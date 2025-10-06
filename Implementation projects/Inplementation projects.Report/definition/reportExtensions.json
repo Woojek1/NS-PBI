@@ -30,6 +30,23 @@
           "formatString": "0"
         }
       ]
+    },
+    {
+      "name": "Prj Bud Total Measures",
+      "measures": [
+        {
+          "name": "Open project count",
+          "dataType": "Double",
+          "expression": "\nCOUNTROWS (\n    DISTINCT(\n        FILTER(\n            VALUES('Project'[Project]),\n            LEFT ('Project'[Project], 3) <> \"(X)\"\n        )\n    )\n)",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Project count",
+          "dataType": "Double",
+          "expression": "\nCOUNTROWS(\n    values(\n        Project[Project Code]\n    )\n)",
+          "formatString": "General Number"
+        }
+      ]
     }
   ]
 }

@@ -4,10 +4,10 @@
   "position": {
     "x": 50,
     "y": 672,
-    "z": 9000,
+    "z": 6000,
     "height": 384,
     "width": 1820,
-    "tabOrder": 9000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -43,7 +43,7 @@
               },
               "queryRef": "Date.Quarter",
               "nativeQueryRef": "Kwartał",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -177,7 +177,14 @@
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data'"
                 }
               }
             }
@@ -298,20 +305,6 @@
                 }
               }
             },
-            "end": {
-              "expr": {
-                "SelectRef": {
-                  "ExpressionName": "select"
-                }
-              }
-            },
-            "secEnd": {
-              "expr": {
-                "SelectRef": {
-                  "ExpressionName": "select"
-                }
-              }
-            },
             "secShow": {
               "expr": {
                 "Literal": {
@@ -405,7 +398,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Inplementation spendings'"
+                  "Value": "'Inplementation costs'"
                 }
               }
             },

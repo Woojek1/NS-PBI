@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "a9533db1b8b08c087a03",
+  "position": {
+    "x": 26.666666666666668,
+    "y": 158.33333333333334,
+    "z": 5000,
+    "height": 316.66666666666669,
+    "width": 1008.3333333333334,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project"
+                }
+              },
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Projekt"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "CAPEX Bud Measures"
+                    }
+                  },
+                  "Property": "Budget realisation"
+                }
+              },
+              "queryRef": "CAPEX Bud Measures.Budget realisation",
+              "nativeQueryRef": "Budget realisation"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Schema": "extension",
+                    "Entity": "CAPEX Bud Measures"
+                  }
+                },
+                "Property": "Budget realisation"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0a88cc6504d8d3a05952",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b5561c107b0844547835",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget realisation"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

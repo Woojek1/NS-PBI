@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "64847a134805a1409d5e",
+  "name": "fe076f0f9ac074a04d67",
   "position": {
-    "x": 50,
-    "y": 152.09876543209879,
-    "z": 0,
-    "height": 110,
-    "width": 320,
-    "tabOrder": 9000
+    "x": 1400,
+    "y": 223.33333333333334,
+    "z": 4000,
+    "height": 126.66666666666667,
+    "width": 361.66666666666669,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "card",
@@ -20,15 +20,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CAPEX Bud Measures"
+                      "Schema": "extension",
+                      "Entity": "Prj Bud Total Measures"
                     }
                   },
-                  "Property": "Budget PLN"
+                  "Property": "Project count"
                 }
               },
-              "queryRef": "CAPEX Bud Measures.Budget PLN",
-              "nativeQueryRef": "Current year budget",
-              "displayName": "Current year budget"
+              "queryRef": "Prj Bud Total Measures.Project count",
+              "nativeQueryRef": "Project count"
             }
           ]
         }
@@ -40,10 +40,11 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CAPEX Bud Measures"
+                    "Schema": "extension",
+                    "Entity": "Prj Bud Total Measures"
                   }
                 },
-                "Property": "Budget PLN"
+                "Property": "Project count"
               }
             },
             "direction": "Descending"
@@ -53,34 +54,16 @@
       }
     },
     "objects": {
-      "categoryLabels": [
-        {
-          "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            }
-          }
-        }
-      ],
       "labels": [
         {
           "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "36D"
+                }
+              }
+            },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
@@ -94,11 +77,29 @@
                   "Value": "true"
                 }
               }
-            },
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "36D"
+                  "Value": "14D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
@@ -107,6 +108,57 @@
       ]
     },
     "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#252525'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
       "border": [
         {
           "properties": {
@@ -135,6 +187,13 @@
                   "Value": "10D"
                 }
               }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -159,81 +218,11 @@
                   }
                 }
               }
-            },
-            "preset": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomRight'"
-                }
-              }
-            },
-            "shadowSpread": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a0c932060320701e92dc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Month Date"
-          }
-        },
-        "type": "RelativeDate",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Date",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 0,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "Month Date"
-                    }
-                  },
-                  "Right": {
-                    "DateSpan": {
-                      "Expression": {
-                        "Now": {}
-                      },
-                      "TimeUnit": 3
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      }
-    ]
   }
 }

@@ -20,21 +20,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "Drillthrough"
-      },
-      {
-        "name": "35087d313a207c4a4b5c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Code"
-          }
-        },
-        "type": "Categorical",
         "filter": {
           "Version": 2,
           "From": [
@@ -56,7 +41,7 @@
                             "Source": "p"
                           }
                         },
-                        "Property": "Project Code"
+                        "Property": "Project"
                       }
                     }
                   ],
@@ -64,7 +49,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'W-24NS0512'"
+                          "Value": "'(X) Podłokietniki 3D Xenium'"
                         }
                       }
                     ]
@@ -74,6 +59,21 @@
             }
           ]
         },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "35087d313a207c4a4b5c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project Code"
+          }
+        },
+        "type": "Categorical",
         "howCreated": "Drillthrough"
       }
     ]
@@ -199,6 +199,21 @@
     {
       "source": "74fadb809e83c25c3bc8",
       "target": "4749aa0d5d26538c092e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "88637b3d6c59e0e2b613",
+      "target": "7cc873cd6449567db2b0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "88637b3d6c59e0e2b613",
+      "target": "f8e59c532090e5b30dc5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74fadb809e83c25c3bc8",
+      "target": "7cc873cd6449567db2b0",
       "type": "NoFilter"
     }
   ]
