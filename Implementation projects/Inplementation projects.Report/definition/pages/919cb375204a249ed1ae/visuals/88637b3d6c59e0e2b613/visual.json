@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "88637b3d6c59e0e2b613",
+  "position": {
+    "x": 50,
+    "y": 361.66666666666669,
+    "z": 1000,
+    "height": 265,
+    "width": 890,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Expenses Category"
+                    }
+                  },
+                  "Property": "Expenses Category"
+                }
+              },
+              "queryRef": "Expenses Category.Expenses Category",
+              "nativeQueryRef": "Kategoria wydatków",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Amount PLN"
+                }
+              },
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Kwota PLN"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Expenses Category"
+                  }
+                },
+                "Property": "Expenses Category"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

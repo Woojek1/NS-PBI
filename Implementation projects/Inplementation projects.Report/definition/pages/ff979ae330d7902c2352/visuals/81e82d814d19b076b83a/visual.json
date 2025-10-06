@@ -1,0 +1,82 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "81e82d814d19b076b83a",
+  "position": {
+    "x": 26.508875739644974,
+    "y": 119.28994082840238,
+    "z": 2000,
+    "height": 287.810650887574,
+    "width": 371.12426035502961,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Code"
+                }
+              },
+              "queryRef": "Project.Project Code",
+              "nativeQueryRef": "Projekt kod",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project"
+                }
+              },
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Projekt",
+              "active": false
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

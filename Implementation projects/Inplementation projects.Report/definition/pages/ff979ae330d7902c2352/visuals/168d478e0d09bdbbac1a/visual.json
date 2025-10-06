@@ -1,0 +1,185 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "168d478e0d09bdbbac1a",
+  "position": {
+    "x": 26.666666666666668,
+    "y": 540,
+    "z": 0,
+    "height": 408.33333333333337,
+    "width": 1866.6666666666667
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project"
+                }
+              },
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Projekt",
+              "active": true
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Project"
+                        }
+                      },
+                      "Property": "Project Code"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Project.Project Code)",
+              "nativeQueryRef": "Pierwsze: Projekt kod"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Amount PLN"
+                }
+              },
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Kwota PLN"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CAPEX Measures"
+                  }
+                },
+                "Property": "Amount PLN"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2c6aedd0dde3ea233100",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Measures"
+              }
+            },
+            "Property": "Amount PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e4c595457c370cb022b5",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "TopN"
+      },
+      {
+        "name": "628f637a8e826dd8618c",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "StartsWith": {
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "p"
+                            }
+                          },
+                          "Property": "Project"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "'(X)'"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

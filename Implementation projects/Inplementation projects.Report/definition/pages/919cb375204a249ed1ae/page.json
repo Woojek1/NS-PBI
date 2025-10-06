@@ -1,0 +1,205 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "919cb375204a249ed1ae",
+  "displayName": "Project details",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6cd57841ac5256cc5626",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "35087d313a207c4a4b5c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project Code"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Project Code"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'W-24NS0512'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "824f82233e38d24885ba",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "5580ee0a7c1566689266",
+        "boundFilter": "6cd57841ac5256cc5626",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project"
+          }
+        }
+      },
+      {
+        "name": "f1f26304300b020482c0",
+        "boundFilter": "35087d313a207c4a4b5c",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project Code"
+          }
+        }
+      }
+    ]
+  },
+  "objects": {
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "190L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "88637b3d6c59e0e2b613",
+      "target": "74fadb809e83c25c3bc8",
+      "type": "NoFilter"
+    },
+    {
+      "source": "88637b3d6c59e0e2b613",
+      "target": "4749aa0d5d26538c092e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "88637b3d6c59e0e2b613",
+      "target": "476d5429dd888b6852b5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "88637b3d6c59e0e2b613",
+      "target": "fd7c7b086de8e43aed2a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "88637b3d6c59e0e2b613",
+      "target": "8227583c62430bd34226",
+      "type": "NoFilter"
+    },
+    {
+      "source": "88637b3d6c59e0e2b613",
+      "target": "64847a134805a1409d5e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74fadb809e83c25c3bc8",
+      "target": "88637b3d6c59e0e2b613",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74fadb809e83c25c3bc8",
+      "target": "64847a134805a1409d5e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74fadb809e83c25c3bc8",
+      "target": "8227583c62430bd34226",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74fadb809e83c25c3bc8",
+      "target": "fd7c7b086de8e43aed2a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74fadb809e83c25c3bc8",
+      "target": "476d5429dd888b6852b5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74fadb809e83c25c3bc8",
+      "target": "4749aa0d5d26538c092e",
+      "type": "NoFilter"
+    }
+  ]
+}
