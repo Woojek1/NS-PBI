@@ -211,6 +211,16 @@ table 'F Margin Data'
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
+	measure PierwszaLitera_Measure = ```
+			
+			VAR n = SELECTEDVALUE(vpbi_d_product[prod_si_name])
+			RETURN
+			IF( LEFT(n, 1) = " ", TRUE(), FALSE() )
+			
+			```
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f48c35ee-88bf-4e97-982a-a7b4830d2a42
+
 	column time_id
 		dataType: int64
 		isHidden

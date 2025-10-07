@@ -75,13 +75,6 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''vpbi_d_product''[line_name]'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
                                 "Value": "'''vpbi_d_product''[model_name]'"
                               }
                             }
@@ -90,6 +83,13 @@
                             {
                               "Literal": {
                                 "Value": "'''vpbi_d_product''[prod_si_code]'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''vpbi_d_product''[prod_si_name]'"
                               }
                             }
                           ]
@@ -117,17 +117,6 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''vpbi_d_product''[line_name]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
                                       "Value": "'''vpbi_d_product''[model_name]'"
                                     }
                                   }
@@ -140,6 +129,17 @@
                                   {
                                     "Literal": {
                                       "Value": "'''vpbi_d_product''[prod_si_code]'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'''vpbi_d_product''[prod_si_name]'"
                                     }
                                   }
                                 ]
@@ -163,13 +163,13 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Product Line"
-                          },
-                          {
                             "0": "Product Model"
                           },
                           {
                             "0": "Index"
+                          },
+                          {
+                            "0": "Index Name"
                           }
                         ]
                       }
@@ -228,7 +228,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "a59f91513a594a1301e0",
+        "name": "8db45d0ad95c6e0dd300",
         "field": {
           "Column": {
             "Expression": {

@@ -35,37 +35,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vpbi_d_product"
+                      "Entity": "vpbi_d_month"
                     }
                   },
-                  "Property": "model_name"
+                  "Property": "mon_name"
                 }
               },
-              "queryRef": "vpbi_d_product.model_name",
-              "nativeQueryRef": "Product Model",
-              "active": false,
-              "displayName": "Product Model"
+              "queryRef": "vpbi_d_month.mon_name",
+              "nativeQueryRef": "mon_name",
+              "active": false
             }
           ]
         },
         "Rows": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "line_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.line_name",
-              "nativeQueryRef": "Product Line",
-              "active": true,
-              "displayName": "Product Line"
-            },
             {
               "field": {
                 "Column": {
@@ -95,8 +78,24 @@
               },
               "queryRef": "vpbi_d_product.prod_si_code",
               "nativeQueryRef": "Index",
-              "active": true,
+              "active": false,
               "displayName": "Index"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "prod_si_name"
+                }
+              },
+              "queryRef": "vpbi_d_product.prod_si_name",
+              "nativeQueryRef": "Index Name",
+              "active": false,
+              "displayName": "Index Name"
             }
           ],
           "fieldParameters": [
@@ -153,35 +152,6 @@
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "vpbi_d_product.line_name"
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "vpbi_d_product.model_name"
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "vpbi_d_product.prod_si_code"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "values": [
         {
@@ -801,20 +771,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "84D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "vpbi_d_month.year_name"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "60D"
                 }
               }
@@ -1341,20 +1297,6 @@
           },
           "selector": {
             "metadata": "vpbi_d_product.prod_si_code"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "563.0989751332231D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "vpbi_d_product.model_name"
           }
         }
       ],
@@ -2190,7 +2132,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2238,10 +2179,25 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
-        "name": "e2bfe6d052d264612500",
+        "name": "8b06ddc00b2d23290541",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_month"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9c43bcb39d2dd30ae417",
         "field": {
           "Column": {
             "Expression": {
@@ -2252,46 +2208,7 @@
             "Property": "model_name"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "v",
-              "Entity": "vpbi_d_product",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "v"
-                          }
-                        },
-                        "Property": "model_name"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'2ME STATIONARY CHAIR, CF FRAME, UPH BACK'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        }
+        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"
