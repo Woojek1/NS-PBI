@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "76ed199e1307a2c0c568",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 688.88888888888891,
+    "width": 762.22222222222217
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "prod_si_code"
+                }
+              },
+              "queryRef": "vpbi_d_product.prod_si_code",
+              "nativeQueryRef": "prod_si_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "prod_si_name"
+                }
+              },
+              "queryRef": "vpbi_d_product.prod_si_name",
+              "nativeQueryRef": "prod_si_name"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

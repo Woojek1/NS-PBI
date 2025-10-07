@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "e38d4284a8b85d348751",
+  "position": {
+    "x": 560.112934773365,
+    "y": 289.80967769368141,
+    "z": 2000,
+    "height": 390.1284122799558,
+    "width": 720.34424695977555,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_company_cost"
+                    }
+                  },
+                  "Property": "comp_cost_code"
+                }
+              },
+              "queryRef": "vpbi_d_company_cost.comp_cost_code",
+              "nativeQueryRef": "comp_cost_code"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F Margin Data"
+                    }
+                  },
+                  "Property": "Complaint Product PLN"
+                }
+              },
+              "queryRef": "F Margin Data.Complaint Product PLN",
+              "nativeQueryRef": "Complaint Product PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F Margin Data"
+                    }
+                  },
+                  "Property": "Complaint Activity PLN v2"
+                }
+              },
+              "queryRef": "F Margin Data.Complaint Activity PLN v2",
+              "nativeQueryRef": "Complaint Activity PLN v2"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vpbi_d_company_cost"
+                  }
+                },
+                "Property": "comp_cost_code"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
