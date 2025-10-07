@@ -26,7 +26,7 @@
         {
           "name": "Budzet PLN (total)",
           "dataType": "Double",
-          "expression": "\nCALCULATE(\n    SUM('CAPEX Bud Measures'[budc_pln]),\n    all('Date')\n)",
+          "expression": "\nCALCULATE(\n    SUM('CAPEX Bud Measures'[budc_pln]),\n    ALL('Date')\n)",
           "formatString": "0"
         }
       ]
@@ -37,14 +37,12 @@
         {
           "name": "Open project count",
           "dataType": "Double",
-          "expression": "\nCOUNTROWS (\n    DISTINCT(\n        FILTER(\n            VALUES('Project'[Project]),\n            LEFT ('Project'[Project], 3) <> \"(X)\"\n        )\n    )\n)",
-          "formatString": "General Number"
+          "expression": "\nCOUNTROWS (\n    DISTINCT(\n        FILTER(\n            VALUES('Project'[Project]),\n            LEFT ('Project'[Project], 3) <> \"(X)\"\n        )\n    )\n)"
         },
         {
           "name": "Project count",
           "dataType": "Double",
-          "expression": "\nCOUNTROWS(\n    values(\n        Project[Project Code]\n    )\n)",
-          "formatString": "General Number"
+          "expression": "\nCOUNTROWS(\n    values(\n        Project[Project Code]\n    )\n)"
         }
       ]
     }
