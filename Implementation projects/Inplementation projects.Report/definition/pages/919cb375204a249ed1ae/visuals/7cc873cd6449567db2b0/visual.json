@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "7cc873cd6449567db2b0",
   "position": {
-    "x": 1461.6666666666667,
-    "y": 296.66666666666669,
+    "x": 1175,
+    "y": 316.66666666666669,
     "z": 10000,
-    "height": 310,
-    "width": 408.33333333333337,
-    "tabOrder": 10000
+    "height": 176.66666666666669,
+    "width": 695,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "gauge",
@@ -402,5 +402,53 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "39ffbae955870ee2deaa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budzet PLN (total)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "336f77664da29ca8c95d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget realisation"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "08d1f862214d28c66776",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Measures"
+              }
+            },
+            "Property": "Amount PLN"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
