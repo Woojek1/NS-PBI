@@ -1,0 +1,465 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "168d478e0d09bdbbac1a",
+  "position": {
+    "x": 26,
+    "y": 376,
+    "z": 0,
+    "height": 610,
+    "width": 1870,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project"
+                }
+              },
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Projekt",
+              "active": true
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Project"
+                        }
+                      },
+                      "Property": "Project Code"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Project.Project Code)",
+              "nativeQueryRef": "Pierwsze: Projekt kod"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "CAPEX Bud Measures"
+                    }
+                  },
+                  "Property": "Budget realisation"
+                }
+              },
+              "queryRef": "CAPEX Bud Measures.Budget realisation",
+              "nativeQueryRef": "Budget realisation"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Amount PLN"
+                }
+              },
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Kwota PLN"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CAPEX Measures"
+                  }
+                },
+                "Property": "Amount PLN"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Schema": "extension",
+                                          "Entity": "CAPEX Bud Measures"
+                                        }
+                                      },
+                                      "Property": "Budget realisation"
+                                    }
+                                  },
+                                  "Right": {
+                                    "RangePercent": {
+                                      "Min": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Measure": {
+                                                      "Expression": {
+                                                        "SourceRef": {
+                                                          "Schema": "extension",
+                                                          "Entity": "CAPEX Bud Measures"
+                                                        }
+                                                      },
+                                                      "Property": "Budget realisation"
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 3
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Max": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Measure": {
+                                                      "Expression": {
+                                                        "SourceRef": {
+                                                          "Schema": "extension",
+                                                          "Entity": "CAPEX Bud Measures"
+                                                        }
+                                                      },
+                                                      "Property": "Budget realisation"
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 4
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Percent": 0.01
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Schema": "extension",
+                                          "Entity": "CAPEX Bud Measures"
+                                        }
+                                      },
+                                      "Property": "Budget realisation"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "500D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#EF9C9C'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Schema": "extension",
+                                          "Entity": "CAPEX Bud Measures"
+                                        }
+                                      },
+                                      "Property": "Budget realisation"
+                                    }
+                                  },
+                                  "Right": {
+                                    "RangePercent": {
+                                      "Min": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Measure": {
+                                                      "Expression": {
+                                                        "SourceRef": {
+                                                          "Schema": "extension",
+                                                          "Entity": "CAPEX Bud Measures"
+                                                        }
+                                                      },
+                                                      "Property": "Budget realisation"
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 3
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Max": {
+                                        "ScopedEval": {
+                                          "Expression": {
+                                            "Aggregation": {
+                                              "Expression": {
+                                                "ScopedEval": {
+                                                  "Expression": {
+                                                    "Measure": {
+                                                      "Expression": {
+                                                        "SourceRef": {
+                                                          "Schema": "extension",
+                                                          "Entity": "CAPEX Bud Measures"
+                                                        }
+                                                      },
+                                                      "Property": "Budget realisation"
+                                                    }
+                                                  },
+                                                  "Scope": [
+                                                    {
+                                                      "AllRolesRef": {}
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "Function": 4
+                                            }
+                                          },
+                                          "Scope": []
+                                        }
+                                      },
+                                      "Percent": 0.0090000000000000011
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Schema": "extension",
+                                          "Entity": "CAPEX Bud Measures"
+                                        }
+                                      },
+                                      "Property": "Budget realisation"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#E4B38E'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 3,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Schema": "extension",
+                                      "Entity": "CAPEX Bud Measures"
+                                    }
+                                  },
+                                  "Property": "Budget realisation"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.9D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#86B1D2'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2c6aedd0dde3ea233100",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Measures"
+              }
+            },
+            "Property": "Amount PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e4c595457c370cb022b5",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3c7bee688c87160a01b4",
+        "ordinal": 2,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Project"
+                  }
+                },
+                "Property": "Project Code"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9b93bba58701e0bda98d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget realisation"
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}
