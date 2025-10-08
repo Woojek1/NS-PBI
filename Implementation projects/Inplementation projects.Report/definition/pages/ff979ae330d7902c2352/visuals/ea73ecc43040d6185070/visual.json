@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "fd7c7b086de8e43aed2a",
+  "name": "ea73ecc43040d6185070",
   "position": {
-    "x": 800,
-    "y": 153.76543209876544,
-    "z": 4000,
-    "height": 108.33333333333334,
-    "width": 320,
-    "tabOrder": 1000
+    "x": 922.85714285714289,
+    "y": 70,
+    "z": 4001,
+    "height": 125.71428571428572,
+    "width": 342.85714285714289,
+    "tabOrder": 5001
   },
   "visual": {
     "visualType": "card",
@@ -27,8 +27,7 @@
                 }
               },
               "queryRef": "CAPEX Bud Measures.Budget PLN",
-              "nativeQueryRef": "Total project budget",
-              "displayName": "Total project budget"
+              "nativeQueryRef": "Budżet PLN"
             }
           ]
         }
@@ -53,6 +52,33 @@
       }
     },
     "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "36D"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "preserveWhitespace": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
       "categoryLabels": [
         {
           "properties": {
@@ -72,33 +98,6 @@
                       "Percent": 0
                     }
                   }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "preserveWhitespace": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "36D"
                 }
               }
             }
@@ -223,5 +222,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b580c8afe2c4b7c2111b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget PLN"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

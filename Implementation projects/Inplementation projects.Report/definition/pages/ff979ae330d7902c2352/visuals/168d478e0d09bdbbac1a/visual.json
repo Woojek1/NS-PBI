@@ -3,11 +3,10 @@
   "name": "168d478e0d09bdbbac1a",
   "position": {
     "x": 26,
-    "y": 540,
+    "y": 376,
     "z": 0,
-    "height": 408,
-    "width": 1868,
-    "tabOrder": 1000
+    "height": 610,
+    "width": 1870
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -52,6 +51,21 @@
               },
               "queryRef": "Min(Project.Project Code)",
               "nativeQueryRef": "Pierwsze: Projekt kod"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "CAPEX Bud Measures"
+                    }
+                  },
+                  "Property": "Budget realisation"
+                }
+              },
+              "queryRef": "CAPEX Bud Measures.Budget realisation",
+              "nativeQueryRef": "Budget realisation"
             }
           ]
         },
@@ -89,8 +103,7 @@
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
@@ -426,6 +439,21 @@
               }
             },
             "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0fc4369431a8e6ea01c6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget realisation"
           }
         },
         "type": "Advanced"

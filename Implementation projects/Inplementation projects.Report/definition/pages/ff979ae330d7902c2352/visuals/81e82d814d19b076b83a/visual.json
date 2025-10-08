@@ -6,7 +6,8 @@
     "y": 70,
     "z": 2000,
     "height": 176.66666666666669,
-    "width": 280
+    "width": 280,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -102,6 +103,36 @@
                 }
               ],
               "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-15NS0002'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-21KC0509'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-24NS0019'"
+                  }
+                }
+              ],
+              "isToggled": true
             }
           ]
         }
@@ -159,7 +190,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'w-24kc0505'"
+                                "Value": "'W-18BN0501'"
                               }
                             }
                           }
@@ -178,7 +209,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'w-24kc0505'"
+                                "Value": "'W-18BN0501'"
                               }
                             }
                           }
@@ -207,7 +238,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'W-24KC0505'"
+                                      "Value": "'W-18BN0501'"
                                     }
                                   }
                                 ]
@@ -231,49 +262,8 @@
                         },
                         "valueMap": [
                           {
-                            "0": "W-24KC0505"
+                            "0": "W-18BN0501"
                           }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "p",
-                    "Entity": "Project",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "p"
-                                }
-                              },
-                              "Property": "Project Code"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'W-24KC0505'"
-                              }
-                            }
-                          ]
                         ]
                       }
                     }
@@ -319,37 +309,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8d4202707c40b061c9c8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f7d3f4955081b7605333",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

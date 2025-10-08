@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 126.66666666666667,
     "width": 361.66666666666669,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -224,5 +224,24 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "def8c713c0a0654cbba9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Prj Bud Total Measures"
+              }
+            },
+            "Property": "Project count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
