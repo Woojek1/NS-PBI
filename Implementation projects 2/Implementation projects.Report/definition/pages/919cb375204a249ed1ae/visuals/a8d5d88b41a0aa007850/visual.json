@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "a8d5d88b41a0aa007850",
   "position": {
-    "x": 851.66666666666674,
-    "y": 316.66666666666669,
-    "z": 12000,
-    "height": 310,
-    "width": 535,
-    "tabOrder": 12000
+    "x": 673.30316742081448,
+    "y": 317.10407239819,
+    "z": 11000,
+    "height": 309.86425339366514,
+    "width": 535.74660633484154,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -784,67 +784,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c1cf30697a2bcd3e0183",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "309df72678d82b06abe6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Schema": "extension",
-                "Entity": "CAPEX Bud Measures"
-              }
-            },
-            "Property": "Budget realisation"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "979be87ae494a913105e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Measures"
-              }
-            },
-            "Property": "Amount PLN"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6e453b47d862d0a5cb95",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Schema": "extension",
-                "Entity": "CAPEX Bud Measures"
-              }
-            },
-            "Property": "Budzet PLN (total)"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

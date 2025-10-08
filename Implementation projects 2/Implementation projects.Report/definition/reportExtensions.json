@@ -28,6 +28,12 @@
           "dataType": "Double",
           "expression": "\nCALCULATE(\n    SUM('CAPEX Bud Measures'[budc_pln]),\n    ALL('Date')\n)",
           "formatString": "0"
+        },
+        {
+          "name": "Title (current year spendings)",
+          "dataType": "Double",
+          "expression": "\n\"Current year (\" & \nYEAR(\n    TODAY()\n)\n& \") spending\"",
+          "formatString": "General Number"
         }
       ]
     },
