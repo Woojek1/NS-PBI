@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "vpbi_d_product.prod_si_name",
-              "nativeQueryRef": "prod_si_name",
-              "active": true
+              "nativeQueryRef": "Index Name",
+              "active": true,
+              "displayName": "Index Name"
             }
           ]
         }
@@ -86,47 +87,6 @@
                 "Literal": {
                   "Value": "true"
                 }
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "v",
-                    "Entity": "vpbi_d_product",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "v"
-                                }
-                              },
-                              "Property": "prod_si_name"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "' (W1200 D460 6OH CF-BI TF-BI/BI TT-19 F30-BL)'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
               }
             }
           }

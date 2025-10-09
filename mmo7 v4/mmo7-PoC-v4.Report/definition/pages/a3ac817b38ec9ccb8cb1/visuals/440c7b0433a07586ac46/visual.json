@@ -57,45 +57,13 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "model_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.model_name",
-              "nativeQueryRef": "Product Model",
-              "active": true,
-              "displayName": "Product Model"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
                   "Property": "prod_si_code"
                 }
               },
               "queryRef": "vpbi_d_product.prod_si_code",
               "nativeQueryRef": "Index",
-              "active": false,
+              "active": true,
               "displayName": "Index"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "prod_si_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.prod_si_name",
-              "nativeQueryRef": "Index Name",
-              "active": false,
-              "displayName": "Index Name"
             }
           ],
           "fieldParameters": [
@@ -111,7 +79,7 @@
                 }
               },
               "index": 0,
-              "length": 3
+              "length": 1
             }
           ]
         },
@@ -187,6 +155,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
                 }
               }
             }
@@ -1312,6 +1287,26 @@
             }
           }
         }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotalsLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sum'"
+                }
+              }
+            },
+            "columnSubtotalsLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sum'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -2132,6 +2127,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2192,20 +2188,6 @@
               }
             },
             "Property": "mon_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9c43bcb39d2dd30ae417",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vpbi_d_product"
-              }
-            },
-            "Property": "model_name"
           }
         },
         "type": "Categorical"

@@ -157,12 +157,27 @@ table vpbi_d_product
 		mode: directQuery
 		source =
 				let
-				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
-				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
-				    mmo7_Schema = controlling_Database{[Name="mmo7",Kind="Schema"]}[Data],
-				    vpbi_d_product_View = mmo7_Schema{[Name="vpbi_d_product",Kind="View"]}[Data]
+				    Source = Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        null
+				    ),
+				    controlling_Database = Source{[Name = "controlling", Kind = "Database"]}[Data],
+				    mmo7_Schema = controlling_Database{[Name = "mmo7", Kind = "Schema"]}[Data],
+				    vpbi_d_product_View = mmo7_Schema{[Name = "vpbi_d_product", Kind = "View"]}[Data]
 				in
 				    vpbi_d_product_View
+				
+				
+				
+				
+				// let
+				//     Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+				//     controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				//     mmo7_Schema = controlling_Database{[Name="mmo7",Kind="Schema"]}[Data],
+				//     vpbi_d_product_View = mmo7_Schema{[Name="vpbi_d_product",Kind="View"]}[Data]
+				// in
+				//     vpbi_d_product_View
 
 	annotation PBI_ResultType = Table
 

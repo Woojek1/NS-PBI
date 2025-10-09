@@ -81,5 +81,70 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cc1706bdc26d062e12a8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_month"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7902e3f2756c611a9351",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_src_cost_transport"
+                  }
+                },
+                "Property": "c_pln_transport"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d44b17ae15970602107b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_src_cost_transport"
+              }
+            },
+            "Property": "src"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "814b48b65ba0a2154999",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_organization_team"
+              }
+            },
+            "Property": "dept_code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

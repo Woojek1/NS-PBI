@@ -104,5 +104,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7210478eb621ccbb80c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_src_cost_transport"
+              }
+            },
+            "Property": "mmo_qualified"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
