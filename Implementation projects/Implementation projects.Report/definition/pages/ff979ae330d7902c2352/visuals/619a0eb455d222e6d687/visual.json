@@ -4,10 +4,10 @@
   "position": {
     "x": 50,
     "y": 474,
-    "z": 11001,
+    "z": 13000,
     "height": 542,
     "width": 1820,
-    "tabOrder": 10002
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -93,15 +93,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CAPEX Measures"
+                      "Entity": "CAPEX Bud Measures"
                     }
                   },
-                  "Property": "Amount PLN"
+                  "Property": "Budget PLN"
                 }
               },
-              "queryRef": "CAPEX Measures.Amount PLN",
-              "nativeQueryRef": "Cost",
-              "displayName": "Cost"
+              "queryRef": "CAPEX Bud Measures.Budget PLN",
+              "nativeQueryRef": "Budget PLN",
+              "displayName": "Budget PLN"
             }
           ]
         }
@@ -456,6 +456,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "isHidden": true
+  }
 }

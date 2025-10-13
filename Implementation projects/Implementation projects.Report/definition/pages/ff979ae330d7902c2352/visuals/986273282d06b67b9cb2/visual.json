@@ -4,10 +4,10 @@
   "position": {
     "x": 50,
     "y": 473.33333333333337,
-    "z": 11000,
+    "z": 12000,
     "height": 543.33333333333337,
     "width": 1820,
-    "tabOrder": 10001
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -457,85 +457,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "40ab01022d9a7a6b6740",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e870d7dbe58419ab0a50",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Bud Measures"
-              }
-            },
-            "Property": "Budget PLN"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "49ce3dc9d70738a44da0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Schema": "extension",
-                "Entity": "CAPEX Bud Measures"
-              }
-            },
-            "Property": "Budget realisation"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ab5c605590ded6560e9a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Project"
-                  }
-                },
-                "Property": "Project Code"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a747bb24e2109cec9d9a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Measures"
-              }
-            },
-            "Property": "Amount PLN"
-          }
-        },
-        "type": "Advanced"
-      }
-    ],
-    "filterSortOrder": "Custom"
-  }
+  "isHidden": true
 }
