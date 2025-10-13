@@ -4,7 +4,7 @@
   "position": {
     "x": 50,
     "y": 474,
-    "z": 13000,
+    "z": 14000,
     "height": 542,
     "width": 1820,
     "tabOrder": 10000
@@ -31,7 +31,8 @@
               "active": true,
               "displayName": "Project"
             }
-          ]
+          ],
+          "showAll": true
         },
         "Tooltips": {
           "projections": [
@@ -40,15 +41,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CAPEX Bud Measures"
+                      "Entity": "CAPEX Measures"
                     }
                   },
-                  "Property": "Budget PLN"
+                  "Property": "Amount PLN"
                 }
               },
-              "queryRef": "CAPEX Bud Measures.Budget PLN",
-              "nativeQueryRef": "Budget PLN",
-              "displayName": "Budget PLN"
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Cost PLN",
+              "displayName": "Cost PLN"
             },
             {
               "field": {
@@ -448,6 +449,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Budget - Column chart'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

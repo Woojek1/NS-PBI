@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 310,
     "width": 890,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -55,18 +55,19 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Expenses Category"
+                    "Entity": "CAPEX Measures"
                   }
                 },
-                "Property": "Expenses Category"
+                "Property": "Amount PLN"
               }
             },
             "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {

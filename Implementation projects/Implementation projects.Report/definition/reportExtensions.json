@@ -33,6 +33,12 @@
           "name": "Title (current year spendings)",
           "dataType": "Double",
           "expression": "\n\"Current year (\" & \nYEAR(\n    TODAY()\n)\n& \") spending\""
+        },
+        {
+          "name": "Selected project",
+          "dataType": "Double",
+          "expression": "\nVAR _project_name = MAX(Project[Project])\nRETURN\n\nIF(\n    HASONEVALUE(Project[Project]),\n    _project_name,\n    \"\"\n)",
+          "formatString": "General Number"
         }
       ]
     },

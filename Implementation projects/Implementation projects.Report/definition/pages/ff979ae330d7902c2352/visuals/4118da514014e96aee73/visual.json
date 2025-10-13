@@ -4,7 +4,7 @@
   "position": {
     "x": 50,
     "y": 474,
-    "z": 14000,
+    "z": 15000,
     "height": 542,
     "width": 1820,
     "tabOrder": 11000
@@ -40,6 +40,21 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Amount PLN"
+                }
+              },
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Cost PLN",
+              "displayName": "Cost PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "CAPEX Bud Measures"
                     }
                   },
@@ -49,21 +64,6 @@
               "queryRef": "CAPEX Bud Measures.Budget PLN",
               "nativeQueryRef": "Budget PLN",
               "displayName": "Budget PLN"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "CAPEX Bud Measures"
-                    }
-                  },
-                  "Property": "Budget realisation"
-                }
-              },
-              "queryRef": "CAPEX Bud Measures.Budget realisation",
-              "nativeQueryRef": "Budget realisation"
             },
             {
               "field": {
@@ -93,15 +93,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CAPEX Measures"
+                      "Schema": "extension",
+                      "Entity": "CAPEX Bud Measures"
                     }
                   },
-                  "Property": "Amount PLN"
+                  "Property": "Budget realisation"
                 }
               },
-              "queryRef": "CAPEX Measures.Amount PLN",
-              "nativeQueryRef": "Cost",
-              "displayName": "Cost"
+              "queryRef": "CAPEX Bud Measures.Budget realisation",
+              "nativeQueryRef": "Budget realisation"
             }
           ]
         }

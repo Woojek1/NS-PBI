@@ -1,38 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "a8d5d88b41a0aa007850",
+  "name": "476f235540b40e452422",
   "position": {
-    "x": 960.72452830188683,
-    "y": 315.89433962264155,
-    "z": 11000,
-    "height": 311.54716981132077,
-    "width": 534.70188679245291,
-    "tabOrder": 8000
+    "x": 420,
+    "y": 35,
+    "z": 18000,
+    "height": 108.33333333333334,
+    "width": 320,
+    "tabOrder": 18000
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Project"
-                    }
-                  },
-                  "Property": "Project"
-                }
-              },
-              "queryRef": "Project.Project",
-              "nativeQueryRef": "Projekt",
-              "active": true
-            }
-          ]
-        },
-        "Tooltips": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -47,42 +28,8 @@
                 }
               },
               "queryRef": "CAPEX Bud Measures.Budget realisation",
-              "nativeQueryRef": "Budget realisation"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CAPEX Measures"
-                    }
-                  },
-                  "Property": "Amount PLN"
-                }
-              },
-              "queryRef": "CAPEX Measures.Amount PLN",
-              "nativeQueryRef": "Total spending",
-              "displayName": "Total spending"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "CAPEX Bud Measures"
-                    }
-                  },
-                  "Property": "Budzet PLN (total)"
-                }
-              },
-              "queryRef": "CAPEX Bud Measures.Budzet PLN (total)",
-              "nativeQueryRef": "Total project budget",
-              "displayName": "Total project budget"
+              "nativeQueryRef": "Total budget realisation",
+              "displayName": "Total budget realisation"
             }
           ]
         }
@@ -94,10 +41,11 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CAPEX Measures"
+                    "Schema": "extension",
+                    "Entity": "CAPEX Bud Measures"
                   }
                 },
-                "Property": "Amount PLN"
+                "Property": "Budget realisation"
               }
             },
             "direction": "Descending"
@@ -107,10 +55,49 @@
       }
     },
     "objects": {
-      "dataPoint": [
+      "categoryLabels": [
         {
           "properties": {
-            "fill": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "preserveWhitespace": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
               "solid": {
                 "color": {
                   "expr": {
@@ -227,7 +214,7 @@
                             "And": {
                               "Left": {
                                 "Comparison": {
-                                  "ComparisonKind": 1,
+                                  "ComparisonKind": 2,
                                   "Left": {
                                     "Measure": {
                                       "Expression": {
@@ -271,7 +258,7 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#86B1D2'"
+                              "Value": "'#000000'"
                             }
                           }
                         }
@@ -280,219 +267,11 @@
                   }
                 }
               }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "showGradientLegend": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             },
-            "show": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "enableTitleDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "enableDetailDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "labelPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'OutsideEnd'"
-                }
-              }
-            },
-            "optimizeLabelDisplay": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "labelContentLayout": {
-              "expr": {
-                "Literal": {
-                  "Value": "'SingleLine'"
-                }
-              }
-            },
-            "labelContainerMaxWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "300D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "preferredCategoryWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "180D"
-                }
-              }
-            },
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
-                                  "ComparisonKind": 1,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Schema": "extension",
-                                          "Entity": "CAPEX Bud Measures"
-                                        }
-                                      },
-                                      "Property": "Budget realisation"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "1D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 3,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Schema": "extension",
-                                          "Entity": "CAPEX Bud Measures"
-                                        }
-                                      },
-                                      "Property": "Budget realisation"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "5000D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#EF9C9C'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 3,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Schema": "extension",
-                                      "Entity": "CAPEX Bud Measures"
-                                    }
-                                  },
-                                  "Property": "Budget realisation"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0.9D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#DEEFFF'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
+                  "Value": "36D"
                 }
               }
             }
@@ -501,32 +280,32 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [
+      "border": [
         {
           "properties": {
-            "text": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'Budget realisation'"
+                  "Value": "true"
                 }
               }
             },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
-            "fontColor": {
+            "color": {
               "solid": {
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 2,
+                      "ColorId": 0,
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -568,7 +347,7 @@
                                   },
                                   "Right": {
                                     "Literal": {
-                                      "Value": "1D"
+                                      "Value": "0.9D"
                                     }
                                   }
                                 }
@@ -607,59 +386,6 @@
                             "And": {
                               "Left": {
                                 "Comparison": {
-                                  "ComparisonKind": 1,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Schema": "extension",
-                                          "Entity": "CAPEX Bud Measures"
-                                        }
-                                      },
-                                      "Property": "Budget realisation"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "0.9D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 3,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Schema": "extension",
-                                          "Entity": "CAPEX Bud Measures"
-                                        }
-                                      },
-                                      "Property": "Budget realisation"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "1D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#E4B38E'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
                                   "ComparisonKind": 2,
                                   "Left": {
                                     "Measure": {
@@ -674,7 +400,7 @@
                                   },
                                   "Right": {
                                     "Literal": {
-                                      "Value": "0D"
+                                      "Value": "-100D"
                                     }
                                   }
                                 }
@@ -713,76 +439,64 @@
                   }
                 }
               }
-            },
-            "preset": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Custom'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "bottom": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c01640a00091b7219398",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Measures"
+              }
+            },
+            "Property": "Amount PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "532140ead0aac3e58e4b",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget realisation"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7aa3cb4913da17754700",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Date"
+          }
+        },
+        "type": "RelativeDate",
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
   }
 }

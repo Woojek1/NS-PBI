@@ -1,34 +1,89 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "fd7c7b086de8e43aed2a",
+  "name": "7ec5862a12284d07ae3d",
   "position": {
-    "x": 800,
-    "y": 153.76543209876544,
-    "z": 5000,
-    "height": 108.33333333333334,
-    "width": 320,
-    "tabOrder": 9000
+    "x": 350,
+    "y": 0,
+    "z": 0,
+    "height": 1080,
+    "width": 1220,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
         "Values": {
           "projections": [
             {
               "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Code"
+                }
+              },
+              "queryRef": "Date.Month Code",
+              "nativeQueryRef": "Miesiąc kod"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Document Number"
+                }
+              },
+              "queryRef": "CAPEX Measures.Document Number",
+              "nativeQueryRef": "Dokument numer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Workflow (link)"
+                }
+              },
+              "queryRef": "CAPEX Measures.Workflow (link)",
+              "nativeQueryRef": "Workflow (link)"
+            },
+            {
+              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CAPEX Bud Measures"
+                      "Entity": "CAPEX Measures"
                     }
                   },
-                  "Property": "Budget PLN"
+                  "Property": "Amount PLN"
                 }
               },
-              "queryRef": "CAPEX Bud Measures.Budget PLN",
-              "nativeQueryRef": "Total project budget",
-              "displayName": "Total project budget"
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Kwota PLN"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Code"
+                }
+              },
+              "queryRef": "Project.Project Code",
+              "nativeQueryRef": "Projekt kod"
             }
           ]
         }
@@ -37,68 +92,72 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CAPEX Bud Measures"
+                    "Entity": "Date"
                   }
                 },
-                "Property": "Budget PLN"
+                "Property": "Month Code"
               }
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
-      "categoryLabels": [
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "148.47948661884698D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Date.Month Code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "240.53267511702305D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CAPEX Measures.Document Number"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "514.0000003460043D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CAPEX Measures.Workflow (link)"
+          }
+        }
+      ],
+      "values": [
         {
           "properties": {
             "fontSize": {
               "expr": {
                 "Literal": {
                   "Value": "14D"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "preserveWhitespace": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "36D"
                 }
               }
             }
@@ -110,6 +169,13 @@
       "title": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "titleWrap": {
               "expr": {
                 "Literal": {
