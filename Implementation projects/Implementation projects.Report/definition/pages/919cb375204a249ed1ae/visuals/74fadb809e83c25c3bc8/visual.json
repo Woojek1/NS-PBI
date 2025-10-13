@@ -6,8 +6,7 @@
     "y": 646,
     "z": 0,
     "height": 412,
-    "width": 1820,
-    "tabOrder": 1000
+    "width": 1820
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -507,100 +506,18 @@
                   "Value": "'e4a78a77ac49b73a37e5'"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d9a43d0b0b850d9c603c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e97556c5716a9e546c2e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Quarter"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e5462f436d350c458c68",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Month"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "141d7d3d1c27b31eb1a1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Measures"
-              }
-            },
-            "Property": "Amount PLN"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "17392e40b4a24dd50e82",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Bud Measures"
-              }
-            },
-            "Property": "Budget PLN"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e1159dc558eabe573052",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Schema": "extension",
-                "Entity": "CAPEX Bud Measures"
-              }
-            },
-            "Property": "Budzet PLN (total)"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

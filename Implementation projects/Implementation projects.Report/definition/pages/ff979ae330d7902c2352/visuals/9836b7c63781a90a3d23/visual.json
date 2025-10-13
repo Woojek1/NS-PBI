@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "a2474e229e307a665d27",
+  "name": "9836b7c63781a90a3d23",
   "position": {
-    "x": 50,
-    "y": 68,
-    "z": 1000,
-    "height": 102,
+    "x": 790,
+    "y": 61.666666666666671,
+    "z": 5000,
+    "height": 108.33333333333334,
     "width": 320,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "card",
@@ -20,15 +20,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Prj Bud Total Measures"
+                      "Entity": "CAPEX Measures"
                     }
                   },
-                  "Property": "Open project count"
+                  "Property": "Amount PLN"
                 }
               },
-              "queryRef": "Prj Bud Total Measures.Closed project count",
-              "nativeQueryRef": "Open project count"
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Cost - total",
+              "displayName": "Cost - total"
             }
           ]
         }
@@ -40,11 +40,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Schema": "extension",
-                    "Entity": "Prj Bud Total Measures"
+                    "Entity": "CAPEX Measures"
                   }
                 },
-                "Property": "Open project count"
+                "Property": "Amount PLN"
               }
             },
             "direction": "Descending"
@@ -54,33 +53,6 @@
       }
     },
     "objects": {
-      "labels": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "36D"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "preserveWhitespace": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
       "categoryLabels": [
         {
           "properties": {
@@ -100,6 +72,33 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "preserveWhitespace": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "36D"
                 }
               }
             }
@@ -224,5 +223,25 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c01640a00091b7219398",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Measures"
+              }
+            },
+            "Property": "Amount PLN"
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
   }
 }

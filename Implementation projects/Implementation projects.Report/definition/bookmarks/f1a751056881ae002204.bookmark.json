@@ -1,0 +1,1107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Budget realisation",
+  "name": "f1a751056881ae002204",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ff979ae330d7902c2352",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "97579bf451651a0d8d99",
+          "type": "Advanced",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "p",
+                "Entity": "Project",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "StartsWith": {
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Project Code"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'W-2'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Project"
+                }
+              },
+              "Property": "Project Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "7e3a640daca5170b9b62",
+          "type": "Advanced",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "d",
+                "Entity": "Date",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Comparison": {
+                    "ComparisonKind": 2,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Year"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2020L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Date"
+                }
+              },
+              "Property": "Year"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "5e65d7a00c972000d121",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "p",
+                "Entity": "Project",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "p"
+                            }
+                          },
+                          "Property": "Project Grp"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Projekty Wdrożeniowe'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Project"
+                }
+              },
+              "Property": "Project Grp"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "27c9d805d53a414540aa",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "c",
+                "Entity": "CAPEX Measures",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "BI Capex"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "1L"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "CAPEX Measures"
+                }
+              },
+              "Property": "BI Capex"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "f0ab5974009b05a3226c",
+          "type": "Advanced",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "p",
+                "Entity": "Project",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "StartsWith": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "p"
+                              }
+                            },
+                            "Property": "Project"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'(X) '"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Project"
+                }
+              },
+              "Property": "Project"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ff979ae330d7902c2352": {
+        "visualContainers": {
+          "55e8e430eae3d292b99c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0674f95390254d8d6660",
+                  "type": "RelativeDate",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "Date",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "d"
+                                  }
+                                },
+                                "Property": "Month Date"
+                              }
+                            },
+                            "Right": {
+                              "DateSpan": {
+                                "Expression": {
+                                  "Now": {}
+                                },
+                                "TimeUnit": 3
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Month Date"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "ecdfd67722b311e0a6d0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget PLN"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget PLN"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "852da1c0a60b82cca616": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "a2474e229e307a665d27": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c2d26eb8d2ca9d242bd7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "Prj Bud Total Measures"
+                        }
+                      },
+                      "Property": "Open project count"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "Prj Bud Total Measures"
+                        }
+                      },
+                      "Property": "Open project count"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "ea73ecc43040d6185070": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1a224e9cc82c4b2609c7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget PLN"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget PLN"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "9836b7c63781a90a3d23": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c01640a00091b7219398",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "fcf8924a9bb860a350ea": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c01640a00091b7219398",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a0c932060320701e92dc",
+                  "type": "RelativeDate",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "Date",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "d"
+                                  }
+                                },
+                                "Property": "Month Date"
+                              }
+                            },
+                            "Right": {
+                              "DateSpan": {
+                                "Expression": {
+                                  "Now": {}
+                                },
+                                "TimeUnit": 3
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Month Date"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "ab9f0cbfc8511dabeeb2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Title (current year spendings)"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Title (current year spendings)"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "18e76f2e13a4614e73c9": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c01640a00091b7219398",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a0c932060320701e92dc",
+                  "type": "RelativeDate",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "Date",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "d"
+                                  }
+                                },
+                                "Property": "Month Date"
+                              }
+                            },
+                            "Right": {
+                              "DateSpan": {
+                                "Expression": {
+                                  "Now": {}
+                                },
+                                "TimeUnit": 3
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Month Date"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "e530692a8110c1a25050": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "18c62e89cd600059e232": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "f9491eaae8d4638b60d0": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "986273282d06b67b9cb2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "40ab01022d9a7a6b6740",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Project"
+                        }
+                      },
+                      "Property": "Project"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e870d7dbe58419ab0a50",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget PLN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "49ce3dc9d70738a44da0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget realisation"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ab5c605590ded6560e9a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Project"
+                            }
+                          },
+                          "Property": "Project Code"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a747bb24e2109cec9d9a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredColumnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Project"
+                        }
+                      },
+                      "Property": "Project"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "619a0eb455d222e6d687": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a31d6818398a49063599",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Project"
+                        }
+                      },
+                      "Property": "Project"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0c967d6b3aa7c85d4591",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget PLN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "00a830f185640334d02a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget realisation"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1f6bcaa87c902b9865b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Project"
+                            }
+                          },
+                          "Property": "Project Code"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "01be3237b0799859661d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredColumnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget PLN"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Project"
+                        }
+                      },
+                      "Property": "Project"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4118da514014e96aee73": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b4c024ff7e88e5cd6c5e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Project"
+                        }
+                      },
+                      "Property": "Project"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "74ac95ba0edc90e977c0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget PLN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7e4bfaf50211ddbb38b2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget realisation"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "261483746b2d46b2c9ce",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Project"
+                            }
+                          },
+                          "Property": "Project Code"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "06fc18a34babb7e202dc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CAPEX Measures"
+                        }
+                      },
+                      "Property": "Amount PLN"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredColumnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Schema": "extension",
+                          "Entity": "CAPEX Bud Measures"
+                        }
+                      },
+                      "Property": "Budget realisation"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Project"
+                        }
+                      },
+                      "Property": "Project"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

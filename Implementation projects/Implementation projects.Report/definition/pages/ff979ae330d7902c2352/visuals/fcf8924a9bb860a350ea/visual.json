@@ -1,75 +1,34 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "e8d73a53d4dd202393ab",
+  "name": "fcf8924a9bb860a350ea",
   "position": {
-    "x": 813.69519832985384,
-    "y": 60.125260960334032,
-    "z": 6003,
-    "height": 693.44467640918583,
-    "width": 1016.1169102296451,
-    "tabOrder": 6003
+    "x": 1530,
+    "y": 138,
+    "z": 6000,
+    "height": 34,
+    "width": 320,
+    "tabOrder": 6000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "card",
     "query": {
       "queryState": {
         "Values": {
           "projections": [
             {
               "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Date"
-                    }
-                  },
-                  "Property": "Month Code"
-                }
-              },
-              "queryRef": "Date.Month Code",
-              "nativeQueryRef": "Miesiąc kod"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CAPEX Measures"
-                    }
-                  },
-                  "Property": "Document Number"
-                }
-              },
-              "queryRef": "CAPEX Measures.Document Number",
-              "nativeQueryRef": "Dokument numer"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CAPEX Measures"
-                    }
-                  },
-                  "Property": "Workflow (link)"
-                }
-              },
-              "queryRef": "CAPEX Measures.Workflow (link)",
-              "nativeQueryRef": "Workflow (link)"
-            },
-            {
-              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CAPEX Measures"
+                      "Schema": "extension",
+                      "Entity": "CAPEX Bud Measures"
                     }
                   },
-                  "Property": "Amount PLN"
+                  "Property": "Title (current year spendings)"
                 }
               },
-              "queryRef": "CAPEX Measures.Amount PLN",
-              "nativeQueryRef": "Kwota PLN"
+              "queryRef": "CAPEX Bud Measures.Title (current year spendings)",
+              "nativeQueryRef": "Title (current year spendings)"
             }
           ]
         }
@@ -78,44 +37,101 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Date"
+                    "Schema": "extension",
+                    "Entity": "CAPEX Bud Measures"
                   }
                 },
-                "Property": "Month Code"
+                "Property": "Title (current year spendings)"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "122.69970532022006D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Date.Month Code"
-          }
-        }
-      ],
-      "values": [
+      "categoryLabels": [
         {
           "properties": {
             "fontSize": {
               "expr": {
                 "Literal": {
                   "Value": "14D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "preserveWhitespace": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "wordWrap": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -127,13 +143,6 @@
       "title": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "titleWrap": {
               "expr": {
                 "Literal": {
@@ -156,6 +165,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Arial'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -227,7 +243,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -251,35 +267,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e589818baa0b939ba7da",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Measures"
-              }
-            },
-            "Property": "Document Number"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "528e242bed41485c8376",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Measures"
-              }
-            },
-            "Property": "Workflow (link)"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "469130e7006d4c8e6736",
+        "name": "c01640a00091b7219398",
+        "ordinal": 0,
         "field": {
           "Measure": {
             "Expression": {
@@ -290,10 +279,12 @@
             "Property": "Amount PLN"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
-        "name": "fd426ef38a0049d30ee5",
+        "name": "a0c932060320701e92dc",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -301,11 +292,50 @@
                 "Entity": "Date"
               }
             },
-            "Property": "Month Code"
+            "Property": "Month Date"
           }
         },
-        "type": "Categorical"
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Date",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "Month Date"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 3
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "168d478e0d09bdbbac1a",
+  "name": "986273282d06b67b9cb2",
   "position": {
-    "x": 25.843828715365241,
-    "y": 599.84886649874056,
-    "z": 0,
-    "height": 431.183879093199,
-    "width": 1870.2770780856424,
-    "tabOrder": 5000
+    "x": 50,
+    "y": 473.33333333333337,
+    "z": 11000,
+    "height": 543.33333333333337,
+    "width": 1820,
+    "tabOrder": 10001
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -27,13 +27,44 @@
                 }
               },
               "queryRef": "Project.Project",
-              "nativeQueryRef": "Projekt",
-              "active": true
+              "nativeQueryRef": "Project",
+              "active": true,
+              "displayName": "Project"
             }
           ]
         },
         "Tooltips": {
           "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Bud Measures"
+                    }
+                  },
+                  "Property": "Budget PLN"
+                }
+              },
+              "queryRef": "CAPEX Bud Measures.Budget PLN",
+              "nativeQueryRef": "Budget PLN",
+              "displayName": "Budget PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "CAPEX Bud Measures"
+                    }
+                  },
+                  "Property": "Budget realisation"
+                }
+              },
+              "queryRef": "CAPEX Bud Measures.Budget realisation",
+              "nativeQueryRef": "Budget realisation"
+            },
             {
               "field": {
                 "Aggregation": {
@@ -52,21 +83,6 @@
               },
               "queryRef": "Min(Project.Project Code)",
               "nativeQueryRef": "Pierwsze: Projekt kod"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "CAPEX Bud Measures"
-                    }
-                  },
-                  "Property": "Budget realisation"
-                }
-              },
-              "queryRef": "CAPEX Bud Measures.Budget realisation",
-              "nativeQueryRef": "Budget realisation"
             }
           ]
         },
@@ -84,7 +100,8 @@
                 }
               },
               "queryRef": "CAPEX Measures.Amount PLN",
-              "nativeQueryRef": "Kwota PLN"
+              "nativeQueryRef": "Cost",
+              "displayName": "Cost"
             }
           ]
         }
@@ -96,11 +113,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Schema": "extension",
-                    "Entity": "CAPEX Bud Measures"
+                    "Entity": "CAPEX Measures"
                   }
                 },
-                "Property": "Budget realisation"
+                "Property": "Amount PLN"
               }
             },
             "direction": "Descending"
@@ -389,6 +405,54 @@
             ]
           }
         }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cost - Column chart'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -396,23 +460,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "2c6aedd0dde3ea233100",
-        "ordinal": 0,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Measures"
-              }
-            },
-            "Property": "Amount PLN"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e4c595457c370cb022b5",
-        "ordinal": 1,
+        "name": "40ab01022d9a7a6b6740",
         "field": {
           "Column": {
             "Expression": {
@@ -423,11 +471,39 @@
             "Property": "Project"
           }
         },
+        "type": "Categorical"
+      },
+      {
+        "name": "e870d7dbe58419ab0a50",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget PLN"
+          }
+        },
         "type": "Advanced"
       },
       {
-        "name": "3c7bee688c87160a01b4",
-        "ordinal": 2,
+        "name": "49ce3dc9d70738a44da0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget realisation"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ab5c605590ded6560e9a",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -441,6 +517,20 @@
               }
             },
             "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a747bb24e2109cec9d9a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Measures"
+              }
+            },
+            "Property": "Amount PLN"
           }
         },
         "type": "Advanced"

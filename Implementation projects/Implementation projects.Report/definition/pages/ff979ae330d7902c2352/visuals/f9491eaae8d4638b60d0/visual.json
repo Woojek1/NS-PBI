@@ -1,77 +1,53 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "a2474e229e307a665d27",
+  "name": "f9491eaae8d4638b60d0",
   "position": {
-    "x": 50,
-    "y": 68,
-    "z": 1000,
-    "height": 102,
-    "width": 320,
-    "tabOrder": 4000
+    "x": 1584,
+    "y": 362,
+    "z": 10000,
+    "height": 76,
+    "width": 210,
+    "tabOrder": 10000
   },
   "visual": {
-    "visualType": "card",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Schema": "extension",
-                      "Entity": "Prj Bud Total Measures"
-                    }
-                  },
-                  "Property": "Open project count"
-                }
-              },
-              "queryRef": "Prj Bud Total Measures.Closed project count",
-              "nativeQueryRef": "Open project count"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Schema": "extension",
-                    "Entity": "Prj Bud Total Measures"
-                  }
-                },
-                "Property": "Open project count"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
+    "visualType": "actionButton",
     "objects": {
-      "labels": [
+      "icon": [
         {
           "properties": {
-            "fontSize": {
+            "shapeType": {
               "expr": {
                 "Literal": {
-                  "Value": "36D"
+                  "Value": "'blank'"
                 }
               }
-            },
-            "labelDisplayUnits": {
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "shape": [
+        {
+          "properties": {
+            "tileShape": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "'rectangleRounded'"
                 }
               }
-            },
-            "preserveWhitespace": {
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "text": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -79,11 +55,16 @@
               }
             }
           }
-        }
-      ],
-      "categoryLabels": [
+        },
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Budget realisation'"
+                }
+              }
+            },
             "fontSize": {
               "expr": {
                 "Literal": {
@@ -91,7 +72,7 @@
                 }
               }
             },
-            "color": {
+            "fontColor": {
               "solid": {
                 "color": {
                   "expr": {
@@ -103,6 +84,30 @@
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
@@ -111,6 +116,13 @@
       "title": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "titleWrap": {
               "expr": {
                 "Literal": {
@@ -145,7 +157,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -162,32 +174,6 @@
       "border": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
             "width": {
               "expr": {
                 "Literal": {
@@ -198,7 +184,20 @@
           }
         }
       ],
-      "dropShadow": [
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualLink": [
         {
           "properties": {
             "show": {
@@ -208,14 +207,17 @@
                 }
               }
             },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#86b1d2'"
-                    }
-                  }
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bookmark'"
+                }
+              }
+            },
+            "bookmark": {
+              "expr": {
+                "Literal": {
+                  "Value": "'f1a751056881ae002204'"
                 }
               }
             }
@@ -224,5 +226,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "howCreated": "InsertVisualButton"
 }
