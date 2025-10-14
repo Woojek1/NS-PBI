@@ -3,11 +3,11 @@
   "name": "e297329820339561e1e3",
   "position": {
     "x": 1530,
-    "y": 6.666666666666667,
-    "z": 16000,
-    "height": 83.333333333333343,
+    "y": 22,
+    "z": 10000,
+    "height": 95,
     "width": 320,
-    "tabOrder": 16000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,11 @@
                       "Entity": "Project"
                     }
                   },
-                  "Property": "Project"
+                  "Property": "Project Code"
                 }
               },
-              "queryRef": "Project.Project",
-              "nativeQueryRef": "Projekt",
+              "queryRef": "Project.Project Code",
+              "nativeQueryRef": "Projekt kod",
               "active": true
             },
             {
@@ -38,12 +38,12 @@
                       "Entity": "Project"
                     }
                   },
-                  "Property": "Project Code"
+                  "Property": "Project"
                 }
               },
-              "queryRef": "Project.Project Code",
-              "nativeQueryRef": "Projekt kod",
-              "active": false
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Projekt",
+              "active": true
             }
           ]
         }
@@ -55,6 +55,25 @@
           "Values"
         ],
         "levels": [
+          {
+            "queryRefs": [
+              "Project.Project Code"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Code"
+                }
+              }
+            ],
+            "isPinned": true
+          },
           {
             "queryRefs": [
               "Project.Project"
@@ -73,16 +92,52 @@
               }
             ],
             "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Project.Project Code"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-20NS0018'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-25NS0514'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-22KC0014'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-23KC0502'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -171,6 +226,67 @@
                   "Value": "true"
                 }
               }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "p",
+                    "Entity": "Project",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Or": {
+                        "Left": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "p"
+                                  }
+                                },
+                                "Property": "Project Code"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'creva'"
+                              }
+                            }
+                          }
+                        },
+                        "Right": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "p"
+                                  }
+                                },
+                                "Property": "Project"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'creva'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
+              }
             }
           }
         }
@@ -257,6 +373,32 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             }

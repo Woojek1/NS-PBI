@@ -1,0 +1,252 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "39794bda64beb975607c",
+  "position": {
+    "x": 66.666666666666671,
+    "y": 41.666666666666671,
+    "z": 0,
+    "height": 606.66666666666674,
+    "width": 1053.3333333333335,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Code"
+                }
+              },
+              "queryRef": "Project.Project Code",
+              "nativeQueryRef": "Projekt kod"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project"
+                }
+              },
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Projekt"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Amount PLN"
+                }
+              },
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Kwota PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Bud Measures"
+                    }
+                  },
+                  "Property": "Budget PLN"
+                }
+              },
+              "queryRef": "CAPEX Bud Measures.Budget PLN",
+              "nativeQueryRef": "Budżet PLN"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Account"
+                    }
+                  },
+                  "Property": "Account"
+                }
+              },
+              "queryRef": "Account.Account",
+              "nativeQueryRef": "Konto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Activity Category 5 pct"
+                    }
+                  },
+                  "Property": "Account 5 pct Code"
+                }
+              },
+              "queryRef": "Activity Category 5 pct.Account 5 pct Code",
+              "nativeQueryRef": "Konto 5% kod"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Organization"
+                    }
+                  },
+                  "Property": "MPK Code"
+                }
+              },
+              "queryRef": "Organization.MPK Code",
+              "nativeQueryRef": "MPK kod"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Category Cost"
+                    }
+                  },
+                  "Property": "Synth 6 ch Code"
+                }
+              },
+              "queryRef": "Category Cost.Synth 6 ch Code",
+              "nativeQueryRef": "Synt 6 kod"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CAPEX Measures"
+                  }
+                },
+                "Property": "Amount PLN"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CAPEX Measures.Amount PLN"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "CAPEX Bud Measures.Budget PLN"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "210.35478354114682D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Project.Project"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7c7e954555b3a1069ea8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "Account 5 pct Code"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a1",
+              "Entity": "Activity Category 5 pct",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "StartsWith": {
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "a1"
+                        }
+                      },
+                      "Property": "Account 5 pct Code"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'507'"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

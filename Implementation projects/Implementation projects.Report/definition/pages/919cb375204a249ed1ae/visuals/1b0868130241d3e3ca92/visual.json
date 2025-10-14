@@ -3,11 +3,10 @@
   "name": "1b0868130241d3e3ca92",
   "position": {
     "x": 1530,
-    "y": 6.666666666666667,
-    "z": 13000,
-    "height": 83.333333333333343,
-    "width": 320,
-    "tabOrder": 13000
+    "y": 130,
+    "z": 2000,
+    "height": 82.5,
+    "width": 320
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +22,11 @@
                       "Entity": "Project"
                     }
                   },
-                  "Property": "Project"
+                  "Property": "Project Code"
                 }
               },
-              "queryRef": "Project.Project",
-              "nativeQueryRef": "Projekt",
+              "queryRef": "Project.Project Code",
+              "nativeQueryRef": "Projekt kod",
               "active": true
             },
             {
@@ -38,11 +37,11 @@
                       "Entity": "Project"
                     }
                   },
-                  "Property": "Project Code"
+                  "Property": "Project"
                 }
               },
-              "queryRef": "Project.Project Code",
-              "nativeQueryRef": "Projekt kod",
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Projekt",
               "active": false
             }
           ]
@@ -55,6 +54,13 @@
           "Values"
         ],
         "levels": [
+          {
+            "queryRefs": [
+              "Project.Project Code"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
           {
             "queryRefs": [
               "Project.Project"
@@ -72,13 +78,6 @@
                 }
               }
             ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Project.Project Code"
-            ],
-            "isCollapsed": true,
             "isPinned": true
           }
         ],

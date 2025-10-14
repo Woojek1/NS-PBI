@@ -32,12 +32,23 @@
         {
           "name": "Title (current year spendings)",
           "dataType": "Double",
-          "expression": "\n\"Current year (\" & \nYEAR(\n    TODAY()\n)\n& \") spending\""
+          "expression": "\n\"Wydatki \" & \nYEAR(\n    TODAY()\n)"
         },
         {
           "name": "Selected project",
           "dataType": "Double",
-          "expression": "\nVAR _project_name = MAX(Project[Project])\nRETURN\n\nIF(\n    HASONEVALUE(Project[Project]),\n    _project_name,\n    \"\"\n)",
+          "expression": "\nVAR _project_name = MAX(Project[Project])\nRETURN\n\nIF(\n    HASONEVALUE(Project[Project]),\n    _project_name,\n    \"\"\n)"
+        },
+        {
+          "name": "Title (current year budget)",
+          "dataType": "Double",
+          "expression": "\n\"Budżet \" & \nYEAR(\n    TODAY()\n)\n",
+          "formatString": "General Number"
+        },
+        {
+          "name": "Title (current year budget realization)",
+          "dataType": "Double",
+          "expression": "\n\"Realizacja budżetu  \" & \nYEAR(\n    TODAY()\n)\n",
           "formatString": "General Number"
         }
       ]

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "494f8bad5be7e014db26",
+  "position": {
+    "x": 394,
+    "y": 154,
+    "z": 1000,
+    "height": 362,
+    "width": 1240,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Sub Grp"
+                }
+              },
+              "queryRef": "Project.Project Sub Grp",
+              "nativeQueryRef": "Projekt podgrupa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Grp"
+                }
+              },
+              "queryRef": "Project.Project Grp",
+              "nativeQueryRef": "Projekt grupa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Code"
+                }
+              },
+              "queryRef": "Project.Project Code",
+              "nativeQueryRef": "Projekt kod"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project"
+                }
+              },
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Projekt"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Bud Measures"
+                    }
+                  },
+                  "Property": "Budget PLN"
+                }
+              },
+              "queryRef": "CAPEX Bud Measures.Budget PLN",
+              "nativeQueryRef": "Budżet PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Amount PLN"
+                }
+              },
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Kwota PLN"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "327.3333318874058D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Project.Project Sub Grp"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -20,6 +20,45 @@
           }
         },
         "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Project"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Flesco'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
         "howCreated": "Drillthrough"
       },
       {
@@ -35,6 +74,45 @@
           }
         },
         "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Project Code"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'W-20NS0018'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
         "howCreated": "Drillthrough"
       }
     ]
@@ -101,82 +179,5 @@
         }
       }
     ]
-  },
-  "visualInteractions": [
-    {
-      "source": "88637b3d6c59e0e2b613",
-      "target": "74fadb809e83c25c3bc8",
-      "type": "NoFilter"
-    },
-    {
-      "source": "88637b3d6c59e0e2b613",
-      "target": "4749aa0d5d26538c092e",
-      "type": "NoFilter"
-    },
-    {
-      "source": "88637b3d6c59e0e2b613",
-      "target": "476d5429dd888b6852b5",
-      "type": "NoFilter"
-    },
-    {
-      "source": "88637b3d6c59e0e2b613",
-      "target": "fd7c7b086de8e43aed2a",
-      "type": "NoFilter"
-    },
-    {
-      "source": "88637b3d6c59e0e2b613",
-      "target": "8227583c62430bd34226",
-      "type": "NoFilter"
-    },
-    {
-      "source": "88637b3d6c59e0e2b613",
-      "target": "64847a134805a1409d5e",
-      "type": "NoFilter"
-    },
-    {
-      "source": "74fadb809e83c25c3bc8",
-      "target": "88637b3d6c59e0e2b613",
-      "type": "NoFilter"
-    },
-    {
-      "source": "74fadb809e83c25c3bc8",
-      "target": "64847a134805a1409d5e",
-      "type": "NoFilter"
-    },
-    {
-      "source": "74fadb809e83c25c3bc8",
-      "target": "8227583c62430bd34226",
-      "type": "NoFilter"
-    },
-    {
-      "source": "74fadb809e83c25c3bc8",
-      "target": "fd7c7b086de8e43aed2a",
-      "type": "NoFilter"
-    },
-    {
-      "source": "74fadb809e83c25c3bc8",
-      "target": "476d5429dd888b6852b5",
-      "type": "NoFilter"
-    },
-    {
-      "source": "74fadb809e83c25c3bc8",
-      "target": "4749aa0d5d26538c092e",
-      "type": "NoFilter"
-    },
-    {
-      "source": "88637b3d6c59e0e2b613",
-      "target": "7cc873cd6449567db2b0",
-      "type": "NoFilter"
-    },
-    {
-      "source": "88637b3d6c59e0e2b613",
-      "target": "f8e59c532090e5b30dc5",
-      "type": "NoFilter"
-    },
-    {
-      "source": "74fadb809e83c25c3bc8",
-      "target": "7cc873cd6449567db2b0",
-      "type": "NoFilter"
-    }
-  ]
+  }
 }
