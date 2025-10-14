@@ -226,67 +226,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "p",
-                    "Entity": "Project",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Or": {
-                        "Left": {
-                          "Contains": {
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "p"
-                                  }
-                                },
-                                "Property": "Project Code"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "'creva'"
-                              }
-                            }
-                          }
-                        },
-                        "Right": {
-                          "Contains": {
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "p"
-                                  }
-                                },
-                                "Property": "Project"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "'creva'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
             }
           }
         }

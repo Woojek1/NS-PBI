@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "1b0868130241d3e3ca92",
+  "name": "752361d3ba355a46be4a",
   "position": {
-    "x": 1530,
+    "x": 1550,
     "y": 130,
-    "z": 2000,
-    "height": 82.5,
-    "width": 320
+    "z": 13001,
+    "height": 96,
+    "width": 320,
+    "tabOrder": 13001
   },
   "visual": {
     "visualType": "slicer",
@@ -42,7 +43,7 @@
               },
               "queryRef": "Project.Project",
               "nativeQueryRef": "Projekt",
-              "active": false
+              "active": true
             }
           ]
         }
@@ -59,6 +60,18 @@
               "Project.Project Code"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project Code"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -81,7 +94,20 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-20NS0018'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -104,7 +130,7 @@
             "singleSelect": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -256,6 +282,32 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             }
