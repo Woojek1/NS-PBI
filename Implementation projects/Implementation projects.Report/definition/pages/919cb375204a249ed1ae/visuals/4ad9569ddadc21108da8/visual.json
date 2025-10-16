@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "f8e59c532090e5b30dc5",
+  "name": "4ad9569ddadc21108da8",
   "position": {
-    "x": 50.526315789473685,
+    "x": 420,
     "y": 0,
-    "z": 0,
-    "height": 130.14354066985646,
-    "width": 1818.9473684210527,
-    "tabOrder": 2000
+    "z": 15001,
+    "height": 96.666666666666671,
+    "width": 1088.3333333333335,
+    "tabOrder": 15001
   },
   "visual": {
     "visualType": "cardVisual",
@@ -17,44 +17,40 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Project"
-                        }
-                      },
-                      "Property": "Project"
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "CAPEX Bud Measures"
                     }
                   },
-                  "Function": 3
+                  "Property": "Selected project"
                 }
               },
-              "queryRef": "Min(Project.Project)",
-              "nativeQueryRef": "Projekt"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Project"
-                        }
-                      },
-                      "Property": "Project Code"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(Project.Project Code)",
-              "nativeQueryRef": "Pierwsze: Projekt kod"
+              "queryRef": "CAPEX Bud Measures.Selected project",
+              "nativeQueryRef": "Selected project"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Schema": "extension",
+                    "Entity": "CAPEX Bud Measures"
+                  }
+                },
+                "Property": "Selected project"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -111,58 +107,6 @@
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "18D"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Min(Project.Project Code)"
-          }
-        },
-        {
-          "properties": {
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "36D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Min(Project.Project)"
           }
         }
       ],

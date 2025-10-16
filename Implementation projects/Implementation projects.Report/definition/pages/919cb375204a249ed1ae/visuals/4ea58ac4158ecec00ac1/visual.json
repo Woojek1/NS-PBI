@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "4ea58ac4158ecec00ac1",
   "position": {
-    "x": 50.947687642153141,
-    "y": 391.56937073540558,
+    "x": 52,
+    "y": 390,
     "z": 2000,
-    "height": 295.49658832448824,
-    "width": 1275.1478392721758
+    "height": 302,
+    "width": 1484,
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "tableEx",
@@ -27,6 +28,21 @@
               },
               "queryRef": "Date.Year",
               "nativeQueryRef": "Rok"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Prj Bud Total Measures"
+                    }
+                  },
+                  "Property": "Prj Bdg Total PLN"
+                }
+              },
+              "queryRef": "Prj Bud Total Measures.Prj Bdg Total PLN",
+              "nativeQueryRef": "Budżet (tab total)",
+              "displayName": "Budżet (tab total)"
             },
             {
               "field": {
@@ -79,22 +95,22 @@
                 "NativeVisualCalculation": {
                   "Language": "dax",
                   "Expression": "RUNNINGSUM([Budżet])",
-                  "Name": "Budżet - skumulowany"
+                  "Name": "Budżet - narastająco"
                 }
               },
               "queryRef": "select1",
-              "nativeQueryRef": "Budżet - skumulowany"
+              "nativeQueryRef": "Budżet - narastająco"
             },
             {
               "field": {
                 "NativeVisualCalculation": {
                   "Language": "dax",
                   "Expression": "RUNNINGSUM([Wydatki])",
-                  "Name": "Wydatki skumulowane"
+                  "Name": "Wydatki - narastająco"
                 }
               },
               "queryRef": "select",
-              "nativeQueryRef": "Wydatki skumulowane"
+              "nativeQueryRef": "Wydatki - narastająco"
             }
           ]
         }
@@ -578,5 +594,80 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b3242a568621284346ce",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b8848e51dd258a0006b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Prj Bud Total Measures"
+              }
+            },
+            "Property": "Prj Bdg Total PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "74e558a35549c6e14398",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1c9264a4cc939b70516b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Measures"
+              }
+            },
+            "Property": "Amount PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "282c203d263de86140a8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget realisation"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

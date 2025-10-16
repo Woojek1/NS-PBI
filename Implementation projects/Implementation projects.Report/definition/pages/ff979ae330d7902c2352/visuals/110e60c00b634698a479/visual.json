@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "110e60c00b634698a479",
   "position": {
-    "x": 49.492039423805913,
-    "y": 540.04548900682335,
+    "x": 49.942196531791907,
+    "y": 536.41618497109823,
     "z": 19000,
-    "height": 487.64215314632293,
-    "width": 1831.2054586808188,
-    "tabOrder": 18000
+    "height": 488.32369942196527,
+    "width": 1831.2138728323698,
+    "tabOrder": 17000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -103,6 +103,20 @@
               "queryRef": "CAPEX Bud Measures.Budget PLN",
               "nativeQueryRef": "Budget PLN",
               "displayName": "Budget PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Prj Bud Total Measures"
+                    }
+                  },
+                  "Property": "Prj Bdg Total PLN"
+                }
+              },
+              "queryRef": "Prj Bud Total Measures.Prj Bdg Total PLN",
+              "nativeQueryRef": "Projekt budżet suma PLN"
             }
           ]
         }
@@ -449,7 +463,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cost - Column chart'"
+                  "Value": "'Budget - Column chart'"
                 }
               }
             }

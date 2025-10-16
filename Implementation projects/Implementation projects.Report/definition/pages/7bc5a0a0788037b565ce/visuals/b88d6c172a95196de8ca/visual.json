@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "e297329820339561e1e3",
+  "name": "b88d6c172a95196de8ca",
   "position": {
-    "x": 1530,
-    "y": 22,
-    "z": 7000,
-    "height": 95,
-    "width": 320,
-    "tabOrder": 7000
+    "x": 1550.6297229219144,
+    "y": 130.5793450881612,
+    "z": 1001,
+    "height": 78.891687657430737,
+    "width": 319.647355163728,
+    "tabOrder": 1001
   },
   "visual": {
     "visualType": "slicer",
@@ -100,47 +100,17 @@
               "identityValues": [
                 {
                   "Literal": {
+                    "Value": "'W-20NS0501'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
                     "Value": "'W-20NS0018'"
-                  }
-                }
-              ],
-              "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'W-25NS0514'"
-                  }
-                }
-              ],
-              "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'W-22KC0014'"
-                  }
-                }
-              ],
-              "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'W-23KC0502'"
-                  }
-                }
-              ],
-              "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'W-20FS0012'"
                   }
                 }
               ],
@@ -237,7 +207,7 @@
                 }
               }
             },
-            "filter": {
+            "selfFilter": {
               "filter": {
                 "Version": 2,
                 "From": [
@@ -250,31 +220,49 @@
                 "Where": [
                   {
                     "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "p"
-                                }
-                              },
-                              "Property": "Project Code"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
+                      "Or": {
+                        "Left": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "p"
+                                  }
+                                },
+                                "Property": "Project Code"
+                              }
+                            },
+                            "Right": {
                               "Literal": {
-                                "Value": "'W-20NS0018'"
+                                "Value": "'lounge'"
                               }
                             }
-                          ]
-                        ]
+                          }
+                        },
+                        "Right": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "p"
+                                  }
+                                },
+                                "Property": "Project"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'lounge'"
+                              }
+                            }
+                          }
+                        }
                       }
                     },
                     "Annotations": {
+                      "PowerBI.MParameterBehavior": 1,
                       "filterExpressionMetadata": {
                         "expressions": [
                           {
@@ -321,6 +309,47 @@
                           {
                             "0": "W-20NS0018"
                           }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "p",
+                    "Entity": "Project",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "p"
+                                }
+                              },
+                              "Property": "Project Code"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'W-20NS0018'"
+                              }
+                            }
+                          ]
                         ]
                       }
                     }
