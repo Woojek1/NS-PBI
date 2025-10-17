@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "110e60c00b634698a479",
   "position": {
     "x": 49.942196531791907,
@@ -103,20 +103,6 @@
               "queryRef": "CAPEX Bud Measures.Budget PLN",
               "nativeQueryRef": "Budget PLN",
               "displayName": "Budget PLN"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Prj Bud Total Measures"
-                    }
-                  },
-                  "Property": "Prj Bdg Total PLN"
-                }
-              },
-              "queryRef": "Prj Bud Total Measures.Prj Bdg Total PLN",
-              "nativeQueryRef": "Projekt budżet suma PLN"
             }
           ]
         }
@@ -168,68 +154,8 @@
                                     }
                                   },
                                   "Right": {
-                                    "RangePercent": {
-                                      "Min": {
-                                        "ScopedEval": {
-                                          "Expression": {
-                                            "Aggregation": {
-                                              "Expression": {
-                                                "ScopedEval": {
-                                                  "Expression": {
-                                                    "Measure": {
-                                                      "Expression": {
-                                                        "SourceRef": {
-                                                          "Schema": "extension",
-                                                          "Entity": "CAPEX Bud Measures"
-                                                        }
-                                                      },
-                                                      "Property": "Budget realisation"
-                                                    }
-                                                  },
-                                                  "Scope": [
-                                                    {
-                                                      "AllRolesRef": {}
-                                                    }
-                                                  ]
-                                                }
-                                              },
-                                              "Function": 3
-                                            }
-                                          },
-                                          "Scope": []
-                                        }
-                                      },
-                                      "Max": {
-                                        "ScopedEval": {
-                                          "Expression": {
-                                            "Aggregation": {
-                                              "Expression": {
-                                                "ScopedEval": {
-                                                  "Expression": {
-                                                    "Measure": {
-                                                      "Expression": {
-                                                        "SourceRef": {
-                                                          "Schema": "extension",
-                                                          "Entity": "CAPEX Bud Measures"
-                                                        }
-                                                      },
-                                                      "Property": "Budget realisation"
-                                                    }
-                                                  },
-                                                  "Scope": [
-                                                    {
-                                                      "AllRolesRef": {}
-                                                    }
-                                                  ]
-                                                }
-                                              },
-                                              "Function": 4
-                                            }
-                                          },
-                                          "Scope": []
-                                        }
-                                      },
-                                      "Percent": 0.01
+                                    "Literal": {
+                                      "Value": "1D"
                                     }
                                   }
                                 }
@@ -281,68 +207,8 @@
                                     }
                                   },
                                   "Right": {
-                                    "RangePercent": {
-                                      "Min": {
-                                        "ScopedEval": {
-                                          "Expression": {
-                                            "Aggregation": {
-                                              "Expression": {
-                                                "ScopedEval": {
-                                                  "Expression": {
-                                                    "Measure": {
-                                                      "Expression": {
-                                                        "SourceRef": {
-                                                          "Schema": "extension",
-                                                          "Entity": "CAPEX Bud Measures"
-                                                        }
-                                                      },
-                                                      "Property": "Budget realisation"
-                                                    }
-                                                  },
-                                                  "Scope": [
-                                                    {
-                                                      "AllRolesRef": {}
-                                                    }
-                                                  ]
-                                                }
-                                              },
-                                              "Function": 3
-                                            }
-                                          },
-                                          "Scope": []
-                                        }
-                                      },
-                                      "Max": {
-                                        "ScopedEval": {
-                                          "Expression": {
-                                            "Aggregation": {
-                                              "Expression": {
-                                                "ScopedEval": {
-                                                  "Expression": {
-                                                    "Measure": {
-                                                      "Expression": {
-                                                        "SourceRef": {
-                                                          "Schema": "extension",
-                                                          "Entity": "CAPEX Bud Measures"
-                                                        }
-                                                      },
-                                                      "Property": "Budget realisation"
-                                                    }
-                                                  },
-                                                  "Scope": [
-                                                    {
-                                                      "AllRolesRef": {}
-                                                    }
-                                                  ]
-                                                }
-                                              },
-                                              "Function": 4
-                                            }
-                                          },
-                                          "Scope": []
-                                        }
-                                      },
-                                      "Percent": 0.0090000000000000011
+                                    "Literal": {
+                                      "Value": "0.9D"
                                     }
                                   }
                                 }
@@ -378,29 +244,54 @@
                         },
                         {
                           "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 3,
+                            "And": {
                               "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Schema": "extension",
-                                      "Entity": "CAPEX Bud Measures"
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Schema": "extension",
+                                          "Entity": "CAPEX Bud Measures"
+                                        }
+                                      },
+                                      "Property": "Budget realisation"
                                     }
                                   },
-                                  "Property": "Budget realisation"
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
                                 }
                               },
                               "Right": {
-                                "Literal": {
-                                  "Value": "0.9D"
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Schema": "extension",
+                                          "Entity": "CAPEX Bud Measures"
+                                        }
+                                      },
+                                      "Property": "Budget realisation"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.9D"
+                                    }
+                                  }
                                 }
                               }
                             }
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#86B1D2'"
+                              "Value": "'#2E66F2'"
                             }
                           }
                         }
@@ -429,6 +320,20 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }
