@@ -87,6 +87,35 @@
         ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Expenses Category.Expenses Category"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Expenses Category"
+                    }
+                  },
+                  "Property": "Expenses Category"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "columnWidth": [
         {
@@ -101,20 +130,6 @@
           },
           "selector": {
             "metadata": "CAPEX Measures.Amount PLN"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "304D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Expenses Category.Expenses Category"
           }
         },
         {
@@ -691,5 +706,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fd50805496df75f141a7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "18acf511a9e07126b138",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Measures"
+              }
+            },
+            "Property": "Amount PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "060d4e838e27b9e6eed5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Expenses Category"
+              }
+            },
+            "Property": "Expenses Category"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
