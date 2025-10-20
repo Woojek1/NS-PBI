@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "34cd9c7a8447bedbcee5",
+  "position": {
+    "x": 10,
+    "y": 295,
+    "z": 0,
+    "height": 408.33333333333337,
+    "width": 1270
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_category_cost"
+                    }
+                  },
+                  "Property": "account_name"
+                }
+              },
+              "queryRef": "d_gl_category_cost.account_name",
+              "nativeQueryRef": "account_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_category_cost"
+                    }
+                  },
+                  "Property": "acc3_name"
+                }
+              },
+              "queryRef": "d_gl_category_cost.acc3_name",
+              "nativeQueryRef": "acc3_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_category_cost"
+                    }
+                  },
+                  "Property": "acc6_name"
+                }
+              },
+              "queryRef": "d_gl_category_cost.acc6_name",
+              "nativeQueryRef": "acc6_name"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "398.00001360114845D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_gl_category_cost.account_name"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

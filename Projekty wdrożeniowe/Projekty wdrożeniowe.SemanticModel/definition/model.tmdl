@@ -1,0 +1,37 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["d_impl_cat_cost","f_capex_imp_cost_data","d_gl_project","d_gl_category_cost","d_gl_account"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table d_impl_cat_cost
+ref table DateTableTemplate_dcebaab6-dc41-4eb4-a2c5-f26a25987c80
+ref table f_capex_imp_cost_data
+ref table LocalDateTable_0ff913f3-f10a-4029-a679-b617baf02955
+ref table LocalDateTable_69067cf5-d043-4cfa-af15-d66ccf42b884
+ref table LocalDateTable_33400849-8a9b-4df7-9fc7-82bde130eb9a
+ref table LocalDateTable_89a65880-e781-4783-bf3d-d4a8c58d8e59
+ref table LocalDateTable_6e84bcdb-5b09-4df3-a53c-b18cd41319b3
+ref table d_gl_project
+ref table LocalDateTable_0867f1af-ac35-4b2b-b28c-aabddefe50d5
+ref table LocalDateTable_2770c86a-8bd6-4791-b22f-33e3d4f4fafd
+ref table LocalDateTable_6e7c4c6e-47c5-4363-bd11-bd26e10eb209
+ref table d_gl_category_cost
+ref table LocalDateTable_ff3c5476-569f-40ab-8497-68b7fcd67309
+ref table LocalDateTable_7ade4d33-80a7-4f17-b93a-178c4bdaa99e
+ref table LocalDateTable_02f14492-cdcf-4c32-a8ed-3f0b4356f3dd
+ref table d_gl_account
+ref table LocalDateTable_785de784-9f58-4e86-ab82-134153450f39
+ref table LocalDateTable_5c8e0862-f692-42fc-87b9-fcd16e738447
+ref table LocalDateTable_586ac6b8-ccf1-4ad3-a68a-2d1170958dd2
+
+ref cultureInfo pl-PL
+
