@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "4ea58ac4158ecec00ac1",
   "position": {
-    "x": 52,
+    "x": 51.428571428571431,
     "y": 390,
     "z": 2000,
-    "height": 302,
-    "width": 1484,
+    "height": 320,
+    "width": 1484.2857142857144,
     "tabOrder": 15000
   },
   "visual": {
@@ -28,6 +28,20 @@
               },
               "queryRef": "Date.Year",
               "nativeQueryRef": "Rok"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Code"
+                }
+              },
+              "queryRef": "Date.Month Code",
+              "nativeQueryRef": "Miesiąc kod"
             },
             {
               "field": {
@@ -125,7 +139,7 @@
                     "Entity": "Date"
                   }
                 },
-                "Property": "Year"
+                "Property": "Month Code"
               }
             },
             "direction": "Ascending"
@@ -140,7 +154,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "241.73641515868033D"
+                  "Value": "165.96939185947764D"
                 }
               }
             }
@@ -182,7 +196,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "271.8571448729816D"
+                  "Value": "221.8284123560991D"
                 }
               }
             }
@@ -217,6 +231,20 @@
           },
           "selector": {
             "metadata": "Date.Year"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "154.00000026583257D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Prj Bud Total Measures.Prj Bdg Total PLN"
           }
         }
       ],
@@ -667,6 +695,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "3aa46973fce22bcd972c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
