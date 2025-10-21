@@ -1,0 +1,233 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "da72673a964c751fb9b6",
+  "position": {
+    "x": 0,
+    "y": 111.25,
+    "z": 1000,
+    "height": 571.25,
+    "width": 795,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "d_gl_project"
+                        }
+                      },
+                      "Property": "prj_code"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "d_gl_project.prj_code",
+              "nativeQueryRef": "Liczba elementów prj_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_project"
+                    }
+                  },
+                  "Property": "prj_code"
+                }
+              },
+              "queryRef": "d_gl_project.prj_code1",
+              "nativeQueryRef": "prj_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              },
+              "queryRef": "d_gl_project.prj_desc",
+              "nativeQueryRef": "prj_desc"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_capex_imp_cost_data"
+                        }
+                      },
+                      "Property": "amount_pln"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_capex_imp_cost_data.amount_pln)",
+              "nativeQueryRef": "Suma elementów amount_pln"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_gl_project.prj_code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "378.9999962189122D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_gl_project.prj_desc"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "187D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(f_capex_imp_cost_data.amount_pln)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_gl_project.prj_code1"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ab3a0a5c8f9ab5092c09",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_project"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f3ca5c8756a7ec89b6d1",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_capex_imp_cost_data"
+                  }
+                },
+                "Property": "amount_pln"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "31469baf76f21dab029c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_gl_project"
+                  }
+                },
+                "Property": "prj_code"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d555fc67427c63cfce37",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_project"
+              }
+            },
+            "Property": "prj_code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

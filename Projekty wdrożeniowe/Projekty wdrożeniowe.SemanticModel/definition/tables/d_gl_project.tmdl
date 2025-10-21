@@ -1,84 +1,20 @@
 table d_gl_project
-	lineageTag: b62c3e4e-875c-4735-8ae2-b52f9ab6254e
-
-	column record_source
-		dataType: string
-		lineageTag: 2ec01b20-6980-4251-a5dc-87bf95e6a171
-		summarizeBy: none
-		sourceColumn: record_source
-
-		annotation SummarizationSetBy = Automatic
-
-	column record_version
-		dataType: dateTime
-		formatString: General Date
-		lineageTag: e96195ed-cd19-47fb-8572-05af1e562a42
-		summarizeBy: none
-		sourceColumn: record_version
-
-		variation Odmiana
-			isDefault
-			relationship: ebba5688-2290-4727-9dcf-87e0350eb45d
-			defaultHierarchy: LocalDateTable_0867f1af-ac35-4b2b-b28c-aabddefe50d5.'Hierarchia dat'
-
-		annotation SummarizationSetBy = Automatic
-
-	column first_load_date
-		dataType: dateTime
-		formatString: General Date
-		lineageTag: 6f171da6-c6ff-4796-afe2-073aaeeaa59d
-		summarizeBy: none
-		sourceColumn: first_load_date
-
-		variation Odmiana
-			isDefault
-			relationship: 7803d2c7-f90f-45ad-a721-311bafaa3ba2
-			defaultHierarchy: LocalDateTable_2770c86a-8bd6-4791-b22f-33e3d4f4fafd.'Hierarchia dat'
-
-		annotation SummarizationSetBy = Automatic
-
-	column last_seen_date
-		dataType: dateTime
-		formatString: General Date
-		lineageTag: a5d5c4f6-cb85-4f96-b034-8782c3a5018f
-		summarizeBy: none
-		sourceColumn: last_seen_date
-
-		variation Odmiana
-			isDefault
-			relationship: cfe63644-60ea-4c54-864e-c1717a8d8846
-			defaultHierarchy: LocalDateTable_6e7c4c6e-47c5-4363-bd11-bd26e10eb209.'Hierarchia dat'
-
-		annotation SummarizationSetBy = Automatic
-
-	column source_exist
-		dataType: string
-		lineageTag: 07859433-81bf-4961-95ea-5bf0d88adb30
-		summarizeBy: none
-		sourceColumn: source_exist
-
-		annotation SummarizationSetBy = Automatic
+	lineageTag: a9299668-eef6-4489-8791-58ebfdfc51fd
 
 	column prj_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 23cc6013-a107-4515-aeea-b2799ecda96f
+		sourceProviderType: int
+		lineageTag: a7209bb2-ae6d-4547-9270-fe06ce9b668d
 		summarizeBy: none
 		sourceColumn: prj_id
 
 		annotation SummarizationSetBy = Automatic
 
-	column db_code
-		dataType: string
-		lineageTag: 8654023c-a71b-435d-8668-fb945309acaa
-		summarizeBy: none
-		sourceColumn: db_code
-
-		annotation SummarizationSetBy = Automatic
-
 	column comp_code
 		dataType: string
-		lineageTag: cef9a77c-249a-45f0-a8c9-56d4dfe0edad
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0c8398e7-c277-4663-bded-1b56411a4444
 		summarizeBy: none
 		sourceColumn: comp_code
 
@@ -86,7 +22,8 @@ table d_gl_project
 
 	column prj_code
 		dataType: string
-		lineageTag: afcddad0-5cb5-4360-a279-68635332f4bb
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e957495b-f3ef-49aa-b54d-b45d9b5b063b
 		summarizeBy: none
 		sourceColumn: prj_code
 
@@ -94,7 +31,8 @@ table d_gl_project
 
 	column prj_desc
 		dataType: string
-		lineageTag: 472511c6-d088-425d-90b5-08b351949e7c
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a43c5151-dbc1-4a24-877a-8df10b1cc749
 		summarizeBy: none
 		sourceColumn: prj_desc
 
@@ -103,15 +41,17 @@ table d_gl_project
 	column prj_sgrp_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 6a34831e-62ea-4b64-83df-b026988d09df
-		summarizeBy: sum
+		sourceProviderType: int
+		lineageTag: 5ecd4b42-c7d1-4be9-b83e-72d72edfdfc5
+		summarizeBy: none
 		sourceColumn: prj_sgrp_id
 
 		annotation SummarizationSetBy = Automatic
 
 	column prj_sgrp_code
 		dataType: string
-		lineageTag: 415bc88e-f181-4b90-953f-766c55ea4a89
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 99dbbf83-ce46-47d9-8129-741d4d1e4939
 		summarizeBy: none
 		sourceColumn: prj_sgrp_code
 
@@ -119,7 +59,8 @@ table d_gl_project
 
 	column prj_sgrp_name
 		dataType: string
-		lineageTag: 079a2956-511f-46b1-a00f-390f9fefbb09
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4de0fa49-d3ab-4ab2-8ac7-4c6b2dc8b477
 		summarizeBy: none
 		sourceColumn: prj_sgrp_name
 
@@ -128,15 +69,17 @@ table d_gl_project
 	column prj_grp_id
 		dataType: int64
 		formatString: 0
-		lineageTag: cd035e51-6790-4fae-82a8-ccfa5e63d08e
-		summarizeBy: sum
+		sourceProviderType: int
+		lineageTag: 1a95d926-4ad0-4afc-95ad-fd275381ed08
+		summarizeBy: none
 		sourceColumn: prj_grp_id
 
 		annotation SummarizationSetBy = Automatic
 
 	column prj_grp_code
 		dataType: string
-		lineageTag: 63180000-5676-4ef4-b554-e073a18bd5fe
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 44bcf10a-13e2-4ba1-b491-424d6d0342b7
 		summarizeBy: none
 		sourceColumn: prj_grp_code
 
@@ -144,7 +87,8 @@ table d_gl_project
 
 	column prj_grp_name
 		dataType: string
-		lineageTag: 5d584ff2-8bc3-475e-a728-7628ffc3b7b5
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 42fa81f6-d971-4745-b54c-152800107db0
 		summarizeBy: none
 		sourceColumn: prj_grp_name
 
@@ -153,15 +97,17 @@ table d_gl_project
 	column owner_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 8ad44670-ad7b-48c0-bc79-8dbc4d03bb60
-		summarizeBy: sum
+		sourceProviderType: int
+		lineageTag: 500d33a1-1862-4927-9a32-b73f1e093abc
+		summarizeBy: none
 		sourceColumn: owner_id
 
 		annotation SummarizationSetBy = Automatic
 
 	column owner_code
 		dataType: string
-		lineageTag: cf416b4f-7323-4c2e-aa35-c1e70f1c20f6
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e938dd53-6d26-4e03-9f51-3884f0e59cc1
 		summarizeBy: none
 		sourceColumn: owner_code
 
@@ -169,7 +115,8 @@ table d_gl_project
 
 	column owner_name
 		dataType: string
-		lineageTag: 66dfbc4c-efe8-4d68-8f36-cc0935d59dd2
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ca9d8677-f109-485a-bfd2-84fbd91bbb0c
 		summarizeBy: none
 		sourceColumn: owner_name
 
@@ -177,7 +124,8 @@ table d_gl_project
 
 	column front_office
 		dataType: string
-		lineageTag: 3e4a3a1e-41fb-4710-895d-ac0d502ce7a2
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 82fee41d-c489-4505-98ec-4181540b8d18
 		summarizeBy: none
 		sourceColumn: front_office
 
@@ -185,7 +133,8 @@ table d_gl_project
 
 	column project_manager
 		dataType: string
-		lineageTag: 7869d85c-b26d-4dc0-aedd-0bb42c9e0bba
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 738664ae-933a-4328-8734-53b9a27953a6
 		summarizeBy: none
 		sourceColumn: project_manager
 
@@ -193,7 +142,8 @@ table d_gl_project
 
 	column coordinator_bo
 		dataType: string
-		lineageTag: 8c8af8df-4ddc-45e3-b995-a5db34837754
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b192a1ac-f3eb-4319-afa4-388dcc283737
 		summarizeBy: none
 		sourceColumn: coordinator_bo
 
@@ -201,7 +151,8 @@ table d_gl_project
 
 	column mpk_code
 		dataType: string
-		lineageTag: 71a5c18e-7e50-451e-8f47-4cf7afdabb0e
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 23474ef6-49e9-4dfc-a767-5d4643613a18
 		summarizeBy: none
 		sourceColumn: mpk_code
 
@@ -210,30 +161,36 @@ table d_gl_project
 	column hprj_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 40f36a18-5833-4a35-a121-1a3b73dce371
-		summarizeBy: sum
+		sourceProviderType: int
+		lineageTag: 7b5ca404-4609-4fcd-8068-5b899be1a812
+		summarizeBy: none
 		sourceColumn: hprj_id
 
 		annotation SummarizationSetBy = Automatic
 
 	column hprj_code
 		dataType: string
-		lineageTag: 6aefe6b8-0671-433f-87e3-f2e6c2782bc7
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cc1c0374-f9ae-4ad7-8107-290a17f83b0e
 		summarizeBy: none
 		sourceColumn: hprj_code
 
 		annotation SummarizationSetBy = Automatic
 
 	partition d_gl_project = m
-		mode: import
+		mode: directQuery
 		source =
 				let
-				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
 				    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
 				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
-				    d_gl_project_View = edw_Schema{[Name="d_gl_project",Kind="View"]}[Data]
+				    d_gl_project_View = edw_Schema{[Name="d_gl_project",Kind="View"]}[Data],
+				    #"Usunięto kolumny" = Table.RemoveColumns(d_gl_project_View,{"record_source", "record_version", "first_load_date", "last_seen_date", "source_exist", "db_code"}),
+				    #"Przefiltrowano wiersze" = Table.SelectRows(#"Usunięto kolumny", each Text.StartsWith([prj_code], "W-2"))
 				in
-				    d_gl_project_View
+				    #"Przefiltrowano wiersze"
+
+	annotation PBI_NavigationStepName = Nawigacja
 
 	annotation PBI_ResultType = Table
 

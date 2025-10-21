@@ -1,10 +1,11 @@
 table d_impl_cat_cost
-	lineageTag: 4511b686-e73a-4195-89ca-3f4e02899aec
+	lineageTag: 2ae39ab7-eb50-43ba-9f72-063ac9a57953
 
 	column impl_cat_cost_id
 		dataType: int64
 		formatString: 0
-		lineageTag: d8f48222-4ced-4db8-bd6e-b41a4d612ea8
+		sourceProviderType: int
+		lineageTag: afe6fe05-ae36-4005-b348-fe04c7080809
 		summarizeBy: none
 		sourceColumn: impl_cat_cost_id
 
@@ -12,7 +13,8 @@ table d_impl_cat_cost
 
 	column impl_cat_cost_code
 		dataType: string
-		lineageTag: 6d20b5ba-b6bc-4829-948c-8f89eabd01d3
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d8708826-435d-4309-9663-baee05e6ecb1
 		summarizeBy: none
 		sourceColumn: impl_cat_cost_code
 
@@ -20,20 +22,25 @@ table d_impl_cat_cost
 
 	column impl_cat_cost_name
 		dataType: string
-		lineageTag: 8772a94d-124e-4f0f-bc71-61d8c4a6a464
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3b8d4675-d4c9-4bce-ad52-2b8b3511bc38
 		summarizeBy: none
 		sourceColumn: impl_cat_cost_name
 
 		annotation SummarizationSetBy = Automatic
 
 	partition d_impl_cat_cost = m
-		mode: import
+		mode: directQuery
 		source =
 				let
-				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
 				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
 				    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
 				    d_impl_cat_cost_View = capex_implement_Schema{[Name="d_impl_cat_cost",Kind="View"]}[Data]
 				in
 				    d_impl_cat_cost_View
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
 

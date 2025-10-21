@@ -1,13 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "90ecbf4ee8a1b58438c0",
+  "name": "a2d254dfe364917232b0",
   "position": {
-    "x": 264,
-    "y": 127,
-    "z": 1000,
-    "height": 83,
-    "width": 403,
-    "tabOrder": 1000
+    "x": 10,
+    "y": 11.25,
+    "z": 0,
+    "height": 82.5,
+    "width": 287.5
   },
   "visual": {
     "visualType": "slicer",
@@ -47,25 +46,44 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "d_gl_project"
-                  }
-                },
-                "Property": "prj_code"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "d_gl_project.prj_code"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_gl_project.prj_desc"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "data": [
         {
@@ -83,6 +101,13 @@
       "general": [
         {
           "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
             "selfFilterEnabled": {
               "expr": {
                 "Literal": {

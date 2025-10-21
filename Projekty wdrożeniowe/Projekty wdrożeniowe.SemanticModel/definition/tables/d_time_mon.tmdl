@@ -1,0 +1,93 @@
+table d_time_mon
+	lineageTag: 79bba16a-fce2-4752-8295-a6270aac9219
+
+	column mon_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 28aebd20-4a63-4740-a394-bd59ae5a42bc
+		summarizeBy: sum
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: df91dcb9-97d6-408b-8e90-d23bf56124d7
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 08236bd8-671c-46e6-99fb-56f5a0289bf6
+		summarizeBy: none
+		sourceColumn: mon_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 837c5b59-1666-4969-a04e-582b5c73b145
+		summarizeBy: sum
+		sourceColumn: quart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: db84302e-786c-4f87-bfe4-814767589d65
+		summarizeBy: none
+		sourceColumn: quart_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 9b74e70e-3aff-4098-92ca-093d842abc4e
+		summarizeBy: none
+		sourceColumn: quart_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 2e09e5a8-8f03-4330-99ba-b0284c9167af
+		summarizeBy: sum
+		sourceColumn: year_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 22cb0d82-c48c-4f7a-8772-40da4f8e00d2
+		summarizeBy: none
+		sourceColumn: year_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_time_mon = m
+		mode: directQuery
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+				    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
+				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+				    d_time_mon_View = edw_Schema{[Name="d_time_mon",Kind="View"]}[Data]
+				in
+				    d_time_mon_View
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+
