@@ -9,10 +9,10 @@
     "width": 640
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -26,13 +26,8 @@
                 }
               },
               "queryRef": "d_impl_cat_cost.impl_cat_cost_name",
-              "nativeQueryRef": "impl_cat_cost_name",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "nativeQueryRef": "impl_cat_cost_name"
+            },
             {
               "field": {
                 "Aggregation": {
@@ -80,5 +75,42 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3044fac4d50c20261534",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_impl_cat_cost"
+              }
+            },
+            "Property": "impl_cat_cost_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "45f75af3688b4b1c0f19",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_capex_imp_cost_data"
+                  }
+                },
+                "Property": "amount_pln"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
