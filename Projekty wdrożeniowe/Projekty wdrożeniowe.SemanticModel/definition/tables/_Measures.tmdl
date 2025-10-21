@@ -1,0 +1,25 @@
+table _Measures
+	lineageTag: e56eb8d9-7996-49b9-a748-87c0abcebbf4
+
+	measure 'Suma wydatkow' =
+			
+			SUM(f_capex_imp_cost_data[amount_pln])
+		lineageTag: 9cf42203-d79e-458c-98af-9b736cd105bc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value
+		formatString: 0
+		lineageTag: b750152a-cb56-4afb-8dfe-e62deb89be83
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = d2ee7f525321452096fd87e350da6033
+
