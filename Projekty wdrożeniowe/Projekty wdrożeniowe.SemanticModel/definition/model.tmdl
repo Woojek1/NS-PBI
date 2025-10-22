@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["f_capex_imp_cost_data","d_impl_cat_cost","d_gl_project","d_time","f_capex_bud_data"]
+annotation PBI_QueryOrder = ["f_capex_imp_cost_data","d_impl_cat_cost","d_gl_project","d_time","f_capex_bud_data","d_time_mon","d_gl_account","d_gl_category_cost"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -18,6 +18,9 @@ ref table d_gl_project
 ref table _Measures
 ref table d_time
 ref table f_capex_bud_data
+ref table d_time_mon
+ref table d_gl_account
+ref table d_gl_category_cost
 
 ref cultureInfo pl-PL
 

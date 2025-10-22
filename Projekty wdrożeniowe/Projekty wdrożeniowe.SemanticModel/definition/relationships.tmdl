@@ -6,17 +6,19 @@ relationship bdbc26ae-2bc1-cba0-fd0a-0461f3effd37
 	fromColumn: f_capex_imp_cost_data.prj_id
 	toColumn: d_gl_project.prj_id
 
-relationship 31190a05-c334-38cd-4ea5-2daba8296898
-	toCardinality: many
+relationship 8a82e261-3fdc-fdea-8aad-c42e510b9cc4
 	fromColumn: f_capex_imp_cost_data.time_id
-	toColumn: d_time.mon_id
+	toColumn: d_time_mon.mon_id
 
-relationship 7d7d95d8-3852-f8d5-706b-a161a203d4ba
-	fromColumn: f_capex_bud_data.prj_id
-	toColumn: d_gl_project.prj_id
-
-relationship 92d4836f-a0d2-2c7d-5238-4912617f4a68
-	toCardinality: many
+relationship c7674846-deea-2e9b-67a2-748d43d1b28d
 	fromColumn: f_capex_bud_data.time_id
-	toColumn: d_time.mon_id
+	toColumn: d_time_mon.mon_id
+
+relationship 8ccff7b1-68cc-9aac-4f1b-b73c3e0e789a
+	fromColumn: f_capex_imp_cost_data.account_id
+	toColumn: d_gl_account.account_id
+
+relationship 1ff20064-e036-06a8-ab73-07067b0667d0
+	fromColumn: f_capex_imp_cost_data.cost_id
+	toColumn: d_gl_category_cost.account_id
 

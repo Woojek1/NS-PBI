@@ -1,0 +1,312 @@
+table d_time_mon
+	lineageTag: 1f136bea-6437-401d-b2a4-e342130fe7fe
+
+	column mon_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 69bc717b-d079-4221-b0d4-d5154007136d
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4c66b449-4a37-4071-af0f-aa2d4f28d42b
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3e86f4f9-8d6b-4b75-9cfd-5fd5224fb361
+		summarizeBy: none
+		sourceColumn: mon_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 97700096-7bc1-4bf3-8fe6-8f0f186c4646
+		summarizeBy: sum
+		sourceColumn: quart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 82eb3c83-9fbe-44ed-8eb3-3ec0d9d64347
+		summarizeBy: none
+		sourceColumn: quart_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b946f1e4-9cde-4e8f-89f4-6564d39abc92
+		summarizeBy: none
+		sourceColumn: quart_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 17005371-b896-4986-8d50-4b75f51d38d1
+		summarizeBy: sum
+		sourceColumn: year_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c06f3757-a5ee-4f5c-94ae-99d03a1e06ea
+		summarizeBy: none
+		sourceColumn: year_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: cf3c49ca-485b-4577-aa82-c3a6d41d79fe
+		summarizeBy: none
+		sourceColumn: mon_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column mon_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 2853ee5c-8356-47c6-8624-1ac982ab9d3b
+		summarizeBy: sum
+		sourceColumn: mon_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 65bee9fa-dcb9-46af-9aeb-cae6497b4ca9
+		summarizeBy: none
+		sourceColumn: quart_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column quart_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 67334fda-8b6f-4b3a-beff-409b9f5b7c87
+		summarizeBy: sum
+		sourceColumn: quart_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 3aa3fd4d-6739-47cc-9e9d-fd1097ff4cb7
+		summarizeBy: sum
+		sourceColumn: yearh_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 1a6c535c-a526-4472-8ddb-b081b07c4490
+		summarizeBy: none
+		sourceColumn: yearh_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 945d1ce9-9380-436a-91bf-85b21795555f
+		summarizeBy: none
+		sourceColumn: yearh_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: a43238e1-d730-4edb-b483-44f67b5d0a2e
+		summarizeBy: none
+		sourceColumn: yearh_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column yearh_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: cd9cff8d-b388-4086-a6ca-e7a768ff5c8e
+		summarizeBy: sum
+		sourceColumn: yearh_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 360a1360-839d-4c54-8575-2cff80db2cae
+		summarizeBy: none
+		sourceColumn: year_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 269d960c-3797-448b-97e5-3899edd6ad0a
+		summarizeBy: none
+		sourceColumn: year_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 9d289c1b-e0da-4584-b1bb-98982a716f5a
+		summarizeBy: sum
+		sourceColumn: year_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 21a339f8-232a-4ef7-ab9a-f66aeadd3e57
+		summarizeBy: sum
+		sourceColumn: mon2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e3c6f90a-15a7-4f4b-8d4f-f53b4aea4ae7
+		summarizeBy: none
+		sourceColumn: mon2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_name_int
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e189ae15-74ea-4fe1-935b-6c90bf9eb65d
+		summarizeBy: none
+		sourceColumn: mon2_name_int
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart2_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 1801e90d-8e29-41b7-b276-b32dc9890205
+		summarizeBy: sum
+		sourceColumn: quart2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart2_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: fbb23c78-88d1-4dc1-8273-0d5f601032c1
+		summarizeBy: none
+		sourceColumn: quart2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_desc_1
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: aba5e4a1-abec-46ce-9c94-7cf61362c6f1
+		summarizeBy: none
+		sourceColumn: year_desc_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8c0aff3c-c673-40a9-8366-904775582fac
+		summarizeBy: sum
+		sourceColumn: is_current_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_previous_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2aebe5cf-b36e-4f19-8e8b-14e3be68b444
+		summarizeBy: sum
+		sourceColumn: is_previous_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_curr_or_prev_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f0341902-6848-4d70-888b-6970756ba271
+		summarizeBy: sum
+		sourceColumn: is_curr_or_prev_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_date_first
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 5896f79e-aeca-4c50-98b2-88aff74f446b
+		summarizeBy: none
+		sourceColumn: mon_date_first
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition d_time_mon = m
+		mode: directQuery
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
+				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+				    d_time_mon_View = edw_Schema{[Name="d_time_mon",Kind="View"]}[Data]
+				in
+				    d_time_mon_View
+

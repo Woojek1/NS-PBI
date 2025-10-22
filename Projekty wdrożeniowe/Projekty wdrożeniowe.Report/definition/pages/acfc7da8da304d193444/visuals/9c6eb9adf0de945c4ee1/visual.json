@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "9c6eb9adf0de945c4ee1",
   "position": {
-    "x": 756.66666666666663,
-    "y": 207.77777777777777,
+    "x": 1118.3333333333335,
+    "y": 260,
     "z": 3002,
-    "height": 138.88888888888889,
-    "width": 282.22222222222223,
+    "height": 110,
+    "width": 371.66666666666669,
     "tabOrder": 3002
   },
   "visual": {
@@ -81,7 +81,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e111751c473990e10a9a",
+        "name": "271c7277447e402d6b55",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -98,58 +98,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "a061e19f4c279ed2f4c1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time"
-              }
-            },
-            "Property": "day_date"
-          }
-        },
-        "type": "RelativeDate",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "d_time",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 0,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "day_date"
-                    }
-                  },
-                  "Right": {
-                    "DateSpan": {
-                      "Expression": {
-                        "Now": {}
-                      },
-                      "TimeUnit": 3
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
       }
     ]
   }

@@ -144,55 +144,6 @@
         "howCreated": "User"
       },
       {
-        "name": "71741abf36e2afe2e722",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time"
-              }
-            },
-            "Property": "year_name"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "d_time",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 2,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "year_name"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "2020L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
         "name": "88e668f64351b57db75f",
         "field": {
           "Column": {
@@ -244,6 +195,21 @@
             }
           ]
         },
+        "howCreated": "User"
+      },
+      {
+        "name": "f054f90b1233aaf936a3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Advanced",
         "howCreated": "User"
       }
     ]

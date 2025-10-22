@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "09a958837376b4fdd96a",
   "position": {
-    "x": 123.33333333333333,
-    "y": 55.555555555555557,
+    "x": 1098.5714285714287,
+    "y": 138.57142857142858,
     "z": 3001,
-    "height": 138.88888888888889,
-    "width": 354.44444444444446,
+    "height": 121.42857142857143,
+    "width": 318.57142857142861,
     "tabOrder": 3001
   },
   "visual": {
@@ -81,7 +81,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "91e3c9179592565952bf",
+        "name": "b25636390a3ab1b4d725",
+        "ordinal": 0,
         "field": {
           "Aggregation": {
             "Expression": {
@@ -98,7 +99,61 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "f5e067e86c3d17720cb4",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_date"
+          }
+        },
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "year_date"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 3
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }
