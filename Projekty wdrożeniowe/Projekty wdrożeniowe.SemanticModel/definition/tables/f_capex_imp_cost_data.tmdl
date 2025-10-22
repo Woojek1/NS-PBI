@@ -165,6 +165,7 @@ table f_capex_imp_cost_data
 
 	column amount_pln
 		dataType: double
+		formatString: #,0
 		sourceProviderType: decimal(38, 18)
 		lineageTag: 4ddc53c7-6790-4650-853f-adb7ef71341c
 		summarizeBy: sum
@@ -172,7 +173,7 @@ table f_capex_imp_cost_data
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"isDecimal":true}
 
 	column debet_amount_bpln
 		dataType: double
@@ -774,10 +775,9 @@ table f_capex_imp_cost_data
 				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
 				    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
 				    f_capex_imp_cost_data_View = capex_implement_Schema{[Name="f_capex_imp_cost_data",Kind="View"]}[Data],
-				    #"Usunięto kolumny" = Table.RemoveColumns(f_capex_imp_cost_data_View,{"record_source", "record_view", "record_version"}),
-				    #"Posortowano wiersze" = Table.Sort(#"Usunięto kolumny",{{"time_id", Order.Descending}})
+				    #"Usunięto kolumny" = Table.RemoveColumns(f_capex_imp_cost_data_View,{"record_source", "record_view", "record_version"})
 				in
-				    #"Posortowano wiersze"
+				    #"Usunięto kolumny"
 
 	annotation PBI_NavigationStepName = Nawigacja
 

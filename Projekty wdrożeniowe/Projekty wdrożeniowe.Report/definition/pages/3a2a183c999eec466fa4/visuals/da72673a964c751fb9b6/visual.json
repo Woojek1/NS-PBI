@@ -6,8 +6,7 @@
     "y": 111.11111111111111,
     "z": 1000,
     "height": 571.11111111111109,
-    "width": 470,
-    "tabOrder": 1000
+    "width": 470
   },
   "visual": {
     "visualType": "tableEx",
@@ -159,75 +158,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ab3a0a5c8f9ab5092c09",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_project"
-              }
-            },
-            "Property": "prj_desc"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f3ca5c8756a7ec89b6d1",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "f_capex_imp_cost_data"
-                  }
-                },
-                "Property": "amount_pln"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "31469baf76f21dab029c",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "d_gl_project"
-                  }
-                },
-                "Property": "prj_code"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d555fc67427c63cfce37",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_project"
-              }
-            },
-            "Property": "prj_code"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

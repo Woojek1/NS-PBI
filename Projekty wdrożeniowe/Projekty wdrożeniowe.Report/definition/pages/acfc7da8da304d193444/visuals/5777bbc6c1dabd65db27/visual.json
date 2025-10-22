@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "be50c4ec0d90fffc3c03",
+  "name": "5777bbc6c1dabd65db27",
   "position": {
-    "x": 208.14589665653497,
-    "y": 61.276595744680854,
-    "z": 2000,
-    "height": 572.887537993921,
-    "width": 445.47112462006083,
+    "x": 355.55555555555554,
+    "y": 0,
+    "z": 1000,
+    "height": 67.777777777777771,
+    "width": 802.22222222222217,
     "tabOrder": 1000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "card",
     "query": {
       "queryState": {
         "Values": {
@@ -22,17 +22,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "f_capex_imp_cost_data"
+                          "Entity": "d_gl_project"
                         }
                       },
-                      "Property": "amount_pln"
+                      "Property": "prj_desc"
                     }
                   },
-                  "Function": 0
+                  "Function": 3
                 }
               },
-              "queryRef": "Sum(f_capex_imp_cost_data.amount_pln)",
-              "nativeQueryRef": "Suma elementów amount_pln"
+              "queryRef": "Min(d_gl_project.prj_desc)",
+              "nativeQueryRef": "Pierwsze: prj_desc"
             }
           ]
         }

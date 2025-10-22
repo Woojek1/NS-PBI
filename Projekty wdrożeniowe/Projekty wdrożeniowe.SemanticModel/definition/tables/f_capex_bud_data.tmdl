@@ -1,0 +1,402 @@
+table f_capex_bud_data
+	lineageTag: cb4cfe21-0508-4462-a389-12021720bfe7
+
+	column record_source
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3199100a-cadb-4004-b54b-cb5eb10d44f3
+		summarizeBy: none
+		sourceColumn: record_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_version
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dd680a07-516d-4fb3-9798-3c653164a9f0
+		summarizeBy: none
+		sourceColumn: record_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: df60d34c-4bcd-4626-9938-ead179546ad9
+		summarizeBy: none
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 14e1a030-a0f6-42d7-b38c-9ac5b8301537
+		summarizeBy: sum
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 12ec1c5d-3e01-4898-bd94-1d1d98245466
+		summarizeBy: sum
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ca3ecab6-a8b0-42b0-b733-7046142578e4
+		summarizeBy: sum
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column intc_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f9908298-0e89-4706-8714-ca5db0822c2d
+		summarizeBy: sum
+		sourceColumn: intc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column scat_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bc6756b6-7144-4edc-8063-ec3b34bacd7a
+		summarizeBy: sum
+		sourceColumn: scat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column scat_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 16190921-d733-4107-bafe-057483ac7c6b
+		summarizeBy: sum
+		sourceColumn: scat_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4da75c5a-3d69-4e35-b1fd-4b667e2dbece
+		summarizeBy: sum
+		sourceColumn: cost_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mng_resp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9579b1e0-5833-4e65-a007-fbec65c48782
+		summarizeBy: sum
+		sourceColumn: mng_resp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cnt_trans_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 016da3fb-83fa-47d6-a220-ef8cd96c83d9
+		summarizeBy: sum
+		sourceColumn: cnt_trans_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prj_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 94e03308-cc6f-4ca9-99ec-cc4cf91849d7
+		summarizeBy: none
+		sourceColumn: prj_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prior_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 37417f00-4796-4292-aec2-3f61b1ad27d4
+		summarizeBy: sum
+		sourceColumn: prior_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 487ed1db-ff94-4ea7-8c7b-0b6445e091b2
+		summarizeBy: sum
+		sourceColumn: prod_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column curr_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 25c39108-813a-44f2-9f72-4c0e6dd9f7fd
+		summarizeBy: sum
+		sourceColumn: curr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin_curr_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9cc6d04c-bf9a-4f51-8330-0131705872f8
+		summarizeBy: sum
+		sourceColumn: fin_curr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column budc_pln
+		dataType: double
+		sourceProviderType: decimal(12, 2)
+		lineageTag: 2f9dab9c-f405-4a5d-81f9-7e708ee1ffcd
+		summarizeBy: sum
+		sourceColumn: budc_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column budc_cur
+		dataType: double
+		sourceProviderType: decimal(12, 2)
+		lineageTag: ad848c6f-0b71-4567-8e16-7197da9d9b6a
+		summarizeBy: sum
+		sourceColumn: budc_cur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column budc_eur
+		dataType: double
+		sourceProviderType: decimal(12, 2)
+		lineageTag: b14040a1-67e0-4772-b541-ba9419fe1410
+		summarizeBy: sum
+		sourceColumn: budc_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column budc_bpln
+		dataType: double
+		sourceProviderType: decimal(12, 2)
+		lineageTag: 1cf33956-a40f-44f4-868e-49730fa5e018
+		summarizeBy: sum
+		sourceColumn: budc_bpln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column budc_beur
+		dataType: double
+		sourceProviderType: decimal(12, 2)
+		lineageTag: a0ad7809-cc8a-47df-9207-4179ee415863
+		summarizeBy: sum
+		sourceColumn: budc_beur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column budc_fcur
+		dataType: double
+		sourceProviderType: decimal(12, 2)
+		lineageTag: d600c0d7-08d3-4d7c-8e20-32a4b741dcc5
+		summarizeBy: sum
+		sourceColumn: budc_fcur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column src_year
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 72258b01-e778-4f21-9b18-d79e5dd74bcf
+		summarizeBy: none
+		sourceColumn: src_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_month_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3fb186f3-9ea6-4a12-bd46-376bdf7bd06c
+		summarizeBy: none
+		sourceColumn: src_month_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_mpk_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0dab82b4-1ee1-44c6-bff0-f1cba7f62b45
+		summarizeBy: none
+		sourceColumn: src_mpk_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_account_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 88b4bf10-d21c-47ab-8c07-998af7e78676
+		summarizeBy: none
+		sourceColumn: src_account_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_comp_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7835177d-ba24-4b0c-afe2-8ec7e2e57dbd
+		summarizeBy: none
+		sourceColumn: src_comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_catdir_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8f9c1d31-bc5f-4cf9-98dd-9c6fc264dcf2
+		summarizeBy: none
+		sourceColumn: src_catdir_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_scat_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: fd47e035-e78d-4130-9f79-ecd8beb94332
+		summarizeBy: none
+		sourceColumn: src_scat_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_category_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 07bff7d1-e8a7-4975-b15c-0339eb8369b6
+		summarizeBy: none
+		sourceColumn: src_category_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_comp_bi_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 78b0727c-e66e-4fd8-9d12-ecf48f7210c2
+		summarizeBy: none
+		sourceColumn: src_comp_bi_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_trans_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 717d4286-1a59-4e6d-9cd9-0c7e58a6f039
+		summarizeBy: none
+		sourceColumn: src_trans_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_prj_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e5034354-30dc-4ffd-8056-4edfb2dd04db
+		summarizeBy: none
+		sourceColumn: src_prj_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_prior_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8b02f058-0e02-4d3f-9126-2a90edfb9002
+		summarizeBy: none
+		sourceColumn: src_prior_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_brand_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 53526211-4128-44aa-9793-671255abf06c
+		summarizeBy: none
+		sourceColumn: src_brand_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_curr_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: eb39218f-9969-41fc-a38d-208c55d2cdd4
+		summarizeBy: none
+		sourceColumn: src_curr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_fin_curr_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3155bdf9-844f-4b00-9c86-43b332223d97
+		summarizeBy: none
+		sourceColumn: src_fin_curr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_scenario
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 67a5c9b8-80a6-4b6a-9098-fc1c1161facc
+		summarizeBy: none
+		sourceColumn: src_scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_version
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a1b4c150-43ff-4c56-9132-1aca4561353f
+		summarizeBy: none
+		sourceColumn: src_version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition f_capex_bud_data = m
+		mode: directQuery
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
+				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+				    f_capex_bud_data_View = edw_Schema{[Name="f_capex_bud_data",Kind="View"]}[Data]
+				in
+				    f_capex_bud_data_View
+

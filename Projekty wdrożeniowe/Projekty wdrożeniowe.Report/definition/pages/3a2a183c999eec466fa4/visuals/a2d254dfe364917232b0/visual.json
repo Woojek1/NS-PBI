@@ -6,7 +6,8 @@
     "y": 11.25,
     "z": 0,
     "height": 82.5,
-    "width": 287.5
+    "width": 287.5,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -223,84 +224,11 @@
                   }
                 ]
               }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "d_gl_project",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "prj_code"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'W-24KC0511'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "3bee22c44ac8db0faa02",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_project"
-              }
-            },
-            "Property": "prj_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "236eee3351b86f6ebce6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_project"
-              }
-            },
-            "Property": "prj_desc"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

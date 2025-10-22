@@ -8,6 +8,24 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure CurrentYear =
+			
+			YEAR(
+			    TODAY()
+			)
+		formatString: 0
+		lineageTag: b1bf3e03-645d-4693-9732-733d7f868fcb
+
+	measure 'Suma wydatków prev Year' =
+			
+			CALCULATE(
+			    SUM(f_capex_imp_cost_data[amount_pln]),
+			    SAMEPERIODLASTYEAR(d_time[day_date])
+			)
+		lineageTag: 1d16c818-7ac4-488e-97c1-e623dd3ab6d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Value
 		formatString: 0
 		lineageTag: b750152a-cb56-4afb-8dfe-e62deb89be83

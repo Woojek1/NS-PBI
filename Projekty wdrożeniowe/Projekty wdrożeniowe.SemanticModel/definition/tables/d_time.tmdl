@@ -1,0 +1,159 @@
+table d_time
+	lineageTag: a6df55a8-4176-4fc9-bb44-f626ab55c0bb
+	dataCategory: Time
+
+	column day_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f120b03e-eb46-4891-9532-fbd48e0ce754
+		summarizeBy: sum
+		sourceColumn: day_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 59b89851-c925-4e51-809f-fa1d85736c7a
+		summarizeBy: none
+		sourceColumn: day_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column day_name_s
+		dataType: string
+		lineageTag: a1134b5d-ae9b-4106-ab62-9e59222f9947
+		summarizeBy: none
+		sourceColumn: day_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_week
+		dataType: string
+		lineageTag: a1e6b4d3-fcdb-470d-a3b2-467ba45de5b2
+		summarizeBy: none
+		sourceColumn: day_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8812f6ef-d0f2-44b7-8261-3f069317c2d9
+		summarizeBy: sum
+		sourceColumn: week_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_name
+		dataType: string
+		lineageTag: 4d8c61b2-609b-446f-86a6-1564ceddd303
+		summarizeBy: none
+		sourceColumn: week_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_name_s
+		dataType: string
+		lineageTag: 5a8ecf52-9645-428b-8a12-4b156fa54030
+		summarizeBy: none
+		sourceColumn: week_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c48ee30c-401d-4369-9d59-c6963e7f1f3e
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		lineageTag: e68d6a6b-8a15-465c-b9c7-c151bf24e8db
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name_s
+		dataType: string
+		lineageTag: 90beaabc-0084-4068-96bf-2ead5c6b0de6
+		summarizeBy: none
+		sourceColumn: mon_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 22e16d75-7b2f-40ee-bc49-3a3188b19826
+		summarizeBy: sum
+		sourceColumn: quart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name
+		dataType: string
+		lineageTag: ea9bc0b8-2c99-45c2-bfa4-8a99733ec49b
+		summarizeBy: none
+		sourceColumn: quart_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name_s
+		dataType: string
+		lineageTag: 371d98f3-d504-482d-b3a4-2004674f9fab
+		summarizeBy: none
+		sourceColumn: quart_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 11709a25-2b5a-4fe8-9bfd-fbe808a06a17
+		summarizeBy: sum
+		sourceColumn: year_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c0fbe5c-008a-4b42-ba60-9647ab791566
+		summarizeBy: sum
+		sourceColumn: year_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_count_work
+		dataType: int64
+		formatString: 0
+		lineageTag: 4fd2cbda-ea96-46ed-9bca-6a6b97c1abb9
+		summarizeBy: sum
+		sourceColumn: day_count_work
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_time = m
+		mode: import
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
+				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+				    d_time_View = edw_Schema{[Name="d_time",Kind="View"]}[Data],
+				    #"Zmieniono typ" = Table.TransformColumnTypes(d_time_View,{{"year_name", Int64.Type}})
+				in
+				    #"Zmieniono typ"
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+

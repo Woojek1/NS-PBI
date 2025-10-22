@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "8f72a5718c73e0d4d8f1",
+  "position": {
+    "x": 419.209726443769,
+    "y": 389.05775075987845,
+    "z": 4000,
+    "height": 284.98480243161094,
+    "width": 803.404255319149,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time"
+                    }
+                  },
+                  "Property": "year_name"
+                }
+              },
+              "queryRef": "d_time.year_name",
+              "nativeQueryRef": "year_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time"
+                    }
+                  },
+                  "Property": "mon_name"
+                }
+              },
+              "queryRef": "d_time.mon_name",
+              "nativeQueryRef": "mon_name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Suma wydatkow"
+                }
+              },
+              "queryRef": "_Measures.Suma wydatkow",
+              "nativeQueryRef": "Suma wydatkow"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Suma wydatków prev Year"
+                }
+              },
+              "queryRef": "_Measures.Suma wydatków prev Year",
+              "nativeQueryRef": "Suma wydatków prev Year"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_time"
+                  }
+                },
+                "Property": "year_name"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_time"
+                  }
+                },
+                "Property": "mon_name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
