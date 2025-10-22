@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "4ea58ac4158ecec00ac1",
   "position": {
-    "x": 51.428571428571431,
+    "x": 51.666666666666671,
     "y": 380,
     "z": 2000,
     "height": 330,
-    "width": 1518.5714285714287,
+    "width": 1301.6666666666667,
     "tabOrder": 15000
   },
   "visual": {
@@ -28,20 +28,6 @@
               },
               "queryRef": "Date.Year",
               "nativeQueryRef": "Rok"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Date"
-                    }
-                  },
-                  "Property": "Month Code"
-                }
-              },
-              "queryRef": "Date.Month Code",
-              "nativeQueryRef": "Miesiąc kod"
             },
             {
               "field": {
@@ -128,23 +114,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Date"
-                  }
-                },
-                "Property": "Month Code"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -695,20 +664,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "3aa46973fce22bcd972c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Month Code"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
