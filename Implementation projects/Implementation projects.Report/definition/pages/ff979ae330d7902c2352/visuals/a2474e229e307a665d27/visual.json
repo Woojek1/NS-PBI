@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "a2474e229e307a665d27",
   "position": {
     "x": 58.571428571428577,
@@ -257,5 +257,24 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0c0e02520aaae11a7aab",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Prj Bud Total Measures"
+              }
+            },
+            "Property": "Open project count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

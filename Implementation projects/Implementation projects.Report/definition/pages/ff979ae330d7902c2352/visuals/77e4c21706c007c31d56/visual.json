@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "77e4c21706c007c31d56",
   "position": {
     "x": 58.571428571428577,
@@ -256,5 +256,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7f6db4e5c66afff46d28",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAPEX Bud Measures"
+              }
+            },
+            "Property": "Budget PLN"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
