@@ -1,0 +1,319 @@
+table d_time_mon
+	lineageTag: 4038fcb4-abd2-4f19-b576-c7504a1e5e71
+
+	column mon_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 0ddf4dd7-8589-453d-b885-f0fb0e3d8db2
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b13fe8f5-6af0-4423-a6d3-50cf434fb830
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 37dcfc9e-9c45-4739-a7e3-7f264155e05c
+		summarizeBy: none
+		sourceColumn: mon_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_date
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		sourceProviderType: date
+		lineageTag: 32911782-f628-4ac1-b5bd-f13f2e4befa9
+		summarizeBy: none
+		sourceColumn: mon_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column mon_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 03129d81-eddf-409b-a52f-24daa519dc78
+		summarizeBy: none
+		sourceColumn: mon_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: ac4861f1-0ab5-4817-aea0-4d2bc77aa2a7
+		summarizeBy: none
+		sourceColumn: quart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: de5a5743-b1f2-4a7d-be88-dbec003403e4
+		summarizeBy: none
+		sourceColumn: quart_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 48239262-a3c3-4d1c-9c86-89bf6860f73d
+		summarizeBy: none
+		sourceColumn: quart_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 07c444fc-5c54-4bad-ac94-46cbb9adb47f
+		summarizeBy: none
+		sourceColumn: quart_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column quart_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: e65d431a-320b-481b-aedf-1eedc6480ecf
+		summarizeBy: none
+		sourceColumn: quart_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: be406982-c371-4c92-9fe4-23496fcb80a4
+		summarizeBy: none
+		sourceColumn: yearh_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 592a02f4-2245-4c43-8364-e40adfc3c826
+		summarizeBy: none
+		sourceColumn: yearh_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cbd9b76f-0b7f-45ca-a568-f9fc63cdf0d1
+		summarizeBy: none
+		sourceColumn: yearh_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: e5063fd7-6ea5-471c-b9b9-4a5e0f810960
+		summarizeBy: none
+		sourceColumn: yearh_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column yearh_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 3c106905-506c-4de6-8672-aa64fc88151f
+		summarizeBy: none
+		sourceColumn: yearh_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 0434f5b4-7275-4d63-87e0-5997800e9750
+		summarizeBy: none
+		sourceColumn: year_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 87b719ac-3c86-4398-828a-c49752977e4b
+		summarizeBy: none
+		sourceColumn: year_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8ceeee8d-f2f0-4c8f-a530-7f3d67b85fbd
+		summarizeBy: none
+		sourceColumn: year_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 565d6f7a-ae8a-460f-9730-aa3cb09c8843
+		summarizeBy: none
+		sourceColumn: year_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 3ceec004-fb6b-41f8-8c75-d28de9fe1bd9
+		summarizeBy: none
+		sourceColumn: year_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 1e2c26fb-48bd-402d-b909-ec02297871fb
+		summarizeBy: none
+		sourceColumn: mon2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 171ec1b0-d45c-4818-a4be-e99b2c393e38
+		summarizeBy: none
+		sourceColumn: mon2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_name_int
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 032f5546-a46c-4de0-b68a-597266011d33
+		summarizeBy: none
+		sourceColumn: mon2_name_int
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart2_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 4ddbdb12-a3de-465f-90b0-dbf1eb758bb0
+		summarizeBy: none
+		sourceColumn: quart2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart2_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4977b654-13bc-4aeb-93e8-e981fbffafbe
+		summarizeBy: none
+		sourceColumn: quart2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_desc_1
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6206cb20-57e3-4356-aa6a-f0dd9e5cc0c0
+		summarizeBy: none
+		sourceColumn: year_desc_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2d924e70-d88b-48ee-8f9a-0c21a90f7cf3
+		summarizeBy: none
+		sourceColumn: is_current_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_previous_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 35ce1af9-102e-47aa-b11a-ff64bb486a3d
+		summarizeBy: none
+		sourceColumn: is_previous_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_curr_or_prev_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6ff32c2d-b1f4-4315-b853-6df2adfea85d
+		summarizeBy: none
+		sourceColumn: is_curr_or_prev_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_date_first
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 258dfcf8-aec5-460c-a17d-0f06a004f2e1
+		summarizeBy: none
+		sourceColumn: mon_date_first
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition d_time_mon = m
+		mode: directQuery
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
+				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+				    d_time_mon_View = edw_Schema{[Name="d_time_mon",Kind="View"]}[Data],
+				    #"Przefiltrowano wiersze1" = Table.SelectRows(d_time_mon_View, each Date.IsInNextNYears([mon_date], 2) or [mon_date] >= #date(2020, 1, 1))
+				in
+				    #"Przefiltrowano wiersze1"
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+

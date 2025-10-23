@@ -1,0 +1,37 @@
+table _Miary
+	lineageTag: fce809bd-c1a1-4265-b842-278345ddfbe1
+
+	measure 'Ilość otwartych projektów' =
+			
+			COUNTROWS (
+			    DISTINCT(
+			        FILTER(
+			            VALUES('d_gl_project'[prj_desc]),
+			            LEFT ('d_gl_project'[prj_desc], 3) <> "(X)"
+			        )
+			    )
+			)
+		formatString: 0
+		lineageTag: 61ae7382-9093-4a16-bdeb-1b3d62127c3e
+
+	measure Wydatki =
+			
+			SUM(f_capex_imp_cost_data[amount_pln])
+		formatString: #,0.00
+		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
+
+	column Value
+		formatString: 0
+		lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Miary = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = 8ff54b4d66f14635a814d7d3fdcc4732
+

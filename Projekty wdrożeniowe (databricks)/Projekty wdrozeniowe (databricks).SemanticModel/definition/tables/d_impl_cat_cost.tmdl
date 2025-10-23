@@ -1,0 +1,42 @@
+table d_impl_cat_cost
+	lineageTag: 5076119e-7b93-4138-85d1-93eeeef055d1
+
+	column impl_cat_cost_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3cc80b04-5d4f-4ad2-bc8a-da997a3f724e
+		summarizeBy: none
+		sourceColumn: impl_cat_cost_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column impl_cat_cost_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3d71afd2-0117-426c-8a18-01a9700b5dd2
+		summarizeBy: none
+		sourceColumn: impl_cat_cost_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column impl_cat_cost_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a5082bfc-a59f-4498-b707-dc8fd56dd66d
+		summarizeBy: none
+		sourceColumn: impl_cat_cost_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_impl_cat_cost = m
+		mode: directQuery
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+				    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
+				    d_impl_cat_cost_View = capex_implement_Schema{[Name="d_impl_cat_cost",Kind="View"]}[Data]
+				in
+				    d_impl_cat_cost_View
+

@@ -1,0 +1,16 @@
+relationship e1462d69-8a2e-43d4-37b1-f0b8ea712c77
+	fromColumn: f_capex_imp_cost_data.impl_cat_cost_id
+	toColumn: d_impl_cat_cost.impl_cat_cost_id
+
+relationship 4ef0dbc4-9a5b-9093-e477-89bef6c0df29
+	fromColumn: f_capex_imp_cost_data.time_id
+	toColumn: d_time_mon.mon_id
+
+relationship 9af398e7-3dde-27f1-9bb9-cdb17ba7fc71
+	fromColumn: f_capex_imp_cost_data.cost_id
+	toColumn: d_gl_category_cost.account_id
+
+relationship 1ea584e2-0a3c-a284-a947-0d9f2464fdaf
+	fromColumn: f_capex_imp_cost_data.prj_id
+	toColumn: d_gl_project.prj_id
+
