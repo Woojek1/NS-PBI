@@ -20,13 +20,19 @@ table _Miary
 		formatString: #,0.00
 		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
 
-	measure 'Nazwa projektu' =
+	measure 'Nazwa projektu' = ```
 			
 			IF(
-			    HASONEVALUE(d_gl_project[prj_desc]),
-			    VALUES(d_gl_project[prj_desc]),
-			    "Wiele projektów"
+			    NOT ISFILTERED(d_gl_project[prj_desc]),
+			    "Wybierz projekt",
+			    IF(
+			        HASONEVALUE(d_gl_project[prj_desc]),
+			        VALUES(d_gl_project[prj_desc]),
+			        "Kilka projektów"
+			    )
 			)
+			
+			```
 		lineageTag: b6e08fcd-fedb-45b4-bb85-c74858294be6
 
 	column Value

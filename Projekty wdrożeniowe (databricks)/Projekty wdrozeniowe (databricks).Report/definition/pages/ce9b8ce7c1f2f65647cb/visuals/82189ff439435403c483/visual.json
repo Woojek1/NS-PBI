@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "82189ff439435403c483",
   "position": {
-    "x": 16.666666666666668,
-    "y": 693.33333333333337,
+    "x": 17.142857142857142,
+    "y": 692.85714285714289,
     "z": 5000,
-    "height": 363.33333333333337,
-    "width": 1315,
+    "height": 364.28571428571433,
+    "width": 1321.4285714285716,
     "tabOrder": 4000
   },
   "visual": {
@@ -49,21 +49,6 @@
               "nativeQueryRef": "Kategorie wydatków",
               "active": true,
               "displayName": "Kategorie wydatków"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_gl_category_cost"
-                    }
-                  },
-                  "Property": "acc3_name"
-                }
-              },
-              "queryRef": "d_gl_category_cost.acc3_name",
-              "nativeQueryRef": "acc3_name",
-              "active": false
             }
           ]
         },
@@ -111,28 +96,22 @@
               }
             ],
             "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "d_gl_category_cost.acc3_name"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_gl_category_cost"
-                    }
-                  },
-                  "Property": "acc3_name"
-                }
-              }
-            ],
-            "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Wdrożenia - Koszty certyfikatów i ochrony wzorów'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -499,7 +478,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "473.9999936319664D"
+                  "Value": "495.42856584890205D"
                 }
               }
             }
