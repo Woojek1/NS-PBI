@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "cf72a167e3196903a7a5",
   "position": {
-    "x": 480,
+    "x": 377.14285714285717,
     "y": 0,
     "z": 7000,
-    "height": 112,
-    "width": 958,
-    "tabOrder": 7000
+    "height": 111.42857142857143,
+    "width": 1158.5714285714287,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "card",
@@ -102,5 +102,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ab7ede616405ddce159b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Nazwa projektu"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

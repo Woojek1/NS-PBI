@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "2f5b70dd8515fcf39254",
   "position": {
-    "x": 16.666666666666668,
-    "y": 428.33333333333337,
+    "x": 16.246153846153845,
+    "y": 425.35384615384612,
     "z": 4000,
-    "height": 251.66666666666669,
-    "width": 956.66666666666674,
-    "tabOrder": 3000
+    "height": 254.03076923076921,
+    "width": 957.04615384615374,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -309,5 +309,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "210c59e393773a8d1fc8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f32d93922d91f6a0bab1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

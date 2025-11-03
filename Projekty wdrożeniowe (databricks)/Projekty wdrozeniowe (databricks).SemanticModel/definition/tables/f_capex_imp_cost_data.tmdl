@@ -54,7 +54,7 @@ table f_capex_imp_cost_data
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: b489c3aa-b098-4b82-8f5b-f4b6c08c3743
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: account_id
 
 		annotation SummarizationSetBy = Automatic
@@ -193,7 +193,7 @@ table f_capex_imp_cost_data
 
 	column amount_pln
 		dataType: double
-		formatString: 0
+		formatString: #,0
 		sourceProviderType: decimal(38, 18)
 		lineageTag: 9ff68804-9dc6-4882-871d-86514a6006bb
 		summarizeBy: sum

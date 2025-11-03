@@ -6,7 +6,8 @@
     "y": 62.5,
     "z": 1000,
     "height": 100,
-    "width": 340
+    "width": 340,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -42,7 +43,7 @@
               },
               "queryRef": "d_gl_project.prj_code",
               "nativeQueryRef": "prj_code",
-              "active": false
+              "active": true
             }
           ]
         }
@@ -59,6 +60,18 @@
               "d_gl_project.prj_desc"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -69,7 +82,70 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'(X) Stelaże do linii K40 K50'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'K40/SQart – optymalizacja'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Unifikacja szaf SQart/K40'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'WithMe'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'WithMe mesh seat  - Nowy Styl'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Dessi - wieszaki ubraniowe'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -230,5 +306,37 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7da9c002e8d3e5ecb0dd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_project"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d0b5c9b2b75396c1f575",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_project"
+              }
+            },
+            "Property": "prj_code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

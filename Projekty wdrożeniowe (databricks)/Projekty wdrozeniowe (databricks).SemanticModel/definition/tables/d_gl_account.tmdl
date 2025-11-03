@@ -1,0 +1,135 @@
+table d_gl_account
+	lineageTag: e7ad5a22-557f-4859-8ac6-da89cf352b30
+
+	column record_source
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e93d2784-58c5-464b-9ff7-1d6f1df2e242
+		summarizeBy: none
+		sourceColumn: record_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_version
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 362ff414-72e0-4f96-90f1-14f0e42a078e
+		summarizeBy: none
+		sourceColumn: record_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_load_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: cdcaa9a1-d542-4735-8f7b-668dee72b06f
+		summarizeBy: none
+		sourceColumn: first_load_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_seen_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 49ca7f71-25e1-46cf-a140-1515d417d307
+		summarizeBy: none
+		sourceColumn: last_seen_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_exist
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a26b351c-7a89-4b77-8774-008e6b324039
+		summarizeBy: none
+		sourceColumn: source_exist
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4a11225a-90fa-4ab8-9ad2-71a1911eb984
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column db_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: eaadf15a-78af-4b18-91fc-2b7c584cb829
+		summarizeBy: none
+		sourceColumn: db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c730304f-e5a9-4213-8ad1-0b7738da795f
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 79c46419-ea52-4580-8de3-23f18af2c89c
+		summarizeBy: none
+		sourceColumn: account_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_desc
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 80a1535f-427b-4e25-b5d6-c90b26591c57
+		summarizeBy: none
+		sourceColumn: account_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_type
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c761863a-a8bd-4495-8c48-73f7f1f473ce
+		summarizeBy: none
+		sourceColumn: account_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column log_account_type_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3aceb556-533d-4bec-b74e-6a3b8a16c5b0
+		summarizeBy: none
+		sourceColumn: log_account_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column log_account_type_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 2b7b4779-0420-4fcc-bc59-a9599b90179e
+		summarizeBy: none
+		sourceColumn: log_account_type_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_gl_account = m
+		mode: directQuery
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
+				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+				    d_gl_account_View = edw_Schema{[Name="d_gl_account",Kind="View"]}[Data]
+				in
+				    d_gl_account_View
+

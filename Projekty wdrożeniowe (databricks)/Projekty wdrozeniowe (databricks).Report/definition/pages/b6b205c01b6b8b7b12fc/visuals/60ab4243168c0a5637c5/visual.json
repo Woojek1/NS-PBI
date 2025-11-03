@@ -1,38 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "82189ff439435403c483",
+  "name": "60ab4243168c0a5637c5",
   "position": {
-    "x": 16.666666666666668,
-    "y": 693.33333333333337,
-    "z": 5000,
-    "height": 363.33333333333337,
-    "width": 1321.6666666666667,
-    "tabOrder": 3000
+    "x": 24.444444444444443,
+    "y": 191.11111111111111,
+    "z": 0,
+    "height": 417.77777777777777,
+    "width": 1230
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_time_mon"
-                    }
-                  },
-                  "Property": "year_name"
-                }
-              },
-              "queryRef": "d_time_mon.year_name",
-              "nativeQueryRef": "year_name",
-              "active": true
-            }
-          ]
-        },
-        "Rows": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -47,8 +27,21 @@
               },
               "queryRef": "d_impl_cat_cost.impl_cat_cost_name",
               "nativeQueryRef": "Kategorie wydatków",
-              "active": true,
               "displayName": "Kategorie wydatków"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_account"
+                    }
+                  },
+                  "Property": "account_code"
+                }
+              },
+              "queryRef": "d_gl_account.account_code",
+              "nativeQueryRef": "account_code"
             },
             {
               "field": {
@@ -62,13 +55,36 @@
                 }
               },
               "queryRef": "f_capex_imp_cost_data.src_code_c",
-              "nativeQueryRef": "src_code_c",
-              "active": true
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
+              "nativeQueryRef": "src_code_c"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_d"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_code_d",
+              "nativeQueryRef": "src_code_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time_mon"
+                    }
+                  },
+                  "Property": "year_name"
+                }
+              },
+              "queryRef": "d_time_mon.year_name",
+              "nativeQueryRef": "year_name"
+            },
             {
               "field": {
                 "Measure": {
@@ -87,55 +103,6 @@
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "d_impl_cat_cost.impl_cat_cost_name"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_impl_cat_cost"
-                    }
-                  },
-                  "Property": "impl_cat_cost_name"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "f_capex_imp_cost_data.src_code_c"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'!Unclassified'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
-      }
-    ],
     "objects": {
       "values": [
         {
@@ -2262,6 +2229,76 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "127D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_gl_account.account_code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144.6666523314091D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_capex_imp_cost_data.src_code_c"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_time_mon.year_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "198.0000313000883D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "107D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_capex_imp_cost_data.src_code_d"
+          }
         }
       ],
       "columnHeaders": [
@@ -2281,13 +2318,6 @@
                 }
               }
             },
-            "titleAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Left'"
-                }
-              }
-            },
             "alignment": {
               "expr": {
                 "Literal": {
@@ -2298,57 +2328,9 @@
           }
         }
       ],
-      "rowHeaders": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "13D"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Auto'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "subTotals": [
-        {
-          "properties": {
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "rowSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "general": [
         {
-          "properties": {
-            "layout": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Compact'"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "grid": [
@@ -2358,19 +2340,6 @@
               "expr": {
                 "Literal": {
                   "Value": "3D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "rowTotal": [
-        {
-          "properties": {
-            "applyToHeaders": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -2457,21 +2426,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "fd90de912759778c8584",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "year_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7c6473a6b65b29b4ae08",
+        "name": "911c85cc165015ee24c3",
         "field": {
           "Column": {
             "Expression": {
@@ -2485,7 +2440,49 @@
         "type": "Categorical"
       },
       {
-        "name": "b7577bb7238d0f20b5a5",
+        "name": "56dc3a63baa5e7846b95",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_account"
+              }
+            },
+            "Property": "account_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "627211bd17f3d207660d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_c"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a15062e9d83d8947771f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c82399019c68713882dc",
         "field": {
           "Measure": {
             "Expression": {
@@ -2497,6 +2494,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "10ac7592261b44200f97",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_d"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
