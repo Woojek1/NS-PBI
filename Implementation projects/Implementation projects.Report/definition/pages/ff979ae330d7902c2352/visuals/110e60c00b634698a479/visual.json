@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "110e60c00b634698a479",
   "position": {
-    "x": 49.942196531791907,
-    "y": 536.41618497109823,
+    "x": 50,
+    "y": 510,
     "z": 19000,
-    "height": 488.32369942196527,
-    "width": 1831.2138728323698,
-    "tabOrder": 17000
+    "height": 515,
+    "width": 1831.6666666666667,
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -377,71 +377,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "287a70362d1d91abbc1b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3a6b4200a04a43d08b6a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Bud Measures"
-              }
-            },
-            "Property": "Budget PLN"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ede600ea276ab8865bdd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Schema": "extension",
-                "Entity": "CAPEX Bud Measures"
-              }
-            },
-            "Property": "Budget realisation"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "41e8dba037c170b3b5da",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Project"
-                  }
-                },
-                "Property": "Project Code"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

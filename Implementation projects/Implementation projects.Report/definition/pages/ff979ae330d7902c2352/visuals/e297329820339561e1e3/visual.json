@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 95,
     "width": 320,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -220,6 +220,97 @@
                   "Value": "true"
                 }
               }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "p",
+                    "Entity": "Project",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "p"
+                                }
+                              },
+                              "Property": "Project Code"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'W-24NS0500'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "Annotations": {
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Project"
+                                }
+                              },
+                              "Property": "Project Code"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'W-24NS0500'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Project"
+                                    }
+                                  },
+                                  "Property": "Project Code"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "W-24NS0500"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
             }
           }
         }
@@ -358,37 +449,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4b04ea2c7713c02b16b6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "46a99719c3b34366b13c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

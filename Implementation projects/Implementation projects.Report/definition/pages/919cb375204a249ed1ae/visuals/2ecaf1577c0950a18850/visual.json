@@ -4,10 +4,10 @@
   "position": {
     "x": 1354,
     "y": 710,
-    "z": 15000,
+    "z": 12000,
     "height": 340,
     "width": 566,
-    "tabOrder": 13000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "donutChart",
@@ -192,37 +192,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "85a0f9756b3536245329",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Expenses Category"
-              }
-            },
-            "Property": "Expenses Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c717f2994d6b1aa8666c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CAPEX Measures"
-              }
-            },
-            "Property": "Amount PLN"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

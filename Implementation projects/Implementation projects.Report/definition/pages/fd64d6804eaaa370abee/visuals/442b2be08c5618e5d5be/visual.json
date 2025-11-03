@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "442b2be08c5618e5d5be",
   "position": {
     "x": 68.888888888888886,
     "y": 46.666666666666664,
-    "z": 1,
+    "z": 0,
     "height": 350,
-    "width": 1142.2222222222222,
-    "tabOrder": 1
+    "width": 1142.2222222222222
   },
   "visual": {
     "visualType": "tableEx",
@@ -178,93 +177,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "605bd26f83c722305c11",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "12287dd01d03169501da",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "54c08f6fc5e70737ce0a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Grp"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "69473bbce08b692e0301",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Sub Grp"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "76a989f9ac10cc91c3c8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Sub Grp Code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "886ffc888950b50b0702",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Grp Code"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

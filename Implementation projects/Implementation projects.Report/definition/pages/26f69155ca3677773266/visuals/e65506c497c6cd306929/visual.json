@@ -1,13 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "3d9e8066176a5050d065",
+  "name": "e65506c497c6cd306929",
   "position": {
-    "x": 10,
-    "y": 72.222222222222214,
+    "x": 9.896907216494844,
+    "y": 17.814432989690719,
     "z": 0,
-    "height": 172.22222222222223,
-    "width": 970,
-    "tabOrder": 2000
+    "height": 658.14432989690715,
+    "width": 1003.5463917525773
   },
   "visual": {
     "visualType": "tableEx",
@@ -45,17 +44,17 @@
             },
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CAPEX Measures"
+                      "Entity": "Account"
                     }
                   },
-                  "Property": "Amount PLN"
+                  "Property": "Account Code"
                 }
               },
-              "queryRef": "CAPEX Measures.Amount PLN",
-              "nativeQueryRef": "Kwota PLN"
+              "queryRef": "Account.Account Code",
+              "nativeQueryRef": "Konto kod"
             },
             {
               "field": {
@@ -76,63 +75,78 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Category Cost"
+                      "Entity": "CAPEX Measures"
                     }
                   },
-                  "Property": "Synth 3 ch"
+                  "Property": "Code D (FK)"
                 }
               },
-              "queryRef": "Category Cost.Synth 3 ch",
-              "nativeQueryRef": "Synt 3"
+              "queryRef": "CAPEX Measures.Code D (FK)",
+              "nativeQueryRef": "Kod D (FK)"
             },
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Pay Account"
+                      "Entity": "CAPEX Measures"
                     }
                   },
-                  "Property": "Pay Account"
+                  "Property": "Amount PLN"
                 }
               },
-              "queryRef": "Pay Account.Pay Account",
-              "nativeQueryRef": "Konto płatnicze"
+              "queryRef": "CAPEX Measures.Amount PLN",
+              "nativeQueryRef": "Kwota PLN"
             },
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Company"
+                      "Entity": "CAPEX Measures"
                     }
                   },
-                  "Property": "Company"
+                  "Property": "Debit PLN"
                 }
               },
-              "queryRef": "Company.Company",
-              "nativeQueryRef": "Spółka"
+              "queryRef": "CAPEX Measures.Debit PLN",
+              "nativeQueryRef": "Debet PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAPEX Measures"
+                    }
+                  },
+                  "Property": "Credit PLN"
+                }
+              },
+              "queryRef": "CAPEX Measures.Credit PLN",
+              "nativeQueryRef": "Kredyt PLN"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CAPEX Measures"
-                  }
-                },
-                "Property": "Amount PLN"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "231.57142857142858D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Account.Account"
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "4a183d9209a5536c3add",
   "position": {
     "x": 586.66666666666663,
     "y": 496.66666666666663,
-    "z": 2,
+    "z": 1000,
     "height": 223.33333333333331,
     "width": 548.88888888888891,
-    "tabOrder": 2
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -142,23 +142,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8c25bbbdcc6d805033b4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Code"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

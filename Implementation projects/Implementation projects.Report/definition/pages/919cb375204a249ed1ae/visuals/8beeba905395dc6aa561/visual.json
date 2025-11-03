@@ -4,10 +4,10 @@
   "position": {
     "x": 1530,
     "y": 22,
-    "z": 15002,
+    "z": 14000,
     "height": 95,
     "width": 320,
-    "tabOrder": 15002
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "slicer",
@@ -121,6 +121,36 @@
                 {
                   "Literal": {
                     "Value": "'W-25KC0015'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-24NS0510'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-22KC0507'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'W-20KC0507'"
                   }
                 }
               ],
@@ -259,7 +289,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'W-24KC0010'"
+                                "Value": "'W-24NS0500'"
                               }
                             }
                           }
@@ -278,7 +308,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'W-24KC0010'"
+                                "Value": "'W-24NS0500'"
                               }
                             }
                           }
@@ -286,7 +316,96 @@
                       }
                     },
                     "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
+                      "PowerBI.MParameterBehavior": 1,
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Project"
+                                }
+                              },
+                              "Property": "Project Code"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'W-24NS0500'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Project"
+                                    }
+                                  },
+                                  "Property": "Project Code"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "W-24NS0500"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "p",
+                    "Entity": "Project",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "p"
+                                }
+                              },
+                              "Property": "Project Code"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'W-24NS0500'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
                     }
                   }
                 ]
@@ -429,37 +548,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dace2b5f7955bbf1eab8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project Code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d9c698746dc606781c5c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Project"
-              }
-            },
-            "Property": "Project"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
