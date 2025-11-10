@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "eb74202b238906ef8332",
   "position": {
-    "x": 812.8,
-    "y": 83.2,
+    "x": 980,
+    "y": 378.88888888888886,
     "z": 1000,
-    "height": 491.8857142857143,
-    "width": 467.2,
+    "height": 341.11111111111109,
+    "width": 265.55555555555554,
     "tabOrder": 1000
   },
   "visual": {
@@ -101,7 +101,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'W-23NS0001'"
+                                "Value": "'W-20Ns0018'"
                               }
                             }
                           }
@@ -120,7 +120,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'W-23NS0001'"
+                                "Value": "'W-20Ns0018'"
                               }
                             }
                           }
@@ -149,7 +149,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'WithMe mesh'"
+                                      "Value": "'Flesco'"
                                     }
                                   }
                                 ]
@@ -173,7 +173,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "WithMe mesh"
+                            "0": "Flesco"
                           }
                         ]
                       }
@@ -212,7 +212,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'WithMe mesh'"
+                                "Value": "'Flesco'"
                               }
                             }
                           ]
@@ -228,5 +228,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ca9dbe84c208f9bc2475",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "89818162d358a17abf83",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project Code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
