@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "440c7b0433a07586ac46",
   "position": {
-    "x": 235.55555555555554,
-    "y": 58.888888888888886,
+    "x": 235,
+    "y": 17.5,
     "z": 0,
-    "height": 645.55555555555554,
-    "width": 1028.8888888888889,
+    "height": 700,
+    "width": 1030,
     "tabOrder": 2000
   },
   "visual": {
@@ -57,13 +57,13 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "prod_si_code"
+                  "Property": "line_name"
                 }
               },
-              "queryRef": "vpbi_d_product.prod_si_code",
-              "nativeQueryRef": "Index",
+              "queryRef": "vpbi_d_product.line_name",
+              "nativeQueryRef": "Product Line",
               "active": true,
-              "displayName": "Index"
+              "displayName": "Product Line"
             }
           ],
           "fieldParameters": [
@@ -79,7 +79,8 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 1,
+              "sortDirection": "Ascending"
             }
           ]
         },
@@ -118,6 +119,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vpbi_d_product"
+                  }
+                },
+                "Property": "line_name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
@@ -898,7 +916,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "60D"
+                  "Value": "96.52173913043478D"
                 }
               }
             }
@@ -1265,13 +1283,41 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "684.1309922648243D"
+                  "Value": "442.86507298572405D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "vpbi_d_product.prod_si_code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "471.91447655073034D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vpbi_d_product.line_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "380.8887041551012D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vpbi_d_product.model_name"
           }
         }
       ],
@@ -2112,6 +2158,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2175,7 +2222,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {

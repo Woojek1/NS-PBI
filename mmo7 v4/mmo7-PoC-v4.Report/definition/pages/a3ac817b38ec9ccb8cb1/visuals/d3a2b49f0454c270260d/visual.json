@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "d3a2b49f0454c270260d",
   "position": {
-    "x": 23.017982799061766,
-    "y": 142.11102423768568,
+    "x": 23.75,
+    "y": 92.5,
     "z": 5000,
-    "height": 83.06489444878811,
-    "width": 212.16575449569976,
+    "height": 75,
+    "width": 211.25,
     "tabOrder": 5000
   },
   "visual": {
@@ -87,6 +87,44 @@
                 "Literal": {
                   "Value": "true"
                 }
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "v",
+                    "Entity": "vpbi_d_product",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "v"
+                              }
+                            },
+                            "Property": "prod_si_name"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'TOPALIT'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
               }
             }
           }

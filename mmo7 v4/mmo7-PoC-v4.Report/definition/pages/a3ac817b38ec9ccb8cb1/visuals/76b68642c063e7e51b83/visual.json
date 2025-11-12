@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "76b68642c063e7e51b83",
   "position": {
-    "x": 23.537653239929949,
-    "y": 328.40630472854639,
+    "x": 23.75,
+    "y": 290,
     "z": 2000,
-    "height": 174.85113835376532,
-    "width": 211.83887915936953,
+    "height": 197.5,
+    "width": 211.25,
     "tabOrder": 1000
   },
   "visual": {
@@ -75,7 +75,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''vpbi_d_product''[prod_si_code]'"
+                                "Value": "'''vpbi_d_product''[line_name]'"
                               }
                             }
                           ]
@@ -103,7 +103,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''vpbi_d_product''[prod_si_code]'"
+                                      "Value": "'''vpbi_d_product''[line_name]'"
                                     }
                                   }
                                 ]
@@ -127,7 +127,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Index"
+                            "0": "Product Line"
                           }
                         ]
                       }
