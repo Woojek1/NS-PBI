@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "8267eaa3cadfbe862a6e",
+  "position": {
+    "x": 16,
+    "y": 0,
+    "z": 7001,
+    "height": 112,
+    "width": 478.54545454545456,
+    "tabOrder": 7001
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "d_gl_project"
+                        }
+                      },
+                      "Property": "prj_code"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(d_gl_project.prj_code)",
+              "nativeQueryRef": "prj_code"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "195d4780c1c56777db01",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_gl_project"
+                  }
+                },
+                "Property": "prj_code"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
