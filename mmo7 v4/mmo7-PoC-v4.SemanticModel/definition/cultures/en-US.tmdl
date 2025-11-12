@@ -30,7 +30,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Sale Qty"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sale Qty": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "f_margin_data.net_sales_pln": {
 			      "Definition": {
@@ -69,19 +81,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Margin I % (PLN)"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Margin I % (PLN)": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "f_margin_data.margin_ii_pln": {
 			      "Definition": {
@@ -207,19 +207,10 @@ cultureInfo en-US
 			          "ConceptualProperty": "line_name"
 			        }
 			      },
-			      "State": "Generated"
-			    },
-			    "vpbi_d_product.model_name": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "vpbi_d_product",
-			          "ConceptualProperty": "model_name"
-			        }
-			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Product Model": {
+			          "Product Line": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -229,6 +220,15 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "vpbi_d_product.model_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "model_name"
+			        }
+			      },
+			      "State": "Generated"
 			    },
 			    "vpbi_d_product.prod_si_code": {
 			      "Definition": {
