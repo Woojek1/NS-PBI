@@ -4,10 +4,9 @@
   "position": {
     "x": 216,
     "y": 309,
-    "z": 1,
+    "z": 1000,
     "height": 150,
-    "width": 748,
-    "tabOrder": 1
+    "width": 748
   },
   "visual": {
     "visualType": "tableEx",
@@ -67,56 +66,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7e6a06983069e0983558",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_account"
-              }
-            },
-            "Property": "account_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "49adad7a08d0ddae7e7e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_d"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a3fd8ab8b419bd0216bd",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "f_capex_imp_cost_data"
-                  }
-                },
-                "Property": "amount_pln"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

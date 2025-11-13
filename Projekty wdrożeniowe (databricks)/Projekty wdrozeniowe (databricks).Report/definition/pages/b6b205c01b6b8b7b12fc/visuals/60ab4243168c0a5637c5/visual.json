@@ -6,7 +6,8 @@
     "y": 191.25,
     "z": 0,
     "height": 520,
-    "width": 1230
+    "width": 1230,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -2422,93 +2423,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "911c85cc165015ee24c3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_impl_cat_cost"
-              }
-            },
-            "Property": "impl_cat_cost_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "56dc3a63baa5e7846b95",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_account"
-              }
-            },
-            "Property": "account_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "627211bd17f3d207660d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_c"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a15062e9d83d8947771f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "year_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c82399019c68713882dc",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Wydatki"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "10ac7592261b44200f97",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_d"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

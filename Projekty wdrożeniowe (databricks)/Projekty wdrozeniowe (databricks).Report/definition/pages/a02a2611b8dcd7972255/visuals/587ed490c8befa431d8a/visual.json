@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "587ed490c8befa431d8a",
+  "position": {
+    "x": 1080,
+    "y": 51.666666666666671,
+    "z": 2,
+    "height": 186.66666666666669,
+    "width": 655,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_voucher_no"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_voucher_no",
+              "nativeQueryRef": "Suma elementów src_voucher_no",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

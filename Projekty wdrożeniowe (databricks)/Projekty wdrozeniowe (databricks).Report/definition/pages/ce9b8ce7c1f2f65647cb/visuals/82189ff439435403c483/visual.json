@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "82189ff439435403c483",
   "position": {
-    "x": 16,
-    "y": 680.72727272727275,
+    "x": 16.666666666666668,
+    "y": 685,
     "z": 5000,
-    "height": 381.09090909090907,
-    "width": 1296,
-    "tabOrder": 3000
+    "height": 376.66666666666669,
+    "width": 1295,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -88,11 +88,11 @@
                       "Entity": "f_capex_imp_cost_data"
                     }
                   },
-                  "Property": "src_code_e"
+                  "Property": "src_code_d"
                 }
               },
-              "queryRef": "f_capex_imp_cost_data.src_code_e",
-              "nativeQueryRef": "src_code_e",
+              "queryRef": "f_capex_imp_cost_data.src_code_d",
+              "nativeQueryRef": "src_code_d",
               "active": true
             },
             {
@@ -108,6 +108,21 @@
               },
               "queryRef": "f_capex_imp_cost_data.src_code_f",
               "nativeQueryRef": "src_code_f",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_voucher_no_ref"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_voucher_no_ref",
+              "nativeQueryRef": "Suma elementów src_voucher_no_ref",
               "active": true
             }
           ]
@@ -197,7 +212,7 @@
           },
           {
             "queryRefs": [
-              "f_capex_imp_cost_data.src_code_e"
+              "f_capex_imp_cost_data.src_code_d"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -208,7 +223,7 @@
                       "Entity": "f_capex_imp_cost_data"
                     }
                   },
-                  "Property": "src_code_e"
+                  "Property": "src_code_d"
                 }
               }
             ],
@@ -232,6 +247,25 @@
               }
             ],
             "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "f_capex_imp_cost_data.src_voucher_no_ref"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_voucher_no_ref"
+                }
+              }
+            ],
+            "isPinned": true
           }
         ],
         "root": {
@@ -250,7 +284,61 @@
                   "identityValues": [
                     {
                       "Literal": {
-                        "Value": "'080-02'"
+                        "Value": "'649-01'"
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'TECHN'"
+                          }
+                        }
+                      ],
+                      "isToggled": true,
+                      "children": [
+                        {
+                          "identityValues": [
+                            {
+                              "Literal": {
+                                "Value": "'I-ZAK-ZEW'"
+                              }
+                            }
+                          ],
+                          "isToggled": true
+                        }
+                      ]
+                    },
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "null"
+                          }
+                        }
+                      ],
+                      "children": [
+                        {
+                          "identityValues": [
+                            {
+                              "Literal": {
+                                "Value": "'I-ZAK-ZEW'"
+                              }
+                            }
+                          ],
+                          "isToggled": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'507-03'"
                       }
                     }
                   ],
@@ -260,7 +348,65 @@
                       "identityValues": [
                         {
                           "Literal": {
-                            "Value": "'TECHN'"
+                            "Value": "'402-012'"
+                          }
+                        }
+                      ],
+                      "isToggled": true,
+                      "children": [
+                        {
+                          "identityValues": [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ],
+                          "isToggled": true,
+                          "children": [
+                            {
+                              "identityValues": [
+                                {
+                                  "Literal": {
+                                    "Value": "'W-20KC0504'"
+                                  }
+                                }
+                              ],
+                              "isToggled": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Wdrożenia - Koszty certyfikatów i ochrony wzorów'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'507-03'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'402-052'"
                           }
                         }
                       ],
@@ -279,50 +425,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'080-04'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "null"
-                          }
-                        }
-                      ],
-                      "isToggled": true,
-                      "children": [
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'00000000'"
-                              }
-                            }
-                          ],
-                          "isToggled": true
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'649-01'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
                 }
               ]
             }
@@ -2456,6 +2558,370 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2020'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "_Miary.Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "325D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2020'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(f_capex_imp_cost_data.src_voucher_no_ref)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2021'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "_Miary.Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "325D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2021'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(f_capex_imp_cost_data.src_voucher_no_ref)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2024'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "_Miary.Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "325D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2024'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(f_capex_imp_cost_data.src_voucher_no_ref)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2025'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "_Miary.Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "325D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2025'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Sum(f_capex_imp_cost_data.src_voucher_no_ref)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "d_time_mon"
+                        }
+                      },
+                      "Property": "year_name"
+                    }
+                  }
+                ]
+              }
+            ],
+            "metadata": "_Miary.Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "347D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "d_time_mon"
+                        }
+                      },
+                      "Property": "year_name"
+                    }
+                  }
+                ]
+              }
+            ],
+            "metadata": "Sum(f_capex_imp_cost_data.src_voucher_no_ref)"
+          }
         }
       ],
       "columnHeaders": [
@@ -2651,7 +3117,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "fd90de912759778c8584",
+        "name": "03969030915ce70edb60",
         "field": {
           "Column": {
             "Expression": {
@@ -2665,7 +3131,7 @@
         "type": "Categorical"
       },
       {
-        "name": "7c6473a6b65b29b4ae08",
+        "name": "c63b51b95834fe73aeb5",
         "field": {
           "Column": {
             "Expression": {
@@ -2679,49 +3145,7 @@
         "type": "Categorical"
       },
       {
-        "name": "b7577bb7238d0f20b5a5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Wydatki"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e68b3c4b599c44e94aff",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_c"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "fe302db841ea106565fe",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_e"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a79fbdc953e037258df6",
+        "name": "d77eef11ecc1317dbcd7",
         "field": {
           "Column": {
             "Expression": {
@@ -2735,7 +3159,49 @@
         "type": "Categorical"
       },
       {
-        "name": "6a80a049fc7997850101",
+        "name": "f491ae41be0b7a09a40a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_c"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ba49a8e7e59a83ce26a7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "35885b390472179db251",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "99bb009d7a7550ad2a40",
         "field": {
           "Column": {
             "Expression": {
@@ -2747,6 +3213,20 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "036d6a3190e78b9ba971",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_voucher_no_ref"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

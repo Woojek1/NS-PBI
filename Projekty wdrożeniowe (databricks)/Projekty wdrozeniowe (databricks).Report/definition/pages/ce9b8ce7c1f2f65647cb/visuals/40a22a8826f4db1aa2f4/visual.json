@@ -7,7 +7,7 @@
     "z": 0,
     "height": 100,
     "width": 340,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -130,6 +130,67 @@
                 "Literal": {
                   "Value": "true"
                 }
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "d_gl_project",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Or": {
+                        "Left": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "d"
+                                  }
+                                },
+                                "Property": "prj_desc"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'W-25KC0017'"
+                              }
+                            }
+                          }
+                        },
+                        "Right": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "d"
+                                  }
+                                },
+                                "Property": "prj_code"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'W-25KC0017'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
               }
             }
           }
@@ -266,37 +327,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9b2580ff150f04445335",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_project"
-              }
-            },
-            "Property": "prj_desc"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0ec96d141016f4b3107e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_project"
-              }
-            },
-            "Property": "prj_code"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

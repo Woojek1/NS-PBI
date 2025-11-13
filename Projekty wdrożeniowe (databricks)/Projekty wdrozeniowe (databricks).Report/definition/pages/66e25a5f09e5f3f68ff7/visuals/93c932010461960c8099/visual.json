@@ -4,10 +4,10 @@
   "position": {
     "x": 940,
     "y": 62.5,
-    "z": 2,
+    "z": 2000,
     "height": 100,
     "width": 340,
-    "tabOrder": 2
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -377,37 +377,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6ff63f69de0c5ec10c60",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_project"
-              }
-            },
-            "Property": "prj_desc"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "65e8c9e718286cd61c4b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_project"
-              }
-            },
-            "Property": "prj_code"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
