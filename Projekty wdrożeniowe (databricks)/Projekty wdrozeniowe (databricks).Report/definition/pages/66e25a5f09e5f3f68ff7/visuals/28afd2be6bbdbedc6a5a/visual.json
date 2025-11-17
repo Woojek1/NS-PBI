@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 0,
-    "height": 116.66666666666667,
-    "width": 748.33333333333337,
+    "height": 720,
+    "width": 762.85714285714289,
     "tabOrder": 2000
   },
   "visual": {
@@ -47,34 +47,6 @@
               },
               "queryRef": "Sum(f_capex_imp_cost_data.amount_pln)",
               "nativeQueryRef": "Suma elementów amount_pln"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_time_mon"
-                    }
-                  },
-                  "Property": "year_name"
-                }
-              },
-              "queryRef": "d_time_mon.year_name",
-              "nativeQueryRef": "year_name"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_gl_account"
-                    }
-                  },
-                  "Property": "account_code"
-                }
-              },
-              "queryRef": "d_gl_account.account_code",
-              "nativeQueryRef": "account_code"
             }
           ]
         }
@@ -97,45 +69,6 @@
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "d_gl_project",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "prj_code"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'W-25NS0008'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
         "objects": {
           "general": [
             {
@@ -157,45 +90,33 @@
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
+        "howCreated": "User",
+        "objects": {
+          "general": [
             {
-              "Name": "d",
-              "Entity": "d_time_mon",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "year_name"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'2025'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
+              "properties": {}
             }
           ]
         }
+      },
+      {
+        "name": "004df9d5052c8ca488cb",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_capex_imp_cost_data"
+                  }
+                },
+                "Property": "amount_pln"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

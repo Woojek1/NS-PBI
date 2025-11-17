@@ -261,6 +261,53 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "65ca3543cd13bb5c52c5",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_d"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "f6cfe64330766d3eda20",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ns_d_gl_project"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
       }
     ],
     "filterSortOrder": "Custom"

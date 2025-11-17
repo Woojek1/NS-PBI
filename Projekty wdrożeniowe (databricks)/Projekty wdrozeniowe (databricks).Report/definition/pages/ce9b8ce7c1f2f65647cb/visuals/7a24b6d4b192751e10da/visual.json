@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "7a24b6d4b192751e10da",
   "position": {
-    "x": 376,
-    "y": 180,
+    "x": 375.71428571428572,
+    "y": 177.14285714285717,
     "z": 2000,
     "height": 100,
     "width": 320,
@@ -230,5 +230,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7c9b773a210aa49828b0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

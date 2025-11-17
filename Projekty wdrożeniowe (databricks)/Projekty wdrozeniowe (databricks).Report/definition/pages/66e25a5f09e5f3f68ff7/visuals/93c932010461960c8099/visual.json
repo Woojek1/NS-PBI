@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "93c932010461960c8099",
   "position": {
-    "x": 940,
-    "y": 62.5,
+    "x": 940.00000000000011,
+    "y": 0,
     "z": 2000,
     "height": 100,
     "width": 340,
@@ -143,16 +143,6 @@
                 }
               ],
               "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'(X) (Unifikacja szaf SQart/K40'"
-                  }
-                }
-              ],
-              "isToggled": true
             }
           ]
         }
@@ -210,7 +200,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'W-25NS0507'"
+                                "Value": "'W-20SI0510'"
                               }
                             }
                           }
@@ -229,7 +219,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'W-25NS0507'"
+                                "Value": "'W-20SI0510'"
                               }
                             }
                           }
@@ -237,7 +227,96 @@
                       }
                     },
                     "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
+                      "PowerBI.MParameterBehavior": 1,
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "d_gl_project"
+                                }
+                              },
+                              "Property": "prj_desc"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'Przeniesienie produkcji krzesła Universo'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "d_gl_project"
+                                    }
+                                  },
+                                  "Property": "prj_desc"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "Przeniesienie produkcji krzesła Universo"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "d_gl_project",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "prj_desc"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Przeniesienie produkcji krzesła Universo'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
                     }
                   }
                 ]
