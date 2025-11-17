@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 377.14285714285717,
     "width": 1294.6285714285716,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -3043,121 +3043,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "03969030915ce70edb60",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "year_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c63b51b95834fe73aeb5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_impl_cat_cost"
-              }
-            },
-            "Property": "impl_cat_cost_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d77eef11ecc1317dbcd7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_gl_account"
-              }
-            },
-            "Property": "account_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f491ae41be0b7a09a40a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_c"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ba49a8e7e59a83ce26a7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Wydatki"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "35885b390472179db251",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_d"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "99bb009d7a7550ad2a40",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_f"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "036d6a3190e78b9ba971",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_voucher_no_ref"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

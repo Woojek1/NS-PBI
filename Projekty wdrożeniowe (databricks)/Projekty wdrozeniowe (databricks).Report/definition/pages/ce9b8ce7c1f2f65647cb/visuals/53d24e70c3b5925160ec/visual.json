@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "53d24e70c3b5925160ec",
+  "position": {
+    "x": 890,
+    "y": 176.66666666666669,
+    "z": 9003,
+    "height": 401.66666666666669,
+    "width": 376.66666666666669,
+    "tabOrder": 9003
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_project_copy"
+                    }
+                  },
+                  "Property": "hprj_code"
+                }
+              },
+              "queryRef": "d_gl_project_copy.hprj_code",
+              "nativeQueryRef": "hprj_code",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_project_copy"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              },
+              "queryRef": "d_gl_project_copy.prj_desc",
+              "nativeQueryRef": "prj_desc",
+              "active": false
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7919420d21b58098304e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_project_copy"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "61f82c5d5d72d41b0256",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_project_copy"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

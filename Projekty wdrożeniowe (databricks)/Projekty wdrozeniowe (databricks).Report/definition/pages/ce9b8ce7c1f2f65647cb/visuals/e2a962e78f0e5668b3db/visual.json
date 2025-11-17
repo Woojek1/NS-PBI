@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "e2a962e78f0e5668b3db",
   "position": {
-    "x": 1556,
-    "y": 180,
+    "x": 1556.4590163934427,
+    "y": 177.8360655737705,
     "z": 1000,
-    "height": 100,
-    "width": 340,
-    "tabOrder": 6000
+    "height": 100.72131147540985,
+    "width": 339.93442622950823,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -115,7 +115,49 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "d_time_mon",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "year_name"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2025'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ]
     },
@@ -246,7 +288,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "51e4e9345ab407c72338",
+        "name": "e92c4a61505ba92d31aa",
         "field": {
           "Column": {
             "Expression": {

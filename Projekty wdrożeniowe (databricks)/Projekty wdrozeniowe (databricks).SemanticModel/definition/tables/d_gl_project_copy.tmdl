@@ -1,20 +1,20 @@
-table ns_d_gl_project
-	lineageTag: fa563efe-89a0-49cb-9444-f294ee156082
+table d_gl_project_copy
+	lineageTag: 5a7b8d7b-88d3-4a98-baad-b6f2c024dd08
 
 	column prj_id
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: fcdaf642-a058-423c-92c1-d68b78e15b57
-		summarizeBy: sum
+		lineageTag: c0452b57-17b5-4e93-a06e-47cb5a84bd33
+		summarizeBy: none
 		sourceColumn: prj_id
 
 		annotation SummarizationSetBy = Automatic
 
 	column db_code
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 8fbd48c6-bfcf-4291-a8dc-9ddd17c16540
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 467774b4-9fdd-425b-bf7a-6bdc50003fc0
 		summarizeBy: none
 		sourceColumn: db_code
 
@@ -22,8 +22,8 @@ table ns_d_gl_project
 
 	column comp_code
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 28758c49-6e98-479f-9a4b-a3953b206330
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b24bb9b3-7ebd-496f-9054-6ef7159806ea
 		summarizeBy: none
 		sourceColumn: comp_code
 
@@ -31,8 +31,8 @@ table ns_d_gl_project
 
 	column prj_desc
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 0643de5c-f6d1-45c6-9040-f77eace240fd
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5e9f738d-325b-4c91-b66d-c17e86160aa0
 		summarizeBy: none
 		sourceColumn: prj_desc
 
@@ -40,8 +40,8 @@ table ns_d_gl_project
 
 	column prj_sgrp_code
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 2227c48e-db35-4c11-827f-caaa5aa49010
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4e21d4d0-207f-4f68-99d9-e4b485d2817f
 		summarizeBy: none
 		sourceColumn: prj_sgrp_code
 
@@ -49,8 +49,8 @@ table ns_d_gl_project
 
 	column prj_sgrp_name
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 0269ad1a-b237-458f-9e76-b89b84d69abd
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3fad802b-f819-4800-8cfd-306b5dcafbdf
 		summarizeBy: none
 		sourceColumn: prj_sgrp_name
 
@@ -58,8 +58,8 @@ table ns_d_gl_project
 
 	column prj_grp_code
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: b6f0027d-6a4a-4846-b0e8-2808486280c7
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 36657555-e60f-427d-ade0-abff59638804
 		summarizeBy: none
 		sourceColumn: prj_grp_code
 
@@ -67,8 +67,8 @@ table ns_d_gl_project
 
 	column prj_grp_name
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 98fc2052-78bb-4921-a07f-c0585ced39b5
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 2093ff5a-2459-4e5b-833b-a98dd65a8ae0
 		summarizeBy: none
 		sourceColumn: prj_grp_name
 
@@ -76,8 +76,8 @@ table ns_d_gl_project
 
 	column owner_code
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: de1407c6-bf32-48df-8a5c-c40261231217
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 13061366-58a3-417a-82c8-bfed3152cac6
 		summarizeBy: none
 		sourceColumn: owner_code
 
@@ -85,8 +85,8 @@ table ns_d_gl_project
 
 	column owner_name
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 7cfc2da9-341c-4645-be62-eb7909d754e7
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 09a04096-4bd7-4608-bc0a-734ff6c455a1
 		summarizeBy: none
 		sourceColumn: owner_name
 
@@ -94,8 +94,8 @@ table ns_d_gl_project
 
 	column front_office
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: b71775d3-7bc6-4251-ac22-dbd849b7cc60
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d1fc6488-ff36-46b9-a84e-4902d5740a3b
 		summarizeBy: none
 		sourceColumn: front_office
 
@@ -103,8 +103,8 @@ table ns_d_gl_project
 
 	column project_manager
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 8cd0b15e-63c8-42ee-b23e-8eb7e72847fe
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f36b119e-f1f9-4544-9f84-08a49f79cf8d
 		summarizeBy: none
 		sourceColumn: project_manager
 
@@ -112,8 +112,8 @@ table ns_d_gl_project
 
 	column coordinator_bo
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 43b08394-592c-4382-aa50-bf1602cf57f6
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ac2aa64a-9423-4a2f-8bf5-9e87bfa98f55
 		summarizeBy: none
 		sourceColumn: coordinator_bo
 
@@ -121,8 +121,8 @@ table ns_d_gl_project
 
 	column mpk_code
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 1052d2a2-0b1c-40c9-9129-d5b4ead0a147
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6b43ac6f-5060-4062-aaa6-b73e2ec8ee04
 		summarizeBy: none
 		sourceColumn: mpk_code
 
@@ -130,8 +130,8 @@ table ns_d_gl_project
 
 	column hprj_code
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: aa82504d-d7ec-405d-a748-ec0321d49d69
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 01c347d3-35ee-4e7f-80bc-6eec2fc11ccc
 		summarizeBy: none
 		sourceColumn: hprj_code
 
@@ -139,8 +139,8 @@ table ns_d_gl_project
 
 	column brand
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: fa1cbca1-05c4-4432-98d2-6a8ec596564c
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 88365d23-4bf7-4a3e-aecc-dc4b1831d838
 		summarizeBy: none
 		sourceColumn: brand
 
@@ -148,8 +148,8 @@ table ns_d_gl_project
 
 	column kategoria
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 1e9b86c2-5980-4b7c-a85b-6d4b7478ea6d
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6200d2c0-a3c0-4591-8b47-e3e668252a00
 		summarizeBy: none
 		sourceColumn: kategoria
 
@@ -157,8 +157,8 @@ table ns_d_gl_project
 
 	column kat_wdr
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: fd86d567-a67f-4ea1-801c-c3545b6b7a08
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 62d40180-84e7-4ce2-8a1d-8575b9bd21ff
 		summarizeBy: none
 		sourceColumn: kat_wdr
 
@@ -166,8 +166,8 @@ table ns_d_gl_project
 
 	column linia
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 4c5bbbb7-73e6-4d34-8302-cfa888cd26cc
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 1ec458a7-274a-4a7c-a18e-a008f920d491
 		summarizeBy: none
 		sourceColumn: linia
 
@@ -175,8 +175,8 @@ table ns_d_gl_project
 
 	column opis
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: b1f7ab98-b04b-40f9-8df2-b1d66d60b7b8
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e635971e-fb31-47a1-85cf-0400f55e35b7
 		summarizeBy: none
 		sourceColumn: opis
 
@@ -184,8 +184,8 @@ table ns_d_gl_project
 
 	column pm
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 36dad133-f3be-44f7-af5c-54a3858157e8
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4da7084d-69d7-474b-bb81-00831183e994
 		summarizeBy: none
 		sourceColumn: pm
 
@@ -193,8 +193,8 @@ table ns_d_gl_project
 
 	column rozp_proj
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 27b6200f-d8fc-41df-9f01-ea9d071a467f
+		sourceProviderType: nvarchar(65535)
+		lineageTag: bfc1dccf-f54a-42de-94f5-539ee8bbd0ad
 		summarizeBy: none
 		sourceColumn: rozp_proj
 
@@ -202,8 +202,8 @@ table ns_d_gl_project
 
 	column zak_proj
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 85c2180b-fdda-4e7a-b325-edbae8dab1e5
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4c30c3a2-ef0b-4992-ac10-f64c5d0f2a00
 		summarizeBy: none
 		sourceColumn: zak_proj
 
@@ -211,42 +211,21 @@ table ns_d_gl_project
 
 	column rozp_prod
 		dataType: string
-		sourceProviderType: nvarchar(max)
-		lineageTag: 104ab575-e355-4009-a8ad-7386b86a5a06
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3d17674f-712c-4c50-b53c-6a6360f5ea2c
 		summarizeBy: none
 		sourceColumn: rozp_prod
 
 		annotation SummarizationSetBy = Automatic
 
-	partition ns_d_gl_project = m
+	partition d_gl_project_copy = m
 		mode: directQuery
 		source =
 				let
-				    Źródło = Databricks.Catalogs(
-				        "adb-16306551450739.19.azuredatabricks.net",
-				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
-				        [
-				            Catalog=null,
-				            Database=null,
-				            QueryTags=null,
-				            EnableAutomaticProxyDiscovery=null,
-				            Implementation="2.0"
-				        ]
-				    ),
-				    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
-				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
-				    ns_d_gl_project_View = edw_Schema{[Name="ns_d_gl_project",Kind="View"]}[Data],
-				
-				    // --- WHERE w M ---
-				    FiltrowaneDane =
-				        Table.SelectRows(
-				            ns_d_gl_project_View,
-				            each Text.StartsWith([hprj_code], "W-2")
-				        )
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+				    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
+				    d_gl_project_copy_View = capex_implement_Schema{[Name="d_gl_project_copy",Kind="View"]}[Data]
 				in
-				    FiltrowaneDane
-
-	annotation PBI_NavigationStepName = Nawigacja
-
-	annotation PBI_ResultType = Table
+				    d_gl_project_copy_View
 

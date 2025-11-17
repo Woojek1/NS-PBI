@@ -172,39 +172,6 @@
           }
         },
         "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "d_gl_project",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "StartsWith": {
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "prj_code"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "'W-2'"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
         "howCreated": "User"
       },
       {
@@ -294,19 +261,52 @@
         }
       },
       {
-        "name": "f6cfe64330766d3eda20",
+        "name": "a9129140ae3e40aa0e25",
         "ordinal": 6,
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "ns_d_gl_project"
+                "Entity": "d_gl_project_copy"
               }
             },
             "Property": "hprj_code"
           }
         },
         "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_gl_project_copy",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Contains": {
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "hprj_code"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'W-2'"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
         "howCreated": "User"
       }
     ],
