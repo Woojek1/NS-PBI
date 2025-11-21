@@ -22,16 +22,12 @@ table _Miary
 
 	measure 'Nazwa projektu' = ```
 			
-			IF(
-			    NOT ISFILTERED(d_gl_project[prj_desc]),
-			    "Wybierz projekt",
-			    IF(
-			        HASONEVALUE(d_gl_project[prj_desc]),
-			        VALUES(d_gl_project[prj_desc]),
-			        "Kilka projektów"
-			    )
+			IF( NOT ISFILTERED(d_gl_project_copy[prj_desc]),
+			    "Wybierz projekt", 
+			    IF( HASONEVALUE(d_gl_project_copy[prj_desc]),
+			        VALUES(d_gl_project_copy[prj_desc]),
+			        "Kilka projektów" ) 
 			)
-			
 			```
 		lineageTag: b6e08fcd-fedb-45b4-bb85-c74858294be6
 

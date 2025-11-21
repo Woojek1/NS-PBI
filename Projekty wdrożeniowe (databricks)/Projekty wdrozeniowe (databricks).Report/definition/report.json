@@ -78,8 +78,63 @@
         "howCreated": "User"
       },
       {
-        "name": "48ca9b288bcd8d8994ea",
+        "name": "d0305d737c9e4974ec7b",
         "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_project_copy"
+              }
+            },
+            "Property": "db_code"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_gl_project_copy",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "db_code"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'NSTYL8'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "48ca9b288bcd8d8994ea",
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -110,7 +165,7 @@
       },
       {
         "name": "c885d67510b035f64e8b",
-        "ordinal": 2,
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -160,7 +215,7 @@
       },
       {
         "name": "825a922f517c42764925",
-        "ordinal": 3,
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -176,7 +231,7 @@
       },
       {
         "name": "3f49744a35bbbc94d6a5",
-        "ordinal": 4,
+        "ordinal": 5,
         "field": {
           "Column": {
             "Expression": {
@@ -231,7 +286,7 @@
       },
       {
         "name": "65ca3543cd13bb5c52c5",
-        "ordinal": 5,
+        "ordinal": 6,
         "field": {
           "Column": {
             "Expression": {
@@ -262,7 +317,7 @@
       },
       {
         "name": "a9129140ae3e40aa0e25",
-        "ordinal": 6,
+        "ordinal": 7,
         "field": {
           "Column": {
             "Expression": {

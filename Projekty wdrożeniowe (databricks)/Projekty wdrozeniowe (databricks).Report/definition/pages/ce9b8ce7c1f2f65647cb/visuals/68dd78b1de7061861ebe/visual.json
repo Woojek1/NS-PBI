@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "03cd4d5a562428326709",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "68dd78b1de7061861ebe",
   "position": {
-    "x": 1558.032786885246,
-    "y": 53.508196721311478,
-    "z": 9000,
-    "height": 99.147540983606561,
-    "width": 338.36065573770492,
-    "tabOrder": 8000
+    "x": 1555.7142857142858,
+    "y": 298.57142857142861,
+    "z": 10000,
+    "height": 101.42857142857143,
+    "width": 338.57142857142861,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,84 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "ns_d_gl_project"
+                      "Entity": "d_time_mon"
                     }
                   },
-                  "Property": "prj_desc"
+                  "Property": "mon_name"
                 }
               },
-              "queryRef": "ns_d_gl_project.prj_desc",
-              "nativeQueryRef": "prj_desc",
-              "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "ns_d_gl_project"
-                    }
-                  },
-                  "Property": "hprj_code"
-                }
-              },
-              "queryRef": "ns_d_gl_project.hprj_code",
-              "nativeQueryRef": "hprj_code",
+              "queryRef": "d_time_mon.mon_name",
+              "nativeQueryRef": "mon_name",
               "active": true
             }
           ]
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Values"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "ns_d_gl_project.prj_desc"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "ns_d_gl_project"
-                    }
-                  },
-                  "Property": "prj_desc"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "ns_d_gl_project.hprj_code"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'\"Universitätsklinikum Bonn\" - Neubau eines Bürogebäudes in Modulbauweise-Bonn'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
-      }
-    ],
     "objects": {
       "data": [
         {
@@ -112,13 +48,20 @@
           }
         }
       ],
-      "general": [
+      "header": [
         {
           "properties": {
-            "selfFilterEnabled": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'Rok'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
                 }
               }
             }
@@ -138,36 +81,9 @@
           }
         }
       ],
-      "header": [
-        {
-          "properties": {
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Projekt, kod'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "items": [
         {
           "properties": {
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -186,8 +102,20 @@
                   "Value": "5D"
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },
@@ -309,37 +237,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7d0e8b915dea624394db",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "ns_d_gl_project"
-              }
-            },
-            "Property": "prj_desc"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a474d1855d5e02498d18",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "ns_d_gl_project"
-              }
-            },
-            "Property": "hprj_code"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
