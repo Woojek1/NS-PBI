@@ -1,6 +1,22 @@
 table _Miary
 	lineageTag: fce809bd-c1a1-4265-b842-278345ddfbe1
 
+	measure Wydatki =
+			
+			SUM(f_capex_imp_cost_data[amount_pln])
+		formatString: #,0.00
+		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
+
+	measure 'Nazwa projektu' =
+			
+			IF( NOT ISFILTERED(vm_pbi_d_gl_project[prj_desc]),
+			    "Wybierz projekt",
+			    IF( HASONEVALUE(vm_pbi_d_gl_project[prj_desc]),
+			        VALUES(vm_pbi_d_gl_project[prj_desc]),
+			        "Kilka projektów" )
+			)
+		lineageTag: b6e08fcd-fedb-45b4-bb85-c74858294be6
+
 	measure 'Ilość otwartych projektów' =
 			
 			COUNTROWS (
@@ -12,24 +28,19 @@ table _Miary
 			    )
 			)
 		formatString: 0
-		lineageTag: 61ae7382-9093-4a16-bdeb-1b3d62127c3e
+		lineageTag: d8358878-8d59-40fd-a985-73ad8eae745c
 
-	measure Wydatki =
+	measure 'Ilosc otwartych projektow wg statusow' =
 			
-			SUM(f_capex_imp_cost_data[amount_pln])
-		formatString: #,0.00
-		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
-
-	measure 'Nazwa projektu' = ```
 			
-			IF( NOT ISFILTERED(d_gl_project_copy[prj_desc]),
-			    "Wybierz projekt", 
-			    IF( HASONEVALUE(d_gl_project_copy[prj_desc]),
-			        VALUES(d_gl_project_copy[prj_desc]),
-			        "Kilka projektów" ) 
+			COUNTROWS(
+			    FILTER(
+			        vm_pbi_d_gl_project,
+			        vm_pbi_d_gl_project[status] = "Aktywny"
+			    )
 			)
-			```
-		lineageTag: b6e08fcd-fedb-45b4-bb85-c74858294be6
+		formatString: 0
+		lineageTag: ff3f4611-a439-44b2-a121-51817b979cd1
 
 	column Value
 		formatString: 0

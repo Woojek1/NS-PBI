@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "68dd78b1de7061861ebe",
+  "name": "67b1a3605083b60e52c3",
   "position": {
-    "x": 1555.7142857142858,
-    "y": 298.57142857142861,
-    "z": 10000,
-    "height": 101.42857142857143,
-    "width": 338.57142857142861,
-    "tabOrder": 9000
+    "x": 1555,
+    "y": 55,
+    "z": 4002,
+    "height": 100,
+    "width": 338.33333333333337,
+    "tabOrder": 4002
   },
   "visual": {
     "visualType": "slicer",
@@ -20,15 +20,30 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon"
+                      "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "mon_name"
+                  "Property": "prj_desc"
                 }
               },
-              "queryRef": "d_time_mon.mon_name",
-              "nativeQueryRef": "mon_name",
+              "queryRef": "vm_pbi_d_gl_project.prj_desc",
+              "nativeQueryRef": "prj_desc",
               "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "hprj_code"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.hprj_code",
+              "nativeQueryRef": "hprj_code",
+              "active": false
             }
           ]
         }
@@ -48,20 +63,13 @@
           }
         }
       ],
-      "header": [
+      "general": [
         {
           "properties": {
-            "text": {
+            "selfFilterEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rok'"
-                }
-              }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
+                  "Value": "true"
                 }
               }
             }
@@ -81,9 +89,36 @@
           }
         }
       ],
+      "header": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Nazwa projektu, kod'"
+                }
+              }
+            }
+          }
+        }
+      ],
       "items": [
         {
           "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -102,20 +137,8 @@
                   "Value": "5D"
                 }
               }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
             }
           }
-        }
-      ],
-      "general": [
-        {
-          "properties": {}
         }
       ]
     },
@@ -236,6 +259,43 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "prj_desc1",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "af5f3174a0227a0ea340",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6c55e0b96a1e31a5c44e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

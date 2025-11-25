@@ -8,18 +8,16 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
 
-annotation PBI_QueryOrder = ["d_impl_cat_cost","f_capex_imp_cost_data","d_time_mon","d_gl_category_cost","d_gl_project","d_gl_account","d_gl_project_copy","vm_pbi_d_gl_project"]
+annotation PBI_QueryOrder = ["d_impl_cat_cost","f_capex_imp_cost_data","d_time_mon","d_gl_category_cost","d_gl_account","vm_pbi_d_gl_project"]
 
 ref table d_impl_cat_cost
 ref table f_capex_imp_cost_data
 ref table d_time_mon
 ref table d_gl_category_cost
-ref table d_gl_project
 ref table _Miary
 ref table d_gl_account
-ref table d_gl_project_copy
 ref table vm_pbi_d_gl_project
 
 ref cultureInfo pl-PL

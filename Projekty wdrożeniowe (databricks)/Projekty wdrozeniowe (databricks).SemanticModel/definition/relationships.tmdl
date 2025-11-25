@@ -10,20 +10,11 @@ relationship 9af398e7-3dde-27f1-9bb9-cdb17ba7fc71
 	fromColumn: f_capex_imp_cost_data.cost_id
 	toColumn: d_gl_category_cost.account_id
 
-relationship 1ea584e2-0a3c-a284-a947-0d9f2464fdaf
-	isActive: false
-	fromColumn: f_capex_imp_cost_data.prj_id
-	toColumn: d_gl_project.prj_id
-
 relationship 678f293f-802f-a597-0ca1-acf96887d2fa
 	fromColumn: f_capex_imp_cost_data.account_id
 	toColumn: d_gl_account.account_id
 
-relationship d960efd6-1903-f2dd-630a-39a54e675455
+relationship 2154bf96-3fb2-2406-6d46-b253e4e20abf
 	fromColumn: f_capex_imp_cost_data.prj_id
 	toColumn: vm_pbi_d_gl_project.prj_id
-
-relationship 7ffe6001-13bf-12d7-7d4a-5939efa4fe5f
-	fromColumn: f_capex_imp_cost_data.prj_id
-	toColumn: d_gl_project_copy.prj_id
 

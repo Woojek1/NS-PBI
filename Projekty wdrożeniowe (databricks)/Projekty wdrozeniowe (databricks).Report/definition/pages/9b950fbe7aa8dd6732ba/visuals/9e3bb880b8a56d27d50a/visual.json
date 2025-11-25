@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "3a3464900cb482434141",
+  "name": "9e3bb880b8a56d27d50a",
   "position": {
-    "x": 39.771428571428572,
-    "y": 501.94285714285718,
-    "z": 4001,
-    "height": 400.45714285714286,
-    "width": 743.3142857142858,
-    "tabOrder": 4001
+    "x": 750,
+    "y": 361.66666666666669,
+    "z": 4004,
+    "height": 340,
+    "width": 986.66666666666674,
+    "tabOrder": 4004
   },
   "visual": {
     "visualType": "tableEx",
@@ -15,20 +15,6 @@
       "queryState": {
         "Values": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vm_pbi_d_gl_project"
-                    }
-                  },
-                  "Property": "db_code"
-                }
-              },
-              "queryRef": "vm_pbi_d_gl_project.db_code",
-              "nativeQueryRef": "db_code"
-            },
             {
               "field": {
                 "Column": {
@@ -51,11 +37,39 @@
                       "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "comp_code"
+                  "Property": "status"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.comp_code",
-              "nativeQueryRef": "comp_code"
+              "queryRef": "vm_pbi_d_gl_project.status",
+              "nativeQueryRef": "status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.prj_desc",
+              "nativeQueryRef": "prj_desc"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "db_code"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.db_code",
+              "nativeQueryRef": "db_code"
             }
           ]
         }
@@ -78,12 +92,30 @@
         ]
       }
     },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "199.500026382026D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.status"
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "9c6c4aa04b821a97d467",
+        "name": "69ff97ca4882ba2d11ce",
         "field": {
           "Column": {
             "Expression": {
@@ -91,52 +123,13 @@
                 "Entity": "vm_pbi_d_gl_project"
               }
             },
-            "Property": "db_code"
+            "Property": "status"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "v",
-              "Entity": "vm_pbi_d_gl_project",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "v"
-                          }
-                        },
-                        "Property": "db_code"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'NSTYL8'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        }
+        "type": "Categorical"
       },
       {
-        "name": "2ba469e57de4235b47ea",
+        "name": "59d1f963805227587c80",
         "field": {
           "Column": {
             "Expression": {
@@ -150,7 +143,7 @@
         "type": "Categorical"
       },
       {
-        "name": "dce41a0a38d62716ace6",
+        "name": "13107975b0bb0be54e82",
         "field": {
           "Column": {
             "Expression": {
@@ -158,7 +151,21 @@
                 "Entity": "vm_pbi_d_gl_project"
               }
             },
-            "Property": "comp_code"
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e8c776e1c271a5b0d174",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "db_code"
           }
         },
         "type": "Categorical"
