@@ -7,7 +7,7 @@ table _Miary
 		formatString: #,0.00
 		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
 
-	measure 'Nazwa projektu' =
+	measure 'Nazwa projektu - tytul' =
 			
 			IF( NOT ISFILTERED(vm_pbi_d_gl_project[prj_desc]),
 			    "Wybierz projekt",
@@ -34,13 +34,25 @@ table _Miary
 			
 			
 			COUNTROWS(
+			    DISTINCT(
 			    FILTER(
 			        vm_pbi_d_gl_project,
 			        vm_pbi_d_gl_project[status] = "Aktywny"
 			    )
 			)
+			)
 		formatString: 0
 		lineageTag: ff3f4611-a439-44b2-a121-51817b979cd1
+
+	measure 'Numer projektu - tytul' =
+			
+			IF( NOT ISFILTERED(vm_pbi_d_gl_project[hprj_code]),
+			    "Wybierz projekt",
+			    IF( HASONEVALUE(vm_pbi_d_gl_project[hprj_code]),
+			        VALUES(vm_pbi_d_gl_project[hprj_code]),
+			        "Kilka projektów")
+			)
+		lineageTag: 0490d09a-711e-4302-9875-25436384c6c6
 
 	column Value
 		formatString: 0

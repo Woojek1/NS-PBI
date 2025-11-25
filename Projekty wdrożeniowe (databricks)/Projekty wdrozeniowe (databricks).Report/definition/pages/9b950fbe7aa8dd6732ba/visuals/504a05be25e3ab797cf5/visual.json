@@ -4,10 +4,10 @@
   "position": {
     "x": 1555,
     "y": 180,
-    "z": 2000,
+    "z": 0,
     "height": 100,
     "width": 338.33333333333337,
-    "tabOrder": 2000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -246,7 +246,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "17041687e46d0c95c73e",
+        "name": "013d2b2d59879ded57c1",
         "field": {
           "Column": {
             "Expression": {
@@ -254,10 +254,11 @@
                 "Entity": "d_time_mon"
               }
             },
-            "Property": "year_name"
+            "Property": "year_date"
           }
         },
-        "type": "Categorical"
+        "type": "RelativeDate",
+        "howCreated": "User"
       }
     ]
   }

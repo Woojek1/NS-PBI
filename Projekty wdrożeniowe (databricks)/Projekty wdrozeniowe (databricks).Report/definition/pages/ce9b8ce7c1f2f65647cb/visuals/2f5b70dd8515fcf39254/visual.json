@@ -7,7 +7,7 @@
     "z": 3000,
     "height": 255.42857142857142,
     "width": 1306.2857142857142,
-    "tabOrder": 10000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "tableEx",
@@ -309,37 +309,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "fd365ba1e46e9be5a45a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "year_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "36e484d287aaeb100aa6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Wydatki"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

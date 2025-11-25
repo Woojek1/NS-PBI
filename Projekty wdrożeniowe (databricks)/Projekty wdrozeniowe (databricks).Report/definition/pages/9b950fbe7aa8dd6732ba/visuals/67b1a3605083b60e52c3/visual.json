@@ -4,10 +4,10 @@
   "position": {
     "x": 1555,
     "y": 55,
-    "z": 4002,
+    "z": 3000,
     "height": 100,
     "width": 338.33333333333337,
-    "tabOrder": 4002
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -269,7 +269,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "af5f3174a0227a0ea340",
+        "name": "4ad2059907703d300cb0",
         "field": {
           "Column": {
             "Expression": {
@@ -280,10 +280,49 @@
             "Property": "prj_desc"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vm_pbi_d_gl_project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "v"
+                            }
+                          },
+                          "Property": "prj_desc"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "''"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
       },
       {
-        "name": "6c55e0b96a1e31a5c44e",
+        "name": "2bc76f60332a4b99bea5",
         "field": {
           "Column": {
             "Expression": {
@@ -294,7 +333,73 @@
             "Property": "hprj_code"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vm_pbi_d_gl_project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "v"
+                              }
+                            },
+                            "Property": "hprj_code"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "''"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

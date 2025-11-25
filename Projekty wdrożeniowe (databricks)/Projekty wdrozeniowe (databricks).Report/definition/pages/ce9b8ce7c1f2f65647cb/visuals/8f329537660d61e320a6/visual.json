@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "8f329537660d61e320a6",
+  "position": {
+    "x": 1262.5,
+    "y": 417.5,
+    "z": 8000,
+    "height": 150,
+    "width": 362.5,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Numer projektu - tytul"
+                }
+              },
+              "queryRef": "_Miary.Numer projektu - tytul",
+              "nativeQueryRef": "Numer projektu - tytul"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
