@@ -19,7 +19,11 @@ relationship 678f293f-802f-a597-0ca1-acf96887d2fa
 	fromColumn: f_capex_imp_cost_data.account_id
 	toColumn: d_gl_account.account_id
 
-relationship 042448b8-7dba-9e5a-ef37-ea3b119d3d32
+relationship d960efd6-1903-f2dd-630a-39a54e675455
+	fromColumn: f_capex_imp_cost_data.prj_id
+	toColumn: vm_pbi_d_gl_project.prj_id
+
+relationship 7ffe6001-13bf-12d7-7d4a-5939efa4fe5f
 	fromColumn: f_capex_imp_cost_data.prj_id
 	toColumn: d_gl_project_copy.prj_id
 

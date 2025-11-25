@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "53d24e70c3b5925160ec",
+  "name": "20fd10e530da12ee10cc",
   "position": {
-    "x": 1556,
-    "y": 56,
-    "z": 8000,
-    "height": 84,
-    "width": 340,
-    "tabOrder": 7000
+    "x": 1153.5238095238096,
+    "y": 135.61904761904762,
+    "z": 10001,
+    "height": 83.80952380952381,
+    "width": 339.8095238095238,
+    "tabOrder": 10001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_gl_project_copy"
+                      "Entity": "vm_pbi_d_gl_project"
                     }
                   },
                   "Property": "hprj_code"
                 }
               },
-              "queryRef": "d_gl_project_copy.hprj_code",
-              "nativeQueryRef": "hprj_code",
+              "queryRef": "vm_pbi_d_gl_project.hprj_code",
+              "nativeQueryRef": "hprj_code1",
               "active": true
             },
             {
@@ -35,15 +35,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_gl_project_copy"
+                      "Entity": "vm_pbi_d_gl_project"
                     }
                   },
                   "Property": "prj_desc"
                 }
               },
-              "queryRef": "d_gl_project_copy.prj_desc",
+              "queryRef": "vm_pbi_d_gl_project.prj_desc",
               "nativeQueryRef": "prj_desc",
-              "active": true
+              "active": false
             }
           ]
         }
@@ -57,65 +57,19 @@
         "levels": [
           {
             "queryRefs": [
-              "d_gl_project_copy.hprj_code"
+              "vm_pbi_d_gl_project.hprj_code"
             ],
             "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_gl_project_copy"
-                    }
-                  },
-                  "Property": "hprj_code"
-                }
-              }
-            ],
             "isPinned": true
           },
           {
             "queryRefs": [
-              "d_gl_project_copy.prj_desc"
+              "vm_pbi_d_gl_project.prj_desc"
             ],
-            "isCollapsed": true,
-            "isPinned": true
+            "isCollapsed": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'W-25KC0520'"
-                  }
-                }
-              ],
-              "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'W-20NS0002'"
-                  }
-                }
-              ],
-              "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'W-23NS0006'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -140,67 +94,6 @@
                 "Literal": {
                   "Value": "true"
                 }
-              }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "d_gl_project_copy",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Or": {
-                        "Left": {
-                          "Contains": {
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "d"
-                                  }
-                                },
-                                "Property": "hprj_code"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "'Moll'"
-                              }
-                            }
-                          }
-                        },
-                        "Right": {
-                          "Contains": {
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "d"
-                                  }
-                                },
-                                "Property": "prj_desc"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "'Moll'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
               }
             }
           }
@@ -394,12 +287,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3650fc414b3392212b11",
+        "name": "e97c3a01147c9be30e20",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_gl_project_copy"
+                "Entity": "vm_pbi_d_gl_project"
               }
             },
             "Property": "hprj_code"
@@ -408,12 +301,12 @@
         "type": "Categorical"
       },
       {
-        "name": "c2ba01fb0bc2e556b2dd",
+        "name": "cb1b2592236a51c9ec9b",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_gl_project_copy"
+                "Entity": "vm_pbi_d_gl_project"
               }
             },
             "Property": "prj_desc"

@@ -42,27 +42,12 @@
                       "Entity": "d_impl_cat_cost"
                     }
                   },
-                  "Property": "impl_cat_cost_code"
-                }
-              },
-              "queryRef": "d_impl_cat_cost.impl_cat_cost_code",
-              "nativeQueryRef": "impl_cat_cost_code",
-              "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_impl_cat_cost"
-                    }
-                  },
                   "Property": "impl_cat_cost_name"
                 }
               },
               "queryRef": "d_impl_cat_cost.impl_cat_cost_name",
               "nativeQueryRef": "Kategorie wydatków",
-              "active": false,
+              "active": true,
               "displayName": "Kategorie wydatków"
             },
             {
@@ -139,6 +124,36 @@
               "queryRef": "f_capex_imp_cost_data.src_voucher_no",
               "nativeQueryRef": "src_voucher_no",
               "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_voucher_date"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_voucher_date",
+              "nativeQueryRef": "src_voucher_date",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_text"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_text",
+              "nativeQueryRef": "src_text",
+              "active": false
             }
           ]
         },
@@ -168,25 +183,6 @@
           "Rows"
         ],
         "levels": [
-          {
-            "queryRefs": [
-              "d_impl_cat_cost.impl_cat_cost_code"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_impl_cat_cost"
-                    }
-                  },
-                  "Property": "impl_cat_cost_code"
-                }
-              }
-            ],
-            "isPinned": true
-          },
           {
             "queryRefs": [
               "d_impl_cat_cost.impl_cat_cost_name"
@@ -299,6 +295,32 @@
                 }
               }
             ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "f_capex_imp_cost_data.src_voucher_date"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_voucher_date"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "f_capex_imp_cost_data.src_text"
+            ],
+            "isCollapsed": true,
             "isPinned": true
           }
         ],
@@ -2795,20 +2817,6 @@
             ],
             "metadata": "Sum(f_capex_imp_cost_data.src_voucher_no_ref)"
           }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "201.71428635124818D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "d_impl_cat_cost.impl_cat_cost_code"
-          }
         }
       ],
       "columnHeaders": [
@@ -3102,20 +3110,6 @@
         "type": "Advanced"
       },
       {
-        "name": "1f98456cc550984cc862",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_impl_cat_cost"
-              }
-            },
-            "Property": "impl_cat_cost_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "55a3a89f28b262b82634",
         "field": {
           "Column": {
@@ -3128,6 +3122,34 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "ea0aa5a88a38a1e3db66",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_voucher_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e94356d0eb43a0e8dd96",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_text"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

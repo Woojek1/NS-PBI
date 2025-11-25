@@ -6,8 +6,8 @@ table _Miary
 			COUNTROWS (
 			    DISTINCT(
 			        FILTER(
-			            VALUES('d_gl_project'[prj_desc]),
-			            LEFT ('d_gl_project'[prj_desc], 3) <> "(X)"
+			            VALUES('vm_pbi_d_gl_project'[prj_desc]),
+			            LEFT ('vm_pbi_d_gl_project'[prj_desc], 3) <> "(X)"
 			        )
 			    )
 			)
