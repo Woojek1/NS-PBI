@@ -54,6 +54,25 @@
               },
               "queryRef": "select",
               "nativeQueryRef": "Wydatki narastająco"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vm_pbi_d_projects_budget"
+                        }
+                      },
+                      "Property": "debet_amount"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vm_pbi_d_projects_budget.debet_amount)",
+              "nativeQueryRef": "Suma elementów debet_amount"
             }
           ]
         }
@@ -145,6 +164,20 @@
           },
           "selector": {
             "metadata": "select"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "280D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(vm_pbi_d_projects_budget.debet_amount)"
           }
         }
       ],
@@ -309,5 +342,56 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "adb008151124b8c3a024",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f26f2261e8509bd5b00a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4f9d5022301ad9a7a7c0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vm_pbi_d_projects_budget"
+                  }
+                },
+                "Property": "debet_amount"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
