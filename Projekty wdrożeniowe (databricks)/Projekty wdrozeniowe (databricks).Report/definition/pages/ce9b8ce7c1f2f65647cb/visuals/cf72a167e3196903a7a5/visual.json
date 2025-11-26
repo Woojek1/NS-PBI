@@ -61,6 +61,20 @@
                   }
                 }
               }
+            },
+            "preserveWhitespace": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "40D"
+                }
+              }
             }
           }
         }
@@ -102,5 +116,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e5479af4ba7b03131992",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Nazwa projektu - tytul"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

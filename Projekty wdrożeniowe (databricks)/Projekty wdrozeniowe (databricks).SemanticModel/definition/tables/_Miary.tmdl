@@ -60,6 +60,25 @@ table _Miary
 		formatString: #,0.00
 		lineageTag: 467e429d-ecbc-48a8-8151-48417635da7e
 
+	measure 'Realizacja budzetu' = ```
+			
+			VAR Budzet_projektu = 
+			    SUM(vm_pbi_d_projects_budget[debet_amount])
+			
+			VAR Wydatki = 
+			    SUM(f_capex_imp_cost_data[amount_pln])
+			
+			RETURN
+			
+			DIVIDE(
+			    [Wydatki],
+			    [Budzet projektu],
+			    "n/d"
+			)
+			```
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 0a1ed71e-7a2c-4f4e-928f-e3600efa60d1
+
 	column Value
 		formatString: 0
 		lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017
