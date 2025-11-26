@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "e2a962e78f0e5668b3db",
   "position": {
-    "x": 1556.4590163934427,
-    "y": 177.8360655737705,
+    "x": 1556,
+    "y": 162,
     "z": 0,
-    "height": 100.72131147540985,
-    "width": 339.93442622950823,
+    "height": 76,
+    "width": 340,
     "tabOrder": 3000
   },
   "visual": {
@@ -259,6 +259,20 @@
         },
         "type": "RelativeDate",
         "howCreated": "User"
+      },
+      {
+        "name": "1501d2ddab5121b4e481",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

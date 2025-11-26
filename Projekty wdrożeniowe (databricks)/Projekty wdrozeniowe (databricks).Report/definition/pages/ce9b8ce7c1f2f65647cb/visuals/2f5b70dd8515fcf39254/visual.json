@@ -3,10 +3,10 @@
   "name": "2f5b70dd8515fcf39254",
   "position": {
     "x": 17.142857142857142,
-    "y": 418.28571428571428,
+    "y": 381.42857142857144,
     "z": 3000,
-    "height": 255.42857142857142,
-    "width": 1306.2857142857142,
+    "height": 315.71428571428572,
+    "width": 1307.1428571428573,
     "tabOrder": 6000
   },
   "visual": {
@@ -57,25 +57,48 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "vm_pbi_d_projects_budget"
-                        }
-                      },
-                      "Property": "debet_amount"
+                    "SourceRef": {
+                      "Entity": "_Miary"
                     }
                   },
-                  "Function": 0
+                  "Property": "Budzet projektu"
                 }
               },
-              "queryRef": "Sum(vm_pbi_d_projects_budget.debet_amount)",
-              "nativeQueryRef": "Suma elementów debet_amount"
+              "queryRef": "_Miary.Budzet projektu",
+              "nativeQueryRef": "Budzet projektu"
+            },
+            {
+              "field": {
+                "NativeVisualCalculation": {
+                  "Language": "dax",
+                  "Expression": "RUNNINGSUM([Budzet projektu])",
+                  "Name": "Budżet narastająco"
+                }
+              },
+              "queryRef": "select1",
+              "nativeQueryRef": "Budżet narastająco"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_time_mon"
+                  }
+                },
+                "Property": "year_name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
@@ -157,7 +180,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "226.66098832915804D"
+                  "Value": "218.07656037586247D"
                 }
               }
             }
@@ -171,13 +194,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "280D"
+                  "Value": "162.42856877832617D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Sum(vm_pbi_d_projects_budget.debet_amount)"
+            "metadata": "_Miary.Budzet projektu"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "186.14286486760506D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select1"
           }
         }
       ],
@@ -250,6 +287,76 @@
           },
           "selector": {
             "metadata": "select"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Budzet projektu"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select1"
           }
         }
       ],
@@ -346,7 +453,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "adb008151124b8c3a024",
+        "name": "c712f402007029d6cb16",
         "field": {
           "Column": {
             "Expression": {
@@ -360,7 +467,7 @@
         "type": "Categorical"
       },
       {
-        "name": "f26f2261e8509bd5b00a",
+        "name": "c432f65a19708340a071",
         "field": {
           "Measure": {
             "Expression": {
@@ -374,20 +481,15 @@
         "type": "Advanced"
       },
       {
-        "name": "4f9d5022301ad9a7a7c0",
+        "name": "eacd188d3c4409d63096",
         "field": {
-          "Aggregation": {
+          "Measure": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "vm_pbi_d_projects_budget"
-                  }
-                },
-                "Property": "debet_amount"
+              "SourceRef": {
+                "Entity": "_Miary"
               }
             },
-            "Function": 0
+            "Property": "Budzet projektu"
           }
         },
         "type": "Advanced"

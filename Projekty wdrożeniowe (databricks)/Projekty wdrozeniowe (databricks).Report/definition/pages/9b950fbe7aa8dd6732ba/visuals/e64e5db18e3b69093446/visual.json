@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "4d0f897a16064d27b5cd",
+  "name": "e64e5db18e3b69093446",
   "position": {
-    "x": 377.28119708746203,
-    "y": 261.39570533106627,
-    "z": 2000,
+    "x": 375.85262565889059,
+    "y": 138.53856247392352,
+    "z": 6000,
     "height": 100,
-    "width": 318.57142857142861,
-    "tabOrder": 5000
+    "width": 320,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "card",
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "_Miary.Wydatki",
-              "nativeQueryRef": "Wydatki bieżący rok",
-              "displayName": "Wydatki bieżący rok"
+              "nativeQueryRef": "Wydatki całkowite",
+              "displayName": "Wydatki całkowite"
             }
           ]
         }
@@ -230,61 +230,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "75ee049daa88b9f1f029",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "mon_date"
-          }
-        },
-        "type": "RelativeDate",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "d_time_mon",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 0,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "mon_date"
-                    }
-                  },
-                  "Right": {
-                    "DateSpan": {
-                      "Expression": {
-                        "Now": {}
-                      },
-                      "TimeUnit": 3
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      }
-    ]
   }
 }

@@ -51,10 +51,11 @@ table vm_pbi_d_projects_budget
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column accounting_period
-		dataType: string
-		sourceProviderType: nvarchar(65535)
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
 		lineageTag: 9548f407-f37c-45d0-9979-83d6d6700aef
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: accounting_period
 
 		annotation SummarizationSetBy = Automatic
@@ -144,6 +145,24 @@ table vm_pbi_d_projects_budget
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column accounting_year_period
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: fd093091-d7e9-42df-9b99-636f044a6459
+		summarizeBy: none
+		sourceColumn: accounting_year_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: dcfe4f59-0137-4a06-96ae-438776541a0a
+		summarizeBy: none
+		sourceColumn: currency_code
+
+		annotation SummarizationSetBy = Automatic
 
 	partition vm_pbi_d_projects_budget = m
 		mode: directQuery

@@ -54,6 +54,12 @@ table _Miary
 			)
 		lineageTag: 0490d09a-711e-4302-9875-25436384c6c6
 
+	measure 'Budzet projektu' =
+			
+			SUM(vm_pbi_d_projects_budget[debet_amount])
+		formatString: #,0.00
+		lineageTag: 467e429d-ecbc-48a8-8151-48417635da7e
+
 	column Value
 		formatString: 0
 		lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017
