@@ -1,82 +1,93 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "4463be3350020b835645",
+  "name": "37fc6a55e47079ab9c85",
   "position": {
-    "x": 19.338339944604876,
-    "y": 261.76713389874567,
-    "z": 9000,
-    "height": 100.11428571428571,
-    "width": 320.91428571428571,
-    "tabOrder": 9000
+    "x": 1555,
+    "y": 161.66666666666669,
+    "z": 10004,
+    "height": 76.666666666666671,
+    "width": 340,
+    "tabOrder": 10004
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "slicer",
     "query": {
       "queryState": {
         "Values": {
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Miary"
+                      "Entity": "d_time_mon_2"
                     }
                   },
-                  "Property": "Budzet projektu"
+                  "Property": "year_name"
                 }
               },
-              "queryRef": "_Miary.Budzet projektu",
-              "nativeQueryRef": "Budzet projektu biezacy rok",
-              "displayName": "Budzet projektu biezacy rok"
+              "queryRef": "d_time_mon_2.year_name",
+              "nativeQueryRef": "year_name",
+              "active": true
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Miary"
-                  }
-                },
-                "Property": "Budzet projektu"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
     "objects": {
-      "labels": [
+      "data": [
         {
           "properties": {
-            "fontSize": {
+            "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "32D"
+                  "Value": "'Dropdown'"
                 }
               }
             }
           }
         }
       ],
-      "categoryLabels": [
+      "header": [
         {
           "properties": {
-            "fontSize": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rok'"
+                }
+              }
+            },
+            "textSize": {
               "expr": {
                 "Literal": {
                   "Value": "14D"
                 }
               }
-            },
-            "color": {
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "properties": {
+            "fontColor": {
               "solid": {
                 "color": {
                   "expr": {
@@ -87,8 +98,27 @@
                   }
                 }
               }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },
@@ -135,26 +165,6 @@
               }
             },
             "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "top": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "bottom": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
@@ -229,29 +239,34 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "year_name",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "1529a2a122c58a9e9aa5",
+        "name": "96766067edb23838e042",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time_mon"
+                "Entity": "d_time_mon_2"
               }
             },
-            "Property": "mon_date"
+            "Property": "year_date"
           }
         },
-        "type": "RelativeDate",
+        "type": "Advanced",
         "filter": {
           "Version": 2,
           "From": [
             {
               "Name": "d",
-              "Entity": "d_time_mon",
+              "Entity": "d_time_mon_2",
               "Type": 0
             }
           ],
@@ -259,7 +274,7 @@
             {
               "Condition": {
                 "Comparison": {
-                  "ComparisonKind": 0,
+                  "ComparisonKind": 2,
                   "Left": {
                     "Column": {
                       "Expression": {
@@ -267,15 +282,17 @@
                           "Source": "d"
                         }
                       },
-                      "Property": "mon_date"
+                      "Property": "year_date"
                     }
                   },
                   "Right": {
                     "DateSpan": {
                       "Expression": {
-                        "Now": {}
+                        "Literal": {
+                          "Value": "datetime'2020-01-01T00:00:00'"
+                        }
                       },
-                      "TimeUnit": 3
+                      "TimeUnit": 5
                     }
                   }
                 }
@@ -284,6 +301,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "3b3e8db26d80e6e5b8e2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon_2"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

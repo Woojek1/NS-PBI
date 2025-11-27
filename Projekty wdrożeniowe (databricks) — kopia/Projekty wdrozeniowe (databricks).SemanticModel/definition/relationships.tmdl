@@ -1,0 +1,24 @@
+relationship e1462d69-8a2e-43d4-37b1-f0b8ea712c77
+	fromColumn: f_capex_imp_cost_data.impl_cat_cost_id
+	toColumn: d_impl_cat_cost.impl_cat_cost_id
+
+relationship 9af398e7-3dde-27f1-9bb9-cdb17ba7fc71
+	fromColumn: f_capex_imp_cost_data.cost_id
+	toColumn: d_gl_category_cost.account_id
+
+relationship 2154bf96-3fb2-2406-6d46-b253e4e20abf
+	fromColumn: f_capex_imp_cost_data.prj_id
+	toColumn: vm_pbi_d_gl_project.prj_id
+
+relationship 4f2db5fa-9214-b9bf-d3f5-5c431074d4a5
+	fromColumn: vm_pbi_d_projects_budget.code_f
+	toColumn: vm_pbi_d_gl_project.hprj_code
+
+relationship 1f79e604-89f7-d948-aae4-136d4fbb2ec8
+	fromColumn: vm_pbi_d_projects_budget.voucher_date
+	toColumn: d_time_mon_2.mon_date_first
+
+relationship 93f5313a-e172-24f1-829e-6bf3b2d4ca69
+	fromColumn: f_capex_imp_cost_data.time_id
+	toColumn: d_time_mon_2.mon_id
+

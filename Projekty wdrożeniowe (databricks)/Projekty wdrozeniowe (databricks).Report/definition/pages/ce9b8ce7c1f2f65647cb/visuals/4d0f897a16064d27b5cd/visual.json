@@ -234,15 +234,29 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "75ee049daa88b9f1f029",
+        "name": "22e9c8305a880381e9cd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a3651f5aa6cb01bd0051",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time_mon"
+                "Entity": "d_time_mon_2"
               }
             },
-            "Property": "mon_date"
+            "Property": "mon_date_first"
           }
         },
         "type": "RelativeDate",
@@ -251,7 +265,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "d_time_mon",
+              "Entity": "d_time_mon_2",
               "Type": 0
             }
           ],
@@ -267,7 +281,7 @@
                           "Source": "d"
                         }
                       },
-                      "Property": "mon_date"
+                      "Property": "mon_date_first"
                     }
                   },
                   "Right": {

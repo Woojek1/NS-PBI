@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "570db5d018c9cd72d43c",
+  "name": "a86ee413a6d140d97ee2",
   "position": {
-    "x": 377.28119708746203,
-    "y": 261.39570533106627,
-    "z": 7000,
-    "height": 100,
-    "width": 318.57142857142861,
-    "tabOrder": 7000
+    "x": 729.6,
+    "y": 140.8,
+    "z": 11000,
+    "height": 99.2,
+    "width": 320,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "card",
@@ -23,12 +23,11 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "Wydatki"
+                  "Property": "Realizacja budzetu"
                 }
               },
-              "queryRef": "_Miary.Wydatki",
-              "nativeQueryRef": "Wydatki bieżący rok",
-              "displayName": "Wydatki bieżący rok"
+              "queryRef": "_Miary.Realizacja budzetu",
+              "nativeQueryRef": "Realizacja budzetu"
             }
           ]
         }
@@ -43,7 +42,7 @@
                     "Entity": "_Miary"
                   }
                 },
-                "Property": "Wydatki"
+                "Property": "Realizacja budzetu"
               }
             },
             "direction": "Descending"
@@ -234,59 +233,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "75ee049daa88b9f1f029",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "mon_date"
-          }
-        },
-        "type": "RelativeDate",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "d_time_mon",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 0,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "mon_date"
-                    }
-                  },
-                  "Right": {
-                    "DateSpan": {
-                      "Expression": {
-                        "Now": {}
-                      },
-                      "TimeUnit": 3
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "125a1f8acddd7d237146",
+        "name": "a17bf3697a60ee08bc8a",
         "field": {
           "Measure": {
             "Expression": {
@@ -294,7 +241,7 @@
                 "Entity": "_Miary"
               }
             },
-            "Property": "Wydatki"
+            "Property": "Realizacja budzetu"
           }
         },
         "type": "Advanced"
