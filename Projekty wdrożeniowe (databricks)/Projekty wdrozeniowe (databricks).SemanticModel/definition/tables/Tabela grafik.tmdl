@@ -1,0 +1,39 @@
+table 'Tabela grafik'
+	lineageTag: 9ee64f05-b8d2-454f-8597-d27aee6d2967
+
+	column 'Kod F'
+		lineageTag: ff73fa58-5ce1-478b-8c34-68903b27cff4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Kod F]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Link
+		lineageTag: c0fee810-8804-4167-9cdb-cc52407d5986
+		dataCategory: WebUrl
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Link]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tabela grafik' = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "Kod F", STRING,
+				    "Link", STRING,
+				    {
+				        { "W-20NS0018", "https://www.nowystyl.com/getmedia/f00495fb-0193-4aee-b121-c08e84fe2e8c/flesco-frame-chair-cfa-uph-rx443000-48260-1.jpg" },
+				        { "W-23NS0006", "https://www.nowystyl.com/getmedia/da74c1bc-9024-4442-b5c3-6caa42466ed7/04-mollen-sofa-3u000-43181-1.jpg" },
+				        { "W-22NS0001", "https://www.nowystyl.com/getmedia/699685b3-79ec-4f2d-aedb-13ea13072b0c/prox-swivel-chair-mesh-grey-sa3-in-ba-rh63067-se-rh63067000-55490-1.jpg"},
+				        { "W-23KC0003", "https://dam.nowystyl.com/assets-prod-resized-1200/fec63e2d-f106-4eca-9189-ac868ce0ffb2_SMILE_FRAME_CHAIR_4LA_W_KO_SH450_E-NK_BA-20CC_SE-20CC_AP-NKP_GD_FSC_.0000.jpg"}
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = ba7a4bc27a614680bd2f6932398584cf
+

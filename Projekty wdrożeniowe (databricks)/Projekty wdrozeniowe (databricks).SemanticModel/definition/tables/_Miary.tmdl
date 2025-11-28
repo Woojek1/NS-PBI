@@ -54,9 +54,12 @@ table _Miary
 			)
 		lineageTag: 0490d09a-711e-4302-9875-25436384c6c6
 
-	measure 'Budzet projektu' =
+	measure 'Budzet projektu' = ```
+			
 			
 			SUM(vm_pbi_d_projects_budget[debet_amount])
+			
+			```
 		formatString: #,0.00
 		lineageTag: 467e429d-ecbc-48a8-8151-48417635da7e
 
@@ -73,8 +76,9 @@ table _Miary
 			DIVIDE(
 			    [Wydatki],
 			    [Budzet projektu],
-			    "n/d"
-			)
+			    ""
+			 )
+			
 			```
 		formatString: #,0.00%;-#,0.00%;#,0.00%
 		lineageTag: 0a1ed71e-7a2c-4f4e-928f-e3600efa60d1

@@ -460,7 +460,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "507.46813045622804D"
+                  "Value": "539.1065187989406D"
                 }
               }
             }
@@ -3663,65 +3663,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1fcdf10bb0a3717a6356",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_impl_cat_cost"
-              }
-            },
-            "Property": "impl_cat_cost_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "80594d9eda072b547042",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_account"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a74524d11a41d9a177c9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Wydatki"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "76ebb91a5337e0c0a055",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon_2"
-              }
-            },
-            "Property": "year_name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
