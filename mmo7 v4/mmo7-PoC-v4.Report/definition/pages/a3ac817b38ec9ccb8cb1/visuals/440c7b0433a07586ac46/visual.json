@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "440c7b0433a07586ac46",
   "position": {
     "x": 235,
@@ -54,6 +54,166 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "vpbi_d_organization_team"
+                    }
+                  },
+                  "Property": "dept_code"
+                }
+              },
+              "queryRef": "vpbi_d_organization_team.dept_code",
+              "nativeQueryRef": "Department",
+              "active": false,
+              "displayName": "Department"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_organization_team"
+                    }
+                  },
+                  "Property": "team_code"
+                }
+              },
+              "queryRef": "vpbi_d_organization_team.team_code",
+              "nativeQueryRef": "Section",
+              "active": false,
+              "displayName": "Section"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_organization"
+                    }
+                  },
+                  "Property": "sman_code"
+                }
+              },
+              "queryRef": "vpbi_d_organization.sman_code",
+              "nativeQueryRef": "Sales Person",
+              "active": false,
+              "displayName": "Sales Person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_company"
+                    }
+                  },
+                  "Property": "comp_code"
+                }
+              },
+              "queryRef": "vpbi_d_company.comp_code",
+              "nativeQueryRef": "Company",
+              "active": false,
+              "displayName": "Company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_customer"
+                    }
+                  },
+                  "Property": "cust_code"
+                }
+              },
+              "queryRef": "vpbi_d_customer.cust_code",
+              "nativeQueryRef": "Customer Code",
+              "active": false,
+              "displayName": "Customer Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_customer"
+                    }
+                  },
+                  "Property": "cust_name"
+                }
+              },
+              "queryRef": "vpbi_d_customer.cust_name",
+              "nativeQueryRef": "Customer",
+              "active": false,
+              "displayName": "Customer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "brand_name"
+                }
+              },
+              "queryRef": "vpbi_d_product.brand_name",
+              "nativeQueryRef": "Brand",
+              "active": false,
+              "displayName": "Brand"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "supergrp_name"
+                }
+              },
+              "queryRef": "vpbi_d_product.supergrp_name",
+              "nativeQueryRef": "Product Supergroup",
+              "active": false,
+              "displayName": "Product Supergroup"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "grp_name"
+                }
+              },
+              "queryRef": "vpbi_d_product.grp_name",
+              "nativeQueryRef": "Product Group",
+              "active": false,
+              "displayName": "Product Group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "sgrp_name"
+                }
+              },
+              "queryRef": "vpbi_d_product.sgrp_name",
+              "nativeQueryRef": "Product Subgroup",
+              "active": false,
+              "displayName": "Product Subgroup"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "vpbi_d_product"
                     }
                   },
@@ -64,6 +224,54 @@
               "nativeQueryRef": "Product Line",
               "active": true,
               "displayName": "Product Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "model_name"
+                }
+              },
+              "queryRef": "vpbi_d_product.model_name",
+              "nativeQueryRef": "Product Model",
+              "active": false,
+              "displayName": "Product Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "prod_si_code"
+                }
+              },
+              "queryRef": "vpbi_d_product.prod_si_code",
+              "nativeQueryRef": "Index",
+              "active": false,
+              "displayName": "Index"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "prod_si_name"
+                }
+              },
+              "queryRef": "vpbi_d_product.prod_si_name",
+              "nativeQueryRef": "Index Name",
+              "active": false,
+              "displayName": "Index Name"
             }
           ],
           "fieldParameters": [
@@ -79,7 +287,7 @@
                 }
               },
               "index": 0,
-              "length": 1,
+              "length": 14,
               "sortDirection": "Ascending"
             }
           ]
@@ -1225,7 +1433,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "83.77777047091584D"
+                  "Value": "101.48234180024838D"
                 }
               }
             }
@@ -1998,7 +2206,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2014,7 +2221,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2030,7 +2236,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2046,7 +2251,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2062,7 +2266,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2158,7 +2361,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2174,7 +2376,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2206,7 +2407,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
