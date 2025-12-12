@@ -1,0 +1,39 @@
+table 'Currency Dom'
+	lineageTag: 7705eeaf-920b-4dfe-acd3-ae031457ed17
+
+	column curr_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: f7f29d1e-a2df-472f-96e4-97a195a15d82
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: curr_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Dom'
+		dataType: string
+		lineageTag: dec682c3-9afe-474b-9de1-f9d9cc14284c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Dom
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Dom Name'
+		dataType: string
+		lineageTag: df35980b-a9e7-4d66-bfcf-5bc14ed40110
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Dom Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Currency Dom' = entity
+		mode: directQuery
+		source
+			entityName: Currency Dom
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

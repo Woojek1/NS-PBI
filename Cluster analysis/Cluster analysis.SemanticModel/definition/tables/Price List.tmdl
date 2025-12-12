@@ -1,0 +1,143 @@
+table 'Price List'
+	lineageTag: 9469b7c2-e0e9-452f-a6d1-217457155f36
+
+	column pricelist_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 5ffaf435-b353-40ea-8819-92542b5d013d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: pricelist_id
+
+		annotation SummarizationSetBy = User
+
+	column db_code
+		dataType: string
+		isHidden
+		lineageTag: 462fa553-deb4-457b-835f-b4142d6187d6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Code'
+		dataType: string
+		lineageTag: 0005ec52-1fb6-46c6-abc2-676242560656
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column PriceList
+		dataType: string
+		lineageTag: bbdb9809-8832-4054-ae7d-71a8dae3695d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList date from'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4cbed3d5-45c6-475d-bbc3-c0126722cc78
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList date from
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList date to'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a1e93ad8-154b-4a51-9f42-5ee3b44a805f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList date to
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Currency'
+		dataType: string
+		lineageTag: e8412f39-0698-4f84-b451-410bce71b151
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Owning Company'
+		dataType: string
+		lineageTag: ed5204e9-f304-4300-b645-7dde6ecababf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Owning Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList base site'
+		dataType: string
+		lineageTag: 6a351007-869a-4487-be7c-a7b5e318c0ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList base site
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_price_group_id
+		dataType: string
+		isHidden
+		lineageTag: 46af10e6-2958-403b-90c4-4b281a2e52aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sales_price_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Assortment id'
+		dataType: string
+		lineageTag: 1cbbdff7-279a-4028-928a-59ba81d53a86
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Assortment id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Category'
+		dataType: string
+		lineageTag: ba4fa1fc-fcc1-47b5-adf4-21bc3d906a30
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_desc
+		dataType: string
+		isHidden
+		lineageTag: c408627a-d75e-4158-be28-d23ed3f13178
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: category_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pricelist workspace'
+		dataType: string
+		lineageTag: 06860aef-74a3-42e0-9ed8-bff01c33718d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pricelist workspace
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Price List' = entity
+		mode: directQuery
+		source
+			entityName: Price List
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

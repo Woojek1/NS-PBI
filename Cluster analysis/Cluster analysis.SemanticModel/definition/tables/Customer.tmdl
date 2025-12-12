@@ -1,0 +1,366 @@
+table Customer
+	lineageTag: 019b5943-7049-48b1-8028-8229d82e8583
+
+	column cust_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 60b15ee1-c1b6-4326-bf49-c81863366f54
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cust_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Code'
+		dataType: string
+		lineageTag: 5c220df5-91d9-44d9-9c9a-f3debf87b782
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer
+		dataType: string
+		lineageTag: c201b766-6b26-4633-b6f8-018b6982ab31
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Zip Code'
+		dataType: string
+		lineageTag: d8705dfa-1ff9-4a7a-9754-709e7b11a1c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ecab9755-7f9e-49ff-a181-9edc74966ed5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Country Code'
+		dataType: string
+		lineageTag: 8a5fc6a1-f81c-42b3-b5a6-f036024a2449
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Country Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Country'
+		dataType: string
+		lineageTag: 416fb77f-a7ad-4314-97d8-00bb667d10f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Country Code (ISO3)'
+		dataType: string
+		lineageTag: 61d1a0e3-e47d-461f-aea1-45f1dd96b994
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Country Code (ISO3)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Country EN'
+		dataType: string
+		lineageTag: 4f0df9a2-71ed-4e00-b8d6-2591aebaef35
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Country EN
+
+		annotation SummarizationSetBy = Automatic
+
+	column mseg_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 87254220-73a6-4ab5-a089-30587c5dc875
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mseg_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Market Segment Code'
+		dataType: string
+		lineageTag: 0e8d567c-05ef-47cc-9a40-f07edd63abdb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Market Segment Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Market Segment'
+		dataType: string
+		lineageTag: 973541c0-12ba-44c1-8b43-7e6daf26de75
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Market Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Market Segment Int'
+		dataType: string
+		lineageTag: 2fca4773-8886-4fdd-9049-a2981f9c37b2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Market Segment Int
+
+		annotation SummarizationSetBy = Automatic
+
+	column schnl_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2107fc35-3311-4e3c-9ce6-7abd226667fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: schnl_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Channel'
+		dataType: string
+		lineageTag: c64651f3-d09d-41c9-8287-b77680cb0ca2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Channel Int'
+		dataType: string
+		lineageTag: d4104444-e060-46e0-aa12-76679d42c7b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Channel Int
+
+		annotation SummarizationSetBy = Automatic
+
+	column sman_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f2ff624e-804d-4cb9-89aa-108e30131aad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sman_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Manager Code'
+		dataType: string
+		lineageTag: aad6cfdb-0e08-4d90-b488-14d4e4b6555c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Manager Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Manager'
+		dataType: string
+		lineageTag: f9ded95b-de79-4eb9-8af9-88a064a89a03
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_par_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7ef4fe58-8c29-4050-a09e-a4c4a780e0c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cust_par_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Code'
+		dataType: string
+		lineageTag: c7fa4366-6c59-405e-a6c8-8265ec1c9c1a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Parent Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Parent
+		dataType: string
+		lineageTag: e430ccbc-ab66-46f9-a967-7f66b4326366
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Parent
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_hier_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 60985150-ec39-41dd-9d90-c37b1a3fbe2a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cust_hier_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarchy Code'
+		dataType: string
+		lineageTag: b233f531-a05a-4644-8e92-e565357736d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hierarchy Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hierarchy
+		dataType: string
+		lineageTag: 26470ef8-1f8f-4373-9bfb-025d52493743
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hierarchy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Related'
+		dataType: string
+		isHidden
+		lineageTag: 1dc74354-2657-447e-9896-83fde495d3c6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Related
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Insurance'
+		dataType: string
+		isHidden
+		lineageTag: c0e53a1e-541b-4dd7-b3f9-047f34ef0148
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Insurance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Collection'
+		dataType: string
+		isHidden
+		lineageTag: 13f1c724-fbe4-4045-9fc4-c41592178eb6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Collection
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Credit'
+		dataType: string
+		isHidden
+		lineageTag: 89c5fd81-62e1-41fa-9e08-bb47069e4f3b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Credit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Default Payment Term'
+		dataType: int64
+		formatString: 0
+		lineageTag: 89a2d92c-1d1a-4ece-bf8c-404ce3934a56
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Default Payment Term
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_grp_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e002ffc1-cca2-4f2b-9f9b-fd62ea592e17
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cust_grp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Act Group Code'
+		dataType: string
+		lineageTag: 347442ff-f007-4d6f-9c88-961297499d1a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Act Group Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Act Group'
+		dataType: string
+		lineageTag: 4ef49a50-1656-47f1-a145-759e8db82c1f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Act Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Customer - NSG internal (Y/N)'
+		dataType: string
+		lineageTag: 6a33c018-5506-4ab2-815a-1a838de9b6bc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company Customer - NSG internal (Y/N)
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_boat_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e5f4631b-4529-483d-ac54-31fe932452f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cust_boat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Boat Code'
+		dataType: string
+		lineageTag: 91a5c9d9-d4bf-404e-983b-205850c7e9fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Boat Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Boat
+		dataType: string
+		lineageTag: 4c06e2a3-4864-4aea-98f8-45306e8ffc5b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Boat
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customer = entity
+		mode: directQuery
+		source
+			entityName: Customer
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

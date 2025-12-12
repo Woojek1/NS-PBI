@@ -1,0 +1,49 @@
+table 'Destination Region'
+	lineageTag: 081f9940-d23d-4261-9524-a68d550e968d
+
+	column dest_reg_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: cbf19c86-4b9e-43ef-9a89-fd411d52c41f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: dest_reg_id
+
+		annotation SummarizationSetBy = User
+
+	column db_code
+		dataType: string
+		isHidden
+		lineageTag: 2cf45f51-bd8a-40a5-bcf8-0e162e784ccf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Code'
+		dataType: string
+		lineageTag: ed60ffd3-7f17-4fb1-9ac3-4c31bb265e35
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 93eb1ca6-68d4-428d-8130-f344f3635048
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Destination Region' = entity
+		mode: directQuery
+		source
+			entityName: Destination Region
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

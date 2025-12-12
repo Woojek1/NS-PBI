@@ -1,0 +1,39 @@
+table 'Price Measure'
+	lineageTag: cd0b39ca-09ae-49ee-982b-981af232185a
+
+	column unit_meas_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 2a999d67-6d8b-44c1-bfc1-f51240f53658
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: unit_meas_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Measure Code'
+		dataType: string
+		lineageTag: 0f93f82d-15c9-40d9-a57f-c2986bca72c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Price Measure Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Measure'
+		dataType: string
+		lineageTag: 25162bc6-73e7-48dd-bf0c-cc2c939f059b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Price Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Price Measure' = entity
+		mode: directQuery
+		source
+			entityName: Price Measure
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

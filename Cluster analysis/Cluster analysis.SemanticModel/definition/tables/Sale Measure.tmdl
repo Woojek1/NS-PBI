@@ -1,0 +1,39 @@
+table 'Sale Measure'
+	lineageTag: b25216c9-6ba2-40aa-8dc1-9c31aeafbc51
+
+	column unit_meas_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: bfd777d4-1cb2-4656-a9c7-5480d18b7ad3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: unit_meas_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Sale Measure Code'
+		dataType: string
+		lineageTag: 58315c73-500e-435d-80df-b8c20faf0e77
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sale Measure Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Measure'
+		dataType: string
+		lineageTag: 027e8d38-e30f-4a78-9894-9fc8df35d388
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sale Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sale Measure' = entity
+		mode: directQuery
+		source
+			entityName: Sale Measure
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

@@ -1,0 +1,29 @@
+table RoleDaxFilter_Comp
+	isHidden
+	lineageTag: 5bd2fe36-01ff-4bef-ad68-f0dbc6a68efb
+
+	column user_name
+		dataType: string
+		lineageTag: e9bd3046-4685-4b3c-9b00-4798954819b0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ac8f648-d838-4f07-b042-59a48abb439c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RoleDaxFilter_Comp = entity
+		mode: directQuery
+		source
+			entityName: RoleDaxFilter_Comp
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

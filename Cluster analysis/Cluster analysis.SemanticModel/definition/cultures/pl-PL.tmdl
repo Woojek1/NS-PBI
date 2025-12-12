@@ -1,0 +1,912 @@
+cultureInfo pl-PL
+	translations
+		model Model
+			table 'Sales Measures'
+				caption: Miary sprzedaży
+				column 'Internal sales'
+					caption: Sprzedaż wewn
+					displayFolder: Miary transakcyjne
+				column 'Order number'
+					caption: Nr zam
+					displayFolder: Miary transakcyjne
+				column Contract
+					caption: Umiejscowienie
+					displayFolder: Miary transakcyjne
+				column 'Lot Batch No'
+					displayFolder: Miary transakcyjne
+				column 'Customer Order No'
+					caption: Nr zam kontrahenta
+					displayFolder: Miary transakcyjne
+				column 'Crossdock Address Id'
+					caption: Id adresu dla crossdock
+					displayFolder: Miary transakcyjne
+				column Description
+					caption: Opis
+					displayFolder: Miary transakcyjne
+				column 'BI Sales'
+					caption: BI sprzedaż
+					displayFolder: Miary transakcyjne
+				column 'Invoice number'
+					caption: Nr faktury
+					displayFolder: Miary transakcyjne
+				column 'Order ID'
+					caption: ID zam
+					displayFolder: Miary transakcyjne
+				column 'Order Reference Code'
+					caption: Kod referencji zam
+					displayFolder: Miary transakcyjne
+				measure 'Catalog Discount PLN'
+					caption: Upust katalogowy PLN
+					displayFolder: Miary
+				measure 'Cust Price Discount PLN'
+					caption: Upust cennikowy PLN
+					displayFolder: Miary
+				measure 'Discount PLN'
+					caption: Upust PLN
+					displayFolder: Miary
+				measure 'Curr Norm Margin PLN'
+					caption: Marża wg norm bież PLN
+					displayFolder: Miary
+				measure 'Annual Norm Margin PLN'
+					caption: Marża wg norm rocz PLN
+					displayFolder: Miary
+				measure 'Kwdr Unit PLN'
+					caption: Kwdr PLN jednostkowy
+					displayFolder: Miary
+				measure 'Catalog Discount bPLN'
+					caption: Upust katalogowy bPLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Cust Price Discount bPLN'
+					caption: Upust cennikowy PLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Discount bPLN'
+					caption: Upust PLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Curr Norm Margin bPLN'
+					caption: Marża wg norm bież PLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Annual Norm Margin bPLN'
+					caption: Marża wg norm rocz PLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'CtrlPLN Margin'
+					caption: Marża CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'CtrlPLN Budget Margin'
+					caption: Marża budżetow CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'Catalog Discount EUR'
+					caption: Upust katalogowy EUR
+					displayFolder: Miary holdingowe EUR
+				measure 'Cust Price Discount EUR'
+					caption: Upust cennikowy EUR
+					displayFolder: Miary holdingowe EUR
+				measure 'Discount EUR'
+					caption: Upust EUR
+					displayFolder: Miary holdingowe EUR
+				measure 'Curr Norm Margin EUR'
+					caption: Marża wg norm bież EUR
+					displayFolder: Miary holdingowe EUR
+				measure 'Annual Norm Margin EUR'
+					caption: Marża wg norm rocz EUR
+					displayFolder: Miary holdingowe EUR
+				measure 'Catalog Discount bEUR'
+					caption: Upust katalogowy bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Cust Price Discount bEUR'
+					caption: Koszt wg norm bież bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Discount bEUR'
+					caption: Upust bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Annual Norm Margin bEUR'
+					caption: Marża wg norm rocz bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Group Margin bEUR'
+					caption: Marża Grupy bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Catalog Discount CUR'
+					caption: Upust katalogowy CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Cust Price Discount CUR'
+					caption: Upust cennikowy CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Discount CUR'
+					caption: Upust CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Curr Norm Margin CUR'
+					caption: Marża wg norm bież CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Average Product Price CUR'
+					caption: Średnia cena produktu CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Average Product Price PLN'
+					caption: Średnia cena produktu PLN
+					displayFolder: Miary wyliczane proste
+				measure 'Cur to EUR Curr Rate'
+					caption: Kurs CUR do EUR
+					displayFolder: Miary wyliczane proste
+				measure 'Discount %'
+					caption: Upust %
+					displayFolder: Miary wyliczane proste
+				measure 'Curr Norm Margin %'
+					caption: Marża wg norm bież %
+					displayFolder: Miary wyliczane proste
+				measure 'Annual Norm Margin %'
+					caption: Marża wg norm rocz %
+					displayFolder: Miary wyliczane proste
+				measure 'Cur to PLN Curr Rate'
+					caption: kurs CUR do PLN
+					displayFolder: Miary wyliczane proste
+				measure 'Net Sales PLN YA'
+					caption: Sprz netto PLN YA
+					displayFolder: Miary wyliczane czasowe
+				measure 'Net sales EUR YA'
+					caption: Sprz netto EUR YA
+					displayFolder: Miary wyliczane czasowe
+				measure 'Net sales bEUR YA'
+					caption: Sprz netto bEUR YA
+					displayFolder: Miary wyliczane czasowe
+				measure 'Net sales bPLN YA'
+					caption: Sprz netto bPLN YA
+					displayFolder: Miary wyliczane czasowe
+				measure 'Net sales CUR YA'
+					caption: Sprz netto CUR YA
+					displayFolder: Miary wyliczane czasowe
+				measure 'Net Price (Invent Index) EUR'
+					caption: Cena netto (Ind zapasów) EUR
+					displayFolder: Miary transakcyjne
+				measure 'Net sales CtrlPLN YA'
+					caption: Sprz netto CtrlPLN YA
+					displayFolder: Miary kontrolingowe CtrlPLN YA
+				measure 'Annual Norm Cost PLN'
+					caption: Koszt norm rocz PLN
+					displayFolder: Miary
+				measure 'Base Sales PLN'
+					caption: Sprz bazowa PLN
+					displayFolder: Miary
+				measure 'Catalog Sales PLN'
+					caption: Sprz katalogowa PLN
+					displayFolder: Miary
+				measure 'Curr Norm Cost PLN'
+					caption: Koszt norm bież PLN
+					displayFolder: Miary
+				measure 'Cust Price Sales PLN'
+					caption: Cena sprzedaży PLN
+					displayFolder: Miary
+				measure 'Inventory Quantity'
+					caption: Ilość mag
+					displayFolder: Miary
+				measure 'Kwdr PLN'
+					displayFolder: Miary
+				measure 'Manufacturing Cost PLN'
+					caption: Koszt wytworzenia PLN
+					displayFolder: Miary
+				measure 'Net Sales PLN'
+					caption: Sprz netto PLN
+					displayFolder: Miary
+				measure 'Sales Quantity'
+					caption: Sprz ilość
+					displayFolder: Miary
+				measure 'Annual Norm Cost bPLN'
+					caption: Koszt norm rocz bPLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Annual Norm Cost EUR'
+					caption: Koszt norm rocz EUR
+					displayFolder: Miary holding EUR
+				measure 'Annual Norm Cost bEUR'
+					caption: Koszt norm rocz bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Annual Norm Cost CUR'
+					caption: Koszt norm rocz CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Annual Norm Cost CtrlPLN'
+					caption: Koszt norm rocz CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'Base Sales bPLN'
+					caption: Sprz bazowa bPLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Base Sales EUR'
+					caption: Sprz bazowa EUR
+					displayFolder: Miary holding EUR
+				measure 'Base Sales bEUR'
+					caption: Sprz bazowa bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Base Sales CUR'
+					caption: Sprz bazowa CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Base Sales CtrlPLN'
+					caption: Sprz bazowa CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'Catalog Sales bPLN'
+					caption: Sprz katalogowa bPLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Catalog Sales EUR'
+					caption: Ceny katalogowe EUR
+					displayFolder: Miary holding EUR
+				measure 'Catalog Sales bEUR'
+					caption: Ceny katalogowe bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Catalog Sales CUR'
+					caption: Ceny katalogowe CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Catalog Sales CtrlPLN'
+					caption: Sprz katalogowa CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'Curr Norm Cost bPLN'
+					caption: Koszt norm bież bPLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Curr Norm Cost EUR'
+					caption: Koszt norm bież EUR
+					displayFolder: Miary holding EUR
+				measure 'Curr Norm Cost bEUR'
+					caption: Koszt norm bież bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Curr Norm Cost CUR'
+					caption: Koszt norm bież CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Curr Norm Cost CtrlPLN'
+					caption: Koszt norm bież CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'Curr Norm Cost CUR Dom'
+					caption: Koszt norm bież CUR Dom
+					displayFolder: Miary walutowe CUR
+				measure 'Cust Price Sales bPLN'
+					caption: Sprz cennikowa bPLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Cust Price Sales EUR'
+					caption: Sprz cennikowa EUR
+					displayFolder: Miary holding EUR
+				measure 'Cust Price Sales bEUR'
+					caption: Sprz cennikowa bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Cust Price Sales CUR'
+					caption: Sprz cennikowa CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Cust Price Sales CtrlPLN'
+					caption: Sprz cennikowa CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'Net Sales bPLN'
+					caption: Sprz netto bPLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Net Sales EUR'
+					caption: Sprz netto EUR
+					displayFolder: Miary holding EUR
+				measure 'Net Sales bEUR'
+					caption: Sprz netto bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Net Sales CUR'
+					caption: Sprz netto CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Net Sales CtrlPLN'
+					caption: Sprz netto CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'Net Sales CUR Dom'
+					caption: Sprz netto CUR Dom
+					displayFolder: Miary walutowe CUR
+				measure 'Manufacturing Cost bPLN'
+					caption: Koszt wytworzenia bPLN
+					displayFolder: Miary budżetowe bPLN
+				measure 'Manufacturing Cost EUR'
+					caption: Koszt wytworzenia EUR
+					displayFolder: Miary holding EUR
+				measure 'Manufacturing Cost bEUR'
+					caption: Koszt wytworzenia bEUR
+					displayFolder: Miary budżetowe bEUR
+				measure 'Manufacturing Cost CUR'
+					caption: Koszt wytworzenia CUR
+					displayFolder: Miary walutowe CUR
+				measure 'Manufacturing Cost CtrlPLN'
+					caption: Koszt wytworzenia CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'Manufacturing Cost CUR Dom'
+					caption: Koszt wytworzenia CUR Dom
+					displayFolder: Miary walutowe CUR
+				measure 'PLN Net Curr Rate'
+					caption: Kurs walutowy netto PLN
+					displayFolder: Miary wyliczane czasowe
+				measure 'Group Margin CtrlPLN'
+					caption: Marża Grupy CtrlPLN
+					displayFolder: Miary kontrolingowe CtrlPLN
+				measure 'License Cost PLN'
+					caption: Koszt licencji PLN
+					displayFolder: Licencja koszt
+				measure 'Mnf Cost PLN Prev Year Price'
+					caption: Koszt wytw PLN wg poprz rok
+					displayFolder: Cena wytworzenia poprz rok
+				measure 'Mnf Cost bPLN Prev Year Price'
+					caption: Koszt wytw bPLN wg poprz rok
+					displayFolder: Miary budżetowe bPLN
+				measure 'Mnf Cost EUR Prev Year Price'
+					caption: Koszt wytw EUR wg poprz rok
+					displayFolder: Cena wytworzenia poprz rok
+				measure 'Mnf Cost bEUR Prev Year Price'
+					caption: Koszt wytw bEUR wg poprz rok
+					displayFolder: Cena wytworzenia poprz rok
+				measure 'Current Manufacturing Cost'
+					caption: Aktualny Koszt Wytworzenia
+					displayFolder: Miary
+			table Date
+				caption: Czas
+				column Date
+					caption: Dzień
+				column 'Working Days Qty'
+					caption: Liczba dni roboczych
+				column 'Week Code'
+					caption: Tydzień kod
+				column 'Month Code'
+					caption: Miesiąc kod
+				column 'Month Short'
+					caption: Miesiąc krótki
+				column 'Quarter Code'
+					caption: Kwartał kod
+				column Half-Year
+					caption: Półrocze
+				column Year
+					caption: Rok
+				column Month
+					caption: Miesiąc
+				column Quarter
+					caption: Kwartał
+				column Week
+					caption: Tydzień
+				measure 'Working Days Qty MYA'
+					caption: Liczba dni roboczych MYA
+				hierarchy 'Date Year Hierarchy'
+					caption: Rok Hierarchia
+					level Year
+						caption: Rok
+					level Half-Year
+						caption: Półrocze
+					level 'Quarter Code'
+						caption: Kwartał kod
+					level Month
+						caption: Miesiąc
+					level Date
+						caption: Dzień
+				hierarchy 'Date Quarter Hierarchy'
+					caption: Kwartał Hierarchia
+					level Quarter
+						caption: Kwartał
+					level Month
+						caption: Miesiąc
+					level Date
+						caption: Dzień
+				hierarchy 'Date Week Hierarchy'
+					caption: Tydzień Hierarchia
+					level Week
+						caption: Tydzień
+					level 'Week Code'
+						caption: Tydzień kod
+					level Date
+						caption: Dzień
+			table Account
+				caption: Konto
+				column 'Account Code'
+					caption: Konto kod
+				column Account
+					caption: Konto
+			table 'Delivery Term'
+				caption: Warunki dostawy
+				column 'Delivery Term Name'
+					caption: Warunki dostawy
+			table Product
+				caption: Produkt
+				column 'Sale Item Code'
+					caption: Przedmiot sprzedaży kod
+				column 'Sale Item Name'
+					caption: Przedmiot sprzedaży
+				column 'Hold Sale Item Name'
+					caption: Poz sprz holding
+				column Attr01
+					displayFolder: Dodatkowe atrybuty
+				column Attr02
+					displayFolder: Dodatkowe atrybuty
+				column Attr03
+					displayFolder: Dodatkowe atrybuty
+				column Attr04
+					displayFolder: Dodatkowe atrybuty
+				column Attr05
+					displayFolder: Dodatkowe atrybuty
+				column Attr06
+					displayFolder: Dodatkowe atrybuty
+				column Attr07
+					displayFolder: Dodatkowe atrybuty
+				column Attr08
+					displayFolder: Dodatkowe atrybuty
+				column Attr09
+					displayFolder: Dodatkowe atrybuty
+				column Attr10
+					displayFolder: Dodatkowe atrybuty
+				column 'Curr Mnf Cost'
+					caption: Aktualny koszt prod
+				column 'Unit Meas Code'
+					caption: Jednostka miary kod
+				column 'Unit Meas'
+					caption: Jednostka miary
+				column 'Model Code'
+					caption: Model kod
+				column 'Line Code'
+					caption: Linia kod
+				column Line
+					caption: Linia
+				column 'Brand Code'
+					caption: Marka kod
+				column Brand
+					caption: Marka
+				column 'Product Subgroup Code'
+					caption: Podgrupa produktowa kod
+				column 'Product Subgroup'
+					caption: Podgrupa produktowa
+				column 'Product Group Code'
+					caption: Grupa produktowa kod
+				column 'Product Group'
+					caption: Grupa produktowa
+				column 'License Code'
+					caption: Licencja kod
+				column License
+					caption: Licencja
+				column 'Kwdr Code'
+					caption: Kwdr kod
+				column 'Impl Code'
+					caption: Wdrożenie kod
+				column 'Impl Name'
+					caption: Wdrożenie
+				column 'Impl Value'
+					caption: Wdrożenie wartość
+				column 'Impl Date'
+					caption: Wdrożenie data
+				column 'Manufacturer Code'
+					caption: Producent kod
+				column Manufacturer
+					caption: Producent
+				column 'Cnt Manufacturer Code'
+					caption: Producent KNT kod
+				column 'Cnt Manufacturer'
+					caption: Producent KNT
+				column 'Buyer Code'
+					caption: Kupujący kod
+				column Buyer
+					caption: Kupujący
+				column 'Legacy Model Code'
+					caption: sModel kod
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Model'
+					caption: sModel
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Model Description'
+					caption: sModel opis
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Brand Code'
+					caption: sMarka kod
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Brand'
+					caption: sMarka
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Group Code'
+					caption: sGrupa kod
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Group'
+					caption: sGrupa
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Subgroup Code'
+					caption: sSubgrupa kod
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Subgroup '
+					caption: sSubgrupa
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Line Code'
+					caption: sLinia kod
+					displayFolder: Starsze Atrybuty
+				column 'Legacy Line'
+					caption: sLinia
+					displayFolder: Starsze Atrybuty
+				column 'Curr Mnf Cost per Unit'
+					caption: Akt Jedn Koszt Wytworzenia
+				column 'Cluster Code'
+					caption: Klaster Kod
+				column 'Cluster Name'
+					caption: Klaster Nazwa
+				hierarchy 'Brand Hierarchy'
+					caption: Marka Hierarchia
+					level Brand
+						caption: Marka
+					level Line
+						caption: Linia
+					level 'Hold Sale Item Name'
+						caption: Poz sprz holding
+					level 'Sale Item Name'
+						caption: Przedmiot sprzedaży
+				hierarchy 'Group Hierarchy'
+					caption: Grupa Hierarchia
+					level 'Product Group'
+						caption: Grupa produktowa
+					level 'Product Subgroup'
+						caption: Podgrupa produktowa
+					level 'Hold Sale Item Name'
+						caption: Poz sprz holding
+					level 'Sale Item Name'
+						caption: Przedmiot sprzedaży
+				hierarchy 'Legacy Brand Hierarchy'
+					caption: sMarka Hierarchia
+					level 'Legacy Brand'
+						caption: sMarka
+					level 'Legacy Line'
+						caption: sLinia
+					level 'Legacy Model'
+						caption: sModel
+					level 'Hold Sale Item Name'
+						caption: Poz sprz holding
+					level 'Sale Item Name'
+						caption: Przedmiot sprzedaży
+				hierarchy 'Legacy Group Hierarchy'
+					caption: sGrupa Hierarchia
+					level 'Legacy Group'
+						caption: sGrupa
+					level 'Legacy Subgroup '
+						caption: sSubgrupa
+					level 'Legacy Model'
+						caption: sModel
+					level 'Hold Sale Item Name'
+						caption: Poz sprz holding
+					level 'Sale Item Name'
+						caption: Przedmiot sprzedaży
+			table Company
+				caption: Spółka
+				column Company
+					caption: Spółka
+				column 'Company Code'
+					caption: Spółka kod
+			table Coordinator
+				caption: Koordynator
+				column 'Coordinator Code'
+					caption: Koordynator kod
+				column Coordinator
+					caption: Koordynator
+			table Currency
+				caption: Waluta
+				column Currency
+					caption: Waluta
+				column 'Currency Name'
+					caption: Waluta nazwa
+			table 'Customer Group'
+				caption: Klient grupa
+				column 'Customer Group'
+					caption: Klient grupa
+				column 'Customer Group Code'
+					caption: Klient grupa kod
+			table Customer
+				caption: Kontrahent
+				column 'Customer Code'
+					caption: Kontrahent kod
+				column Customer
+					caption: Kontrahent
+				column 'Customer Zip Code'
+					caption: Kontrahent kod pocztowy
+				column 'Customer Country Code'
+					caption: Kontrahent Kraj kod
+				column 'Customer Country'
+					caption: Kontrahent Kraj
+				column 'Customer Country Code (ISO3)'
+					caption: Kontrahent Kraj kod (ISO3)
+				column 'Customer Country EN'
+					caption: Kontrahent Kraj EN
+				column 'Market Segment Code'
+					caption: Segment rynku kod
+				column 'Market Segment'
+					caption: Segment rynku
+				column 'Market Segment Int'
+					caption: Segment rynku wewn
+				column 'Sales Channel'
+					caption: Kanał sprzedaży
+				column 'Sales Channel Int'
+					caption: Kanał sprzedaży wewn
+				column 'Account Manager Code'
+					caption: Opiekun kod
+				column 'Account Manager'
+					caption: Opiekun
+				column 'Parent Code'
+					caption: Rodzic kod
+				column Parent
+					caption: Rodzic
+				column 'Hierarchy Code'
+					caption: Hierarchia kod
+				column Hierarchy
+					caption: Hierarchia
+				column 'Customer Related'
+					caption: Kontrahent powiązany
+				column 'Customer Insurance'
+					caption: Kontrahent ubezp
+				column 'Customer Collection'
+					caption: Kontrahent kolekcja
+				column 'Customer Credit'
+					caption: Kontrahent kredyt
+				column 'Default Payment Term'
+					caption: Kontrahent termin płatności
+				column 'Customer Act Group Code'
+					caption: Kontrahent akt grupa kod
+				column 'Customer Act Group'
+					caption: Kontrahent akt grupa
+				column 'Company Customer - NSG internal (Y/N)'
+					caption: Kontrahent spółka - NSG wewn (T/N)
+				column 'Boat Code'
+					caption: Łódź kod
+				column Boat
+					caption: Łódź
+			table Destination
+				caption: Odbiorca
+				column 'Destination Code'
+					caption: Odbiorca kod
+				column 'Destination Address'
+					caption: Odbiorca Adres
+				column Destination
+					caption: Odbiorca
+				column 'Destination Address Name'
+					caption: Odbiorca Adres nazwa
+				column District
+					caption: Rejon
+				column 'Destination Zip Code'
+					caption: Odbiorca Kod pocztowy
+				column City
+					caption: Miasto
+				column 'City Desc'
+					caption: Miasto opis
+				column Province
+					caption: Województwo
+				column 'Dest Country Code'
+					caption: Odbiorca Kraj kod
+				column 'Dest Country'
+					caption: Odbiorca Kraj
+				column 'Dest Country Code (ISO3)'
+					caption: Odbiorca Kraj kod (ISO3)
+				column 'Dest Country Name (en)'
+					caption: Odbiorca Kraj (EN)
+				column 'World Region'
+					caption: Region świata
+				column 'Destination Address Code'
+					caption: Odbiorca Adres kod
+				hierarchy 'Destination Hierarchy'
+					caption: Odbiorca Hierarchia
+					level 'World Region'
+						caption: Region świata
+					level 'Dest Country'
+						caption: Odbiorca kraj
+					level Province
+						caption: Województwo
+					level City
+						caption: Miasto
+			table 'Destination Region'
+				caption: Odbiorca region
+				column 'Region Code'
+					caption: Region kod
+			table Invoice
+				caption: Faktura
+				column Type
+					caption: Typ
+				column 'Type Name'
+					caption: Typ nazwa
+				column Series
+					caption: Seria
+				column Direction
+					caption: Kierunek
+				column 'Sales Correction'
+					caption: Sprzedaż korekta
+				hierarchy 'Direction Hierarchy'
+					caption: Kierunek Hierarchia
+					level Direction
+						caption: Kierunek
+					level Series
+						caption: Seria
+			table 'Order Receive'
+				caption: Zamówienie odbiór
+				column 'Order Receiving Code'
+					caption: Zamówienie odbiór kod
+			table Department
+				caption: Dział
+				column 'Salesman Code'
+					caption: Sprzedawca kod
+				column Salesman
+					caption: Sprzedawca
+				column 'Salesman Int'
+					caption: Sprzedawca wewn
+				column 'Section Code'
+					caption: Sekcja kod
+				column Section
+					caption: Sekcja
+				column 'Section Int'
+					caption: Sekcja wewn
+				column 'Department Code'
+					caption: Dział kod
+				column Department
+					caption: Dział
+				column 'Department Int'
+					caption: Dział wewn
+			table Project
+				caption: Projekt
+				column 'Project Code'
+					caption: Projekt kod
+				column Project
+					caption: Projekt
+				column 'Coordinator FO'
+					caption: Koordynator FO
+				column 'Project Manager'
+					caption: Kierownik projektu
+				column 'Coordinator BO'
+					caption: Koordynator BO
+			table 'Sale Status'
+				caption: Sprz status
+				column 'Sale Status Code'
+					caption: Sprz status kod
+				column 'Sale Status Code Name'
+					caption: Sprz status kod nazwa
+				column 'Sale Status Code Name Int'
+					caption: Sprz status kod wewn
+			table Variant
+				caption: Wariant
+				column 'Variant Code'
+					caption: Wariant kod
+			table 'Catalog Type'
+				caption: Typ kartoteki
+				column 'Catalog Type Code'
+					caption: Typ kartoteki kod
+				column 'Catalog Type'
+					caption: Typ kartoteki
+			table 'Price Measure'
+				caption: JM Cena
+				column 'Price Measure Code'
+					caption: JM Cena kod
+				column 'Price Measure'
+					caption: JM Cena
+			table 'Sale Measure'
+				caption: JM Sprzedaż
+				column 'Sale Measure Code'
+					caption: JM Sprzedaż kod
+				column 'Sale Measure'
+					caption: JM Sprzedaż
+			table 'Inventory Measure'
+				caption: JM Magazyn
+				column 'Inventory Measure Code'
+					caption: JM Magazyn kod
+				column 'Inventory Measure'
+					caption: JM Magazyn
+			table 'Currency Dom'
+				caption: Waluta Dom
+				column 'Currency Dom'
+					caption: Waluta Dom
+				column 'Currency Dom Name'
+					caption: Waluta Dom nazwa
+			table 'Product Inventory'
+				caption: Pozycja z inwentarza
+				column 'Inventory Item Code'
+					caption: Pozycja z inwentarza kod
+				column 'Inventory Item Name'
+					caption: Pozycja z inwentarza
+				column 'Hold Inventory Item Name'
+					caption: Poz z inwentarza Holding nazwa
+				column 'PI Manufacturer Code'
+					caption: Producent kod (poz z inw)
+				column 'PI Manufacturer'
+					caption: Producent (poz z inw)
+				column 'PI Cnt Manufacturer Code'
+					caption: Producent KNT kod (poz z inw)
+				column 'PI Cnt Manufacturer'
+					caption: Producent KNT (poz z inw)
+			table 'Currency Rate'
+				caption: Kurs walutowy
+				column 'Currency Rate PLN'
+					caption: Kurs walutowy PLN
+					displayFolder: Miary wyliczane proste
+			table License
+				caption: Licencja
+				column 'License Code'
+					caption: Licencja kod
+				column License
+					caption: Licencja
+				column 'License Type'
+					caption: Licencja typ
+				column Designer
+					caption: Projektant
+			table 'Price List'
+				caption: Cennik
+				column 'PriceList Code'
+					caption: Cennik kod
+				column PriceList
+					caption: Cennik
+				column 'PriceList date from'
+					caption: Cennik data od
+				column 'PriceList date to'
+					caption: Cennik data do
+				column 'PriceList Currency'
+					caption: Cennik waluta
+				column 'PriceList Owning Company'
+					caption: Cennik spółka
+				column 'PriceList base site'
+					caption: Cennik główne umiejscowienie
+				column 'PriceList Assortment id'
+					caption: Cennik Asortyment id
+				column 'PriceList Category'
+					caption: Cennik kategoria
+				column 'Pricelist workspace'
+					caption: Cennik obszar
+			table 'Order Reference Type'
+				caption: Typ referencji zam
+				column 'Order Ref Type Code'
+					caption: Typ referencji zam kod
+				column 'Order Ref Type '
+					caption: Typ referencji zam
+			table 'Time Intelligence'
+				caption: Miary czasowe
+				column 'Time Calculation'
+					caption: Miara czasowa
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "sales_measures.inventory_quantity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sales Measures",
+			          "ConceptualProperty": "Inventory Quantity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Inventory Quantity": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_measures.net_sales_pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sales Measures",
+			          "ConceptualProperty": "Net Sales PLN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Sales PLN": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_measures.net_sales_eur": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sales Measures",
+			          "ConceptualProperty": "Net Sales EUR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Sales EUR": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

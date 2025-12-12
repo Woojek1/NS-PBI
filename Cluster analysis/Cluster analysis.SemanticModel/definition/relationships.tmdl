@@ -1,0 +1,124 @@
+relationship 2390ec03-17f6-46e7-b57e-f40615b16a08
+	fromColumn: 'Sales Measures'.time_id
+	toColumn: Date.day_id
+
+relationship 9ccb05c1-a999-4883-b244-18ad02321d8a
+	fromColumn: 'Sales Measures'.d_term_id
+	toColumn: 'Delivery Term'.d_term_id
+
+relationship 2b4a6907-35d6-4c08-8b40-65015294f407
+	fromColumn: 'Sales Measures'.account_id
+	toColumn: Account.account_id
+
+relationship 1231551b-f409-4d2b-8ccd-1748e144dfeb
+	fromColumn: 'Sales Measures'.prod_id
+	toColumn: Product.prod_si_id
+
+relationship c94b7403-d6c2-4a81-9ee1-dae4e549926f
+	fromColumn: 'Sales Measures'.var_id
+	toColumn: Variant.var_id
+
+relationship 4104dd4b-3458-4dee-8c5c-dd62d6525a26
+	fromColumn: 'Sales Measures'.cat_type_id
+	toColumn: 'Catalog Type'.cat_type_id
+
+relationship 5e812c99-5726-44d6-9d61-f3fb856a8367
+	fromColumn: 'Sales Measures'.cord_id
+	toColumn: Coordinator.cord_id
+
+relationship 8769f46a-91fc-4c68-919e-fdfd212f3ea9
+	fromColumn: 'Sales Measures'.curr_id
+	toColumn: Currency.curr_id
+
+relationship 53d1d588-f3d1-4248-86bd-7243babe7156
+	fromColumn: 'Sales Measures'.invoice_id
+	toColumn: Invoice.invoice_id
+
+relationship 151d5b4d-408f-423e-901b-5203a6f625e3
+	fromColumn: 'Sales Measures'.ord_rec_id
+	toColumn: 'Order Receive'.ord_rec_id
+
+relationship 3b9337c9-0806-4470-a00c-c568329924b4
+	fromColumn: 'Sales Measures'.s_sta_id
+	toColumn: 'Sale Status'.s_sta_id
+
+relationship edcec35d-c76e-47a5-9025-fe14d704438d
+	fromColumn: 'Sales Measures'.skonto_id
+	toColumn: Skonto.skonto_id
+
+relationship 9f96cbc5-5527-4b98-9a4f-052c52b0c92b
+	fromColumn: 'Sales Measures'.cust_id
+	toColumn: Customer.cust_id
+
+relationship 320fe283-fc82-4f86-b48b-505427dd05d9
+	fromColumn: 'Sales Measures'.c_grp_id
+	toColumn: 'Customer Group'.cust_grp_id
+
+relationship 27900509-a44a-44fd-96b8-1e8a3b90ace1
+	fromColumn: 'Sales Measures'.dest_id
+	toColumn: Destination.dest_id
+
+relationship b2aee95e-efa4-453e-93e3-4094b84e4e17
+	fromColumn: 'Sales Measures'.c_reg_id
+	toColumn: 'Destination Region'.dest_reg_id
+
+relationship 3179ae56-552d-4225-8474-1cb6d4b724d1
+	fromColumn: 'Sales Measures'.prj_id
+	toColumn: Project.prj_id
+
+relationship 573aa39d-383e-4328-b14c-5f7bd46f437c
+	fromColumn: 'Sales Measures'.org_id
+	toColumn: Department.org_id
+
+relationship 69c15e50-6f5b-419e-b5e1-7c0b71294840
+	fromColumn: 'Sales Measures'.price_um_id
+	toColumn: 'Price Measure'.unit_meas_id
+
+relationship cd6a0643-f39d-4841-9ff7-455895b27db2
+	fromColumn: 'Sales Measures'.invent_um_id
+	toColumn: 'Inventory Measure'.unit_meas_id
+
+relationship d6930a03-8fd9-4731-8aeb-51a64a826dbd
+	fromColumn: 'Sales Measures'.sale_um_id
+	toColumn: 'Sale Measure'.unit_meas_id
+
+relationship 1d404d1a-2e44-44ab-a4ac-80bf974b71f0
+	fromColumn: 'Sales Measures'.curr_dom_id
+	toColumn: 'Currency Dom'.curr_id
+
+relationship e1e664dc-710e-4b3d-9777-0515e53f5462
+	fromColumn: 'Sales Measures'.prod_inv_id
+	toColumn: 'Product Inventory'.prod_si_id
+
+relationship 3d4022fe-a43d-421d-8fd3-1617889da788
+	fromColumn: 'Sales Measures'.lic_id
+	toColumn: License.lic_id
+
+relationship 03ba1844-d11d-4431-af88-cc33f86f45ea
+	fromColumn: 'Sales Measures'.pricelist_id
+	toColumn: 'Price List'.pricelist_id
+
+relationship 2bbbcdde-6b9c-4d93-90b5-a50d2d339841
+	fromColumn: 'Sales Measures'.ord_supp_type_id
+	toColumn: 'Order Reference Type'.ord_supp_type_id
+
+relationship 194208ca-9f4d-4519-a212-3f79340f382a
+	fromColumn: 'Sales Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship cc445d8b-4000-4c76-b84c-5210f3eed3c7
+	fromColumn: 'Sales Measures'.dest_ord_id
+	toColumn: 'Destination Order'.dest_id
+
+relationship 145804e1-07a3-486f-8eff-eb6f1316e9b4
+	fromColumn: 'Sales Measures'.supp_id
+	toColumn: Supplier.supp_id
+
+relationship 0bc40a42-e41c-4fb3-810a-da1dc67e1363
+	fromColumn: 'Currency Rate'.curr_id
+	toColumn: Currency.curr_id
+
+relationship d3c54270-5107-4855-9333-8a60729f8004
+	fromColumn: 'Currency Rate'.day_id
+	toColumn: Date.day_id
+

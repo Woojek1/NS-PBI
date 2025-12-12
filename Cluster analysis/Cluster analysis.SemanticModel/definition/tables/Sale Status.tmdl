@@ -1,0 +1,48 @@
+table 'Sale Status'
+	lineageTag: 4bb0814e-82cf-4b03-8f31-7df7a3efa806
+
+	column s_sta_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 0435c468-7ba9-41e5-8055-dcc23db74ce2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: s_sta_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Sale Status Code'
+		dataType: string
+		lineageTag: 7a4b34a5-3f80-487a-ab60-ec413815698a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sale Status Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Status Code Name'
+		dataType: string
+		lineageTag: 98759749-7701-449d-90e1-5470ebb92c59
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sale Status Code Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Status Code Name Int'
+		dataType: string
+		lineageTag: 5c1027ef-23f2-4bc7-89da-167337332d07
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sale Status Code Name Int
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sale Status' = entity
+		mode: directQuery
+		source
+			entityName: Sale Status
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

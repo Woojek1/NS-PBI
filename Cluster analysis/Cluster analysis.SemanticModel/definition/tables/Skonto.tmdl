@@ -1,0 +1,40 @@
+table Skonto
+	lineageTag: 4457efe0-022a-416c-adbd-23f6d6557aa3
+
+	column skonto_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 6f97fb0d-a3fb-4f69-b909-b6b2ed83d5f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: skonto_id
+
+		annotation SummarizationSetBy = User
+
+	column skonto_code
+		dataType: string
+		isHidden
+		lineageTag: 9b67f141-64e0-4599-b3b2-a1c077c96b6d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: skonto_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Skonto
+		dataType: string
+		lineageTag: 0c40e522-1c43-4d46-8eac-bf9f11d7925f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Skonto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Skonto = entity
+		mode: directQuery
+		source
+			entityName: Skonto
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

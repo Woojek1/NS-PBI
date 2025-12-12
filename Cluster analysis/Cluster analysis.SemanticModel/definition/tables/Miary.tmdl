@@ -1,0 +1,49 @@
+table Miary
+	lineageTag: 8167594c-ab78-4648-a403-f150cd0a8946
+
+	column Miary
+		lineageTag: 834b9c20-22fc-46e8-9990-de2369517527
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Kolejność Miary'
+
+		relatedColumnDetails
+			groupByColumn: 'Pola: Miary'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pola: Miary'
+		isHidden
+		lineageTag: ec889a31-642b-4b1b-8103-af7060c178bb
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Kolejność Miary'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kolejność Miary'
+		isHidden
+		formatString: 0
+		lineageTag: 5786cad9-e711-4841-bee5-907ba8ffe7af
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Miary = calculated
+		mode: import
+		source =
+				{
+				    ("Inventory Quantity", NAMEOF('Sales Measures'[Inventory Quantity]), 0),
+				    ("Net Sales PLN", NAMEOF('Sales Measures'[Net Sales PLN]), 1),
+				    ("Net Sales EUR", NAMEOF('Sales Measures'[Net Sales EUR]), 2)
+				}
+
+	annotation PBI_Id = 9703073c5cf94daf8dde70a7aa623f54
+

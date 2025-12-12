@@ -1,0 +1,57 @@
+table Supplier
+	lineageTag: 5788e2bc-66ae-48ac-bd40-d528f90ce11f
+
+	column supp_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 72ab38a5-6148-4414-ba94-c37fc8032207
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Code'
+		dataType: string
+		lineageTag: b4442915-ac4e-4bf4-8c94-6d32ead2c90d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supplier
+		dataType: string
+		lineageTag: ae312dea-9eef-44b0-b860-0fe9970db206
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Supplier - NSG Internal (Y/N)'
+		dataType: string
+		lineageTag: ca77538a-609b-42b9-bc76-e49744389c24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company Supplier - NSG Internal (Y/N)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comapny Supplier - NSG Internal (Y/N) English'
+		dataType: string
+		lineageTag: edc7e595-2fc1-4e01-8270-a8c47699202c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Comapny Supplier - NSG Internal (Y/N) English
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Supplier = entity
+		mode: directQuery
+		source
+			entityName: Supplier
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

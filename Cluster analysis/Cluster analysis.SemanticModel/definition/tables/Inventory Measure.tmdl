@@ -1,0 +1,39 @@
+table 'Inventory Measure'
+	lineageTag: 3ce01a97-53d5-4bea-afc3-216668ad4529
+
+	column unit_meas_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: d5c3cedd-e0ea-47d7-9295-8333d295c66c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: unit_meas_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Inventory Measure Code'
+		dataType: string
+		lineageTag: 2abcd443-3e2d-4288-9be8-3d6f48713cfe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Inventory Measure Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inventory Measure'
+		dataType: string
+		lineageTag: e624856c-4dce-4a1e-8937-9b68598dd0fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Inventory Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Inventory Measure' = entity
+		mode: directQuery
+		source
+			entityName: Inventory Measure
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

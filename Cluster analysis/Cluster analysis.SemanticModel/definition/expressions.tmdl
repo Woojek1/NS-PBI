@@ -1,0 +1,11 @@
+expression 'Połączenie DirectQuery z elementem AS — Sales Tabular Model' =
+		let
+		    Source = AnalysisServices.Database("asazure://northeurope.asazure.windows.net/asnsgsolet", "Sales Tabular Model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Sales Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 8f277fe8-5248-493c-b251-55b63865c953
+
+	annotation PBI_IncludeFutureArtifacts = True
+

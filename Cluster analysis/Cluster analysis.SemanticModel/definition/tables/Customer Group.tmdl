@@ -1,0 +1,49 @@
+table 'Customer Group'
+	lineageTag: 0d6c6353-1f14-464b-bc72-b10b3592a9d2
+
+	column cust_grp_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 7a05e082-c669-426d-9c4f-6adc1fee6d39
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cust_grp_id
+
+		annotation SummarizationSetBy = User
+
+	column cust_grp_code
+		dataType: string
+		isHidden
+		lineageTag: 3d8fee4e-27b6-4959-8445-77668a9a80ae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cust_grp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Group'
+		dataType: string
+		lineageTag: b42556ff-01bc-4bb3-9ee4-9820401d53a6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Group Code'
+		dataType: string
+		lineageTag: 1f22f89f-1aea-4018-a744-26edb668718f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Group Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Customer Group' = entity
+		mode: directQuery
+		source
+			entityName: Customer Group
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

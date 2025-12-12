@@ -1,0 +1,40 @@
+table 'Order Receive'
+	lineageTag: 34daa338-f8d1-4787-966b-abdf8ab9c3d0
+
+	column ord_rec_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: ed2ab50c-4aa2-4d58-b103-2f22f6ba4604
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ord_rec_id
+
+		annotation SummarizationSetBy = User
+
+	column ord_rec_code
+		dataType: string
+		isHidden
+		lineageTag: 7489822f-c562-45eb-be00-386257841c61
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ord_rec_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Receiving Code'
+		dataType: string
+		lineageTag: ec5792d6-df43-42fa-b325-680b77edc2fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Receiving Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Order Receive' = entity
+		mode: directQuery
+		source
+			entityName: Order Receive
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

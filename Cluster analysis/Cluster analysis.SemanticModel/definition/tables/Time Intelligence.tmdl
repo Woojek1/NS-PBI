@@ -1,0 +1,29 @@
+table 'Time Intelligence'
+	lineageTag: e285ff8f-9a7a-434f-b548-2558b9c89be5
+
+	column 'Time Calculation'
+		dataType: string
+		lineageTag: f21e4605-8c68-42d2-a378-2c67774d5552
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time Calculation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5bec3a53-2092-41b6-ae52-59fc3cc12445
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Time Intelligence' = entity
+		mode: directQuery
+		source
+			entityName: Time Intelligence
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

@@ -1,0 +1,124 @@
+table Department
+	lineageTag: 71270fcf-9ff3-43ba-9446-95dd4d2c6c2b
+
+	column org_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 5f77d3d0-3d3d-4da8-86f1-7582ee10d26f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: org_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Salesman Code'
+		dataType: string
+		lineageTag: 8e73dff1-af9f-4a19-b625-b7df816e3de2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Salesman Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salesman
+		dataType: string
+		lineageTag: 61cd9c2f-72bb-4238-92e8-0a71d0877c75
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Salesman
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Salesman Int'
+		dataType: string
+		lineageTag: 8cae6ac9-291c-4d9e-8377-aeaf34d5680a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Salesman Int
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6c70153e-de56-44d4-ab87-a6e385d2c20f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Section Code'
+		dataType: string
+		lineageTag: a0dad5c0-fa9f-42bf-997b-4126faf1bf64
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Section Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Section
+		dataType: string
+		lineageTag: 90bd1269-ea96-4f59-b9ca-660c8a4ab5d5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Section
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Section Int'
+		dataType: string
+		lineageTag: 536da970-bd87-4e49-98f5-befd18541ad9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Section Int
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 44980609-9173-479d-a525-8cc6ce4db8c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: dept_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Code'
+		dataType: string
+		lineageTag: 41602bb9-eb09-401b-9e9d-836a8019bcae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: b85c614d-1856-4aab-aece-5d5b7644d6be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Int'
+		dataType: string
+		lineageTag: 9a9854ce-1d12-4644-889a-b013f50bb5fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department Int
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Department = entity
+		mode: directQuery
+		source
+			entityName: Department
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

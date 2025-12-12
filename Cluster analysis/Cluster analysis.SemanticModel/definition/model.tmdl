@@ -1,0 +1,56 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Połączenie DirectQuery z elementem AS — Sales Tabular Model"]
+
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+
+ref table 'Sales Measures'
+ref table Date
+ref table Account
+ref table 'Delivery Term'
+ref table Product
+ref table Company
+ref table Coordinator
+ref table Currency
+ref table 'Customer Group'
+ref table Customer
+ref table Destination
+ref table 'Destination Region'
+ref table Invoice
+ref table 'Order Receive'
+ref table Department
+ref table Project
+ref table 'Sale Status'
+ref table Skonto
+ref table Variant
+ref table 'Catalog Type'
+ref table 'Price Measure'
+ref table 'Sale Measure'
+ref table 'Inventory Measure'
+ref table 'Currency Dom'
+ref table 'Product Inventory'
+ref table 'Currency Rate'
+ref table License
+ref table 'Price List'
+ref table 'Order Reference Type'
+ref table RoleDaxFilter_Year
+ref table RoleDaxFilter_Comp
+ref table RoleDaxFilter_Cust
+ref table RoleDaxFilter_Org
+ref table RoleDaxFilter_Dest
+ref table 'Time Intelligence'
+ref table 'Destination Order'
+ref table Supplier
+ref table Miary
+
+ref cultureInfo pl-PL
+ref cultureInfo en-US
+

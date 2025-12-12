@@ -1,0 +1,49 @@
+table 'Delivery Term'
+	lineageTag: e621e3d9-5b5e-44b0-b2aa-cf5c5c6cfb72
+
+	column d_term_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 843f47ea-bfdb-46ed-aa82-608727e7b489
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: d_term_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Term Name'
+		dataType: string
+		lineageTag: dcf63e52-47f5-4237-a213-ed64927a69a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Term Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column d_term_name_en
+		dataType: string
+		isHidden
+		lineageTag: 1f02eef5-7b75-446b-8a37-6eba4717d96d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: d_term_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Term Code'
+		dataType: string
+		lineageTag: 29c0bbb6-7155-406f-b277-31a9db834bee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Term Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Delivery Term' = entity
+		mode: directQuery
+		source
+			entityName: Delivery Term
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+

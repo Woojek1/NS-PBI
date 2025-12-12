@@ -1,0 +1,66 @@
+table Project
+	lineageTag: 40599780-e0fc-4e0c-bc60-57b57982cd8d
+
+	column prj_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 0f2a8d46-e14b-44be-b7eb-caaaee987b6d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prj_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Project Code'
+		dataType: string
+		lineageTag: 5795aed0-e978-4ff8-989b-d636fcec6456
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Project Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: e0e271f6-c528-48ca-b651-fa8e165df883
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Coordinator FO'
+		dataType: string
+		lineageTag: 6c943424-e963-4e80-8699-c290a8a521a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Coordinator FO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Manager'
+		dataType: string
+		lineageTag: f2b97f6a-70d4-45b0-89e9-4bc256ae2394
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Project Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Coordinator BO'
+		dataType: string
+		lineageTag: 25298462-5b28-43eb-b6f4-cb6157d1b8ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Coordinator BO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Project = entity
+		mode: directQuery
+		source
+			entityName: Project
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Sales Tabular Model'
+
