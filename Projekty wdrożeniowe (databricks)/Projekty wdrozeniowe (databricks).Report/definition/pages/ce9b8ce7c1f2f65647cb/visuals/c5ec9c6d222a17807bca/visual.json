@@ -4,10 +4,10 @@
   "position": {
     "x": 1556,
     "y": 56,
-    "z": 7000,
+    "z": 6000,
     "height": 82,
     "width": 338,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -130,67 +130,6 @@
                 "Literal": {
                   "Value": "true"
                 }
-              }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "v",
-                    "Entity": "vm_pbi_d_gl_project",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Or": {
-                        "Left": {
-                          "Contains": {
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "v"
-                                  }
-                                },
-                                "Property": "prj_desc"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "'Dess'"
-                              }
-                            }
-                          }
-                        },
-                        "Right": {
-                          "Contains": {
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "v"
-                                  }
-                                },
-                                "Property": "hprj_code"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "'Dess'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
               }
             }
           }

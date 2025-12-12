@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "vm_pbi_d_gl_project.prj_desc",
-              "nativeQueryRef": "prj_desc",
-              "active": true
+              "nativeQueryRef": "Nazwa projektu",
+              "active": true,
+              "displayName": "Nazwa projektu"
             },
             {
               "field": {
@@ -42,8 +43,47 @@
                 }
               },
               "queryRef": "f_capex_imp_cost_data.src_code_f",
-              "nativeQueryRef": "src_code_f",
-              "active": false
+              "nativeQueryRef": "Kod projektu",
+              "active": false,
+              "displayName": "Kod projektu"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vm_pbi_d_gl_project"
+                        }
+                      },
+                      "Property": "hprj_code"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(vm_pbi_d_gl_project.hprj_code)",
+              "nativeQueryRef": "Numer projektu",
+              "displayName": "Numer projektu"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Budzet projektu"
+                }
+              },
+              "queryRef": "_Miary.Budzet projektu",
+              "nativeQueryRef": "Budzet projektu"
             }
           ]
         },
@@ -66,7 +106,8 @@
                 }
               },
               "queryRef": "Sum(f_capex_imp_cost_data.amount_pln)",
-              "nativeQueryRef": "Suma elementów amount_pln"
+              "nativeQueryRef": "Wydatki",
+              "displayName": "Wydatki"
             }
           ]
         }
@@ -285,6 +326,13 @@
                   "Value": "'a645d96ee423756045ca'"
                 }
               }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default'"
+                }
+              }
             }
           }
         }
@@ -298,62 +346,32 @@
                   "Value": "false"
                 }
               }
+            },
+            "showDrillDownExpandButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showDrillDownLevelButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showDrillToggleButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d161b9b0c28d534db826",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vm_pbi_d_gl_project"
-              }
-            },
-            "Property": "prj_desc"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d718fd795a7393a0606b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_f"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6514aaab8c4bebd2ab11",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "f_capex_imp_cost_data"
-                  }
-                },
-                "Property": "amount_pln"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
