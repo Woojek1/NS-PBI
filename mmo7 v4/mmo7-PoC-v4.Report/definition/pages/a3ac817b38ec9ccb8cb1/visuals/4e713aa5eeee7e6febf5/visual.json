@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "4e713aa5eeee7e6febf5",
   "position": {
     "x": 23.75,
@@ -105,6 +105,13 @@
                                 "Value": "'''F Margin Data''[Net Sales PLN]'"
                               }
                             }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''F Margin Data''[Sale Qty]'"
+                              }
+                            }
                           ]
                         ]
                       }
@@ -135,6 +142,17 @@
                                   }
                                 ]
                               }
+                            ],
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'''F Margin Data''[Sale Qty]'"
+                                    }
+                                  }
+                                ]
+                              }
                             ]
                           ],
                           "columns": [
@@ -155,6 +173,9 @@
                         "valueMap": [
                           {
                             "0": "Net Sales PLN"
+                          },
+                          {
+                            "0": "Sale Qty"
                           }
                         ]
                       }

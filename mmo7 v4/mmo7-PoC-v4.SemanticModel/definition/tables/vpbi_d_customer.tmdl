@@ -50,6 +50,15 @@ table vpbi_d_customer
 
 		annotation SummarizationSetBy = Automatic
 
+	column cust_hier_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6f32fbe3-0d99-46aa-a474-d0c7be09a954
+		summarizeBy: none
+		sourceColumn: cust_hier_code
+
+		annotation SummarizationSetBy = Automatic
+
 	partition vpbi_d_customer = m
 		mode: directQuery
 		source =

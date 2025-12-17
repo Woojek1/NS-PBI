@@ -839,34 +839,6 @@ table 'F Margin Data'
 
 		annotation SummarizationSetBy = Automatic
 
-	column c_pln_compl_act_v2
-		dataType: double
-		isHidden
-		sourceProviderType: decimal(14, 4)
-		lineageTag: ecab172d-1632-49d1-aaca-fc3a1f3298c6
-		summarizeBy: sum
-		sourceColumn: c_pln_compl_act_v2
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column c_eur_compl_act_v2
-		dataType: double
-		isHidden
-		sourceProviderType: decimal(14, 4)
-		lineageTag: 41f28178-7243-4ad1-9776-8cb43be08c2e
-		summarizeBy: sum
-		sourceColumn: c_eur_compl_act_v2
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column src_phase
 		dataType: string
 		sourceProviderType: nvarchar(65535)
@@ -884,6 +856,15 @@ table 'F Margin Data'
 		lineageTag: f0c07746-1c0c-4b89-b970-c01f460c3e59
 		summarizeBy: none
 		sourceColumn: src_step
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_alo_table
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 577d9ba6-6ce1-4203-836e-8f2dab98227d
+		summarizeBy: none
+		sourceColumn: src_alo_table
 
 		annotation SummarizationSetBy = Automatic
 

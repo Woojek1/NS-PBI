@@ -54,176 +54,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vpbi_d_organization_team"
-                    }
-                  },
-                  "Property": "dept_code"
-                }
-              },
-              "queryRef": "vpbi_d_organization_team.dept_code",
-              "nativeQueryRef": "Department",
-              "active": false,
-              "displayName": "Department"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_organization_team"
-                    }
-                  },
-                  "Property": "team_code"
-                }
-              },
-              "queryRef": "vpbi_d_organization_team.team_code",
-              "nativeQueryRef": "Section",
-              "active": false,
-              "displayName": "Section"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_organization"
-                    }
-                  },
-                  "Property": "sman_code"
-                }
-              },
-              "queryRef": "vpbi_d_organization.sman_code",
-              "nativeQueryRef": "Sales Person",
-              "active": false,
-              "displayName": "Sales Person"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_company"
-                    }
-                  },
-                  "Property": "comp_code"
-                }
-              },
-              "queryRef": "vpbi_d_company.comp_code",
-              "nativeQueryRef": "Company",
-              "active": false,
-              "displayName": "Company"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_customer"
-                    }
-                  },
-                  "Property": "cust_code"
-                }
-              },
-              "queryRef": "vpbi_d_customer.cust_code",
-              "nativeQueryRef": "Customer Code",
-              "active": false,
-              "displayName": "Customer Code"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_customer"
-                    }
-                  },
-                  "Property": "cust_name"
-                }
-              },
-              "queryRef": "vpbi_d_customer.cust_name",
-              "nativeQueryRef": "Customer",
-              "active": false,
-              "displayName": "Customer"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "brand_name"
+                  "Property": "bcg1_name_en"
                 }
               },
-              "queryRef": "vpbi_d_product.brand_name",
-              "nativeQueryRef": "Brand",
-              "active": false,
-              "displayName": "Brand"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "supergrp_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.supergrp_name",
-              "nativeQueryRef": "Product Supergroup",
-              "active": false,
-              "displayName": "Product Supergroup"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "grp_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.grp_name",
-              "nativeQueryRef": "Product Group",
-              "active": false,
-              "displayName": "Product Group"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "sgrp_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.sgrp_name",
-              "nativeQueryRef": "Product Subgroup",
-              "active": false,
-              "displayName": "Product Subgroup"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "line_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.line_name",
-              "nativeQueryRef": "Product Line",
+              "queryRef": "vpbi_d_product.bcg1_name_en",
+              "nativeQueryRef": "Business category",
               "active": true,
-              "displayName": "Product Line"
+              "displayName": "Business category"
             },
             {
               "field": {
@@ -233,13 +73,13 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "model_name"
+                  "Property": "bcg2_name_en"
                 }
               },
-              "queryRef": "vpbi_d_product.model_name",
-              "nativeQueryRef": "Product Model",
-              "active": false,
-              "displayName": "Product Model"
+              "queryRef": "vpbi_d_product.bcg2_name_en",
+              "nativeQueryRef": "Business subcategory",
+              "active": true,
+              "displayName": "Business subcategory"
             },
             {
               "field": {
@@ -249,29 +89,13 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "prod_si_code"
+                  "Property": "bcg3_name_en"
                 }
               },
-              "queryRef": "vpbi_d_product.prod_si_code",
-              "nativeQueryRef": "Index",
+              "queryRef": "vpbi_d_product.bcg3_name_en",
+              "nativeQueryRef": "Business cluster",
               "active": false,
-              "displayName": "Index"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "prod_si_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.prod_si_name",
-              "nativeQueryRef": "Index Name",
-              "active": false,
-              "displayName": "Index Name"
+              "displayName": "Business cluster"
             }
           ],
           "fieldParameters": [
@@ -287,8 +111,7 @@
                 }
               },
               "index": 0,
-              "length": 14,
-              "sortDirection": "Ascending"
+              "length": 3
             }
           ]
         },
@@ -308,6 +131,21 @@
               "queryRef": "F Margin Data.Net Sales PLN",
               "nativeQueryRef": "Net Sales PLN",
               "displayName": "Net Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F Margin Data"
+                    }
+                  },
+                  "Property": "Sale Qty"
+                }
+              },
+              "queryRef": "F Margin Data.Sale Qty",
+              "nativeQueryRef": "Sale Qty",
+              "displayName": "Sale Qty"
             }
           ],
           "fieldParameters": [
@@ -323,29 +161,91 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 2
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "vpbi_d_product"
-                  }
-                },
-                "Property": "line_name"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "vpbi_d_product.bcg1_name_en"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg1_name_en"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "vpbi_d_product.bcg2_name_en"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg2_name_en"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "vpbi_d_product.bcg3_name_en"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'!Unclassified'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'!Unclassified'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
     "objects": {
       "values": [
         {
@@ -589,12 +489,6 @@
           },
           "selector": {
             "metadata": "f_margin_data.Margin I (prim) % (PLN)"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "vpbi_d_organization_team.dept_code"
           }
         },
         {
@@ -1276,7 +1170,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "63D"
+                  "Value": "91.17391304347825D"
                 }
               }
             }
@@ -1485,48 +1379,6 @@
               }
             ]
           }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "442.86507298572405D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "vpbi_d_product.prod_si_code"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "471.91447655073034D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "vpbi_d_product.line_name"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "380.8887041551012D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "vpbi_d_product.model_name"
-          }
         }
       ],
       "rowHeaders": [
@@ -1613,7 +1465,6 @@
           }
         },
         "type": "Advanced",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2206,6 +2057,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2221,6 +2073,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2236,6 +2089,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2251,6 +2105,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2266,6 +2121,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2361,6 +2217,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2376,6 +2233,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2407,6 +2265,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2422,6 +2281,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2434,6 +2294,48 @@
               }
             },
             "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d90b2f8e44c0fc891689",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "bcg1_name_en"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7d940d12742bceeb99f8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "bcg2_name_en"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b8527957d00591aaae24",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "bcg3_name_en"
           }
         },
         "type": "Categorical"

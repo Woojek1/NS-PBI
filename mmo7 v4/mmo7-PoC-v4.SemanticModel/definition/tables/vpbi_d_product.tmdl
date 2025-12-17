@@ -153,6 +153,69 @@ table vpbi_d_product
 
 		annotation SummarizationSetBy = Automatic
 
+	column bcg3_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d4b97733-2989-41e4-926a-d8d39ab07f7e
+		summarizeBy: none
+		sourceColumn: bcg3_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg3_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 85252ed1-f5db-4e53-9216-7322eb49d495
+		summarizeBy: none
+		sourceColumn: bcg3_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg3_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7574b59b-c144-4c6b-8763-a4bea75de7db
+		summarizeBy: none
+		sourceColumn: bcg3_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg2_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ad1ce559-3492-4076-982a-0ce8136f930c
+		summarizeBy: none
+		sourceColumn: bcg2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg2_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 92e37a6c-f5b5-4043-805a-0bc835569cff
+		summarizeBy: none
+		sourceColumn: bcg2_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg1_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: afa57f6e-b162-44b6-b27c-def077a097c0
+		summarizeBy: none
+		sourceColumn: bcg1_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg1_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c25f0f0c-df28-435d-b836-394fd3833346
+		summarizeBy: none
+		sourceColumn: bcg1_name_en
+
+		annotation SummarizationSetBy = Automatic
+
 	partition vpbi_d_product = m
 		mode: directQuery
 		source =

@@ -53,7 +53,10 @@ table Attributes
 				    ("Product Line", NAMEOF('vpbi_d_product'[line_name]), 8),
 				    ("Product Model", NAMEOF('vpbi_d_product'[model_name]), 9),
 				    ("Index", NAMEOF('vpbi_d_product'[prod_si_code]), 10),
-				    ("Index Name", NAMEOF('vpbi_d_product'[prod_si_name]), 11)
+				    ("Index Name", NAMEOF('vpbi_d_product'[prod_si_name]), 11),
+				    ("Business category", NAMEOF('vpbi_d_product'[bcg1_name_en]),12),
+				    ("Business subcategory", NAMEOF('vpbi_d_product'[bcg2_name_en]),13),
+				    ("Business cluster", NAMEOF('vpbi_d_product'[bcg3_name_en]),14)
 				}
 
 	annotation PBI_Id = 36003c7d134a4495a19bd7df3ecc4fe1
