@@ -23,61 +23,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "67efc94033993141c787",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Date"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Date",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 2,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "Date"
-                    }
-                  },
-                  "Right": {
-                    "DateSpan": {
-                      "Expression": {
-                        "Literal": {
-                          "Value": "datetime'2020-01-01T01:00:00'"
-                        }
-                      },
-                      "TimeUnit": 5
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
         "name": "73e9ca30eb2689bfaf04",
+        "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
@@ -131,52 +78,53 @@
         "howCreated": "User"
       },
       {
-        "name": "4a375a47621660bf6003",
+        "name": "67efc94033993141c787",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Sale Status"
+                "Entity": "Date"
               }
             },
-            "Property": "Sale Status Code"
+            "Property": "Date"
           }
         },
-        "type": "Categorical",
+        "type": "Advanced",
         "filter": {
           "Version": 2,
           "From": [
             {
-              "Name": "s",
-              "Entity": "Sale Status",
+              "Name": "d",
+              "Entity": "Date",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "s"
-                          }
-                        },
-                        "Property": "Sale Status Code"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'zafakturowano'"
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
                         }
-                      }
-                    ]
-                  ]
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Literal": {
+                          "Value": "datetime'2020-01-01T01:00:00'"
+                        }
+                      },
+                      "TimeUnit": 5
+                    }
+                  }
                 }
               }
             }
@@ -186,6 +134,7 @@
       },
       {
         "name": "1fa3b252b3eb1da6cca7",
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -237,8 +186,64 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "4a375a47621660bf6003",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sale Status"
+              }
+            },
+            "Property": "Sale Status Code"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "Sale Status",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "Sale Status Code"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'zafakturowano'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   },
   "objects": {
     "section": [
@@ -260,7 +265,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           },

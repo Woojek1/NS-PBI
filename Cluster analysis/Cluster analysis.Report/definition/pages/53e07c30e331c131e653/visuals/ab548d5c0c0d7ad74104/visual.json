@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ab548d5c0c0d7ad74104",
   "position": {
-    "x": 321.66666666666669,
-    "y": 1.6666666666666667,
+    "x": 330,
+    "y": 0,
     "z": 0,
-    "height": 855,
-    "width": 1550,
+    "height": 860,
+    "width": 1568.3333333333335,
     "tabOrder": 0
   },
   "visual": {
@@ -42,11 +42,11 @@
                       "Entity": "Product"
                     }
                   },
-                  "Property": "Cluster Name"
+                  "Property": "BC Grp1"
                 }
               },
-              "queryRef": "Product.Cluster Name",
-              "nativeQueryRef": "Klaster Nazwa",
+              "queryRef": "Product.BC Grp1",
+              "nativeQueryRef": "BC Grp1",
               "active": true
             },
             {
@@ -57,11 +57,26 @@
                       "Entity": "Product"
                     }
                   },
-                  "Property": "Line Status"
+                  "Property": "BC Grp2"
                 }
               },
-              "queryRef": "Product.Line Status",
-              "nativeQueryRef": "Line Status",
+              "queryRef": "Product.BC Grp2",
+              "nativeQueryRef": "BC Grp2",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Cluster Name"
+                }
+              },
+              "queryRef": "Product.Cluster Name",
+              "nativeQueryRef": "Klaster Nazwa",
               "active": false
             },
             {
@@ -93,6 +108,21 @@
               "queryRef": "Product.Model",
               "nativeQueryRef": "Model",
               "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Model Code"
+                }
+              },
+              "queryRef": "Product.Model Code",
+              "nativeQueryRef": "Model Code",
+              "active": false
             }
           ]
         },
@@ -106,12 +136,12 @@
                       "Entity": "Sales Measures"
                     }
                   },
-                  "Property": "Inventory Quantity"
+                  "Property": "Sales Quantity"
                 }
               },
-              "queryRef": "Sales Measures.Inventory Quantity",
-              "nativeQueryRef": "Inventory Quantity",
-              "displayName": "Inventory Quantity"
+              "queryRef": "Sales Measures.Sales Quantity",
+              "nativeQueryRef": "Sales Quantity",
+              "displayName": "Sales Quantity"
             },
             {
               "field": {
@@ -171,6 +201,44 @@
         "levels": [
           {
             "queryRefs": [
+              "Product.BC Grp1"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "BC Grp1"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Product.BC Grp2"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "BC Grp2"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
               "Product.Cluster Name"
             ],
             "isCollapsed": true,
@@ -183,25 +251,6 @@
                     }
                   },
                   "Property": "Cluster Name"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Product.Line Status"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Product"
-                    }
-                  },
-                  "Property": "Line Status"
                 }
               }
             ],
@@ -231,10 +280,86 @@
               "Product.Model"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Model"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Product.Model Code"
+            ],
+            "isCollapsed": true,
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'MEBLE'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Meble recepcyjne'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'Lady recepcyjne'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'BIURKA I STOŁY'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Stoły i małe stoliki'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -292,6 +417,22 @@
             "metadata": "Product.Cluster Name"
           }
         }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sales Measures.Sales Quantity"
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -327,20 +468,6 @@
         "type": "Advanced"
       },
       {
-        "name": "e24f11a654c12855c7c7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Product"
-              }
-            },
-            "Property": "Line Status"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "01d337692ade26ccbfe1",
         "field": {
           "Column": {
@@ -369,35 +496,35 @@
         "type": "Categorical"
       },
       {
-        "name": "8da711a18f30a290b0d7",
+        "name": "d6c5fef4531a440a0eb5",
         "field": {
-          "Measure": {
+          "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Sales Measures"
+                "Entity": "Product"
               }
             },
-            "Property": "Net Sales PLN"
+            "Property": "BC Grp1"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       },
       {
-        "name": "8dc4d23fc07883a22d94",
+        "name": "8a41c233caecd1804d4b",
         "field": {
-          "Measure": {
+          "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Sales Measures"
+                "Entity": "Product"
               }
             },
-            "Property": "Inventory Quantity"
+            "Property": "BC Grp2"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       },
       {
-        "name": "b576a6bb811bd159428f",
+        "name": "0e685e46a7683a1a20ce",
         "field": {
           "Measure": {
             "Expression": {
@@ -405,7 +532,7 @@
                 "Entity": "Sales Measures"
               }
             },
-            "Property": "Net Sales EUR"
+            "Property": "Sales Quantity"
           }
         },
         "type": "Advanced"
