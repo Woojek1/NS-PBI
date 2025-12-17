@@ -1,0 +1,482 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "vpbi_d_organization.dept_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_organization",
+			          "ConceptualProperty": "dept_code"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_data.sale_qty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "sale_qty"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_data.sale_qty1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Sale Qty"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_data.net_sales_pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Net Sales PLN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Sales PLN": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "f_margin_data.margin_i_pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Margin I PLN"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_data.margin_i__pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Margin I % (PLN)"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_data.margin_ii_pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Margin II PLN"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_data.margin_ii__pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Margin II % (PLN)"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vpbi_d_month.year_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_month",
+			          "ConceptualProperty": "year_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Year": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_month.mon_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_month",
+			          "ConceptualProperty": "mon_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Month Code": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_product.prod_si_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "prod_si_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Index Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_product.brand_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "brand_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Brand": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_product.supergrp_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "supergrp_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Product Supergroup": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_product.grp_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "grp_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Product Group": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_product.sgrp_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "sgrp_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Product Subgroup": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_product.line_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "line_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Product Line": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_product.model_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "model_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Product Model": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_product.prod_si_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_product",
+			          "ConceptualProperty": "prod_si_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Index": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_organization_team.dept_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_organization_team",
+			          "ConceptualProperty": "dept_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Department": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_organization_team.team_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_organization_team",
+			          "ConceptualProperty": "team_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Section": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_organization.sman_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_organization",
+			          "ConceptualProperty": "sman_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales Person": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_company.comp_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_company",
+			          "ConceptualProperty": "comp_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Company": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_customer.cust_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_customer",
+			          "ConceptualProperty": "cust_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Customer Code": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vpbi_d_customer.cust_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vpbi_d_customer",
+			          "ConceptualProperty": "cust_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Customer": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "f_margin_data.complaint_activity_pln_v2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Complaint Activity PLN v2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Complaint Activity PLN v2": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "parameter.parameter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter",
+			          "ConceptualProperty": "Parameter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Measures": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "f_margin_data.prod_si_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "prod_si_code"
+			        }
+			      },
+			      "State": "Generated"
+			    }
+			  }
+			}
+		contentType: json
+

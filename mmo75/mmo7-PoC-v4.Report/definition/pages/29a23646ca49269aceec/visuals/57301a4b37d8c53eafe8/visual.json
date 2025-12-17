@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "57301a4b37d8c53eafe8",
+  "position": {
+    "x": 56.774193548387096,
+    "y": 155.87096774193549,
+    "z": 0,
+    "height": 279.741935483871,
+    "width": 1129.2903225806451,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_d_product"
+                    }
+                  },
+                  "Property": "bcg1_name"
+                }
+              },
+              "queryRef": "v_d_product.bcg1_name",
+              "nativeQueryRef": "bcg1_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_d_product"
+                    }
+                  },
+                  "Property": "bcg2_name"
+                }
+              },
+              "queryRef": "v_d_product.bcg2_name",
+              "nativeQueryRef": "bcg2_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_d_product"
+                    }
+                  },
+                  "Property": "bcg3_name"
+                }
+              },
+              "queryRef": "v_d_product.bcg3_name",
+              "nativeQueryRef": "bcg3_name"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7c888059bb4b7e134fe0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "v_d_product"
+              }
+            },
+            "Property": "bcg1_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e8ca81e3be48ee87aea6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "v_d_product"
+              }
+            },
+            "Property": "bcg2_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "89ed1f406bb47f05369c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "v_d_product"
+              }
+            },
+            "Property": "bcg3_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

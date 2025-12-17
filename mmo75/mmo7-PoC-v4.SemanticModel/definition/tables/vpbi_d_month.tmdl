@@ -1,0 +1,58 @@
+table vpbi_d_month
+	lineageTag: b2eba3bd-5cb2-40f8-a94e-eaa435e115a1
+
+	column mon_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 87e4a1cf-9b36-49ca-a2ee-c2af9cfc17a8
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 50205c6f-ebec-4153-9113-283998ce553c
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3ba565ad-ea14-48d8-9c6f-8afe2848aa37
+		summarizeBy: none
+		sourceColumn: year_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_period_key
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3e85766e-7642-4601-9127-38aa94125b87
+		summarizeBy: none
+		sourceColumn: year_period_key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vpbi_d_month = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    mmo7_Schema = controlling_Database{[Name="mmo7",Kind="Schema"]}[Data],
+				    vpbi_d_month_View = mmo7_Schema{[Name="vpbi_d_month",Kind="View"]}[Data]
+				in
+				    vpbi_d_month_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Nawigacja
+

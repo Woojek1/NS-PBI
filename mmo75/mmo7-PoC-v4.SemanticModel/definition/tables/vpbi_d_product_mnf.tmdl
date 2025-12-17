@@ -1,0 +1,67 @@
+table vpbi_d_product_mnf
+	lineageTag: 508ef4c6-fb9a-49fe-88c0-4aeef7d6c6e0
+
+	column mnf_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4b4116e1-f172-4836-ac9f-1aac2ddb4f32
+		summarizeBy: none
+		sourceColumn: mnf_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 1794d70e-2f46-4e98-b969-0b93916d0159
+		summarizeBy: none
+		sourceColumn: mnf_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e8bb8e60-2934-49a0-bc94-d52729e7e715
+		summarizeBy: none
+		sourceColumn: mnf_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_cnt_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5f66456a-0a57-4f07-9f1c-dd0a1b9f1b5c
+		summarizeBy: none
+		sourceColumn: mnf_cnt_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_cnt_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c436df6e-c7ba-44a7-bb8d-d84ba4311ff6
+		summarizeBy: none
+		sourceColumn: mnf_cnt_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vpbi_d_product_mnf = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    mmo7_Schema = controlling_Database{[Name="mmo7",Kind="Schema"]}[Data],
+				    vpbi_d_product_mnf_View = mmo7_Schema{[Name="vpbi_d_product_mnf",Kind="View"]}[Data]
+				in
+				    vpbi_d_product_mnf_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Nawigacja
+

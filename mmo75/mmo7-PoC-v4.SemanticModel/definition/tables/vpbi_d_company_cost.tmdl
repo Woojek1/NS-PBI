@@ -1,0 +1,50 @@
+table vpbi_d_company_cost
+	lineageTag: 2d6228e3-0435-4946-a4db-65c8cecc4d9d
+
+	column comp_cost_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d2be61af-c39f-4597-8f80-f93ad6c62142
+		summarizeBy: none
+		sourceColumn: comp_cost_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column comp_cost_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 037a9cd8-f934-467d-b62d-1197f5ca534d
+		summarizeBy: none
+		sourceColumn: comp_cost_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_cost_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3d2c09f9-ea80-43d2-b465-71c44bc35f60
+		summarizeBy: none
+		sourceColumn: comp_cost_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vpbi_d_company_cost = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    mmo7_Schema = controlling_Database{[Name="mmo7",Kind="Schema"]}[Data],
+				    vpbi_d_company_View = mmo7_Schema{[Name="vpbi_d_company",Kind="View"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(vpbi_d_company_View,{{"comp_code", "comp_cost_code"}, {"comp_id", "comp_cost_id"}, {"comp_name", "comp_cost_name"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,95 @@
+table vpbi_d_organization
+	lineageTag: 96190661-9f94-4d8d-bc23-8ce73d3e3f9a
+
+	column org_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f12d49ad-d1b5-4700-8619-56855d0401c3
+		summarizeBy: none
+		sourceColumn: org_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sman_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 16044b28-32f1-47e1-a9dd-0132e441e31a
+		summarizeBy: none
+		sourceColumn: sman_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sman_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4eb0ac92-42de-41b9-901d-ca3d5c2154c1
+		summarizeBy: none
+		sourceColumn: sman_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_code
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 77c2bd04-8a6c-403a-abec-85ac16d4483d
+		summarizeBy: none
+		sourceColumn: team_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_name
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7d541267-6274-4096-b3f2-f612fc77eb53
+		summarizeBy: none
+		sourceColumn: team_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_code
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 55e6fee6-c71d-4493-9c84-dd908e01e25a
+		summarizeBy: none
+		sourceColumn: dept_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_name
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6e5fd20e-72fa-4c02-be1f-275ef68de4f4
+		summarizeBy: none
+		sourceColumn: dept_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vpbi_d_organization = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    mmo7_Schema = controlling_Database{[Name="mmo7",Kind="Schema"]}[Data],
+				    vpbi_d_organization_View = mmo7_Schema{[Name="vpbi_d_organization",Kind="View"]}[Data]
+				in
+				    vpbi_d_organization_View
+
+	annotation PBI_ResultType = Table
+

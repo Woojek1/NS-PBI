@@ -1,0 +1,150 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "191c24bab040dd14cee3",
+  "position": {
+    "x": 246.5348237317283,
+    "y": 30.816852966466037,
+    "z": 1000,
+    "height": 688.97678417884788,
+    "width": 1033.4651762682718,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_month"
+                    }
+                  },
+                  "Property": "mon_name"
+                }
+              },
+              "queryRef": "vpbi_d_month.mon_name",
+              "nativeQueryRef": "mon_name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_src_cost_transport"
+                        }
+                      },
+                      "Property": "c_pln_transport"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_src_cost_transport.c_pln_transport)",
+              "nativeQueryRef": "Sum of c_pln_transport"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_src_cost_transport"
+                    }
+                  },
+                  "Property": "src"
+                }
+              },
+              "queryRef": "f_src_cost_transport.src",
+              "nativeQueryRef": "src"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_organization_team"
+                    }
+                  },
+                  "Property": "dept_code"
+                }
+              },
+              "queryRef": "vpbi_d_organization_team.dept_code",
+              "nativeQueryRef": "dept_code"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cc1706bdc26d062e12a8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_month"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7902e3f2756c611a9351",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_src_cost_transport"
+                  }
+                },
+                "Property": "c_pln_transport"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d44b17ae15970602107b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_src_cost_transport"
+              }
+            },
+            "Property": "src"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "814b48b65ba0a2154999",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_organization_team"
+              }
+            },
+            "Property": "dept_code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
