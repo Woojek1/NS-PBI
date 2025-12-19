@@ -62,7 +62,7 @@
               },
               "queryRef": "Product.BC Grp2",
               "nativeQueryRef": "BC Grp2",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -157,21 +157,6 @@
               "queryRef": "Sales Measures.Net Sales PLN",
               "nativeQueryRef": "Net Sales PLN",
               "displayName": "Net Sales PLN"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Sales Measures"
-                    }
-                  },
-                  "Property": "Net Sales EUR"
-                }
-              },
-              "queryRef": "Sales Measures.Net Sales EUR",
-              "nativeQueryRef": "Net Sales EUR",
-              "displayName": "Net Sales EUR"
             }
           ],
           "fieldParameters": [
@@ -187,7 +172,7 @@
                 }
               },
               "index": 0,
-              "length": 3
+              "length": 2
             }
           ]
         }
@@ -203,7 +188,6 @@
             "queryRefs": [
               "Product.BC Grp1"
             ],
-            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -302,64 +286,7 @@
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'MEBLE'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Meble recepcyjne'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'Lady recepcyjne'"
-                          }
-                        }
-                      ],
-                      "isToggled": true
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'BIURKA I STOŁY'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Stoły i małe stoliki'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -522,20 +449,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "0e685e46a7683a1a20ce",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sales Measures"
-              }
-            },
-            "Property": "Sales Quantity"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -850,19 +850,7 @@ cultureInfo pl-PL
 			          "ConceptualProperty": "Inventory Quantity"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Inventory Quantity": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "sales_measures.net_sales_pln": {
 			      "Definition": {
@@ -896,6 +884,27 @@ cultureInfo pl-PL
 			      "Terms": [
 			        {
 			          "Net Sales EUR": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_measures.sales_quantity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sales Measures",
+			          "ConceptualProperty": "Sales Quantity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales Quantity": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

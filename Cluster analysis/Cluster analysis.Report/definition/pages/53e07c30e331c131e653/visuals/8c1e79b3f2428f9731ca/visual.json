@@ -23,17 +23,68 @@
                       "Entity": "Product"
                     }
                   },
+                  "Property": "BC Grp1"
+                }
+              },
+              "queryRef": "Product.BC Grp1",
+              "nativeQueryRef": "BC Grp1",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
                   "Property": "Cluster Name"
                 }
               },
               "queryRef": "Product.Cluster Name",
-              "nativeQueryRef": "Klaster Nazwa",
-              "active": true
+              "nativeQueryRef": "Cluster Name",
+              "active": false
             }
           ]
         }
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Product.BC Grp1"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "BC Grp1"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Product.Cluster Name"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "data": [
         {
