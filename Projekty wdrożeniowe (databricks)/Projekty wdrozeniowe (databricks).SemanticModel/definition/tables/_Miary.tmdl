@@ -46,7 +46,7 @@ table _Miary
 
 	measure 'Numer projektu - tytul' =
 			
-			IF( NOT ISFILTERED(vm_pbi_d_gl_project[hprj_code]),
+			IF( NOT ISFILTERED(vm_pbi_d_gl_project[prj_desc]),
 			    "Wybierz projekt",
 			    IF( HASONEVALUE(vm_pbi_d_gl_project[hprj_code]),
 			        VALUES(vm_pbi_d_gl_project[hprj_code]),

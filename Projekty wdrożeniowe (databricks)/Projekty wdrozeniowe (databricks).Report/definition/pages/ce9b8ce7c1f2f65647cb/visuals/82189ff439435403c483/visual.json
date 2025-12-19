@@ -49,66 +49,6 @@
               "nativeQueryRef": "Kategorie wydatków",
               "active": true,
               "displayName": "Kategorie wydatków"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "f_capex_imp_cost_data"
-                    }
-                  },
-                  "Property": "src_account"
-                }
-              },
-              "queryRef": "f_capex_imp_cost_data.src_account",
-              "nativeQueryRef": "src_account",
-              "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "f_capex_imp_cost_data"
-                    }
-                  },
-                  "Property": "src_code_f"
-                }
-              },
-              "queryRef": "f_capex_imp_cost_data.src_code_f",
-              "nativeQueryRef": "src_code_f",
-              "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "f_capex_imp_cost_data"
-                    }
-                  },
-                  "Property": "src_code_d"
-                }
-              },
-              "queryRef": "f_capex_imp_cost_data.src_code_d",
-              "nativeQueryRef": "src_code_d",
-              "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "f_capex_imp_cost_data"
-                    }
-                  },
-                  "Property": "src_code_c"
-                }
-              },
-              "queryRef": "f_capex_imp_cost_data.src_code_c",
-              "nativeQueryRef": "src_code_c",
-              "active": false
             }
           ]
         },
@@ -173,82 +113,6 @@
               }
             ],
             "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "f_capex_imp_cost_data.src_account"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "f_capex_imp_cost_data"
-                    }
-                  },
-                  "Property": "src_account"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "f_capex_imp_cost_data.src_code_f"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "f_capex_imp_cost_data"
-                    }
-                  },
-                  "Property": "src_code_f"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "f_capex_imp_cost_data.src_code_d"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "f_capex_imp_cost_data"
-                    }
-                  },
-                  "Property": "src_code_d"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "f_capex_imp_cost_data.src_code_c"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "f_capex_imp_cost_data"
-                    }
-                  },
-                  "Property": "src_code_c"
-                }
-              }
-            ],
-            "isPinned": true
           }
         ],
         "root": {
@@ -261,31 +125,7 @@
                   }
                 }
               ],
-              "isToggled": true,
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'080-02'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'W-20NS0002'"
-                          }
-                        }
-                      ],
-                      "isToggled": true
-                    }
-                  ]
-                }
-              ]
+              "isToggled": true
             }
           ]
         }
@@ -3834,20 +3674,6 @@
         "type": "Categorical"
       },
       {
-        "name": "55df40f8917b19424254",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_account"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "11da0a578c8853b045b1",
         "field": {
           "Measure": {
@@ -3860,34 +3686,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "9e8f07ccfc2a9cdc5228",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_d"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3ac67e634047ad8a3945",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_capex_imp_cost_data"
-              }
-            },
-            "Property": "src_code_c"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
