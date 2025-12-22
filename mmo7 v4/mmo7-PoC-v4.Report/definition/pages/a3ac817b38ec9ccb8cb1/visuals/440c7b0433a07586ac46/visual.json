@@ -7,7 +7,7 @@
     "z": 0,
     "height": 700,
     "width": 1030,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -57,44 +57,12 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "bcg1_name_en"
-                }
-              },
-              "queryRef": "vpbi_d_product.bcg1_name_en",
-              "nativeQueryRef": "Business category",
-              "active": true,
-              "displayName": "Business category"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "bcg2_name_en"
-                }
-              },
-              "queryRef": "vpbi_d_product.bcg2_name_en",
-              "nativeQueryRef": "Business subcategory",
-              "active": true,
-              "displayName": "Business subcategory"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
                   "Property": "bcg3_name_en"
                 }
               },
               "queryRef": "vpbi_d_product.bcg3_name_en",
               "nativeQueryRef": "Business cluster",
-              "active": false,
+              "active": true,
               "displayName": "Business cluster"
             },
             {
@@ -105,13 +73,29 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "grp_name"
+                  "Property": "line_name"
                 }
               },
-              "queryRef": "vpbi_d_product.grp_name",
-              "nativeQueryRef": "Product Group",
-              "active": false,
-              "displayName": "Product Group"
+              "queryRef": "vpbi_d_product.line_name",
+              "nativeQueryRef": "Product Line",
+              "active": true,
+              "displayName": "Product Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_customer"
+                    }
+                  },
+                  "Property": "cust_name"
+                }
+              },
+              "queryRef": "vpbi_d_customer.cust_name",
+              "nativeQueryRef": "Customer",
+              "active": true,
+              "displayName": "Customer"
             },
             {
               "field": {
@@ -121,29 +105,13 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "sgrp_name"
+                  "Property": "prod_si_code"
                 }
               },
-              "queryRef": "vpbi_d_product.sgrp_name",
-              "nativeQueryRef": "Product Subgroup",
+              "queryRef": "vpbi_d_product.prod_si_code",
+              "nativeQueryRef": "Index",
               "active": false,
-              "displayName": "Product Subgroup"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "supergrp_name"
-                }
-              },
-              "queryRef": "vpbi_d_product.supergrp_name",
-              "nativeQueryRef": "Product Supergroup",
-              "active": false,
-              "displayName": "Product Supergroup"
+              "displayName": "Index"
             }
           ],
           "fieldParameters": [
@@ -159,7 +127,7 @@
                 }
               },
               "index": 0,
-              "length": 6
+              "length": 4
             }
           ]
         },
@@ -179,6 +147,51 @@
               "queryRef": "F Margin Data.Net Sales PLN",
               "nativeQueryRef": "Net Sales PLN",
               "displayName": "Net Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F Margin Data"
+                    }
+                  },
+                  "Property": "Manufacturing Cost PLN"
+                }
+              },
+              "queryRef": "F Margin Data.Manufacturing Cost PLN",
+              "nativeQueryRef": "Manufacturing Cost PLN",
+              "displayName": "Manufacturing Cost PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F Margin Data"
+                    }
+                  },
+                  "Property": "Margin II PLN"
+                }
+              },
+              "queryRef": "F Margin Data.Margin II PLN",
+              "nativeQueryRef": "Margin II PLN",
+              "displayName": "Margin II PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "F Margin Data"
+                    }
+                  },
+                  "Property": "Margin II % (PLN)"
+                }
+              },
+              "queryRef": "F Margin Data.Margin II % (PLN)",
+              "nativeQueryRef": "Margin II % (PLN)",
+              "displayName": "Margin II % (PLN)"
             }
           ],
           "fieldParameters": [
@@ -194,7 +207,7 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 4
             }
           ]
         }
@@ -208,46 +221,8 @@
         "levels": [
           {
             "queryRefs": [
-              "vpbi_d_product.bcg1_name_en"
-            ],
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "bcg1_name_en"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "vpbi_d_product.bcg2_name_en"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "bcg2_name_en"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
               "vpbi_d_product.bcg3_name_en"
             ],
-            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -264,9 +239,8 @@
           },
           {
             "queryRefs": [
-              "vpbi_d_product.grp_name"
+              "vpbi_d_product.line_name"
             ],
-            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -275,7 +249,7 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "grp_name"
+                  "Property": "line_name"
                 }
               }
             ],
@@ -283,7 +257,7 @@
           },
           {
             "queryRefs": [
-              "vpbi_d_product.sgrp_name"
+              "vpbi_d_customer.cust_name"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -291,10 +265,10 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vpbi_d_product"
+                      "Entity": "vpbi_d_customer"
                     }
                   },
-                  "Property": "sgrp_name"
+                  "Property": "cust_name"
                 }
               }
             ],
@@ -302,7 +276,7 @@
           },
           {
             "queryRefs": [
-              "vpbi_d_product.supergrp_name"
+              "vpbi_d_product.prod_si_code"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -313,133 +287,14 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "supergrp_name"
+                  "Property": "prod_si_code"
                 }
               }
             ],
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'!Unclassified'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'!Unclassified'"
-                      }
-                    }
-                  ],
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'!Unclassified'"
-                          }
-                        }
-                      ],
-                      "children": [
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'Krzesła obrotowe'"
-                              }
-                            }
-                          ],
-                          "children": [
-                            {
-                              "identityValues": [
-                                {
-                                  "Literal": {
-                                    "Value": "'Krzesła obrotowe biurowe'"
-                                  }
-                                }
-                              ],
-                              "isToggled": true
-                            }
-                          ]
-                        },
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'Biurka i stanowiska workbench'"
-                              }
-                            }
-                          ],
-                          "isToggled": true
-                        },
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'Produkty uzupełniające'"
-                              }
-                            }
-                          ],
-                          "isToggled": true
-                        },
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'Stoły i stoliki'"
-                              }
-                            }
-                          ],
-                          "isToggled": true,
-                          "children": [
-                            {
-                              "identityValues": [
-                                {
-                                  "Literal": {
-                                    "Value": "'Stoły do spotkań (nieskładane)'"
-                                  }
-                                }
-                              ],
-                              "isToggled": true
-                            }
-                          ]
-                        },
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'Komponenty i materiały'"
-                              }
-                            }
-                          ],
-                          "isToggled": true
-                        },
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'Beam Seating'"
-                              }
-                            }
-                          ],
-                          "isToggled": true
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -706,20 +561,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "60D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "F Margin Data.Sale Qty"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "87D"
                 }
               }
@@ -734,20 +575,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "110D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "F Margin Data.Margin I % (PLN)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "93D"
                 }
               }
@@ -783,44 +610,6 @@
           },
           "selector": {
             "metadata": "F Margin Data.Margin II % (PLN)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "60D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "vpbi_d_product"
-                          }
-                        },
-                        "Property": "line_code"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'ARIZONA'"
-                      }
-                    }
-                  }
-                }
-              }
-            ],
-            "metadata": "F Margin Data.Sale Qty"
           }
         },
         {
@@ -935,36 +724,6 @@
               }
             ],
             "metadata": "F Margin Data.Margin II % (PLN)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "63D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "total": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "vpbi_d_product"
-                        }
-                      },
-                      "Property": "line_code"
-                    }
-                  }
-                ]
-              }
-            ],
-            "metadata": "F Margin Data.Sale Qty"
           }
         },
         {
@@ -1062,44 +821,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "60D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "vpbi_d_month"
-                          }
-                        },
-                        "Property": "year_name"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'2024'"
-                      }
-                    }
-                  }
-                }
-              }
-            ],
-            "metadata": "F Margin Data.Sale Qty"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "93D"
                 }
               }
@@ -1214,44 +935,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "96.52173913043478D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "scopeId": {
-                  "Comparison": {
-                    "ComparisonKind": 0,
-                    "Left": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "vpbi_d_month"
-                          }
-                        },
-                        "Property": "year_name"
-                      }
-                    },
-                    "Right": {
-                      "Literal": {
-                        "Value": "'2025'"
-                      }
-                    }
-                  }
-                }
-              }
-            ],
-            "metadata": "F Margin Data.Sale Qty"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "93D"
                 }
               }
@@ -1359,36 +1042,6 @@
               }
             ],
             "metadata": "F Margin Data.Margin II % (PLN)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "91.17391304347825D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "total": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "vpbi_d_month"
-                        }
-                      },
-                      "Property": "year_name"
-                    }
-                  }
-                ]
-              }
-            ],
-            "metadata": "F Margin Data.Sale Qty"
           }
         },
         {
@@ -1523,7 +1176,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "101.48234180024838D"
+                  "Value": "124.74221877400497D"
                 }
               }
             }
@@ -1575,6 +1228,110 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "370.5333333333333D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vpbi_d_product.bcg1_name_en"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "249.00000284787995D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vpbi_d_product.bcg3_name_en"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "90.55558375179223D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "vpbi_d_month"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2024'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "F Margin Data.Manufacturing Cost PLN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "96.11111111111111D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "vpbi_d_month"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2025'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "F Margin Data.Manufacturing Cost PLN"
+          }
         }
       ],
       "rowHeaders": [
@@ -1604,6 +1361,20 @@
               "expr": {
                 "Literal": {
                   "Value": "'Sum'"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -1727,7 +1498,6 @@
           }
         },
         "type": "Advanced",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2078,7 +1848,6 @@
           }
         },
         "type": "Advanced",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2094,7 +1863,6 @@
           }
         },
         "type": "Advanced",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2414,7 +2182,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2462,6 +2229,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2477,11 +2245,10 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
-        "name": "8b06ddc00b2d23290541",
+        "name": "b6ffe7f56535f6927d51",
         "field": {
           "Column": {
             "Expression": {
@@ -2495,35 +2262,7 @@
         "type": "Categorical"
       },
       {
-        "name": "d90b2f8e44c0fc891689",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vpbi_d_product"
-              }
-            },
-            "Property": "bcg1_name_en"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7d940d12742bceeb99f8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vpbi_d_product"
-              }
-            },
-            "Property": "bcg2_name_en"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b8527957d00591aaae24",
+        "name": "e3717a0d11fece973238",
         "field": {
           "Column": {
             "Expression": {
@@ -2537,29 +2276,15 @@
         "type": "Categorical"
       },
       {
-        "name": "c9c7deab651ccae76f33",
+        "name": "6925378bb5725ccceb28",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vpbi_d_product"
+                "Entity": "vpbi_d_customer"
               }
             },
-            "Property": "grp_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "5d56a46928b16d2820b9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vpbi_d_product"
-              }
-            },
-            "Property": "supergrp_name"
+            "Property": "cust_name"
           }
         },
         "type": "Categorical"

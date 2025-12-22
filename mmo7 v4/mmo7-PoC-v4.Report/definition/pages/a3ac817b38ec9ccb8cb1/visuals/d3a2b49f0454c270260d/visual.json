@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "d3a2b49f0454c270260d",
   "position": {
     "x": 23.75,
@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 75,
     "width": 211.25,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -135,23 +135,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8ad852efda317a03808d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vpbi_d_product"
-              }
-            },
-            "Property": "prod_si_name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

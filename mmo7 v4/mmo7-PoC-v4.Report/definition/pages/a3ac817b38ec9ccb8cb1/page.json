@@ -56,6 +56,23 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "a37f2d038db103cca62d",
+        "displayName": "Business cluster",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "bcg3_name_en"
+          }
+        },
+        "type": "Categorical",
         "filter": {
           "Version": 2,
           "From": [
@@ -77,7 +94,7 @@
                             "Source": "v"
                           }
                         },
-                        "Property": "bcg2_name_en"
+                        "Property": "bcg3_name_en"
                       }
                     }
                   ],
@@ -85,7 +102,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'!Unclassified'"
+                          "Value": "'Free-standing absorbers'"
                         }
                       }
                     ]
@@ -95,23 +112,6 @@
             }
           ]
         },
-        "howCreated": "User"
-      },
-      {
-        "name": "a37f2d038db103cca62d",
-        "displayName": "Business cluster",
-        "ordinal": 3,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vpbi_d_product"
-              }
-            },
-            "Property": "bcg3_name_en"
-          }
-        },
-        "type": "Categorical",
         "howCreated": "User"
       },
       {
@@ -146,7 +146,22 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User"
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       },
       {
         "name": "e8e024f3290a93536bff",
@@ -231,7 +246,53 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User"
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vpbi_d_product",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "v"
+                          }
+                        },
+                        "Property": "line_name"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Sileo'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
       },
       {
         "name": "a71637473a418923e9d7",
@@ -325,7 +386,7 @@
           "width": {
             "expr": {
               "Literal": {
-                "Value": "279L"
+                "Value": "185L"
               }
             }
           }

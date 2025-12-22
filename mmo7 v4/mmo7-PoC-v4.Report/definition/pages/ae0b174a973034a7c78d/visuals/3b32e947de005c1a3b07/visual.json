@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "3b32e947de005c1a3b07",
   "position": {
     "x": 23.943881527669522,
     "y": 31.925175370226029,
     "z": 0,
     "height": 159.62587685113016,
-    "width": 213.49961028838658
+    "width": 213.49961028838658,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -146,6 +147,13 @@
                           [
                             {
                               "Literal": {
+                                "Value": "'2024'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
                                 "Value": "'2025'"
                               }
                             }
@@ -174,6 +182,17 @@
                                 "0": [
                                   {
                                     "Literal": {
+                                      "Value": "'2024'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
                                       "Value": "'2025'"
                                     }
                                   }
@@ -197,6 +216,9 @@
                           ]
                         },
                         "valueMap": [
+                          {
+                            "0": "2024"
+                          },
                           {
                             "0": "2025"
                           }

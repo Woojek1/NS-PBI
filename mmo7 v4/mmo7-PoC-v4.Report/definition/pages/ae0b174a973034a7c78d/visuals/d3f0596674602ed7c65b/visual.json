@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "d3f0596674602ed7c65b",
   "position": {
     "x": 24.316109422492403,
@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 73.9209726443769,
     "width": 213.00911854103344,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -104,23 +104,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7210478eb621ccbb80c1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_src_cost_transport"
-              }
-            },
-            "Property": "mmo_qualified"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

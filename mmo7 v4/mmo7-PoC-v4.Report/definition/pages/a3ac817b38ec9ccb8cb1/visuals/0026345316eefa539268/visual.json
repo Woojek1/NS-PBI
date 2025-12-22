@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "0026345316eefa539268",
   "position": {
     "x": 23.75,
     "y": 167.5,
     "z": 1000,
     "height": 122.5,
-    "width": 211.25
+    "width": 211.25,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -133,6 +134,13 @@
                           [
                             {
                               "Literal": {
+                                "Value": "'2024'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
                                 "Value": "'2025'"
                               }
                             }
@@ -161,6 +169,17 @@
                                 "0": [
                                   {
                                     "Literal": {
+                                      "Value": "'2024'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
                                       "Value": "'2025'"
                                     }
                                   }
@@ -184,6 +203,9 @@
                           ]
                         },
                         "valueMap": [
+                          {
+                            "0": "2024"
+                          },
                           {
                             "0": "2025"
                           }
@@ -309,7 +331,7 @@
         }
       },
       {
-        "name": "95c79c76cd00ebca74a0",
+        "name": "633115e1257ca79b93a7",
         "field": {
           "Column": {
             "Expression": {

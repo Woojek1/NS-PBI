@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "76b68642c063e7e51b83",
   "position": {
-    "x": 23.75,
-    "y": 290,
+    "x": 23.466666666666665,
+    "y": 290.13333333333333,
     "z": 2000,
-    "height": 197.5,
-    "width": 211.25,
-    "tabOrder": 1000
+    "height": 197.33333333333334,
+    "width": 211.2,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -75,20 +75,6 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''vpbi_d_product''[bcg1_name_en]'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'''vpbi_d_product''[bcg2_name_en]'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
                                 "Value": "'''vpbi_d_product''[bcg3_name_en]'"
                               }
                             }
@@ -96,21 +82,21 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''vpbi_d_product''[grp_name]'"
+                                "Value": "'''vpbi_d_product''[line_name]'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'''vpbi_d_product''[sgrp_name]'"
+                                "Value": "'''vpbi_d_customer''[cust_name]'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'''vpbi_d_product''[supergrp_name]'"
+                                "Value": "'''vpbi_d_product''[prod_si_code]'"
                               }
                             }
                           ]
@@ -138,28 +124,6 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''vpbi_d_product''[bcg1_name_en]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'''vpbi_d_product''[bcg2_name_en]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
                                       "Value": "'''vpbi_d_product''[bcg3_name_en]'"
                                     }
                                   }
@@ -171,7 +135,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''vpbi_d_product''[grp_name]'"
+                                      "Value": "'''vpbi_d_product''[line_name]'"
                                     }
                                   }
                                 ]
@@ -182,7 +146,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''vpbi_d_product''[sgrp_name]'"
+                                      "Value": "'''vpbi_d_customer''[cust_name]'"
                                     }
                                   }
                                 ]
@@ -193,7 +157,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''vpbi_d_product''[supergrp_name]'"
+                                      "Value": "'''vpbi_d_product''[prod_si_code]'"
                                     }
                                   }
                                 ]
@@ -217,25 +181,57 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Business category"
-                          },
-                          {
-                            "0": "Business subcategory"
-                          },
-                          {
                             "0": "Business cluster"
                           },
                           {
-                            "0": "Product Group"
+                            "0": "Product Line"
                           },
                           {
-                            "0": "Product Subgroup"
+                            "0": "Customer"
                           },
                           {
-                            "0": "Product Supergroup"
+                            "0": "Index"
                           }
                         ]
                       }
+                    }
+                  }
+                ]
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "a",
+                    "Entity": "Attributes",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "a"
+                              }
+                            },
+                            "Property": "Attributes"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'index'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
                     }
                   }
                 ]
@@ -304,7 +300,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8db45d0ad95c6e0dd300",
+        "name": "8aa00693bdb2c9898d46",
         "field": {
           "Column": {
             "Expression": {
