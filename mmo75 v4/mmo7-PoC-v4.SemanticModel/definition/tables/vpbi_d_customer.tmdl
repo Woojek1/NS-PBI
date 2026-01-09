@@ -1,0 +1,76 @@
+table vpbi_d_customer
+	lineageTag: e4867388-29c8-47c9-a8ab-16aa878f2876
+
+	column cust_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 66e49732-5ef7-4dff-baee-e57bf33669d3
+		summarizeBy: none
+		sourceColumn: cust_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b18bd09d-132d-483e-b7ca-6195b930ec3e
+		summarizeBy: none
+		sourceColumn: cust_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 59d79ac3-17a2-4eea-9bcd-3435a70064a2
+		summarizeBy: none
+		sourceColumn: cust_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_nsg_factor_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6127fe65-8fec-44ef-ad4a-96e6aa6d0771
+		summarizeBy: none
+		sourceColumn: cust_nsg_factor_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column db_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c53536f2-5fa3-46d1-8735-097ea13153c2
+		summarizeBy: none
+		sourceColumn: db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_hier_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6f32fbe3-0d99-46aa-a474-d0c7be09a954
+		summarizeBy: none
+		sourceColumn: cust_hier_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vpbi_d_customer = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    mmo7_Schema = controlling_Database{[Name="mmo7",Kind="Schema"]}[Data],
+				    vpbi_d_customer_View = mmo7_Schema{[Name="vpbi_d_customer",Kind="View"]}[Data]
+				in
+				    vpbi_d_customer_View
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+
