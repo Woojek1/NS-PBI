@@ -43,12 +43,44 @@
               },
               "queryRef": "vpbi_d_month.mon_name",
               "nativeQueryRef": "mon_name",
-              "active": false
+              "active": true
             }
           ]
         },
         "Rows": {
           "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg1_name_en"
+                }
+              },
+              "queryRef": "vpbi_d_product.bcg1_name_en",
+              "nativeQueryRef": "Business category",
+              "active": true,
+              "displayName": "Business category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg2_name_en"
+                }
+              },
+              "queryRef": "vpbi_d_product.bcg2_name_en",
+              "nativeQueryRef": "Business subcategory",
+              "active": true,
+              "displayName": "Business subcategory"
+            },
             {
               "field": {
                 "Column": {
@@ -73,45 +105,12 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "line_name"
+                  "Property": "model_code"
                 }
               },
-              "queryRef": "vpbi_d_product.line_name",
-              "nativeQueryRef": "Product Line",
-              "active": true,
-              "displayName": "Product Line"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_customer"
-                    }
-                  },
-                  "Property": "cust_name"
-                }
-              },
-              "queryRef": "vpbi_d_customer.cust_name",
-              "nativeQueryRef": "Customer",
-              "active": true,
-              "displayName": "Customer"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "prod_si_code"
-                }
-              },
-              "queryRef": "vpbi_d_product.prod_si_code",
-              "nativeQueryRef": "Index",
-              "active": false,
-              "displayName": "Index"
+              "queryRef": "vpbi_d_product.model_code",
+              "nativeQueryRef": "model_code",
+              "active": true
             }
           ],
           "fieldParameters": [
@@ -127,7 +126,8 @@
                 }
               },
               "index": 0,
-              "length": 4
+              "length": 3,
+              "sortDirection": "Ascending"
             }
           ]
         },
@@ -141,57 +141,12 @@
                       "Entity": "F Margin Data"
                     }
                   },
-                  "Property": "Net Sales PLN"
+                  "Property": "Transport PLN"
                 }
               },
-              "queryRef": "F Margin Data.Net Sales PLN",
-              "nativeQueryRef": "Net Sales PLN",
-              "displayName": "Net Sales PLN"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "F Margin Data"
-                    }
-                  },
-                  "Property": "Manufacturing Cost PLN"
-                }
-              },
-              "queryRef": "F Margin Data.Manufacturing Cost PLN",
-              "nativeQueryRef": "Manufacturing Cost PLN",
-              "displayName": "Manufacturing Cost PLN"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "F Margin Data"
-                    }
-                  },
-                  "Property": "Margin II PLN"
-                }
-              },
-              "queryRef": "F Margin Data.Margin II PLN",
-              "nativeQueryRef": "Margin II PLN",
-              "displayName": "Margin II PLN"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "F Margin Data"
-                    }
-                  },
-                  "Property": "Margin II % (PLN)"
-                }
-              },
-              "queryRef": "F Margin Data.Margin II % (PLN)",
-              "nativeQueryRef": "Margin II % (PLN)",
-              "displayName": "Margin II % (PLN)"
+              "queryRef": "F Margin Data.Transport PLN",
+              "nativeQueryRef": "Transport PLN",
+              "displayName": "Transport PLN"
             }
           ],
           "fieldParameters": [
@@ -207,10 +162,66 @@
                 }
               },
               "index": 0,
-              "length": 4
+              "length": 1
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vpbi_d_product"
+                  }
+                },
+                "Property": "bcg1_name_en"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vpbi_d_product"
+                  }
+                },
+                "Property": "bcg2_name_en"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vpbi_d_product"
+                  }
+                },
+                "Property": "bcg3_name_en"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vpbi_d_product"
+                  }
+                },
+                "Property": "model_code"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "expansionStates": [
@@ -219,6 +230,42 @@
           "Rows"
         ],
         "levels": [
+          {
+            "queryRefs": [
+              "vpbi_d_product.bcg1_name_en"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg1_name_en"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "vpbi_d_product.bcg2_name_en"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg2_name_en"
+                }
+              }
+            ],
+            "isPinned": true
+          },
           {
             "queryRefs": [
               "vpbi_d_product.bcg3_name_en"
@@ -239,44 +286,7 @@
           },
           {
             "queryRefs": [
-              "vpbi_d_product.line_name"
-            ],
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "line_name"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "vpbi_d_customer.cust_name"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_customer"
-                    }
-                  },
-                  "Property": "cust_name"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "vpbi_d_product.prod_si_code"
+              "vpbi_d_product.model_code"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -287,7 +297,7 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
-                  "Property": "prod_si_code"
+                  "Property": "model_code"
                 }
               }
             ],
@@ -931,15 +941,7 @@
           }
         },
         {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "93D"
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -1498,6 +1500,7 @@
           }
         },
         "type": "Advanced",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -1705,6 +1708,7 @@
           }
         },
         "type": "Advanced",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -1816,7 +1820,6 @@
           }
         },
         "type": "Advanced",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -1848,6 +1851,7 @@
           }
         },
         "type": "Advanced",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -1863,6 +1867,7 @@
           }
         },
         "type": "Advanced",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2166,7 +2171,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2182,6 +2186,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2245,6 +2250,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2262,7 +2268,35 @@
         "type": "Categorical"
       },
       {
-        "name": "e3717a0d11fece973238",
+        "name": "3edb5d7d1c5253478203",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "bcg1_name_en"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "37a824ae11d201c2e0ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "bcg2_name_en"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a5c1d4eb7d0d20208ac5",
         "field": {
           "Column": {
             "Expression": {
@@ -2271,20 +2305,6 @@
               }
             },
             "Property": "bcg3_name_en"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6925378bb5725ccceb28",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vpbi_d_customer"
-              }
-            },
-            "Property": "cust_name"
           }
         },
         "type": "Categorical"

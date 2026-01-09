@@ -44,7 +44,7 @@
               },
               "queryRef": "vpbi_d_month.mon_name",
               "nativeQueryRef": "Month Code",
-              "active": false,
+              "active": true,
               "displayName": "Month Code"
             }
           ]
@@ -84,7 +84,20 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'2025'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -134,13 +147,6 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'2024'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
                                 "Value": "'2025'"
                               }
                             }
@@ -169,17 +175,6 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'2024'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
                                       "Value": "'2025'"
                                     }
                                   }
@@ -203,9 +198,6 @@
                           ]
                         },
                         "valueMap": [
-                          {
-                            "0": "2024"
-                          },
                           {
                             "0": "2025"
                           }

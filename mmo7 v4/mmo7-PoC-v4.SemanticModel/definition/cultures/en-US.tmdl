@@ -30,7 +30,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Sale Qty"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sale Qty": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "f_margin_data.net_sales_pln": {
 			      "Definition": {
@@ -177,19 +189,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "grp_name"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Product Group": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "vpbi_d_product.sgrp_name": {
 			      "Definition": {
@@ -198,19 +198,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "sgrp_name"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Product Subgroup": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "vpbi_d_product.line_name": {
 			      "Definition": {
@@ -418,6 +406,15 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "f_margin_data.manufacturing_cost_pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Manufacturing Cost PLN"
+			        }
+			      },
+			      "State": "Generated"
 			    }
 			  }
 			}

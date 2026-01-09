@@ -75,28 +75,21 @@
                           [
                             {
                               "Literal": {
+                                "Value": "'''vpbi_d_product''[bcg1_name_en]'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''vpbi_d_product''[bcg2_name_en]'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
                                 "Value": "'''vpbi_d_product''[bcg3_name_en]'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'''vpbi_d_product''[line_name]'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'''vpbi_d_customer''[cust_name]'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'''vpbi_d_product''[prod_si_code]'"
                               }
                             }
                           ]
@@ -124,40 +117,29 @@
                                 "0": [
                                   {
                                     "Literal": {
+                                      "Value": "'''vpbi_d_product''[bcg1_name_en]'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'''vpbi_d_product''[bcg2_name_en]'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
                                       "Value": "'''vpbi_d_product''[bcg3_name_en]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'''vpbi_d_product''[line_name]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'''vpbi_d_customer''[cust_name]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'''vpbi_d_product''[prod_si_code]'"
                                     }
                                   }
                                 ]
@@ -181,57 +163,16 @@
                         },
                         "valueMap": [
                           {
+                            "0": "Business category"
+                          },
+                          {
+                            "0": "Business subcategory"
+                          },
+                          {
                             "0": "Business cluster"
-                          },
-                          {
-                            "0": "Product Line"
-                          },
-                          {
-                            "0": "Customer"
-                          },
-                          {
-                            "0": "Index"
                           }
                         ]
                       }
-                    }
-                  }
-                ]
-              }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "a",
-                    "Entity": "Attributes",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "a"
-                              }
-                            },
-                            "Property": "Attributes"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'index'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
                     }
                   }
                 ]

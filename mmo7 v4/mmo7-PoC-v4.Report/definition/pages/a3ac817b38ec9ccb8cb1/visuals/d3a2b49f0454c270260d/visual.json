@@ -135,5 +135,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cfccf2376863c4980a5e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "prod_si_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
