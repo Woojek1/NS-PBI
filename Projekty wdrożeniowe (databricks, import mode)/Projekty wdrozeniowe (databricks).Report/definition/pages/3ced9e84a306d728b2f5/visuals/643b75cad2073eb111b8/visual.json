@@ -1,0 +1,69 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "643b75cad2073eb111b8",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 612,
+    "width": 846,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_projects_budget"
+                    }
+                  },
+                  "Property": "code_f"
+                }
+              },
+              "queryRef": "vm_pbi_d_projects_budget.code_f",
+              "nativeQueryRef": "code_f"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Budzet projektu"
+                }
+              },
+              "queryRef": "_Miary.Budzet projektu",
+              "nativeQueryRef": "Budzet projektu"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vm_pbi_d_projects_budget"
+                  }
+                },
+                "Property": "code_f"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

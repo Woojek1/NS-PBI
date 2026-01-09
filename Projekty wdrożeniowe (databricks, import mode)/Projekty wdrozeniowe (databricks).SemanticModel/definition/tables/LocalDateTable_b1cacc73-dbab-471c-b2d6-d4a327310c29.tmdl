@@ -1,0 +1,116 @@
+table LocalDateTable_b1cacc73-dbab-471c-b2d6-d4a327310c29
+	isHidden
+	showAsVariationsOnly
+	lineageTag: 19c1e70c-e248-4c19-9f28-67204892905c
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 519b44fd-21f7-4092-b591-e09c4d6ccabf
+		dataCategory: PaddedDateTableDates
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = User
+
+	column Rok = YEAR([Date])
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3e88b509-1dc5-4e0c-8015-518406bd2c7d
+		dataCategory: Years
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Year
+
+	column 'Numer miesiąca' = MONTH([Date])
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: dbc39d5d-b73f-4745-8a21-1e3c769b4a5e
+		dataCategory: MonthOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = MonthNumber
+
+	column Miesiąc = FORMAT([Date], "MMMM")
+		dataType: string
+		isHidden
+		lineageTag: b18294a0-1563-46b8-bdc4-fd03f9f27465
+		dataCategory: Months
+		summarizeBy: none
+		sortByColumn: 'Numer miesiąca'
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Month
+
+	column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 086a09fa-cb4f-4406-957c-f1893a05a5f6
+		dataCategory: QuarterOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = QuarterNumber
+
+	column Kwartał = "Qtr " & [Numer kwartału]
+		dataType: string
+		isHidden
+		lineageTag: 0739d97c-3ca1-455a-b68b-62df89e38029
+		dataCategory: Quarters
+		summarizeBy: none
+		sortByColumn: 'Numer kwartału'
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Quarter
+
+	column Dzień = DAY([Date])
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3d40d334-0c6c-472e-b88a-36094e13dacc
+		dataCategory: DayOfMonth
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Day
+
+	hierarchy 'Hierarchia dat'
+		lineageTag: 5a6bfa33-e134-4d97-adb9-6a38f7943152
+
+		level Rok
+			lineageTag: a419503c-ef32-41b9-bad1-c8ff6597c4e9
+			column: Rok
+
+		level Kwartał
+			lineageTag: c60ab8ef-fea7-4cb0-a31a-841974fd9d28
+			column: Kwartał
+
+		level Miesiąc
+			lineageTag: d3f5ca9e-d1df-4667-90e9-b1169f46057a
+			column: Miesiąc
+
+		level Dzień
+			lineageTag: a34d3938-c7c8-47fe-822e-6bdca730594c
+			column: Dzień
+
+		annotation TemplateId = DateHierarchy
+
+	partition LocalDateTable_b1cacc73-dbab-471c-b2d6-d4a327310c29 = calculated
+		mode: import
+		source = Calendar(Date(Year(MIN('f_capex_imp_cost_data'[src_doc_date])), 1, 1), Date(Year(MAX('f_capex_imp_cost_data'[src_doc_date])), 12, 31))
+
+	annotation __PBI_LocalDateTable = true
+
