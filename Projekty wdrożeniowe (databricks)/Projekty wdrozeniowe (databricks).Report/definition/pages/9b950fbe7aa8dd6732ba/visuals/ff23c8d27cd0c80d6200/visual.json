@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "a86ee413a6d140d97ee2",
+  "name": "ff23c8d27cd0c80d6200",
   "position": {
-    "x": 729.6,
-    "y": 140.8,
-    "z": 10000,
-    "height": 99.2,
+    "x": 730,
+    "y": 261.66666666666669,
+    "z": 12003,
+    "height": 100,
     "width": 320,
-    "tabOrder": 10000
+    "tabOrder": 12003
   },
   "visual": {
     "visualType": "card",
@@ -335,7 +335,59 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "80478fe7c297d7a04fe3",
+        "name": "ab59fcc96059d94ba15b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon_2"
+              }
+            },
+            "Property": "mon_date_first"
+          }
+        },
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon_2",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "mon_date_first"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 3
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "f6743b5a0ac5e115b800",
         "field": {
           "Measure": {
             "Expression": {
