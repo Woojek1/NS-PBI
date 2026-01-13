@@ -1,0 +1,173 @@
+table mv_material_requisition
+	lineageTag: 6cf2b1bf-f854-44b8-aa43-3700f249f113
+
+	measure Kolor_Czcionki = ```
+			
+			VAR Code = SELECTEDVALUE ( 'mv_material_requisition'[CODENO_F] )
+			VAR Customer = SELECTEDVALUE ( 'mv_material_requisition'[INT_CUSTOMER_NO] )
+			RETURN
+			IF (
+			    Customer = "A-WDR"
+			        && NOT ( LEFT ( Code, 2 ) = "W-" ),
+			    "#FF0000",   -- czerwony
+			    "#000000"    -- czarny (lub BLANK())
+			)
+			
+			```
+		lineageTag: f63d33b9-e212-4c50-ab9f-26b32cfe529d
+
+	column ORDER_NO
+		dataType: string
+		lineageTag: 2d890b36-8e4a-4a02-b6df-7c0deb03751f
+		summarizeBy: none
+		sourceColumn: ORDER_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT
+		dataType: string
+		lineageTag: 69d46289-f40e-435c-8ff5-d0048dad6dbd
+		summarizeBy: none
+		sourceColumn: CONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	column INT_CUSTOMER_NO
+		dataType: string
+		lineageTag: 4be2d5c7-785e-4cf4-832e-dd65b10f1ab4
+		summarizeBy: none
+		sourceColumn: INT_CUSTOMER_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODENO_F
+		dataType: string
+		lineageTag: c71e82fc-f7aa-468f-bcc1-4b469902acac
+		summarizeBy: none
+		sourceColumn: CODENO_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODE_F_DESCRIPTION
+		dataType: string
+		lineageTag: 93c1c836-636a-4d10-8712-a84a14c70126
+		summarizeBy: none
+		sourceColumn: CODE_F_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE_ENTERED
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: f01f0af5-d966-4faa-aaf7-6da8c6e8c3d1
+		summarizeBy: none
+		sourceColumn: DATE_ENTERED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column PLANNED_DELIVERY_DATE_Warsaw
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7de69939-ff51-4e55-9302-d560a4f90468
+		summarizeBy: none
+		sourceColumn: PLANNED_DELIVERY_DATE_Warsaw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DUE_DATE_Warsaw
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a40cbc3b-bf17-4c06-b787-78447e4d11b4
+		summarizeBy: none
+		sourceColumn: DUE_DATE_Warsaw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column INTERNAL_DESTINATION
+		dataType: string
+		lineageTag: d42f95e4-0feb-43fa-a634-e83b847e762c
+		summarizeBy: none
+		sourceColumn: INTERNAL_DESTINATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOTE_TEXT
+		dataType: string
+		lineageTag: a650de67-f7e4-41cb-8c15-c51098d91ad3
+		summarizeBy: none
+		sourceColumn: NOTE_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PART_NO
+		dataType: string
+		lineageTag: 25494549-68d1-4497-9c45-f03e1b90691d
+		summarizeBy: none
+		sourceColumn: PART_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPTION
+		dataType: string
+		lineageTag: bd65ebaf-731b-4145-aa49-08dc14456555
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTY_DUE
+		dataType: double
+		formatString: 0.0
+		lineageTag: 525b870a-e7f7-43bb-8003-26c822d38f62
+		summarizeBy: sum
+		sourceColumn: QTY_DUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTY_ASSIGNED
+		dataType: double
+		lineageTag: 7919abed-d957-4705-b90f-58b17b99b6b5
+		summarizeBy: sum
+		sourceColumn: QTY_ASSIGNED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QTY_ON_ORDER
+		dataType: double
+		formatString: 0.0
+		lineageTag: 5178330c-f5cb-48de-b0a4-784f639d788f
+		summarizeBy: sum
+		sourceColumn: QTY_ON_ORDER
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTY_SHIPPED
+		dataType: double
+		formatString: 0.0
+		lineageTag: 19e713d8-3991-443b-a975-874496f23996
+		summarizeBy: sum
+		sourceColumn: QTY_SHIPPED
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mv_material_requisition = m
+		mode: import
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/2121eceff9915261", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+				    material_requisition_Schema = controlling_Database{[Name="material_requisition",Kind="Schema"]}[Data],
+				    mv_material_requisition_View = material_requisition_Schema{[Name="mv_material_requisition",Kind="View"]}[Data]
+				in
+				    mv_material_requisition_View
+
