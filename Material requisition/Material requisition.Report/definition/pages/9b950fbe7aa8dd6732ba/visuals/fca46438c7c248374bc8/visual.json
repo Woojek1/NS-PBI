@@ -188,6 +188,20 @@
               },
               "queryRef": "Sum(mv_material_requisition.QTY_ASSIGNED)",
               "nativeQueryRef": "Suma elementów QTY_ASSIGNED"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mv_material_requisition"
+                    }
+                  },
+                  "Property": "Kolor_Czcionki"
+                }
+              },
+              "queryRef": "mv_material_requisition.Kolor_Czcionki",
+              "nativeQueryRef": "Kolor_Czcionki"
             }
           ]
         }
@@ -196,13 +210,13 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
                     "Entity": "mv_material_requisition"
                   }
                 },
-                "Property": "DATE_ENTERED"
+                "Property": "Kolor_Czcionki"
               }
             },
             "direction": "Descending"
@@ -259,7 +273,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "297.1301385895762D"
+                  "Value": "338.5276577605982D"
                 }
               }
             }
@@ -365,24 +379,7 @@
           }
         },
         {
-          "properties": {
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mv_material_requisition"
-                        }
-                      },
-                      "Property": "Kolor_Czcionki"
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -417,5 +414,197 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7e5ec240bce25603e74c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "INT_CUSTOMER_NO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "68cd9539eb00b00b6d03",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "CODENO_F"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c9e4df2500346c9d09ac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "ORDER_NO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5d4dc997dda801eecb10",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "CODE_F_DESCRIPTION"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9b4c99e7c5dbb94d4870",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "PART_NO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a671584d01e8d7ad401c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "DESCRIPTION"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "876791e08273d038e491",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "DATE_ENTERED"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e91b871d09dcab54852d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_DUE"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4e3539ccaae2c4704915",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_SHIPPED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7a22cd24de1880039001",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_ON_ORDER"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "af369ed7258ac33c9e23",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_ASSIGNED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a8f80d824983617b0d31",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "Kolor_Czcionki"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
