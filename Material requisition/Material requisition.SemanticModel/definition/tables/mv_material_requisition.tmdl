@@ -1,7 +1,7 @@
 table mv_material_requisition
 	lineageTag: 6cf2b1bf-f854-44b8-aa43-3700f249f113
 
-	measure Kolor_Czcionki = ```
+	measure 'Przyczyna bledu' = ```
 			
 			VAR Project_Code = SELECTEDVALUE ( 'mv_material_requisition'[CODENO_F] )
 			VAR Project_Name = SELECTEDVALUE( 'mv_material_requisition'[CODE_F_DESCRIPTION] )
@@ -39,28 +39,30 @@ table mv_material_requisition
 			        &&
 			    NOT (Customer = "A-ROZ" || Customer = "NARZEDZIA" || Customer = "A-WDR" || Customer = "ROZWOJ")
 			
-			
-			
-			
 			RETURN
-			Warunek_1 || Warunek_2 || Warunek_3 || Warunek_4
 			
-			// IF(
-			//     Warunek_1,
-			//     "#FF0000",
-			//     "#000000"
-			// )
-			
-			// IF(
-			//     Customer = "A-WDR"
-			//         && NOT ( LEFT ( Project_Code, 2 ) = "W-" ),
-			//     "#FF0000",   -- czerwony
-			//     "#000000"    -- czarny (lub BLANK())
-			// )
+			SWITCH (
+			    TRUE (),
+			    Warunek_1, "Warunek_1: A-WDR i kod != W-",
+			    Warunek_2, "Warunek_2: A-WDR i nazwa (X)",
+			    Warunek_3, "Warunek_3: A-ROZ i kod W- i nazwa != (X)",
+			    Warunek_4, "Warunek_4: kod W- i customer nie wylaczony",
+			    BLANK()
+			)
 			
 			```
-		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: f63d33b9-e212-4c50-ab9f-26b32cfe529d
+
+	measure Kolor_Czcionki = ```
+			
+			IF (
+			    [Przyczyna bledu] <> "",
+			    "#FF0000",   -- czerwony
+			    "#000000"    -- czarny (lub BLANK())
+			)
+			
+			```
+		lineageTag: 2af7ab39-28c1-4c49-898c-4352cbf9e508
 
 	column ORDER_NO
 		dataType: string
