@@ -78,7 +78,7 @@
               },
               "queryRef": "vpbi_d_product.bcg2_name_en",
               "nativeQueryRef": "Business subcategory",
-              "active": true,
+              "active": false,
               "displayName": "Business subcategory"
             },
             {
@@ -94,7 +94,7 @@
               },
               "queryRef": "vpbi_d_product.bcg3_name_en",
               "nativeQueryRef": "Business cluster",
-              "active": true,
+              "active": false,
               "displayName": "Business cluster"
             },
             {
@@ -110,7 +110,7 @@
               },
               "queryRef": "vpbi_d_product.model_code",
               "nativeQueryRef": "model_code",
-              "active": true
+              "active": false
             }
           ],
           "fieldParameters": [
@@ -141,21 +141,6 @@
                       "Entity": "F Margin Data"
                     }
                   },
-                  "Property": "Sale Qty"
-                }
-              },
-              "queryRef": "F Margin Data.Sale Qty",
-              "nativeQueryRef": "Sale Qty",
-              "displayName": "Sale Qty"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "F Margin Data"
-                    }
-                  },
                   "Property": "Net Sales PLN"
                 }
               },
@@ -177,7 +162,7 @@
                 }
               },
               "index": 0,
-              "length": 2
+              "length": 1
             }
           ]
         }
@@ -192,46 +177,20 @@
                     "Entity": "vpbi_d_product"
                   }
                 },
-                "Property": "bcg1_name_en"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "vpbi_d_product"
-                  }
-                },
-                "Property": "bcg2_name_en"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "vpbi_d_product"
-                  }
-                },
-                "Property": "bcg3_name_en"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "vpbi_d_product"
-                  }
-                },
                 "Property": "model_code"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vpbi_d_product"
+                  }
+                },
+                "Property": "bcg1_name_en"
               }
             },
             "direction": "Ascending"
@@ -249,18 +208,7 @@
             "queryRefs": [
               "vpbi_d_product.bcg1_name_en"
             ],
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "bcg1_name_en"
-                }
-              }
-            ],
+            "isCollapsed": true,
             "isPinned": true
           },
           {
@@ -268,18 +216,6 @@
               "vpbi_d_product.bcg2_name_en"
             ],
             "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "bcg2_name_en"
-                }
-              }
-            ],
             "isPinned": true
           },
           {
@@ -287,142 +223,16 @@
               "vpbi_d_product.bcg3_name_en"
             ],
             "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "bcg3_name_en"
-                }
-              }
-            ],
             "isPinned": true
           },
           {
             "queryRefs": [
               "vpbi_d_product.model_code"
             ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vpbi_d_product"
-                    }
-                  },
-                  "Property": "model_code"
-                }
-              }
-            ]
+            "isCollapsed": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'SOFTSEATING'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Armchairs'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'Armchairs swivel base'"
-                          }
-                        }
-                      ],
-                      "isToggled": true
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'DESKS AND TABLES'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Tops'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'Tops and furniture formats'"
-                          }
-                        }
-                      ],
-                      "isToggled": true
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'!Unclassified'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'!Unclassified'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'!Unclassified'"
-                          }
-                        }
-                      ],
-                      "isToggled": true
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -1552,6 +1362,7 @@
           }
         },
         "type": "Advanced",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -2385,7 +2196,7 @@
         "type": "Categorical"
       },
       {
-        "name": "3edb5d7d1c5253478203",
+        "name": "ec1cbf5359c5ba60cdb5",
         "field": {
           "Column": {
             "Expression": {
@@ -2399,7 +2210,7 @@
         "type": "Categorical"
       },
       {
-        "name": "37a824ae11d201c2e0ab",
+        "name": "e30dd0a30270547e54a0",
         "field": {
           "Column": {
             "Expression": {
@@ -2413,7 +2224,7 @@
         "type": "Categorical"
       },
       {
-        "name": "a5c1d4eb7d0d20208ac5",
+        "name": "9f4bee729994100a6996",
         "field": {
           "Column": {
             "Expression": {
