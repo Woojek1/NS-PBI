@@ -7,8 +7,6 @@ table mv_material_requisition
 			VAR Project_Name = SELECTEDVALUE( 'mv_material_requisition'[CODE_F_DESCRIPTION] )
 			VAR Customer = SELECTEDVALUE ( 'mv_material_requisition'[INT_CUSTOMER_NO] )
 			
-			
-			
 			VAR Warunek_1 = 
 			// INT_CUSTOMER_NO = A-WDR i CODENO_F (projekt) inny niż W-%
 			
@@ -39,14 +37,23 @@ table mv_material_requisition
 			        &&
 			    NOT (Customer = "A-ROZ" || Customer = "NARZEDZIA" || Customer = "A-WDR" || Customer = "ROZWOJ")
 			
+			VAR Warunek_5 =
+			// INT_CUSTOMER_NO = A-WDR i pusty kod F
+			    Customer = "A-WDR"
+			        &&
+			    Project_Code = ""
+			
+			
+			
 			RETURN
 			
 			SWITCH (
 			    TRUE (),
-			    Warunek_1, "Warunek_1: A-WDR i kod != W-",
-			    Warunek_2, "Warunek_2: A-WDR i nazwa (X)",
-			    Warunek_3, "Warunek_3: A-ROZ i kod W- i nazwa != (X)",
-			    Warunek_4, "Warunek_4: kod W- i customer nie wylaczony",
+			    Warunek_1, "A-WDR i kod F nie jest wdrożeniowy",
+			    Warunek_2, "A-WDR i zamknięty projekt W",
+			    Warunek_3, "A-ROZ z kodem F wdrożeniowym",
+			    Warunek_4, "Kod F wdrożeniowy, ale klient różny od: A-ROZ, A-WDR, NARZEDZIA, ROZWOJ",
+			    Warunek_5, "Warunek 5",
 			    BLANK()
 			)
 			
@@ -205,6 +212,14 @@ table mv_material_requisition
 		lineageTag: 19e713d8-3991-443b-a975-874496f23996
 		summarizeBy: sum
 		sourceColumn: QTY_SHIPPED
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUG_SOURCE
+		dataType: string
+		lineageTag: 9fae8fda-f98d-4bb7-b7fe-f469adceccb9
+		summarizeBy: none
+		sourceColumn: BUG_SOURCE
 
 		annotation SummarizationSetBy = Automatic
 
