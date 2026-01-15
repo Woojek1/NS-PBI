@@ -1,0 +1,22 @@
+table Tagi
+	lineageTag: 2a37605a-9874-40f0-90dc-cb4bdda1371f
+
+	column Filtr
+		dataType: string
+		lineageTag: f3bfecc8-bdeb-4bcd-b9ef-4ad02ec8623b
+		summarizeBy: none
+		sourceColumn: Filtr
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Tagi = m
+		mode: import
+		source =
+				let
+				    Źródło = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcnL1c/ZQitWJVgpxdPJxhbD8A8C0Y3Cwq6+TT6RSbCwA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Filtr = _t]),
+				    #"Zmieniono typ" = Table.TransformColumnTypes(Źródło,{{"Filtr", type text}})
+				in
+				    #"Zmieniono typ"
+
+	annotation PBI_ResultType = Table
+

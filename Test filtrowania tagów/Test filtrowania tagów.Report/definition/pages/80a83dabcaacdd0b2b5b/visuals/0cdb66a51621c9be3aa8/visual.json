@@ -1,0 +1,137 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "0cdb66a51621c9be3aa8",
+  "position": {
+    "x": 60.631578947368418,
+    "y": 48.505263157894738,
+    "z": 0,
+    "height": 499.2,
+    "width": 707.36842105263156,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "product_cluster_model"
+                    }
+                  },
+                  "Property": "MODEL_CODE"
+                }
+              },
+              "queryRef": "product_cluster_model.MODEL_CODE",
+              "nativeQueryRef": "MODEL_CODE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "product_cluster_model"
+                    }
+                  },
+                  "Property": "MODEL_NAME"
+                }
+              },
+              "queryRef": "product_cluster_model.MODEL_NAME",
+              "nativeQueryRef": "MODEL_NAME"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "78e4ea30170d4426a612",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "product_cluster_model"
+              }
+            },
+            "Property": "MODEL_CODE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cf85bca4ad078096e096",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "product_cluster_model"
+              }
+            },
+            "Property": "MODEL_NAME"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ff44a03502746029e80b",
+        "ordinal": 2,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "product_cluster_model"
+              }
+            },
+            "Property": "Model zawiera dowolny tag (multi)"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "product_cluster_model",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "p"
+                        }
+                      },
+                      "Property": "Model zawiera dowolny tag (multi)"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

@@ -1,0 +1,100 @@
+table product_cluster_model
+	lineageTag: fb85bc04-a44d-4114-9595-1d58e3cf4369
+
+	measure 'Model zawiera WSZYSTKIE tagi (AND)' = ```
+			
+			VAR _WybraneTagi =
+			    VALUES ( Tagi[Filtr] )
+			
+			VAR _LiczbaTagow =
+			    COUNTROWS ( _WybraneTagi )
+			
+			VAR _Dopasowania =
+			    SUMX (
+			        _WybraneTagi,
+			        VAR _Tag = Tagi[Filtr]
+			        RETURN
+			            IF (
+			                CALCULATE (
+			                    COUNTROWS ( product_cluster_model ),
+			                    FILTER (
+			                        product_cluster_model,
+			                        CONTAINSSTRING (
+			                            product_cluster_model[MODEL_CODE],
+			                            _Tag
+			                        )
+			                    )
+			                ) > 0,
+			                1,
+			                0
+			            )
+			    )
+			RETURN
+			IF (
+			    _LiczbaTagow = 0,
+			    1,
+			    IF ( _Dopasowania = _LiczbaTagow, 1, 0 )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: e4ba16b5-2fc2-4943-a697-d007b9519212
+
+	measure 'Model zawiera dowolny tag (multi)' = ```
+			
+			VAR _Wybrane = VALUES ( Tagi[Filtr] )
+			RETURN
+			IF (
+			    COUNTROWS ( _Wybrane ) = 0,
+			    1,
+			    MAXX (
+			        _Wybrane,
+			        VAR _Tag = Tagi[Filtr]
+			        RETURN
+			            IF (
+			                CALCULATE (
+			                    COUNTROWS ( product_cluster_model ),
+			                    FILTER (
+			                        product_cluster_model,
+			                        CONTAINSSTRING ( product_cluster_model[MODEL_CODE], _Tag )
+			                    )
+			                ) > 0,
+			                1,
+			                0
+			            )
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: ba6829ee-02ce-4960-89ef-5698389c985b
+
+	column MODEL_CODE
+		dataType: string
+		lineageTag: 3c55afd9-bd10-4f71-a5f6-b17d017e2fef
+		summarizeBy: none
+		sourceColumn: MODEL_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MODEL_NAME
+		dataType: string
+		lineageTag: fb11284d-cb21-487b-86b6-2b9f1ce87094
+		summarizeBy: none
+		sourceColumn: MODEL_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	partition product_cluster_model = m
+		mode: import
+		source =
+				let
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    source_Database = Źródło{[Name="source",Kind="Database"]}[Data],
+				    ext_Schema = source_Database{[Name="ext",Kind="Schema"]}[Data],
+				    product_cluster_model_View = ext_Schema{[Name="product_cluster_model",Kind="View"]}[Data]
+				in
+				    product_cluster_model_View
+
+	annotation PBI_ResultType = Table
+

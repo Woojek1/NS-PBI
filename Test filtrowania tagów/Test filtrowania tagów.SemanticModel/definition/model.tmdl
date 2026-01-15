@@ -1,0 +1,19 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["product_cluster_model","Tagi"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table product_cluster_model
+ref table Tagi
+
+ref cultureInfo pl-PL
+
