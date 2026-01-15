@@ -78,7 +78,7 @@
               },
               "queryRef": "vpbi_d_product.bcg2_name_en",
               "nativeQueryRef": "Business subcategory",
-              "active": false,
+              "active": true,
               "displayName": "Business subcategory"
             },
             {
@@ -94,7 +94,7 @@
               },
               "queryRef": "vpbi_d_product.bcg3_name_en",
               "nativeQueryRef": "Business cluster",
-              "active": false,
+              "active": true,
               "displayName": "Business cluster"
             },
             {
@@ -110,7 +110,7 @@
               },
               "queryRef": "vpbi_d_product.model_code",
               "nativeQueryRef": "model_code",
-              "active": false
+              "active": true
             }
           ],
           "fieldParameters": [
@@ -209,6 +209,18 @@
               "vpbi_d_product.bcg1_name_en"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg1_name_en"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -216,6 +228,18 @@
               "vpbi_d_product.bcg2_name_en"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg2_name_en"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -223,16 +247,66 @@
               "vpbi_d_product.bcg3_name_en"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg3_name_en"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
             "queryRefs": [
               "vpbi_d_product.model_code"
             ],
-            "isCollapsed": true
+            "isCollapsed": true,
+            "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'!Unclassified'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'!Unclassified'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'!Unclassified'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "objects": {
