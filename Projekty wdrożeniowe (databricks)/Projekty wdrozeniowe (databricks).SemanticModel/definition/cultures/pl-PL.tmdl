@@ -128,6 +128,16 @@ cultureInfo pl-PL
 			      "State": "Generated",
 			      "Terms": [
 			        {
+			          "Całkowity budzet projektu": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Budzet projektu biezacy rok": {
 			            "State": "Suggested",
 			            "Source": {
@@ -192,6 +202,47 @@ cultureInfo pl-PL
 			      "Terms": [
 			        {
 			          "Kod projektu": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_miary.realizacja_budzetu": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Realizacja budzetu"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Realizacja budzetu całkowitego": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Realizacja budżetu bieżacy rok": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Realizacja budżetu bieżący rok": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

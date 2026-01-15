@@ -131,67 +131,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "v",
-                    "Entity": "vm_pbi_d_gl_project",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Or": {
-                        "Left": {
-                          "Contains": {
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "v"
-                                  }
-                                },
-                                "Property": "prj_desc"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "'Creva'"
-                              }
-                            }
-                          }
-                        },
-                        "Right": {
-                          "Contains": {
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "v"
-                                  }
-                                },
-                                "Property": "hprj_code"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "'Creva'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
             }
           }
         }

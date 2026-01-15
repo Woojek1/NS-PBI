@@ -4,8 +4,9 @@ table _Miary
 	measure Wydatki =
 			
 			SUM(f_capex_imp_cost_data[amount_pln])
-		formatString: #,0.00
 		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
+
+		formatStringDefinition = "#,0.00"
 
 	measure 'Nazwa projektu - tytul' =
 			
