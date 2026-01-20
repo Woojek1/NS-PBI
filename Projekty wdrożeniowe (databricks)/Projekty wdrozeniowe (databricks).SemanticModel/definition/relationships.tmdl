@@ -22,3 +22,8 @@ relationship d46a0709-5d91-2835-dea8-40e9c69840a7
 	fromColumn: 'Tabela grafik'.'Kod F'
 	toColumn: vm_pbi_d_gl_project.hprj_code
 
+relationship ddecde8b-861f-717c-7a05-cf2f1751dcbd
+	toCardinality: many
+	fromColumn: vm_pbi_f_lines_sales.line_name
+	toColumn: vm_pbi_d_gl_project.linia
+
