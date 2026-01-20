@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Sales Measures",
+      "measures": [
+        {
+          "name": "Sprzedaż PLUS PLN (Line)",
+          "dataType": "Double",
+          "expression": "\r\nSUMX (\r\n    VALUES ( 'Product'[Model Code] ),\r\n    VAR ModelCode = 'Product'[Model Code]\r\n\r\n    VAR Opis = RIGHT(MAX('Product'[Model]), 6) = \", PLUS\"\r\n\r\n    // VAR WarunekPLUS =\r\n    //     RIGHT ( ModelCode, 4 ) = \"PLUS\"\r\n\r\n    VAR WarunekLista =\r\n        ModelCode IN {\r\n            \"MTLBOARDMFCORGC\",\r\n            \"MTLBOARDMFCORGD\",\r\n            \"MTLBOARDFENIXRC\",\r\n            \"MTLBOARDFENIXRD\",\r\n            \"MTLBOARDMFCRC\",\r\n            \"MTLBOARDMFCRD\"\r\n        }\r\n\r\n    // VAR WarunekWykluczenie =\r\n    //     ModelCode <> \"TAKTIKOFFICEMESHPLUS\"\r\n\r\n    RETURN\r\n        IF (\r\n            ( Opis || WarunekLista ),\r\n                //  WarunekWykluczenie,\r\n            [Net Sales PLN],\r\n            BLANK ()\r\n        )\r\n)\r\n\r\n",
+          "formatString": "#,0\\ \"zł\";-#,0\\ \"zł\";#,0\\ \"zł\"",
+          "displayFolder": "Miary",
+          "references": {
+            "measures": [
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales PLN"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Line ma pasujący ModelCode",
+          "dataType": "Double",
+          "expression": "\nVAR ListaPasujacych =\n    FILTER (\n        VALUES ( 'Product'[Model Code] ),\n        RIGHT ( 'Product'[Model Code], 4 ) = \"PLUS\"\n            || 'Product'[Model Code] IN {\n                \"MTLBOARDMFCORGC\",\n                \"MTLBOARDMFCORGD\",\n                \"MTLBOARDFENIXRC\",\n                \"MTLBOARDFENIXRD\",\n                \"MTLBOARDMFCRC\",\n                \"MTLBOARDMFCRD\"\n            }\n    )\nRETURN\nIF ( COUNTROWS ( ListaPasujacych ) > 0, 1, 0 )\n",
+          "formatString": "General Number",
+          "displayFolder": "Miary"
+        }
+      ]
+    }
+  ]
+}
