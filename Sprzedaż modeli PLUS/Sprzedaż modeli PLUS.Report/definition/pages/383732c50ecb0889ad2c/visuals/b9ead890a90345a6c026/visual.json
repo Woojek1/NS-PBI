@@ -1,0 +1,533 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "b9ead890a90345a6c026",
+  "position": {
+    "x": 29.999999999999996,
+    "y": 28.18181818181818,
+    "z": 1,
+    "height": 676.36363636363626,
+    "width": 1220,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Line"
+                }
+              },
+              "queryRef": "Product.Line",
+              "nativeQueryRef": "Linia",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Code"
+                }
+              },
+              "queryRef": "Date.Month Code",
+              "nativeQueryRef": "Miesiąc kod",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Model"
+                }
+              },
+              "queryRef": "Product.Model",
+              "nativeQueryRef": "Model",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Net Sales PLN"
+                }
+              },
+              "queryRef": "Sales Measures.Net Sales PLN",
+              "nativeQueryRef": "Sprz netto PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Sprz netto PLN PLUS"
+                }
+              },
+              "queryRef": "Sales Measures.Sprz netto PLN PLUS",
+              "nativeQueryRef": "Sprz netto PLN PLUS"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "stosunek_PLUS_do_linia"
+                }
+              },
+              "queryRef": "Sales Measures.stosunek_PLUS_do_linia",
+              "nativeQueryRef": "stosunek_PLUS_do_linia"
+            },
+            {
+              "field": {
+                "NativeVisualCalculation": {
+                  "Language": "dax",
+                  "Expression": "RUNNINGSUM([Sprz netto PLN PLUS])",
+                  "Name": "Suma bieżąca"
+                }
+              },
+              "queryRef": "select",
+              "nativeQueryRef": "Suma bieżąca"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Product.Line"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Line"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Date.Month Code"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Code"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Product.Model"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'CS5040'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Easy Space'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Multiline komponenty'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'K40'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'eModel 3.0'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'eModel'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'eComo'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "153D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sales Measures.Net Sales PLN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "192D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Product.Line"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "136D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sales Measures.Sprz netto PLN PLUS"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "168D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sales Measures.stosunek_PLUS_do_linia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "91D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "633a663837462835e705",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "czy_model_plus"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "039aff336ae651076a80",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "czy_linIa_ma_plus"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s1",
+              "Entity": "Sales Measures",
+              "Schema": "extension",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "s1"
+                            }
+                          },
+                          "Property": "czy_linIa_ma_plus"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "395a728a3eaa15e28800",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "793787fc76bbda4e9389",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Model Code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "1d0eb30850a1b0e65166",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Model"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "69433e20d0a016d51a77",
+        "ordinal": 5,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Net Sales PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "50a7e3c0dbd3058eba84",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Sprz netto PLN PLUS"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c2b5eb8b08e91b076e4d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "stosunek_PLUS_do_linia"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ab933a3990e5d1dd37eb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

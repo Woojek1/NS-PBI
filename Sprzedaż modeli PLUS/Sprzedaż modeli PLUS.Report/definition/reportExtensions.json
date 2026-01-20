@@ -8,9 +8,9 @@
         {
           "name": "Sprzedaż PLUS PLN (Line)",
           "dataType": "Double",
-          "expression": "\r\nSUMX (\r\n    VALUES ( 'Product'[Model Code] ),\r\n    VAR ModelCode = 'Product'[Model Code]\r\n\r\n    VAR Opis = RIGHT(MAX('Product'[Model]), 6) = \", PLUS\"\r\n\r\n    // VAR WarunekPLUS =\r\n    //     RIGHT ( ModelCode, 4 ) = \"PLUS\"\r\n\r\n    VAR WarunekLista =\r\n        ModelCode IN {\r\n            \"MTLBOARDMFCORGC\",\r\n            \"MTLBOARDMFCORGD\",\r\n            \"MTLBOARDFENIXRC\",\r\n            \"MTLBOARDFENIXRD\",\r\n            \"MTLBOARDMFCRC\",\r\n            \"MTLBOARDMFCRD\"\r\n        }\r\n\r\n    // VAR WarunekWykluczenie =\r\n    //     ModelCode <> \"TAKTIKOFFICEMESHPLUS\"\r\n\r\n    RETURN\r\n        IF (\r\n            ( Opis || WarunekLista ),\r\n                //  WarunekWykluczenie,\r\n            [Net Sales PLN],\r\n            BLANK ()\r\n        )\r\n)\r\n\r\n",
+          "expression": "\nSUMX (\n    VALUES ('Product'[Model] ),\n    VAR ModelCode = 'Product'[Model]\n\n    VAR Opis = RIGHT(MAX('Product'[Model]), 6) = \", PLUS\"\n\n    // VAR WarunekPLUS =\n    //     RIGHT ( ModelCode, 4 ) = \"PLUS\"\n\n    VAR WarunekLista =\n        ModelCode IN {\n            \"MTLBOARDMFCORGC\",\n            \"MTLBOARDMFCORGD\",\n            \"MTLBOARDFENIXRC\",\n            \"MTLBOARDFENIXRD\",\n            \"MTLBOARDMFCRC\",\n            \"MTLBOARDMFCRD\"\n        }\n\n    // VAR WarunekWykluczenie =\n    //     ModelCode <> \"TAKTIKOFFICEMESHPLUS\"\n\n    RETURN\n        IF (\n            // (\n                 Opis,\n            // || WarunekLista ),\n                //  WarunekWykluczenie,\n            [Net Sales PLN],\n            BLANK ()\n        )\n)\n\n",
           "formatString": "#,0\\ \"zł\";-#,0\\ \"zł\";#,0\\ \"zł\"",
-          "displayFolder": "Miary",
+          "displayFolder": "PLUS",
           "references": {
             "measures": [
               {
@@ -24,8 +24,54 @@
           "name": "Line ma pasujący ModelCode",
           "dataType": "Double",
           "expression": "\nVAR ListaPasujacych =\n    FILTER (\n        VALUES ( 'Product'[Model Code] ),\n        RIGHT ( 'Product'[Model Code], 4 ) = \"PLUS\"\n            || 'Product'[Model Code] IN {\n                \"MTLBOARDMFCORGC\",\n                \"MTLBOARDMFCORGD\",\n                \"MTLBOARDFENIXRC\",\n                \"MTLBOARDFENIXRD\",\n                \"MTLBOARDMFCRC\",\n                \"MTLBOARDMFCRD\"\n            }\n    )\nRETURN\nIF ( COUNTROWS ( ListaPasujacych ) > 0, 1, 0 )\n",
-          "formatString": "General Number",
-          "displayFolder": "Miary"
+          "displayFolder": "PLUS"
+        },
+        {
+          "name": "czy_model_plus",
+          "dataType": "Double",
+          "expression": "\nVAR _model = SELECTEDVALUE('Product'[Model])\nVAR _kod   = SELECTEDVALUE('Product'[Model Code])\nRETURN\nIF(\n    ( NOT ISBLANK(_model) && CONTAINSSTRING(_model, \", PLUS\") )\n        || \n    ( NOT ISBLANK(_kod) && _kod IN {\n        \"MTLBOARDMFCORGC\",\n        \"MTLBOARDMFCORGD\",\n        \"MTLBOARDFENIXRC\",\n        \"MTLBOARDFENIXRD\",\n        \"MTLBOARDMFCRC\",\n        \"MTLBOARDMFCRD\"\n    }),\n    \"TAK\",\n    blank()\n)\n",
+          "displayFolder": "PLUS"
+        },
+        {
+          "name": "czy_linIa_ma_plus",
+          "dataType": "Double",
+          "expression": "\nVAR plusCount =\n    CALCULATE(\n        DISTINCTCOUNT('Product'[Model Code]),\n        FILTER(\n            ALL('Product'[Model], 'Product'[Model Code]),\n            CONTAINSSTRING('Product'[Model], \", PLUS\")\n                || 'Product'[Model Code] IN {\n                    \"MTLBOARDMFCORGC\",\n                    \"MTLBOARDMFCORGD\",\n                    \"MTLBOARDFENIXRC\",\n                    \"MTLBOARDFENIXRD\",\n                    \"MTLBOARDMFCRC\",\n                    \"MTLBOARDMFCRD\"\n                }\n        )\n    )\nRETURN\nIF(plusCount > 0, \"TAK\", blank())\n",
+          "displayFolder": "PLUS"
+        },
+        {
+          "name": "Sprz netto PLN PLUS",
+          "dataType": "Double",
+          "expression": "\nROUND(\n    CALCULATE(\n        [Net Sales PLN],\n        FILTER(\n            ALL('Product'[Model], 'Product'[Model Code]),\n            CONTAINSSTRING('Product'[Model], \", PLUS\")\n                || 'Product'[Model Code] IN {\n                    \"MTLBOARDMFCORGC\",\n                    \"MTLBOARDMFCORGD\",\n                    \"MTLBOARDFENIXRC\",\n                    \"MTLBOARDFENIXRD\",\n                    \"MTLBOARDMFCRC\",\n                    \"MTLBOARDMFCRD\"\n                }\n        )\n    ),\n    0\n)\n",
+          "formatString": "#,0\\ \"zł\";-#,0\\ \"zł\";#,0\\ \"zł\"",
+          "displayFolder": "PLUS",
+          "references": {
+            "measures": [
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales PLN"
+              }
+            ]
+          }
+        },
+        {
+          "name": "stosunek_PLUS_do_linia",
+          "dataType": "Double",
+          "expression": "\nDIVIDE(\n    [Sprz netto PLN PLUS],\n    [Net Sales PLN]\n)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "displayFolder": "PLUS",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Sales Measures",
+                "name": "Sprz netto PLN PLUS"
+              },
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales PLN"
+              }
+            ]
+          }
         }
       ]
     }
