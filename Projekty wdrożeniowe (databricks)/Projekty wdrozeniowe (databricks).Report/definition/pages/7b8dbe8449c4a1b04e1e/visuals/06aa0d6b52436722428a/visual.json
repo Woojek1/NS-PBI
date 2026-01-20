@@ -3,11 +3,11 @@
   "name": "06aa0d6b52436722428a",
   "position": {
     "x": 942,
-    "y": 56,
-    "z": 2,
+    "y": 0,
+    "z": 1000,
     "height": 82,
     "width": 338,
-    "tabOrder": 2
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -15,21 +15,6 @@
       "queryState": {
         "Values": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vm_pbi_d_gl_project"
-                    }
-                  },
-                  "Property": "prj_desc"
-                }
-              },
-              "queryRef": "vm_pbi_d_gl_project.prj_desc",
-              "nativeQueryRef": "prj_desc",
-              "active": true
-            },
             {
               "field": {
                 "Column": {
@@ -57,55 +42,13 @@
         "levels": [
           {
             "queryRefs": [
-              "vm_pbi_d_gl_project.prj_desc"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vm_pbi_d_gl_project"
-                    }
-                  },
-                  "Property": "prj_desc"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
               "vm_pbi_d_gl_project.hprj_code"
             ],
             "isCollapsed": true,
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'(X) Mollen'"
-                  }
-                }
-              ],
-              "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'Smile'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -377,7 +320,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       },
       {
         "name": "2bc76f60332a4b99bea5",

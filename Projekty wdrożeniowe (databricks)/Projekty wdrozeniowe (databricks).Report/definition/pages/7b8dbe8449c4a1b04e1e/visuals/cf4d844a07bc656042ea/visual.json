@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "cf4d844a07bc656042ea",
   "position": {
-    "x": 16.666666666666668,
-    "y": 116.66666666666666,
-    "z": 1,
+    "x": 25.555555555555554,
+    "y": 96.666666666666657,
+    "z": 0,
     "height": 486.66666666666663,
-    "width": 972.22222222222217,
-    "tabOrder": 1
+    "width": 971.11111111111109,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "pivotTable",
@@ -43,7 +43,22 @@
               },
               "queryRef": "vm_pbi_d_gl_project.hprj_code",
               "nativeQueryRef": "hprj_code",
-              "active": false
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.prj_desc",
+              "nativeQueryRef": "prj_desc",
+              "active": true
             }
           ]
         },
@@ -122,7 +137,6 @@
             "queryRefs": [
               "vm_pbi_d_gl_project.linia"
             ],
-            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -141,7 +155,37 @@
             "queryRefs": [
               "vm_pbi_d_gl_project.hprj_code"
             ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "hprj_code"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "vm_pbi_d_gl_project.prj_desc"
+            ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
@@ -245,7 +289,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "148.77778098583534D"
+                  "Value": "254.91210854386546D"
                 }
               }
             }
@@ -369,5 +413,126 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "53bd99bf62a357ae02d3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v1",
+              "Entity": "vm_pbi_d_gl_project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "StartsWith": {
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "v1"
+                        }
+                      },
+                      "Property": "hprj_code"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'W-2'"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "29a514d32077830e0d05",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "linia"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1cdc170b0b9012d54e7b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ae18cc202402039bb567",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_f_lines_sales"
+              }
+            },
+            "Property": "SPRZEDAZ_linii"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b43c561a0a5a33030e01",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_f_lines_sales"
+              }
+            },
+            "Property": "sprzedaz_koszt"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "aef2f525a1e0c51dc027",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
