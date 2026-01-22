@@ -227,10 +227,14 @@ table mv_material_requisition
 		mode: import
 		source =
 				let
-				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/2121eceff9915261", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/2121eceff9915261", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
 				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
 				    material_requisition_Schema = controlling_Database{[Name="material_requisition",Kind="Schema"]}[Data],
 				    mv_material_requisition_View = material_requisition_Schema{[Name="mv_material_requisition",Kind="View"]}[Data]
 				in
 				    mv_material_requisition_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 
