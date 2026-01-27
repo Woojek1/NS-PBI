@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "fca46438c7c248374bc8",
   "position": {
     "x": 0,
@@ -191,6 +191,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "DATE_ENTERED"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
