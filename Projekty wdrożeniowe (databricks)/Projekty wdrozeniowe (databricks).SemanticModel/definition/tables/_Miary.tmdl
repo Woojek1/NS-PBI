@@ -127,6 +127,12 @@ table _Miary
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
+	measure !TEST_sales =
+			
+			SUM(vm_pbi_f_model_sales_flesco[s_pln_net])
+		formatString: #,0
+		lineageTag: 5943069d-eaab-4a5f-94e3-57d0a58f0051
+
 	column Value
 		formatString: 0
 		lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017
