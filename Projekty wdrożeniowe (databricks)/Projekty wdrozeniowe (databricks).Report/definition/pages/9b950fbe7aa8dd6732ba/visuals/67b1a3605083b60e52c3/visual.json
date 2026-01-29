@@ -23,6 +23,21 @@
                       "Entity": "vm_pbi_d_gl_project"
                     }
                   },
+                  "Property": "prj_desc"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.prj_desc",
+              "nativeQueryRef": "prj_desc",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
                   "Property": "hprj_code"
                 }
               },
@@ -42,13 +57,65 @@
         "levels": [
           {
             "queryRefs": [
+              "vm_pbi_d_gl_project.prj_desc"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
               "vm_pbi_d_gl_project.hprj_code"
             ],
             "isCollapsed": true,
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Krzesło obrotowe ekonomiczne (CN) - 3 linie'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'(X) Wdrożenie produkcji EBD ( wcześniej Linia krzeseł SAIL i  GLOBELINE)'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'(X) Krzesło ARN Kusch'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -320,8 +387,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
+        }
       },
       {
         "name": "2bc76f60332a4b99bea5",

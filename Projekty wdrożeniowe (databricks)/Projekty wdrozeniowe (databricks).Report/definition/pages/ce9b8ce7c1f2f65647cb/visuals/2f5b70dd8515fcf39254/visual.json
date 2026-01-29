@@ -449,5 +449,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9bf2fa186540ee4ba014",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon_2"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cd2f0bd51d0d6a5706d2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "79a400181e18f7d29f2d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Budzet projektu"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

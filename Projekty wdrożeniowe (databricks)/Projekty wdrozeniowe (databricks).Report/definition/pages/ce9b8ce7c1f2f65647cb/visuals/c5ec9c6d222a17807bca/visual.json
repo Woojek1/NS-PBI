@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "c5ec9c6d222a17807bca",
   "position": {
     "x": 1556,
@@ -15,6 +15,21 @@
       "queryState": {
         "Values": {
           "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.prj_desc",
+              "nativeQueryRef": "prj_desc",
+              "active": true
+            },
             {
               "field": {
                 "Column": {
@@ -42,13 +57,55 @@
         "levels": [
           {
             "queryRefs": [
+              "vm_pbi_d_gl_project.prj_desc"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
               "vm_pbi_d_gl_project.hprj_code"
             ],
             "isCollapsed": true,
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'(X) Mollen'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Smile'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -320,8 +377,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
+        }
       },
       {
         "name": "2bc76f60332a4b99bea5",

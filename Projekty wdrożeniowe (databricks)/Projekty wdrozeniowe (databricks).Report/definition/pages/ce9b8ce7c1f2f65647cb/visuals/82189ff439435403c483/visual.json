@@ -3914,5 +3914,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6f685b9970f9ec4f979a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon_2"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3cd533018a63933c25da",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_impl_cat_cost"
+              }
+            },
+            "Property": "impl_cat_cost_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "11da0a578c8853b045b1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
