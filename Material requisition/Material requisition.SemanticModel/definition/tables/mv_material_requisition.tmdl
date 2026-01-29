@@ -223,6 +223,14 @@ table mv_material_requisition
 
 		annotation SummarizationSetBy = Automatic
 
+	column STATUS_CODE
+		dataType: string
+		lineageTag: 34c9cdd4-28d2-4886-9546-5020d02da0f8
+		summarizeBy: none
+		sourceColumn: STATUS_CODE
+
+		annotation SummarizationSetBy = Automatic
+
 	partition mv_material_requisition = m
 		mode: import
 		source =

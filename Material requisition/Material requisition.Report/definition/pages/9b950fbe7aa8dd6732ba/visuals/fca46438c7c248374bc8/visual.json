@@ -6,7 +6,7 @@
     "y": 0,
     "z": 0,
     "height": 1080,
-    "width": 1920.0000000000002,
+    "width": 1920,
     "tabOrder": 0
   },
   "visual": {
@@ -27,7 +27,22 @@
                 }
               },
               "queryRef": "mv_material_requisition.INT_CUSTOMER_NO",
-              "nativeQueryRef": "INT_CUSTOMER_NO"
+              "nativeQueryRef": "CUSTOMER",
+              "displayName": "CUSTOMER"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mv_material_requisition"
+                    }
+                  },
+                  "Property": "STATUS_CODE"
+                }
+              },
+              "queryRef": "mv_material_requisition.STATUS_CODE",
+              "nativeQueryRef": "STATUS_CODE"
             },
             {
               "field": {
@@ -41,7 +56,8 @@
                 }
               },
               "queryRef": "mv_material_requisition.CODENO_F",
-              "nativeQueryRef": "CODENO_F"
+              "nativeQueryRef": "CODENO F",
+              "displayName": "CODENO F"
             },
             {
               "field": {
@@ -55,7 +71,8 @@
                 }
               },
               "queryRef": "mv_material_requisition.DATE_ENTERED",
-              "nativeQueryRef": "DATE_ENTERED"
+              "nativeQueryRef": "DATE ENTERED",
+              "displayName": "DATE ENTERED"
             },
             {
               "field": {
@@ -69,7 +86,8 @@
                 }
               },
               "queryRef": "mv_material_requisition.ORDER_NO",
-              "nativeQueryRef": "ORDER_NO"
+              "nativeQueryRef": "ORDER NO",
+              "displayName": "ORDER NO"
             },
             {
               "field": {
@@ -83,7 +101,8 @@
                 }
               },
               "queryRef": "mv_material_requisition.CODE_F_DESCRIPTION",
-              "nativeQueryRef": "CODE_F_DESCRIPTION"
+              "nativeQueryRef": "CODE F DESCRIPTION",
+              "displayName": "CODE F DESCRIPTION"
             },
             {
               "field": {
@@ -97,7 +116,22 @@
                 }
               },
               "queryRef": "mv_material_requisition.PART_NO",
-              "nativeQueryRef": "PART_NO"
+              "nativeQueryRef": "PART NO",
+              "displayName": "PART NO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "mv_material_requisition"
+                    }
+                  },
+                  "Property": "DESCRIPTION"
+                }
+              },
+              "queryRef": "mv_material_requisition.DESCRIPTION",
+              "nativeQueryRef": "DESCRIPTION"
             },
             {
               "field": {
@@ -116,7 +150,8 @@
                 }
               },
               "queryRef": "Sum(mv_material_requisition.QTY_DUE)",
-              "nativeQueryRef": "Suma elementów QTY_DUE"
+              "nativeQueryRef": "QTY DUE",
+              "displayName": "QTY DUE"
             },
             {
               "field": {
@@ -135,7 +170,8 @@
                 }
               },
               "queryRef": "Sum(mv_material_requisition.QTY_SHIPPED)",
-              "nativeQueryRef": "Suma elementów QTY_SHIPPED"
+              "nativeQueryRef": "QTY SHIPPED",
+              "displayName": "QTY SHIPPED"
             },
             {
               "field": {
@@ -154,7 +190,8 @@
                 }
               },
               "queryRef": "Sum(mv_material_requisition.QTY_ASSIGNED)",
-              "nativeQueryRef": "Suma elementów QTY_ASSIGNED"
+              "nativeQueryRef": "QTY ASSIGNED",
+              "displayName": "QTY ASSIGNED"
             },
             {
               "field": {
@@ -173,7 +210,8 @@
                 }
               },
               "queryRef": "Sum(mv_material_requisition.QTY_ON_ORDER)",
-              "nativeQueryRef": "Suma elementów QTY_ON_ORDER"
+              "nativeQueryRef": "QTY ON ORDER",
+              "displayName": "QTY ON ORDER"
             },
             {
               "field": {
@@ -187,7 +225,8 @@
                 }
               },
               "queryRef": "mv_material_requisition.BUG_SOURCE",
-              "nativeQueryRef": "BUG_SOURCE"
+              "nativeQueryRef": "BUG SOURCE",
+              "displayName": "BUG SOURCE"
             }
           ]
         }
@@ -217,7 +256,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "151.668200895408D"
+                  "Value": "95.88988358383918D"
                 }
               }
             }
@@ -231,7 +270,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "195.57143340024538D"
+                  "Value": "146.76684240715133D"
                 }
               }
             }
@@ -259,7 +298,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "87.71659812488562D"
+                  "Value": "68.15124515735168D"
                 }
               }
             }
@@ -273,7 +312,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "118.14278807313481D"
+                  "Value": "88.90794963564863D"
                 }
               }
             }
@@ -287,7 +326,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "123.71426976166455D"
+                  "Value": "87.29459877903615D"
                 }
               }
             }
@@ -301,7 +340,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "118.42857235987276D"
+                  "Value": "121.20126808088678D"
                 }
               }
             }
@@ -329,13 +368,41 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "143.85714894431283D"
+                  "Value": "90.93015426220569D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "Sum(mv_material_requisition.QTY_ASSIGNED)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.08695652173913D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "mv_material_requisition.DATE_ENTERED"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "502.39488808874125D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "mv_material_requisition.DESCRIPTION"
           }
         }
       ],
@@ -482,6 +549,148 @@
         {
           "properties": {}
         }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(mv_material_requisition.QTY_DUE)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(mv_material_requisition.QTY_SHIPPED)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(mv_material_requisition.QTY_ASSIGNED)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(mv_material_requisition.QTY_ON_ORDER)"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -520,183 +729,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b84f7646d903d28bc702",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mv_material_requisition"
-              }
-            },
-            "Property": "INT_CUSTOMER_NO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9fc5f640cc5ceb6d6dea",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mv_material_requisition"
-              }
-            },
-            "Property": "CODENO_F"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "30c8fe3379070ed03381",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mv_material_requisition"
-              }
-            },
-            "Property": "DATE_ENTERED"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e9e5b7e1e0c8030dced0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mv_material_requisition"
-              }
-            },
-            "Property": "ORDER_NO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "25d8dc872b17c07730b1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mv_material_requisition"
-              }
-            },
-            "Property": "CODE_F_DESCRIPTION"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "413418f91ade8a4cd62b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mv_material_requisition"
-              }
-            },
-            "Property": "PART_NO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "91cd76da4007b04550a0",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "mv_material_requisition"
-                  }
-                },
-                "Property": "QTY_DUE"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "74cdc6b66ae5e404d2d3",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "mv_material_requisition"
-                  }
-                },
-                "Property": "QTY_SHIPPED"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8f69aaca06b0cbad20ab",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "mv_material_requisition"
-                  }
-                },
-                "Property": "QTY_ON_ORDER"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "55676d1d58a44e1be06b",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "mv_material_requisition"
-                  }
-                },
-                "Property": "QTY_ASSIGNED"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3fd7aa3a2ea04a024083",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mv_material_requisition"
-              }
-            },
-            "Property": "BUG_SOURCE"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
