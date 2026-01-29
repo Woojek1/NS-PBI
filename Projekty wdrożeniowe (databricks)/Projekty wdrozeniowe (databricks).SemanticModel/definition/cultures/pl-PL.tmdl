@@ -216,7 +216,7 @@ cultureInfo pl-PL
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Miary",
-			          "ConceptualProperty": "Realizacja budzetu"
+			          "ConceptualProperty": "Realizacja budzetu %"
 			        }
 			      },
 			      "State": "Generated",
@@ -243,6 +243,69 @@ cultureInfo pl-PL
 			        },
 			        {
 			          "Realizacja budżetu bieżący rok": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project.hprj_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vm_pbi_d_gl_project",
+			          "ConceptualProperty": "hprj_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Kod projektu": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_miary.wydatki_blank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki (blank)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Wydatki": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_miary.budzet_projektu_blank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Budzet projektu (blank)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budżet projektu": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

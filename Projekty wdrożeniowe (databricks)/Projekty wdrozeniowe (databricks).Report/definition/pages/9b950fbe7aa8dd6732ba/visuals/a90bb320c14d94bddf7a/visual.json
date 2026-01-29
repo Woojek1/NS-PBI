@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "a90bb320c14d94bddf7a",
   "position": {
     "x": 729.6,
     "y": 140.8,
-    "z": 12002,
+    "z": 12000,
     "height": 99.2,
     "width": 320,
-    "tabOrder": 12002
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "card",
@@ -23,7 +23,7 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "Realizacja budzetu"
+                  "Property": "Realizacja budzetu %"
                 }
               },
               "queryRef": "_Miary.Realizacja budzetu",
@@ -43,7 +43,7 @@
                     "Entity": "_Miary"
                   }
                 },
-                "Property": "Realizacja budzetu"
+                "Property": "Realizacja budzetu %"
               }
             },
             "direction": "Descending"
@@ -232,7 +232,7 @@
                                           "Entity": "_Miary"
                                         }
                                       },
-                                      "Property": "Realizacja budzetu"
+                                      "Property": "Realizacja budzetu %"
                                     }
                                   },
                                   "Right": {
@@ -252,7 +252,7 @@
                                           "Entity": "_Miary"
                                         }
                                       },
-                                      "Property": "Realizacja budzetu"
+                                      "Property": "Realizacja budzetu %"
                                     }
                                   },
                                   "Right": {
@@ -283,7 +283,7 @@
                                           "Entity": "_Miary"
                                         }
                                       },
-                                      "Property": "Realizacja budzetu"
+                                      "Property": "Realizacja budzetu %"
                                     }
                                   },
                                   "Right": {
@@ -303,7 +303,7 @@
                                           "Entity": "_Miary"
                                         }
                                       },
-                                      "Property": "Realizacja budzetu"
+                                      "Property": "Realizacja budzetu %"
                                     }
                                   },
                                   "Right": {
@@ -332,23 +332,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8f9fe9d9e77f898a7ebd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Realizacja budzetu"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

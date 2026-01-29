@@ -3,10 +3,12 @@ table _Miary
 
 	measure Wydatki =
 			
-			SUM(f_capex_imp_cost_data[amount_pln])
+			COALESCE(
+			    SUM(f_capex_imp_cost_data[amount_pln]),
+			    0
+			)
+		formatString: #,0
 		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
-
-		formatStringDefinition = "#,0.00"
 
 	measure 'Nazwa projektu - tytul' =
 			
@@ -55,16 +57,18 @@ table _Miary
 			)
 		lineageTag: 0490d09a-711e-4302-9875-25436384c6c6
 
-	measure 'Budzet projektu' = ```
+	measure 'Budzet projektu' =
 			
-			
-			SUM(vm_pbi_d_projects_budget[debet_amount])
-			
-			```
-		formatString: #,0.00
+			COALESCE(
+			    SUM(vm_pbi_d_projects_budget[debet_amount]),
+			    0
+			)
+		formatString: #,0
 		lineageTag: 467e429d-ecbc-48a8-8151-48417635da7e
 
-	measure 'Realizacja budzetu' = ```
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Realizacja budzetu %' = ```
 			
 			VAR Budzet_projektu = 
 			    SUM(vm_pbi_d_projects_budget[debet_amount])
@@ -81,8 +85,47 @@ table _Miary
 			 )
 			
 			```
-		formatString: #,0.00%;-#,0.00%;#,0.00%
+		formatString: #,0%;-#,0%;#,0%
 		lineageTag: 0a1ed71e-7a2c-4f4e-928f-e3600efa60d1
+
+	measure Przyszly_rok =
+			
+			YEAR(
+			    NOW()
+			) + 1
+		formatString: 0
+		lineageTag: 5ca79c38-862a-40c6-826e-1f390723fb89
+
+	measure 'Widocznosc grafiki' = ```
+			
+			IF(
+			    HASONEVALUE(vm_pbi_d_gl_project[prj_desc]),
+			    "RGBA(255,0,0,0)",         
+			    "RGBA(255,255,255,1)"
+			)
+			
+			```
+		lineageTag: a6dacdac-9fa3-4da3-b234-913ccc9fdc1b
+
+	measure 'Budzet projektu (blank)' = ```
+			
+			    SUM(vm_pbi_d_projects_budget[debet_amount])
+			
+			```
+		formatString: #,0
+		lineageTag: 9d24a183-b6ed-4b1c-a704-6e5608b789a9
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Wydatki (blank)' = ```
+			
+			    SUM(f_capex_imp_cost_data[amount_pln])
+			
+			```
+		formatString: #,0
+		lineageTag: 29184878-cc4b-46f5-8e71-e83cbc1758d4
+
+		annotation PBI_FormatHint = {"isDecimal":true}
 
 	column Value
 		formatString: 0

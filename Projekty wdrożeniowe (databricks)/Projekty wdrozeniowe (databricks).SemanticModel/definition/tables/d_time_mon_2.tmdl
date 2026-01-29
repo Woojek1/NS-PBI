@@ -162,11 +162,14 @@ table d_time_mon_2
 		annotation SummarizationSetBy = Automatic
 
 	column year_name
-		dataType: string
+		dataType: int64
+		formatString: 0
 		sourceProviderType: nvarchar(65535)
 		lineageTag: eef3767d-5d69-409b-9827-f3b200d3332a
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: year_name
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

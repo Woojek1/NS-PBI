@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "02148ff5c0d11039d018",
   "position": {
-    "x": 1143.3333333333335,
-    "y": 140,
+    "x": 1173.8947368421052,
+    "y": 126.31578947368421,
     "z": 12000,
-    "height": 335,
-    "width": 335,
+    "height": 254.31578947368422,
+    "width": 304.84210526315792,
     "tabOrder": 12000
   },
   "visual": {
@@ -32,6 +32,65 @@
           ]
         }
       }
+    },
+    "objects": {
+      "altTextSettings": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "imageSettings": [
+        {
+          "properties": {
+            "imageAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'mcenter'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Miary"
+                        }
+                      },
+                      "Property": "Widocznosc grafiki"
+                    }
+                  }
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }
