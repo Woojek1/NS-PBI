@@ -231,6 +231,16 @@ table mv_material_requisition
 
 		annotation SummarizationSetBy = Automatic
 
+	column QTY_RETURNED
+		dataType: double
+		lineageTag: 0afa3a9e-b4cf-4d5e-8479-649557a8b23f
+		summarizeBy: sum
+		sourceColumn: QTY_RETURNED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition mv_material_requisition = m
 		mode: import
 		source =

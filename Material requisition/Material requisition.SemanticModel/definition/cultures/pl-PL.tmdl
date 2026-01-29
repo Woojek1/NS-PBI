@@ -1399,9 +1399,221 @@ cultureInfo pl-PL
 			          }
 			        }
 			      ]
+			    },
+			    "mv_material_requisition.status_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mv_material_requisition",
+			          "ConceptualProperty": "STATUS_CODE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "status code": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "STATUS_CODE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "status id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "status key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "category code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "importance code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prestige code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prominence code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "condition code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "class code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grade code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "level code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mv_material_requisition.qty_returned": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "mv_material_requisition",
+			          "ConceptualProperty": "QTY_RETURNED"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qty returned": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "QTY_RETURNED": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "mv_material_requisition_has_qty_returned": {
+			      "Binding": {
+			        "ConceptualEntity": "mv_material_requisition"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mv_material_requisition": {
+			          "Target": {
+			            "Entity": "mv_material_requisition"
+			          }
+			        },
+			        "mv_material_requisition.qty_returned": {
+			          "Target": {
+			            "Entity": "mv_material_requisition.qty_returned"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mv_material_requisition"
+			            },
+			            "Object": {
+			              "Role": "mv_material_requisition.qty_returned"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mv_material_requisitions_have_qty_returned"
+			        }
+			      ]
+			    },
+			    "mv_material_requisition_has_status_code": {
+			      "Binding": {
+			        "ConceptualEntity": "mv_material_requisition"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mv_material_requisition": {
+			          "Target": {
+			            "Entity": "mv_material_requisition"
+			          }
+			        },
+			        "mv_material_requisition.status_code": {
+			          "Target": {
+			            "Entity": "mv_material_requisition.status_code"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mv_material_requisition"
+			            },
+			            "Object": {
+			              "Role": "mv_material_requisition.status_code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mv_material_requisitions_have_status_codes"
+			        }
+			      ]
+			    },
 			    "mv_material_requisition_has_kolor_czcionki": {
 			      "Binding": {
 			        "ConceptualEntity": "mv_material_requisition"

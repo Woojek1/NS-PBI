@@ -215,6 +215,26 @@
             },
             {
               "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mv_material_requisition"
+                        }
+                      },
+                      "Property": "QTY_RETURNED"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(mv_material_requisition.QTY_RETURNED)",
+              "nativeQueryRef": "QTY RETURNED",
+              "displayName": "QTY RETURNED"
+            },
+            {
+              "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
@@ -284,7 +304,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "365.66975493102547D"
+                  "Value": "355.66035486050197D"
                 }
               }
             }
@@ -326,7 +346,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "87.29459877903615D"
+                  "Value": "76.98945129494129D"
                 }
               }
             }
@@ -340,7 +360,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "121.20126808088678D"
+                  "Value": "111.21673913550973D"
                 }
               }
             }
@@ -396,13 +416,41 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "502.39488808874125D"
+                  "Value": "490.737293105769D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "mv_material_requisition.DESCRIPTION"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.33332573316753D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(mv_material_requisition.QTY_RETURNED)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "106.33333341182504D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "mv_material_requisition.STATUS_CODE"
           }
         }
       ],
@@ -542,6 +590,72 @@
               }
             ],
             "metadata": "mv_material_requisition.DATE_ENTERED"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Not": {
+                              "Expression": {
+                                "Comparison": {
+                                  "ComparisonKind": 0,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "mv_material_requisition"
+                                            }
+                                          },
+                                          "Property": "BUG_SOURCE"
+                                        }
+                                      },
+                                      "Function": 3
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "null"
+                                    }
+                                  }
+                                },
+                                "Annotations": {
+                                  "PowerBI.SQExprEvaluationKind": 1,
+                                  "PowerBI.SQExprTextOperatorOption": 10
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FF0000'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "mv_material_requisition.STATUS_CODE"
           }
         }
       ],
@@ -690,6 +804,41 @@
           "selector": {
             "metadata": "Sum(mv_material_requisition.QTY_ON_ORDER)"
           }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(mv_material_requisition.QTY_RETURNED)"
+          }
         }
       ]
     },
@@ -729,5 +878,230 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8cb58f25d2a1584c9ee2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "INT_CUSTOMER_NO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "df30628ddf139521e24c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "STATUS_CODE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ff1effe6d4b397ff15bf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "CODENO_F"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fafd1e36b03ae89903d2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "DATE_ENTERED"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2c79056ac595e785b41e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "ORDER_NO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "626fd70281eabebb1ef7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "CODE_F_DESCRIPTION"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a363a31482ab39624326",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "PART_NO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3b4248a760377c7413d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "DESCRIPTION"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "570097e71cac3cdb7b87",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_DUE"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2377256fe0dc1f75da98",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_SHIPPED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "763e3581ac8f1cfa2cba",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_ASSIGNED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "53ae8effce742ab2eb8f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_ON_ORDER"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e2b785dbb87273485f22",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mv_material_requisition"
+              }
+            },
+            "Property": "BUG_SOURCE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ee13e14b7a464cdbbd61",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "mv_material_requisition"
+                  }
+                },
+                "Property": "QTY_RETURNED"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
