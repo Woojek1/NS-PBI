@@ -1,0 +1,18 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["f_margin75_facts"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table f_margin75_facts
+
+ref cultureInfo pl-PL
+
