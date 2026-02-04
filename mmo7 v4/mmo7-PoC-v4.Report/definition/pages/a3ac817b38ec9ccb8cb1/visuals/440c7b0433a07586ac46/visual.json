@@ -57,6 +57,38 @@
                       "Entity": "vpbi_d_product"
                     }
                   },
+                  "Property": "bcg1_name_en"
+                }
+              },
+              "queryRef": "vpbi_d_product.bcg1_name_en",
+              "nativeQueryRef": "Business category",
+              "active": true,
+              "displayName": "Business category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg2_name_en"
+                }
+              },
+              "queryRef": "vpbi_d_product.bcg2_name_en",
+              "nativeQueryRef": "Business subcategory",
+              "active": true,
+              "displayName": "Business subcategory"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
                   "Property": "bcg3_name_en"
                 }
               },
@@ -94,7 +126,7 @@
                 }
               },
               "index": 0,
-              "length": 1,
+              "length": 3,
               "sortDirection": "Ascending"
             }
           ]
@@ -158,7 +190,7 @@
                     "Entity": "vpbi_d_product"
                   }
                 },
-                "Property": "bcg3_name_en"
+                "Property": "bcg1_name_en"
               }
             },
             "direction": "Ascending"
@@ -166,6 +198,89 @@
         ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "vpbi_d_product.bcg1_name_en"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg1_name_en"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "vpbi_d_product.bcg2_name_en"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg2_name_en"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "vpbi_d_product.bcg3_name_en"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "bcg3_name_en"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "vpbi_d_product.model_code"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vpbi_d_product"
+                    }
+                  },
+                  "Property": "model_code"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "values": [
         {
@@ -2127,7 +2242,35 @@
         "type": "Categorical"
       },
       {
-        "name": "9f4bee729994100a6996",
+        "name": "17e58c83d11e4bd94d4a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "bcg1_name_en"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ff625f76e6acb29f9287",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vpbi_d_product"
+              }
+            },
+            "Property": "bcg2_name_en"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2e01b3df6b528844e41a",
         "field": {
           "Column": {
             "Expression": {
@@ -2138,7 +2281,22 @@
             "Property": "bcg3_name_en"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ],
     "filterSortOrder": "Custom"
