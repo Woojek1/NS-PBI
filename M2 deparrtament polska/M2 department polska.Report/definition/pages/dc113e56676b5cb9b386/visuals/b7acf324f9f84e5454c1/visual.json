@@ -1,0 +1,588 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "b7acf324f9f84e5454c1",
+  "position": {
+    "x": 20,
+    "y": 38.571428571428577,
+    "z": 0,
+    "height": 1024.2857142857144,
+    "width": 1880.0000000000002,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "Sum(Date.Year)",
+              "nativeQueryRef": "Year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Department"
+                    }
+                  },
+                  "Property": "Department Code"
+                }
+              },
+              "queryRef": "Department.Department Code",
+              "nativeQueryRef": "Department Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Department"
+                    }
+                  },
+                  "Property": "Section Code"
+                }
+              },
+              "queryRef": "Department.Section Code",
+              "nativeQueryRef": "Section Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Line"
+                }
+              },
+              "queryRef": "Product.Line",
+              "nativeQueryRef": "Line"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Net Sales PLN"
+                }
+              },
+              "queryRef": "Sales Measures.Net Sales PLN",
+              "nativeQueryRef": "Net Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Catalog Sales PLN"
+                }
+              },
+              "queryRef": "Sales Measures.Catalog Sales PLN",
+              "nativeQueryRef": "Catalog Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Discount PLN"
+                }
+              },
+              "queryRef": "Sales Measures.Discount PLN",
+              "nativeQueryRef": "Discount PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Discount %"
+                }
+              },
+              "queryRef": "Sales Measures.Discount %",
+              "nativeQueryRef": "Discount %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Manufacturing Cost PLN"
+                }
+              },
+              "queryRef": "Sales Measures.Manufacturing Cost PLN",
+              "nativeQueryRef": "Manufacturing Cost PLN"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Price List"
+                    }
+                  },
+                  "Property": "PriceList Code"
+                }
+              },
+              "queryRef": "Price List.PriceList Code",
+              "nativeQueryRef": "PriceList Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Price List"
+                    }
+                  },
+                  "Property": "PriceList Category"
+                }
+              },
+              "queryRef": "Price List.PriceList Category",
+              "nativeQueryRef": "PriceList Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer"
+                    }
+                  },
+                  "Property": "Customer Code"
+                }
+              },
+              "queryRef": "Customer.Customer Code",
+              "nativeQueryRef": "Customer Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer"
+                    }
+                  },
+                  "Property": "Customer"
+                }
+              },
+              "queryRef": "Customer.Customer",
+              "nativeQueryRef": "Customer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Project"
+                    }
+                  },
+                  "Property": "Project"
+                }
+              },
+              "queryRef": "Project.Project",
+              "nativeQueryRef": "Project"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Order number"
+                }
+              },
+              "queryRef": "Sales Measures.Order number",
+              "nativeQueryRef": "Nr zam"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Property": "Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116.99999700808118D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Customer.Customer Code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "171.00001929272858D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Price List.PriceList Category"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120.6078827249845D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Price List.PriceList Code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "445D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Customer.Customer"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "170D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sales Measures.Manufacturing Cost PLN"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d4a62aa6c0912f42376f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Department"
+              }
+            },
+            "Property": "Department Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2af563f6c5ab492919b3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "40b50d0063d5e3c87df6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Department"
+              }
+            },
+            "Property": "Section Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "709db25187e6d8b06645",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a0e3f0d0d7e30b996fbd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Net Sales (PLN)"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "Sales Measures",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 1,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "s"
+                        }
+                      },
+                      "Property": "Net Sales (PLN)"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "0L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "f7afa60234b4d0e7e4c7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Catalog Sales PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f82398a3e26f94e3c495",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Discount PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "43c04917fa01883982ed",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Discount %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d58ac105879ad3a0e780",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Manufacturing Cost PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3b15db5cfc2aa6c7ecc2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Price List"
+              }
+            },
+            "Property": "PriceList Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "382b04fa9058dcabf38c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Price List"
+              }
+            },
+            "Property": "PriceList Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "48196b2ad32b87ecb043",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Customer"
+              }
+            },
+            "Property": "Customer Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e00ce4a3671340208f1e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Customer"
+              }
+            },
+            "Property": "Customer"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f51c7570a351b71adefa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Project"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2eae1998e9314641ca0e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Net Sales PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4ed8562cd73d7095375d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Order number"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
