@@ -1,0 +1,80 @@
+table d_organization
+	lineageTag: 5f4dcb19-f16c-4cf1-9dbb-64e735d18153
+
+	column org_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1819cbae-274c-46c1-b970-f39461322c21
+		summarizeBy: none
+		sourceColumn: org_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 59413741-86ab-4e01-abfc-be0aee1b43b9
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Code'
+		dataType: string
+		lineageTag: e83e8463-2fe0-4541-b0ce-a733c4e81030
+		summarizeBy: none
+		sourceColumn: Department Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Section Code'
+		dataType: string
+		lineageTag: 660ec4f9-e577-4e30-8030-3620c4c8f434
+		summarizeBy: none
+		sourceColumn: Section Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Section
+		dataType: string
+		lineageTag: c3900c60-b5d0-4026-8d39-a59b0b63af85
+		summarizeBy: none
+		sourceColumn: Section
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salesperson
+		dataType: string
+		lineageTag: cced5e12-32ee-4c7d-80ce-1ca26bceb538
+		summarizeBy: none
+		sourceColumn: Salesperson
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_organization = m
+		mode: import
+		source =
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        org_id,
+				        dept_name as `Department`,
+				        dept_code as `Department Code`,
+				        team_code as `Section Code`,
+				        team_name as `Section`,
+				        sman_name as `Salesperson`
+				    from zenith.edw.d_organization
+				    ",
+				    null,
+				    [EnableFolding=true]
+				)
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

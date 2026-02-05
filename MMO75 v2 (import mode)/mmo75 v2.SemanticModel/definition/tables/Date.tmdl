@@ -1,0 +1,49 @@
+table Date
+	lineageTag: d1bb8350-706a-43ca-947d-af0ec7ca1642
+
+	column Date
+		lineageTag: 76a00ecf-301c-4ddd-b36a-2072e349d679
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Date Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Date Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Fields'
+		isHidden
+		lineageTag: 83be021e-2f5c-49c6-b259-8135b10c104c
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Date Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Order'
+		isHidden
+		formatString: 0
+		lineageTag: 4c8c56b3-1de1-4198-bace-d51b49c2bff6
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				{
+				    ("Year", NAMEOF('d_time'[year_name]), 0),
+				    ("Quarter", NAMEOF('d_time'[quart_name]), 1),
+				    ("Month", NAMEOF('d_time'[mon_name]), 2)
+				}
+
+	annotation PBI_Id = e28dc133a0b74fa08b4fe00963d1227e
+

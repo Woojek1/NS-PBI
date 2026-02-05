@@ -1,0 +1,64 @@
+table d_time
+	lineageTag: 34449c9f-1d78-480f-8492-ebd1b58904b1
+
+	column mon_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a34d87b-942c-456c-a66e-351ecde3f457
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		lineageTag: 4746dcca-8c4e-46be-ab66-c705ce9afc48
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name
+		dataType: string
+		lineageTag: 3299d44b-8074-4655-9cb3-cf8e19a04b41
+		summarizeBy: none
+		sourceColumn: quart_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name
+		dataType: string
+		lineageTag: 075e7c0b-8f3c-4346-8e39-28d1975d4950
+		summarizeBy: none
+		sourceColumn: year_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_time = m
+		mode: import
+		source = ```
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select 
+				        mon_id,
+				        year_name,
+				        quart_name,
+				        mon_name
+				    from zenith.edw.d_time_mon
+				    where
+				        year_name > 2023
+				    ",
+				    null,
+				    [EnableFolding=true]
+				)
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

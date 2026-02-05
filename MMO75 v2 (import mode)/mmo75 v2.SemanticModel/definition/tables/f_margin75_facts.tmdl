@@ -1,0 +1,673 @@
+table f_margin75_facts
+	lineageTag: cfd6f8cc-4f4e-4992-b006-d076b271eebd
+
+	measure 'Assembly EUR' = SUM(f_margin75_facts[c_eur_assembly])
+		formatString: #,0
+		lineageTag: 05230736-9b76-4963-a1b2-03a2d5469718
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Commission EUR' = SUM(f_margin75_facts[c_eur_comm])
+		formatString: #,0
+		lineageTag: 8ced0897-ba0e-4c84-9d03-9a6748c660fd
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Complaint Activity EUR' = SUM(f_margin75_facts[c_eur_compl_act])
+		formatString: #,0
+		lineageTag: 0b1206e8-9453-4ec3-8e56-73cf38e1f70d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Complaint Product EUR' = SUM(f_margin75_facts[c_eur_compl_prod])
+		formatString: #,0
+		lineageTag: c833b979-552a-4a9f-8eeb-976437330c83
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'License EUR' = SUM(f_margin75_facts[c_eur_lic])
+		formatString: #,0
+		lineageTag: ba241dff-404b-44d8-a9e1-6708d49af582
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Sold Insurance EUR' = SUM(f_margin75_facts[c_eur_sinsuran])
+		formatString: #,0
+		lineageTag: fb34d2ba-6118-4fb6-9896-2ecccb879b02
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Sold Insurance PLN' = SUM(f_margin75_facts[c_pln_sinsuran])
+		formatString: #,0
+		lineageTag: 75d1f012-587f-4290-9cfd-10743968399c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Stock Depreciation EUR' = SUM(f_margin75_facts[c_eur_stock_deprec])
+		formatString: #,0
+		lineageTag: 22fdfdc8-c569-4854-908d-0be84f8c463c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Transport EUR' = SUM(f_margin75_facts[c_eur_transport])
+		formatString: #,0
+		lineageTag: 60e073da-c7cd-44fc-8e77-f3a80c0b1e71
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Variance Fixed Cost EUR' = SUM(f_margin75_facts[c_eur_varfixed])
+		formatString: #,0
+		lineageTag: f5bc0283-969b-494a-bd03-ba0a92660266
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Assembly PLN' = SUM(f_margin75_facts[c_pln_assembly])
+		formatString: #,0
+		lineageTag: 670c7ffd-eb2f-4571-9e85-c0964f17667d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Commission PLN' = SUM(f_margin75_facts[c_pln_comm])
+		formatString: #,0
+		lineageTag: bb7e116e-f4e0-489a-9039-47be09d4bc9f
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Complaint Activity PLN' = SUM(f_margin75_facts[c_pln_compl_act])
+		formatString: #,0
+		lineageTag: f323d3ab-fb09-47ad-a793-2792c3c90328
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Complaint Product PLN' = SUM(f_margin75_facts[c_pln_compl_prod])
+		formatString: #,0
+		lineageTag: 50f1bdcf-f91f-40f1-b577-470250ff5258
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'License PLN' = SUM(f_margin75_facts[c_pln_lic])
+		formatString: #,0
+		lineageTag: e7daf5ed-8873-427c-90cf-3651610ec0d3
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Stock Depreciation PLN' = SUM(f_margin75_facts[c_pln_stock_deprec])
+		formatString: #,0
+		lineageTag: e767ce40-aba9-44ec-b3cc-513129f37c5c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Transport PLN' = SUM(f_margin75_facts[c_pln_transport])
+		formatString: #,0
+		lineageTag: 04c89d33-f838-4055-84a4-726816104973
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Variance Fixed Cost PLN' = SUM(f_margin75_facts[c_pln_varfixed])
+		formatString: #,0
+		lineageTag: cda8f03a-3b6c-4338-98b3-97ed4d85593f
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Sale Qty' = SUM(f_margin75_facts[sale_qty])
+		formatString: #,0
+		lineageTag: 323517ab-2a0f-4cb0-8d1b-d17550be7a38
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Net Sales PLN' = SUM(f_margin75_facts[s_pln_net])
+		formatString: #,0
+		lineageTag: 55f0803b-4a71-4ef8-8aa1-295fb81d1fd6
+
+	measure 'Net Sales EUR' = SUM(f_margin75_facts[s_eur_net])
+		formatString: #,0
+		lineageTag: 6d6e2740-f032-44fc-860b-15193b1cce8e
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Manufacturing Cost EUR' = SUM(f_margin75_facts[s_eur_corp_cost])
+		formatString: #,0
+		lineageTag: fa4d7169-0fbf-45a2-9c4f-429666580c72
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Manufacturing Cost PLN' = SUM(f_margin75_facts[s_pln_corp_cost])
+		formatString: #,0
+		lineageTag: 34c2f3d3-bed1-42ad-b8f8-2afa039977c9
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Margin I PLN' = [Net Sales PLN] - [Manufacturing Cost PLN]
+		formatString: #,0
+		lineageTag: 233d4736-dbcd-475b-916d-b5fd1e9978f5
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Margin I EUR' = [Net Sales EUR] - [Manufacturing Cost EUR]
+		formatString: #,0
+		lineageTag: ef8903e8-16a2-499c-8631-effe5428a61b
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Margin I % (PLN)' = IF([Net Sales PLN] = BLANK(), BLANK(), [Margin I PLN] / [Net Sales PLN])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ed7cdf32-9d4f-4c93-9d16-8fbd8439be85
+
+	measure 'Margin I % (EUR)' = [Margin I EUR] / [Net Sales EUR]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a6273b70-b8a9-4415-833b-34cfd87d88a0
+
+	measure 'Margin II EUR' = [Margin I EUR] - [Assembly EUR] - [Commission EUR] - [Complaint Activity EUR] - [Complaint Product EUR] - [License EUR] - [Sold Insurance EUR] - [Stock Depreciation EUR] - [Transport EUR] - [Variance Fixed Cost EUR]
+		formatString: #,0
+		lineageTag: 60fc5202-3852-45ea-94d9-65f43a490c17
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Margin II PLN' = [Margin I PLN] - [Assembly PLN] - [Commission PLN] - [Complaint Activity PLN] - [Complaint Product PLN] - [License PLN] - [Sold Insurance PLN] - [Stock Depreciation PLN] - [Transport PLN] - [Variance Fixed Cost PLN]
+		formatString: #,0
+		lineageTag: fc91ba36-5566-4a1c-af55-79db42c29d96
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Margin II % (PLN)' = IF([Net Sales PLN] = BLANK(), BLANK(), [Margin II PLN] / [Net Sales PLN])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 66ebfd4b-ef74-4b5b-a54b-ef349cd7efa5
+
+	measure 'Margin II % (EUR)' = IF([Net Sales EUR] = BLANK(), BLANK(), [Margin II EUR] / [Net Sales EUR])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0b358023-d2ab-46de-a1e0-702b1c9842d5
+
+	measure 'Margin I (prim) PLN' = [Margin I PLN] - [Complaint Product PLN] - [Variance Fixed Cost PLN]
+		formatString: #,0
+		lineageTag: baf7fcdd-5e8e-4094-bbab-6b8f96571984
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Margin I (prim) EUR' = [Margin I EUR] - [Complaint Product EUR] - [Variance Fixed Cost EUR]
+		formatString: #,0
+		lineageTag: bbb5b81e-5a2a-4c41-9b15-4a7b884f349c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Margin I (prim) % (PLN)' = IF([Net Sales PLN] = BLANK(), BLANK(), [Margin I (prim) PLN] / [Net Sales PLN])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 68ffe78a-ba9b-4353-9fad-85e52cf1347a
+
+	measure 'Margin I (prim) % (EUR)' = IF([Net Sales EUR] = BLANK(), BLANK(), [Margin I (prim) EUR] / [Net Sales EUR])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e5b08602-50de-438b-8992-5982ff835025
+
+	column time_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f0da9b74-2b78-4ce6-8c45-d79b5b5eed6a
+		summarizeBy: none
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5f85eedb-0344-4576-bc37-6c3f5f3c2543
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 54d28b61-a5e5-47df-af99-1c49d60748a4
+		summarizeBy: none
+		sourceColumn: cust_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_inv_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ba4d292f-0c16-423a-9245-f817c0ec2f9a
+		summarizeBy: none
+		sourceColumn: prod_inv_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 16bef3b0-4cb9-4b34-8910-e2debea1e055
+		summarizeBy: none
+		sourceColumn: mnf_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 76c0da42-a890-44e2-9090-c7d1a9d91f0c
+		summarizeBy: none
+		sourceColumn: org_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b42665ff-024c-4cd1-826b-dfb2fcf75354
+		summarizeBy: sum
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column d_term_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d1cfaafb-32ea-4605-ad2d-907b6a5523f4
+		summarizeBy: none
+		sourceColumn: d_term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_cost_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7491a17a-2486-47a9-a8c3-903f0e3dfdb3
+		summarizeBy: sum
+		sourceColumn: comp_cost_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_qty
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: e1b23456-8c34-4884-9465-2597ff21f23a
+		summarizeBy: sum
+		sourceColumn: sale_qty
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_pln_net
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 8afa5ac3-4322-4a81-8e23-7db3a93db33a
+		summarizeBy: sum
+		sourceColumn: s_pln_net
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_eur_net
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: de1fc571-90c0-4fe2-ab5d-ad3ec2ef3868
+		summarizeBy: sum
+		sourceColumn: s_eur_net
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_pln_corp_cost
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 24039509-1adf-4915-bfbd-207ddef5d4ca
+		summarizeBy: sum
+		sourceColumn: s_pln_corp_cost
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_eur_corp_cost
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 4434b2d7-2465-4738-8d9f-6993feb4f26c
+		summarizeBy: sum
+		sourceColumn: s_eur_corp_cost
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_lic
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: fb0f07d2-2c6b-4e39-89f3-cb2bfcce1a20
+		summarizeBy: sum
+		sourceColumn: c_pln_lic
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_lic
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 708a9c59-03ea-4810-bff3-620c8b3bcb9c
+		summarizeBy: sum
+		sourceColumn: c_eur_lic
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_varfixed
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 21b3369e-dce3-4d92-a01a-4c0a2e3d28dc
+		summarizeBy: sum
+		sourceColumn: c_pln_varfixed
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_varfixed
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 0e412042-fbc2-4faa-b8e7-b442ba335907
+		summarizeBy: sum
+		sourceColumn: c_eur_varfixed
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_transport
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 8aacd0f4-c282-4ee1-a4d2-38b7adffeb72
+		summarizeBy: sum
+		sourceColumn: c_pln_transport
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_transport
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 3581023c-b5f3-473e-a124-d6ad8322a6d6
+		summarizeBy: sum
+		sourceColumn: c_eur_transport
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_compl_prod
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: eced5fcd-2581-4231-82c4-0b75a4c1f8b9
+		summarizeBy: sum
+		sourceColumn: c_pln_compl_prod
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_compl_prod
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 11546d6c-08f8-433f-89ed-66c944518324
+		summarizeBy: sum
+		sourceColumn: c_eur_compl_prod
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_comm
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 23d00bc7-4c7f-4385-aeed-c4800dec7ae2
+		summarizeBy: sum
+		sourceColumn: c_pln_comm
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_comm
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: b1487786-7a20-4cdc-8c21-e44531134de5
+		summarizeBy: sum
+		sourceColumn: c_eur_comm
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_sinsuran
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 7b1bff27-b160-4c85-b9ad-6927c61e52a3
+		summarizeBy: sum
+		sourceColumn: c_pln_sinsuran
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_sinsuran
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: cc668bf8-a20c-4f46-a02b-22c3efd7ac25
+		summarizeBy: sum
+		sourceColumn: c_eur_sinsuran
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_assembly
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: f134b76f-07c1-4336-bc01-dae43076b46b
+		summarizeBy: sum
+		sourceColumn: c_pln_assembly
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_assembly
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 9c8b6823-4131-40a4-b7c9-d6a4e40337f3
+		summarizeBy: sum
+		sourceColumn: c_eur_assembly
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_stock_deprec
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: fcbdcd8f-4233-4003-931b-f7b156e076a4
+		summarizeBy: sum
+		sourceColumn: c_pln_stock_deprec
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_stock_deprec
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 85daf678-e8c1-41fd-925a-80e0c65094d8
+		summarizeBy: sum
+		sourceColumn: c_eur_stock_deprec
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_compl_act
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 5f8f8b1c-6352-4e1c-adcc-d6f202d5ac85
+		summarizeBy: sum
+		sourceColumn: c_pln_compl_act
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_compl_act
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 16092a65-7bc1-4ec2-83cf-a5708b2a7ad5
+		summarizeBy: sum
+		sourceColumn: c_eur_compl_act
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition f_margin75_facts = m
+		mode: import
+		source =
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        time_id,
+				        comp_id,
+				        cust_id,
+				        prod_inv_id,
+				        mnf_id,
+				        org_id,
+				        team_id,
+				        d_term_id,
+				        comp_cost_id,
+				        -- mon_name,
+				        -- comp_code,
+				        -- cust_code,
+				        -- prod_si_code,
+				        -- sman_code,
+				        -- team_code,
+				        -- dept_code,
+				        -- d_term_code,
+				        -- comp_cost_code,
+				        sale_qty,
+				        s_pln_net,
+				        s_eur_net,
+				        s_pln_corp_cost,
+				        s_eur_corp_cost,
+				        c_pln_lic,
+				        c_eur_lic,
+				        c_pln_varfixed,
+				        c_eur_varfixed,
+				        c_pln_transport,
+				        c_eur_transport,
+				        c_pln_compl_prod,
+				        c_eur_compl_prod,
+				        c_pln_comm,
+				        c_eur_comm,
+				        c_pln_sinsuran,
+				        c_eur_sinsuran,
+				        c_pln_assembly,
+				        c_eur_assembly,
+				        c_pln_stock_deprec,
+				        c_eur_stock_deprec,
+				        c_pln_compl_act,
+				        c_eur_compl_act
+				    from zenith.mmo75.f_margin75_facts
+				    ",
+				    null,
+				    [EnableFolding=true]
+				)
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

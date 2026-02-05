@@ -1,0 +1,43 @@
+relationship 8253d1f4-4181-675b-3182-d1d169e0262a
+	fromColumn: f_margin75_facts.cust_id
+	toColumn: d_customer.cust_id
+
+relationship 3014718d-9140-a210-6638-3836815101b9
+	fromColumn: f_margin75_facts.org_id
+	toColumn: d_organization.org_id
+
+relationship 988bb2e9-3e22-8049-fe33-572f16951937
+	fromColumn: f_margin75_facts.comp_id
+	toColumn: d_company.comp_id
+
+relationship 91f2cafc-401b-76a2-6f56-a6692e8340fd
+	fromColumn: f_margin75_facts.mnf_id
+	toColumn: d_product_mnf.mnf_id
+
+relationship 07ecf5ca-1520-61d5-d340-6f56599cbb1a
+	fromColumn: f_margin75_facts.d_term_id
+	toColumn: d_delivery_term.d_term_id
+
+relationship 7ffb563a-406d-6b34-dac2-7052ef412957
+	fromColumn: f_margin75_facts.prod_inv_id
+	toColumn: d_product.prod_si_id
+
+relationship 9ed58209-42b4-47fb-badf-2a6a7e83768c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_product_mnf.record_version
+	toColumn: LocalDateTable_4c4d275d-8813-4439-8836-8072b56e2b02.Date
+
+relationship d0067aa3-1b0e-4c00-9b14-a546ec3f2eff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_product_mnf.first_load_date
+	toColumn: LocalDateTable_c88230a9-ba89-4b93-8ac7-5f07c27a4480.Date
+
+relationship 1e7854bb-afa5-4420-84b7-3b2bcb017599
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_product_mnf.last_seen_date
+	toColumn: LocalDateTable_6ef57f1a-7b77-4f8e-aeea-d69cbc136f24.Date
+
+relationship 967e7e33-c8a1-f349-f659-e7936d4c3147
+	fromColumn: f_margin75_facts.time_id
+	toColumn: d_time.mon_id
+

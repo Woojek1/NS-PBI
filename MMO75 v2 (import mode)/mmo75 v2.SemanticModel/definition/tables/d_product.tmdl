@@ -1,0 +1,139 @@
+table d_product
+	lineageTag: 9edd1183-535f-460e-bdf5-dcd264366913
+
+	column prod_si_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e54a1a0d-b165-4524-9759-0a23ae68be3d
+		summarizeBy: none
+		sourceColumn: prod_si_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line
+		dataType: string
+		lineageTag: 3d71bebe-4516-4e9a-862d-e0fd7923ceca
+		summarizeBy: none
+		sourceColumn: Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 05d53eb6-4b4c-4d0e-921a-63bb148f6316
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Subgroup'
+		dataType: string
+		lineageTag: b0f1c120-fad5-4b2f-ae55-033fa596bee3
+		summarizeBy: none
+		sourceColumn: Product Subgroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Supergroup'
+		dataType: string
+		lineageTag: 859f0d2e-8817-4126-a9b1-935b4f007c21
+		summarizeBy: none
+		sourceColumn: Product Supergroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Group'
+		dataType: string
+		lineageTag: be98720b-9870-4d17-8ea4-12fb47f372bf
+		summarizeBy: none
+		sourceColumn: Product Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Name'
+		dataType: string
+		lineageTag: b1d8b51f-7791-43e9-b778-8900d66618e4
+		summarizeBy: none
+		sourceColumn: Index Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Code'
+		dataType: string
+		lineageTag: 5e1fa87b-42c5-4d25-8829-2b1b750e0b68
+		summarizeBy: none
+		sourceColumn: Index Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BC Grp 1'
+		dataType: string
+		lineageTag: 07d6c826-1953-4aa5-8d98-849078c0e46c
+		summarizeBy: none
+		sourceColumn: BC Grp 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BC Grp 2'
+		dataType: string
+		lineageTag: c182015e-6b27-4b9c-84de-677c030b7532
+		summarizeBy: none
+		sourceColumn: BC Grp 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BC Grp 3'
+		dataType: string
+		lineageTag: 5363ced2-41d5-4bf8-b960-92c072e55ca1
+		summarizeBy: none
+		sourceColumn: BC Grp 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: b40dc906-b30a-44dc-95d3-905a50ac773c
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_product = m
+		mode: import
+		source =
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        p.prod_si_id,
+				        p.line_name        as `Line`,
+				        p.model_name       as `Model`,
+				        p.sgrp_name        as `Product Subgroup`,
+				        p.supergrp_name    as `Product Supergroup`,
+				        p.grp_name         as `Product Group`,
+				        p.prod_si_name     as `Index Name`,
+				        p.prod_si_code     as `Index Code`,
+				        p.bcg1_name_en     as `BC Grp 1`,
+				        p.bcg2_name_en     as `BC Grp 2`,
+				        p.bcg3_name_en     as `BC Grp 3`,
+				        p.brand_name       as `Brand`
+				    from zenith.edw.d_product p
+				    where exists (
+				        select 1
+				        from zenith.mmo75.f_margin75_facts f
+				        where f.prod_inv_id = p.prod_si_id
+				    )
+				    ",
+				    null,
+				    [EnableFolding=true]
+				    )
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

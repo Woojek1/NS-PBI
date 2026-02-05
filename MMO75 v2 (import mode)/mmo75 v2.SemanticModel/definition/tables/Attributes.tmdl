@@ -1,0 +1,68 @@
+table Attributes
+	lineageTag: fdae762e-b829-4420-a00c-0271c42f2331
+
+	column Attributes
+		lineageTag: 8a491979-f9e0-4e46-8aba-2f6811e90b2f
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Attributes Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Attributes Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attributes Fields'
+		isHidden
+		lineageTag: e55473d8-90e1-46f8-88a8-d859d55fadff
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Attributes Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attributes Order'
+		isHidden
+		formatString: 0
+		lineageTag: c5b21293-a537-48da-ae2e-1d1e7d391815
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Attributes = calculated
+		mode: import
+		source =
+				{
+				    ("Department", NAMEOF('d_organization'[Department]), 0),
+				    ("Department Code", NAMEOF('d_organization'[Department Code]), 1),
+				    ("Section", NAMEOF('d_organization'[Section]), 2),
+				    ("Section Code", NAMEOF('d_organization'[Section Code]), 3),
+				    ("Salesperson", NAMEOF('d_organization'[Salesperson]), 4),
+				    ("Company", NAMEOF('d_company'[Company]), 5),
+				    ("Company Code", NAMEOF('d_company'[Company Code]), 6),
+				    ("Customer Hierarchy", NAMEOF('d_customer'[Customer Hierarchy]), 7),
+				    ("Customer", NAMEOF('d_customer'[Customer]), 8),
+				    ("Customer Code", NAMEOF('d_customer'[Customer Code]), 9),
+				    ("Customer Country", NAMEOF('d_customer'[Customer Country]), 10),
+				    ("Brand", NAMEOF('d_product'[Brand]), 11),
+				    ("Product Supergroup", NAMEOF('d_product'[Product Supergroup]), 12),
+				    ("Product Group", NAMEOF('d_product'[Product Group]), 13),
+				    ("Product Subgroup", NAMEOF('d_product'[Product Subgroup]), 14),
+				    ("BC Grp 1", NAMEOF('d_product'[BC Grp 1]), 15),
+				    ("BC Grp 2", NAMEOF('d_product'[BC Grp 2]), 16),
+				    ("BC Grp 3", NAMEOF('d_product'[BC Grp 3]), 17),
+				    ("Line", NAMEOF('d_product'[Line]), 18),
+				    ("Model", NAMEOF('d_product'[Model]), 19),
+				    ("Index Code", NAMEOF('d_product'[Index Code]), 20),
+				    ("Index Name", NAMEOF('d_product'[Index Name]), 21)
+				}
+
+	annotation PBI_Id = 334f1aa7ef164c749aea7eaf4790817c
+

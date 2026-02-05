@@ -1,0 +1,81 @@
+table Miary
+	lineageTag: fdc1a33c-efad-493c-9e22-aeae1d7eaecb
+
+	column Measures
+		lineageTag: 8f7c162e-f520-4c44-b4a1-5c8e27d3a56b
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Measures Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Measures Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Measures Fields'
+		isHidden
+		lineageTag: e4e4104c-3668-4a70-804e-453abcb0efff
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Measures Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Measures Order'
+		isHidden
+		formatString: 0
+		lineageTag: 38f498a9-9df3-47e0-9d24-2ff337391767
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Miary = calculated
+		mode: import
+		source =
+				{
+				    ("Sale Qty", NAMEOF('f_margin75_facts'[Sale Qty]), 0),
+				    ("Net Sales PLN", NAMEOF('f_margin75_facts'[Net Sales PLN]), 1),
+				    ("Manufacturing Cost PLN", NAMEOF('f_margin75_facts'[Manufacturing Cost PLN]), 2),
+				    ("Margin I PLN", NAMEOF('f_margin75_facts'[Margin I PLN]), 3),
+				    ("Margin I % (PLN)", NAMEOF('f_margin75_facts'[Margin I % (PLN)]), 4),
+				    ("Margin I (prim) PLN", NAMEOF('f_margin75_facts'[Margin I (prim) PLN]), 5),
+				    ("Margin I (prim) % (PLN)", NAMEOF('f_margin75_facts'[Margin I (prim) % (PLN)]), 6),
+				    ("Assembly PLN", NAMEOF('f_margin75_facts'[Assembly PLN]), 7),
+				    ("Commission PLN", NAMEOF('f_margin75_facts'[Commission PLN]), 8),
+				    ("Complaint Activity PLN", NAMEOF('f_margin75_facts'[Complaint Activity PLN]), 9),
+				    ("Complaint Product PLN", NAMEOF('f_margin75_facts'[Complaint Product PLN]), 10),
+				    ("License PLN", NAMEOF('f_margin75_facts'[License PLN]), 11),
+				    ("Sold Insurance PLN", NAMEOF('f_margin75_facts'[Sold Insurance PLN]), 12),
+				    ("Stock Depreciation PLN", NAMEOF('f_margin75_facts'[Stock Depreciation PLN]), 13),
+				    ("Transport PLN", NAMEOF('f_margin75_facts'[Transport PLN]), 14),
+				    ("Variance Fixed Cost PLN", NAMEOF('f_margin75_facts'[Variance Fixed Cost PLN]), 15),
+				    ("Margin II PLN", NAMEOF('f_margin75_facts'[Margin II PLN]), 16),
+				    ("Margin II % (PLN)", NAMEOF('f_margin75_facts'[Margin II % (PLN)]), 17),
+				    ("Net Sales EUR", NAMEOF('f_margin75_facts'[Net Sales EUR]), 18),
+				    ("Manufacturing Cost EUR", NAMEOF('f_margin75_facts'[Manufacturing Cost EUR]), 19),
+				    ("Margin I EUR", NAMEOF('f_margin75_facts'[Margin I EUR]), 20),
+				    ("Margin I % (EUR)", NAMEOF('f_margin75_facts'[Margin I % (EUR)]), 21),
+				    ("Margin I (prim) EUR", NAMEOF('f_margin75_facts'[Margin I (prim) EUR]), 22),
+				    ("Margin I (prim) % (EUR)", NAMEOF('f_margin75_facts'[Margin I (prim) % (EUR)]), 23),
+				    ("Assembly EUR", NAMEOF('f_margin75_facts'[Assembly EUR]), 24),
+				    ("Commission EUR", NAMEOF('f_margin75_facts'[Commission EUR]), 25),
+				    ("Complaint Activity EUR", NAMEOF('f_margin75_facts'[Complaint Activity EUR]), 26),
+				    ("Complaint Product EUR", NAMEOF('f_margin75_facts'[Complaint Product EUR]), 27),
+				    ("License EUR", NAMEOF('f_margin75_facts'[License EUR]), 28),
+				    ("Sold Insurance EUR", NAMEOF('f_margin75_facts'[Sold Insurance EUR]), 29),
+				    ("Stock Depreciation EUR", NAMEOF('f_margin75_facts'[Stock Depreciation EUR]), 30),
+				    ("Transport EUR", NAMEOF('f_margin75_facts'[Transport EUR]), 31),
+				    ("Variance Fixed Cost EUR", NAMEOF('f_margin75_facts'[Variance Fixed Cost EUR]), 32),
+				    ("Margin II EUR", NAMEOF('f_margin75_facts'[Margin II EUR]), 33),
+				    ("Margin II % (EUR)", NAMEOF('f_margin75_facts'[Margin II % (EUR)]), 34)
+				}
+
+	annotation PBI_Id = 2cf44427eaeb414495f6a33c8abf7737
+

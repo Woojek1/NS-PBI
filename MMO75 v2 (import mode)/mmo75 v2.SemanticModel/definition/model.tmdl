@@ -1,0 +1,32 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["f_margin75_facts","d_customer","d_product","d_organization","d_company","d_delivery_term","d_product_mnf","d_time"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table f_margin75_facts
+ref table d_customer
+ref table d_product
+ref table d_organization
+ref table d_company
+ref table Attributes
+ref table Date
+ref table d_delivery_term
+ref table d_product_mnf
+ref table Miary
+ref table DateTableTemplate_6ca78e69-cf62-48b9-896c-46d30ada91c2
+ref table LocalDateTable_4c4d275d-8813-4439-8836-8072b56e2b02
+ref table LocalDateTable_c88230a9-ba89-4b93-8ac7-5f07c27a4480
+ref table LocalDateTable_6ef57f1a-7b77-4f8e-aeea-d69cbc136f24
+ref table d_time
+
+ref cultureInfo en-US
+

@@ -1,0 +1,53 @@
+table d_company
+	lineageTag: 50742c50-26a9-40a7-b6da-1a56114006ce
+
+	column comp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3751d87a-159b-4b70-8a26-91dc161b60b3
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: c81fa982-5ee6-4c92-bc79-720c19a6b5fc
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 8f3166f9-2a86-4a3d-a03e-5c5cb7960c61
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_company = m
+		mode: import
+		source =
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        comp_id,
+				        comp_name as `Company`,
+				        comp_code as `Company Code`
+				    from zenith.edw.d_company
+				    ",
+				    null,
+				    [EnableFolding=true]
+				)
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
