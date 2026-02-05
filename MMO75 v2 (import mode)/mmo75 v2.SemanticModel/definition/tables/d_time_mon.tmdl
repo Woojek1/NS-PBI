@@ -1,4 +1,4 @@
-table d_time
+table d_time_mon
 	lineageTag: 34449c9f-1d78-480f-8492-ebd1b58904b1
 
 	column mon_id
@@ -34,7 +34,7 @@ table d_time
 
 		annotation SummarizationSetBy = Automatic
 
-	partition d_time = m
+	partition d_time_mon = m
 		mode: import
 		source = ```
 				Value.NativeQuery(
@@ -52,6 +52,8 @@ table d_time
 				    from zenith.edw.d_time_mon
 				    where
 				        year_name > 2023
+				    and
+				         year_name <= year(current_date()) + 1
 				    ",
 				    null,
 				    [EnableFolding=true]

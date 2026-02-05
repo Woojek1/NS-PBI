@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time"
+                      "Entity": "d_time_mon"
                     }
                   },
                   "Property": "year_name"
                 }
               },
-              "queryRef": "d_time.year_name",
+              "queryRef": "d_time_mon.year_name",
               "nativeQueryRef": "Year",
               "active": true,
               "displayName": "Year"
@@ -66,6 +66,54 @@
               "nativeQueryRef": "Department",
               "active": true,
               "displayName": "Department"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_organization"
+                    }
+                  },
+                  "Property": "Section"
+                }
+              },
+              "queryRef": "d_organization.Section",
+              "nativeQueryRef": "Section",
+              "active": false,
+              "displayName": "Section"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_customer"
+                    }
+                  },
+                  "Property": "Customer"
+                }
+              },
+              "queryRef": "d_customer.Customer",
+              "nativeQueryRef": "Customer",
+              "active": false,
+              "displayName": "Customer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Brand"
+                }
+              },
+              "queryRef": "d_product.Brand",
+              "nativeQueryRef": "Brand",
+              "active": false,
+              "displayName": "Brand"
             }
           ],
           "fieldParameters": [
@@ -81,7 +129,7 @@
                 }
               },
               "index": 0,
-              "length": 1,
+              "length": 4,
               "sortDirection": "Ascending"
             }
           ]
@@ -102,6 +150,21 @@
               "queryRef": "f_margin75_facts.Sale Qty",
               "nativeQueryRef": "Sale Qty",
               "displayName": "Sale Qty"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Net Sales PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Net Sales PLN",
+              "nativeQueryRef": "Net Sales PLN",
+              "displayName": "Net Sales PLN"
             }
           ],
           "fieldParameters": [
@@ -117,7 +180,7 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 2
             }
           ]
         }
@@ -140,6 +203,44 @@
         ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "d_organization.Department"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_organization.Section"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_customer.Customer"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_product.Brand"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "values": [
         {
@@ -206,7 +307,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time"
+                "Entity": "d_time_mon"
               }
             },
             "Property": "Year"
@@ -275,7 +376,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -371,7 +471,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -419,7 +518,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -588,7 +686,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time"
+                "Entity": "d_time_mon"
               }
             },
             "Property": "Quarter"
@@ -604,7 +702,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time"
+                "Entity": "d_time_mon"
               }
             },
             "Property": "Month"
@@ -627,7 +725,6 @@
           }
         },
         "type": "Advanced",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -1141,6 +1238,20 @@
         "type": "Advanced",
         "howCreated": "User",
         "isHiddenInViewMode": true
+      },
+      {
+        "name": "705a2cba5406c02e615b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

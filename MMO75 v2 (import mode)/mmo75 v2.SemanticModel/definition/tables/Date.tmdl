@@ -40,9 +40,9 @@ table Date
 		mode: import
 		source =
 				{
-				    ("Year", NAMEOF('d_time'[year_name]), 0),
-				    ("Quarter", NAMEOF('d_time'[quart_name]), 1),
-				    ("Month", NAMEOF('d_time'[mon_name]), 2)
+				    ("Year", NAMEOF('d_time_mon'[year_name]), 0),
+				    ("Quarter", NAMEOF('d_time_mon'[quart_name]), 1),
+				    ("Month", NAMEOF('d_time_mon'[mon_name]), 2)
 				}
 
 	annotation PBI_Id = e28dc133a0b74fa08b4fe00963d1227e
