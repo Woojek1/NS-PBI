@@ -99,6 +99,14 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Model Code'
+		dataType: string
+		lineageTag: 06cd16d0-2abc-4a2d-90b2-ae6ecf85175d
+		summarizeBy: none
+		sourceColumn: Model Code
+
+		annotation SummarizationSetBy = Automatic
+
 	partition d_product = m
 		mode: import
 		source =
@@ -112,6 +120,7 @@ table d_product
 				    select
 				        p.prod_si_id,
 				        p.line_name        as `Line`,
+				        p.model_code       as `Model Code`,
 				        p.model_name       as `Model`,
 				        p.sgrp_name        as `Product Subgroup`,
 				        p.supergrp_name    as `Product Supergroup`,

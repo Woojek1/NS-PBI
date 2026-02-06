@@ -88,32 +88,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_customer"
-                    }
-                  },
-                  "Property": "Customer"
-                }
-              },
-              "queryRef": "d_customer.Customer",
-              "nativeQueryRef": "Customer",
-              "active": false,
-              "displayName": "Customer"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
                       "Entity": "d_product"
                     }
                   },
-                  "Property": "Brand"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "d_product.Brand",
-              "nativeQueryRef": "Brand",
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
               "active": false,
-              "displayName": "Brand"
+              "displayName": "Line"
             }
           ],
           "fieldParameters": [
@@ -129,7 +113,7 @@
                 }
               },
               "index": 0,
-              "length": 4,
+              "length": 3,
               "sortDirection": "Ascending"
             }
           ]
@@ -214,6 +198,18 @@
               "d_organization.Department"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_organization"
+                    }
+                  },
+                  "Property": "Department"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -225,14 +221,7 @@
           },
           {
             "queryRefs": [
-              "d_customer.Customer"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "d_product.Brand"
+              "d_product.Line"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -302,23 +291,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "a1ea4744af2e9ca5853f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "73adb8bbe99d4acfc57c",
+        "name": "2ec8c0885485a5558bf6",
+        "ordinal": 0,
         "field": {
           "Measure": {
             "Expression": {
@@ -326,250 +300,33 @@
                 "Entity": "f_margin75_facts"
               }
             },
-            "Property": "Sale Qty"
+            "Property": "Assembly EUR"
           }
         },
         "type": "Advanced",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "e1948dc66f20d54bf57f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_organization"
-              }
-            },
-            "Property": "Department"
-          }
-        },
-        "type": "Categorical",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "5d5c49e16f3800b9264b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_organization"
-              }
-            },
-            "Property": "Department Code"
-          }
-        },
-        "type": "Categorical",
         "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
-        "name": "c196a6da0ccb08331d80",
+        "name": "e2787f19fd5b317b9aeb",
+        "ordinal": 1,
         "field": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_organization"
+                "Entity": "f_margin75_facts"
               }
             },
-            "Property": "Section"
+            "Property": "Assembly PLN"
           }
         },
-        "type": "Categorical",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "489ebf73e821c3fe5a18",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_organization"
-              }
-            },
-            "Property": "Section Code"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "bc8f463c42c004615e42",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_organization"
-              }
-            },
-            "Property": "Salesperson"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "fc9c6be639f414007fb2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_company"
-              }
-            },
-            "Property": "Company"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "7cda10c14c0828b29775",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_company"
-              }
-            },
-            "Property": "Company Code"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "efd2f39eb6c2fe4f8e2d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_customer"
-              }
-            },
-            "Property": "Customer Hierarchy"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "fa665bd510c3768f4ca5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_customer"
-              }
-            },
-            "Property": "Customer"
-          }
-        },
-        "type": "Categorical",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "313e28bb46dc82a3eb08",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_customer"
-              }
-            },
-            "Property": "Customer Code"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "6d649a1f77bde3b65549",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_customer"
-              }
-            },
-            "Property": "Customer Country"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "d374ebc0f271b5af7bc5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "Brand"
-          }
-        },
-        "type": "Categorical",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "624d83843fe94a5ade14",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "Product Supergroup"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "c1bf5db9715b7f17e14f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "Product Group"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "5b40ecde6735f1b67d65",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "Product Subgroup"
-          }
-        },
-        "type": "Categorical",
+        "type": "Advanced",
         "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
         "name": "bda1d0235a62321430bb",
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -586,6 +343,7 @@
       },
       {
         "name": "a4a616af49ac4124d6a3",
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -602,6 +360,7 @@
       },
       {
         "name": "15b538c742b8e09ffc0b",
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -617,7 +376,8 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "27b5c40ef389a5653b65",
+        "name": "d374ebc0f271b5af7bc5",
+        "ordinal": 5,
         "field": {
           "Column": {
             "Expression": {
@@ -625,7 +385,7 @@
                 "Entity": "d_product"
               }
             },
-            "Property": "Line"
+            "Property": "Brand"
           }
         },
         "type": "Categorical",
@@ -633,15 +393,236 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "e5b4cd5ff4bedf6b7fce",
+        "name": "a508447f6b4577420843",
+        "ordinal": 6,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Commission EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "8e123d72ce65ca8e9c63",
+        "ordinal": 7,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Commission PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "fc9c6be639f414007fb2",
+        "ordinal": 8,
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_product"
+                "Entity": "d_company"
               }
             },
-            "Property": "Model"
+            "Property": "Company"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "7cda10c14c0828b29775",
+        "ordinal": 9,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_company"
+              }
+            },
+            "Property": "Company Code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "90bf5d0a1ad3aa63405d",
+        "ordinal": 10,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Complaint Activity EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "4c3e313ab729c4a82a1f",
+        "ordinal": 11,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Complaint Activity PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "a3c711ea23c2ebff7d08",
+        "ordinal": 12,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Complaint Product EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "edb8f03b1cf7d83d49fa",
+        "ordinal": 13,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Complaint Product PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "fa665bd510c3768f4ca5",
+        "ordinal": 14,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "313e28bb46dc82a3eb08",
+        "ordinal": 15,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer Code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "6d649a1f77bde3b65549",
+        "ordinal": 16,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer Country"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "efd2f39eb6c2fe4f8e2d",
+        "ordinal": 17,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer Hierarchy"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "e1948dc66f20d54bf57f",
+        "ordinal": 18,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_organization"
+              }
+            },
+            "Property": "Department"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "5d5c49e16f3800b9264b",
+        "ordinal": 19,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_organization"
+              }
+            },
+            "Property": "Department Code"
           }
         },
         "type": "Categorical",
@@ -650,6 +631,7 @@
       },
       {
         "name": "a2bfc124f63c0ee30bdd",
+        "ordinal": 20,
         "field": {
           "Column": {
             "Expression": {
@@ -666,6 +648,7 @@
       },
       {
         "name": "5758d959c57ddb03d390",
+        "ordinal": 21,
         "field": {
           "Column": {
             "Expression": {
@@ -681,470 +664,8 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "5fe714d4c107b11078ab",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "Quarter"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "439fefaa1c33ee65dc59",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "Month"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "f9c05b43850acc746df5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Net Sales PLN"
-          }
-        },
-        "type": "Advanced",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "e2d8f79d1b2a9a2dbf0a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Manufacturing Cost PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "ba5aa70e4720ac5bb301",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin I PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "c32160fabca46c565d21",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin I % (PLN)"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "c23ae9fd11c14c863e34",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin I (prim) PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "8c2f39ac89606b78d9b1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin I (prim) % (PLN)"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "e2787f19fd5b317b9aeb",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Assembly PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "8e123d72ce65ca8e9c63",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Commission PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "4c3e313ab729c4a82a1f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Complaint Activity PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "edb8f03b1cf7d83d49fa",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Complaint Product PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "6785dec7d3aef08de9ed",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "License PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "cff54dec2ad5c7d91077",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Sold Insurance PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "caf9910741262d084f38",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Stock Depreciation PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "0e421f7cff34ef466344",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Transport PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "8cfde390b832eb908570",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Variance Fixed Cost PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "06f83c62be245b6d22d8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin II PLN"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "c1e175ff8f65852e24ea",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin II % (PLN)"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "12d5297b7ac289d10a7f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Net Sales EUR"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "1bbc1e8b1767e34ee8db",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Manufacturing Cost EUR"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "386402e9accdcae74a01",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin I EUR"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "455f41a00036de16fbb5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin I % (EUR)"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "1b9deda2fb3f479a9f39",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin I (prim) EUR"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "4b6917ded4e86894faad",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Margin I (prim) % (EUR)"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "2ec8c0885485a5558bf6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Assembly EUR"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "a508447f6b4577420843",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Commission EUR"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "90bf5d0a1ad3aa63405d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Complaint Activity EUR"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "a3c711ea23c2ebff7d08",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_margin75_facts"
-              }
-            },
-            "Property": "Complaint Product EUR"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
         "name": "7b65a4c4084e03fe188e",
+        "ordinal": 22,
         "field": {
           "Measure": {
             "Expression": {
@@ -1160,7 +681,8 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "30c273eb18bf44c5d851",
+        "name": "6785dec7d3aef08de9ed",
+        "ordinal": 23,
         "field": {
           "Measure": {
             "Expression": {
@@ -1168,7 +690,7 @@
                 "Entity": "f_margin75_facts"
               }
             },
-            "Property": "Stock Depreciation EUR"
+            "Property": "License PLN"
           }
         },
         "type": "Advanced",
@@ -1176,7 +698,24 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "87cda8f62d0c1b7ad590",
+        "name": "27b5c40ef389a5653b65",
+        "ordinal": 24,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "1bbc1e8b1767e34ee8db",
+        "ordinal": 25,
         "field": {
           "Measure": {
             "Expression": {
@@ -1184,7 +723,7 @@
                 "Entity": "f_margin75_facts"
               }
             },
-            "Property": "Transport EUR"
+            "Property": "Manufacturing Cost EUR"
           }
         },
         "type": "Advanced",
@@ -1192,7 +731,8 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "6574c1223a22f7d4bd05",
+        "name": "e2d8f79d1b2a9a2dbf0a",
+        "ordinal": 26,
         "field": {
           "Measure": {
             "Expression": {
@@ -1200,7 +740,7 @@
                 "Entity": "f_margin75_facts"
               }
             },
-            "Property": "Variance Fixed Cost EUR"
+            "Property": "Manufacturing Cost PLN"
           }
         },
         "type": "Advanced",
@@ -1208,7 +748,8 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "841a7cff1a3fac1f088a",
+        "name": "4b6917ded4e86894faad",
+        "ordinal": 27,
         "field": {
           "Measure": {
             "Expression": {
@@ -1216,7 +757,126 @@
                 "Entity": "f_margin75_facts"
               }
             },
-            "Property": "Margin II EUR"
+            "Property": "Margin I (prim) % (EUR)"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "8c2f39ac89606b78d9b1",
+        "ordinal": 28,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin I (prim) % (PLN)"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "1b9deda2fb3f479a9f39",
+        "ordinal": 29,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin I (prim) EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "c23ae9fd11c14c863e34",
+        "ordinal": 30,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin I (prim) PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "455f41a00036de16fbb5",
+        "ordinal": 31,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin I % (EUR)"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "c32160fabca46c565d21",
+        "ordinal": 32,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin I % (PLN)"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "386402e9accdcae74a01",
+        "ordinal": 33,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin I EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "ba5aa70e4720ac5bb301",
+        "ordinal": 34,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin I PLN"
           }
         },
         "type": "Advanced",
@@ -1225,6 +885,7 @@
       },
       {
         "name": "19b0330a41bb68654a17",
+        "ordinal": 35,
         "field": {
           "Measure": {
             "Expression": {
@@ -1240,7 +901,379 @@
         "isHiddenInViewMode": true
       },
       {
+        "name": "c1e175ff8f65852e24ea",
+        "ordinal": 36,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin II % (PLN)"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "841a7cff1a3fac1f088a",
+        "ordinal": 37,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin II EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "06f83c62be245b6d22d8",
+        "ordinal": 38,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin II PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "e5b4cd5ff4bedf6b7fce",
+        "ordinal": 39,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Model"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "e545593965b498c735b8",
+        "displayName": "Month",
+        "ordinal": 40,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "12d5297b7ac289d10a7f",
+        "ordinal": 41,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Net Sales EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "f9c05b43850acc746df5",
+        "ordinal": 42,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Net Sales PLN"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "c1bf5db9715b7f17e14f",
+        "ordinal": 43,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Product Group"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "5b40ecde6735f1b67d65",
+        "ordinal": 44,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Product Subgroup"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "624d83843fe94a5ade14",
+        "ordinal": 45,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Product Supergroup"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "73adb8bbe99d4acfc57c",
+        "ordinal": 46,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Sale Qty"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "bc8f463c42c004615e42",
+        "ordinal": 47,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_organization"
+              }
+            },
+            "Property": "Salesperson"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "c8f1dbe9d8cac6f3d961",
+        "displayName": "Quarter",
+        "ordinal": 48,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "quart_name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "c196a6da0ccb08331d80",
+        "ordinal": 49,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_organization"
+              }
+            },
+            "Property": "Section"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "489ebf73e821c3fe5a18",
+        "ordinal": 50,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_organization"
+              }
+            },
+            "Property": "Section Code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "cff54dec2ad5c7d91077",
+        "ordinal": 51,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Sold Insurance PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "30c273eb18bf44c5d851",
+        "ordinal": 52,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Stock Depreciation EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "caf9910741262d084f38",
+        "ordinal": 53,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Stock Depreciation PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "87cda8f62d0c1b7ad590",
+        "ordinal": 54,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Transport EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "0e421f7cff34ef466344",
+        "ordinal": 55,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Transport PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "6574c1223a22f7d4bd05",
+        "ordinal": 56,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Variance Fixed Cost EUR"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "8cfde390b832eb908570",
+        "ordinal": 57,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Variance Fixed Cost PLN"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
         "name": "705a2cba5406c02e615b",
+        "ordinal": 58,
         "field": {
           "Column": {
             "Expression": {
@@ -1253,6 +1286,7 @@
         },
         "type": "Categorical"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }
