@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "7a24b6d4b192751e10da",
   "position": {
     "x": 375.85262565889059,
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "_Miary.Wydatki",
-              "nativeQueryRef": "Wydatki całkowite",
+              "nativeQueryRef": "Wydatki",
               "displayName": "Wydatki całkowite"
             }
           ]
@@ -60,6 +60,13 @@
               "expr": {
                 "Literal": {
                   "Value": "32D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
                 }
               }
             }
@@ -230,5 +237,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a81485e52a80055f7a0e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

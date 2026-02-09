@@ -1,34 +1,6 @@
 table f_capex_imp_cost_data
 	lineageTag: 06a525a9-5cc5-4409-9d2d-7739a2bac1f3
 
-	column record_source
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: d0293ed9-571c-430f-af9e-0a9961b2de98
-		summarizeBy: none
-		sourceColumn: record_source
-
-		annotation SummarizationSetBy = Automatic
-
-	column record_view
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 28c084d0-6099-4130-a7cb-705a5ddd81b0
-		summarizeBy: none
-		sourceColumn: record_view
-
-		annotation SummarizationSetBy = Automatic
-
-	column record_version
-		dataType: dateTime
-		formatString: General Date
-		sourceProviderType: datetime2
-		lineageTag: 8b3b06ff-d723-4d94-9cfc-599717def3cd
-		summarizeBy: none
-		sourceColumn: record_version
-
-		annotation SummarizationSetBy = Automatic
-
 	column time_id
 		dataType: int64
 		formatString: 0
@@ -39,42 +11,12 @@ table f_capex_imp_cost_data
 
 		annotation SummarizationSetBy = Automatic
 
-	column mpk_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 554dd667-3a79-4c25-a7b6-d5ae90b7b0a1
-		summarizeBy: sum
-		sourceColumn: mpk_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column account_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: b489c3aa-b098-4b82-8f5b-f4b6c08c3743
-		summarizeBy: sum
-		sourceColumn: account_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column pay_account_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: c75b73ad-c2f5-4c83-82c5-3a75b5e2dd5a
-		summarizeBy: sum
-		sourceColumn: pay_account_id
-
-		annotation SummarizationSetBy = Automatic
-
 	column cost_id
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 740a6763-ea32-411e-955d-a4ea9e29ae67
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cost_id
 
 		annotation SummarizationSetBy = Automatic
@@ -89,108 +31,6 @@ table f_capex_imp_cost_data
 
 		annotation SummarizationSetBy = Automatic
 
-	column supp_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 5d9385e2-0b4c-4c0f-9f10-1f9ca056f5b4
-		summarizeBy: sum
-		sourceColumn: supp_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column curr_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 48c1a2c9-e610-4488-9a68-e7d458b2bb8f
-		summarizeBy: sum
-		sourceColumn: curr_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column fin_curr_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: f185a084-ec10-42d8-858d-e6d4cd319743
-		summarizeBy: sum
-		sourceColumn: fin_curr_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column comp_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 572b0cfa-c4b7-4853-a8e6-0fc2173f8381
-		summarizeBy: sum
-		sourceColumn: comp_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column var_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: e9ebb4fe-89b5-44d0-99f0-9d21eb42dac2
-		summarizeBy: sum
-		sourceColumn: var_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column voucher_type_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 840e9d66-f10f-4e86-a2a1-6eee92a35e12
-		summarizeBy: sum
-		sourceColumn: voucher_type_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column prior_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 825a072e-cd3a-4ff0-a3f6-27a3ed7f5b9c
-		summarizeBy: sum
-		sourceColumn: prior_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column ccat_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 6eb44305-94f0-448e-898e-fa40381e19e3
-		summarizeBy: sum
-		sourceColumn: ccat_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column debet_amount_pln
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 21265abd-4afc-4e56-ae4e-b3dd32f7c4a4
-		summarizeBy: sum
-		sourceColumn: debet_amount_pln
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column credit_amount_pln
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 59b5014c-3e97-4ebe-85fe-95a2cb674135
-		summarizeBy: sum
-		sourceColumn: credit_amount_pln
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column amount_pln
 		dataType: double
 		formatString: #,0
@@ -203,588 +43,6 @@ table f_capex_imp_cost_data
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	column debet_amount_bpln
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 38669633-dca8-45da-aa85-6389e167a72c
-		summarizeBy: sum
-		sourceColumn: debet_amount_bpln
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column credit_amount_bpln
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 8151fe73-3f46-4c4e-95a7-fad131105673
-		summarizeBy: sum
-		sourceColumn: credit_amount_bpln
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column amount_bpln
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 5db59708-a06c-4c68-8758-d4e3f0400fe4
-		summarizeBy: sum
-		sourceColumn: amount_bpln
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column debet_amount_eur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: e8ca0086-5321-4dc7-8169-8077f7a3a720
-		summarizeBy: sum
-		sourceColumn: debet_amount_eur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column credit_amount_eur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 484cb2c8-eeb5-4ea7-9040-691d113f8541
-		summarizeBy: sum
-		sourceColumn: credit_amount_eur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column amount_eur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: d8d40ffb-1a86-4a57-bbdb-03f519ad87b3
-		summarizeBy: sum
-		sourceColumn: amount_eur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column debet_amount_beur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: a0f876bd-55c7-4adb-b798-41eb05d789b9
-		summarizeBy: sum
-		sourceColumn: debet_amount_beur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column credit_amount_beur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 88203b22-570d-47aa-bded-78bc3e070985
-		summarizeBy: sum
-		sourceColumn: credit_amount_beur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column amount_beur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 144e5ade-1129-4b27-9608-b8a6d484ca41
-		summarizeBy: sum
-		sourceColumn: amount_beur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column debet_amount_cur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 76f2f300-3627-4da3-8d64-2a077d569dec
-		summarizeBy: sum
-		sourceColumn: debet_amount_cur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column credit_amount_cur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 5e420d18-0d41-4357-aeca-9227b6b49dfc
-		summarizeBy: sum
-		sourceColumn: credit_amount_cur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column amount_cur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: b8b5b1be-3bcf-4cff-aecb-231e37489b0a
-		summarizeBy: sum
-		sourceColumn: amount_cur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column debet_amount_fcur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 2e2000ac-97f5-495f-b696-9cf34d4b2fe2
-		summarizeBy: sum
-		sourceColumn: debet_amount_fcur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column credit_amount_fcur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 3f9b865e-eac7-4729-b9e3-b6b62256ad73
-		summarizeBy: sum
-		sourceColumn: credit_amount_fcur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column amount_fcur
-		dataType: double
-		sourceProviderType: decimal(38, 18)
-		lineageTag: eb1f267c-d1cd-44c3-a16a-731ce0b50890
-		summarizeBy: sum
-		sourceColumn: amount_fcur
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column bi
-		dataType: int64
-		formatString: 0
-		sourceProviderType: tinyint
-		lineageTag: a32080be-ccfd-4653-83ae-bb29ac0a0c8f
-		summarizeBy: sum
-		sourceColumn: bi
-
-		annotation SummarizationSetBy = Automatic
-
-	column wfd_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 9ee68174-7e85-48aa-84c2-e67b3271da93
-		summarizeBy: sum
-		sourceColumn: wfd_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column link
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 8349e349-099f-48d4-b47e-15d3e930595e
-		summarizeBy: none
-		sourceColumn: link
-
-		annotation SummarizationSetBy = Automatic
-
-	column ccat_rule_list
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: be01116e-6a93-49f8-ab1c-98b4bc2f5996
-		summarizeBy: none
-		sourceColumn: ccat_rule_list
-
-		annotation SummarizationSetBy = Automatic
-
-	column ccat_rule_cnt
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: e4748ff7-2510-4d3a-aef5-d92580e9b06a
-		summarizeBy: sum
-		sourceColumn: ccat_rule_cnt
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_rule_no
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: e5713d4f-3d0a-4f30-91ba-5e4cb4008168
-		summarizeBy: none
-		sourceColumn: src_rule_no
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_db_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: f7c74266-5004-4179-8b7f-5f822fa7efd1
-		summarizeBy: none
-		sourceColumn: src_db_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_db_code_2
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: d10bb925-55f1-4798-a236-eef7ad38efa3
-		summarizeBy: none
-		sourceColumn: src_db_code_2
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_company
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 1d0c324b-cf77-4ddc-9597-2ac05045e279
-		summarizeBy: none
-		sourceColumn: src_company
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_gl_company
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 2f721295-0057-409c-8cdc-7f1a1eb84f2e
-		summarizeBy: none
-		sourceColumn: src_gl_company
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_year_period_key
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 1bb3284e-9fbf-4632-9508-32effb2551f6
-		summarizeBy: sum
-		sourceColumn: src_year_period_key
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_voucher_date
-		dataType: dateTime
-		formatString: Long Date
-		sourceProviderType: date
-		lineageTag: 7488a44c-6815-43b8-889f-189b3c3c287a
-		summarizeBy: none
-		sourceColumn: src_voucher_date
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column src_voucher_type
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: f6a8a819-5a7c-4bb1-8414-cd7fb553a9b7
-		summarizeBy: none
-		sourceColumn: src_voucher_type
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_voucher_no
-		dataType: int64
-		formatString: 0
-		sourceProviderType: bigint
-		lineageTag: 99c1bc3f-a2f6-4da7-8f9d-581b2cd7c64d
-		summarizeBy: sum
-		sourceColumn: src_voucher_no
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_event_date
-		dataType: dateTime
-		formatString: Long Date
-		sourceProviderType: date
-		lineageTag: 13fe83cc-000f-4f53-8bb0-af09d5602feb
-		summarizeBy: none
-		sourceColumn: src_event_date
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column src_doc_date
-		dataType: dateTime
-		formatString: Long Date
-		sourceProviderType: date
-		lineageTag: 3cb73e3c-b974-4d25-8043-f8531756965f
-		summarizeBy: none
-		sourceColumn: src_doc_date
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column src_reference_number
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 1e2ca14c-45fa-4c11-b731-f1d51883fa0e
-		summarizeBy: none
-		sourceColumn: src_reference_number
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_reference_row_no
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 6578137a-85bd-411f-ac6e-ec2cb2783878
-		summarizeBy: sum
-		sourceColumn: src_reference_row_no
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_reference_serie
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: c60645bd-c32c-44e4-bd67-493f2877661a
-		summarizeBy: none
-		sourceColumn: src_reference_serie
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_account
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: be9710f9-dc57-4e49-a690-d1f56584b8bf
-		summarizeBy: none
-		sourceColumn: src_account
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_b
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 9674c192-ff17-4910-95a3-19e0f2100709
-		summarizeBy: none
-		sourceColumn: src_code_b
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_c
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 04a1b07b-41da-417c-8e9d-ed1d8576956a
-		summarizeBy: none
-		sourceColumn: src_code_c
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_d
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 516c7b18-e353-4f01-ae07-cda462bd649e
-		summarizeBy: none
-		sourceColumn: src_code_d
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_e
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: e6cc5bb0-54ac-4134-9898-cb1a6e1dd4af
-		summarizeBy: none
-		sourceColumn: src_code_e
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_f
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: f78844bf-ef5c-44da-8fac-39e7cdd112f6
-		summarizeBy: none
-		sourceColumn: src_code_f
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_g
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 507100f3-e09f-46df-947b-86549a794c64
-		summarizeBy: none
-		sourceColumn: src_code_g
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_g_description
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: ec501c57-7f5e-42f3-a7d4-899adb68386b
-		summarizeBy: none
-		sourceColumn: src_code_g_description
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_h
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 19b2707a-b0be-4acd-8543-a651da4f5c22
-		summarizeBy: none
-		sourceColumn: src_code_h
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_i
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: f8394e42-3a7e-4bb8-8851-de2bb67d13db
-		summarizeBy: none
-		sourceColumn: src_code_i
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_code_j
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 25d8a377-5abe-443d-9b0e-86c8bb74ae9b
-		summarizeBy: none
-		sourceColumn: src_code_j
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_party_type_id
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 8990557a-e434-4b6d-b43a-8fe8250c545a
-		summarizeBy: none
-		sourceColumn: src_party_type_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_currency_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: fc044a95-c912-4ea1-be64-f99e89f1ce35
-		summarizeBy: none
-		sourceColumn: src_currency_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_dom_currency_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: c3e8c96d-90bf-4860-a12e-38cf26ed95c7
-		summarizeBy: none
-		sourceColumn: src_dom_currency_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_company_currency_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: f8fe3acd-17e4-4739-963b-caa3b997da33
-		summarizeBy: none
-		sourceColumn: src_company_currency_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_text
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: a21e3041-020e-4464-b655-1d3b58f76652
-		summarizeBy: none
-		sourceColumn: src_text
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_variant
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 496a4780-a0c5-4fab-aa94-d142902a20f6
-		summarizeBy: none
-		sourceColumn: src_variant
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_trans_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 34bad21a-1993-48c0-8583-d318ee2161bd
-		summarizeBy: none
-		sourceColumn: src_trans_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_payment_account
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: c5362302-843a-4c6b-8495-7d6720315ea8
-		summarizeBy: none
-		sourceColumn: src_payment_account
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_mixed_payment_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: bb5df0d5-0556-4dd7-831f-705b68a4a7e2
-		summarizeBy: sum
-		sourceColumn: src_mixed_payment_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_mixed_payment_id_cnt
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 5bcf9577-7405-4421-a51e-2153e557c2db
-		summarizeBy: sum
-		sourceColumn: src_mixed_payment_id_cnt
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_mixed_payment_date
-		dataType: dateTime
-		formatString: Long Date
-		sourceProviderType: date
-		lineageTag: 3ca76ec6-cf3e-46a8-a72d-a485fee40960
-		summarizeBy: none
-		sourceColumn: src_mixed_payment_date
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column src_voucher_type_ref
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: ffdf6158-a867-4784-9f20-78243f43ea0f
-		summarizeBy: none
-		sourceColumn: src_voucher_type_ref
-
-		annotation SummarizationSetBy = Automatic
-
-	column src_voucher_no_ref
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 09483370-97c4-46df-9b2c-0feecd416bb4
-		summarizeBy: sum
-		sourceColumn: src_voucher_no_ref
-
-		annotation SummarizationSetBy = Automatic
-
-	column impl_cat_cost_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: a600257e-cb9f-4319-a7c9-2802d14c3a16
-		summarizeBy: none
-		sourceColumn: impl_cat_cost_code
-
-		annotation SummarizationSetBy = Automatic
-
 	column impl_cat_cost_id
 		dataType: int64
 		formatString: 0
@@ -795,16 +53,71 @@ table f_capex_imp_cost_data
 
 		annotation SummarizationSetBy = Automatic
 
+	column bi
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: d381c680-3a15-41e2-b678-b0322581e485
+		summarizeBy: sum
+		sourceColumn: bi
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_f
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 059c150c-0b46-478b-a330-c252dd157a79
+		summarizeBy: none
+		sourceColumn: src_code_f
+
+		annotation SummarizationSetBy = Automatic
+
 	partition f_capex_imp_cost_data = m
 		mode: directQuery
-		source =
+		source = ```
 				let
 				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
-				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
-				    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
-				    f_capex_imp_cost_data_View = capex_implement_Schema{[Name="f_capex_imp_cost_data",Kind="View"]}[Data]
+				    Database_controlling = Źródło{[Name="controlling",Kind="Database"]}[Data],
+				    Schema_capex_implement = Database_controlling{[Name="capex_implement",Kind="Schema"]}[Data],
+				    View = Schema_capex_implement{[Name="f_capex_imp_cost_data",Kind="View"]}[Data],
+				    Keep = Table.SelectColumns(View, {"amount_pln","impl_cat_cost_id","cost_id","prj_id","time_id","bi","src_code_f"})
 				in
-				    f_capex_imp_cost_data_View
+				    Keep
+				
+				
+				
+				
+				// Value.NativeQuery(
+				//     Databricks.Catalogs(
+				//         "adb-16306551450739.19.azuredatabricks.net",
+				//         "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				//         [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				//     ){[Name="controlling", Kind="Database"]}[Data],
+				//     "
+				//     select 
+				//         amount_pln,
+				//         impl_cat_cost_id,
+				//         cost_id,
+				//         prj_id,
+				//         time_id,
+				//         bi,
+				//         src_code_f
+				//     from controlling.capex_implement.f_capex_imp_cost_data
+				//     ",
+				//     null,
+				//     [EnableFolding=true]
+				// )
+				
+				
+				
+				// let
+				//     Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				//     controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+				//     capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
+				//     f_capex_imp_cost_data_View = capex_implement_Schema{[Name="f_capex_imp_cost_data",Kind="View"]}[Data]
+				// in
+				//     f_capex_imp_cost_data_View
+				```
 
 	annotation PBI_NavigationStepName = Nawigacja
 

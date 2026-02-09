@@ -432,19 +432,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Customer"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Customer": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "d_product.brand": {
 			      "Definition": {
@@ -453,10 +441,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Brand"
 			        }
 			      },
+			      "State": "Generated"
+			    },
+			    "d_product.line": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_product",
+			          "ConceptualProperty": "Line"
+			        }
+			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Brand": {
+			          "Line": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
