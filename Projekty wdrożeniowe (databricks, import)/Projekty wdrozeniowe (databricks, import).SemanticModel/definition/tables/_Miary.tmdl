@@ -94,6 +94,26 @@ table _Miary
 			```
 		lineageTag: 27778e1b-8db4-4dbc-b119-6f3b7b46de78
 
+	measure Sprzedaz =
+			
+			SUM(mmo75[s_pln_net])
+		formatString: #,0.00
+		lineageTag: 075e393b-857f-4dff-917e-27c42297f1aa
+
+	measure Marza_II =
+			
+			SUM(mmo75[m_pln_margin_ii])
+		lineageTag: ab0c2d8a-18bb-4ee4-b9c3-65211b64a8d2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Zysk z wdrozenia' =
+			
+			[Marza_II]-[Wydatki]
+		lineageTag: bfb82d26-b167-48a0-9de0-52b3302af165
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Value
 		formatString: 0
 		lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017

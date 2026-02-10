@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "e64e5db18e3b69093446",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "6ca63d33afff56a9dfca",
   "position": {
-    "x": 375.85262565889059,
-    "y": 138.53856247392352,
-    "z": 5000,
+    "x": 377.28119708746203,
+    "y": 261.39570533106627,
+    "z": 12003,
     "height": 100,
-    "width": 320,
-    "tabOrder": 5000
+    "width": 318.57142857142861,
+    "tabOrder": 12003
   },
   "visual": {
     "visualType": "card",
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "_Miary.Wydatki",
-              "nativeQueryRef": "Wydatki całkowite",
-              "displayName": "Wydatki całkowite"
+              "nativeQueryRef": "Wydatki bieżący rok",
+              "displayName": "Wydatki bieżący rok"
             }
           ]
         }
@@ -230,5 +230,61 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a3651f5aa6cb01bd0051",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_date_first"
+          }
+        },
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "mon_date_first"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 3
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

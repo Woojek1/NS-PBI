@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "35d8887f76d2a4eda7b9",
+  "name": "e866f6ce1980df061c13",
   "position": {
-    "x": 19.338339944604876,
-    "y": 261.76713389874567,
-    "z": 9000,
-    "height": 100.11428571428571,
-    "width": 320.91428571428571,
-    "tabOrder": 9000
+    "x": 729.6,
+    "y": 262.4,
+    "z": 12007,
+    "height": 99.2,
+    "width": 320,
+    "tabOrder": 12007
   },
   "visual": {
     "visualType": "card",
@@ -23,12 +23,12 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "Budzet projektu"
+                  "Property": "Realizacja budzetu %"
                 }
               },
-              "queryRef": "_Miary.Budzet projektu",
-              "nativeQueryRef": "Budzet projektu biezacy rok",
-              "displayName": "Budzet projektu biezacy rok"
+              "queryRef": "_Miary.Realizacja budzetu",
+              "nativeQueryRef": "Realizacja budżetu biążacy rok %",
+              "displayName": "Realizacja budżetu biążacy rok %"
             }
           ]
         }
@@ -43,7 +43,7 @@
                     "Entity": "_Miary"
                   }
                 },
-                "Property": "Budzet projektu"
+                "Property": "Realizacja budzetu %"
               }
             },
             "direction": "Descending"
@@ -217,9 +217,111 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_Miary"
+                                        }
+                                      },
+                                      "Property": "Realizacja budzetu %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.99D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_Miary"
+                                        }
+                                      },
+                                      "Property": "Realizacja budzetu %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "5000D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#EF9C9C'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_Miary"
+                                        }
+                                      },
+                                      "Property": "Realizacja budzetu %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "-100D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_Miary"
+                                        }
+                                      },
+                                      "Property": "Realizacja budzetu %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.99D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#0D5272'"
+                            }
+                          }
+                        }
+                      ]
                     }
                   }
                 }
@@ -234,7 +336,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e8fa0b052b58eb9383b3",
+        "name": "ab59fcc96059d94ba15b",
         "field": {
           "Column": {
             "Expression": {
@@ -284,20 +386,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "324f9fcd4b417d02fc01",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Budzet projektu"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -67,13 +67,14 @@
                 }
               },
               "queryRef": "_Miary.Budzet projektu",
-              "nativeQueryRef": "Budzet projektu"
+              "nativeQueryRef": "Budżet projektu",
+              "displayName": "Budżet projektu"
             },
             {
               "field": {
                 "NativeVisualCalculation": {
                   "Language": "dax",
-                  "Expression": "RUNNINGSUM([Budzet projektu])",
+                  "Expression": "RUNNINGSUM([Budżet projektu])",
                   "Name": "Budżet narastająco"
                 }
               },
@@ -92,7 +93,8 @@
                 }
               },
               "queryRef": "_Miary.Realizacja budzetu",
-              "nativeQueryRef": "Realizacja budzetu %"
+              "nativeQueryRef": "Realizacja budżetu %",
+              "displayName": "Realizacja budżetu %"
             }
           ]
         }
@@ -509,7 +511,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9bf2fa186540ee4ba014",
+        "name": "6438bfb6a218d3ad106e",
         "field": {
           "Column": {
             "Expression": {
@@ -523,7 +525,7 @@
         "type": "Categorical"
       },
       {
-        "name": "cd2f0bd51d0d6a5706d2",
+        "name": "e928a487f57d5bbbabe5",
         "field": {
           "Measure": {
             "Expression": {
@@ -537,7 +539,7 @@
         "type": "Advanced"
       },
       {
-        "name": "79a400181e18f7d29f2d",
+        "name": "d5c55cea988f4a0a4d8a",
         "field": {
           "Measure": {
             "Expression": {
@@ -551,7 +553,7 @@
         "type": "Advanced"
       },
       {
-        "name": "0ca4a0f5d69d8dee3883",
+        "name": "f5cfb52e46215aca78ab",
         "field": {
           "Measure": {
             "Expression": {

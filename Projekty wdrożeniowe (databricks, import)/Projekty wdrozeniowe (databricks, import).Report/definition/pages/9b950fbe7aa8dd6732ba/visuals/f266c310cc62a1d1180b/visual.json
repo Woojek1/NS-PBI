@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "26c00d95890349ba2840",
+  "name": "f266c310cc62a1d1180b",
   "position": {
     "x": 19.338339944604876,
-    "y": 138.33856247017425,
-    "z": 6000,
+    "y": 261.76713389874567,
+    "z": 12005,
     "height": 100.11428571428571,
     "width": 320.91428571428571,
-    "tabOrder": 6000
+    "tabOrder": 12005
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "_Miary.Budzet projektu",
-              "nativeQueryRef": "Budzet projektu"
+              "nativeQueryRef": "Budżet projektu bieżący rok",
+              "displayName": "Budżet projektu bieżący rok"
             }
           ]
         }
@@ -233,18 +234,56 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "788494f9ca4a2485ebfb",
+        "name": "e8fa0b052b58eb9383b3",
         "field": {
-          "Measure": {
+          "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Miary"
+                "Entity": "d_time_mon"
               }
             },
-            "Property": "Budzet projektu"
+            "Property": "mon_date_first"
           }
         },
-        "type": "Advanced"
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "mon_date_first"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 3
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
       }
     ]
   }
