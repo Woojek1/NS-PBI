@@ -1,0 +1,93 @@
+relationship e1462d69-8a2e-43d4-37b1-f0b8ea712c77
+	fromColumn: f_capex_imp_cost_data.impl_cat_cost_id
+	toColumn: d_impl_cat_cost.impl_cat_cost_id
+
+relationship 9af398e7-3dde-27f1-9bb9-cdb17ba7fc71
+	fromColumn: f_capex_imp_cost_data.cost_id
+	toColumn: d_gl_category_cost.account_id
+
+relationship 2154bf96-3fb2-2406-6d46-b253e4e20abf
+	fromColumn: f_capex_imp_cost_data.prj_id
+	toColumn: vm_pbi_d_gl_project.prj_id
+
+relationship 4f2db5fa-9214-b9bf-d3f5-5c431074d4a5
+	fromColumn: vm_pbi_d_projects_budget.code_f
+	toColumn: vm_pbi_d_gl_project.hprj_code
+
+relationship 1f79e604-89f7-d948-aae4-136d4fbb2ec8
+	fromColumn: vm_pbi_d_projects_budget.voucher_date
+	toColumn: d_time_mon_2.mon_date_first
+
+relationship 93f5313a-e172-24f1-829e-6bf3b2d4ca69
+	fromColumn: f_capex_imp_cost_data.time_id
+	toColumn: d_time_mon_2.mon_id
+
+relationship d46a0709-5d91-2835-dea8-40e9c69840a7
+	fromColumn: 'Tabela grafik'.'Kod F'
+	toColumn: vm_pbi_d_gl_project.hprj_code
+
+relationship ae5e08ab-4833-45a8-b99b-6e7661d35223
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_capex_imp_cost_data.record_version
+	toColumn: LocalDateTable_de98997b-1e52-4a61-ad15-b07c8b9d73d3.Date
+
+relationship 8ecad80c-4108-4fe7-9e08-1f21ea4aaefd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_capex_imp_cost_data.src_voucher_date
+	toColumn: LocalDateTable_f6b3f76e-2159-4bc5-bc23-53092c036c1f.Date
+
+relationship 7305e8e5-1a94-4ef7-8dc1-687bd0cdd99b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_capex_imp_cost_data.src_event_date
+	toColumn: LocalDateTable_916697ad-4c93-49c4-80fe-18934b3e9b67.Date
+
+relationship fa35f850-2c6c-4c34-946f-6e075a0e6e64
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_capex_imp_cost_data.src_doc_date
+	toColumn: LocalDateTable_b1cacc73-dbab-471c-b2d6-d4a327310c29.Date
+
+relationship dd397e85-cbfa-4f72-9eb3-78865ab9079f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_capex_imp_cost_data.src_mixed_payment_date
+	toColumn: LocalDateTable_7936e83a-f606-42d2-82e3-910baeca3d51.Date
+
+relationship f52de096-8cee-4766-a0a2-107b2c829004
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_gl_category_cost.record_version
+	toColumn: LocalDateTable_69dcace9-50fa-41df-b24b-8e2f38cdbb1e.Date
+
+relationship 5f5710f4-e7c6-413c-a74c-90fbf7caf8ac
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_gl_category_cost.first_load_date
+	toColumn: LocalDateTable_17d7f684-8304-4f8d-b815-928d4ffa593b.Date
+
+relationship 02554f4e-2c1f-4c61-83f7-b9f90566ea81
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_gl_category_cost.last_seen_date
+	toColumn: LocalDateTable_b561741b-9308-4378-91f9-c09e0f9fadc6.Date
+
+relationship 625322fd-72b8-4ec6-882e-9b6e65a164e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_time_mon_2.mon_date
+	toColumn: LocalDateTable_4d0dce57-4aba-4c15-bfda-624c063bdc0c.Date
+
+relationship e23fd3b8-523f-4e0f-aba5-a04d090ba747
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_time_mon_2.quart_date
+	toColumn: LocalDateTable_155fc850-9e1f-4b1c-a369-632ccca01002.Date
+
+relationship 884e64da-11ff-4286-b418-5fd92186dae7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_time_mon_2.yearh_date
+	toColumn: LocalDateTable_045f5532-ee22-4071-9af4-16b17355360d.Date
+
+relationship 7fdfe354-3175-4831-b4e7-6956c14b74ee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_time_mon_2.year_date
+	toColumn: LocalDateTable_8693e99b-1741-4d80-b1bf-706749dd3952.Date
+
+relationship 0cfc22bd-a6f5-4857-802a-ce5a9e136a9f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_time_mon_2.mon_date_first
+	toColumn: LocalDateTable_7cf7eeeb-2ebc-47e4-88d9-574fc0937969.Date
+

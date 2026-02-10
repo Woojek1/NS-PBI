@@ -1,0 +1,477 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "dd5c2edb1b3f02ca0601",
+  "position": {
+    "x": 26.666666666666668,
+    "y": 21.666666666666668,
+    "z": 1,
+    "height": 1035,
+    "width": 1870,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "hprj_code"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.hprj_code",
+              "nativeQueryRef": "Kod projektu",
+              "displayName": "Kod projektu"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.prj_desc",
+              "nativeQueryRef": "Nazwa projektu",
+              "displayName": "Nazwa projektu"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.status",
+              "nativeQueryRef": "Status",
+              "displayName": "Status"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki"
+                }
+              },
+              "queryRef": "_Miary.Wydatki",
+              "nativeQueryRef": "Wydatki"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Budzet projektu"
+                }
+              },
+              "queryRef": "_Miary.Budzet projektu",
+              "nativeQueryRef": "Budzet projektu"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Realizacja budzetu %"
+                }
+              },
+              "queryRef": "_Miary.Realizacja budzetu",
+              "nativeQueryRef": "Realizacja budzetu"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "!TEST_sales"
+                }
+              },
+              "queryRef": "_Miary.Flesco_sales",
+              "nativeQueryRef": "!TEST_sales"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Miary"
+                  }
+                },
+                "Property": "!TEST_sales"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#000000'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "215.95238095238096D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.hprj_code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "659.999998410543D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.prj_desc"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "162.666657287746D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Budzet projektu"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "257.6666756660595D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.status"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "169D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Realizacja budzetu"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Flesco_sales"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Koszty wdrożenia'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "23d422befaaf1136ada6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "484b0d5330f4314a1e15",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dea0ea1d60549898e4b9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7a65fb5c526ffd4333db",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1d924eb4fe225e2584ae",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Budzet projektu"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "449c294a5c1186c6d65c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Realizacja budzetu %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "81c78d9e142ce2d7321d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "!TEST_sales"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
