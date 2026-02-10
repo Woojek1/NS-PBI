@@ -1,30 +1,32 @@
-relationship e1462d69-8a2e-43d4-37b1-f0b8ea712c77
+relationship def47e1d-c5a6-4501-8fc6-2b9422d98dfd
 	fromColumn: f_capex_imp_cost_data.impl_cat_cost_id
 	toColumn: d_impl_cat_cost.impl_cat_cost_id
 
-relationship 2154bf96-3fb2-2406-6d46-b253e4e20abf
+relationship 9a871ea2-2341-4acf-a713-d71bbaa8facb
+	fromColumn: f_capex_imp_cost_data.cost_id
+	toColumn: d_gl_category_cost.account_id
+
+relationship 97f9cf57-d471-425c-8e8e-61e218bc4712
 	fromColumn: f_capex_imp_cost_data.prj_id
 	toColumn: vm_pbi_d_gl_project.prj_id
 
-relationship 4f2db5fa-9214-b9bf-d3f5-5c431074d4a5
+relationship 104e2215-0d83-49d7-9dbb-30a1cb24ea45
+	fromColumn: f_capex_imp_cost_data.time_id
+	toColumn: d_time_mon.mon_id
+
+relationship 93250a44-9397-4e41-94f4-01f6937cd3dd
 	fromColumn: vm_pbi_d_projects_budget.code_f
 	toColumn: vm_pbi_d_gl_project.hprj_code
 
-relationship 1f79e604-89f7-d948-aae4-136d4fbb2ec8
+relationship 48cfccaf-fd41-4700-a0b1-cb987152e0a6
 	fromColumn: vm_pbi_d_projects_budget.voucher_date
-	toColumn: d_time_mon_2.mon_date_first
+	toColumn: d_time_mon.mon_date_first
 
-relationship 93f5313a-e172-24f1-829e-6bf3b2d4ca69
-	fromColumn: f_capex_imp_cost_data.time_id
-	toColumn: d_time_mon_2.mon_id
-
-relationship d46a0709-5d91-2835-dea8-40e9c69840a7
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
+relationship fdbdaa97-fa57-4773-a10d-8afa0d4d367a
 	fromColumn: 'Tabela grafik'.'Kod F'
 	toColumn: vm_pbi_d_gl_project.hprj_code
 
-relationship 474a460e-1a68-e750-42bb-c0bca35f3424
+relationship 8fd06e9e-8bd1-4482-92b7-78177520d8af
 	fromColumn: vm_pbi_f_model_sales_flesco.code_f
 	toColumn: vm_pbi_d_gl_project.hprj_code
 

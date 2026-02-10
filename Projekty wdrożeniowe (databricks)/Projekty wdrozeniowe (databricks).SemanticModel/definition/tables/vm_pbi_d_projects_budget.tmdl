@@ -1,59 +1,43 @@
 table vm_pbi_d_projects_budget
-	lineageTag: b65f87dc-f676-454c-912b-5465b4cebead
+	lineageTag: 0b6e01d4-b732-4ab1-ac5a-d9f592fc7b1d
+	sourceLineageTag: b65f87dc-f676-454c-912b-5465b4cebead
 
 	column voucher_date
 		dataType: dateTime
 		formatString: Long Date
-		sourceProviderType: date
-		lineageTag: 1e04d7c7-8748-4ed4-8a1f-a43f9278e4a3
+		lineageTag: e4867dc1-673e-43db-8fce-120c8cb26002
+		sourceLineageTag: 1e04d7c7-8748-4ed4-8a1f-a43f9278e4a3
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: voucher_date
 
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
+		annotation SummarizationSetBy = User
 
 	column code_f
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 4b39049a-4a98-46cd-92a4-1052d432a4a2
+		lineageTag: 123ad53d-2014-4b8c-903c-8dafbf85bf8b
+		sourceLineageTag: 4b39049a-4a98-46cd-92a4-1052d432a4a2
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: code_f
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column debet_amount
 		dataType: double
-		sourceProviderType: decimal(10, 0)
-		lineageTag: 6fe7e577-2f46-45a2-a3ae-dec9922337da
+		lineageTag: 41c49b95-3c7d-4091-9a5b-adc606ef194b
+		sourceLineageTag: 6fe7e577-2f46-45a2-a3ae-dec9922337da
+		dataCategory: Uncategorized
 		summarizeBy: sum
 		sourceColumn: debet_amount
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition vm_pbi_d_projects_budget = m
+	partition vm_pbi_d_projects_budget = entity
 		mode: directQuery
-		source =
-				Value.NativeQuery(
-				    Databricks.Catalogs(
-				        "adb-16306551450739.19.azuredatabricks.net",
-				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
-				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
-				    ){[Name="zenith", Kind="Database"]}[Data],
-				    "
-				    select
-				        voucher_date,
-				        code_f,
-				        debet_amount
-				    from controlling.capex_implement.vm_pbi_d_projects_budget
-				    ",
-				    null,
-				    [EnableFolding=true]
-				)
-
-	annotation PBI_NavigationStepName = Navigation
-
-	annotation PBI_ResultType = Table
+		source
+			entityName: vm_pbi_d_projects_budget
+			expressionSource: 'DirectQuery to AS - Projekty wdrozeniowe (databricks)'
 

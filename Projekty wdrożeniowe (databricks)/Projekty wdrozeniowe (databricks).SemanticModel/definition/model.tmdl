@@ -1,29 +1,26 @@
 model Model
-	culture: pl-PL
+	culture: en-US
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: pl-PL
 	dataAccessOptions
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+annotation PBI_QueryOrder = ["DirectQuery to AS - Projekty wdrozeniowe (databricks)"]
 
-<<<<<<< HEAD
-annotation PBI_QueryOrder = ["d_impl_cat_cost","f_capex_imp_cost_data","vm_pbi_d_gl_project","vm_pbi_d_projects_budget","d_time_mon","vm_pbi_f_model_sales_flesco"]
-=======
-annotation PBI_QueryOrder = ["d_impl_cat_cost","f_capex_imp_cost_data","d_gl_category_cost","vm_pbi_d_gl_project","vm_pbi_d_projects_budget","d_time_mon_2","vm_pbi_f_model_sales_flesco"]
->>>>>>> parent of cd75856 (Remove unused columns from mon_time table)
+annotation PBI_ProTooling = ["DevMode"]
 
 ref table d_impl_cat_cost
 ref table f_capex_imp_cost_data
+ref table d_gl_category_cost
 ref table _Miary
 ref table vm_pbi_d_gl_project
 ref table vm_pbi_d_projects_budget
-ref table d_time_mon_2
+ref table d_time_mon
 ref table 'Tabela grafik'
 ref table vm_pbi_f_model_sales_flesco
 
-ref cultureInfo pl-PL
+ref cultureInfo en-US
 

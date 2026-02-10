@@ -1,249 +1,273 @@
 table vm_pbi_d_gl_project
-	lineageTag: 7b5e640a-b0b1-4ecd-98a9-ffc90c116218
+	lineageTag: 7da94f61-7174-4916-a37e-a4ed55f74137
+	sourceLineageTag: 7b5e640a-b0b1-4ecd-98a9-ffc90c116218
 
 	column prj_id
 		dataType: int64
+		isNullable: false
 		formatString: 0
-		sourceProviderType: int
-		lineageTag: 2a688176-1bce-486b-8fa0-9a69e66ed0e4
+		lineageTag: 1fefbdf7-12b0-4cd7-a191-51de3fb8bb49
+		sourceLineageTag: 2a688176-1bce-486b-8fa0-9a69e66ed0e4
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: prj_id
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column db_code
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 3502fff0-e682-445f-a896-cc3f315aa48e
+		lineageTag: f44b67e2-a189-4899-ac7a-86672d164152
+		sourceLineageTag: 3502fff0-e682-445f-a896-cc3f315aa48e
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: db_code
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column comp_code
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 7d003d97-b373-4fd8-a3af-cde7b6c8305b
+		lineageTag: 98b3762c-895d-4068-a539-c08681c32a58
+		sourceLineageTag: 7d003d97-b373-4fd8-a3af-cde7b6c8305b
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: comp_code
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column prj_desc
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: a065ed3b-f5e6-4f0a-a3b2-a99f30640715
+		lineageTag: 4bd26fb3-9ed5-4ff8-b81d-8b158259e5af
+		sourceLineageTag: a065ed3b-f5e6-4f0a-a3b2-a99f30640715
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: prj_desc
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column prj_sgrp_code
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 31e6a571-8142-4815-95c0-11fc252fbcf7
+		lineageTag: b3881b62-a349-475f-8149-f71378475911
+		sourceLineageTag: 31e6a571-8142-4815-95c0-11fc252fbcf7
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: prj_sgrp_code
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column prj_sgrp_name
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 39904cde-b83a-4f18-9d87-e4eb5d852854
+		lineageTag: 1ec035af-fb3d-4599-a08f-4024742f9b76
+		sourceLineageTag: 39904cde-b83a-4f18-9d87-e4eb5d852854
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: prj_sgrp_name
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column prj_grp_code
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 99f47bac-e9f0-45d7-9936-709f11347eb4
+		lineageTag: 248afb15-6e9f-4593-946b-a559314e28d6
+		sourceLineageTag: 99f47bac-e9f0-45d7-9936-709f11347eb4
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: prj_grp_code
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column prj_grp_name
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: f4b955e8-ed09-4d85-aa15-de26a79ff7e3
+		lineageTag: 64af4903-7e85-4257-9368-a8abe94cc6e2
+		sourceLineageTag: f4b955e8-ed09-4d85-aa15-de26a79ff7e3
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: prj_grp_name
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column owner_code
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 69c107d5-357c-42be-b162-e02e27ef4c6f
+		lineageTag: f9d79161-33fb-4c50-967c-5241f8c7f16e
+		sourceLineageTag: 69c107d5-357c-42be-b162-e02e27ef4c6f
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: owner_code
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column owner_name
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: c30b9302-78ea-4f01-94f2-f1b51674f634
+		lineageTag: b9d139a9-5a6f-43e8-b8c7-9d387ca6723f
+		sourceLineageTag: c30b9302-78ea-4f01-94f2-f1b51674f634
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: owner_name
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column front_office
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 204561ca-17b3-4cb6-b177-ed15e19642d9
+		lineageTag: c2dcc7b1-67ce-4b96-a97b-bbb276d2e990
+		sourceLineageTag: 204561ca-17b3-4cb6-b177-ed15e19642d9
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: front_office
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column project_manager
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: ba8e9599-9013-4e48-af64-e3ef3af69626
+		lineageTag: 598201c9-f8f6-4436-bdc0-3fa343ade008
+		sourceLineageTag: ba8e9599-9013-4e48-af64-e3ef3af69626
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: project_manager
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column coordinator_bo
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 9da5d51d-bd51-4de9-b820-22ed1067e8ec
+		lineageTag: 72954d56-ba85-40e4-a834-3f67a031427c
+		sourceLineageTag: 9da5d51d-bd51-4de9-b820-22ed1067e8ec
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: coordinator_bo
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column mpk_code
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 5249e895-d6a7-47d3-ab36-c118b81f761b
+		lineageTag: db56dd25-830f-46c5-b6be-7543af976f2d
+		sourceLineageTag: 5249e895-d6a7-47d3-ab36-c118b81f761b
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: mpk_code
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column hprj_code
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 3e39f449-7759-4897-a906-72b3f111854a
+		isNullable: false
+		lineageTag: 86229c4f-4be0-4421-b1e5-b4751dc47678
+		sourceLineageTag: 3e39f449-7759-4897-a906-72b3f111854a
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: hprj_code
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column brand
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: e1e1009d-31e2-48bf-9a2b-edcd4399bf06
+		lineageTag: 6dd0f7a2-6ca8-4df0-9b95-de3ad6c0eca2
+		sourceLineageTag: e1e1009d-31e2-48bf-9a2b-edcd4399bf06
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: brand
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column kategoria
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 31cf3793-06f6-4928-ae4c-e99e80641f65
+		lineageTag: 9a5d5c9e-eca1-473d-94d8-78d2c074f1d8
+		sourceLineageTag: 31cf3793-06f6-4928-ae4c-e99e80641f65
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: kategoria
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column kat_wdr
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 6c417fb8-e1d0-4afe-91d7-1c6a1448bab4
+		lineageTag: 5a2a037d-6518-499f-80e5-67f845784704
+		sourceLineageTag: 6c417fb8-e1d0-4afe-91d7-1c6a1448bab4
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: kat_wdr
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column linia
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 5eede928-849c-445f-8d6d-ba20a68c29bd
+		lineageTag: d4605fb2-da80-4dea-a9f3-63b4d43591dc
+		sourceLineageTag: 5eede928-849c-445f-8d6d-ba20a68c29bd
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: linia
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column opis
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: b51f8994-4331-4da2-a2d8-d7efd5059547
+		lineageTag: 25102c47-de9f-40ee-a872-a4beac81c3aa
+		sourceLineageTag: b51f8994-4331-4da2-a2d8-d7efd5059547
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: opis
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column pm
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 73b465a6-452f-4f27-b417-3f4a7452f704
+		lineageTag: 1595c0aa-2088-408e-8f7f-b74de7df9c2b
+		sourceLineageTag: 73b465a6-452f-4f27-b417-3f4a7452f704
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: pm
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column rozp_proj
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: fc62eab2-6e24-4313-aa33-1c7af74580b5
+		lineageTag: 4c96635e-ba6f-4ce2-aa4c-6c92cffa9f0b
+		sourceLineageTag: fc62eab2-6e24-4313-aa33-1c7af74580b5
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: rozp_proj
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column zak_proj
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 4495e26c-9452-4eb1-9ba7-dcb7708b2fd2
+		lineageTag: 3d526072-bb38-48d8-83d2-deaa048a694f
+		sourceLineageTag: 4495e26c-9452-4eb1-9ba7-dcb7708b2fd2
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: zak_proj
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column rozp_prod
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: b7586fba-c02a-4aca-ab1c-8957f9980238
+		lineageTag: 759bb1d9-50de-4836-af88-32769466933e
+		sourceLineageTag: b7586fba-c02a-4aca-ab1c-8957f9980238
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: rozp_prod
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column grupa
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 17433227-40f3-49ce-8b36-da100222e548
+		lineageTag: d7927945-91a9-46a7-95a6-b17be22d60f9
+		sourceLineageTag: 17433227-40f3-49ce-8b36-da100222e548
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: grupa
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column status
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: f6a74355-eeb8-481a-9d2d-1f31d9924cce
+		lineageTag: 83b98620-b4f7-4865-8a00-be890afa6b25
+		sourceLineageTag: f6a74355-eeb8-481a-9d2d-1f31d9924cce
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: status
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
-	partition vm_pbi_d_gl_project = m
+	partition vm_pbi_d_gl_project = entity
 		mode: directQuery
-		source =
-				let
-				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
-				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
-				    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
-				    vm_pbi_d_gl_project_View = capex_implement_Schema{[Name="vm_pbi_d_gl_project",Kind="View"]}[Data]
-				in
-				    vm_pbi_d_gl_project_View
+		source
+			entityName: vm_pbi_d_gl_project
+			expressionSource: 'DirectQuery to AS - Projekty wdrozeniowe (databricks)'
 

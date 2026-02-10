@@ -1,150 +1,96 @@
 table _Miary
-	lineageTag: fce809bd-c1a1-4265-b842-278345ddfbe1
+	lineageTag: 73da042d-1ed3-4b4f-8dc0-c7fea77931a1
+	sourceLineageTag: fce809bd-c1a1-4265-b842-278345ddfbe1
 
-	measure Wydatki =
-			
-			COALESCE(
-			    SUM(f_capex_imp_cost_data[amount_pln]),
-			    0
-			)
+	measure Wydatki = EXTERNALMEASURE("Wydatki", DOUBLE, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: #,0
-		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
+		lineageTag: e6c5edba-c587-446d-bbe6-374abca242ed
+		sourceLineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
+		dataCategory: Uncategorized
 
-	measure 'Nazwa projektu - tytul' =
-			
-			IF( NOT ISFILTERED(vm_pbi_d_gl_project[prj_desc]),
-			    "Wybierz projekt",
-			    IF( HASONEVALUE(vm_pbi_d_gl_project[prj_desc]),
-			        VALUES(vm_pbi_d_gl_project[prj_desc]),
-			        "Kilka projektów" )
-			)
-		lineageTag: b6e08fcd-fedb-45b4-bb85-c74858294be6
+	measure 'Nazwa projektu - tytul' = EXTERNALMEASURE("Nazwa projektu - tytul", STRING, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
+		lineageTag: c0b9787f-4651-4960-8860-c76331f62cbb
+		sourceLineageTag: b6e08fcd-fedb-45b4-bb85-c74858294be6
+		dataCategory: Uncategorized
 
-	measure 'Ilość otwartych projektów' =
-			
-			COUNTROWS (
-			    DISTINCT(
-			        FILTER(
-			            VALUES('vm_pbi_d_gl_project'[prj_desc]),
-			            LEFT ('vm_pbi_d_gl_project'[prj_desc], 3) <> "(X)"
-			        )
-			    )
-			)
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure 'Ilość otwartych projektów' = EXTERNALMEASURE("Ilość otwartych projektów", INTEGER, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: 0
-		lineageTag: d8358878-8d59-40fd-a985-73ad8eae745c
+		lineageTag: 0b019337-0572-4e68-96c5-0341bce09a6b
+		sourceLineageTag: d8358878-8d59-40fd-a985-73ad8eae745c
+		dataCategory: Uncategorized
 
-	measure 'Ilosc otwartych projektow wg statusow' =
-			
-			
-			COUNTROWS(
-			    DISTINCT(
-			    FILTER(
-			        vm_pbi_d_gl_project,
-			        vm_pbi_d_gl_project[status] = "Aktywny"
-			    )
-			)
-			)
+	measure 'Ilosc otwartych projektow wg statusow' = EXTERNALMEASURE("Ilosc otwartych projektow wg statusow", INTEGER, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: 0
-		lineageTag: ff3f4611-a439-44b2-a121-51817b979cd1
+		lineageTag: 7c24e157-a914-44a5-819c-db5606886378
+		sourceLineageTag: ff3f4611-a439-44b2-a121-51817b979cd1
+		dataCategory: Uncategorized
 
-	measure 'Numer projektu - tytul' =
-			
-			IF( NOT ISFILTERED(vm_pbi_d_gl_project[prj_desc]),
-			    "Wybierz projekt",
-			    IF( HASONEVALUE(vm_pbi_d_gl_project[hprj_code]),
-			        VALUES(vm_pbi_d_gl_project[hprj_code]),
-			        "Kilka projektów")
-			)
-		lineageTag: 0490d09a-711e-4302-9875-25436384c6c6
+	measure 'Numer projektu - tytul' = EXTERNALMEASURE("Numer projektu - tytul", STRING, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
+		lineageTag: 0a98edbc-f056-41d8-9809-d2bdb6d8eef4
+		sourceLineageTag: 0490d09a-711e-4302-9875-25436384c6c6
+		dataCategory: Uncategorized
 
-	measure 'Budzet projektu' =
-			
-			COALESCE(
-			    SUM(vm_pbi_d_projects_budget[debet_amount]),
-			    0
-			)
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure 'Budzet projektu' = EXTERNALMEASURE("Budzet projektu", DOUBLE, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: #,0
-		lineageTag: 467e429d-ecbc-48a8-8151-48417635da7e
+		lineageTag: abedb45c-7769-4974-82bd-63bb322b07db
+		sourceLineageTag: 467e429d-ecbc-48a8-8151-48417635da7e
+		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isDecimal":true}
-
-	measure 'Realizacja budzetu %' = ```
-			
-			VAR Budzet_projektu = 
-			    SUM(vm_pbi_d_projects_budget[debet_amount])
-			
-			VAR Wydatki = 
-			    SUM(f_capex_imp_cost_data[amount_pln])
-			
-			RETURN
-			
-			DIVIDE(
-			    [Wydatki],
-			    [Budzet projektu],
-			    ""
-			 )
-			
-			```
+	measure 'Realizacja budzetu %' = EXTERNALMEASURE("Realizacja budzetu %", DOUBLE, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: #,0%;-#,0%;#,0%
-		lineageTag: 0a1ed71e-7a2c-4f4e-928f-e3600efa60d1
+		lineageTag: 89795e4d-c5ca-435d-be03-6984e9102eff
+		sourceLineageTag: 0a1ed71e-7a2c-4f4e-928f-e3600efa60d1
+		dataCategory: Uncategorized
 
-	measure Przyszly_rok =
-			
-			YEAR(
-			    NOW()
-			) + 1
+	measure Przyszly_rok = EXTERNALMEASURE("Przyszly_rok", INTEGER, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: 0
-		lineageTag: 5ca79c38-862a-40c6-826e-1f390723fb89
+		lineageTag: 50b06d8e-8c01-49eb-8c52-59387ed784ff
+		sourceLineageTag: 5ca79c38-862a-40c6-826e-1f390723fb89
+		dataCategory: Uncategorized
 
-	measure 'Widocznosc grafiki' = ```
-			
-			IF(
-			    HASONEVALUE(vm_pbi_d_gl_project[prj_desc]),
-			    "RGBA(255,0,0,0)",         
-			    "RGBA(255,255,255,1)"
-			)
-			
-			```
-		lineageTag: a6dacdac-9fa3-4da3-b234-913ccc9fdc1b
+	measure 'Widocznosc grafiki' = EXTERNALMEASURE("Widocznosc grafiki", STRING, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
+		lineageTag: 420357d7-7aad-480c-9932-522d74771e0a
+		sourceLineageTag: a6dacdac-9fa3-4da3-b234-913ccc9fdc1b
+		dataCategory: Uncategorized
 
-	measure 'Budzet projektu (blank)' = ```
-			
-			    SUM(vm_pbi_d_projects_budget[debet_amount])
-			
-			```
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure 'Budzet projektu (blank)' = EXTERNALMEASURE("Budzet projektu (blank)", DOUBLE, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: #,0
-		lineageTag: 9d24a183-b6ed-4b1c-a704-6e5608b789a9
+		lineageTag: 43c924d1-23ee-4faf-8c4f-45ca00a10d7e
+		sourceLineageTag: 9d24a183-b6ed-4b1c-a704-6e5608b789a9
+		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isDecimal":true}
-
-	measure 'Wydatki (blank)' = ```
-			
-			    SUM(f_capex_imp_cost_data[amount_pln])
-			
-			```
+	measure 'Wydatki (blank)' = EXTERNALMEASURE("Wydatki (blank)", DOUBLE, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: #,0
-		lineageTag: 29184878-cc4b-46f5-8e71-e83cbc1758d4
+		lineageTag: ef746aa7-997b-40b0-b537-a476fd2e343b
+		sourceLineageTag: 29184878-cc4b-46f5-8e71-e83cbc1758d4
+		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isDecimal":true}
-
-	measure !TEST_sales =
-			
-			SUM(vm_pbi_f_model_sales_flesco[s_pln_net])
+	measure !TEST_sales = EXTERNALMEASURE("!TEST_sales", INTEGER, "DirectQuery to AS - Projekty wdrozeniowe (databricks)")
 		formatString: #,0
-		lineageTag: 5943069d-eaab-4a5f-94e3-57d0a58f0051
+		lineageTag: d7bb27da-dd03-41bf-979a-4333524bf3e8
+		sourceLineageTag: 5943069d-eaab-4a5f-94e3-57d0a58f0051
+		dataCategory: Uncategorized
 
 	column Value
+		dataType: int64
 		formatString: 0
-		lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017
+		lineageTag: 824e5dee-7f52-4e9f-9a31-d6311fbada96
+		sourceLineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017
+		dataCategory: Uncategorized
 		summarizeBy: sum
-		isNameInferred
-		sourceColumn: [Value]
+		sourceColumn: Value
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
-	partition _Miary = calculated
-		mode: import
-		source = {0}
-
-	annotation PBI_Id = 8ff54b4d66f14635a814d7d3fdcc4732
+	partition _Miary = entity
+		mode: directQuery
+		source
+			entityName: _Miary
+			expressionSource: 'DirectQuery to AS - Projekty wdrozeniowe (databricks)'
 

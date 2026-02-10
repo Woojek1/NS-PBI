@@ -1,125 +1,874 @@
 table f_capex_imp_cost_data
-	lineageTag: 06a525a9-5cc5-4409-9d2d-7739a2bac1f3
+	lineageTag: fe4c7507-4cd0-4b31-91d3-86afb000df0c
+	sourceLineageTag: 06a525a9-5cc5-4409-9d2d-7739a2bac1f3
+
+	column record_source
+		dataType: string
+		lineageTag: b52bb6fa-1efb-422a-8ce3-fc06e712abb6
+		sourceLineageTag: d0293ed9-571c-430f-af9e-0a9961b2de98
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: record_source
+
+		annotation SummarizationSetBy = User
+
+	column record_view
+		dataType: string
+		lineageTag: 9a9cf4d0-0dcd-4e8f-aa37-65e122217246
+		sourceLineageTag: 28c084d0-6099-4130-a7cb-705a5ddd81b0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: record_view
+
+		annotation SummarizationSetBy = User
+
+	column record_version
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 375d8e8a-c80a-47f2-ba6b-b8bac6410673
+		sourceLineageTag: 8b3b06ff-d723-4d94-9cfc-599717def3cd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: record_version
+
+		annotation SummarizationSetBy = User
 
 	column time_id
 		dataType: int64
 		formatString: 0
-		sourceProviderType: int
-		lineageTag: 013ec034-d002-4e34-8a58-2073082e5114
+		lineageTag: 948e8db5-4284-4816-a0ea-fdaf99f4a8ae
+		sourceLineageTag: 013ec034-d002-4e34-8a58-2073082e5114
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: time_id
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
+
+	column mpk_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1548fb04-466e-4a04-921d-64d4deb2d835
+		sourceLineageTag: 554dd667-3a79-4c25-a7b6-d5ae90b7b0a1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = User
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: cdce1563-0b47-41b2-bb8f-60d4f7499bd2
+		sourceLineageTag: b489c3aa-b098-4b82-8f5b-f4b6c08c3743
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = User
+
+	column pay_account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a421d46c-5b3a-405f-b81d-e605b3c83eeb
+		sourceLineageTag: c75b73ad-c2f5-4c83-82c5-3a75b5e2dd5a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: pay_account_id
+
+		annotation SummarizationSetBy = User
 
 	column cost_id
 		dataType: int64
 		formatString: 0
-		sourceProviderType: int
-		lineageTag: 740a6763-ea32-411e-955d-a4ea9e29ae67
-		summarizeBy: sum
+		lineageTag: 89c04d6b-a2c7-46e1-9d7d-d77799d1f61f
+		sourceLineageTag: 740a6763-ea32-411e-955d-a4ea9e29ae67
+		dataCategory: Uncategorized
+		summarizeBy: none
 		sourceColumn: cost_id
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column prj_id
 		dataType: int64
 		formatString: 0
-		sourceProviderType: int
-		lineageTag: 53713fe8-3388-41ce-82bd-df44cccca69d
+		lineageTag: 8a9e3e92-f6c6-4a81-9aa9-774399238139
+		sourceLineageTag: 53713fe8-3388-41ce-82bd-df44cccca69d
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: prj_id
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
+
+	column supp_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f1e39e3-b0c6-431b-b545-2fc2869fcf69
+		sourceLineageTag: 5d9385e2-0b4c-4c0f-9f10-1f9ca056f5b4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: supp_id
+
+		annotation SummarizationSetBy = User
+
+	column curr_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 85b82d86-6d45-4d25-8142-72abe82e657e
+		sourceLineageTag: 48c1a2c9-e610-4488-9a68-e7d458b2bb8f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: curr_id
+
+		annotation SummarizationSetBy = User
+
+	column fin_curr_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c35a4436-8332-49af-a1e9-133504c3e2f3
+		sourceLineageTag: f185a084-ec10-42d8-858d-e6d4cd319743
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: fin_curr_id
+
+		annotation SummarizationSetBy = User
+
+	column comp_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0fd96754-e9e3-4eed-afb8-e08c5e7c3b8f
+		sourceLineageTag: 572b0cfa-c4b7-4853-a8e6-0fc2173f8381
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = User
+
+	column var_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b38d34e9-cd15-4cb4-a768-81b8839a2d98
+		sourceLineageTag: e9ebb4fe-89b5-44d0-99f0-9d21eb42dac2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: var_id
+
+		annotation SummarizationSetBy = User
+
+	column voucher_type_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ae3b311-50ad-4989-bf57-87242a3233ef
+		sourceLineageTag: 840e9d66-f10f-4e86-a2a1-6eee92a35e12
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: voucher_type_id
+
+		annotation SummarizationSetBy = User
+
+	column prior_id
+		dataType: int64
+		formatString: 0
+		lineageTag: bffffb9e-cb6d-48ae-a796-738e27277208
+		sourceLineageTag: 825a072e-cd3a-4ff0-a3f6-27a3ed7f5b9c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: prior_id
+
+		annotation SummarizationSetBy = User
+
+	column ccat_id
+		dataType: int64
+		formatString: 0
+		lineageTag: faec4025-74d3-462f-bbd1-f65354b6d2ef
+		sourceLineageTag: 6eb44305-94f0-448e-898e-fa40381e19e3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ccat_id
+
+		annotation SummarizationSetBy = User
+
+	column debet_amount_pln
+		dataType: double
+		lineageTag: 4fec206e-d952-4473-b9e3-c60176f441be
+		sourceLineageTag: 21265abd-4afc-4e56-ae4e-b3dd32f7c4a4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: debet_amount_pln
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_pln
+		dataType: double
+		lineageTag: c4c37a8b-74d4-4506-a2f1-dbbbc911d3dd
+		sourceLineageTag: 59b5014c-3e97-4ebe-85fe-95a2cb674135
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: credit_amount_pln
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column amount_pln
 		dataType: double
 		formatString: #,0
-		sourceProviderType: decimal(38, 18)
-		lineageTag: 9ff68804-9dc6-4882-871d-86514a6006bb
+		lineageTag: a7d60747-a91a-4830-b0fd-63f45a838d31
+		sourceLineageTag: 9ff68804-9dc6-4882-871d-86514a6006bb
+		dataCategory: Uncategorized
 		summarizeBy: sum
 		sourceColumn: amount_pln
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isDecimal":true}
+	column debet_amount_bpln
+		dataType: double
+		lineageTag: 1408fe16-6ead-4042-ae8a-4990222266f6
+		sourceLineageTag: 38669633-dca8-45da-aa85-6389e167a72c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: debet_amount_bpln
 
-	column impl_cat_cost_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: int
-		lineageTag: 67614503-dffd-4e07-a446-44d322b6f7ce
-		summarizeBy: none
-		sourceColumn: impl_cat_cost_id
+		annotation SummarizationSetBy = User
 
-		annotation SummarizationSetBy = Automatic
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_bpln
+		dataType: double
+		lineageTag: a56ee11a-7c63-47aa-9af1-7641e0ddcf25
+		sourceLineageTag: 8151fe73-3f46-4c4e-95a7-fad131105673
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: credit_amount_bpln
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_bpln
+		dataType: double
+		lineageTag: 4264f140-4e5a-4c22-b291-5f3d9b6f995d
+		sourceLineageTag: 5db59708-a06c-4c68-8758-d4e3f0400fe4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: amount_bpln
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_eur
+		dataType: double
+		lineageTag: 8331f166-a58f-469f-8b87-1c88199b9102
+		sourceLineageTag: e8ca0086-5321-4dc7-8169-8077f7a3a720
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: debet_amount_eur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_eur
+		dataType: double
+		lineageTag: 88b1a6ea-d1a6-4b5b-a815-841dbde54cff
+		sourceLineageTag: 484cb2c8-eeb5-4ea7-9040-691d113f8541
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: credit_amount_eur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_eur
+		dataType: double
+		lineageTag: 341caf3d-6e14-4675-bc08-5f46669c4129
+		sourceLineageTag: d8d40ffb-1a86-4a57-bbdb-03f519ad87b3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: amount_eur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_beur
+		dataType: double
+		lineageTag: 9b5bc81b-5d28-48ea-8d8a-abce7595ef42
+		sourceLineageTag: a0f876bd-55c7-4adb-b798-41eb05d789b9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: debet_amount_beur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_beur
+		dataType: double
+		lineageTag: f9bb3586-a35d-4554-9b7f-cc7dfcab8622
+		sourceLineageTag: 88203b22-570d-47aa-bded-78bc3e070985
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: credit_amount_beur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_beur
+		dataType: double
+		lineageTag: 401fe4e7-7ee2-4b2d-a330-d1135eb3b654
+		sourceLineageTag: 144e5ade-1129-4b27-9608-b8a6d484ca41
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: amount_beur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_cur
+		dataType: double
+		lineageTag: aab3111e-b32e-438c-90be-72b28bc1a3cd
+		sourceLineageTag: 76f2f300-3627-4da3-8d64-2a077d569dec
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: debet_amount_cur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_cur
+		dataType: double
+		lineageTag: 993c62b7-c168-4012-98f4-9fe955ce71b9
+		sourceLineageTag: 5e420d18-0d41-4357-aeca-9227b6b49dfc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: credit_amount_cur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_cur
+		dataType: double
+		lineageTag: ca9d7f44-39d2-4ab2-9592-314799f9d90d
+		sourceLineageTag: b8b5b1be-3bcf-4cff-aecb-231e37489b0a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: amount_cur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_fcur
+		dataType: double
+		lineageTag: c6628801-5f43-4709-a418-061db079cbcf
+		sourceLineageTag: 2e2000ac-97f5-495f-b696-9cf34d4b2fe2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: debet_amount_fcur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_fcur
+		dataType: double
+		lineageTag: 00319067-7fd0-44b9-88c7-74ca8fd484d1
+		sourceLineageTag: 3f9b865e-eac7-4729-b9e3-b6b62256ad73
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: credit_amount_fcur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_fcur
+		dataType: double
+		lineageTag: 014d025e-9489-4574-9f53-613b93e2fc5e
+		sourceLineageTag: eb1f267c-d1cd-44c3-a16a-731ce0b50890
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: amount_fcur
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column bi
 		dataType: int64
 		formatString: 0
-		sourceProviderType: tinyint
-		lineageTag: d381c680-3a15-41e2-b678-b0322581e485
+		lineageTag: ea5a48f2-82c8-4e64-99aa-f3ea10189d26
+		sourceLineageTag: a32080be-ccfd-4653-83ae-bb29ac0a0c8f
+		dataCategory: Uncategorized
 		summarizeBy: sum
 		sourceColumn: bi
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
+
+	column wfd_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f61b7f80-1566-4eef-93f6-07837fc54fd6
+		sourceLineageTag: 9ee68174-7e85-48aa-84c2-e67b3271da93
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: wfd_id
+
+		annotation SummarizationSetBy = User
+
+	column link
+		dataType: string
+		lineageTag: df5dd73a-b1b0-4b8c-a12b-9a4922223c5c
+		sourceLineageTag: 8349e349-099f-48d4-b47e-15d3e930595e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: link
+
+		annotation SummarizationSetBy = User
+
+	column ccat_rule_list
+		dataType: string
+		lineageTag: 72e3d2d0-d48d-4cd5-8e4c-a0253181b6a8
+		sourceLineageTag: be01116e-6a93-49f8-ab1c-98b4bc2f5996
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ccat_rule_list
+
+		annotation SummarizationSetBy = User
+
+	column ccat_rule_cnt
+		dataType: int64
+		formatString: 0
+		lineageTag: 8aa623c0-c037-4b43-bea7-0330b8fea722
+		sourceLineageTag: e4748ff7-2510-4d3a-aef5-d92580e9b06a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ccat_rule_cnt
+
+		annotation SummarizationSetBy = User
+
+	column src_rule_no
+		dataType: string
+		lineageTag: 59ce22cd-e57f-4622-bcc9-e4c2de22a38b
+		sourceLineageTag: e5713d4f-3d0a-4f30-91ba-5e4cb4008168
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_rule_no
+
+		annotation SummarizationSetBy = User
+
+	column src_db_code
+		dataType: string
+		lineageTag: 9f823f46-f583-434c-bb30-d759779426a9
+		sourceLineageTag: f7c74266-5004-4179-8b7f-5f822fa7efd1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_db_code
+
+		annotation SummarizationSetBy = User
+
+	column src_db_code_2
+		dataType: string
+		lineageTag: 68423f9f-9832-48ca-9be2-7b0d7102a378
+		sourceLineageTag: d10bb925-55f1-4798-a236-eef7ad38efa3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_db_code_2
+
+		annotation SummarizationSetBy = User
+
+	column src_company
+		dataType: string
+		lineageTag: f0cfa8d1-a72c-4886-8b03-4121a108687c
+		sourceLineageTag: 1d0c324b-cf77-4ddc-9597-2ac05045e279
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_company
+
+		annotation SummarizationSetBy = User
+
+	column src_gl_company
+		dataType: string
+		lineageTag: b6632c75-f2d5-4c31-aeae-2e2caa727de2
+		sourceLineageTag: 2f721295-0057-409c-8cdc-7f1a1eb84f2e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_gl_company
+
+		annotation SummarizationSetBy = User
+
+	column src_year_period_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e755587b-16eb-4ff6-9d08-9cbce90c2b7f
+		sourceLineageTag: 1bb3284e-9fbf-4632-9508-32effb2551f6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: src_year_period_key
+
+		annotation SummarizationSetBy = User
+
+	column src_voucher_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 508bfcca-8db1-47ba-84c5-2c75453bf2e8
+		sourceLineageTag: 7488a44c-6815-43b8-889f-189b3c3c287a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_voucher_date
+
+		annotation SummarizationSetBy = User
+
+	column src_voucher_type
+		dataType: string
+		lineageTag: dfc98a98-9fdc-41a2-b635-a75b136d37ec
+		sourceLineageTag: f6a8a819-5a7c-4bb1-8414-cd7fb553a9b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_voucher_type
+
+		annotation SummarizationSetBy = User
+
+	column src_voucher_no
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a252e6f-a540-411e-bd18-5b06d35a5bfe
+		sourceLineageTag: 99c1bc3f-a2f6-4da7-8f9d-581b2cd7c64d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: src_voucher_no
+
+		annotation SummarizationSetBy = User
+
+	column src_event_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5fb09846-84df-4a8f-99e2-7c844d004901
+		sourceLineageTag: 13fe83cc-000f-4f53-8bb0-af09d5602feb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_event_date
+
+		annotation SummarizationSetBy = User
+
+	column src_doc_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f5a490a1-9d44-46ac-b554-5e259a65cf16
+		sourceLineageTag: 3cb73e3c-b974-4d25-8043-f8531756965f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_doc_date
+
+		annotation SummarizationSetBy = User
+
+	column src_reference_number
+		dataType: string
+		lineageTag: 4b9b432d-d27a-43ae-9fdb-7652a702a457
+		sourceLineageTag: 1e2ca14c-45fa-4c11-b731-f1d51883fa0e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_reference_number
+
+		annotation SummarizationSetBy = User
+
+	column src_reference_row_no
+		dataType: int64
+		formatString: 0
+		lineageTag: d19c54cc-a408-4b55-b2f7-1a98a9f3784c
+		sourceLineageTag: 6578137a-85bd-411f-ac6e-ec2cb2783878
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: src_reference_row_no
+
+		annotation SummarizationSetBy = User
+
+	column src_reference_serie
+		dataType: string
+		lineageTag: 901ce0b7-1037-463b-aa17-b6d4dfdd2106
+		sourceLineageTag: c60645bd-c32c-44e4-bd67-493f2877661a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_reference_serie
+
+		annotation SummarizationSetBy = User
+
+	column src_account
+		dataType: string
+		lineageTag: cc7d6301-1280-4498-89f6-4767e09e5b8b
+		sourceLineageTag: be9710f9-dc57-4e49-a690-d1f56584b8bf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_account
+
+		annotation SummarizationSetBy = User
+
+	column src_code_b
+		dataType: string
+		lineageTag: a6a70891-ebac-494a-87e8-8d518760840c
+		sourceLineageTag: 9674c192-ff17-4910-95a3-19e0f2100709
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_b
+
+		annotation SummarizationSetBy = User
+
+	column src_code_c
+		dataType: string
+		lineageTag: cb52076c-4668-4ad0-a4c1-98108be15948
+		sourceLineageTag: 04a1b07b-41da-417c-8e9d-ed1d8576956a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_c
+
+		annotation SummarizationSetBy = User
+
+	column src_code_d
+		dataType: string
+		lineageTag: b5214701-1d92-4df4-855a-a732f2dc09c1
+		sourceLineageTag: 516c7b18-e353-4f01-ae07-cda462bd649e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_d
+
+		annotation SummarizationSetBy = User
+
+	column src_code_e
+		dataType: string
+		lineageTag: 5c0cf8d1-9c77-4010-8450-980d7957db59
+		sourceLineageTag: e6cc5bb0-54ac-4134-9898-cb1a6e1dd4af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_e
+
+		annotation SummarizationSetBy = User
 
 	column src_code_f
 		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 059c150c-0b46-478b-a330-c252dd157a79
+		lineageTag: 39bceb06-18c8-4803-a933-d23235f8ea91
+		sourceLineageTag: f78844bf-ef5c-44da-8fac-39e7cdd112f6
+		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: src_code_f
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
-	partition f_capex_imp_cost_data = m
+	column src_code_g
+		dataType: string
+		lineageTag: 3167d83a-32df-4f5b-9056-bf00fc5f444a
+		sourceLineageTag: 507100f3-e09f-46df-947b-86549a794c64
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_g
+
+		annotation SummarizationSetBy = User
+
+	column src_code_g_description
+		dataType: string
+		lineageTag: f129b932-b298-41e3-b525-c26a123c9734
+		sourceLineageTag: ec501c57-7f5e-42f3-a7d4-899adb68386b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_g_description
+
+		annotation SummarizationSetBy = User
+
+	column src_code_h
+		dataType: string
+		lineageTag: 33523e85-a967-4334-a744-11366b5f4a7e
+		sourceLineageTag: 19b2707a-b0be-4acd-8543-a651da4f5c22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_h
+
+		annotation SummarizationSetBy = User
+
+	column src_code_i
+		dataType: string
+		lineageTag: a472463c-6ba4-4b1b-9f44-3d560241254c
+		sourceLineageTag: f8394e42-3a7e-4bb8-8851-de2bb67d13db
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_i
+
+		annotation SummarizationSetBy = User
+
+	column src_code_j
+		dataType: string
+		lineageTag: dec7d7c8-c3fd-4e20-98ad-895d1cef9365
+		sourceLineageTag: 25d8a377-5abe-443d-9b0e-86c8bb74ae9b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_code_j
+
+		annotation SummarizationSetBy = User
+
+	column src_party_type_id
+		dataType: string
+		lineageTag: 8fd82d04-2799-4d93-a4ce-9def748f379f
+		sourceLineageTag: 8990557a-e434-4b6d-b43a-8fe8250c545a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_party_type_id
+
+		annotation SummarizationSetBy = User
+
+	column src_currency_code
+		dataType: string
+		lineageTag: 4cc92505-18ec-48dc-acb3-4f6018181ee5
+		sourceLineageTag: fc044a95-c912-4ea1-be64-f99e89f1ce35
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_currency_code
+
+		annotation SummarizationSetBy = User
+
+	column src_dom_currency_code
+		dataType: string
+		lineageTag: b707ee7f-c562-4ccc-9acc-72b135f2a513
+		sourceLineageTag: c3e8c96d-90bf-4860-a12e-38cf26ed95c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_dom_currency_code
+
+		annotation SummarizationSetBy = User
+
+	column src_company_currency_code
+		dataType: string
+		lineageTag: b7eb81b2-5f46-40ab-89c2-c6dcf8d96122
+		sourceLineageTag: f8fe3acd-17e4-4739-963b-caa3b997da33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_company_currency_code
+
+		annotation SummarizationSetBy = User
+
+	column src_text
+		dataType: string
+		lineageTag: 29a83000-4d36-48f0-9037-cf138abd6fce
+		sourceLineageTag: a21e3041-020e-4464-b655-1d3b58f76652
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_text
+
+		annotation SummarizationSetBy = User
+
+	column src_variant
+		dataType: string
+		lineageTag: 6093fa66-ecae-4a5e-8e44-49a80161459f
+		sourceLineageTag: 496a4780-a0c5-4fab-aa94-d142902a20f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_variant
+
+		annotation SummarizationSetBy = User
+
+	column src_trans_code
+		dataType: string
+		lineageTag: 50918134-528f-4d83-98fd-89fbfc9274b7
+		sourceLineageTag: 34bad21a-1993-48c0-8583-d318ee2161bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_trans_code
+
+		annotation SummarizationSetBy = User
+
+	column src_payment_account
+		dataType: string
+		lineageTag: 8f499154-4c9d-4b0c-9094-a77926391591
+		sourceLineageTag: c5362302-843a-4c6b-8495-7d6720315ea8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_payment_account
+
+		annotation SummarizationSetBy = User
+
+	column src_mixed_payment_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a7380135-e1b9-4ece-94cc-3ba5ef41cc6b
+		sourceLineageTag: bb5df0d5-0556-4dd7-831f-705b68a4a7e2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: src_mixed_payment_id
+
+		annotation SummarizationSetBy = User
+
+	column src_mixed_payment_id_cnt
+		dataType: int64
+		formatString: 0
+		lineageTag: 32395773-6182-4438-b1b6-406a9cd88b2f
+		sourceLineageTag: 5bcf9577-7405-4421-a51e-2153e557c2db
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: src_mixed_payment_id_cnt
+
+		annotation SummarizationSetBy = User
+
+	column src_mixed_payment_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 393f77f4-318e-4f07-a4c0-12626aab8757
+		sourceLineageTag: 3ca76ec6-cf3e-46a8-a72d-a485fee40960
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_mixed_payment_date
+
+		annotation SummarizationSetBy = User
+
+	column src_voucher_type_ref
+		dataType: string
+		lineageTag: ac7bdd90-5bfa-4be8-833f-f531eddaaed5
+		sourceLineageTag: ffdf6158-a867-4784-9f20-78243f43ea0f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_voucher_type_ref
+
+		annotation SummarizationSetBy = User
+
+	column src_voucher_no_ref
+		dataType: int64
+		formatString: 0
+		lineageTag: eca25545-8a57-4c0b-ae06-a7af438aad96
+		sourceLineageTag: 09483370-97c4-46df-9b2c-0feecd416bb4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: src_voucher_no_ref
+
+		annotation SummarizationSetBy = User
+
+	column impl_cat_cost_code
+		dataType: string
+		lineageTag: d3abe5d5-9413-4d55-bbba-d3ab69adf65b
+		sourceLineageTag: a600257e-cb9f-4319-a7c9-2802d14c3a16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: impl_cat_cost_code
+
+		annotation SummarizationSetBy = User
+
+	column impl_cat_cost_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a7205275-6c27-4bb6-bf98-a39f8ab7d480
+		sourceLineageTag: 67614503-dffd-4e07-a446-44d322b6f7ce
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: impl_cat_cost_id
+
+		annotation SummarizationSetBy = User
+
+	partition f_capex_imp_cost_data = entity
 		mode: directQuery
-		source = ```
-				let
-				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
-				    Database_controlling = Źródło{[Name="controlling",Kind="Database"]}[Data],
-				    Schema_capex_implement = Database_controlling{[Name="capex_implement",Kind="Schema"]}[Data],
-				    View = Schema_capex_implement{[Name="f_capex_imp_cost_data",Kind="View"]}[Data],
-				    Keep = Table.SelectColumns(View, {"amount_pln","impl_cat_cost_id","cost_id","prj_id","time_id","bi","src_code_f"})
-				in
-				    Keep
-				
-				
-				
-				
-				// Value.NativeQuery(
-				//     Databricks.Catalogs(
-				//         "adb-16306551450739.19.azuredatabricks.net",
-				//         "/sql/1.0/warehouses/d77ff9935cb3e9fe",
-				//         [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
-				//     ){[Name="controlling", Kind="Database"]}[Data],
-				//     "
-				//     select 
-				//         amount_pln,
-				//         impl_cat_cost_id,
-				//         cost_id,
-				//         prj_id,
-				//         time_id,
-				//         bi,
-				//         src_code_f
-				//     from controlling.capex_implement.f_capex_imp_cost_data
-				//     ",
-				//     null,
-				//     [EnableFolding=true]
-				// )
-				
-				
-				
-				// let
-				//     Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
-				//     controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
-				//     capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
-				//     f_capex_imp_cost_data_View = capex_implement_Schema{[Name="f_capex_imp_cost_data",Kind="View"]}[Data]
-				// in
-				//     f_capex_imp_cost_data_View
-				```
-
-	annotation PBI_NavigationStepName = Nawigacja
-
-	annotation PBI_ResultType = Table
+		source
+			entityName: f_capex_imp_cost_data
+			expressionSource: 'DirectQuery to AS - Projekty wdrozeniowe (databricks)'
 

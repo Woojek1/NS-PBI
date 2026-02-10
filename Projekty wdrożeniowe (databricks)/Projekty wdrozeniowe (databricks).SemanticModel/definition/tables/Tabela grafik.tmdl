@@ -1,61 +1,30 @@
 table 'Tabela grafik'
-	lineageTag: 9ee64f05-b8d2-454f-8597-d27aee6d2967
+	lineageTag: 150b9532-525f-429c-9475-f8ef152610b2
+	sourceLineageTag: 9ee64f05-b8d2-454f-8597-d27aee6d2967
 
 	column 'Kod F'
-		lineageTag: ff73fa58-5ce1-478b-8c34-68903b27cff4
+		dataType: string
+		lineageTag: 61171d32-c3eb-4099-bee3-2c2fefd14e2f
+		sourceLineageTag: ff73fa58-5ce1-478b-8c34-68903b27cff4
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Kod F]
+		sourceColumn: Kod F
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column Link
-		lineageTag: c0fee810-8804-4167-9cdb-cc52407d5986
+		dataType: string
+		lineageTag: c85c7b38-456d-4c29-a499-e9376fa788e3
+		sourceLineageTag: c0fee810-8804-4167-9cdb-cc52407d5986
 		dataCategory: WebUrl
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Link]
+		sourceColumn: Link
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
-	partition 'Tabela grafik' = calculated
-		mode: import
-		source = ```
-				
-				DATATABLE(
-				    "Kod F", STRING,
-				    "Link", STRING,
-				    {
-				        { "W-20NS0000", "https://dam.nowystyl.com/assets-prod-resized-1200/11e35735-25bd-4970-985b-d7a775f8b3d6_XIO%202.0-Meeting%20table_02-1.jpg"},
-				        { "W-23NS0511", "https://dam.nowystyl.com/assets-prod-resized-1200/0a3ca089-7abf-4456-8310-3f4cc4033a55_05%20BEWISE%20FRAME%20CHAIR%204LA%20W%20KO_.0001.jpg"},
-				        { "W-25NS0003", "https://dam.nowystyl.com/assets-prod-resized-1200/a5f3b6c1-69fe-4e6a-aa63-afe13f9cd934_VESTA%20NEW%20CFS_.0001.jpg"},
-				        { "W-25NS0006", "https://dam.nowystyl.com/assets-prod-resized-1200/d335d272-832c-4b51-b3ce-3a5d176a0b48_K40%20mobile%20cabinet%20Caddy%20A_.0007.jpg"},
-				        { "W-20NS0018", "https://www.nowystyl.com/getmedia/f00495fb-0193-4aee-b121-c08e84fe2e8c/flesco-frame-chair-cfa-uph-rx443000-48260-1.jpg" },
-				        { "W-23NS0006", "https://www.nowystyl.com/getmedia/da74c1bc-9024-4442-b5c3-6caa42466ed7/04-mollen-sofa-3u000-43181-1.jpg" },
-				        { "W-22NS0001", "https://www.nowystyl.com/getmedia/699685b3-79ec-4f2d-aedb-13ea13072b0c/prox-swivel-chair-mesh-grey-sa3-in-ba-rh63067-se-rh63067000-55490-1.jpg"},
-				        { "W-23KC0003", "https://dam.nowystyl.com/assets-prod-resized-1200/fec63e2d-f106-4eca-9189-ac868ce0ffb2_SMILE_FRAME_CHAIR_4LA_W_KO_SH450_E-NK_BA-20CC_SE-20CC_AP-NKP_GD_FSC_.0000.jpg"},
-				        { "W-24KC0011", "https://dam.nowystyl.com/assets-prod-resized-800/93fdacf8-2abe-4bbd-a69b-c4d73252c0a4_06%20KANU%20ARMCHAIR%20ARC%204L%20LGM_.0001.jpg"},
-				        { "W-29NS0000", "https://dam.nowystyl.com/assets-prod-resized-1200/11e35735-25bd-4970-985b-d7a775f8b3d6_XIO%202.0-Meeting%20table_02-1.jpg"},
-				        { "W-25NS0013", "https://dam.nowystyl.com/assets-prod-resized-1200/19c8b883-0bec-403e-bc3d-c7b2e48a9aa4_Dessi%20coat%20stand_.0001.jpg"},
-				        { "W-25KC0520", "https://dam.nowystyl.com/assets-prod-resized-1200/4d3bb97f-4673-49f2-bb54-621af73c5129_GENAYA%20SOFA%203U%202B%20PN_.0007.jpg"},
-				        { "W-20NS0002", "https://dam.nowystyl.com/assets-prod-resized-1200/4d3bb97f-4673-49f2-bb54-621af73c5129_GENAYA%20SOFA%20SET%20Z-SHAPE%201_.0007.jpg"},
-				        { "W-22NS0008", "https://dam.nowystyl.com/assets-prod-resized-1200/bfd44fb8-d1d5-4a17-bef5-0c2854c24f83_BRAINY_MINI_UPH_RED_OPEN_.0007.jpg"},
-				        { "W-20GO0527", "https://dam.nowystyl.com/assets-prod-resized-1200/fbe3d8eb-1438-49b4-b327-33088c12998d_SAIL_SWIVEL_CHAIR_MESH_SY_SE-CSE20_R2D-PU_GL-STD_TS_ESH_.0001.jpg"},
-				        { "W-20NS0003", "https://dam.nowystyl.com/assets-prod-resized-1200/f785b324-a3b3-469b-a63a-772e69f39bd7_02%20OFFA%20SIDEBOARD%20TRIPLE%20BOX%20WD_.0007.jpg"},
-				        { "W-20KC0015", "https://dam.nowystyl.com/assets-prod-resized-1200/b8b4be13-0c51-48fb-8ee1-fe38d5d49305_03%20BOUND%20SOFA%20CO%20KO_.0001.jpg"},
-				        { "W-20NS0501", "https://dam.nowystyl.com/assets-prod-resized-1200/7fa62905-a1e8-4a64-aba7-853744e2c1f6_X-LINE%20SWIVEL%20CHAIR%20MESH%20(ERF-ST%20HRMA-MCJ879%20LUH2%20BA-MCJ879%20SE-SP-CSE07%20R37-BL%20B%20B%20GL-500N%20ST56-BL%20ESH60%20PACK-A1)_.0007.jpg"},
-				        { "W-20KC0507", "https://dam.nowystyl.com/assets-prod-resized-1200/d216bff3-1406-42c7-bd33-c4c63b3959fe_05%20ARN%20FRAME%20CHAIR%20HKR%204L%20LGW%20P_.0001.jpg"},
-				        { "W-23KC0007", "https://dam.nowystyl.com/assets-prod-resized-1200/ffcaea9e-f5b6-419e-af37-3b36c3412b27_LUPINO%20HOCKER%20CO_NAP10036_.0001.jpg"},
-				        { "W-23NS0008", "https://dam.nowystyl.com/assets-prod-resized-1200/1eb28c4c-e238-4baf-9204-b54ec93d80b6_SEMU_TABLE_M_W507_D565_VB_TT-3_BC-VB_GD_.0002.jpg"},
-				        { "W-23NS0001", "https://dam.nowystyl.com/assets-prod-resized-1200/c82a27dd-3eb8-468d-81a3-c7b100c84abe_02%20WITHME%20SWIVEL%20CHAIR%20UPH_P%20PRF%20GREY%20ME_WM%20BA_RX606_G%20SE_RX612%20ARF_G_GR%20GL_G%20TS36_G%20ESH60_G%20PACK_A1_.0001.jpg"},
-				        { "W-24NS0510", "https://dam.nowystyl.com/assets-prod-resized-1200/db5045e4-4b7c-49a2-8739-ac26a189aa8b_APLO%20CABINET%20arrangement%20S8_.0000.jpg"},
-				        { "W-25NS0005", "https://dam.nowystyl.com/assets-prod-resized-1200/de33449e-4c1f-45a5-8f4e-b497e362a0a5_02%20Tri.ply%20pouffe%20L%20with%20three%20backrests_.0007.jpg"},
-				        { "W-25NS0008", "https://dam.nowystyl.com/assets-prod-resized-1200/7a1dcd6d-9b99-41da-91d8-b26d9e4ab2d2_11%20Sileo%20Levels%20wall%20panels%20-%20set%20RC%202_.0001.jpg"},
-				        { "W-25NS0002", "https://dam.nowystyl.com/assets-prod-resized-1200/6c9b4d0c-6f94-45b4-92bc-d3cd143235b4_04%20SITARI%20MEETING%20CHAIR%20CFS%20P_.0007.jpg"}
-				    }
-				)
-				
-				```
-
-	annotation PBI_Id = ba7a4bc27a614680bd2f6932398584cf
+	partition 'Tabela grafik' = entity
+		mode: directQuery
+		source
+			entityName: Tabela grafik
+			expressionSource: 'DirectQuery to AS - Projekty wdrozeniowe (databricks)'
 

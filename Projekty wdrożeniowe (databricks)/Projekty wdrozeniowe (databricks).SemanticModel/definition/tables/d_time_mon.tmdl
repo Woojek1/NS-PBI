@@ -1,0 +1,76 @@
+table d_time_mon
+	lineageTag: a1d2fc53-b6f6-4691-9487-8bc72c1748e4
+	sourceLineageTag: ab79ee08-f67b-4985-bea4-d720a35afa5d
+
+	column mon_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: f984a58a-5431-4a37-bc8c-92eed4dcda34
+		sourceLineageTag: 547dcf66-3665-4ce8-b007-7c4c95a76ae7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = User
+
+	column mon_name
+		dataType: string
+		lineageTag: ba7f33dd-b5aa-4982-818d-e4d5f057c91f
+		sourceLineageTag: a8d0fdfd-5a91-4024-8a2e-cbcbce3c5af6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = User
+
+	column quart_name
+		dataType: string
+		lineageTag: 2eed7e44-2fa4-4a96-b795-d6fe7e6d1f1e
+		sourceLineageTag: 732bd49e-ad5f-41be-ab15-5415a228bad2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: quart_name
+
+		annotation SummarizationSetBy = User
+
+	column year_name
+		dataType: int64
+		formatString: 0
+		lineageTag: 95d35b1e-5511-470a-82a0-245cef9b708d
+		sourceLineageTag: eef3767d-5d69-409b-9827-f3b200d3332a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: year_name
+
+		annotation SummarizationSetBy = User
+
+	column year_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 324195fd-7347-4c2b-beb4-772e28166156
+		sourceLineageTag: 5bb0330d-7cca-4d64-809a-fbfcb0874a65
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: year_date
+
+		annotation SummarizationSetBy = User
+
+	column mon_date_first
+		dataType: dateTime
+		isNullable: false
+		formatString: Long Date
+		lineageTag: 6d85e371-a7b9-4bb6-979a-eeb4fb0c372a
+		sourceLineageTag: 7f519c3c-833b-4b7b-82b6-134255c80975
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_date_first
+
+		annotation SummarizationSetBy = User
+
+	partition d_time_mon = entity
+		mode: directQuery
+		source
+			entityName: d_time_mon
+			expressionSource: 'DirectQuery to AS - Projekty wdrozeniowe (databricks)'
+

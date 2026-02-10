@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - Projekty wdrozeniowe (databricks)' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Controlling%20Test%20%26%20Development", "Projekty wdrozeniowe (databricks)"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 266f2270-3292-4ecb-b954-4ef8d460cf2f
+
+	annotation PBI_IncludeFutureArtifacts = True
+
