@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "02148ff5c0d11039d018",
   "position": {
     "x": 1143.3333333333335,
     "y": 140,
     "z": 12000,
-    "height": 335,
+    "height": 255,
     "width": 335,
     "tabOrder": 12000
   },
@@ -33,6 +33,39 @@
         }
       }
     },
+    "objects": {
+      "imageSettings": [
+        {
+          "properties": {
+            "imageAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'mcenter'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "909e03e8f4ef9fc8040d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Tabela grafik"
+              }
+            },
+            "Property": "Link"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -63,7 +63,7 @@ table _Miary
 		formatString: #,0.00
 		lineageTag: 467e429d-ecbc-48a8-8151-48417635da7e
 
-	measure 'Realizacja budzetu' = ```
+	measure 'Realizacja budzetu %' = ```
 			
 			VAR Budzet_projektu = 
 			    SUM(vm_pbi_d_projects_budget[debet_amount])
@@ -80,8 +80,19 @@ table _Miary
 			 )
 			
 			```
-		formatString: #,0.00%;-#,0.00%;#,0.00%
+		formatString: #,0%;-#,0%;#,0%
 		lineageTag: 0a1ed71e-7a2c-4f4e-928f-e3600efa60d1
+
+	measure 'Widocznosc grafiki' = ```
+			
+			IF(
+			    HASONEVALUE(vm_pbi_d_gl_project[prj_desc]),
+			    "RGBA(255,0,0,0)",         
+			    "RGBA(255,255,255,1)"
+			)
+			
+			```
+		lineageTag: 27778e1b-8db4-4dbc-b119-6f3b7b46de78
 
 	column Value
 		formatString: 0

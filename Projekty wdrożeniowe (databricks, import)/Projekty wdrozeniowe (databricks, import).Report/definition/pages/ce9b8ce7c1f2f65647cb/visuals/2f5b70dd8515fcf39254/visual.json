@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "2f5b70dd8515fcf39254",
   "position": {
     "x": 17.142857142857142,
     "y": 381.42857142857144,
     "z": 2000,
-    "height": 315.71428571428572,
-    "width": 1307.1428571428573,
+    "height": 344.28571428571433,
+    "width": 1125.7142857142858,
     "tabOrder": 5000
   },
   "visual": {
@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon_2"
+                      "Entity": "d_time_mon"
                     }
                   },
                   "Property": "year_name"
@@ -79,6 +79,20 @@
               },
               "queryRef": "select1",
               "nativeQueryRef": "Budżet narastająco"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Realizacja budzetu %"
+                }
+              },
+              "queryRef": "_Miary.Realizacja budzetu",
+              "nativeQueryRef": "Realizacja budzetu %"
             }
           ]
         }
@@ -90,7 +104,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "d_time_mon_2"
+                    "Entity": "d_time_mon"
                   }
                 },
                 "Property": "year_name"
@@ -242,6 +256,20 @@
           "selector": {
             "metadata": "select1"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "200.4285746715942D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Realizacja budzetu"
+          }
         }
       ],
       "columnFormatting": [
@@ -384,6 +412,34 @@
           "selector": {
             "metadata": "_Miary.Budzet projektu"
           }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Realizacja budzetu"
+          }
         }
       ]
     },
@@ -458,7 +514,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time_mon_2"
+                "Entity": "d_time_mon"
               }
             },
             "Property": "year_name"
@@ -490,6 +546,20 @@
               }
             },
             "Property": "Budzet projektu"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0ca4a0f5d69d8dee3883",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Realizacja budzetu %"
           }
         },
         "type": "Advanced"

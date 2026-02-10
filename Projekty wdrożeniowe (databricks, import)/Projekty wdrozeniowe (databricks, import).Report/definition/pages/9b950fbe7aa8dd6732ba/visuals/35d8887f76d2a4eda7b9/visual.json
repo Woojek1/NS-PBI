@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "35d8887f76d2a4eda7b9",
   "position": {
     "x": 19.338339944604876,
@@ -239,7 +239,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time_mon_2"
+                "Entity": "d_time_mon"
               }
             },
             "Property": "mon_date_first"
@@ -251,7 +251,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "d_time_mon_2",
+              "Entity": "d_time_mon",
               "Type": 0
             }
           ],
@@ -284,6 +284,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "324f9fcd4b417d02fc01",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Budzet projektu"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

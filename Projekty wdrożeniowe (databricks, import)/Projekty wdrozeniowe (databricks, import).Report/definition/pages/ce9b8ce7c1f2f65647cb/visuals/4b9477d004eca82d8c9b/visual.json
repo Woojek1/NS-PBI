@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "4b9477d004eca82d8c9b",
   "position": {
     "x": 729.6,
@@ -23,11 +23,11 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "Realizacja budzetu"
+                  "Property": "Realizacja budzetu %"
                 }
               },
               "queryRef": "_Miary.Realizacja budzetu",
-              "nativeQueryRef": "Realizacja budzetu"
+              "nativeQueryRef": "Realizacja budzetu %"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Miary"
                   }
                 },
-                "Property": "Realizacja budzetu"
+                "Property": "Realizacja budzetu %"
               }
             },
             "direction": "Descending"
@@ -231,7 +231,7 @@
                                           "Entity": "_Miary"
                                         }
                                       },
-                                      "Property": "Realizacja budzetu"
+                                      "Property": "Realizacja budzetu %"
                                     }
                                   },
                                   "Right": {
@@ -251,7 +251,7 @@
                                           "Entity": "_Miary"
                                         }
                                       },
-                                      "Property": "Realizacja budzetu"
+                                      "Property": "Realizacja budzetu %"
                                     }
                                   },
                                   "Right": {
@@ -282,7 +282,7 @@
                                           "Entity": "_Miary"
                                         }
                                       },
-                                      "Property": "Realizacja budzetu"
+                                      "Property": "Realizacja budzetu %"
                                     }
                                   },
                                   "Right": {
@@ -302,7 +302,7 @@
                                           "Entity": "_Miary"
                                         }
                                       },
-                                      "Property": "Realizacja budzetu"
+                                      "Property": "Realizacja budzetu %"
                                     }
                                   },
                                   "Right": {
@@ -340,7 +340,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time_mon_2"
+                "Entity": "d_time_mon"
               }
             },
             "Property": "mon_date_first"
@@ -352,7 +352,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "d_time_mon_2",
+              "Entity": "d_time_mon",
               "Type": 0
             }
           ],

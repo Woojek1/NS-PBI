@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "43a5c3844e59ad08d980",
   "position": {
     "x": 729.6,
@@ -23,7 +23,7 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "Realizacja budzetu"
+                  "Property": "Realizacja budzetu %"
                 }
               },
               "queryRef": "_Miary.Realizacja budzetu",
@@ -42,7 +42,7 @@
                     "Entity": "_Miary"
                   }
                 },
-                "Property": "Realizacja budzetu"
+                "Property": "Realizacja budzetu %"
               }
             },
             "direction": "Descending"
@@ -238,7 +238,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time_mon_2"
+                "Entity": "d_time_mon"
               }
             },
             "Property": "mon_date_first"
@@ -250,7 +250,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "d_time_mon_2",
+              "Entity": "d_time_mon",
               "Type": 0
             }
           ],

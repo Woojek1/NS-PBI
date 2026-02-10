@@ -1,0 +1,3195 @@
+createOrReplace
+
+	model Model
+		culture: pl-PL
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: pl-PL
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
+
+		table d_impl_cat_cost
+			lineageTag: 5076119e-7b93-4138-85d1-93eeeef055d1
+
+			column impl_cat_cost_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 3cc80b04-5d4f-4ad2-bc8a-da997a3f724e
+				summarizeBy: none
+				sourceColumn: impl_cat_cost_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column impl_cat_cost_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 3d71afd2-0117-426c-8a18-01a9700b5dd2
+				summarizeBy: none
+				sourceColumn: impl_cat_cost_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column impl_cat_cost_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a5082bfc-a59f-4498-b707-dc8fd56dd66d
+				summarizeBy: none
+				sourceColumn: impl_cat_cost_name
+				sortByColumn: impl_cat_cost_code
+
+				changedProperty = SortByColumn
+
+				annotation SummarizationSetBy = Automatic
+
+			partition d_impl_cat_cost = m
+				mode: import
+				source =
+						let
+						    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+						    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+						    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
+						    d_impl_cat_cost_View = capex_implement_Schema{[Name="d_impl_cat_cost",Kind="View"]}[Data]
+						in
+						    d_impl_cat_cost_View
+
+			annotation PBI_NavigationStepName = Nawigacja
+
+			annotation PBI_ResultType = Exception
+
+		table f_capex_imp_cost_data
+			lineageTag: 06a525a9-5cc5-4409-9d2d-7739a2bac1f3
+
+			column record_source
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: d0293ed9-571c-430f-af9e-0a9961b2de98
+				summarizeBy: none
+				sourceColumn: record_source
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_view
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 28c084d0-6099-4130-a7cb-705a5ddd81b0
+				summarizeBy: none
+				sourceColumn: record_view
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_version
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 8b3b06ff-d723-4d94-9cfc-599717def3cd
+				summarizeBy: none
+				sourceColumn: record_version
+
+				variation Odmiana
+					isDefault
+					relationship: ae5e08ab-4833-45a8-b99b-6e7661d35223
+					defaultHierarchy: LocalDateTable_de98997b-1e52-4a61-ad15-b07c8b9d73d3.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+			column time_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 013ec034-d002-4e34-8a58-2073082e5114
+				summarizeBy: none
+				sourceColumn: time_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 554dd667-3a79-4c25-a7b6-d5ae90b7b0a1
+				summarizeBy: sum
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column account_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: b489c3aa-b098-4b82-8f5b-f4b6c08c3743
+				summarizeBy: sum
+				sourceColumn: account_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column pay_account_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: c75b73ad-c2f5-4c83-82c5-3a75b5e2dd5a
+				summarizeBy: sum
+				sourceColumn: pay_account_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column cost_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 740a6763-ea32-411e-955d-a4ea9e29ae67
+				summarizeBy: sum
+				sourceColumn: cost_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column prj_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 53713fe8-3388-41ce-82bd-df44cccca69d
+				summarizeBy: none
+				sourceColumn: prj_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column supp_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 5d9385e2-0b4c-4c0f-9f10-1f9ca056f5b4
+				summarizeBy: sum
+				sourceColumn: supp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column curr_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 48c1a2c9-e610-4488-9a68-e7d458b2bb8f
+				summarizeBy: sum
+				sourceColumn: curr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column fin_curr_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: f185a084-ec10-42d8-858d-e6d4cd319743
+				summarizeBy: sum
+				sourceColumn: fin_curr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 572b0cfa-c4b7-4853-a8e6-0fc2173f8381
+				summarizeBy: sum
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column var_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: e9ebb4fe-89b5-44d0-99f0-9d21eb42dac2
+				summarizeBy: sum
+				sourceColumn: var_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column voucher_type_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 840e9d66-f10f-4e86-a2a1-6eee92a35e12
+				summarizeBy: sum
+				sourceColumn: voucher_type_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column prior_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 825a072e-cd3a-4ff0-a3f6-27a3ed7f5b9c
+				summarizeBy: sum
+				sourceColumn: prior_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column ccat_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 6eb44305-94f0-448e-898e-fa40381e19e3
+				summarizeBy: sum
+				sourceColumn: ccat_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column debet_amount_pln
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 21265abd-4afc-4e56-ae4e-b3dd32f7c4a4
+				summarizeBy: sum
+				sourceColumn: debet_amount_pln
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column credit_amount_pln
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 59b5014c-3e97-4ebe-85fe-95a2cb674135
+				summarizeBy: sum
+				sourceColumn: credit_amount_pln
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column amount_pln
+				dataType: double
+				formatString: #,0
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 9ff68804-9dc6-4882-871d-86514a6006bb
+				summarizeBy: sum
+				sourceColumn: amount_pln
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isDecimal":true}
+
+			column debet_amount_bpln
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 38669633-dca8-45da-aa85-6389e167a72c
+				summarizeBy: sum
+				sourceColumn: debet_amount_bpln
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column credit_amount_bpln
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 8151fe73-3f46-4c4e-95a7-fad131105673
+				summarizeBy: sum
+				sourceColumn: credit_amount_bpln
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column amount_bpln
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 5db59708-a06c-4c68-8758-d4e3f0400fe4
+				summarizeBy: sum
+				sourceColumn: amount_bpln
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column debet_amount_eur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: e8ca0086-5321-4dc7-8169-8077f7a3a720
+				summarizeBy: sum
+				sourceColumn: debet_amount_eur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column credit_amount_eur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 484cb2c8-eeb5-4ea7-9040-691d113f8541
+				summarizeBy: sum
+				sourceColumn: credit_amount_eur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column amount_eur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: d8d40ffb-1a86-4a57-bbdb-03f519ad87b3
+				summarizeBy: sum
+				sourceColumn: amount_eur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column debet_amount_beur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: a0f876bd-55c7-4adb-b798-41eb05d789b9
+				summarizeBy: sum
+				sourceColumn: debet_amount_beur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column credit_amount_beur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 88203b22-570d-47aa-bded-78bc3e070985
+				summarizeBy: sum
+				sourceColumn: credit_amount_beur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column amount_beur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 144e5ade-1129-4b27-9608-b8a6d484ca41
+				summarizeBy: sum
+				sourceColumn: amount_beur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column debet_amount_cur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 76f2f300-3627-4da3-8d64-2a077d569dec
+				summarizeBy: sum
+				sourceColumn: debet_amount_cur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column credit_amount_cur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 5e420d18-0d41-4357-aeca-9227b6b49dfc
+				summarizeBy: sum
+				sourceColumn: credit_amount_cur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column amount_cur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: b8b5b1be-3bcf-4cff-aecb-231e37489b0a
+				summarizeBy: sum
+				sourceColumn: amount_cur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column debet_amount_fcur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 2e2000ac-97f5-495f-b696-9cf34d4b2fe2
+				summarizeBy: sum
+				sourceColumn: debet_amount_fcur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column credit_amount_fcur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: 3f9b865e-eac7-4729-b9e3-b6b62256ad73
+				summarizeBy: sum
+				sourceColumn: credit_amount_fcur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column amount_fcur
+				dataType: double
+				sourceProviderType: decimal(38, 18)
+				lineageTag: eb1f267c-d1cd-44c3-a16a-731ce0b50890
+				summarizeBy: sum
+				sourceColumn: amount_fcur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column bi
+				dataType: int64
+				formatString: 0
+				sourceProviderType: tinyint
+				lineageTag: a32080be-ccfd-4653-83ae-bb29ac0a0c8f
+				summarizeBy: sum
+				sourceColumn: bi
+
+				annotation SummarizationSetBy = Automatic
+
+			column wfd_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 9ee68174-7e85-48aa-84c2-e67b3271da93
+				summarizeBy: sum
+				sourceColumn: wfd_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column link
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8349e349-099f-48d4-b47e-15d3e930595e
+				summarizeBy: none
+				sourceColumn: link
+
+				annotation SummarizationSetBy = Automatic
+
+			column ccat_rule_list
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: be01116e-6a93-49f8-ab1c-98b4bc2f5996
+				summarizeBy: none
+				sourceColumn: ccat_rule_list
+
+				annotation SummarizationSetBy = Automatic
+
+			column ccat_rule_cnt
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: e4748ff7-2510-4d3a-aef5-d92580e9b06a
+				summarizeBy: sum
+				sourceColumn: ccat_rule_cnt
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_rule_no
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: e5713d4f-3d0a-4f30-91ba-5e4cb4008168
+				summarizeBy: none
+				sourceColumn: src_rule_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_db_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f7c74266-5004-4179-8b7f-5f822fa7efd1
+				summarizeBy: none
+				sourceColumn: src_db_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_db_code_2
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: d10bb925-55f1-4798-a236-eef7ad38efa3
+				summarizeBy: none
+				sourceColumn: src_db_code_2
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_company
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 1d0c324b-cf77-4ddc-9597-2ac05045e279
+				summarizeBy: none
+				sourceColumn: src_company
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_gl_company
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2f721295-0057-409c-8cdc-7f1a1eb84f2e
+				summarizeBy: none
+				sourceColumn: src_gl_company
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_year_period_key
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 1bb3284e-9fbf-4632-9508-32effb2551f6
+				summarizeBy: sum
+				sourceColumn: src_year_period_key
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_voucher_date
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 7488a44c-6815-43b8-889f-189b3c3c287a
+				summarizeBy: none
+				sourceColumn: src_voucher_date
+
+				variation Odmiana
+					isDefault
+					relationship: 8ecad80c-4108-4fe7-9e08-1f21ea4aaefd
+					defaultHierarchy: LocalDateTable_f6b3f76e-2159-4bc5-bc23-53092c036c1f.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column src_voucher_type
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f6a8a819-5a7c-4bb1-8414-cd7fb553a9b7
+				summarizeBy: none
+				sourceColumn: src_voucher_type
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_voucher_no
+				dataType: int64
+				formatString: 0
+				sourceProviderType: bigint
+				lineageTag: 99c1bc3f-a2f6-4da7-8f9d-581b2cd7c64d
+				summarizeBy: sum
+				sourceColumn: src_voucher_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_event_date
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 13fe83cc-000f-4f53-8bb0-af09d5602feb
+				summarizeBy: none
+				sourceColumn: src_event_date
+
+				variation Odmiana
+					isDefault
+					relationship: 7305e8e5-1a94-4ef7-8dc1-687bd0cdd99b
+					defaultHierarchy: LocalDateTable_916697ad-4c93-49c4-80fe-18934b3e9b67.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column src_doc_date
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 3cb73e3c-b974-4d25-8043-f8531756965f
+				summarizeBy: none
+				sourceColumn: src_doc_date
+
+				variation Odmiana
+					isDefault
+					relationship: fa35f850-2c6c-4c34-946f-6e075a0e6e64
+					defaultHierarchy: LocalDateTable_b1cacc73-dbab-471c-b2d6-d4a327310c29.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column src_reference_number
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 1e2ca14c-45fa-4c11-b731-f1d51883fa0e
+				summarizeBy: none
+				sourceColumn: src_reference_number
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_reference_row_no
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 6578137a-85bd-411f-ac6e-ec2cb2783878
+				summarizeBy: sum
+				sourceColumn: src_reference_row_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_reference_serie
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c60645bd-c32c-44e4-bd67-493f2877661a
+				summarizeBy: none
+				sourceColumn: src_reference_serie
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_account
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: be9710f9-dc57-4e49-a690-d1f56584b8bf
+				summarizeBy: none
+				sourceColumn: src_account
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_b
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 9674c192-ff17-4910-95a3-19e0f2100709
+				summarizeBy: none
+				sourceColumn: src_code_b
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_c
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 04a1b07b-41da-417c-8e9d-ed1d8576956a
+				summarizeBy: none
+				sourceColumn: src_code_c
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_d
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 516c7b18-e353-4f01-ae07-cda462bd649e
+				summarizeBy: none
+				sourceColumn: src_code_d
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_e
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: e6cc5bb0-54ac-4134-9898-cb1a6e1dd4af
+				summarizeBy: none
+				sourceColumn: src_code_e
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_f
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f78844bf-ef5c-44da-8fac-39e7cdd112f6
+				summarizeBy: none
+				sourceColumn: src_code_f
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_g
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 507100f3-e09f-46df-947b-86549a794c64
+				summarizeBy: none
+				sourceColumn: src_code_g
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_g_description
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: ec501c57-7f5e-42f3-a7d4-899adb68386b
+				summarizeBy: none
+				sourceColumn: src_code_g_description
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_h
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 19b2707a-b0be-4acd-8543-a651da4f5c22
+				summarizeBy: none
+				sourceColumn: src_code_h
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_i
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f8394e42-3a7e-4bb8-8851-de2bb67d13db
+				summarizeBy: none
+				sourceColumn: src_code_i
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_code_j
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 25d8a377-5abe-443d-9b0e-86c8bb74ae9b
+				summarizeBy: none
+				sourceColumn: src_code_j
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_party_type_id
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8990557a-e434-4b6d-b43a-8fe8250c545a
+				summarizeBy: none
+				sourceColumn: src_party_type_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_currency_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: fc044a95-c912-4ea1-be64-f99e89f1ce35
+				summarizeBy: none
+				sourceColumn: src_currency_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_dom_currency_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c3e8c96d-90bf-4860-a12e-38cf26ed95c7
+				summarizeBy: none
+				sourceColumn: src_dom_currency_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_company_currency_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f8fe3acd-17e4-4739-963b-caa3b997da33
+				summarizeBy: none
+				sourceColumn: src_company_currency_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_text
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a21e3041-020e-4464-b655-1d3b58f76652
+				summarizeBy: none
+				sourceColumn: src_text
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_variant
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 496a4780-a0c5-4fab-aa94-d142902a20f6
+				summarizeBy: none
+				sourceColumn: src_variant
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_trans_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 34bad21a-1993-48c0-8583-d318ee2161bd
+				summarizeBy: none
+				sourceColumn: src_trans_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_payment_account
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c5362302-843a-4c6b-8495-7d6720315ea8
+				summarizeBy: none
+				sourceColumn: src_payment_account
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_mixed_payment_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: bb5df0d5-0556-4dd7-831f-705b68a4a7e2
+				summarizeBy: sum
+				sourceColumn: src_mixed_payment_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_mixed_payment_id_cnt
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 5bcf9577-7405-4421-a51e-2153e557c2db
+				summarizeBy: sum
+				sourceColumn: src_mixed_payment_id_cnt
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_mixed_payment_date
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 3ca76ec6-cf3e-46a8-a72d-a485fee40960
+				summarizeBy: none
+				sourceColumn: src_mixed_payment_date
+
+				variation Odmiana
+					isDefault
+					relationship: dd397e85-cbfa-4f72-9eb3-78865ab9079f
+					defaultHierarchy: LocalDateTable_7936e83a-f606-42d2-82e3-910baeca3d51.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column src_voucher_type_ref
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: ffdf6158-a867-4784-9f20-78243f43ea0f
+				summarizeBy: none
+				sourceColumn: src_voucher_type_ref
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_voucher_no_ref
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 09483370-97c4-46df-9b2c-0feecd416bb4
+				summarizeBy: sum
+				sourceColumn: src_voucher_no_ref
+
+				annotation SummarizationSetBy = Automatic
+
+			column impl_cat_cost_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a600257e-cb9f-4319-a7c9-2802d14c3a16
+				summarizeBy: none
+				sourceColumn: impl_cat_cost_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column impl_cat_cost_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 67614503-dffd-4e07-a446-44d322b6f7ce
+				summarizeBy: none
+				sourceColumn: impl_cat_cost_id
+
+				annotation SummarizationSetBy = Automatic
+
+			partition f_capex_imp_cost_data = m
+				mode: import
+				source =
+						let
+						    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+						    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+						    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
+						    f_capex_imp_cost_data_View = capex_implement_Schema{[Name="f_capex_imp_cost_data",Kind="View"]}[Data]
+						in
+						    f_capex_imp_cost_data_View
+
+			annotation PBI_NavigationStepName = Nawigacja
+
+			annotation PBI_ResultType = Table
+
+		table d_gl_category_cost
+			lineageTag: cb764ee9-caab-47c9-8b38-7efa2758dd18
+
+			column record_source
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 1c948d6c-7464-4988-b28f-e80122a4cc44
+				summarizeBy: none
+				sourceColumn: record_source
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_version
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 4e61aa8d-404c-4ffa-ad60-ad08ade46a28
+				summarizeBy: none
+				sourceColumn: record_version
+
+				variation Odmiana
+					isDefault
+					relationship: f52de096-8cee-4766-a0a2-107b2c829004
+					defaultHierarchy: LocalDateTable_69dcace9-50fa-41df-b24b-8e2f38cdbb1e.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+			column first_load_date
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: d719aeaf-361b-4048-b58e-8fe5c58ff288
+				summarizeBy: none
+				sourceColumn: first_load_date
+
+				variation Odmiana
+					isDefault
+					relationship: 5f5710f4-e7c6-413c-a74c-90fbf7caf8ac
+					defaultHierarchy: LocalDateTable_17d7f684-8304-4f8d-b815-928d4ffa593b.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+			column last_seen_date
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 26a55818-db56-4161-9542-d68ed3121889
+				summarizeBy: none
+				sourceColumn: last_seen_date
+
+				variation Odmiana
+					isDefault
+					relationship: 02554f4e-2c1f-4c61-83f7-b9f90566ea81
+					defaultHierarchy: LocalDateTable_b561741b-9308-4378-91f9-c09e0f9fadc6.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+			column source_exist
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 224d265a-03ca-4596-b77b-ae57c9c53cce
+				summarizeBy: none
+				sourceColumn: source_exist
+
+				annotation SummarizationSetBy = Automatic
+
+			column account_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 2ffc68db-fb38-4e61-a9a5-b22d0e3750e0
+				summarizeBy: sum
+				sourceColumn: account_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column db_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: dd947444-5694-4b25-9e17-c33e325ca21a
+				summarizeBy: none
+				sourceColumn: db_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 3f0578af-4909-4144-9006-047525b075d9
+				summarizeBy: none
+				sourceColumn: comp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column account_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: db303415-5a7f-44b2-b7e9-34f27dee1706
+				summarizeBy: none
+				sourceColumn: account_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column account_code_bi
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 958a4d88-06c9-4c4d-91c5-7cdcbc81acf0
+				summarizeBy: none
+				sourceColumn: account_code_bi
+
+				annotation SummarizationSetBy = Automatic
+
+			column account_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 664681f2-da22-4bb6-81c9-a4cc7a8bbc36
+				summarizeBy: none
+				sourceColumn: account_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc6_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 54c27f2b-a584-4d8c-9d6c-89c9758b2414
+				summarizeBy: sum
+				sourceColumn: acc6_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc6_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 75c0b119-47e2-4c6f-b750-f65e38a45640
+				summarizeBy: none
+				sourceColumn: acc6_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc6_code_bi
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 370aa843-f54f-4942-8906-7d86639160d4
+				summarizeBy: none
+				sourceColumn: acc6_code_bi
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc6_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: d41a6400-94ff-408d-8b74-1d9eae6b0e5e
+				summarizeBy: none
+				sourceColumn: acc6_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc6_name_en
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 47a5405d-01e0-48a1-bc9b-b0efd425c5d3
+				summarizeBy: none
+				sourceColumn: acc6_name_en
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc3_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: bb868245-cbb9-423f-8c30-73d3fb85068d
+				summarizeBy: sum
+				sourceColumn: acc3_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc3_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 7c35faa6-10bc-4343-b10f-5659ff01965a
+				summarizeBy: none
+				sourceColumn: acc3_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc3_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 0799ed43-a7ce-4cfd-8b0f-ff2ce45e8964
+				summarizeBy: none
+				sourceColumn: acc3_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column acc3_name_en
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a330f085-7f76-4afc-8e0a-09a7d3c5f2c3
+				summarizeBy: none
+				sourceColumn: acc3_name_en
+
+				annotation SummarizationSetBy = Automatic
+
+			partition d_gl_category_cost = m
+				mode: import
+				source =
+						let
+						    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+						    zenith_Database = Źródło{[Name="zenith",Kind="Database"]}[Data],
+						    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+						    d_gl_category_cost_View = edw_Schema{[Name="d_gl_category_cost",Kind="View"]}[Data]
+						in
+						    d_gl_category_cost_View
+
+			annotation PBI_NavigationStepName = Nawigacja
+
+			annotation PBI_ResultType = Table
+
+		table _Miary
+			lineageTag: fce809bd-c1a1-4265-b842-278345ddfbe1
+
+			measure Wydatki =
+					
+					SUM(f_capex_imp_cost_data[amount_pln])
+				formatString: #,0.00
+				lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
+
+			measure 'Nazwa projektu - tytul' =
+					
+					IF( NOT ISFILTERED(vm_pbi_d_gl_project[prj_desc]),
+					    "Wybierz projekt",
+					    IF( HASONEVALUE(vm_pbi_d_gl_project[prj_desc]),
+					        VALUES(vm_pbi_d_gl_project[prj_desc]),
+					        "Kilka projektów" )
+					)
+				lineageTag: b6e08fcd-fedb-45b4-bb85-c74858294be6
+
+			measure 'Ilość otwartych projektów' =
+					
+					COUNTROWS (
+					    DISTINCT(
+					        FILTER(
+					            VALUES('vm_pbi_d_gl_project'[prj_desc]),
+					            LEFT ('vm_pbi_d_gl_project'[prj_desc], 3) <> "(X)"
+					        )
+					    )
+					)
+				formatString: 0
+				lineageTag: d8358878-8d59-40fd-a985-73ad8eae745c
+
+			measure 'Ilosc otwartych projektow wg statusow' =
+					
+					
+					COUNTROWS(
+					    DISTINCT(
+					    FILTER(
+					        vm_pbi_d_gl_project,
+					        vm_pbi_d_gl_project[status] = "Aktywny"
+					    )
+					)
+					)
+				formatString: 0
+				lineageTag: ff3f4611-a439-44b2-a121-51817b979cd1
+
+			measure 'Numer projektu - tytul' =
+					
+					IF( NOT ISFILTERED(vm_pbi_d_gl_project[prj_desc]),
+					    "Wybierz projekt",
+					    IF( HASONEVALUE(vm_pbi_d_gl_project[hprj_code]),
+					        VALUES(vm_pbi_d_gl_project[hprj_code]),
+					        "Kilka projektów")
+					)
+				lineageTag: 0490d09a-711e-4302-9875-25436384c6c6
+
+			measure 'Budzet projektu' = ```
+					
+					
+					SUM(vm_pbi_d_projects_budget[debet_amount])
+					
+					```
+				formatString: #,0.00
+				lineageTag: 467e429d-ecbc-48a8-8151-48417635da7e
+
+			measure 'Realizacja budzetu %' = ```
+					
+					VAR Budzet_projektu = 
+					    SUM(vm_pbi_d_projects_budget[debet_amount])
+					
+					VAR Wydatki = 
+					    SUM(f_capex_imp_cost_data[amount_pln])
+					
+					RETURN
+					
+					DIVIDE(
+					    [Wydatki],
+					    [Budzet projektu],
+					    ""
+					 )
+					
+					```
+				formatString: #,0%;-#,0%;#,0%
+				lineageTag: 0a1ed71e-7a2c-4f4e-928f-e3600efa60d1
+
+			measure 'Widocznosc grafiki' = ```
+					
+					IF(
+					    HASONEVALUE(vm_pbi_d_gl_project[prj_desc]),
+					    "RGBA(255,0,0,0)",         
+					    "RGBA(255,255,255,1)"
+					)
+					
+					```
+				lineageTag: 27778e1b-8db4-4dbc-b119-6f3b7b46de78
+
+			column Value
+				formatString: 0
+				lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017
+				summarizeBy: sum
+				isNameInferred
+				sourceColumn: [Value]
+
+				annotation SummarizationSetBy = Automatic
+
+			partition _Miary = calculated
+				mode: import
+				source = {0}
+
+			annotation PBI_Id = 8ff54b4d66f14635a814d7d3fdcc4732
+
+		table vm_pbi_d_gl_project
+			lineageTag: 7b5e640a-b0b1-4ecd-98a9-ffc90c116218
+
+			column prj_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 2a688176-1bce-486b-8fa0-9a69e66ed0e4
+				summarizeBy: none
+				sourceColumn: prj_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column db_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 3502fff0-e682-445f-a896-cc3f315aa48e
+				summarizeBy: none
+				sourceColumn: db_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 7d003d97-b373-4fd8-a3af-cde7b6c8305b
+				summarizeBy: none
+				sourceColumn: comp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column prj_desc
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a065ed3b-f5e6-4f0a-a3b2-a99f30640715
+				summarizeBy: none
+				sourceColumn: prj_desc
+
+				annotation SummarizationSetBy = Automatic
+
+			column prj_sgrp_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 31e6a571-8142-4815-95c0-11fc252fbcf7
+				summarizeBy: none
+				sourceColumn: prj_sgrp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column prj_sgrp_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 39904cde-b83a-4f18-9d87-e4eb5d852854
+				summarizeBy: none
+				sourceColumn: prj_sgrp_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column prj_grp_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 99f47bac-e9f0-45d7-9936-709f11347eb4
+				summarizeBy: none
+				sourceColumn: prj_grp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column prj_grp_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f4b955e8-ed09-4d85-aa15-de26a79ff7e3
+				summarizeBy: none
+				sourceColumn: prj_grp_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column owner_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 69c107d5-357c-42be-b162-e02e27ef4c6f
+				summarizeBy: none
+				sourceColumn: owner_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column owner_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c30b9302-78ea-4f01-94f2-f1b51674f634
+				summarizeBy: none
+				sourceColumn: owner_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column front_office
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 204561ca-17b3-4cb6-b177-ed15e19642d9
+				summarizeBy: none
+				sourceColumn: front_office
+
+				annotation SummarizationSetBy = Automatic
+
+			column project_manager
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: ba8e9599-9013-4e48-af64-e3ef3af69626
+				summarizeBy: none
+				sourceColumn: project_manager
+
+				annotation SummarizationSetBy = Automatic
+
+			column coordinator_bo
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 9da5d51d-bd51-4de9-b820-22ed1067e8ec
+				summarizeBy: none
+				sourceColumn: coordinator_bo
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 5249e895-d6a7-47d3-ab36-c118b81f761b
+				summarizeBy: none
+				sourceColumn: mpk_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column hprj_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 3e39f449-7759-4897-a906-72b3f111854a
+				summarizeBy: none
+				sourceColumn: hprj_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column brand
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: e1e1009d-31e2-48bf-9a2b-edcd4399bf06
+				summarizeBy: none
+				sourceColumn: brand
+
+				annotation SummarizationSetBy = Automatic
+
+			column kategoria
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 31cf3793-06f6-4928-ae4c-e99e80641f65
+				summarizeBy: none
+				sourceColumn: kategoria
+
+				annotation SummarizationSetBy = Automatic
+
+			column kat_wdr
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 6c417fb8-e1d0-4afe-91d7-1c6a1448bab4
+				summarizeBy: none
+				sourceColumn: kat_wdr
+
+				annotation SummarizationSetBy = Automatic
+
+			column linia
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 5eede928-849c-445f-8d6d-ba20a68c29bd
+				summarizeBy: none
+				sourceColumn: linia
+
+				annotation SummarizationSetBy = Automatic
+
+			column opis
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: b51f8994-4331-4da2-a2d8-d7efd5059547
+				summarizeBy: none
+				sourceColumn: opis
+
+				annotation SummarizationSetBy = Automatic
+
+			column pm
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 73b465a6-452f-4f27-b417-3f4a7452f704
+				summarizeBy: none
+				sourceColumn: pm
+
+				annotation SummarizationSetBy = Automatic
+
+			column rozp_proj
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: fc62eab2-6e24-4313-aa33-1c7af74580b5
+				summarizeBy: none
+				sourceColumn: rozp_proj
+
+				annotation SummarizationSetBy = Automatic
+
+			column zak_proj
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 4495e26c-9452-4eb1-9ba7-dcb7708b2fd2
+				summarizeBy: none
+				sourceColumn: zak_proj
+
+				annotation SummarizationSetBy = Automatic
+
+			column rozp_prod
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: b7586fba-c02a-4aca-ab1c-8957f9980238
+				summarizeBy: none
+				sourceColumn: rozp_prod
+
+				annotation SummarizationSetBy = Automatic
+
+			column grupa
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 17433227-40f3-49ce-8b36-da100222e548
+				summarizeBy: none
+				sourceColumn: grupa
+
+				annotation SummarizationSetBy = Automatic
+
+			column status
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f6a74355-eeb8-481a-9d2d-1f31d9924cce
+				summarizeBy: none
+				sourceColumn: status
+
+				annotation SummarizationSetBy = Automatic
+
+			partition vm_pbi_d_gl_project = m
+				mode: import
+				source =
+						let
+						    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+						    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+						    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
+						    vm_pbi_d_gl_project_View = capex_implement_Schema{[Name="vm_pbi_d_gl_project",Kind="View"]}[Data]
+						in
+						    vm_pbi_d_gl_project_View
+
+		table vm_pbi_d_projects_budget
+			lineageTag: b65f87dc-f676-454c-912b-5465b4cebead
+
+			column company
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 696fb9bc-f8db-40c6-8a33-46464eac6a4f
+				summarizeBy: none
+				sourceColumn: company
+
+				annotation SummarizationSetBy = Automatic
+
+			column ledger_id
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: d95b05a5-fa5a-4d4c-955c-f6e01b8f3fe2
+				summarizeBy: none
+				sourceColumn: ledger_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column voucher_type
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8e04632f-34aa-48de-9737-609dbbe6c252
+				summarizeBy: none
+				sourceColumn: voucher_type
+
+				annotation SummarizationSetBy = Automatic
+
+			column voucher_no
+				dataType: double
+				sourceProviderType: decimal(10, 0)
+				lineageTag: 63328689-2c63-4eb9-9292-e07019fb52bf
+				summarizeBy: sum
+				sourceColumn: voucher_no
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column accounting_year
+				dataType: double
+				sourceProviderType: decimal(10, 0)
+				lineageTag: a89fe7ee-f578-434a-aa21-85e6d3b74010
+				summarizeBy: sum
+				sourceColumn: accounting_year
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column accounting_period
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 9548f407-f37c-45d0-9979-83d6d6700aef
+				summarizeBy: sum
+				sourceColumn: accounting_period
+
+				annotation SummarizationSetBy = Automatic
+
+			column voucher_date
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 1e04d7c7-8748-4ed4-8a1f-a43f9278e4a3
+				summarizeBy: none
+				sourceColumn: voucher_date
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column account
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 1f430fed-c9b6-4878-a4db-e6747266e461
+				summarizeBy: none
+				sourceColumn: account
+
+				annotation SummarizationSetBy = Automatic
+
+			column code_b
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2070de71-6cd4-49aa-8e48-5098d5d53d51
+				summarizeBy: none
+				sourceColumn: code_b
+
+				annotation SummarizationSetBy = Automatic
+
+			column code_c
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 53d064a1-132e-4a0e-bd4a-8d2f24a75858
+				summarizeBy: none
+				sourceColumn: code_c
+
+				annotation SummarizationSetBy = Automatic
+
+			column code_d
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8c943c3d-ae7e-4673-a3f3-820ab957aac3
+				summarizeBy: none
+				sourceColumn: code_d
+
+				annotation SummarizationSetBy = Automatic
+
+			column code_e
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 14fed863-024b-4b5b-a368-5b74d076e30f
+				summarizeBy: none
+				sourceColumn: code_e
+
+				annotation SummarizationSetBy = Automatic
+
+			column code_f
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 4b39049a-4a98-46cd-92a4-1052d432a4a2
+				summarizeBy: none
+				sourceColumn: code_f
+
+				annotation SummarizationSetBy = Automatic
+
+			column text
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 5e46be88-0212-4043-82d4-1b23a8537320
+				summarizeBy: none
+				sourceColumn: text
+
+				annotation SummarizationSetBy = Automatic
+
+			column debet_amount
+				dataType: double
+				sourceProviderType: decimal(10, 0)
+				lineageTag: 6fe7e577-2f46-45a2-a3ae-dec9922337da
+				summarizeBy: sum
+				sourceColumn: debet_amount
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column accounting_year_period
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: fd093091-d7e9-42df-9b99-636f044a6459
+				summarizeBy: none
+				sourceColumn: accounting_year_period
+
+				annotation SummarizationSetBy = Automatic
+
+			column currency_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: dcfe4f59-0137-4a06-96ae-438776541a0a
+				summarizeBy: none
+				sourceColumn: currency_code
+
+				annotation SummarizationSetBy = Automatic
+
+			partition vm_pbi_d_projects_budget = m
+				mode: import
+				source =
+						let
+						    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+						    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+						    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
+						    vm_pbi_d_projects_budget_View = capex_implement_Schema{[Name="vm_pbi_d_projects_budget",Kind="View"]}[Data]
+						in
+						    vm_pbi_d_projects_budget_View
+
+		table d_time_mon
+			lineageTag: ab79ee08-f67b-4985-bea4-d720a35afa5d
+
+			column mon_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: smallint
+				lineageTag: 547dcf66-3665-4ce8-b007-7c4c95a76ae7
+				summarizeBy: none
+				sourceColumn: mon_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a8d0fdfd-5a91-4024-8a2e-cbcbce3c5af6
+				summarizeBy: none
+				sourceColumn: mon_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 732bd49e-ad5f-41be-ab15-5415a228bad2
+				summarizeBy: none
+				sourceColumn: quart_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: eef3767d-5d69-409b-9827-f3b200d3332a
+				summarizeBy: none
+				sourceColumn: year_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_date
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 5bb0330d-7cca-4d64-809a-fbfcb0874a65
+				summarizeBy: none
+				sourceColumn: year_date
+
+				variation Odmiana
+					isDefault
+					relationship: 7fdfe354-3175-4831-b4e7-6956c14b74ee
+					defaultHierarchy: LocalDateTable_8693e99b-1741-4d80-b1bf-706749dd3952.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column mon_date_first
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 7f519c3c-833b-4b7b-82b6-134255c80975
+				summarizeBy: none
+				sourceColumn: mon_date_first
+
+				variation Odmiana
+					isDefault
+					relationship: 0cfc22bd-a6f5-4857-802a-ce5a9e136a9f
+					defaultHierarchy: LocalDateTable_7cf7eeeb-2ebc-47e4-88d9-574fc0937969.'Hierarchia dat'
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			partition d_time_mon = m
+				mode: import
+				source = ```
+						let
+						    d_time_mon = Value.NativeQuery(
+						    Databricks.Catalogs(
+						        "adb-16306551450739.19.azuredatabricks.net",
+						        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+						        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+						    ){[Name="zenith", Kind="Database"]}[Data],
+						    "
+						    select 
+						        mon_id,
+						        year_name,
+						        year_date,
+						        quart_name,
+						        mon_name,
+						        mon_date_first
+						    from zenith.edw.d_time_mon
+						    where
+						        year_name > 2019
+						    and
+						         year_name <= year(current_date()) + 1
+						    ",
+						    null,
+						    [EnableFolding=true]
+						),
+						    #"Sorted Rows" = Table.Sort(d_time_mon,{{"mon_id", Order.Ascending}})
+						in
+						    #"Sorted Rows"
+						
+						
+						
+						
+						// let
+						//     Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
+						//     controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
+						//     capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
+						//     d_time_mon_2_View = capex_implement_Schema{[Name="d_time_mon_2",Kind="View"]}[Data]
+						// in
+						//     d_time_mon_2_View
+						```
+
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Table
+
+		table 'Tabela grafik'
+			lineageTag: 9ee64f05-b8d2-454f-8597-d27aee6d2967
+
+			column 'Kod F'
+				lineageTag: ff73fa58-5ce1-478b-8c34-68903b27cff4
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Kod F]
+
+				annotation SummarizationSetBy = Automatic
+
+			column Link
+				lineageTag: c0fee810-8804-4167-9cdb-cc52407d5986
+				dataCategory: WebUrl
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Link]
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Tabela grafik' = calculated
+				mode: import
+				source = ```
+						
+						DATATABLE(
+						    "Kod F", STRING,
+						    "Link", STRING,
+						    {
+						        { "W-20NS0000", "https://dam.nowystyl.com/assets-prod-resized-1200/11e35735-25bd-4970-985b-d7a775f8b3d6_XIO%202.0-Meeting%20table_02-1.jpg"},
+						        { "W-23NS0511", "https://dam.nowystyl.com/assets-prod-resized-1200/0a3ca089-7abf-4456-8310-3f4cc4033a55_05%20BEWISE%20FRAME%20CHAIR%204LA%20W%20KO_.0001.jpg"},
+						        { "W-25NS0003", "https://dam.nowystyl.com/assets-prod-resized-1200/a5f3b6c1-69fe-4e6a-aa63-afe13f9cd934_VESTA%20NEW%20CFS_.0001.jpg"},
+						        { "W-25NS0006", "https://dam.nowystyl.com/assets-prod-resized-1200/d335d272-832c-4b51-b3ce-3a5d176a0b48_K40%20mobile%20cabinet%20Caddy%20A_.0007.jpg"},
+						        { "W-20NS0018", "https://www.nowystyl.com/getmedia/f00495fb-0193-4aee-b121-c08e84fe2e8c/flesco-frame-chair-cfa-uph-rx443000-48260-1.jpg" },
+						        { "W-23NS0006", "https://www.nowystyl.com/getmedia/da74c1bc-9024-4442-b5c3-6caa42466ed7/04-mollen-sofa-3u000-43181-1.jpg" },
+						        { "W-22NS0001", "https://www.nowystyl.com/getmedia/699685b3-79ec-4f2d-aedb-13ea13072b0c/prox-swivel-chair-mesh-grey-sa3-in-ba-rh63067-se-rh63067000-55490-1.jpg"},
+						        { "W-23KC0003", "https://dam.nowystyl.com/assets-prod-resized-1200/fec63e2d-f106-4eca-9189-ac868ce0ffb2_SMILE_FRAME_CHAIR_4LA_W_KO_SH450_E-NK_BA-20CC_SE-20CC_AP-NKP_GD_FSC_.0000.jpg"},
+						        { "W-24KC0011", "https://dam.nowystyl.com/assets-prod-resized-800/93fdacf8-2abe-4bbd-a69b-c4d73252c0a4_06%20KANU%20ARMCHAIR%20ARC%204L%20LGM_.0001.jpg"},
+						        { "W-29NS0000", "https://dam.nowystyl.com/assets-prod-resized-1200/11e35735-25bd-4970-985b-d7a775f8b3d6_XIO%202.0-Meeting%20table_02-1.jpg"},
+						        { "W-25NS0013", "https://dam.nowystyl.com/assets-prod-resized-1200/19c8b883-0bec-403e-bc3d-c7b2e48a9aa4_Dessi%20coat%20stand_.0001.jpg"},
+						        { "W-25KC0520", "https://dam.nowystyl.com/assets-prod-resized-1200/4d3bb97f-4673-49f2-bb54-621af73c5129_GENAYA%20SOFA%203U%202B%20PN_.0007.jpg"},
+						        { "W-20NS0002", "https://dam.nowystyl.com/assets-prod-resized-1200/4d3bb97f-4673-49f2-bb54-621af73c5129_GENAYA%20SOFA%20SET%20Z-SHAPE%201_.0007.jpg"},
+						        { "W-22NS0008", "https://dam.nowystyl.com/assets-prod-resized-1200/bfd44fb8-d1d5-4a17-bef5-0c2854c24f83_BRAINY_MINI_UPH_RED_OPEN_.0007.jpg"},
+						        { "W-20GO0527", "https://dam.nowystyl.com/assets-prod-resized-1200/fbe3d8eb-1438-49b4-b327-33088c12998d_SAIL_SWIVEL_CHAIR_MESH_SY_SE-CSE20_R2D-PU_GL-STD_TS_ESH_.0001.jpg"},
+						        { "W-20NS0003", "https://dam.nowystyl.com/assets-prod-resized-1200/f785b324-a3b3-469b-a63a-772e69f39bd7_02%20OFFA%20SIDEBOARD%20TRIPLE%20BOX%20WD_.0007.jpg"},
+						        { "W-20KC0015", "https://dam.nowystyl.com/assets-prod-resized-1200/b8b4be13-0c51-48fb-8ee1-fe38d5d49305_03%20BOUND%20SOFA%20CO%20KO_.0001.jpg"},
+						        { "W-20NS0501", "https://dam.nowystyl.com/assets-prod-resized-1200/7fa62905-a1e8-4a64-aba7-853744e2c1f6_X-LINE%20SWIVEL%20CHAIR%20MESH%20(ERF-ST%20HRMA-MCJ879%20LUH2%20BA-MCJ879%20SE-SP-CSE07%20R37-BL%20B%20B%20GL-500N%20ST56-BL%20ESH60%20PACK-A1)_.0007.jpg"},
+						        { "W-20KC0507", "https://dam.nowystyl.com/assets-prod-resized-1200/d216bff3-1406-42c7-bd33-c4c63b3959fe_05%20ARN%20FRAME%20CHAIR%20HKR%204L%20LGW%20P_.0001.jpg"},
+						        { "W-23KC0007", "https://dam.nowystyl.com/assets-prod-resized-1200/ffcaea9e-f5b6-419e-af37-3b36c3412b27_LUPINO%20HOCKER%20CO_NAP10036_.0001.jpg"},
+						        { "W-23NS0008", "https://dam.nowystyl.com/assets-prod-resized-1200/1eb28c4c-e238-4baf-9204-b54ec93d80b6_SEMU_TABLE_M_W507_D565_VB_TT-3_BC-VB_GD_.0002.jpg"},
+						        { "W-23NS0001", "https://dam.nowystyl.com/assets-prod-resized-1200/c82a27dd-3eb8-468d-81a3-c7b100c84abe_02%20WITHME%20SWIVEL%20CHAIR%20UPH_P%20PRF%20GREY%20ME_WM%20BA_RX606_G%20SE_RX612%20ARF_G_GR%20GL_G%20TS36_G%20ESH60_G%20PACK_A1_.0001.jpg"},
+						        { "W-24NS0510", "https://dam.nowystyl.com/assets-prod-resized-1200/db5045e4-4b7c-49a2-8739-ac26a189aa8b_APLO%20CABINET%20arrangement%20S8_.0000.jpg"},
+						        { "W-25NS0005", "https://dam.nowystyl.com/assets-prod-resized-1200/de33449e-4c1f-45a5-8f4e-b497e362a0a5_02%20Tri.ply%20pouffe%20L%20with%20three%20backrests_.0007.jpg"}
+						    }
+						)
+						
+						```
+
+			annotation PBI_Id = ba7a4bc27a614680bd2f6932398584cf
+
+		table DateTableTemplate_fd1a24d7-591b-4660-9be2-73d9224f8ddb
+			isHidden
+			isPrivate
+			lineageTag: aa00b613-00b5-456e-b2ee-c87d20b9e887
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: d3fc7d7e-5a40-42d8-83e4-46444bded90a
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 1af75ce6-2dff-4f28-90da-ac2bc9ac802a
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 8fde6fd6-774b-44e5-98f6-8a4a30ecc0b5
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: cdd144de-4ea3-4c24-9ef4-98b69bf42198
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: cf856a6d-e14f-42ce-af9b-356995878044
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 76a3c8c7-a4e9-45e1-b5b6-b24f5e499dde
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c758829c-d6a9-4b74-8e37-e120e38bbaa4
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: f612d798-980c-4e61-b0ff-fe5dad6ce493
+
+				level Rok
+					lineageTag: 6516977a-2851-4f0f-be4e-acc3f6970359
+					column: Rok
+
+				level Kwartał
+					lineageTag: b1950a97-9acb-46b9-9b49-2c268ba95f8f
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: a11bb9c0-230c-496f-bdbb-8695408953af
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: 8d5b5a23-9188-4e46-874c-4a0840226e1f
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition DateTableTemplate_fd1a24d7-591b-4660-9be2-73d9224f8ddb = calculated
+				mode: import
+				source = Calendar(Date(2015,1,1), Date(2015,1,1))
+
+			annotation __PBI_TemplateDateTable = true
+
+			annotation DefaultItem = DateHierarchy
+
+		table LocalDateTable_de98997b-1e52-4a61-ad15-b07c8b9d73d3
+			isHidden
+			showAsVariationsOnly
+			lineageTag: 31d07298-ca35-44af-8621-9a8673eec368
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: a395daee-bd4f-4d00-be00-2d44f3ec31bb
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9492f4bc-ed1f-4535-81a8-431448162cda
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9b79a57d-2a40-4f99-8e90-a78417926bff
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: 4f9372f3-96cc-471d-8e91-a0dac4886be9
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c3e26f9b-e6da-45eb-93de-2d63f47d3360
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 0291c5db-51fa-4a3f-9544-a5bc23bcd62b
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3eb353e2-c9fe-47df-9812-b5126bb14afc
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: a91de5a6-e685-4a38-a9d7-5f724e3a8c29
+
+				level Rok
+					lineageTag: 494a4806-b5b3-4551-91a1-52f84f92ce78
+					column: Rok
+
+				level Kwartał
+					lineageTag: 250ff7f9-c89e-4f14-8b34-5e94031f02a6
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: d8bb2424-5aa1-4ff3-96bf-dc38b6ca55e8
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: 358e2335-4ff5-4d3e-b2ad-af7a895d37a1
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_de98997b-1e52-4a61-ad15-b07c8b9d73d3 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('f_capex_imp_cost_data'[record_version])), 1, 1), Date(Year(MAX('f_capex_imp_cost_data'[record_version])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_f6b3f76e-2159-4bc5-bc23-53092c036c1f
+			isHidden
+			showAsVariationsOnly
+			lineageTag: 5b57d401-959a-4fa2-b6f1-5fe9aabe554a
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: f34ee156-b39f-4925-87c7-cbd11dfaa8b3
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c54f0b5b-3f9e-4af2-86ee-7df26da5a6a0
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: dba1cd48-b12e-4884-9da3-c98e7fa8c317
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: 4eb97ff9-2cb3-4a86-9dc7-c2679512ff0b
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9655c2c1-f256-41b7-9043-fe60634ae454
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 471efe11-9bb7-49d0-b71e-774a33da8e6b
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 45d37c96-89ef-4473-83c9-8644ddfff27c
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: dbebbe9f-5024-439c-9a8c-39027eb1a214
+
+				level Rok
+					lineageTag: 15f5fbf2-6ebb-49d2-87f7-dd6c53a91fc1
+					column: Rok
+
+				level Kwartał
+					lineageTag: b8b72469-3003-4e74-a222-58d453eecd40
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: 06d73e76-ec8e-4925-b6e5-1c8286f0ad7d
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: 3b2f2062-65df-4207-a681-14d6c2184e0b
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_f6b3f76e-2159-4bc5-bc23-53092c036c1f = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('f_capex_imp_cost_data'[src_voucher_date])), 1, 1), Date(Year(MAX('f_capex_imp_cost_data'[src_voucher_date])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_916697ad-4c93-49c4-80fe-18934b3e9b67
+			isHidden
+			showAsVariationsOnly
+			lineageTag: fd87c9e9-7b3b-4fcf-91d6-bb931a47eca7
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: ec5aa030-506b-46be-b6ca-57af2bf75185
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9c1b9d8f-25fd-4b2c-a287-ec14480615ab
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 74665d39-dfc6-42a3-afe5-98ccc0f64c9d
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: 44442b04-a66c-42a1-a9fc-12dddc046654
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: bbcef65b-6141-4309-8784-217db99760f2
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 9e98752e-ee16-4740-ac33-8dccda9be88c
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 4f6d78db-adaf-4496-a54f-5d97efcca8ec
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: e9be40da-b742-4327-a748-b99793faaaeb
+
+				level Rok
+					lineageTag: 555441ec-62df-473e-ab15-70a8261a398c
+					column: Rok
+
+				level Kwartał
+					lineageTag: ac45c81b-599e-4f55-af73-274a20458854
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: bc206cca-7b12-4110-b231-5cdb22c2fe0e
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: d21fa64b-d62a-431d-b0d7-4ba53696d091
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_916697ad-4c93-49c4-80fe-18934b3e9b67 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('f_capex_imp_cost_data'[src_event_date])), 1, 1), Date(Year(MAX('f_capex_imp_cost_data'[src_event_date])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_b1cacc73-dbab-471c-b2d6-d4a327310c29
+			isHidden
+			showAsVariationsOnly
+			lineageTag: 19c1e70c-e248-4c19-9f28-67204892905c
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 519b44fd-21f7-4092-b591-e09c4d6ccabf
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3e88b509-1dc5-4e0c-8015-518406bd2c7d
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: dbc39d5d-b73f-4745-8a21-1e3c769b4a5e
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: b18294a0-1563-46b8-bdc4-fd03f9f27465
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 086a09fa-cb4f-4406-957c-f1893a05a5f6
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 0739d97c-3ca1-455a-b68b-62df89e38029
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3d40d334-0c6c-472e-b88a-36094e13dacc
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: 5a6bfa33-e134-4d97-adb9-6a38f7943152
+
+				level Rok
+					lineageTag: a419503c-ef32-41b9-bad1-c8ff6597c4e9
+					column: Rok
+
+				level Kwartał
+					lineageTag: c60ab8ef-fea7-4cb0-a31a-841974fd9d28
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: d3f5ca9e-d1df-4667-90e9-b1169f46057a
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: a34d3938-c7c8-47fe-822e-6bdca730594c
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_b1cacc73-dbab-471c-b2d6-d4a327310c29 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('f_capex_imp_cost_data'[src_doc_date])), 1, 1), Date(Year(MAX('f_capex_imp_cost_data'[src_doc_date])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_7936e83a-f606-42d2-82e3-910baeca3d51
+			isHidden
+			showAsVariationsOnly
+			lineageTag: c42a9260-e676-4daf-bf6a-b641ee6b03cd
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: facd0084-0c26-47c2-b09d-d7efa193ecb9
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c4ee95d7-36ca-4dcd-9eeb-5b74e6984824
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3a1ee305-bf07-474f-9b44-fcd8d4c46cd8
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: e89c7e74-9b91-4dc2-90dd-1d5f19ee14d0
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 0059e83b-973f-416b-89e8-6088cd39b028
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 345c3946-92f5-4ee5-9210-5930563cd678
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 7f832c88-a5a6-4360-9d49-ca20cb408f9a
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: ca06b496-7e9a-4de7-8e5e-9e55465cc33a
+
+				level Rok
+					lineageTag: db79975d-3118-4fd0-916f-d0fd286ddffb
+					column: Rok
+
+				level Kwartał
+					lineageTag: 09e6877b-15df-456b-8dfe-5b367cb6dd6f
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: 17aa03d9-102a-4cc6-b582-6c9ded80a390
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: 81ec7c75-778f-4786-bf57-dfe14fee9c36
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_7936e83a-f606-42d2-82e3-910baeca3d51 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('f_capex_imp_cost_data'[src_mixed_payment_date])), 1, 1), Date(Year(MAX('f_capex_imp_cost_data'[src_mixed_payment_date])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_69dcace9-50fa-41df-b24b-8e2f38cdbb1e
+			isHidden
+			showAsVariationsOnly
+			lineageTag: 730e0dcb-31af-49c3-819d-3bf74b3f02a0
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 2ccd9dd5-9fda-4e0f-832a-5726ad0ef740
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 80c0caf1-953c-4b3e-9c48-eacc32cd782c
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: e1293139-b98d-48f1-b2bb-1f8fbeb9ee2f
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: a28bd75b-4f3c-4ef5-9648-588f6944072a
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: b1fe6f37-962b-4744-84fe-fa00272a4200
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: ef68b663-10f8-470d-aa3b-969f1bd35a33
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c36ca7f2-5952-47a1-90ee-dad6d1ab5030
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: 338c2144-ec2d-4fd2-9fa3-fe2bd7dd6870
+
+				level Rok
+					lineageTag: 72129bdc-6948-4673-9fba-2507785eb706
+					column: Rok
+
+				level Kwartał
+					lineageTag: 304aeb4b-acc7-448f-88cc-29ea3c032682
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: 59c4695f-6a37-4146-94a6-0716bc8dd24f
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: 777495a5-f6be-4418-9d31-45012dcf43f9
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_69dcace9-50fa-41df-b24b-8e2f38cdbb1e = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('d_gl_category_cost'[record_version])), 1, 1), Date(Year(MAX('d_gl_category_cost'[record_version])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_17d7f684-8304-4f8d-b815-928d4ffa593b
+			isHidden
+			showAsVariationsOnly
+			lineageTag: 4643ddc3-eaa1-442a-8ca4-45f72a640688
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 2449b2df-83f1-4446-9b40-78d6eb4f84cb
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9e56cec4-caed-4e33-95d6-e76e1e5d2663
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 6666f736-d89c-4075-85f9-77cd3717894a
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: 1cc2ef84-9d58-4865-93fb-f57642f3f62d
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 58066a51-9528-4685-ba5a-b6b3ce62592a
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 2acb2055-5358-4d2a-8a5a-42ad98e8a1b8
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: a25b0c14-a426-49b4-b4fd-1c52824a992a
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: eccc3d50-ad12-4ab4-9f4c-10339f1877b5
+
+				level Rok
+					lineageTag: 7e8c89c9-779b-4e9c-afe8-414234bfe09a
+					column: Rok
+
+				level Kwartał
+					lineageTag: 9b97dd15-2353-4a60-8328-11af66c1c524
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: b71a9f88-e21f-447b-bb27-3a70ef8a4f01
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: 92de2882-8957-4776-a0c1-7ba6f3a3c9e4
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_17d7f684-8304-4f8d-b815-928d4ffa593b = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('d_gl_category_cost'[first_load_date])), 1, 1), Date(Year(MAX('d_gl_category_cost'[first_load_date])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_b561741b-9308-4378-91f9-c09e0f9fadc6
+			isHidden
+			showAsVariationsOnly
+			lineageTag: 23010879-f41d-481e-836f-6a6a9202777d
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: b59acfcc-f74b-4ecd-a83f-808098390db0
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 5a2e6e1a-0ace-4cad-a1a1-04bee4c13275
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9f299e18-f656-4f53-ac02-a87660c69000
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: cc46fb0e-10c9-4cb2-9cc9-0f925931f557
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 2e3976ff-6e52-4469-890e-c09aa5d6b0b6
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 4bae7c6f-0ab9-41e7-a346-1ecbd612d7f6
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 659ca178-56aa-407a-9ecf-8c3584ba4956
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: 9a3627b2-27f6-4708-b9bd-de23ce87c059
+
+				level Rok
+					lineageTag: fe9ab36d-a893-4490-9edd-96e779cb6ab2
+					column: Rok
+
+				level Kwartał
+					lineageTag: c9771160-2c26-4729-9dc7-0fba5a4262d5
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: fa5da306-79fa-491d-909f-7774492e8b5a
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: fd90a246-54b4-41a0-b79e-7620d7cc9bde
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_b561741b-9308-4378-91f9-c09e0f9fadc6 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('d_gl_category_cost'[last_seen_date])), 1, 1), Date(Year(MAX('d_gl_category_cost'[last_seen_date])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_8693e99b-1741-4d80-b1bf-706749dd3952
+			isHidden
+			showAsVariationsOnly
+			lineageTag: 95085db8-05e4-4669-9062-bced4c69ad38
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 62a5da23-33e5-4e2e-9216-0779e156b876
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: acc8f680-d19d-43ef-aa16-e3c95589d339
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f1e9220b-b00e-45f4-834c-720305cb787e
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: fc25ee6c-a8cb-405b-a89d-5325a6dd7f20
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f474efc5-f9ba-490a-ace3-828f0c84ba79
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: a900eb24-1fad-4890-b7ca-f7986e502526
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 69562cb0-9efb-4577-b70c-20eae6a46b17
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: c6cd6050-e909-431f-af40-09881e69df6e
+
+				level Rok
+					lineageTag: 3d68fd5f-b298-46da-bbe4-2b6bd1273297
+					column: Rok
+
+				level Kwartał
+					lineageTag: a8025225-8fd7-4dd9-a4b1-28e3e6d62dc0
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: b718961f-27e8-4518-953e-7002ca24ecfa
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: 8e0479f2-a58b-407d-b6b0-d29a792c0b36
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_8693e99b-1741-4d80-b1bf-706749dd3952 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('d_time_mon'[year_date])), 1, 1), Date(Year(MAX('d_time_mon'[year_date])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_7cf7eeeb-2ebc-47e4-88d9-574fc0937969
+			isHidden
+			showAsVariationsOnly
+			lineageTag: 415a4a3c-dd22-40d2-8989-dccfa4011bdd
+
+			column Date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 969f368e-b3d8-4efb-813c-345a9f0e4653
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Rok = YEAR([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 89f2ea06-166f-4527-9b9a-837b24555314
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column 'Numer miesiąca' = MONTH([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 25c3bc7a-8f9c-4455-aa7c-a45e53123f77
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Miesiąc = FORMAT([Date], "MMMM")
+				dataType: string
+				isHidden
+				lineageTag: 47569abb-cf74-4752-bdbf-a1250717d368
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: 'Numer miesiąca'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column 'Numer kwartału' = INT(([Numer miesiąca] + 2) / 3)
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 47264f52-588b-43c0-9d23-e896328daec6
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Kwartał = "Qtr " & [Numer kwartału]
+				dataType: string
+				isHidden
+				lineageTag: 2c1b8c86-808b-4397-8e3c-77ee4251c817
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: 'Numer kwartału'
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Dzień = DAY([Date])
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 8562daa2-94c9-4205-82b2-49e527ae4b2d
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Hierarchia dat'
+				lineageTag: 798e2b36-614c-4746-baac-3d5c3fcae2fb
+
+				level Rok
+					lineageTag: 3b408fb6-c692-4a19-8ed0-dd59c0ae4b00
+					column: Rok
+
+				level Kwartał
+					lineageTag: f0bec387-7520-434c-b6c5-24b384e4e821
+					column: Kwartał
+
+				level Miesiąc
+					lineageTag: 7255f522-6567-4411-a6b6-8afdf574738e
+					column: Miesiąc
+
+				level Dzień
+					lineageTag: 792c0a1f-7701-44fd-8619-c61277313912
+					column: Dzień
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_7cf7eeeb-2ebc-47e4-88d9-574fc0937969 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('d_time_mon'[mon_date_first])), 1, 1), Date(Year(MAX('d_time_mon'[mon_date_first])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		relationship e1462d69-8a2e-43d4-37b1-f0b8ea712c77
+			fromColumn: f_capex_imp_cost_data.impl_cat_cost_id
+			toColumn: d_impl_cat_cost.impl_cat_cost_id
+
+		relationship 2154bf96-3fb2-2406-6d46-b253e4e20abf
+			fromColumn: f_capex_imp_cost_data.prj_id
+			toColumn: vm_pbi_d_gl_project.prj_id
+
+		relationship 4f2db5fa-9214-b9bf-d3f5-5c431074d4a5
+			fromColumn: vm_pbi_d_projects_budget.code_f
+			toColumn: vm_pbi_d_gl_project.hprj_code
+
+		relationship 1f79e604-89f7-d948-aae4-136d4fbb2ec8
+			fromColumn: vm_pbi_d_projects_budget.voucher_date
+			toColumn: d_time_mon.mon_date_first
+
+		relationship 93f5313a-e172-24f1-829e-6bf3b2d4ca69
+			fromColumn: f_capex_imp_cost_data.time_id
+			toColumn: d_time_mon.mon_id
+
+		relationship d46a0709-5d91-2835-dea8-40e9c69840a7
+			fromColumn: 'Tabela grafik'.'Kod F'
+			toColumn: vm_pbi_d_gl_project.hprj_code
+
+		relationship ae5e08ab-4833-45a8-b99b-6e7661d35223
+			joinOnDateBehavior: datePartOnly
+			fromColumn: f_capex_imp_cost_data.record_version
+			toColumn: LocalDateTable_de98997b-1e52-4a61-ad15-b07c8b9d73d3.Date
+
+		relationship 8ecad80c-4108-4fe7-9e08-1f21ea4aaefd
+			joinOnDateBehavior: datePartOnly
+			fromColumn: f_capex_imp_cost_data.src_voucher_date
+			toColumn: LocalDateTable_f6b3f76e-2159-4bc5-bc23-53092c036c1f.Date
+
+		relationship 7305e8e5-1a94-4ef7-8dc1-687bd0cdd99b
+			joinOnDateBehavior: datePartOnly
+			fromColumn: f_capex_imp_cost_data.src_event_date
+			toColumn: LocalDateTable_916697ad-4c93-49c4-80fe-18934b3e9b67.Date
+
+		relationship fa35f850-2c6c-4c34-946f-6e075a0e6e64
+			joinOnDateBehavior: datePartOnly
+			fromColumn: f_capex_imp_cost_data.src_doc_date
+			toColumn: LocalDateTable_b1cacc73-dbab-471c-b2d6-d4a327310c29.Date
+
+		relationship dd397e85-cbfa-4f72-9eb3-78865ab9079f
+			joinOnDateBehavior: datePartOnly
+			fromColumn: f_capex_imp_cost_data.src_mixed_payment_date
+			toColumn: LocalDateTable_7936e83a-f606-42d2-82e3-910baeca3d51.Date
+
+		relationship f52de096-8cee-4766-a0a2-107b2c829004
+			joinOnDateBehavior: datePartOnly
+			fromColumn: d_gl_category_cost.record_version
+			toColumn: LocalDateTable_69dcace9-50fa-41df-b24b-8e2f38cdbb1e.Date
+
+		relationship 5f5710f4-e7c6-413c-a74c-90fbf7caf8ac
+			joinOnDateBehavior: datePartOnly
+			fromColumn: d_gl_category_cost.first_load_date
+			toColumn: LocalDateTable_17d7f684-8304-4f8d-b815-928d4ffa593b.Date
+
+		relationship 02554f4e-2c1f-4c61-83f7-b9f90566ea81
+			joinOnDateBehavior: datePartOnly
+			fromColumn: d_gl_category_cost.last_seen_date
+			toColumn: LocalDateTable_b561741b-9308-4378-91f9-c09e0f9fadc6.Date
+
+		relationship 7fdfe354-3175-4831-b4e7-6956c14b74ee
+			joinOnDateBehavior: datePartOnly
+			fromColumn: d_time_mon.year_date
+			toColumn: LocalDateTable_8693e99b-1741-4d80-b1bf-706749dd3952.Date
+
+		relationship 0cfc22bd-a6f5-4857-802a-ce5a9e136a9f
+			joinOnDateBehavior: datePartOnly
+			fromColumn: d_time_mon.mon_date_first
+			toColumn: LocalDateTable_7cf7eeeb-2ebc-47e4-88d9-574fc0937969.Date
+
+		cultureInfo pl-PL
+
+			linguisticMetadata = {"Version":"2.0.0","Language":"en-US","Entities":{"table_miary.wydatki":{"Definition":{"Binding":{"ConceptualEntity":"_Miary","ConceptualProperty":"Wydatki"}},"State":"Generated","Terms":[{"Wydatki bieżący rok":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}},{"Wydatki całkowite":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"d_impl_cat_cost.impl_cat_cost_name":{"Definition":{"Binding":{"ConceptualEntity":"d_impl_cat_cost","ConceptualProperty":"impl_cat_cost_name"}},"State":"Generated","Terms":[{"Kategoria wydatków":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}},{"Kategorie wydatków":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"d_impl_cat_cost.impl_cat_cost_code":{"Definition":{"Binding":{"ConceptualEntity":"d_impl_cat_cost","ConceptualProperty":"impl_cat_cost_code"}},"State":"Generated"},"vm_pbi_d_gl_project.status":{"Definition":{"Binding":{"ConceptualEntity":"vm_pbi_d_gl_project","ConceptualProperty":"status"}},"State":"Generated","Terms":[{"Status":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"table_miary.ilosc_otwartych_projektow_wg_statusow":{"Definition":{"Binding":{"ConceptualEntity":"_Miary","ConceptualProperty":"Ilosc otwartych projektow wg statusow"}},"State":"Generated","Terms":[{"Ilosc otwartych projektow":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"table_miary.budzet_projektu":{"Definition":{"Binding":{"ConceptualEntity":"_Miary","ConceptualProperty":"Budzet projektu"}},"State":"Generated","Terms":[{"Budzet projektu biezacy rok":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"d_time_mon_2.year_name":{"Definition":{"Binding":{"ConceptualEntity":"d_time_mon","ConceptualProperty":"year_name"}},"State":"Generated","Terms":[{"Rok":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"vm_pbi_d_gl_project.prj_desc":{"Definition":{"Binding":{"ConceptualEntity":"vm_pbi_d_gl_project","ConceptualProperty":"prj_desc"}},"State":"Generated","Terms":[{"Nazwa projektu":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"f_capex_imp_cost_data.src_code_f":{"Definition":{"Binding":{"ConceptualEntity":"f_capex_imp_cost_data","ConceptualProperty":"src_code_f"}},"State":"Generated","Terms":[{"Kod projektu":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]}}}
+				contentType: json
+
+		annotation __PBI_TimeIntelligenceEnabled = 1
+
+		annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+
+		annotation PBI_QueryOrder = ["d_impl_cat_cost","f_capex_imp_cost_data","d_gl_category_cost","vm_pbi_d_gl_project","vm_pbi_d_projects_budget","d_time_mon"]
+
