@@ -96,13 +96,13 @@ table _Miary
 
 	measure Sprzedaz =
 			
-			SUM(mmo75[s_pln_net])
+			SUM(vm_pbi_d_gl_project[s_pln_net])
 		formatString: #,0.00
 		lineageTag: 075e393b-857f-4dff-917e-27c42297f1aa
 
 	measure Marza_II =
 			
-			SUM(mmo75[m_pln_margin_ii])
+			SUM(vm_pbi_d_gl_project[m_pln_margin_ii])
 		lineageTag: ab0c2d8a-18bb-4ee4-b9c3-65211b64a8d2
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}

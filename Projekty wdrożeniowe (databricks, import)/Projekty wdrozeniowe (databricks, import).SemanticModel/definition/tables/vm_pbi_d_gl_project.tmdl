@@ -236,6 +236,26 @@ table vm_pbi_d_gl_project
 
 		annotation SummarizationSetBy = Automatic
 
+	column s_pln_net
+		dataType: double
+		lineageTag: b102baf2-2662-4479-bfe6-16d27ceb661e
+		summarizeBy: sum
+		sourceColumn: s_pln_net
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column m_pln_margin_ii
+		dataType: double
+		lineageTag: 8b8910bf-450e-44ff-8b44-c5b1a5b2a311
+		summarizeBy: sum
+		sourceColumn: m_pln_margin_ii
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition vm_pbi_d_gl_project = m
 		mode: import
 		source =
@@ -246,4 +266,8 @@ table vm_pbi_d_gl_project
 				    vm_pbi_d_gl_project_View = capex_implement_Schema{[Name="vm_pbi_d_gl_project",Kind="View"]}[Data]
 				in
 				    vm_pbi_d_gl_project_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 
