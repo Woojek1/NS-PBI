@@ -114,6 +114,16 @@ table _Miary
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Marza_II_% =
+			
+			DIVIDE(
+			    [Marza_II],
+			    [Sprzedaz],
+			    "brak sprzedaży"
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 76eb7427-cb99-490f-81e7-9c51441295fa
+
 	column Value
 		formatString: 0
 		lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017

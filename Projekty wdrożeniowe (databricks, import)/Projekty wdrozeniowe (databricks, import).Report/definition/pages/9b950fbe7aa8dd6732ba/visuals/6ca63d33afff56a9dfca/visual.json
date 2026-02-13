@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "_Miary.Wydatki",
-              "nativeQueryRef": "Wydatki bieżący rok",
-              "displayName": "Wydatki bieżący rok"
+              "nativeQueryRef": "Koszty bieżący rok",
+              "displayName": "Koszty bieżący rok"
             }
           ]
         }
@@ -284,6 +284,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "20d04a594ca59dd8375e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

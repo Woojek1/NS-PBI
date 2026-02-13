@@ -20,7 +20,7 @@ cultureInfo pl-PL
 			          }
 			        },
 			        {
-			          "Wydatki całkowite": {
+			          "Koszty całkowite": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -30,7 +30,17 @@ cultureInfo pl-PL
 			          }
 			        },
 			        {
-			          "Wydatki bieżący rok": {
+			          "Koszty bieżący rok": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Koszt wdrożenia": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -10729,6 +10739,16 @@ cultureInfo pl-PL
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "Kod projektu": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -10899,6 +10919,16 @@ cultureInfo pl-PL
 			        {
 			          "linia": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Linia produktowa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -12406,44 +12436,232 @@ cultureInfo pl-PL
 			          "sprzedaz": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Sprzedaż netto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.marza_II": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Marza_II"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "marza II": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Marza_II": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Marża II": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.zysk_z_wdrozenia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Zysk z wdrozenia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "zysk z wdrozenia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project.s_pln_net": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vm_pbi_d_gl_project",
+			          "ConceptualProperty": "s_pln_net"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "s pln net": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "s_pln_net": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "s pln meshwork": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "s pln mesh": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "s pln web": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "s pln netting": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "s pln lattice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "s pln grid": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "s pln network": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project.m_pln_margin_ii": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vm_pbi_d_gl_project",
+			          "ConceptualProperty": "m_pln_margin_ii"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "m pln margin ii": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "m_pln_margin_ii": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.Marza_II_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Marza_II_%"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Marza_II_%": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "marza_ii_ percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "marza_ii_ pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "Marza II %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "d_time_mon_mon_date_first_hierarchia_dat_has_d_time_mon_mon_date_first_rok": {
-			      "Binding": {
-			        "ConceptualEntity": "d_time_mon"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "d_time_mon.mon_date_first.hierarchia_dat": {
-			          "Target": {
-			            "Entity": "d_time_mon.mon_date_first.hierarchia_dat"
-			          }
-			        },
-			        "d_time_mon.mon_date_first.rok": {
-			          "Target": {
-			            "Entity": "d_time_mon.mon_date_first.rok"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_time_mon.mon_date_first.hierarchia_dat"
-			            },
-			            "Object": {
-			              "Role": "d_time_mon.mon_date_first.rok"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks"
-			        }
-			      ]
-			    },
 			    "d_time_mon_mon_date_first_has_hierarchia_dat": {
 			      "Binding": {
 			        "ConceptualEntity": "d_time_mon"
@@ -12803,7 +13021,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks1"
+			          "ID": "hierarchia_dat_have_roks"
 			        }
 			      ]
 			    },
@@ -13166,7 +13384,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks2"
+			          "ID": "hierarchia_dat_have_roks1"
 			        }
 			      ]
 			    },
@@ -13529,7 +13747,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks3"
+			          "ID": "hierarchia_dat_have_roks2"
 			        }
 			      ]
 			    },
@@ -13892,7 +14110,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks4"
+			          "ID": "hierarchia_dat_have_roks3"
 			        }
 			      ]
 			    },
@@ -14255,7 +14473,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks5"
+			          "ID": "hierarchia_dat_have_roks4"
 			        }
 			      ]
 			    },
@@ -14618,7 +14836,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks6"
+			          "ID": "hierarchia_dat_have_roks5"
 			        }
 			      ]
 			    },
@@ -14981,7 +15199,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks7"
+			          "ID": "hierarchia_dat_have_roks6"
 			        }
 			      ]
 			    },
@@ -15344,7 +15562,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks8"
+			          "ID": "hierarchia_dat_have_roks7"
 			        }
 			      ]
 			    },
@@ -15707,7 +15925,7 @@ cultureInfo pl-PL
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hierarchia_dat_have_roks9"
+			          "ID": "hierarchia_dat_have_roks8"
 			        }
 			      ]
 			    },
@@ -15896,39 +16114,6 @@ cultureInfo pl-PL
 			        }
 			      ]
 			    },
-			    "vm_pbi_d_gl_project_has_mmo_75": {
-			      "Binding": {
-			        "ConceptualEntity": "vm_pbi_d_gl_project"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "vm_pbi_d_gl_project": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_gl_project"
-			          }
-			        },
-			        "mmo_75": {
-			          "Target": {
-			            "Entity": "mmo_75"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "vm_pbi_d_gl_project"
-			            },
-			            "Object": {
-			              "Role": "mmo_75"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "vm_pbi_d_gl_projects_have_mmo_75"
-			        }
-			      ]
-			    },
 			    "f_capex_imp_cost_data_has_d_time_mon": {
 			      "Binding": {
 			        "ConceptualEntity": "f_capex_imp_cost_data"
@@ -16064,6 +16249,237 @@ cultureInfo pl-PL
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_impl_cat_costs_have_f_capex_imp_cost_data"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project_has_entity__miary_Marza_II_": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_gl_project"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        },
+			        "entity__miary.Marza_II_": {
+			          "Target": {
+			            "Entity": "entity__miary.Marza_II_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.Marza_II_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_Marza_II_"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project_has_m_pln_margin_ii": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_gl_project"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        },
+			        "vm_pbi_d_gl_project.m_pln_margin_ii": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project.m_pln_margin_ii"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_gl_project.m_pln_margin_ii"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_m_pln_margin_iis"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project_has_s_pln_net": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_gl_project"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        },
+			        "vm_pbi_d_gl_project.s_pln_net": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project.s_pln_net"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_gl_project.s_pln_net"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_s_pln_nets"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project_has_entity__miary_zysk_z_wdrozenia": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_gl_project"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        },
+			        "entity__miary.zysk_z_wdrozenia": {
+			          "Target": {
+			            "Entity": "entity__miary.zysk_z_wdrozenia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.zysk_z_wdrozenia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_zysk_z_wdrozenia"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_zysk_z_wdrozenia": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.zysk_z_wdrozenia": {
+			          "Target": {
+			            "Entity": "entity__miary.zysk_z_wdrozenia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.zysk_z_wdrozenia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_zysk_z_wdrozenia"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project_has_entity__miary_marza_II": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_gl_project"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        },
+			        "entity__miary.marza_II": {
+			          "Target": {
+			            "Entity": "entity__miary.marza_II"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.marza_II"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_marza_II"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project_has_entity__miary_sprzedaz": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_gl_project"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        },
+			        "entity__miary.sprzedaz": {
+			          "Target": {
+			            "Entity": "entity__miary.sprzedaz"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.sprzedaz"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_sprzedaz"
 			        }
 			      ]
 			    },
@@ -21156,6 +21572,39 @@ cultureInfo pl-PL
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "f_capex_imp_cost_data_are_mixed_on_src_mixed_payment_dates"
+			        }
+			      ]
+			    },
+			    "d_time_mon_mon_date_first_hierarchia_dat_has_d_time_mon_mon_date_first_rok": {
+			      "Binding": {
+			        "ConceptualEntity": "d_time_mon"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_time_mon.mon_date_first.hierarchia_dat": {
+			          "Target": {
+			            "Entity": "d_time_mon.mon_date_first.hierarchia_dat"
+			          }
+			        },
+			        "d_time_mon.mon_date_first.rok": {
+			          "Target": {
+			            "Entity": "d_time_mon.mon_date_first.rok"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_time_mon.mon_date_first.hierarchia_dat"
+			            },
+			            "Object": {
+			              "Role": "d_time_mon.mon_date_first.rok"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarchia_dat_have_roks9"
 			        }
 			      ]
 			    },

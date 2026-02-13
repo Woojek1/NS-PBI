@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "_Miary.Wydatki",
-              "nativeQueryRef": "Wydatki całkowite",
-              "displayName": "Wydatki całkowite"
+              "nativeQueryRef": "Koszty całkowite",
+              "displayName": "Koszty całkowite"
             }
           ]
         }
@@ -230,5 +230,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8dd608da257f533789ed",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
