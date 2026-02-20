@@ -96,13 +96,13 @@ table _Miary
 
 	measure Sprzedaz =
 			
-			SUM(vm_pbi_d_gl_project[s_pln_net])
+			SUM(vm_pbi_d_gl_project[s_pln_net_from_sales])
 		formatString: #,0.00
 		lineageTag: 075e393b-857f-4dff-917e-27c42297f1aa
 
 	measure Marza_II =
 			
-			SUM(vm_pbi_d_gl_project[m_pln_margin_ii])
+			SUM(vm_pbi_d_gl_project[m_pln_margin_ii_from_margin])
 		lineageTag: ab0c2d8a-18bb-4ee4-b9c3-65211b64a8d2
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -114,14 +114,23 @@ table _Miary
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Marza_II_% =
+	measure Marza_II_% = ```
+			
+			VAR margin_ii_net = 
+			    sum(vm_pbi_d_gl_project[m_pln_margin_ii_from_margin])
+			
+			VAR sales = 
+			    SUM(vm_pbi_d_gl_project[s_pln_net_from_margin])
+			
+			RETURN
 			
 			DIVIDE(
-			    [Marza_II],
-			    [Sprzedaz],
+			    margin_ii_net,
+			    sales,
 			    "brak sprzedaży"
 			)
-		formatString: 0.0%;-0.0%;0.0%
+			```
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 76eb7427-cb99-490f-81e7-9c51441295fa
 
 	column Value

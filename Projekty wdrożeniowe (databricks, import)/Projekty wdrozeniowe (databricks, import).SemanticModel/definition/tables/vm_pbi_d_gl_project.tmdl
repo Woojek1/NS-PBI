@@ -236,25 +236,46 @@ table vm_pbi_d_gl_project
 
 		annotation SummarizationSetBy = Automatic
 
-	column s_pln_net
+	column s_pln_net_from_margin
 		dataType: double
-		lineageTag: b102baf2-2662-4479-bfe6-16d27ceb661e
+		lineageTag: 7199834a-de0f-4353-9111-65509f603989
 		summarizeBy: sum
-		sourceColumn: s_pln_net
+		sourceColumn: s_pln_net_from_margin
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column m_pln_margin_ii
+	column m_pln_margin_ii_from_margin
 		dataType: double
-		lineageTag: 8b8910bf-450e-44ff-8b44-c5b1a5b2a311
+		lineageTag: 3dab82ab-2c76-4cd3-93ee-e89ac2bf9958
 		summarizeBy: sum
-		sourceColumn: m_pln_margin_ii
+		sourceColumn: m_pln_margin_ii_from_margin
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_pln_net_from_sales
+		dataType: double
+		lineageTag: a07fc4e3-3b5f-408f-8689-c319d8037814
+		summarizeBy: sum
+		sourceColumn: s_pln_net_from_sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column first_sales
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0dd2d304-81d5-44c7-85ed-b7c122770811
+		summarizeBy: none
+		sourceColumn: first_sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	partition vm_pbi_d_gl_project = m
 		mode: import

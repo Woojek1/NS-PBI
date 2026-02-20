@@ -18,11 +18,6 @@ table d_gl_category_cost
 		summarizeBy: none
 		sourceColumn: record_version
 
-		variation Odmiana
-			isDefault
-			relationship: f52de096-8cee-4766-a0a2-107b2c829004
-			defaultHierarchy: LocalDateTable_69dcace9-50fa-41df-b24b-8e2f38cdbb1e.'Hierarchia dat'
-
 		annotation SummarizationSetBy = Automatic
 
 	column first_load_date
@@ -33,11 +28,6 @@ table d_gl_category_cost
 		summarizeBy: none
 		sourceColumn: first_load_date
 
-		variation Odmiana
-			isDefault
-			relationship: 5f5710f4-e7c6-413c-a74c-90fbf7caf8ac
-			defaultHierarchy: LocalDateTable_17d7f684-8304-4f8d-b815-928d4ffa593b.'Hierarchia dat'
-
 		annotation SummarizationSetBy = Automatic
 
 	column last_seen_date
@@ -47,11 +37,6 @@ table d_gl_category_cost
 		lineageTag: 26a55818-db56-4161-9542-d68ed3121889
 		summarizeBy: none
 		sourceColumn: last_seen_date
-
-		variation Odmiana
-			isDefault
-			relationship: 02554f4e-2c1f-4c61-83f7-b9f90566ea81
-			defaultHierarchy: LocalDateTable_b561741b-9308-4378-91f9-c09e0f9fadc6.'Hierarchia dat'
 
 		annotation SummarizationSetBy = Automatic
 

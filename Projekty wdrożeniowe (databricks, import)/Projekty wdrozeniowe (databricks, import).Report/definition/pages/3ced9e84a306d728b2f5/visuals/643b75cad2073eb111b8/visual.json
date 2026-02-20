@@ -47,21 +47,6 @@
             },
             {
               "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vm_pbi_d_gl_project"
-                    }
-                  },
-                  "Property": "linia"
-                }
-              },
-              "queryRef": "vm_pbi_d_gl_project.linia",
-              "nativeQueryRef": "Linia produktowa",
-              "displayName": "Linia produktowa"
-            },
-            {
-              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
@@ -102,8 +87,8 @@
                 }
               },
               "queryRef": "_Miary.Marza_II",
-              "nativeQueryRef": "Marża II",
-              "displayName": "Marża II"
+              "nativeQueryRef": "Marża II (po 2024)",
+              "displayName": "Marża II (po 2024)"
             },
             {
               "field": {
@@ -117,8 +102,8 @@
                 }
               },
               "queryRef": "_Miary.Marza_II_%",
-              "nativeQueryRef": "Marza II %",
-              "displayName": "Marza II %"
+              "nativeQueryRef": "Marza II % (po 2024)",
+              "displayName": "Marza II % (po 2024)"
             },
             {
               "field": {
@@ -133,6 +118,21 @@
               },
               "queryRef": "_Miary.Zysk z wdrozenia",
               "nativeQueryRef": "Zysk z wdrozenia"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "first_sales"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.first_sales",
+              "nativeQueryRef": "Pierwsza sprzedaż",
+              "displayName": "Pierwsza sprzedaż"
             }
           ]
         }
@@ -147,10 +147,10 @@
                     "Entity": "vm_pbi_d_gl_project"
                   }
                 },
-                "Property": "prj_desc"
+                "Property": "first_sales"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -365,7 +365,7 @@
             "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "1L"
+                  "Value": "2L"
                 }
               }
             },
@@ -463,6 +463,34 @@
           },
           "selector": {
             "metadata": "_Miary.Zysk z wdrozenia"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.first_sales"
           }
         }
       ],
@@ -550,27 +578,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "623.0909090909091D"
+                  "Value": "618.2177193534864D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "vm_pbi_d_gl_project.prj_desc"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "213.54545454545453D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "vm_pbi_d_gl_project.linia"
           }
         },
         {
@@ -606,7 +620,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "162.1818181818182D"
+                  "Value": "199.56587648564994D"
                 }
               }
             }
@@ -641,6 +655,20 @@
           },
           "selector": {
             "metadata": "_Miary.Marza_II_%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "158.7023658994165D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.first_sales"
           }
         }
       ]
@@ -807,20 +835,6 @@
         "type": "Categorical"
       },
       {
-        "name": "baf7716967cb6e8dde05",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vm_pbi_d_gl_project"
-              }
-            },
-            "Property": "linia"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "541d998945874623603b",
         "field": {
           "Measure": {
@@ -861,6 +875,73 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "a6ab4da0f62c3d66af02",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "first_sales"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "87d1d4ddb07863f378c9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Sprzedaz"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_Miary",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "_"
+                            }
+                          },
+                          "Property": "Sprzedaz"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
       }
     ]
   }
