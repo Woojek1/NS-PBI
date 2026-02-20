@@ -161,6 +161,121 @@
           }
         },
         "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Date",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Year"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2025L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2026L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              },
+              "Annotations": {
+                "filterExpressionMetadata": {
+                  "expressions": [
+                    {
+                      "HierarchyLevel": {
+                        "Expression": {
+                          "Hierarchy": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Date"
+                              }
+                            },
+                            "Hierarchy": "Date Year Hierarchy"
+                          }
+                        },
+                        "Level": "Year"
+                      }
+                    }
+                  ],
+                  "decomposedIdentities": {
+                    "values": [
+                      [
+                        {
+                          "0": [
+                            {
+                              "Literal": {
+                                "Value": "2025L"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "0": [
+                            {
+                              "Literal": {
+                                "Value": "2026L"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ],
+                    "columns": [
+                      {
+                        "value": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Date"
+                              }
+                            },
+                            "Property": "Year"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "valueMap": [
+                    {
+                      "0": "2025"
+                    },
+                    {
+                      "0": "2026"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
         "howCreated": "User"
       },
       {
@@ -232,12 +347,35 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "f8e6100b6f43e0a39f65",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical",
         "filter": {
           "Version": 2,
           "From": [
             {
               "Name": "d",
-              "Entity": "Department",
+              "Entity": "Date",
               "Type": 0
             }
           ],
@@ -255,7 +393,7 @@
                                 "Source": "d"
                               }
                             },
-                            "Property": "Department Code"
+                            "Property": "Month Code"
                           }
                         }
                       ],
@@ -263,357 +401,140 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'BN SK - W'"
+                              "Value": "'M-2025-01'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'BW PL - W'"
+                              "Value": "'M-2025-02'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'BW US - W'"
+                              "Value": "'M-2025-03'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-AT-W'"
+                              "Value": "'M-2025-04'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-CH-W'"
+                              "Value": "'M-2025-05'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-CZ-W'"
+                              "Value": "'M-2025-06'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-DE-W'"
+                              "Value": "'M-2025-07'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-DU-W'"
+                              "Value": "'M-2025-08'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-FR-W'"
+                              "Value": "'M-2025-09'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-GS-W'"
+                              "Value": "'M-2026-03'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-KU-W'"
+                              "Value": "'M-2026-04'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-KZ-W'"
+                              "Value": "'M-2026-05'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-MJ-W'"
+                              "Value": "'M-2026-06'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-NG-W'"
+                              "Value": "'M-2026-07'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-NI-W'"
+                              "Value": "'M-2026-08'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-NL-W'"
+                              "Value": "'M-2026-09'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-PL-W'"
+                              "Value": "'M-2026-10'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-RB-W'"
+                              "Value": "'M-2026-11'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-RG-W'"
+                              "Value": "'M-2026-12'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'D-RL-W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'D-RU-W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'D-SK-W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'D-TF-W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'D-TM-W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'D-TR-W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'D-UA-W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'KC DE - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'KC GB - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'MJ FR - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS AT - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS CZ - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS DE - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS ES - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS FR - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS KZ - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS PL - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS RU - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS SK - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS TF - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS TM - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS TR - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS UA - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS UK - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS ZA - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'RG GS - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'RG NI - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'ROHDE DE - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'ROHDE NL - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'SO DE - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'ST DU - W'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'NS HU - W'"
+                              "Value": "'M-2026-02'"
                             }
                           }
                         ]
@@ -641,6 +562,22 @@
             }
           ]
         }
+      },
+      {
+        "name": "c59fedba6424a0d1745e",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Internal sales"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
       }
     ],
     "filterSortOrder": "Custom"
