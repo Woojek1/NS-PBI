@@ -72,19 +72,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Sale Qty"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Sale Qty": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "f_margin75_facts.manufacturing_cost_pln": {
 			      "Definition": {
@@ -111,7 +99,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Margin I % (PLN)"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Margin I % (PLN)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "f_margin75_facts.margin_i_prim_pln": {
 			      "Definition": {
@@ -228,7 +228,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Margin II % (PLN)"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Margin II % (PLN)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "f_margin75_facts.net_sales_eur": {
 			      "Definition": {
@@ -390,19 +402,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Department"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Department": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "d_organization.section": {
 			      "Definition": {
@@ -411,19 +411,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Section"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Section": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "d_customer.customer": {
 			      "Definition": {
@@ -450,10 +438,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Line"
 			        }
 			      },
+			      "State": "Generated"
+			    },
+			    "d_product.npi_flag": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_product",
+			          "ConceptualProperty": "NPI flag"
+			        }
+			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Line": {
+			          "NPI flag": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

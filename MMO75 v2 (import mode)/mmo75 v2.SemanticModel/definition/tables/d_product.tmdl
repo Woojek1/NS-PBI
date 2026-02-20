@@ -107,10 +107,28 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'NPI No'
+		dataType: string
+		lineageTag: 1df6f7f5-b8b7-4838-be26-666f52d68430
+		summarizeBy: none
+		sourceColumn: NPI No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NPI flag'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 510dbb8b-980a-450a-bd22-16d6c10ae7d1
+		summarizeBy: none
+		sourceColumn: NPI flag
+
+		annotation SummarizationSetBy = Automatic
+
 	partition d_product = m
 		mode: import
 		source =
-				Value.NativeQuery(
+				let
+				    d_product = Value.NativeQuery(
 				    Databricks.Catalogs(
 				        "adb-16306551450739.19.azuredatabricks.net",
 				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
@@ -130,7 +148,12 @@ table d_product
 				        p.bcg1_name_en     as `BC Grp 1`,
 				        p.bcg2_name_en     as `BC Grp 2`,
 				        p.bcg3_name_en     as `BC Grp 3`,
-				        p.brand_name       as `Brand`
+				        p.brand_name       as `Brand`,
+				        p.npi_no           as `NPI No`,
+				        case
+				            when npi_no is null then false
+				            else true
+				        end                as `NPI flag`
 				    from zenith.edw.d_product p
 				    where exists (
 				        select 1
@@ -141,6 +164,8 @@ table d_product
 				    null,
 				    [EnableFolding=true]
 				    )
+				in
+				    d_product
 
 	annotation PBI_NavigationStepName = Navigation
 
