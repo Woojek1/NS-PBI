@@ -107,20 +107,6 @@
             },
             {
               "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Miary"
-                    }
-                  },
-                  "Property": "Zysk z wdrozenia"
-                }
-              },
-              "queryRef": "_Miary.Zysk z wdrozenia",
-              "nativeQueryRef": "Zysk z wdrozenia"
-            },
-            {
-              "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
@@ -150,7 +136,7 @@
                 "Property": "first_sales"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -452,41 +438,6 @@
                   "Value": "'Right'"
                 }
               }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Miary.Zysk z wdrozenia"
-          }
-        },
-        {
-          "properties": {
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
             }
           },
           "selector": {
@@ -592,7 +543,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "148D"
+                  "Value": "167.2000038981297D"
                 }
               }
             }
@@ -620,7 +571,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "199.56587648564994D"
+                  "Value": "221.76829376298997D"
                 }
               }
             }
@@ -634,21 +585,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "185.54545454545456D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Miary.Zysk z wdrozenia"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "148.8181818181818D"
+                  "Value": "193.1817186173357D"
                 }
               }
             }
@@ -662,7 +599,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "158.7023658994165D"
+                  "Value": "214.93600742518493D"
                 }
               }
             }
@@ -849,20 +786,6 @@
         "type": "Advanced"
       },
       {
-        "name": "5408d2422623bd0f3659",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Zysk z wdrozenia"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "b2afa48996d8f978d71c",
         "field": {
           "Measure": {
@@ -903,44 +826,6 @@
           }
         },
         "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "_",
-              "Entity": "_Miary",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "_"
-                            }
-                          },
-                          "Property": "Sprzedaz"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
         "howCreated": "User"
       }
     ]
