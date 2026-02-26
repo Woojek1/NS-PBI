@@ -1,0 +1,13 @@
+relationship AutoDetected_696e303f-948f-4b8c-b694-7c6b1c362271
+	fromColumn: f_margin75_facts.cust_id
+	toColumn: d_customer.cust_id
+
+relationship 1df7af9d-1998-46ba-30c8-2340d778db82
+	fromColumn: f_margin75_facts.prod_inv_id
+	toColumn: d_product.prod_si_id
+
+relationship 10f1bbbf-173e-7eb9-5f11-40565b685359
+	toCardinality: many
+	fromColumn: d_product.'NPI No'
+	toColumn: CBR_data.'Sygnatura SP / SP Signature'
+

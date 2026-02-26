@@ -1,0 +1,23 @@
+expression 'Errors in CBR_data' =
+		let
+		Source = CBR_data,
+		  #"Detected Type Mismatches" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "The type of the value does not match the type of the column.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Source, pairs),
+		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"Name", "State", "Originated", "Contractor / Kontrahent", "Commercial project / Projekt handlowy", "Implementation project / Projekt wdrozeniowy", "Wniosek do", "Index", "Quantity on customer order / Ilość na zamówieniu klienta", "Request type / Typ wniosku", "Project manager / Kierownik projektu", "Construction leader / Kierownik komorki konstrukcyjnej", "Responsible engineer / Konstruktor prowadzacy", "Sygnatura SP / SP Signature", "Customer order number / Numer zamówienia klienta", "Customer order activation date / Data aktywacji zamówienia klienta", "Planned shipping date / Planowana data wysyłki", "Requested implementation date / Zadany termin zakonczenia wdrozenia", "Requested order completion date / Wymagany termin realizacji zamowienia", "Description / Opis", "Column21", "NPI Link", "Task name", "Task duration [h]", "Task Description", "Task Comment", "Task Assigned person", "Task Sekcja", "Column29", "Task Link"}),
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "Name", "State", "Originated", "Contractor / Kontrahent", "Commercial project / Projekt handlowy", "Implementation project / Projekt wdrozeniowy", "Wniosek do", "Index", "Quantity on customer order / Ilość na zamówieniu klienta", "Request type / Typ wniosku", "Project manager / Kierownik projektu", "Construction leader / Kierownik komorki konstrukcyjnej", "Responsible engineer / Konstruktor prowadzacy", "Sygnatura SP / SP Signature", "Customer order number / Numer zamówienia klienta", "Customer order activation date / Data aktywacji zamówienia klienta", "Planned shipping date / Planowana data wysyłki", "Requested implementation date / Zadany termin zakonczenia wdrozenia", "Requested order completion date / Wymagany termin realizacji zamowienia", "Description / Opis", "Column21", "NPI Link", "Task name", "Task duration [h]", "Task Description", "Task Comment", "Task Assigned person", "Task Sekcja", "Column29", "Task Link"})
+		in
+		  #"Reordered Columns"
+	lineageTag: a852ba0c-d53a-4422-b8c4-296866f2d9c9
+	queryGroup: 'Query Errors - 26 02 2026 12:11:36'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

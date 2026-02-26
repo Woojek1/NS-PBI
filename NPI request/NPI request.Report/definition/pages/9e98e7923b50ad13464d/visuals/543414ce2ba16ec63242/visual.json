@@ -1,0 +1,170 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "543414ce2ba16ec63242",
+  "position": {
+    "x": 196.94845360824741,
+    "y": 99.958762886597924,
+    "z": 0,
+    "height": 479.01030927835046,
+    "width": 955.05154639175248,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CBR_data"
+                    }
+                  },
+                  "Property": "Sygnatura SP / SP Signature"
+                }
+              },
+              "queryRef": "CBR_data.Sygnatura SP / SP Signature",
+              "nativeQueryRef": "Sygnatura SP / SP Signature"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_margin75_facts"
+                        }
+                      },
+                      "Property": "s_pln_net"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_margin75_facts.s_pln_net)",
+              "nativeQueryRef": "Sum of s_pln_net"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CBR_data"
+                        }
+                      },
+                      "Property": "Task duration [h]"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CBR_data.Task duration [h])",
+              "nativeQueryRef": "Sum of Task duration [h]"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_margin75_facts"
+                        }
+                      },
+                      "Property": "sale_qty"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_margin75_facts.sale_qty)",
+              "nativeQueryRef": "Sum of sale_qty"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "06772ae2a050e0e2e4a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CBR_data"
+              }
+            },
+            "Property": "Sygnatura SP / SP Signature"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "315eba300070b265c652",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_margin75_facts"
+                  }
+                },
+                "Property": "s_pln_net"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0d78582c106ba88c0c43",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CBR_data"
+                  }
+                },
+                "Property": "Task duration [h]"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0ff34f7c77a6627beec1",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_margin75_facts"
+                  }
+                },
+                "Property": "sale_qty"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
