@@ -63,7 +63,9 @@ table Attributes
 				    ("Model", NAMEOF('d_product'[Model]), 20),
 				    ("Index Code", NAMEOF('d_product'[Index Code]), 21),
 				    ("Index Name", NAMEOF('d_product'[Index Name]), 22),
-				    ("NPI flag", NAMEOF(d_product[NPI flag]),23)
+				    ("NPI flag", NAMEOF(d_product[NPI flag]),23),
+				    ("Pricelist code", NAMEOF(d_pricelist[pricelist_code]),24),
+				    ("Pricelist name", NAMEOF(d_pricelist[pricelist_name]),25)
 				}
 
 	annotation PBI_Id = 334f1aa7ef164c749aea7eaf4790817c

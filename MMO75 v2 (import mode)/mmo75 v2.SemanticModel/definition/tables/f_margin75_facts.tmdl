@@ -609,6 +609,15 @@ table f_margin75_facts
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column pricelist_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b268adac-f9b3-4906-94a2-dc76235e8c2b
+		summarizeBy: none
+		sourceColumn: pricelist_id
+
+		annotation SummarizationSetBy = Automatic
+
 	partition f_margin75_facts = m
 		mode: import
 		source =
@@ -629,6 +638,7 @@ table f_margin75_facts
 				        team_id,
 				        d_term_id,
 				        comp_cost_id,
+				        pricelist_id,
 				        sale_qty,
 				        s_pln_net,
 				        s_eur_net,

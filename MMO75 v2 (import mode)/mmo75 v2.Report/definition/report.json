@@ -447,6 +447,40 @@
         },
         "type": "Categorical",
         "howCreated": "User"
+      },
+      {
+        "name": "fa932ea0ba15c3a1215d",
+        "displayName": "Pricelist code",
+        "ordinal": 27,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_pricelist"
+              }
+            },
+            "Property": "pricelist_code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "30a3405b9c25d7088b80",
+        "displayName": "Pricelist name",
+        "ordinal": 28,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_pricelist"
+              }
+            },
+            "Property": "pricelist_name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
       }
     ],
     "filterSortOrder": "Custom"

@@ -1,0 +1,52 @@
+table d_pricelist
+	lineageTag: 8d746224-8d61-47c1-ac0b-1ffc536151a2
+
+	column pricelist_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cd1167d-e9af-42a4-9132-9dbbaab44ade
+		summarizeBy: none
+		sourceColumn: pricelist_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricelist_code
+		dataType: string
+		lineageTag: e9e4fb96-6ae1-4a11-bb28-847c82134d6e
+		summarizeBy: none
+		sourceColumn: pricelist_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricelist_name
+		dataType: string
+		lineageTag: 97a1de68-86f3-4ba7-a60e-01f0f5eff530
+		summarizeBy: none
+		sourceColumn: pricelist_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_pricelist = m
+		mode: import
+		source =
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        pricelist_id,
+				        pricelist_code,
+				        pricelist_name
+				    from zenith.edw.d_pricelist
+				    ",
+				    null,
+				    [EnableFolding=true]
+				)
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
