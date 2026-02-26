@@ -1,0 +1,132 @@
+table d_product
+	lineageTag: 9a05152a-2567-4afc-9fbf-ff845234e735
+
+	column prod_si_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c3325ad9-3a0a-4bf2-b100-32f508f308e3
+		summarizeBy: none
+		sourceColumn: prod_si_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line
+		dataType: string
+		lineageTag: d23d87d2-8ae6-4fd9-a125-df4b7bc69692
+		summarizeBy: none
+		sourceColumn: Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Model Code'
+		dataType: string
+		lineageTag: 6f7e2c84-e79a-4c58-9287-a80f14afe131
+		summarizeBy: none
+		sourceColumn: Model Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 3bb37b78-9d7b-4f71-8731-1d28f4aec207
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Subgroup'
+		dataType: string
+		lineageTag: a4f23d20-96e8-49ae-8dcd-5c33014f87e5
+		summarizeBy: none
+		sourceColumn: Product Subgroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Supergroup'
+		dataType: string
+		lineageTag: ef79a8fe-ca39-4863-8962-27a80d608f04
+		summarizeBy: none
+		sourceColumn: Product Supergroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Group'
+		dataType: string
+		lineageTag: 0257237d-6d48-4ba4-b728-2a1dde2ce2b6
+		summarizeBy: none
+		sourceColumn: Product Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Name'
+		dataType: string
+		lineageTag: 7c714182-d461-4cce-8edf-98d5234fcc05
+		summarizeBy: none
+		sourceColumn: Index Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Code'
+		dataType: string
+		lineageTag: d2b9eb2d-1b12-4c3f-9f0e-eeb3ffe8f059
+		summarizeBy: none
+		sourceColumn: Index Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: 520c84b8-9e42-4891-882b-4a410077f083
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NPI No'
+		dataType: string
+		lineageTag: 7b6fde80-684b-4063-8ad6-2758b6faa0cd
+		summarizeBy: none
+		sourceColumn: NPI No
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_product = m
+		mode: import
+		source =
+				let
+				    d_product = Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        p.prod_si_id,
+				        p.line_name        as `Line`,
+				        p.model_code       as `Model Code`,
+				        p.model_name       as `Model`,
+				        p.sgrp_name        as `Product Subgroup`,
+				        p.supergrp_name    as `Product Supergroup`,
+				        p.grp_name         as `Product Group`,
+				        p.prod_si_name     as `Index Name`,
+				        p.prod_si_code     as `Index Code`,
+				        p.brand_name       as `Brand`,
+				        p.npi_no           as `NPI No`
+				    from zenith.edw.d_product p
+				    where exists (
+				        select 1
+				        from zenith.mmo75.f_margin75_facts f
+				        where f.prod_inv_id = p.prod_si_id
+				    )
+				    ",
+				    null,
+				    [EnableFolding=true]
+				    )
+				in
+				    d_product
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

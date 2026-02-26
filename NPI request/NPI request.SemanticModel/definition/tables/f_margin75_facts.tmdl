@@ -1,0 +1,422 @@
+table f_margin75_facts
+	lineageTag: 6afe1b3b-8ba2-4b94-8585-14545a4fc805
+
+	column time_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0faca851-d696-4f3d-8f8d-843ea9da6150
+		summarizeBy: sum
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a1d79b81-ad03-4b7f-87ac-162fbd18664e
+		summarizeBy: sum
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_id
+		dataType: int64
+		formatString: 0
+		lineageTag: fa613652-e5b6-4769-bf44-ff3ac647b87e
+		summarizeBy: none
+		sourceColumn: cust_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_inv_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 46e57a2b-980b-4755-813a-06465db5f27a
+		summarizeBy: none
+		sourceColumn: prod_inv_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_id
+		dataType: int64
+		formatString: 0
+		lineageTag: e55ddbd9-1406-444f-bf6e-4adb836c1320
+		summarizeBy: sum
+		sourceColumn: mnf_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 105874f7-95b4-4e73-8f17-0baf83cfa977
+		summarizeBy: sum
+		sourceColumn: org_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4578bb7f-3464-4a4f-93f0-b6c396d9f37d
+		summarizeBy: sum
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column d_term_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 111de334-33d3-44da-af72-0df0d386deb8
+		summarizeBy: sum
+		sourceColumn: d_term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_cost_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b077c61-4eba-483e-a8f1-5ef54071b4e0
+		summarizeBy: sum
+		sourceColumn: comp_cost_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricelist_id
+		dataType: int64
+		formatString: 0
+		lineageTag: dbf7d463-2435-4351-9138-7a9aa90921bd
+		summarizeBy: sum
+		sourceColumn: pricelist_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		lineageTag: 206eae14-4fb1-4682-b9c3-4af720d92dd6
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		lineageTag: e79aa16e-37a2-4480-8898-44430c829498
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_code
+		dataType: string
+		lineageTag: c8a1f939-db99-4f64-b3f6-27ea0ba37717
+		summarizeBy: none
+		sourceColumn: cust_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_code
+		dataType: string
+		lineageTag: 71c1908f-e281-4045-a5a7-9600a138c4e3
+		summarizeBy: none
+		sourceColumn: prod_si_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sman_code
+		dataType: string
+		lineageTag: fe4ea506-2c76-4afb-b5c8-b10234184cf7
+		summarizeBy: none
+		sourceColumn: sman_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_code
+		dataType: string
+		lineageTag: 075fcaee-c36e-4ec1-985c-43500cb0a8d8
+		summarizeBy: none
+		sourceColumn: team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_code
+		dataType: string
+		lineageTag: b939d350-e425-42a3-908e-3d1572f8fae0
+		summarizeBy: none
+		sourceColumn: dept_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column d_term_code
+		dataType: string
+		lineageTag: ae8c9142-a707-4108-9991-cf895ec8ea7d
+		summarizeBy: none
+		sourceColumn: d_term_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_qty
+		dataType: double
+		lineageTag: db6ea762-9e3e-4e2a-baf4-5092a903bd8f
+		summarizeBy: sum
+		sourceColumn: sale_qty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_pln_net
+		dataType: double
+		lineageTag: 91be85b9-17bf-4a26-9080-f118b7aa452a
+		summarizeBy: sum
+		sourceColumn: s_pln_net
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_eur_net
+		dataType: double
+		lineageTag: 24192d6e-92d2-4d24-a94b-1ebfd8ad9d06
+		summarizeBy: sum
+		sourceColumn: s_eur_net
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_pln_corp_cost
+		dataType: double
+		lineageTag: 24220bd1-54a3-4588-840e-4e2b2c616f35
+		summarizeBy: sum
+		sourceColumn: s_pln_corp_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_eur_corp_cost
+		dataType: double
+		lineageTag: 4d159823-1f5f-4cef-94da-951e5be71db9
+		summarizeBy: sum
+		sourceColumn: s_eur_corp_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_lic
+		dataType: double
+		lineageTag: ac39b0f9-ecda-488d-8bf5-49349ec5eaf8
+		summarizeBy: sum
+		sourceColumn: c_pln_lic
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_lic
+		dataType: double
+		lineageTag: f5e78254-7530-41aa-aaa5-1e9784d13f97
+		summarizeBy: sum
+		sourceColumn: c_eur_lic
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_pln_base
+		dataType: double
+		lineageTag: 1487d710-953d-4614-8128-e8f6db52a22e
+		summarizeBy: sum
+		sourceColumn: s_pln_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_eur_base
+		dataType: double
+		lineageTag: 4d73b620-205d-4a1d-bd2a-8d45a9449ba3
+		summarizeBy: sum
+		sourceColumn: s_eur_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_varfixed
+		dataType: double
+		lineageTag: 83f5ae7a-f2df-4199-b17b-da2c2a3c5481
+		summarizeBy: sum
+		sourceColumn: c_pln_varfixed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_varfixed
+		dataType: double
+		lineageTag: e5fa6f21-20ce-4da1-961a-0ac950bf60fe
+		summarizeBy: sum
+		sourceColumn: c_eur_varfixed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_transport
+		dataType: double
+		lineageTag: e2a63c0c-bc0c-4453-bc84-d687f4603745
+		summarizeBy: sum
+		sourceColumn: c_pln_transport
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_transport
+		dataType: double
+		lineageTag: b319a343-8871-483e-8dfc-36a4a7f5223c
+		summarizeBy: sum
+		sourceColumn: c_eur_transport
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_compl_prod
+		dataType: double
+		lineageTag: d92e415c-a20c-49d5-a03b-d28984d398b8
+		summarizeBy: sum
+		sourceColumn: c_pln_compl_prod
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_compl_prod
+		dataType: double
+		lineageTag: 0e61a0d6-7922-444d-8cb4-08812fde4c05
+		summarizeBy: sum
+		sourceColumn: c_eur_compl_prod
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_comm
+		dataType: double
+		lineageTag: 468b9464-ccf2-4fd6-8b84-06b5be5b46de
+		summarizeBy: sum
+		sourceColumn: c_pln_comm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_comm
+		dataType: double
+		lineageTag: a2143d59-3047-4894-a859-a3fd85aa3153
+		summarizeBy: sum
+		sourceColumn: c_eur_comm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_sinsuran
+		dataType: double
+		lineageTag: 3aec663e-7217-4b59-b2fc-75d1a1fe21e1
+		summarizeBy: sum
+		sourceColumn: c_pln_sinsuran
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_sinsuran
+		dataType: double
+		lineageTag: e960012e-033f-4c23-86d8-91c25eaf7887
+		summarizeBy: sum
+		sourceColumn: c_eur_sinsuran
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_assembly
+		dataType: double
+		lineageTag: d420fcb1-3dc6-491f-81f7-e327147352df
+		summarizeBy: sum
+		sourceColumn: c_pln_assembly
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_assembly
+		dataType: double
+		lineageTag: 0db1813f-ff10-44ba-8942-f2c1db8447f0
+		summarizeBy: sum
+		sourceColumn: c_eur_assembly
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_stock_deprec
+		dataType: double
+		lineageTag: 6422a13d-a26b-45d3-b05b-d414dcd69ee7
+		summarizeBy: sum
+		sourceColumn: c_pln_stock_deprec
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_stock_deprec
+		dataType: double
+		lineageTag: fb968727-e5f9-46f3-a3b5-d150f7445be1
+		summarizeBy: sum
+		sourceColumn: c_eur_stock_deprec
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_compl_act
+		dataType: double
+		lineageTag: 9121a759-a2b5-4aca-87bc-f765a149e990
+		summarizeBy: sum
+		sourceColumn: c_pln_compl_act
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_compl_act
+		dataType: double
+		lineageTag: 06459019-b41f-47e4-8dc4-8e38e1dab63f
+		summarizeBy: sum
+		sourceColumn: c_eur_compl_act
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition f_margin75_facts = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", MetricViewBiCompatibilityMode=null]),
+				    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
+				    mmo75_Schema = zenith_Database{[Name="mmo75",Kind="Schema"]}[Data],
+				    f_margin75_facts_Table = mmo75_Schema{[Name="f_margin75_facts",Kind="Table"]}[Data]
+				in
+				    f_margin75_facts_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
