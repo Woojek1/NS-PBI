@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "82189ff439435403c483",
   "position": {
     "x": 18.333333333333336,
@@ -731,51 +731,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f099f38af40f05fd04d5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "year_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9b03ea61de8e588036af",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_impl_cat_cost"
-              }
-            },
-            "Property": "impl_cat_cost_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8386445c5aeb2cf20c99",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Wydatki"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "643b75cad2073eb111b8",
   "position": {
     "x": 33.454545454545453,
@@ -87,8 +87,8 @@
                 }
               },
               "queryRef": "_Miary.Marza_II",
-              "nativeQueryRef": "Marża II (po 2024)",
-              "displayName": "Marża II (po 2024)"
+              "nativeQueryRef": "Marża II (od 2024)",
+              "displayName": "Marża II (od 2024)"
             },
             {
               "field": {
@@ -102,8 +102,8 @@
                 }
               },
               "queryRef": "_Miary.Marza_II_%",
-              "nativeQueryRef": "Marza II % (po 2024)",
-              "displayName": "Marza II % (po 2024)"
+              "nativeQueryRef": "Marza II % (od 2024)",
+              "displayName": "Marza II % (od 2024)"
             },
             {
               "field": {
@@ -716,7 +716,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "00d6a77d4d123651e497",
+        "name": "87d1d4ddb07863f378c9",
         "field": {
           "Measure": {
             "Expression": {
@@ -730,7 +730,7 @@
         "type": "Advanced"
       },
       {
-        "name": "96dc4cf4dc864dd612f0",
+        "name": "d18546cf00cc04bda07d",
         "field": {
           "Column": {
             "Expression": {
@@ -744,21 +744,7 @@
         "type": "Categorical"
       },
       {
-        "name": "1b67c0073b8c48465c23",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Wydatki"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "eed6e9a10715b18c4198",
+        "name": "2a78bcaa08d174792c86",
         "field": {
           "Column": {
             "Expression": {
@@ -772,7 +758,21 @@
         "type": "Categorical"
       },
       {
-        "name": "541d998945874623603b",
+        "name": "9cf570b680d8e46e4d7a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "10be3b9f0d7650449108",
         "field": {
           "Measure": {
             "Expression": {
@@ -786,7 +786,7 @@
         "type": "Advanced"
       },
       {
-        "name": "b2afa48996d8f978d71c",
+        "name": "f03ac5bb0dc5901eaa63",
         "field": {
           "Measure": {
             "Expression": {
@@ -800,7 +800,7 @@
         "type": "Advanced"
       },
       {
-        "name": "a6ab4da0f62c3d66af02",
+        "name": "b811266c7301381653e0",
         "field": {
           "Column": {
             "Expression": {
@@ -812,21 +812,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "87d1d4ddb07863f378c9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Sprzedaz"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
       }
     ]
   }
