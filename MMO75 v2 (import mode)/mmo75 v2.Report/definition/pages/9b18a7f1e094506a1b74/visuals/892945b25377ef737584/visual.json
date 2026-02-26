@@ -56,16 +56,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_organization"
+                      "Entity": "d_product"
                     }
                   },
-                  "Property": "Department"
+                  "Property": "Index Code"
                 }
               },
-              "queryRef": "d_organization.Department",
-              "nativeQueryRef": "Department",
+              "queryRef": "d_product.Index Code",
+              "nativeQueryRef": "Index Code",
               "active": true,
-              "displayName": "Department"
+              "displayName": "Index Code"
             }
           ],
           "fieldParameters": [
@@ -101,6 +101,21 @@
               "queryRef": "f_margin75_facts.Net Sales PLN",
               "nativeQueryRef": "Net Sales PLN",
               "displayName": "Net Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Base Sales PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Base Sales PLN",
+              "nativeQueryRef": "Base Sales PLN",
+              "displayName": "Base Sales PLN"
             }
           ],
           "fieldParameters": [
@@ -116,7 +131,7 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 2
             }
           ]
         }
@@ -553,6 +568,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -586,7 +602,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -1023,7 +1038,7 @@
                 "Entity": "f_margin75_facts"
               }
             },
-            "Property": "Sale Qty"
+            "Property": "Sale Quantity"
           }
         },
         "type": "Advanced",
@@ -1231,6 +1246,20 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "6f058a7273a6c3212953",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Base Sales PLN"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

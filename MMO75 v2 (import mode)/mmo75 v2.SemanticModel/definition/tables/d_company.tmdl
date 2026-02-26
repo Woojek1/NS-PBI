@@ -3,11 +3,14 @@ table d_company
 
 	column comp_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 3751d87a-159b-4b70-8a26-91dc161b60b3
 		summarizeBy: none
 		sourceColumn: comp_id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

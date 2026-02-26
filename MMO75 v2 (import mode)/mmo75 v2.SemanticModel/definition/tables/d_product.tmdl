@@ -3,11 +3,14 @@ table d_product
 
 	column prod_si_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: e54a1a0d-b165-4524-9759-0a23ae68be3d
 		summarizeBy: none
 		sourceColumn: prod_si_id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

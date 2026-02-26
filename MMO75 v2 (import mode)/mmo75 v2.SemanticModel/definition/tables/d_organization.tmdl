@@ -3,11 +3,14 @@ table d_organization
 
 	column org_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 1819cbae-274c-46c1-b970-f39461322c21
 		summarizeBy: none
 		sourceColumn: org_id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

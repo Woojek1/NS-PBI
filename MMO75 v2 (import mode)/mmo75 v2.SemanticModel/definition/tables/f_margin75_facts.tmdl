@@ -109,7 +109,7 @@ table f_margin75_facts
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	measure 'Sale Qty' = SUM(f_margin75_facts[sale_qty])
+	measure 'Sale Quantity' = SUM(f_margin75_facts[sale_qty])
 		formatString: #,0
 		lineageTag: 323517ab-2a0f-4cb0-8d1b-d17550be7a38
 
@@ -197,93 +197,132 @@ table f_margin75_facts
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: e5b08602-50de-438b-8992-5982ff835025
 
+	measure 'Base Sales PLN' = SUM(f_margin75_facts[s_pln_base])
+		formatString: #,0
+		lineageTag: 911e2658-38cb-424d-ae90-43231a11e30f
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Base Sales EUR' = SUM(f_margin75_facts[s_eur_base])
+		formatString: #,0
+		lineageTag: 77913062-840f-47cd-8df7-bcf99a97fbf8
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
 	column time_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: f0da9b74-2b78-4ce6-8c45-d79b5b5eed6a
 		summarizeBy: none
 		sourceColumn: time_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column comp_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 5f85eedb-0344-4576-bc37-6c3f5f3c2543
 		summarizeBy: none
 		sourceColumn: comp_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column cust_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 54d28b61-a5e5-47df-af99-1c49d60748a4
 		summarizeBy: none
 		sourceColumn: cust_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column prod_inv_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: ba4d292f-0c16-423a-9245-f817c0ec2f9a
 		summarizeBy: none
 		sourceColumn: prod_inv_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column mnf_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 16bef3b0-4cb9-4b34-8910-e2debea1e055
 		summarizeBy: sum
 		sourceColumn: mnf_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column org_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 76c0da42-a890-44e2-9090-c7d1a9d91f0c
 		summarizeBy: none
 		sourceColumn: org_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column team_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: b42665ff-024c-4cd1-826b-dfb2fcf75354
 		summarizeBy: sum
 		sourceColumn: team_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column d_term_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: d1cfaafb-32ea-4605-ad2d-907b6a5523f4
 		summarizeBy: sum
 		sourceColumn: d_term_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column comp_cost_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 7491a17a-2486-47a9-a8c3-903f0e3dfdb3
 		summarizeBy: sum
 		sourceColumn: comp_cost_id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -611,12 +650,41 @@ table f_margin75_facts
 
 	column pricelist_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: b268adac-f9b3-4906-94a2-dc76235e8c2b
 		summarizeBy: none
 		sourceColumn: pricelist_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
+
+	column s_pln_base
+		dataType: double
+		isHidden
+		lineageTag: 83436fae-d49c-4a27-b810-5eeec47e8920
+		summarizeBy: sum
+		sourceColumn: s_pln_base
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s_eur_base
+		dataType: double
+		isHidden
+		lineageTag: f9f02670-4c82-4bc2-84c8-1b840a81a2f2
+		summarizeBy: sum
+		sourceColumn: s_eur_base
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition f_margin75_facts = m
 		mode: import
@@ -642,6 +710,8 @@ table f_margin75_facts
 				        sale_qty,
 				        s_pln_net,
 				        s_eur_net,
+				        s_pln_base,
+				        s_eur_base,
 				        s_pln_corp_cost,
 				        s_eur_corp_cost,
 				        c_pln_lic,

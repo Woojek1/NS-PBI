@@ -3,10 +3,13 @@ table d_pricelist
 
 	column pricelist_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 3cd1167d-e9af-42a4-9132-9dbbaab44ade
 		summarizeBy: none
 		sourceColumn: pricelist_id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

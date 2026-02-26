@@ -36,7 +36,43 @@
     "objects": {
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "d_product",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "StartsWith": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Index Code"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'w'"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ],
       "inputText": [
@@ -58,7 +94,7 @@
             "filterMode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Filter_Contains_All'"
+                  "Value": "'Filter_Starts_With_Any'"
                 }
               }
             }
@@ -102,5 +138,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "36117232174bd504523a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Index Code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

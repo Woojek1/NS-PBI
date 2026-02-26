@@ -3,11 +3,14 @@ table d_customer
 
 	column cust_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 57255382-bffb-48a1-9d1f-f8dfa1a9756d
 		summarizeBy: none
 		sourceColumn: cust_id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
