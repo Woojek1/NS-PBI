@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "643b75cad2073eb111b8",
   "position": {
-    "x": 33.454545454545453,
-    "y": 164.36363636363637,
+    "x": 0,
+    "y": 164,
     "z": 0,
-    "height": 894.5454545454545,
-    "width": 1854.5454545454545,
+    "height": 892,
+    "width": 1920,
     "tabOrder": 0
   },
   "visual": {
@@ -44,6 +44,20 @@
               "queryRef": "vm_pbi_d_gl_project.prj_desc",
               "nativeQueryRef": "Nazwa projektu",
               "displayName": "Nazwa projektu"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Budzet projektu"
+                }
+              },
+              "queryRef": "_Miary.Budzet projektu",
+              "nativeQueryRef": "Budzet projektu"
             },
             {
               "field": {
@@ -119,6 +133,50 @@
               "queryRef": "vm_pbi_d_gl_project.first_sales",
               "nativeQueryRef": "Pierwsza sprzedaż",
               "displayName": "Pierwsza sprzedaż"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Ilosc miesiecy od pierwszej sprzedazy"
+                }
+              },
+              "queryRef": "_Miary.Ilosc miesiecy od pierwszej sprzedazy",
+              "nativeQueryRef": "Mc od pierwszej sprzedaży",
+              "displayName": "Mc od pierwszej sprzedaży"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Zwrot wdrozenia"
+                }
+              },
+              "queryRef": "_Miary.Zwrot wdrozenia",
+              "nativeQueryRef": "Zwrot wdrozenia"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "brand"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.brand",
+              "nativeQueryRef": "Brand",
+              "displayName": "Brand"
             }
           ]
         }
@@ -127,13 +185,13 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "vm_pbi_d_gl_project"
+                    "Entity": "_Miary"
                   }
                 },
-                "Property": "first_sales"
+                "Property": "Sprzedaz"
               }
             },
             "direction": "Descending"
@@ -443,6 +501,90 @@
           "selector": {
             "metadata": "vm_pbi_d_gl_project.first_sales"
           }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Zwrot wdrozenia"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Ilosc miesiecy od pierwszej sprzedazy"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.brand"
+          }
         }
       ],
       "values": [
@@ -515,7 +657,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "179.27272727272728D"
+                  "Value": "143.32606990325112D"
                 }
               }
             }
@@ -529,7 +671,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "618.2177193534864D"
+                  "Value": "445.84833354434426D"
                 }
               }
             }
@@ -543,7 +685,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "167.2000038981297D"
+                  "Value": "143.22691978598016D"
                 }
               }
             }
@@ -557,7 +699,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "161.75876938075328D"
+                  "Value": "147.73713104999592D"
                 }
               }
             }
@@ -571,7 +713,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "221.76829376298997D"
+                  "Value": "133.63844366342096D"
                 }
               }
             }
@@ -585,7 +727,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "193.1817186173357D"
+                  "Value": "127.24044222810977D"
                 }
               }
             }
@@ -599,13 +741,82 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "214.93600742518493D"
+                  "Value": "155.51620702361672D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "vm_pbi_d_gl_project.first_sales"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Budzet projektu"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "165.00003089202116D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Ilosc miesiecy od pierwszej sprzedazy"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "178D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Zwrot wdrozenia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.brand"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
           }
         }
       ]
@@ -809,6 +1020,62 @@
               }
             },
             "Property": "first_sales"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3c0f0205ea64d264a23a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Budzet projektu"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7ec3bb250ba704810bee",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Ilosc miesiecy od pierwszej sprzedazy"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bce5f7b80302b7901806",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Zwrot wdrozenia"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e4764e693090e22c20ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "brand"
           }
         },
         "type": "Categorical"

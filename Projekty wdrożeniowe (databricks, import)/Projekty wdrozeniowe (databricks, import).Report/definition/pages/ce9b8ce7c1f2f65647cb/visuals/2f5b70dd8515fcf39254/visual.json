@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "2f5b70dd8515fcf39254",
   "position": {
-    "x": 17.142857142857142,
-    "y": 381.42857142857144,
+    "x": 0,
+    "y": 381.66666666666669,
     "z": 2000,
-    "height": 344.28571428571433,
-    "width": 1125.7142857142858,
+    "height": 343.33333333333337,
+    "width": 1143.3333333333335,
     "tabOrder": 5000
   },
   "visual": {
@@ -507,5 +507,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "60540251e0605328ca81",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a712a394e560d15eb520",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fc4e674fd9422c61d83d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Budzet projektu"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a641573e0756d73a30a0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Realizacja budzetu %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "82189ff439435403c483",
+  "name": "392b49a300a686b60d0a",
   "position": {
-    "x": 0,
-    "y": 725,
-    "z": 3000,
-    "height": 355,
-    "width": 1353.3333333333335,
+    "x": 28.631578947368421,
+    "y": 0,
+    "z": 0,
+    "height": 911.15789473684208,
+    "width": 1869.4736842105262,
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Columns": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -26,14 +26,23 @@
                   "Property": "year_name"
                 }
               },
-              "queryRef": "d_time_mon_2.year_name",
-              "nativeQueryRef": "year_name",
-              "active": true
-            }
-          ]
-        },
-        "Rows": {
-          "projections": [
+              "queryRef": "d_time_mon.year_name",
+              "nativeQueryRef": "year_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time_mon"
+                    }
+                  },
+                  "Property": "mon_name"
+                }
+              },
+              "queryRef": "d_time_mon.mon_name",
+              "nativeQueryRef": "mon_name"
+            },
             {
               "field": {
                 "Column": {
@@ -47,13 +56,64 @@
               },
               "queryRef": "d_impl_cat_cost.impl_cat_cost_name",
               "nativeQueryRef": "Kategorie wydatków",
-              "active": true,
               "displayName": "Kategorie wydatków"
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_gl_category_cost"
+                    }
+                  },
+                  "Property": "account_code"
+                }
+              },
+              "queryRef": "d_gl_category_cost.account_code",
+              "nativeQueryRef": "account_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_c"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_code_c",
+              "nativeQueryRef": "src_code_c"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_d"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_code_d",
+              "nativeQueryRef": "src_code_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_e"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_code_e",
+              "nativeQueryRef": "src_code_e"
+            },
             {
               "field": {
                 "Measure": {
@@ -67,6 +127,48 @@
               },
               "queryRef": "_Miary.Wydatki",
               "nativeQueryRef": "Wydatki"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_voucher_no"
+                }
+              },
+              "queryRef": "Sum(f_capex_imp_cost_data.src_voucher_no)",
+              "nativeQueryRef": "src_voucher_no"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_text"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_text",
+              "nativeQueryRef": "src_text"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_f"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_code_f",
+              "nativeQueryRef": "src_code_f"
             }
           ]
         }
@@ -78,10 +180,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "d_impl_cat_cost"
+                    "Entity": "d_time_mon"
                   }
                 },
-                "Property": "impl_cat_cost_name"
+                "Property": "year_name"
               }
             },
             "direction": "Ascending"
@@ -89,48 +191,6 @@
         ]
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "d_impl_cat_cost.impl_cat_cost_name"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_impl_cat_cost"
-                    }
-                  },
-                  "Property": "impl_cat_cost_name"
-                }
-              }
-            ],
-            "isPinned": true
-          }
-        ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'!Unclassified'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
-      }
-    ],
     "objects": {
       "values": [
         {
@@ -255,13 +315,6 @@
                 }
               }
             },
-            "titleAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Left'"
-                }
-              }
-            },
             "alignment": {
               "expr": {
                 "Literal": {
@@ -272,57 +325,9 @@
           }
         }
       ],
-      "rowHeaders": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "13D"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Auto'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "subTotals": [
-        {
-          "properties": {
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "rowSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
       "general": [
         {
-          "properties": {
-            "layout": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Compact'"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "grid": [
@@ -332,19 +337,6 @@
               "expr": {
                 "Literal": {
                   "Value": "3D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "rowTotal": [
-        {
-          "properties": {
-            "applyToHeaders": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -645,7 +637,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "477.99999926935055D"
+                  "Value": "317.50000951636093D"
                 }
               }
             }
@@ -1245,6 +1237,146 @@
             ],
             "metadata": "Sum(f_capex_imp_cost_data.src_voucher_no)"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "127D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_gl_category_cost.account_code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_capex_imp_cost_data.src_code_c"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "107D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_capex_imp_cost_data.src_code_d"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_time_mon.year_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "793D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_capex_imp_cost_data.src_text"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "208D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(f_capex_imp_cost_data.src_voucher_no)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141.5000027509838D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_time_mon.mon_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "107D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_capex_imp_cost_data.src_code_e"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_capex_imp_cost_data.src_code_f"
+          }
         }
       ]
     },
@@ -1327,7 +1459,116 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "b8da35ce4d165804066c",
+        "name": "8de845b47437a0406b56",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_impl_cat_cost"
+              }
+            },
+            "Property": "impl_cat_cost_name"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_impl_cat_cost",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "impl_cat_cost_name"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'!Unclassified'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "d88c972d0b7ebc0d1e80",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_gl_category_cost"
+              }
+            },
+            "Property": "account_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1d7e7964028be0270da1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_c"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e1d9470d990dad462851",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "55608b09ec3008b530a1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "febe925de23709c30727",
         "field": {
           "Column": {
             "Expression": {
@@ -1341,32 +1582,94 @@
         "type": "Categorical"
       },
       {
-        "name": "abfd3ab46d2859eb5016",
+        "name": "2f3349a31c37b803ee7c",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_impl_cat_cost"
+                "Entity": "f_capex_imp_cost_data"
               }
             },
-            "Property": "impl_cat_cost_name"
+            "Property": "src_text"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "345980435106b43b210e",
+        "name": "3c8fa1c38615c3037ce3",
         "field": {
-          "Measure": {
+          "Aggregation": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_capex_imp_cost_data"
+                  }
+                },
+                "Property": "src_voucher_no"
               }
             },
-            "Property": "Wydatki"
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "c12de0245a36cbe00880",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4653404e46cc9a50ca59",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_e"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6856620a006b8116322d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_voucher_no"
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "af24dee909a4674310a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_f"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

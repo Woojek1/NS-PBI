@@ -1,91 +1,81 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "4497dd9920d904c85e50",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "458d4308052812400ddb",
   "position": {
-    "x": 1553.3333333333335,
-    "y": 261.66666666666669,
-    "z": 3000,
-    "height": 81.666666666666671,
-    "width": 340,
-    "tabOrder": 4000
+    "x": 21.666666666666668,
+    "y": 25,
+    "z": 14002,
+    "height": 100,
+    "width": 320,
+    "tabOrder": 14002
   },
   "visual": {
-    "visualType": "slicer",
+    "visualType": "card",
     "query": {
       "queryState": {
         "Values": {
           "projections": [
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_gl_project"
+                      "Entity": "_Miary"
                     }
                   },
-                  "Property": "status"
+                  "Property": "Ilość otwartych projektów"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.status",
-              "nativeQueryRef": "Status",
-              "active": true,
-              "displayName": "Status"
+              "queryRef": "_Miary.Ilość otwartych projektów",
+              "nativeQueryRef": "Ilość otwartych projektów"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Miary"
+                  }
+                },
+                "Property": "Ilość otwartych projektów"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
-      "data": [
+      "labels": [
         {
           "properties": {
-            "mode": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "32D"
                 }
               }
             }
           }
         }
       ],
-      "selection": [
+      "categoryLabels": [
         {
           "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "header": [
-        {
-          "properties": {
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "items": [
-        {
-          "properties": {
-            "textSize": {
+            "fontSize": {
               "expr": {
                 "Literal": {
                   "Value": "14D"
                 }
               }
             },
-            "fontColor": {
+            "color": {
               "solid": {
                 "color": {
                   "expr": {
@@ -96,20 +86,8 @@
                   }
                 }
               }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
             }
           }
-        }
-      ],
-      "general": [
-        {
-          "properties": {}
         }
       ]
     },
@@ -156,6 +134,26 @@
               }
             },
             "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
@@ -230,11 +228,24 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "status",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "19cd48fa02c4cd85592c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Ilość otwartych projektów"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

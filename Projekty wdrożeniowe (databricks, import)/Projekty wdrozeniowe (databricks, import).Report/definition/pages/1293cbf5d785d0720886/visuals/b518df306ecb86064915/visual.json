@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "26379bfd8945b5688c72",
+  "name": "b518df306ecb86064915",
   "position": {
-    "x": 375.85262565889059,
-    "y": 138.53856247392352,
-    "z": 7000,
-    "height": 100,
-    "width": 320,
-    "tabOrder": 7000
+    "x": 19.338339944604876,
+    "y": 261.76713389874567,
+    "z": 9000,
+    "height": 100.11428571428571,
+    "width": 320.91428571428571,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "card",
@@ -23,12 +23,12 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "Wydatki"
+                  "Property": "Budzet projektu"
                 }
               },
-              "queryRef": "_Miary.Wydatki",
-              "nativeQueryRef": "Koszty całkowite",
-              "displayName": "Koszty całkowite"
+              "queryRef": "_Miary.Budzet projektu",
+              "nativeQueryRef": "Budżet projektu bieżący rok",
+              "displayName": "Budżet projektu bieżący rok"
             }
           ]
         }
@@ -43,7 +43,7 @@
                     "Entity": "_Miary"
                   }
                 },
-                "Property": "Wydatki"
+                "Property": "Budzet projektu"
               }
             },
             "direction": "Descending"
@@ -230,5 +230,61 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e8fa0b052b58eb9383b3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_date_first"
+          }
+        },
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "mon_date_first"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 3
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

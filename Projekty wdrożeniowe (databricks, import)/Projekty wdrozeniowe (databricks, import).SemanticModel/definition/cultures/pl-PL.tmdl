@@ -20,7 +20,7 @@ cultureInfo pl-PL
 			          }
 			        },
 			        {
-			          "Koszty całkowite": {
+			          "Koszty bieżący rok": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -30,7 +30,7 @@ cultureInfo pl-PL
 			          }
 			        },
 			        {
-			          "Koszty bieżący rok": {
+			          "Koszty całkowite": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -285,16 +285,6 @@ cultureInfo pl-PL
 			        {
 			          "ilosc otwartych projektow wg statusow": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Ilosc otwartych projektow": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -1646,6 +1636,9 @@ cultureInfo pl-PL
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "cost id": {
@@ -10758,9 +10751,242 @@ cultureInfo pl-PL
 			          }
 			        }
 			      ]
+			    },
+			    "entity__miary.ilosc_miesiecy_od_pierwszej_sprzedazy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Ilosc miesiecy od pierwszej sprzedazy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ilosc miesiecy od pierwszej sprzedazy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Mc od pierwszej sprzedaży": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.zwrot_wdrozenia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Zwrot wdrozenia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "zwrot wdrozenia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "f_capex_imp_cost_data_has_vm_pbi_d_gl_project": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_gl_project"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_vm_pbi_d_gl_projects"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "f_capex_imp_cost_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_f_capex_imp_cost_data"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_d_impl_cat_cost": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "d_impl_cat_cost": {
+			          "Target": {
+			            "Entity": "d_impl_cat_cost"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "d_impl_cat_cost"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_d_impl_cat_costs"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_impl_cat_cost"
+			            },
+			            "Object": {
+			              "Role": "f_capex_imp_cost_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_impl_cat_costs_have_f_capex_imp_cost_data"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project_has_entity__miary_zwrot_wdrozenia": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_gl_project"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        },
+			        "entity__miary.zwrot_wdrozenia": {
+			          "Target": {
+			            "Entity": "entity__miary.zwrot_wdrozenia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.zwrot_wdrozenia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_zwrot_wdrozenia"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_zwrot_wdrozenia": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.zwrot_wdrozenia": {
+			          "Target": {
+			            "Entity": "entity__miary.zwrot_wdrozenia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.zwrot_wdrozenia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_zwrot_wdrozenia"
+			        }
+			      ]
+			    },
+			    "entity__miary_has_ilosc_miesiecy_od_pierwszej_sprzedazy": {
+			      "Binding": {
+			        "ConceptualEntity": "_Miary"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__miary": {
+			          "Target": {
+			            "Entity": "entity__miary"
+			          }
+			        },
+			        "entity__miary.ilosc_miesiecy_od_pierwszej_sprzedazy": {
+			          "Target": {
+			            "Entity": "entity__miary.ilosc_miesiecy_od_pierwszej_sprzedazy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__miary"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.ilosc_miesiecy_od_pierwszej_sprzedazy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_miaries_have_ilosc_miesiecy_od_pierwszej_sprzedazy"
+			        }
+			      ]
+			    },
 			    "vm_pbi_d_gl_project_has_entity__miary_Marza_II_": {
 			      "Binding": {
 			        "ConceptualEntity": "vm_pbi_d_gl_project"
@@ -15394,66 +15620,6 @@ cultureInfo pl-PL
 			        }
 			      ]
 			    },
-			    "f_capex_imp_cost_data_has_cost_id": {
-			      "Binding": {
-			        "ConceptualEntity": "f_capex_imp_cost_data"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_capex_imp_cost_data": {
-			          "Target": {
-			            "Entity": "f_capex_imp_cost_data"
-			          }
-			        },
-			        "f_capex_imp_cost_data.cost_id": {
-			          "Target": {
-			            "Entity": "f_capex_imp_cost_data.cost_id"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_capex_imp_cost_data"
-			            },
-			            "Object": {
-			              "Role": "f_capex_imp_cost_data.cost_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_capex_imp_cost_data_have_cost_ids"
-			        },
-			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "f_capex_imp_cost_data"
-			            },
-			            "Adjectives": [
-			              {
-			                "expensive": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Antonyms": [
-			              {
-			                "cheap": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Measurement": {
-			              "Role": "f_capex_imp_cost_data.cost_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cost_id_indicates_how_expensive_f_capex_imp_cost_data_are"
-			        }
-			      ]
-			    },
 			    "f_capex_imp_cost_data_has_pay_account_id": {
 			      "Binding": {
 			        "ConceptualEntity": "f_capex_imp_cost_data"
@@ -16150,98 +16316,6 @@ cultureInfo pl-PL
 			        }
 			      ]
 			    },
-			    "f_capex_imp_cost_data_has_d_impl_cat_cost": {
-			      "Binding": {
-			        "ConceptualEntity": "f_capex_imp_cost_data"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_capex_imp_cost_data": {
-			          "Target": {
-			            "Entity": "f_capex_imp_cost_data"
-			          }
-			        },
-			        "d_impl_cat_cost": {
-			          "Target": {
-			            "Entity": "d_impl_cat_cost"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_capex_imp_cost_data"
-			            },
-			            "Object": {
-			              "Role": "d_impl_cat_cost"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_capex_imp_cost_data_have_d_impl_cat_costs"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_impl_cat_cost"
-			            },
-			            "Object": {
-			              "Role": "f_capex_imp_cost_data"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_impl_cat_costs_have_f_capex_imp_cost_data"
-			        }
-			      ]
-			    },
-			    "f_capex_imp_cost_data_has_vm_pbi_d_gl_project": {
-			      "Binding": {
-			        "ConceptualEntity": "f_capex_imp_cost_data"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_capex_imp_cost_data": {
-			          "Target": {
-			            "Entity": "f_capex_imp_cost_data"
-			          }
-			        },
-			        "vm_pbi_d_gl_project": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_gl_project"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_capex_imp_cost_data"
-			            },
-			            "Object": {
-			              "Role": "vm_pbi_d_gl_project"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_capex_imp_cost_data_have_vm_pbi_d_gl_projects"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "vm_pbi_d_gl_project"
-			            },
-			            "Object": {
-			              "Role": "f_capex_imp_cost_data"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "vm_pbi_d_gl_projects_have_f_capex_imp_cost_data"
-			        }
-			      ]
-			    },
 			    "f_capex_imp_cost_data_has_d_time_mon": {
 			      "Binding": {
 			        "ConceptualEntity": "f_capex_imp_cost_data"
@@ -16285,6 +16359,52 @@ cultureInfo pl-PL
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_time_mon_have_f_capex_imp_cost_data"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_d_gl_category_cost": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "d_gl_category_cost": {
+			          "Target": {
+			            "Entity": "d_gl_category_cost"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "d_gl_category_cost"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_d_gl_category_costs"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_gl_category_cost"
+			            },
+			            "Object": {
+			              "Role": "f_capex_imp_cost_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_gl_category_costs_have_f_capex_imp_cost_data"
 			        }
 			      ]
 			    },

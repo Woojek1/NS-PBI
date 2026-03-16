@@ -3,7 +3,10 @@ table _Miary
 
 	measure Wydatki =
 			
-			SUM(f_capex_imp_cost_data[amount_pln])
+			ROUND(
+			    SUM(f_capex_imp_cost_data[amount_pln]),
+			    0
+			)
 		formatString: #,0.00
 		lineageTag: 295b12e5-d9a0-457b-a5b2-7fcb9103c641
 
@@ -133,6 +136,25 @@ table _Miary
 			```
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 76eb7427-cb99-490f-81e7-9c51441295fa
+
+	measure 'Ilosc miesiecy od pierwszej sprzedazy' =
+			
+			VAR DZIS = TODAY()
+			VAR PIWERWSZA_SPRZEDAZ = MIN(vm_pbi_d_gl_project[first_sales])
+			RETURN
+			DATEDIFF(PIWERWSZA_SPRZEDAZ, DZIS, MONTH)
+		formatString: 0
+		lineageTag: ca24e34b-83da-4184-9856-4b7327457ccb
+
+	measure 'Zwrot wdrozenia' =
+			
+			DIVIDE(
+			    [Marza_II],
+			    [Wydatki],
+			    "BŁĄD"
+			)
+		formatString: 0%;-0%;0%
+		lineageTag: 35a07a38-dbbf-468c-8c30-4d470148f7af
 
 	column Value
 		formatString: 0
