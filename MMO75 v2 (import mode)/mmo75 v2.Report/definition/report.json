@@ -14,8 +14,72 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8fa206884019d7085f0b",
+        "name": "66688b9080970b4bce80",
         "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "dca0b069b7b084008a27",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Business category"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "daf84ed2db383c97026a",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Business subcategory"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "c12a9788001e7708966d",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Business cluster"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "8fa206884019d7085f0b",
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -31,7 +95,7 @@
       },
       {
         "name": "f11d000b661f309225d8",
-        "ordinal": 1,
+        "ordinal": 5,
         "field": {
           "Column": {
             "Expression": {
@@ -47,7 +111,7 @@
       },
       {
         "name": "5f8cb3945c655e98f306",
-        "ordinal": 2,
+        "ordinal": 6,
         "field": {
           "Column": {
             "Expression": {
@@ -63,7 +127,7 @@
       },
       {
         "name": "82fa4a90face4d91c3ab",
-        "ordinal": 3,
+        "ordinal": 7,
         "field": {
           "Column": {
             "Expression": {
@@ -79,7 +143,7 @@
       },
       {
         "name": "f4743622cf9df9c9276b",
-        "ordinal": 4,
+        "ordinal": 8,
         "field": {
           "Column": {
             "Expression": {
@@ -95,7 +159,7 @@
       },
       {
         "name": "a491435f52af2a3b3155",
-        "ordinal": 5,
+        "ordinal": 9,
         "field": {
           "Column": {
             "Expression": {
@@ -111,7 +175,7 @@
       },
       {
         "name": "6675dc3273452df705cd",
-        "ordinal": 6,
+        "ordinal": 10,
         "field": {
           "Column": {
             "Expression": {
@@ -127,7 +191,7 @@
       },
       {
         "name": "c62bd13672ce50e9aae3",
-        "ordinal": 7,
+        "ordinal": 11,
         "field": {
           "Column": {
             "Expression": {
@@ -143,7 +207,7 @@
       },
       {
         "name": "da4272f4ddaa0a4bd5f9",
-        "ordinal": 8,
+        "ordinal": 12,
         "field": {
           "Column": {
             "Expression": {
@@ -159,7 +223,7 @@
       },
       {
         "name": "4f0d4eff4eff3624e6a3",
-        "ordinal": 9,
+        "ordinal": 13,
         "field": {
           "Column": {
             "Expression": {
@@ -175,7 +239,7 @@
       },
       {
         "name": "7a4b667fc02948084227",
-        "ordinal": 10,
+        "ordinal": 14,
         "field": {
           "Column": {
             "Expression": {
@@ -191,7 +255,7 @@
       },
       {
         "name": "be2fe4249c177d8a02a2",
-        "ordinal": 11,
+        "ordinal": 15,
         "field": {
           "Column": {
             "Expression": {
@@ -207,7 +271,7 @@
       },
       {
         "name": "af2154ba81c709e59bc8",
-        "ordinal": 12,
+        "ordinal": 16,
         "field": {
           "Column": {
             "Expression": {
@@ -223,7 +287,7 @@
       },
       {
         "name": "d66a0dd3e2a4053ff305",
-        "ordinal": 13,
+        "ordinal": 17,
         "field": {
           "Column": {
             "Expression": {
@@ -239,70 +303,6 @@
       },
       {
         "name": "84bf4c00764ec60fb44e",
-        "ordinal": 14,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "Product Subgroup"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "33508d62d0762517067f",
-        "ordinal": 15,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "BC Grp 1"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "2945fbba33b7ece5d1c2",
-        "ordinal": 16,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "BC Grp 2"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "f1a28fe23333aeb048be",
-        "ordinal": 17,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "BC Grp 3"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "23c13ef8d22a1bd97e0e",
         "ordinal": 18,
         "field": {
           "Column": {
@@ -311,7 +311,7 @@
                 "Entity": "d_product"
               }
             },
-            "Property": "Line"
+            "Property": "Product Subgroup"
           }
         },
         "type": "Categorical",
@@ -477,6 +477,69 @@
               }
             },
             "Property": "pricelist_name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "732e900de601c283107a",
+        "ordinal": 29,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Novelties flag"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "f14a7db750613790d45d",
+        "ordinal": 30,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "NPI No"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "47a19276bce10e91426d",
+        "ordinal": 31,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Pricelist model"
           }
         },
         "type": "Categorical",

@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "ba0a001d9027009106a4",
+  "name": "c55046cee9a277e38066",
   "position": {
     "x": 20,
-    "y": 532.85714285714289,
+    "y": 887.27272727272725,
     "z": 7000,
-    "height": 82.5,
-    "width": 188.92857142857144,
+    "height": 85.454545454545453,
+    "width": 251.81818181818178,
     "tabOrder": 7000
   },
   "visual": {
@@ -36,43 +36,7 @@
     "objects": {
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "d_product",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "StartsWith": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "Index Code"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'w'"
-                          }
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "inputText": [
@@ -81,20 +45,47 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "12D"
                 }
               }
             }
           }
         }
       ],
-      "dropdown": [
+      "slicerSettings": [
         {
           "properties": {
-            "filterMode": {
+            "multiselect": {
               "expr": {
                 "Literal": {
-                  "Value": "'Filter_Starts_With_Any'"
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "filterOperator": [
+        {
+          "properties": {
+            "showText": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "backShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -129,7 +120,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "12D"
                 }
               }
             }
@@ -142,7 +133,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "36117232174bd504523a",
+        "name": "4312bf763d2baab09b57",
         "field": {
           "Column": {
             "Expression": {
@@ -153,7 +144,8 @@
             "Property": "Index Code"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "isHiddenInViewMode": true
       }
     ]
   }

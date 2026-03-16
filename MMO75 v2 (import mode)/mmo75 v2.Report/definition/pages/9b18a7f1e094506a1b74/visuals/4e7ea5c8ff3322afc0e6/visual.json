@@ -5,8 +5,8 @@
     "x": 20,
     "y": 80,
     "z": 1000,
-    "height": 199.09090909090907,
-    "width": 189.09090909090907,
+    "height": 440,
+    "width": 252.22222222222223,
     "tabOrder": 0
   },
   "visual": {
@@ -45,92 +45,6 @@
                 }
               }
             },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "a",
-                    "Entity": "Attributes",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "a"
-                              }
-                            },
-                            "Property": "Attributes"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'index'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1,
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Attributes"
-                                }
-                              },
-                              "Property": "Attributes"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'''d_product''[Index Code]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "Attributes"
-                                    }
-                                  },
-                                  "Property": "Attributes Fields"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "Index Code"
-                          }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -161,10 +75,60 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''d_product''[Index Code]'"
+                                "Value": "'''d_product''[Line]'"
                               }
                             }
                           ]
+                        ]
+                      }
+                    },
+                    "Annotations": {
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Attributes"
+                                }
+                              },
+                              "Property": "Attributes"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'''d_product''[Line]'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Attributes"
+                                    }
+                                  },
+                                  "Property": "Attributes Fields"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "Line"
+                          }
                         ]
                       }
                     }
@@ -181,7 +145,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "10D"
                 }
               }
             }
@@ -194,7 +158,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "12D"
                 }
               }
             }

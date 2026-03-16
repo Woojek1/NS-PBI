@@ -378,19 +378,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Department"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Department": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "d_organization.section": {
 			      "Definition": {
@@ -419,15 +407,6 @@ cultureInfo en-US
 			      },
 			      "State": "Generated"
 			    },
-			    "d_product.line": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "d_product",
-			          "ConceptualProperty": "Line"
-			        }
-			      },
-			      "State": "Generated"
-			    },
 			    "d_product.npi_flag": {
 			      "Definition": {
 			        "Binding": {
@@ -436,6 +415,87 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated"
+			    },
+			    "d_product.model": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_product",
+			          "ConceptualProperty": "Model"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "d_product.model_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_product",
+			          "ConceptualProperty": "Model Code"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "d_pricelist.pricelist_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_pricelist",
+			          "ConceptualProperty": "pricelist_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pricelist name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "f_margin75_facts.discount_pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_margin75_facts",
+			          "ConceptualProperty": "!Discount% (PLN)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "!Discount% (PLN)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "f_margin75_facts.base_sales_pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_margin75_facts",
+			          "ConceptualProperty": "Base Sales PLN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Base Sales PLN": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  }
 			}

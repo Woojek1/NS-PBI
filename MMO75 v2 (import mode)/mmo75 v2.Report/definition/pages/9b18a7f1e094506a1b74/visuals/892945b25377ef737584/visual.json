@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "892945b25377ef737584",
   "position": {
-    "x": 209.09090909090907,
+    "x": 271,
     "y": 80,
     "z": 6000,
-    "height": 618.18181818181813,
-    "width": 1050.9090909090908,
+    "height": 980.36363636363637,
+    "width": 1633.4545454545455,
     "tabOrder": 2000
   },
   "visual": {
@@ -59,13 +59,13 @@
                       "Entity": "d_product"
                     }
                   },
-                  "Property": "Index Code"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "d_product.Index Code",
-              "nativeQueryRef": "Index Code",
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
               "active": true,
-              "displayName": "Index Code"
+              "displayName": "Line"
             }
           ],
           "fieldParameters": [
@@ -95,6 +95,21 @@
                       "Entity": "f_margin75_facts"
                     }
                   },
+                  "Property": "Sale Quantity"
+                }
+              },
+              "queryRef": "f_margin75_facts.Sale Quantity",
+              "nativeQueryRef": "Sale Quantity ",
+              "displayName": "Sale Quantity "
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
                   "Property": "Net Sales PLN"
                 }
               },
@@ -110,12 +125,12 @@
                       "Entity": "f_margin75_facts"
                     }
                   },
-                  "Property": "Base Sales PLN"
+                  "Property": "Margin I PLN"
                 }
               },
-              "queryRef": "f_margin75_facts.Base Sales PLN",
-              "nativeQueryRef": "Base Sales PLN",
-              "displayName": "Base Sales PLN"
+              "queryRef": "f_margin75_facts.Margin I PLN",
+              "nativeQueryRef": "Margin I PLN",
+              "displayName": "Margin I PLN"
             }
           ],
           "fieldParameters": [
@@ -131,7 +146,7 @@
                 }
               },
               "index": 0,
-              "length": 2
+              "length": 3
             }
           ]
         }
@@ -144,7 +159,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "10D"
                 }
               }
             }
@@ -157,7 +172,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "10D"
                 }
               }
             },
@@ -177,7 +192,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "10D"
                 }
               }
             },
@@ -225,6 +240,367 @@
           },
           "selector": {
             "metadata": "f_margin75_facts.Net Sales PLN"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "242.19559962751038D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Line"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129.45454545454544D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2025'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "161.45454545454544D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "d_time_mon"
+                        }
+                      },
+                      "Property": "year_name"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93.1142870041279D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2026'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "f_margin75_facts.Sale Quantity"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "90.74285627319136D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2025'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "f_margin75_facts.Margin I PLN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.11428571428571D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2025'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "f_margin75_facts.Net Sales PLN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.48571600550386D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2025'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "f_margin75_facts.Sale Quantity"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93.48571254638274D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2024'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "f_margin75_facts.Margin I PLN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105.85714285714286D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2024'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "f_margin75_facts.Net Sales PLN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93.1142870041279D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "d_time_mon"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'2024'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "f_margin75_facts.Sale Quantity"
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Compact'"
+                }
+              }
+            }
           }
         }
       ]
@@ -283,59 +659,8 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "bda1d0235a62321430bb",
-        "ordinal": 2,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "BC Grp 1"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "a4a616af49ac4124d6a3",
-        "ordinal": 3,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "BC Grp 2"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
-        "name": "15b538c742b8e09ffc0b",
-        "ordinal": 4,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "BC Grp 3"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      },
-      {
         "name": "d374ebc0f271b5af7bc5",
-        "ordinal": 5,
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -352,7 +677,7 @@
       },
       {
         "name": "a508447f6b4577420843",
-        "ordinal": 6,
+        "ordinal": 3,
         "field": {
           "Measure": {
             "Expression": {
@@ -369,7 +694,7 @@
       },
       {
         "name": "8e123d72ce65ca8e9c63",
-        "ordinal": 7,
+        "ordinal": 4,
         "field": {
           "Measure": {
             "Expression": {
@@ -386,7 +711,7 @@
       },
       {
         "name": "fc9c6be639f414007fb2",
-        "ordinal": 8,
+        "ordinal": 5,
         "field": {
           "Column": {
             "Expression": {
@@ -403,7 +728,7 @@
       },
       {
         "name": "7cda10c14c0828b29775",
-        "ordinal": 9,
+        "ordinal": 6,
         "field": {
           "Column": {
             "Expression": {
@@ -420,7 +745,7 @@
       },
       {
         "name": "90bf5d0a1ad3aa63405d",
-        "ordinal": 10,
+        "ordinal": 7,
         "field": {
           "Measure": {
             "Expression": {
@@ -437,7 +762,7 @@
       },
       {
         "name": "4c3e313ab729c4a82a1f",
-        "ordinal": 11,
+        "ordinal": 8,
         "field": {
           "Measure": {
             "Expression": {
@@ -454,7 +779,7 @@
       },
       {
         "name": "a3c711ea23c2ebff7d08",
-        "ordinal": 12,
+        "ordinal": 9,
         "field": {
           "Measure": {
             "Expression": {
@@ -471,7 +796,7 @@
       },
       {
         "name": "edb8f03b1cf7d83d49fa",
-        "ordinal": 13,
+        "ordinal": 10,
         "field": {
           "Measure": {
             "Expression": {
@@ -488,7 +813,7 @@
       },
       {
         "name": "fa665bd510c3768f4ca5",
-        "ordinal": 14,
+        "ordinal": 11,
         "field": {
           "Column": {
             "Expression": {
@@ -505,7 +830,7 @@
       },
       {
         "name": "313e28bb46dc82a3eb08",
-        "ordinal": 15,
+        "ordinal": 12,
         "field": {
           "Column": {
             "Expression": {
@@ -522,7 +847,7 @@
       },
       {
         "name": "6d649a1f77bde3b65549",
-        "ordinal": 16,
+        "ordinal": 13,
         "field": {
           "Column": {
             "Expression": {
@@ -539,7 +864,7 @@
       },
       {
         "name": "efd2f39eb6c2fe4f8e2d",
-        "ordinal": 17,
+        "ordinal": 14,
         "field": {
           "Column": {
             "Expression": {
@@ -556,7 +881,7 @@
       },
       {
         "name": "e1948dc66f20d54bf57f",
-        "ordinal": 18,
+        "ordinal": 15,
         "field": {
           "Column": {
             "Expression": {
@@ -573,7 +898,7 @@
       },
       {
         "name": "5d5c49e16f3800b9264b",
-        "ordinal": 19,
+        "ordinal": 16,
         "field": {
           "Column": {
             "Expression": {
@@ -590,7 +915,7 @@
       },
       {
         "name": "a2bfc124f63c0ee30bdd",
-        "ordinal": 20,
+        "ordinal": 17,
         "field": {
           "Column": {
             "Expression": {
@@ -602,11 +927,19 @@
           }
         },
         "type": "Categorical",
-        "isHiddenInViewMode": true
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
       },
       {
         "name": "5758d959c57ddb03d390",
-        "ordinal": 21,
+        "ordinal": 18,
         "field": {
           "Column": {
             "Expression": {
@@ -623,7 +956,7 @@
       },
       {
         "name": "7b65a4c4084e03fe188e",
-        "ordinal": 22,
+        "ordinal": 19,
         "field": {
           "Measure": {
             "Expression": {
@@ -640,7 +973,7 @@
       },
       {
         "name": "6785dec7d3aef08de9ed",
-        "ordinal": 23,
+        "ordinal": 20,
         "field": {
           "Measure": {
             "Expression": {
@@ -657,7 +990,7 @@
       },
       {
         "name": "27b5c40ef389a5653b65",
-        "ordinal": 24,
+        "ordinal": 21,
         "field": {
           "Column": {
             "Expression": {
@@ -669,12 +1002,11 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
         "name": "1bbc1e8b1767e34ee8db",
-        "ordinal": 25,
+        "ordinal": 22,
         "field": {
           "Measure": {
             "Expression": {
@@ -691,7 +1023,7 @@
       },
       {
         "name": "e2d8f79d1b2a9a2dbf0a",
-        "ordinal": 26,
+        "ordinal": 23,
         "field": {
           "Measure": {
             "Expression": {
@@ -708,7 +1040,7 @@
       },
       {
         "name": "4b6917ded4e86894faad",
-        "ordinal": 27,
+        "ordinal": 24,
         "field": {
           "Measure": {
             "Expression": {
@@ -725,7 +1057,7 @@
       },
       {
         "name": "8c2f39ac89606b78d9b1",
-        "ordinal": 28,
+        "ordinal": 25,
         "field": {
           "Measure": {
             "Expression": {
@@ -742,7 +1074,7 @@
       },
       {
         "name": "1b9deda2fb3f479a9f39",
-        "ordinal": 29,
+        "ordinal": 26,
         "field": {
           "Measure": {
             "Expression": {
@@ -759,7 +1091,7 @@
       },
       {
         "name": "c23ae9fd11c14c863e34",
-        "ordinal": 30,
+        "ordinal": 27,
         "field": {
           "Measure": {
             "Expression": {
@@ -776,7 +1108,7 @@
       },
       {
         "name": "455f41a00036de16fbb5",
-        "ordinal": 31,
+        "ordinal": 28,
         "field": {
           "Measure": {
             "Expression": {
@@ -793,7 +1125,7 @@
       },
       {
         "name": "c32160fabca46c565d21",
-        "ordinal": 32,
+        "ordinal": 29,
         "field": {
           "Measure": {
             "Expression": {
@@ -810,7 +1142,7 @@
       },
       {
         "name": "386402e9accdcae74a01",
-        "ordinal": 33,
+        "ordinal": 30,
         "field": {
           "Measure": {
             "Expression": {
@@ -827,7 +1159,7 @@
       },
       {
         "name": "ba5aa70e4720ac5bb301",
-        "ordinal": 34,
+        "ordinal": 31,
         "field": {
           "Measure": {
             "Expression": {
@@ -839,12 +1171,11 @@
           }
         },
         "type": "Advanced",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
         "name": "19b0330a41bb68654a17",
-        "ordinal": 35,
+        "ordinal": 32,
         "field": {
           "Measure": {
             "Expression": {
@@ -861,7 +1192,7 @@
       },
       {
         "name": "c1e175ff8f65852e24ea",
-        "ordinal": 36,
+        "ordinal": 33,
         "field": {
           "Measure": {
             "Expression": {
@@ -878,7 +1209,7 @@
       },
       {
         "name": "841a7cff1a3fac1f088a",
-        "ordinal": 37,
+        "ordinal": 34,
         "field": {
           "Measure": {
             "Expression": {
@@ -895,7 +1226,7 @@
       },
       {
         "name": "06f83c62be245b6d22d8",
-        "ordinal": 38,
+        "ordinal": 35,
         "field": {
           "Measure": {
             "Expression": {
@@ -912,7 +1243,7 @@
       },
       {
         "name": "e5b4cd5ff4bedf6b7fce",
-        "ordinal": 39,
+        "ordinal": 36,
         "field": {
           "Column": {
             "Expression": {
@@ -930,7 +1261,7 @@
       {
         "name": "e545593965b498c735b8",
         "displayName": "Month",
-        "ordinal": 40,
+        "ordinal": 37,
         "field": {
           "Column": {
             "Expression": {
@@ -942,11 +1273,12 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User"
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       },
       {
         "name": "12d5297b7ac289d10a7f",
-        "ordinal": 41,
+        "ordinal": 38,
         "field": {
           "Measure": {
             "Expression": {
@@ -963,7 +1295,7 @@
       },
       {
         "name": "f9c05b43850acc746df5",
-        "ordinal": 42,
+        "ordinal": 39,
         "field": {
           "Measure": {
             "Expression": {
@@ -979,7 +1311,7 @@
       },
       {
         "name": "c1bf5db9715b7f17e14f",
-        "ordinal": 43,
+        "ordinal": 40,
         "field": {
           "Column": {
             "Expression": {
@@ -996,7 +1328,7 @@
       },
       {
         "name": "5b40ecde6735f1b67d65",
-        "ordinal": 44,
+        "ordinal": 41,
         "field": {
           "Column": {
             "Expression": {
@@ -1013,7 +1345,7 @@
       },
       {
         "name": "624d83843fe94a5ade14",
-        "ordinal": 45,
+        "ordinal": 42,
         "field": {
           "Column": {
             "Expression": {
@@ -1030,7 +1362,7 @@
       },
       {
         "name": "73adb8bbe99d4acfc57c",
-        "ordinal": 46,
+        "ordinal": 43,
         "field": {
           "Measure": {
             "Expression": {
@@ -1042,12 +1374,11 @@
           }
         },
         "type": "Advanced",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
         "name": "bc8f463c42c004615e42",
-        "ordinal": 47,
+        "ordinal": 44,
         "field": {
           "Column": {
             "Expression": {
@@ -1065,7 +1396,7 @@
       {
         "name": "c8f1dbe9d8cac6f3d961",
         "displayName": "Quarter",
-        "ordinal": 48,
+        "ordinal": 45,
         "field": {
           "Column": {
             "Expression": {
@@ -1077,11 +1408,12 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User"
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       },
       {
         "name": "c196a6da0ccb08331d80",
-        "ordinal": 49,
+        "ordinal": 46,
         "field": {
           "Column": {
             "Expression": {
@@ -1098,7 +1430,7 @@
       },
       {
         "name": "489ebf73e821c3fe5a18",
-        "ordinal": 50,
+        "ordinal": 47,
         "field": {
           "Column": {
             "Expression": {
@@ -1115,7 +1447,7 @@
       },
       {
         "name": "cff54dec2ad5c7d91077",
-        "ordinal": 51,
+        "ordinal": 48,
         "field": {
           "Measure": {
             "Expression": {
@@ -1132,7 +1464,7 @@
       },
       {
         "name": "30c273eb18bf44c5d851",
-        "ordinal": 52,
+        "ordinal": 49,
         "field": {
           "Measure": {
             "Expression": {
@@ -1149,7 +1481,7 @@
       },
       {
         "name": "caf9910741262d084f38",
-        "ordinal": 53,
+        "ordinal": 50,
         "field": {
           "Measure": {
             "Expression": {
@@ -1166,7 +1498,7 @@
       },
       {
         "name": "87cda8f62d0c1b7ad590",
-        "ordinal": 54,
+        "ordinal": 51,
         "field": {
           "Measure": {
             "Expression": {
@@ -1183,7 +1515,7 @@
       },
       {
         "name": "0e421f7cff34ef466344",
-        "ordinal": 55,
+        "ordinal": 52,
         "field": {
           "Measure": {
             "Expression": {
@@ -1200,7 +1532,7 @@
       },
       {
         "name": "6574c1223a22f7d4bd05",
-        "ordinal": 56,
+        "ordinal": 53,
         "field": {
           "Measure": {
             "Expression": {
@@ -1217,7 +1549,7 @@
       },
       {
         "name": "8cfde390b832eb908570",
-        "ordinal": 57,
+        "ordinal": 54,
         "field": {
           "Measure": {
             "Expression": {
@@ -1234,7 +1566,7 @@
       },
       {
         "name": "705a2cba5406c02e615b",
-        "ordinal": 58,
+        "ordinal": 55,
         "field": {
           "Column": {
             "Expression": {
@@ -1245,21 +1577,25 @@
             "Property": "year_name"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "isHiddenInViewMode": true
       },
       {
-        "name": "6f058a7273a6c3212953",
+        "name": "a92b07dc489c700e31c6",
+        "ordinal": 56,
         "field": {
-          "Measure": {
+          "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "f_margin75_facts"
+                "Entity": "d_product"
               }
             },
-            "Property": "Base Sales PLN"
+            "Property": "Model Code"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       }
     ],
     "filterSortOrder": "Custom"

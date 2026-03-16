@@ -14,14 +14,6 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
-	column Line
-		dataType: string
-		lineageTag: 3d71bebe-4516-4e9a-862d-e0fd7923ceca
-		summarizeBy: none
-		sourceColumn: Line
-
-		annotation SummarizationSetBy = Automatic
-
 	column Model
 		dataType: string
 		lineageTag: 05d53eb6-4b4c-4d0e-921a-63bb148f6316
@@ -70,30 +62,6 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'BC Grp 1'
-		dataType: string
-		lineageTag: 07d6c826-1953-4aa5-8d98-849078c0e46c
-		summarizeBy: none
-		sourceColumn: BC Grp 1
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'BC Grp 2'
-		dataType: string
-		lineageTag: c182015e-6b27-4b9c-84de-677c030b7532
-		summarizeBy: none
-		sourceColumn: BC Grp 2
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'BC Grp 3'
-		dataType: string
-		lineageTag: 5363ced2-41d5-4bf8-b960-92c072e55ca1
-		summarizeBy: none
-		sourceColumn: BC Grp 3
-
-		annotation SummarizationSetBy = Automatic
-
 	column Brand
 		dataType: string
 		lineageTag: b40dc906-b30a-44dc-95d3-905a50ac773c
@@ -127,6 +95,54 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Novelties flag'
+		dataType: string
+		lineageTag: 9e4d27ab-e6b6-4346-86dc-0ad2c6a4a205
+		summarizeBy: none
+		sourceColumn: Novelties flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business category'
+		dataType: string
+		lineageTag: b3e15905-e3c6-417b-9b1a-757d39fafa9f
+		summarizeBy: none
+		sourceColumn: Business category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business subcategory'
+		dataType: string
+		lineageTag: b858e7a2-631b-4d82-8ce9-cf32a55975c2
+		summarizeBy: none
+		sourceColumn: Business subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business cluster'
+		dataType: string
+		lineageTag: 97b5054e-a309-4ff1-a878-ce2a317bccf2
+		summarizeBy: none
+		sourceColumn: Business cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pricelist model'
+		dataType: string
+		lineageTag: cae134a9-37ce-481a-b590-bb2f932bda6e
+		summarizeBy: none
+		sourceColumn: Pricelist model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line
+		dataType: string
+		lineageTag: dd85b8de-cc3b-444f-9b0b-4d794d989ab8
+		summarizeBy: none
+		sourceColumn: Line
+
+		annotation SummarizationSetBy = Automatic
+
 	partition d_product = m
 		mode: import
 		source =
@@ -148,15 +164,17 @@ table d_product
 				        p.grp_name         as `Product Group`,
 				        p.prod_si_name     as `Index Name`,
 				        p.prod_si_code     as `Index Code`,
-				        p.bcg1_name_en     as `BC Grp 1`,
-				        p.bcg2_name_en     as `BC Grp 2`,
-				        p.bcg3_name_en     as `BC Grp 3`,
+				        p.bcg1_name_en     as `Business category`,
+				        p.bcg2_name_en     as `Business subcategory`,
+				        p.bcg3_name_en     as `Business cluster`,
 				        p.brand_name       as `Brand`,
+				        p.line_novelties_flag as `Novelties flag`,
 				        p.npi_no           as `NPI No`,
 				        case
 				            when npi_no is null then false
 				            else true
-				        end                as `NPI flag`
+				        end                as `NPI flag`,
+				        p.price_model_desc as `Pricelist model`
 				    from zenith.edw.d_product p
 				    where exists (
 				        select 1

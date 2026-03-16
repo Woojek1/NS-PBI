@@ -38,8 +38,9 @@ table Miary
 
 	partition Miary = calculated
 		mode: import
-		source =
+		source = ```
 				{
+				    ("!Discount% (PLN)", NAMEOF('f_margin75_facts'[!Discount% (PLN)]), 0),
 				    ("Sale Quantity ", NAMEOF('f_margin75_facts'[Sale Quantity]), 0),
 				    ("Net Sales PLN", NAMEOF('f_margin75_facts'[Net Sales PLN]), 1),
 				    ("Base Sales PLN", NAMEOF('f_margin75_facts'[Base Sales PLN]), 2),
@@ -76,8 +77,9 @@ table Miary
 				    ("Transport EUR", NAMEOF('f_margin75_facts'[Transport EUR]), 33),
 				    ("Variance Fixed Cost EUR", NAMEOF('f_margin75_facts'[Variance Fixed Cost EUR]), 34),
 				    ("Margin II EUR", NAMEOF('f_margin75_facts'[Margin II EUR]), 35),
-				    ("Margin II % (EUR)", NAMEOF('f_margin75_facts'[Margin II % (EUR)]), 36)
+				    ("Margin II % (EUR)", NAMEOF('f_margin75_facts'[Margin II % (EUR)]), 36)    
 				}
+				```
 
 	annotation PBI_Id = 2cf44427eaeb414495f6a33c8abf7737
 

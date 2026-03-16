@@ -209,6 +209,19 @@ table f_margin75_facts
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
+	measure '!Discount (PLN)' =
+			
+			[Base Sales PLN] - [Net Sales PLN]
+		lineageTag: 9acfb5c6-ae46-4568-b7ad-5cf5c5b0be53
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '!Discount% (PLN)' =
+			
+			DIVIDE([Base Sales PLN] - [Net sales PLN], [Base Sales PLN], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7c6843a7-5f47-4a19-abed-867a024a773e
+
 	column time_id
 		dataType: int64
 		isHidden
@@ -732,7 +745,7 @@ table f_margin75_facts
 				        c_eur_stock_deprec,
 				        c_pln_compl_act,
 				        c_eur_compl_act
-				    from zenith.mmo75.f_margin75_facts
+				    from zenith.mmo75.f_margin_facts
 				    ",
 				    null,
 				    [EnableFolding=true]
