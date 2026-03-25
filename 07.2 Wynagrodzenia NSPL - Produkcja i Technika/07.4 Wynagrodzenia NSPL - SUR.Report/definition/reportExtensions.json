@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Salary Cost Measures",
+      "measures": [
+        {
+          "name": "Absencja urlopowa",
+          "dataType": "Double",
+          "expression": "CALCULATE('Salary Cost Measures'[Salary rbh],'Salary Component'[Component Code]=\"9720\")/(CALCULATE([Salary rbh],'Salary Component'[Component Code]=\"9590\")-CALCULATE([Salary rbh],'Salary Component'[Component Code] in {\"9635\",\"9640\",\"9642\",\"9645\",\"9690\",\"9700\",\"9740\",\"9810\",\"9820\", \"9830\",\"9636\",\"1112\"}))",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "Salary Cost Measures",
+                "name": "Salary rbh"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Absencja chorobowa",
+          "dataType": "Double",
+          "expression": "(CALCULATE([Salary rbh],'Salary Component'[Component Code] in {\"9600\",\"9610\",\"9620\",\"9630\",\"9650\",\"9660\"})-CALCULATE([Salary rbh],'Salary Component'[Component Code] = \"6020\"))/\n(\n    CALCULATE([Salary rbh],'Salary Component'[Component Code] = \"9590\") - CALCULATE([Salary rbh],'Salary Component'[Component Code] in {\"9635\",\"9640\",\"9642\",\"9645\",\"9690\",\"9700\",\"9740\",\"9810\",\"9820\", \"9830\",\"9636\",\"1112\"}))\n",
+          "formatString": "#,0.00\\ %;-#,0.00\\ %;#,0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "Salary Cost Measures",
+                "name": "Salary rbh"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Średnie wynagrodzenie PLN",
+          "dataType": "Double",
+          "expression": "(CALCULATE([Salary Costs PLN],'Salary Component'[Component Code] in {\"1430\",\"1440\",\"1450\",\"1510\",\"1530\",\"1550\",\"1560\",\"1570\",\"1580\",\"1582\",\"1590\",\"1592\",\"1593\",\"1594\",\"1595\",\"1610\",\"1620\",\"1670\",\"1680\",\"1685\",\"1690\",\"1697\",\"1710\",\"1800\",\"1810\",\"1820\",\"1822\",\"1860\",\"1870\",\"1900\",\"2150\",\"2200\",\"2450\",\"2500\",\"2517\",\"2550\",\"2600\",\"2640\",\"2650\",\"2810\",\"3110\",\"3745\",\"3760\",\"3810\",\"3850\",\"3860\",\"3862\",\"3863\",\"3875\",\"3930\",\"3970\",\"4440\",\"4459\",\"4460\",\"4461\",\"6510\",\"6520\",\"6530\",\"6540\",\"6598\",\"6599\",\"7850\",\"9520\",\"9530\",\"9540\",\"9560\",\"9570\"}))/\nCALCULATE('Salary Cost Measures'[HeadCount])",
+          "formatString": "General Number",
+          "references": {
+            "measures": [
+              {
+                "entity": "Salary Cost Measures",
+                "name": "Salary Costs PLN"
+              },
+              {
+                "entity": "Salary Cost Measures",
+                "name": "HeadCount"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Średnie wynagrodzenie EUR",
+          "dataType": "Double",
+          "expression": "(CALCULATE([Salary Costs EUR],'Salary Component'[Component Code] in {\"1430\",\"1440\",\"1450\",\"1510\",\"1530\",\"1550\",\"1560\",\"1570\",\"1580\",\"1582\",\"1590\",\"1592\",\"1593\",\"1594\",\"1595\",\"1610\",\"1620\",\"1670\",\"1680\",\"1685\",\"1690\",\"1697\",\"1710\",\"1800\",\"1810\",\"1820\",\"1822\",\"1860\",\"1870\",\"1900\",\"2150\",\"2200\",\"2450\",\"2500\",\"2517\",\"2550\",\"2600\",\"2640\",\"2650\",\"2810\",\"3110\",\"3745\",\"3760\",\"3810\",\"3850\",\"3860\",\"3862\",\"3863\",\"3875\",\"3930\",\"3970\",\"4440\",\"4459\",\"4460\",\"4461\",\"6510\",\"6520\",\"6530\",\"6540\",\"6598\",\"6599\",\"7850\",\"9520\",\"9530\",\"9540\",\"9560\",\"9570\"}))/\nCALCULATE('Salary Cost Measures'[HeadCount])",
+          "formatString": "General Number",
+          "references": {
+            "measures": [
+              {
+                "entity": "Salary Cost Measures",
+                "name": "Salary Costs EUR"
+              },
+              {
+                "entity": "Salary Cost Measures",
+                "name": "HeadCount"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
