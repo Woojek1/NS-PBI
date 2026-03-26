@@ -749,5 +749,151 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "72117706a9b28c8f9643",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0000c0444ababf30a405",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "505c3842af5ce4c57a19",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d64171939c36b7bf0dc8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "adbdc315e4188d6df646",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "69a6ea9a7d20b407ed45",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch (en)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "158ee596a1059be9d408",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Actuals YTD EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9d39f3941e0fc77cd11b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Bud Measures"
+              }
+            },
+            "Property": "Budget YTD EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a726b3050922b1a1370a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "YTD Act vs Bdg"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2c2c049f6fbc00374892",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "% YTD Act/Bdg"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
