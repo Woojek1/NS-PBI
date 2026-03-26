@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "64e4ccc0172287470450",
+  "name": "e4f66ee717c2d77b8c70",
   "position": {
     "x": 729.6,
-    "y": 140.8,
-    "z": 7000,
+    "y": 262.4,
+    "z": 8000,
     "height": 99.2,
     "width": 320,
-    "tabOrder": 7000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "_Miary.Realizacja budzetu",
-              "nativeQueryRef": "Realizacja budżetu całkowitego %",
-              "displayName": "Realizacja budżetu całkowitego %"
+              "nativeQueryRef": "Realizacja budżetu biążacy rok %",
+              "displayName": "Realizacja budżetu biążacy rok %"
             }
           ]
         }
@@ -332,5 +332,61 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ab59fcc96059d94ba15b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_date_first"
+          }
+        },
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "mon_date_first"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 3
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

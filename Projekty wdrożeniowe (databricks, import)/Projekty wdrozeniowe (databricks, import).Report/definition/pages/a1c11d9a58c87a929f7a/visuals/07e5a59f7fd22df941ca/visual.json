@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "8d9abbc8d82300217685",
+  "name": "07e5a59f7fd22df941ca",
   "position": {
-    "x": 729.6,
-    "y": 262.4,
-    "z": 8000,
-    "height": 99.2,
-    "width": 320,
-    "tabOrder": 8000
+    "x": 377.28119708746203,
+    "y": 261.39570533106627,
+    "z": 1000,
+    "height": 100,
+    "width": 318.57142857142861,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -23,12 +23,12 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "Realizacja budzetu %"
+                  "Property": "Wydatki"
                 }
               },
-              "queryRef": "_Miary.Realizacja budzetu",
-              "nativeQueryRef": "Realizacja budżetu biążacy rok %",
-              "displayName": "Realizacja budżetu biążacy rok %"
+              "queryRef": "_Miary.Wydatki",
+              "nativeQueryRef": "Koszty bieżący rok",
+              "displayName": "Koszty bieżący rok"
             }
           ]
         }
@@ -43,7 +43,7 @@
                     "Entity": "_Miary"
                   }
                 },
-                "Property": "Realizacja budzetu %"
+                "Property": "Wydatki"
               }
             },
             "direction": "Descending"
@@ -217,111 +217,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
-                                  "ComparisonKind": 2,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "_Miary"
-                                        }
-                                      },
-                                      "Property": "Realizacja budzetu %"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "0.99D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 3,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "_Miary"
-                                        }
-                                      },
-                                      "Property": "Realizacja budzetu %"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "5000D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#EF9C9C'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "And": {
-                              "Left": {
-                                "Comparison": {
-                                  "ComparisonKind": 2,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "_Miary"
-                                        }
-                                      },
-                                      "Property": "Realizacja budzetu %"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "-100D"
-                                    }
-                                  }
-                                }
-                              },
-                              "Right": {
-                                "Comparison": {
-                                  "ComparisonKind": 3,
-                                  "Left": {
-                                    "Measure": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "_Miary"
-                                        }
-                                      },
-                                      "Property": "Realizacja budzetu %"
-                                    }
-                                  },
-                                  "Right": {
-                                    "Literal": {
-                                      "Value": "0.99D"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#0D5272'"
-                            }
-                          }
-                        }
-                      ]
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
                     }
                   }
                 }
@@ -336,7 +234,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ab59fcc96059d94ba15b",
+        "name": "a3651f5aa6cb01bd0051",
         "field": {
           "Column": {
             "Expression": {

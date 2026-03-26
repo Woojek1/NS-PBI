@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "1293cbf5d785d0720886",
-  "displayName": "Overview",
+  "name": "a1c11d9a58c87a929f7a",
+  "displayName": "Overview - Forum",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920,
@@ -32,24 +32,20 @@
           "Where": [
             {
               "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Contains": {
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "v"
-                            }
-                          },
-                          "Property": "brand"
+                "Contains": {
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "v"
                         }
                       },
-                      "Right": {
-                        "Literal": {
-                          "Value": "'Forum'"
-                        }
-                      }
+                      "Property": "brand"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Forum'"
                     }
                   }
                 }

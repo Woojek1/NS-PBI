@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "458d4308052812400ddb",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "573174aa7c094f1d1ba0",
   "position": {
-    "x": 21.666666666666668,
-    "y": 25,
-    "z": 14002,
+    "x": 375.85262565889059,
+    "y": 138.53856247392352,
+    "z": 0,
     "height": 100,
     "width": 320,
-    "tabOrder": 14002
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,12 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "Ilość otwartych projektów"
+                  "Property": "Wydatki"
                 }
               },
-              "queryRef": "_Miary.Ilość otwartych projektów",
-              "nativeQueryRef": "Ilość otwartych projektów"
+              "queryRef": "_Miary.Wydatki",
+              "nativeQueryRef": "Koszty całkowite",
+              "displayName": "Koszty całkowite"
             }
           ]
         }
@@ -42,7 +43,7 @@
                     "Entity": "_Miary"
                   }
                 },
-                "Property": "Ilość otwartych projektów"
+                "Property": "Wydatki"
               }
             },
             "direction": "Descending"
@@ -229,23 +230,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "19cd48fa02c4cd85592c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "Ilość otwartych projektów"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -13,7 +13,7 @@ table _Miary
 	measure 'Nazwa projektu - tytul' =
 			
 			IF( NOT ISFILTERED(vm_pbi_d_gl_project[prj_desc]),
-			    "Wybierz projekt",
+			    "Budżet wdrożeń",
 			    IF( HASONEVALUE(vm_pbi_d_gl_project[prj_desc]),
 			        VALUES(vm_pbi_d_gl_project[prj_desc]),
 			        "Kilka projektów" )
@@ -155,6 +155,12 @@ table _Miary
 			)
 		formatString: 0%;-0%;0%
 		lineageTag: 35a07a38-dbbf-468c-8c30-4d470148f7af
+
+	measure username = USERNAME()
+		lineageTag: 8d7b564f-c76d-4a2b-a203-9d1c13915671
+
+	measure userprincipalname = USERPRINCIPALNAME()
+		lineageTag: 69f07fed-d54e-480b-b910-d1b267c33cf2
 
 	column Value
 		formatString: 0
