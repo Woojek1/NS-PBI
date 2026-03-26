@@ -29,6 +29,22 @@ table d_pricelist
 
 		annotation SummarizationSetBy = Automatic
 
+	column pricelist_type
+		dataType: string
+		lineageTag: f4f035e8-261b-4c4d-9e09-2334b032be6b
+		summarizeBy: none
+		sourceColumn: pricelist_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_desc
+		dataType: string
+		lineageTag: 53927963-2c34-429b-9192-1e0c5af3c4d8
+		summarizeBy: none
+		sourceColumn: category_desc
+
+		annotation SummarizationSetBy = Automatic
+
 	partition d_pricelist = m
 		mode: import
 		source =
@@ -42,7 +58,9 @@ table d_pricelist
 				    select
 				        pricelist_id,
 				        pricelist_code,
-				        pricelist_name
+				        pricelist_name,
+				        pricelist_type,
+				        category_desc
 				    from zenith.edw.d_pricelist
 				    ",
 				    null,

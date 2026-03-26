@@ -127,19 +127,27 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Pricelist model'
-		dataType: string
-		lineageTag: cae134a9-37ce-481a-b590-bb2f932bda6e
-		summarizeBy: none
-		sourceColumn: Pricelist model
-
-		annotation SummarizationSetBy = Automatic
-
 	column Line
 		dataType: string
 		lineageTag: dd85b8de-cc3b-444f-9b0b-4d794d989ab8
 		summarizeBy: none
 		sourceColumn: Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pricelist model name'
+		dataType: string
+		lineageTag: 9613dd14-ac69-4b11-8b14-c935d10b5f73
+		summarizeBy: none
+		sourceColumn: Pricelist model name
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_list_category
+		dataType: string
+		lineageTag: d72f49a8-49d6-49f0-aea1-66c08e2c1858
+		summarizeBy: none
+		sourceColumn: price_list_category
 
 		annotation SummarizationSetBy = Automatic
 
@@ -174,7 +182,8 @@ table d_product
 				            when npi_no is null then false
 				            else true
 				        end                as `NPI flag`,
-				        p.price_model_desc as `Pricelist model`
+				        p.price_model_name as `Pricelist model name`,
+				        get_json_object(p.price_lists_json, '$[0].price_list_category') AS price_list_category
 				    from zenith.edw.d_product p
 				    where exists (
 				        select 1

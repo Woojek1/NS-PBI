@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "4e7ea5c8ff3322afc0e6",
   "position": {
     "x": 20,
@@ -75,7 +75,14 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''d_product''[Line]'"
+                                "Value": "'''d_pricelist''[pricelist_type]'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''d_pricelist''[pricelist_code]'"
                               }
                             }
                           ]
@@ -103,7 +110,18 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''d_product''[Line]'"
+                                      "Value": "'''d_pricelist''[pricelist_type]'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'''d_pricelist''[pricelist_code]'"
                                     }
                                   }
                                 ]
@@ -127,7 +145,10 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Line"
+                            "0": "Pricelist type"
+                          },
+                          {
+                            "0": "Pricelist code"
                           }
                         ]
                       }
