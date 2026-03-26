@@ -143,11 +143,11 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
-	column price_list_category
+	column 'Line status'
 		dataType: string
-		lineageTag: d72f49a8-49d6-49f0-aea1-66c08e2c1858
+		lineageTag: e15f2030-3afc-4baa-932d-c640353fde73
 		summarizeBy: none
-		sourceColumn: price_list_category
+		sourceColumn: Line status
 
 		annotation SummarizationSetBy = Automatic
 
@@ -176,14 +176,17 @@ table d_product
 				        p.bcg2_name_en     as `Business subcategory`,
 				        p.bcg3_name_en     as `Business cluster`,
 				        p.brand_name       as `Brand`,
+				        case
+				            when p.line_status_name = 'PrzesuniÄ™te' then 'Przesunięte'
+				            else p.line_status_name
+				        end as `Line status`,
 				        p.line_novelties_flag as `Novelties flag`,
 				        p.npi_no           as `NPI No`,
 				        case
 				            when npi_no is null then false
 				            else true
 				        end                as `NPI flag`,
-				        p.price_model_name as `Pricelist model name`,
-				        get_json_object(p.price_lists_json, '$[0].price_list_category') AS price_list_category
+				        p.price_model_name as `Pricelist model name`
 				    from zenith.edw.d_product p
 				    where exists (
 				        select 1

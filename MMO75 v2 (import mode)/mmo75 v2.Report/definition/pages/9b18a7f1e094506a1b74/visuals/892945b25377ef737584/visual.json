@@ -56,32 +56,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_pricelist"
+                      "Entity": "d_product"
                     }
                   },
-                  "Property": "pricelist_type"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "d_pricelist.pricelist_type",
-              "nativeQueryRef": "Pricelist type",
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
               "active": true,
-              "displayName": "Pricelist type"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_pricelist"
-                    }
-                  },
-                  "Property": "pricelist_code"
-                }
-              },
-              "queryRef": "d_pricelist.pricelist_code",
-              "nativeQueryRef": "Pricelist code",
-              "active": true,
-              "displayName": "Pricelist code"
+              "displayName": "Line"
             }
           ],
           "fieldParameters": [
@@ -97,7 +81,7 @@
                 }
               },
               "index": 0,
-              "length": 2
+              "length": 1
             }
           ]
         },
@@ -138,66 +122,6 @@
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "d_pricelist.pricelist_type"
-            ],
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_pricelist"
-                    }
-                  },
-                  "Property": "pricelist_type"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "d_pricelist.pricelist_code"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_pricelist"
-                    }
-                  },
-                  "Property": "pricelist_code"
-                }
-              }
-            ],
-            "isPinned": true
-          }
-        ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "null"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
-      }
-    ],
     "objects": {
       "values": [
         {
@@ -1085,7 +1009,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -1682,34 +1605,6 @@
         "type": "Categorical",
         "howCreated": "User",
         "isHiddenInViewMode": true
-      },
-      {
-        "name": "e00b1f5f23d2e8536276",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_pricelist"
-              }
-            },
-            "Property": "pricelist_type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "5beef99d6cce80064989",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_pricelist"
-              }
-            },
-            "Property": "pricelist_code"
-          }
-        },
-        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"

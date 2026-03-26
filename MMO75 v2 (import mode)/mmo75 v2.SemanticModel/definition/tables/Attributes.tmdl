@@ -59,16 +59,18 @@ table Attributes
 				    ("Business subcategory", NAMEOF('d_product'[Business subcategory]), 16),
 				    ("Business cluster", NAMEOF('d_product'[Business cluster]), 17),
 				    ("Line", NAMEOF('d_product'[Line]), 18),
-				    ("Model Code", NAMEOF('d_product'[Model Code]), 19),
-				    ("Model", NAMEOF('d_product'[Model]), 20),
-				    ("Index Code", NAMEOF('d_product'[Index Code]), 21),
-				    ("Index Name", NAMEOF('d_product'[Index Name]), 22),
-				    ("NPI flag", NAMEOF(d_product[NPI flag]),23),
-				    ("Pricelist code", NAMEOF(d_pricelist[pricelist_code]),24),
-				    ("Pricelist name", NAMEOF(d_pricelist[pricelist_name]),25),
-				    ("Pricelist type", NAMEOF(d_pricelist[pricelist_type]),26),  
-				    ("Novelties flag", NAMEOF(d_product[Novelties flag]),27),
-				    ("Pricelist model name", NAMEOF(d_product[Pricelist model name]), 28)
+				    ("Line status", NAMEOF('d_product'[Line status]), 19),
+				    ("Model Code", NAMEOF('d_product'[Model Code]), 20),
+				    ("Model", NAMEOF('d_product'[Model]), 21),
+				    ("Price list model name", NAMEOF(d_product[Pricelist model name]), 22),
+				    ("Index Code", NAMEOF('d_product'[Index Code]), 23),
+				    ("Index Name", NAMEOF('d_product'[Index Name]), 24),
+				    ("NPI flag", NAMEOF(d_product[NPI flag]),25),
+				    ("Price list code", NAMEOF(d_pricelist[pricelist_code]),26),
+				    ("Price list name", NAMEOF(d_pricelist[pricelist_name]),27),
+				    ("Price list category", NAMEOF(d_pricelist[category_id]),28),  
+				    ("Novelties flag", NAMEOF(d_product[Novelties flag]),29)
+				    
 				}
 				```
 

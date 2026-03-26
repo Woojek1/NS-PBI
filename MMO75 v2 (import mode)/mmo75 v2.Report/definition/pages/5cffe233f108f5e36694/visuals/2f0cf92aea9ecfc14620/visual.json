@@ -17,36 +17,6 @@
           "projections": [
             {
               "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_product"
-                    }
-                  },
-                  "Property": "price_list_category"
-                }
-              },
-              "queryRef": "d_product.price_list_category",
-              "nativeQueryRef": "PRODUCT price_list_category",
-              "displayName": "PRODUCT price_list_category"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_pricelist"
-                    }
-                  },
-                  "Property": "pricelist_type"
-                }
-              },
-              "queryRef": "d_pricelist.pricelist_type",
-              "nativeQueryRef": "PRICELIST pricelist_type",
-              "displayName": "PRICELIST pricelist_type"
-            },
-            {
-              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
@@ -68,20 +38,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "807e4b624b46d9c9eddf",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "price_list_category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "b2ac69746cb261817958",
         "field": {
           "Measure": {
@@ -94,20 +50,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "a6d0c78a93f853f3da2f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_pricelist"
-              }
-            },
-            "Property": "pricelist_type"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

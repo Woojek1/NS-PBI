@@ -29,19 +29,11 @@ table d_pricelist
 
 		annotation SummarizationSetBy = Automatic
 
-	column pricelist_type
+	column category_id
 		dataType: string
-		lineageTag: f4f035e8-261b-4c4d-9e09-2334b032be6b
+		lineageTag: 0decfb04-d423-48be-bf0c-00a79fb235a0
 		summarizeBy: none
-		sourceColumn: pricelist_type
-
-		annotation SummarizationSetBy = Automatic
-
-	column category_desc
-		dataType: string
-		lineageTag: 53927963-2c34-429b-9192-1e0c5af3c4d8
-		summarizeBy: none
-		sourceColumn: category_desc
+		sourceColumn: category_id
 
 		annotation SummarizationSetBy = Automatic
 
@@ -59,8 +51,7 @@ table d_pricelist
 				        pricelist_id,
 				        pricelist_code,
 				        pricelist_name,
-				        pricelist_type,
-				        category_desc
+				        category_id
 				    from zenith.edw.d_pricelist
 				    ",
 				    null,
