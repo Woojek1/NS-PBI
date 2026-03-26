@@ -252,6 +252,23 @@ table CBR_data
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'd_product.prod_si_id'
+		dataType: int64
+		formatString: 0
+		lineageTag: c6b118a3-61a7-405a-bfaa-07d6a9447c09
+		summarizeBy: none
+		sourceColumn: d_product.prod_si_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'd_product.Model'
+		dataType: string
+		lineageTag: 384b6c77-2120-453d-844c-3acb2c53e51f
+		summarizeBy: none
+		sourceColumn: d_product.Model
+
+		annotation SummarizationSetBy = Automatic
+
 	partition CBR_data = m
 		mode: import
 		source =
@@ -259,9 +276,11 @@ table CBR_data
 				    Source = Excel.Workbook(File.Contents("C:\Users\lukasz.wojcik\OneDrive - Nowy Styl Sp. z o.o\Dokumenty\GitHub\NS-PBI\NPI request\NPI_Zadania_2024-2026.xlsx"), null, true),
 				    DANE1_Sheet = Source{[Item="DANE1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(DANE1_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Name", type text}, {"State", type text}, {"Originated", type date}, {"Contractor / Kontrahent", type text}, {"Commercial project / Projekt handlowy", type text}, {"Implementation project / Projekt wdrozeniowy", type text}, {"Wniosek do", type text}, {"Index", type text}, {"Quantity on customer order / Ilość na zamówieniu klienta", type any}, {"Request type / Typ wniosku", type text}, {"Project manager / Kierownik projektu", type text}, {"Construction leader / Kierownik komorki konstrukcyjnej", type text}, {"Responsible engineer / Konstruktor prowadzacy", type text}, {"Sygnatura SP / SP Signature", type text}, {"Customer order number / Numer zamówienia klienta", type text}, {"Customer order activation date / Data aktywacji zamówienia klienta", type text}, {"Planned shipping date / Planowana data wysyłki", type text}, {"Requested implementation date / Zadany termin zakonczenia wdrozenia", type date}, {"Requested order completion date / Wymagany termin realizacji zamowienia", type date}, {"Description / Opis", type text}, {"Column21", type text}, {"NPI Link", type text}, {"Task name", type text}, {"Task duration [h]", type number}, {"Task Description", type text}, {"Task Comment", type text}, {"Task Assigned person", type text}, {"Task Sekcja", type text}, {"Column29", type text}, {"Task Link", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Name", type text}, {"State", type text}, {"Originated", type date}, {"Contractor / Kontrahent", type text}, {"Commercial project / Projekt handlowy", type text}, {"Implementation project / Projekt wdrozeniowy", type text}, {"Wniosek do", type text}, {"Index", type text}, {"Quantity on customer order / Ilość na zamówieniu klienta", type any}, {"Request type / Typ wniosku", type text}, {"Project manager / Kierownik projektu", type text}, {"Construction leader / Kierownik komorki konstrukcyjnej", type text}, {"Responsible engineer / Konstruktor prowadzacy", type text}, {"Sygnatura SP / SP Signature", type text}, {"Customer order number / Numer zamówienia klienta", type text}, {"Customer order activation date / Data aktywacji zamówienia klienta", type text}, {"Planned shipping date / Planowana data wysyłki", type text}, {"Requested implementation date / Zadany termin zakonczenia wdrozenia", type date}, {"Requested order completion date / Wymagany termin realizacji zamowienia", type date}, {"Description / Opis", type text}, {"Column21", type text}, {"NPI Link", type text}, {"Task name", type text}, {"Task duration [h]", type number}, {"Task Description", type text}, {"Task Comment", type text}, {"Task Assigned person", type text}, {"Task Sekcja", type text}, {"Column29", type text}, {"Task Link", type text}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"Sygnatura SP / SP Signature"}, d_product, {"NPI No"}, "d_product", JoinKind.LeftOuter),
+				    #"Expanded d_product1" = Table.ExpandTableColumn(#"Merged Queries", "d_product", {"prod_si_id", "Model"}, {"d_product.prod_si_id", "d_product.Model"})
 				in
-				    #"Changed Type"
+				    #"Expanded d_product1"
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -1,0 +1,214 @@
+createOrReplace
+
+	ref table f_margin75_facts
+
+		measure 'Assembly EUR' = SUM(f_margin75_facts[c_eur_assembly])
+			formatString: #,0
+			lineageTag: 05230736-9b76-4963-a1b2-03a2d5469718
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Assembly PLN' = SUM(f_margin75_facts[c_pln_assembly])
+			formatString: #,0
+			lineageTag: 670c7ffd-eb2f-4571-9e85-c0964f17667d
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Base Sales EUR' = SUM(f_margin75_facts[s_eur_base])
+			formatString: #,0
+			lineageTag: 77913062-840f-47cd-8df7-bcf99a97fbf8
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Base Sales PLN' = SUM(f_margin75_facts[s_pln_base])
+			formatString: #,0
+			lineageTag: 911e2658-38cb-424d-ae90-43231a11e30f
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Commission EUR' = SUM(f_margin75_facts[c_eur_comm])
+			formatString: #,0
+			lineageTag: 8ced0897-ba0e-4c84-9d03-9a6748c660fd
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Commission PLN' = SUM(f_margin75_facts[c_pln_comm])
+			formatString: #,0
+			lineageTag: bb7e116e-f4e0-489a-9039-47be09d4bc9f
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Complaint Activity EUR' = SUM(f_margin75_facts[c_eur_compl_act])
+			formatString: #,0
+			lineageTag: 0b1206e8-9453-4ec3-8e56-73cf38e1f70d
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Complaint Activity PLN' = SUM(f_margin75_facts[c_pln_compl_act])
+			formatString: #,0
+			lineageTag: f323d3ab-fb09-47ad-a793-2792c3c90328
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Complaint Product EUR' = SUM(f_margin75_facts[c_eur_compl_prod])
+			formatString: #,0
+			lineageTag: c833b979-552a-4a9f-8eeb-976437330c83
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Complaint Product PLN' = SUM(f_margin75_facts[c_pln_compl_prod])
+			formatString: #,0
+			lineageTag: 50f1bdcf-f91f-40f1-b577-470250ff5258
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'License EUR' = SUM(f_margin75_facts[c_eur_lic])
+			formatString: #,0
+			lineageTag: ba241dff-404b-44d8-a9e1-6708d49af582
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'License PLN' = SUM(f_margin75_facts[c_pln_lic])
+			formatString: #,0
+			lineageTag: e7daf5ed-8873-427c-90cf-3651610ec0d3
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Manufacturing Cost EUR' = SUM(f_margin75_facts[s_eur_corp_cost])
+			formatString: #,0
+			lineageTag: fa4d7169-0fbf-45a2-9c4f-429666580c72
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Manufacturing Cost PLN' = SUM(f_margin75_facts[s_pln_corp_cost])
+			formatString: #,0
+			lineageTag: 34c2f3d3-bed1-42ad-b8f8-2afa039977c9
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Margin I (prim) % (EUR)' = IF([Net Sales EUR] = BLANK(), BLANK(), [Margin I (prim) EUR] / [Net Sales EUR])
+			formatString: 0.00%;-0.00%;0.00%
+			lineageTag: e5b08602-50de-438b-8992-5982ff835025
+
+		measure 'Margin I (prim) % (PLN)' = IF([Net Sales PLN] = BLANK(), BLANK(), [Margin I (prim) PLN] / [Net Sales PLN])
+			formatString: 0.00%;-0.00%;0.00%
+			lineageTag: 68ffe78a-ba9b-4353-9fad-85e52cf1347a
+
+		measure 'Margin I (prim) EUR' = [Margin I EUR] - [Complaint Product EUR] - [Variance Fixed Cost EUR]
+			formatString: #,0
+			lineageTag: bbb5b81e-5a2a-4c41-9b15-4a7b884f349c
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Margin I (prim) PLN' = [Margin I PLN] - [Complaint Product PLN] - [Variance Fixed Cost PLN]
+			formatString: #,0
+			lineageTag: baf7fcdd-5e8e-4094-bbab-6b8f96571984
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Margin I % (EUR)' = [Margin I EUR] / [Net Sales EUR]
+			formatString: 0.00%;-0.00%;0.00%
+			lineageTag: a6273b70-b8a9-4415-833b-34cfd87d88a0
+
+		measure 'Margin I % (PLN)' = IF([Net Sales PLN] = BLANK(), BLANK(), [Margin I PLN] / [Net Sales PLN])
+			formatString: 0.00%;-0.00%;0.00%
+			lineageTag: ed7cdf32-9d4f-4c93-9d16-8fbd8439be85
+
+		measure 'Margin I EUR' = [Net Sales EUR] - [Manufacturing Cost EUR]
+			formatString: #,0
+			lineageTag: ef8903e8-16a2-499c-8631-effe5428a61b
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Margin I PLN' = [Net Sales PLN] - [Manufacturing Cost PLN]
+			formatString: #,0
+			lineageTag: 233d4736-dbcd-475b-916d-b5fd1e9978f5
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Margin II % (EUR)' = IF([Net Sales EUR] = BLANK(), BLANK(), [Margin II EUR] / [Net Sales EUR])
+			formatString: 0.00%;-0.00%;0.00%
+			lineageTag: 0b358023-d2ab-46de-a1e0-702b1c9842d5
+
+		measure 'Margin II % (PLN)' = IF([Net Sales PLN] = BLANK(), BLANK(), [Margin II PLN] / [Net Sales PLN])
+			formatString: 0.00%;-0.00%;0.00%
+			lineageTag: 66ebfd4b-ef74-4b5b-a54b-ef349cd7efa5
+
+		measure 'Margin II EUR' = [Margin I EUR] - [Assembly EUR] - [Commission EUR] - [Complaint Activity EUR] - [Complaint Product EUR] - [License EUR] - [Sold Insurance EUR] - [Stock Depreciation EUR] - [Transport EUR] - [Variance Fixed Cost EUR]
+			formatString: #,0
+			lineageTag: 60fc5202-3852-45ea-94d9-65f43a490c17
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Margin II PLN' = [Margin I PLN] - [Assembly PLN] - [Commission PLN] - [Complaint Activity PLN] - [Complaint Product PLN] - [License PLN] - [Sold Insurance PLN] - [Stock Depreciation PLN] - [Transport PLN] - [Variance Fixed Cost PLN]
+			formatString: #,0
+			lineageTag: fc91ba36-5566-4a1c-af55-79db42c29d96
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+		
+
+
+		measure 'Net Sales EUR' = SUM(f_margin75_facts[s_eur_net])
+			formatString: #,0
+			lineageTag: 6d6e2740-f032-44fc-860b-15193b1cce8e
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Net Sales PLN' = SUM(f_margin75_facts[s_pln_net])
+			formatString: #,0
+			lineageTag: 55f0803b-4a71-4ef8-8aa1-295fb81d1fd6
+
+		measure 'Sale Quantity' = SUM(f_margin75_facts[sale_qty])
+			formatString: #,0
+			lineageTag: 323517ab-2a0f-4cb0-8d1b-d17550be7a38
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Sold Insurance EUR' = SUM(f_margin75_facts[c_eur_sinsuran])
+			formatString: #,0
+			lineageTag: fb34d2ba-6118-4fb6-9896-2ecccb879b02
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Sold Insurance PLN' = SUM(f_margin75_facts[c_pln_sinsuran])
+			formatString: #,0
+			lineageTag: 75d1f012-587f-4290-9cfd-10743968399c
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Stock Depreciation EUR' = SUM(f_margin75_facts[c_eur_stock_deprec])
+			formatString: #,0
+			lineageTag: 22fdfdc8-c569-4854-908d-0be84f8c463c
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Stock Depreciation PLN' = SUM(f_margin75_facts[c_pln_stock_deprec])
+			formatString: #,0
+			lineageTag: e767ce40-aba9-44ec-b3cc-513129f37c5c
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Transport EUR' = SUM(f_margin75_facts[c_eur_transport])
+			formatString: #,0
+			lineageTag: 60e073da-c7cd-44fc-8e77-f3a80c0b1e71
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Transport PLN' = SUM(f_margin75_facts[c_pln_transport])
+			formatString: #,0
+			lineageTag: 04c89d33-f838-4055-84a4-726816104973
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Variance Fixed Cost EUR' = SUM(f_margin75_facts[c_eur_varfixed])
+			formatString: #,0
+			lineageTag: f5bc0283-969b-494a-bd03-ba0a92660266
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
+		measure 'Variance Fixed Cost PLN' = SUM(f_margin75_facts[c_pln_varfixed])
+			formatString: #,0
+			lineageTag: cda8f03a-3b6c-4338-98b3-97ed4d85593f
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+

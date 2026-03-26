@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "543414ce2ba16ec63242",
   "position": {
-    "x": 196.94845360824741,
-    "y": 99.958762886597924,
+    "x": 17,
+    "y": 23,
     "z": 0,
-    "height": 479.01030927835046,
-    "width": 955.05154639175248,
+    "height": 674,
+    "width": 1246,
     "tabOrder": 0
   },
   "visual": {
@@ -15,6 +15,20 @@
       "queryState": {
         "Values": {
           "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CBR_data"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "CBR_data.Name",
+              "nativeQueryRef": "Name"
+            },
             {
               "field": {
                 "Column": {
@@ -85,9 +99,68 @@
               },
               "queryRef": "Sum(f_margin75_facts.sale_qty)",
               "nativeQueryRef": "Sum of sale_qty"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Margin II PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Margin II PLN",
+              "nativeQueryRef": "Margin II PLN"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CBR_data"
+                    }
+                  },
+                  "Property": "d_product.Model"
+                }
+              },
+              "queryRef": "CBR_data.d_product.Model",
+              "nativeQueryRef": "d_product.Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "cust_code"
+                }
+              },
+              "queryRef": "f_margin75_facts.cust_code",
+              "nativeQueryRef": "cust_code"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CBR_data"
+                  }
+                },
+                "Property": "Name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "drillFilterOtherVisuals": true
@@ -161,6 +234,20 @@
               }
             },
             "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b13538f7050d9c93ad40",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin II PLN"
           }
         },
         "type": "Advanced"

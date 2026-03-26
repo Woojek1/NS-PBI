@@ -1,0 +1,10 @@
+createOrReplace
+
+	ref table f_margin75_facts
+
+		measure 'Margin I PLN' = [Net Sales PLN] - [Manufacturing Cost PLN]
+			formatString: #,0
+			lineageTag: 233d4736-dbcd-475b-916d-b5fd1e9978f5
+
+			annotation PBI_FormatHint = {"isDecimal":true}
+
