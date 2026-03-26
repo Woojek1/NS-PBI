@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Activity Category 5 pct",
+      "measures": [
+        {
+          "name": "YTD Act vs Bdg",
+          "dataType": "Double",
+          "expression": "\n[Actuals YTD EUR] - [Budget YTD EUR]",
+          "formatString": "\"€\"\\ #,0.00;-\"€\"\\ #,0.00;\"€\"\\ #,0.00",
+          "measureTemplate": {
+            "daxTemplateName": "MathematicalSubtraction",
+            "version": 0
+          },
+          "references": {
+            "measures": [
+              {
+                "entity": "OPEX Measures",
+                "name": "Actuals YTD EUR"
+              },
+              {
+                "entity": "OPEX Bud Measures",
+                "name": "Budget YTD EUR"
+              }
+            ]
+          }
+        },
+        {
+          "name": "% YTD Act/Bdg",
+          "dataType": "Double",
+          "expression": "\nDIVIDE([YTD Act vs Bdg], [Budget YTD EUR])",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "measureTemplate": {
+            "daxTemplateName": "MathematicalDivision",
+            "version": 0
+          },
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Activity Category 5 pct",
+                "name": "YTD Act vs Bdg"
+              },
+              {
+                "entity": "OPEX Bud Measures",
+                "name": "Budget YTD EUR"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Act vs Bdg",
+          "dataType": "Double",
+          "expression": "\n[Debit/active balance EUR] - [Budget EUR]",
+          "formatString": "#,0.00",
+          "measureTemplate": {
+            "daxTemplateName": "MathematicalSubtraction",
+            "version": 0
+          },
+          "references": {
+            "measures": [
+              {
+                "entity": "OPEX Measures",
+                "name": "Debit/active balance EUR"
+              },
+              {
+                "entity": "OPEX Bud Measures",
+                "name": "Budget EUR"
+              }
+            ]
+          }
+        },
+        {
+          "name": "% Act/Bdg",
+          "dataType": "Double",
+          "expression": "\nDIVIDE([Act vs Bdg], [Budget EUR])",
+          "formatString": "#,0.00\\ %;-#,0.00\\ %;#,0.00\\ %",
+          "measureTemplate": {
+            "daxTemplateName": "MathematicalDivision",
+            "version": 0
+          },
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Activity Category 5 pct",
+                "name": "Act vs Bdg"
+              },
+              {
+                "entity": "OPEX Bud Measures",
+                "name": "Budget EUR"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
