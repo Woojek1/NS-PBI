@@ -33,10 +33,43 @@ table vm_pbi_d_projects_budget
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column code_c
+		dataType: string
+		lineageTag: c3e3577e-e7c1-4439-8838-bb03b0b42be7
+		summarizeBy: none
+		sourceColumn: code_c
+
+		annotation SummarizationSetBy = Automatic
+
+	column budget_type
+		dataType: string
+		lineageTag: c11b5454-0165-47ce-a87b-504f0693b6c8
+		summarizeBy: none
+		sourceColumn: budget_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column project_year
+		dataType: string
+		lineageTag: 6258f1d9-8d94-4ef9-9eed-fb6c554314f6
+		summarizeBy: none
+		sourceColumn: project_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column budget_year
+		dataType: string
+		lineageTag: 1e779c53-916c-4eba-afbf-b95671a0118f
+		summarizeBy: none
+		sourceColumn: budget_year
+
+		annotation SummarizationSetBy = Automatic
+
 	partition vm_pbi_d_projects_budget = m
 		mode: import
 		source = ```
-				Value.NativeQuery(
+				let
+				    vm_pbi_d_projects_budget = Value.NativeQuery(
 				    Databricks.Catalogs(
 				        "adb-16306551450739.19.azuredatabricks.net",
 				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
@@ -45,13 +78,21 @@ table vm_pbi_d_projects_budget
 				    "
 				    select 
 				        code_f,
+				        code_c,
 				        voucher_date,
 				        debet_amount
 				    from controlling.capex_implement.vm_pbi_d_projects_budget
 				    ",
 				    null,
 				    [EnableFolding=true]
-				)
+				),
+				    #"Inserted Last Characters" = Table.AddColumn(vm_pbi_d_projects_budget, "Last Characters", each Text.End([code_c], 2), type text),
+				    #"Renamed Columns" = Table.RenameColumns(#"Inserted Last Characters",{{"Last Characters", "budget_type"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Rok projektu", each "20" & Text.Middle([code_f], 2, 2)),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Custom",{{"Rok projektu", "project_year"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns1", "budget_year", each Date.Year([voucher_date]))
+				in
+				    #"Added Custom1"
 				```
 
 	annotation PBI_NavigationStepName = Navigation
