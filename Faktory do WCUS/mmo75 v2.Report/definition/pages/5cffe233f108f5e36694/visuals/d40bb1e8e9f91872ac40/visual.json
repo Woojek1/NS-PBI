@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "d40bb1e8e9f91872ac40",
+  "position": {
+    "x": 9.6,
+    "y": 96,
+    "z": 8000,
+    "height": 559.5428571428572,
+    "width": 408.68571428571431,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Product Subgroup"
+                }
+              },
+              "queryRef": "d_product.Product Subgroup",
+              "nativeQueryRef": "Product Subgroup"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Faktor"
+                }
+              },
+              "queryRef": "f_margin75_facts.Faktor",
+              "nativeQueryRef": "Faktor"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_product"
+                  }
+                },
+                "Property": "Product Subgroup"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "13900a0e9cea385dd5ea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Product Subgroup"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bdeabaf87fa657c64ff8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Faktor"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "432dcc7eebcbbb8fced6",
+  "position": {
+    "x": 0,
+    "y": 233.33333333333334,
+    "z": 0,
+    "height": 421.66666666666669,
+    "width": 1920,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Line"
+                }
+              },
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Pricelist model name"
+                }
+              },
+              "queryRef": "d_product.Pricelist model name",
+              "nativeQueryRef": "Pricelist model name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Base Sales PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Base Sales PLN",
+              "nativeQueryRef": "Base Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Unit Base Sales"
+                }
+              },
+              "queryRef": "f_margin75_facts.Unit Base Sales",
+              "nativeQueryRef": "Unit Base Sales"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Manufacturing Cost PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Manufacturing Cost PLN",
+              "nativeQueryRef": "Manufacturing Cost PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Unit Manufacturing Cost"
+                }
+              },
+              "queryRef": "f_margin75_facts.Unit Manufacturing Cost",
+              "nativeQueryRef": "Unit Manufacturing Cost"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Net Sales PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Net Sales PLN",
+              "nativeQueryRef": "Net Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Faktor"
+                }
+              },
+              "queryRef": "f_margin75_facts.Faktor",
+              "nativeQueryRef": "Faktor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Unit Factor"
+                }
+              },
+              "queryRef": "f_margin75_facts.Unit Factor",
+              "nativeQueryRef": "Unit Factor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Sale Quantity"
+                }
+              },
+              "queryRef": "f_margin75_facts.Sale Quantity",
+              "nativeQueryRef": "Sale Quantity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_pricelist"
+                    }
+                  },
+                  "Property": "sales_price_group_id"
+                }
+              },
+              "queryRef": "d_pricelist.sales_price_group_id",
+              "nativeQueryRef": "sales_price_group_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_pricelist"
+                    }
+                  },
+                  "Property": "pricelist_name"
+                }
+              },
+              "queryRef": "d_pricelist.pricelist_name",
+              "nativeQueryRef": "pricelist_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time_mon"
+                    }
+                  },
+                  "Property": "mon_name"
+                }
+              },
+              "queryRef": "d_time_mon.mon_name",
+              "nativeQueryRef": "mon_name"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_product"
+                  }
+                },
+                "Property": "Pricelist model name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "323.9812146329254D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Pricelist model name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108.71429160752223D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_margin75_facts.Net Sales PLN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77.06764682947129D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_margin75_facts.Faktor"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "158.85713606287416D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_margin75_facts.Unit Manufacturing Cost"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_margin75_facts.Unit Manufacturing Cost"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_margin75_facts.Unit Base Sales"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

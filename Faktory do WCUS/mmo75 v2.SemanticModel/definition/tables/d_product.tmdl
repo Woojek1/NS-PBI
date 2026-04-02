@@ -1,0 +1,206 @@
+table d_product
+	lineageTag: 9edd1183-535f-460e-bdf5-dcd264366913
+
+	column prod_si_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e54a1a0d-b165-4524-9759-0a23ae68be3d
+		summarizeBy: none
+		sourceColumn: prod_si_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 05d53eb6-4b4c-4d0e-921a-63bb148f6316
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Subgroup'
+		dataType: string
+		lineageTag: b0f1c120-fad5-4b2f-ae55-033fa596bee3
+		summarizeBy: none
+		sourceColumn: Product Subgroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Supergroup'
+		dataType: string
+		lineageTag: 859f0d2e-8817-4126-a9b1-935b4f007c21
+		summarizeBy: none
+		sourceColumn: Product Supergroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Group'
+		dataType: string
+		lineageTag: be98720b-9870-4d17-8ea4-12fb47f372bf
+		summarizeBy: none
+		sourceColumn: Product Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Name'
+		dataType: string
+		lineageTag: b1d8b51f-7791-43e9-b778-8900d66618e4
+		summarizeBy: none
+		sourceColumn: Index Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Index Code'
+		dataType: string
+		lineageTag: 5e1fa87b-42c5-4d25-8829-2b1b750e0b68
+		summarizeBy: none
+		sourceColumn: Index Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: b40dc906-b30a-44dc-95d3-905a50ac773c
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Model Code'
+		dataType: string
+		lineageTag: 06cd16d0-2abc-4a2d-90b2-ae6ecf85175d
+		summarizeBy: none
+		sourceColumn: Model Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NPI No'
+		dataType: string
+		lineageTag: 1df6f7f5-b8b7-4838-be26-666f52d68430
+		summarizeBy: none
+		sourceColumn: NPI No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NPI flag'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 510dbb8b-980a-450a-bd22-16d6c10ae7d1
+		summarizeBy: none
+		sourceColumn: NPI flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Novelties flag'
+		dataType: string
+		lineageTag: 9e4d27ab-e6b6-4346-86dc-0ad2c6a4a205
+		summarizeBy: none
+		sourceColumn: Novelties flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business category'
+		dataType: string
+		lineageTag: b3e15905-e3c6-417b-9b1a-757d39fafa9f
+		summarizeBy: none
+		sourceColumn: Business category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business subcategory'
+		dataType: string
+		lineageTag: b858e7a2-631b-4d82-8ce9-cf32a55975c2
+		summarizeBy: none
+		sourceColumn: Business subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business cluster'
+		dataType: string
+		lineageTag: 97b5054e-a309-4ff1-a878-ce2a317bccf2
+		summarizeBy: none
+		sourceColumn: Business cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line
+		dataType: string
+		lineageTag: dd85b8de-cc3b-444f-9b0b-4d794d989ab8
+		summarizeBy: none
+		sourceColumn: Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pricelist model name'
+		dataType: string
+		lineageTag: 9613dd14-ac69-4b11-8b14-c935d10b5f73
+		summarizeBy: none
+		sourceColumn: Pricelist model name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line status'
+		dataType: string
+		lineageTag: e15f2030-3afc-4baa-932d-c640353fde73
+		summarizeBy: none
+		sourceColumn: Line status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_product = m
+		mode: import
+		source =
+				let
+				    d_product = Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        p.prod_si_id,
+				        p.line_name        as `Line`,
+				        p.model_code       as `Model Code`,
+				        p.model_name       as `Model`,
+				        p.sgrp_name        as `Product Subgroup`,
+				        p.supergrp_name    as `Product Supergroup`,
+				        p.grp_name         as `Product Group`,
+				        p.prod_si_name     as `Index Name`,
+				        p.prod_si_code     as `Index Code`,
+				        p.bcg1_name_en     as `Business category`,
+				        p.bcg2_name_en     as `Business subcategory`,
+				        p.bcg3_name_en     as `Business cluster`,
+				        p.brand_name       as `Brand`,
+				        case
+				            when p.line_status_name = 'PrzesuniÄ™te' then 'Przesunięte'
+				            else p.line_status_name
+				        end as `Line status`,
+				        p.line_novelties_flag as `Novelties flag`,
+				        p.npi_no           as `NPI No`,
+				        case
+				            when npi_no is null then false
+				            else true
+				        end                as `NPI flag`,
+				        p.price_model_name as `Pricelist model name`
+				    from zenith.edw.d_product p
+				    where exists (
+				        select 1
+				        from zenith.mmo75.f_margin75_facts f
+				        where f.prod_inv_id = p.prod_si_id
+				    )
+				    ",
+				    null,
+				    [EnableFolding=true]
+				    )
+				in
+				    d_product
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
