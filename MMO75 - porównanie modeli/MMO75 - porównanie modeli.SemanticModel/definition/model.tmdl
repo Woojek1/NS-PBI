@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["f_margin_ytd_facts","f_margin_mon_facts","f_margin_ytd_delta_facts","d_customer","d_time_mon","d_product"]
+annotation PBI_QueryOrder = ["f_margin_ytd_facts","f_margin_mon_facts","f_margin_ytd_delta_facts","d_customer","d_time_mon","d_product","f_margin_mon_data"]
 
 annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
 
@@ -18,10 +18,10 @@ ref table d_time_mon
 ref table f_margin_mon_facts
 ref table Measure_selector
 ref table _Miary
-ref table 'z(do usuniecia) Wymiar_Parameter_bez_parameter_field'
 ref table Atributes
 ref table f_margin_ytd_delta_facts
 ref table d_product
+ref table f_margin_mon_data
 
 ref cultureInfo en-US
 

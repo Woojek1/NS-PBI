@@ -1,0 +1,145 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "0b105bc3a0f0ef9a8ca2",
+  "position": {
+    "x": 25.806451612903224,
+    "y": 221.93548387096774,
+    "z": 0,
+    "height": 486.19354838709677,
+    "width": 1233.5483870967741,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_margin_mon_data"
+                        }
+                      },
+                      "Property": "c_eur_assembly"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_margin_mon_data.c_eur_assembly)",
+              "nativeQueryRef": "Sum of c_eur_assembly"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time_mon"
+                    }
+                  },
+                  "Property": "mon_name"
+                }
+              },
+              "queryRef": "d_time_mon.mon_name",
+              "nativeQueryRef": "mon_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin_mon_data"
+                    }
+                  },
+                  "Property": "src_info"
+                }
+              },
+              "queryRef": "f_margin_mon_data.src_info",
+              "nativeQueryRef": "src_info"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "f_margin_mon_data"
+                      }
+                    },
+                    "Property": "c_eur_assembly"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "318cde664067e9a3e739",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin_mon_data"
+              }
+            },
+            "Property": "src_info"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e7d9c01e7751935e6985",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_margin_mon_data"
+                  }
+                },
+                "Property": "c_eur_assembly"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1bf9132b7715de56cd7f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

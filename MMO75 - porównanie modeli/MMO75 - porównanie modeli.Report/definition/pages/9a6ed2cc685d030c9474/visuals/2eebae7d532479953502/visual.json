@@ -4,10 +4,10 @@
   "position": {
     "x": 39.876923076923077,
     "y": 376.61538461538458,
-    "z": 2001,
+    "z": 3000,
     "height": 177.23076923076923,
     "width": 1835.8153846153846,
-    "tabOrder": 2001
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_customer"
+                      "Entity": "d_product"
                     }
                   },
-                  "Property": "Customer Code"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "d_customer.Customer Code",
-              "nativeQueryRef": "Customer code",
-              "displayName": "Customer code"
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
+              "displayName": "Line"
             },
             {
               "field": {
@@ -253,7 +253,8 @@
             "Property": "Customer Code"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User"
       },
       {
         "name": "3257b0644c66ea592da3",

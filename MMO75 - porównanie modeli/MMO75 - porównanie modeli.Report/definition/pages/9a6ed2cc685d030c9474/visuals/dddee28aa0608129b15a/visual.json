@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_customer"
+                      "Entity": "d_product"
                     }
                   },
-                  "Property": "Customer Code"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "d_customer.Customer Code",
-              "nativeQueryRef": "Customer code",
-              "displayName": "Customer code"
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
+              "displayName": "Line"
             },
             {
               "field": {
@@ -223,163 +223,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9880dc7b18b253964dd1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA s_eur_net"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "28fa1591ae17029633df",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_assembly"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "39f2a5cbb516a0b1d1b2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_comm"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f9157cfaba9088d1ecc6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_compl_act"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "244f227e206404172139",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_compl_prod"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "911c262db52a27bc6d13",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_lic"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f38f9ab224148d0337ee",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_sinsuran"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "493cd195776f02a962f7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_stock_deprec"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f092bc07a6582ad5ebd7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_transport"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d58dbed9711fc317ceac",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA c_eur_varfixed"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6b98ef4a6b1e30bf3fb0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary"
-              }
-            },
-            "Property": "YTD DELTA Margin II EUR (%)"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

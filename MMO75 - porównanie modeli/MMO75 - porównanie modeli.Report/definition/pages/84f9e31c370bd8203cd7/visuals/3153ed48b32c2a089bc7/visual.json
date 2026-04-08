@@ -13,9 +13,6 @@
     "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Columns": {
-          "projections": []
-        },
         "Rows": {
           "projections": [
             {
@@ -23,16 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_customer"
+                      "Entity": "d_product"
                     }
                   },
-                  "Property": "Customer Code"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "d_customer.Customer Code",
-              "nativeQueryRef": "Customer code",
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
               "active": true,
-              "displayName": "Customer code"
+              "displayName": "Line"
             },
             {
               "field": {
@@ -47,7 +44,7 @@
               },
               "queryRef": "d_time_mon.mon_name",
               "nativeQueryRef": "mon_name",
-              "active": true,
+              "active": false,
               "displayName": "mon_name"
             }
           ],
@@ -138,20 +135,6 @@
                       "Entity": "_Miary"
                     }
                   },
-                  "Property": "YTD Wybrana wartość"
-                }
-              },
-              "queryRef": "_Miary.YTD Wybrana wartość",
-              "nativeQueryRef": "YTD Wybrana wartość"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Miary"
-                    }
-                  },
                   "Property": "diff_%"
                 }
               },
@@ -179,29 +162,6 @@
         ]
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "d_customer.Customer Code"
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "d_time_mon.mon_name"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "values": [
         {
@@ -347,19 +307,73 @@
           "selector": {
             "metadata": "_Miary.MON s_eur_corp_cost"
           }
-        },
+        }
+      ],
+      "columnFormatting": [
         {
           "properties": {
-            "value": {
+            "styleHeader": {
               "expr": {
                 "Literal": {
-                  "Value": "197.2959139547139D"
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Miary.YTD Wybrana wartość"
+            "metadata": "_Miary.Wybrana wartość MON"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wybrana wartość YTD DELTA"
           }
         }
       ]
@@ -396,6 +410,7 @@
           }
         },
         "type": "Advanced",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -456,10 +471,11 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
-        "name": "03037193f5ead3094f96",
+        "name": "5275e590cd3d9198985d",
         "field": {
           "Measure": {
             "Expression": {
@@ -473,7 +489,7 @@
         "type": "Advanced"
       },
       {
-        "name": "896fe96f8f157011954e",
+        "name": "7a9bbc5473b15ee72fa5",
         "field": {
           "Measure": {
             "Expression": {
@@ -485,6 +501,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "af0120d3c622ac9fdba9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
