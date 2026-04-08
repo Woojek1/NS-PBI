@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["f_margin_ytd_facts","f_margin_mon_facts","f_margin_ytd_delta_facts","d_customer","d_time_mon","d_product"]
+
+annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
+
+ref table f_margin_ytd_facts
+ref table d_customer
+ref table d_time_mon
+ref table f_margin_mon_facts
+ref table Measure_selector
+ref table _Miary
+ref table 'z(do usuniecia) Wymiar_Parameter_bez_parameter_field'
+ref table Atributes
+ref table f_margin_ytd_delta_facts
+ref table d_product
+
+ref cultureInfo en-US
+

@@ -1,0 +1,36 @@
+relationship 9bf0d808-7f24-c403-8652-2ad3ead26195
+	fromColumn: f_margin_ytd_facts.time_id
+	toColumn: d_time_mon.mon_id
+
+relationship e50ca317-9deb-31c4-f723-f98a57c5ed02
+	fromColumn: f_margin_mon_facts.time_id
+	toColumn: d_time_mon.mon_id
+
+relationship 1c0d1dab-32c6-af0b-77fa-869c13a3caae
+	fromColumn: f_margin_ytd_facts.cust_id
+	toColumn: d_customer.cust_id
+
+relationship 89f16a39-a5bb-ddf6-aa97-a9297c889169
+	fromColumn: f_margin_mon_facts.cust_id
+	toColumn: d_customer.cust_id
+
+relationship 98727913-fa84-3318-f944-b4f30a0d6dc9
+	fromColumn: f_margin_ytd_delta_facts.cust_id
+	toColumn: d_customer.cust_id
+
+relationship bfc182df-5f40-cd0e-384a-8e90c17c0160
+	fromColumn: f_margin_ytd_delta_facts.time_id
+	toColumn: d_time_mon.mon_id
+
+relationship ba819bb1-04a0-9f61-22bc-ec5d0aa5a89d
+	fromColumn: f_margin_ytd_delta_facts.prod_inv_id
+	toColumn: d_product.prod_si_id
+
+relationship f4315952-4c45-ba33-ec03-6c6fecc5a32d
+	fromColumn: f_margin_ytd_facts.prod_inv_id
+	toColumn: d_product.prod_si_id
+
+relationship d113c7d7-59b1-3e3e-22f1-52d66e328e8b
+	fromColumn: f_margin_mon_facts.prod_inv_id
+	toColumn: d_product.prod_si_id
+

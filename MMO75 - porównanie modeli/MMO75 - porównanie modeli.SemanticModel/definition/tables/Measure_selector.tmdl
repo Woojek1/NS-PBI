@@ -1,0 +1,65 @@
+table Measure_selector
+	lineageTag: 3cd21005-be8b-461b-8bae-078b9969b4dd
+
+	column MiaraKey
+		lineageTag: af810003-8e65-4469-8fa9-4ea1706748c1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MiaraKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiaraLabel
+		lineageTag: 1d4d0e68-c80a-49fb-a218-f5c1b6e525af
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MiaraLabel]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Measure_selector = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "MiaraKey", STRING,
+				    "MiaraLabel", STRING,
+				    {
+				        {"sale_qty", "Sale Quantity"},
+				        {"s_pln_net", "Net Sale PLN"},
+				        {"s_pln_base", "Base Sales PLN"},
+				        {"s_pln_corp_cost", "Manufacturing Cost PLN"},
+				        {"c_pln_lic", "License PLN"},
+				        {"c_pln_comm", "Commission PLN"},
+				        {"c_pln_transport", "Transport PLN"},
+				        {"c_pln_assembly", "Assembly PLN"},
+				        {"c_pln_compl_prod", "Complaint Product PLN"},
+				        {"c_pln_compl_act", "Complaint Activity PLN"},
+				        {"c_pln_varfixed", "Variance Fixed Cost PLN"},
+				        {"c_pln_sinsuran", "Sold Insurance PLN"},
+				        {"c_pln_stock_deprec", "Stock Depreciation PLN"},
+				        {"Margin I PLN", "Margin I PLN"},
+				        {"Margin I PLN (%)", "Margin I PLN (%)"},
+				        {"Margin II PLN", "Margin II PLN"},
+				        {"Margin II PLN (%)", "Margin II PLN (%)"},
+				        {"s_eur_net", "Net Sale EUR"},
+				        {"s_eur_base", "Base Sales EUR"},
+				        {"s_eur_corp_cost", "Manufacturing Cost EUR"},
+				        {"c_eur_lic", "License EUR"},
+				        {"c_eur_comm", "Commission EUR"},
+				        {"c_eur_transport", "Transport EUR"},
+				        {"c_eur_assembly", "Assembly EUR"},
+				        {"c_eur_compl_prod", "Complaint Product EUR"},
+				        {"c_eur_compl_act", "Complaint Activity EUR"},
+				        {"c_eur_varfixed", "Variance Fixed Cost EUR"},
+				        {"c_eur_sinsuran", "Sold Insurance EUR"},
+				        {"c_eur_stock_deprec", "Stock Depreciation EUR"},
+				        {"Margin I EUR", "Margin I EUR"},
+				        {"Margin I EUR (%)", "Margin I EUR (%)"},
+				        {"Margin II EUR", "Margin II EUR"},
+				        {"Margin II EUR (%)", "Margin II EUR (%)"}
+				    }
+				)
+
+	annotation PBI_Id = 02e90220116743f198873f46e2408ae1
+

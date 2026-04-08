@@ -1,0 +1,457 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "2eebae7d532479953502",
+  "position": {
+    "x": 39.876923076923077,
+    "y": 376.61538461538458,
+    "z": 2001,
+    "height": 177.23076923076923,
+    "width": 1835.8153846153846,
+    "tabOrder": 2001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_customer"
+                    }
+                  },
+                  "Property": "Customer Code"
+                }
+              },
+              "queryRef": "d_customer.Customer Code",
+              "nativeQueryRef": "Customer code",
+              "displayName": "Customer code"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON s_eur_net"
+                }
+              },
+              "queryRef": "_Miary.MON s_eur_net",
+              "nativeQueryRef": "MON s_eur_net"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON Margin II EUR (%)"
+                }
+              },
+              "queryRef": "_Miary.MON Margin II EUR (%)",
+              "nativeQueryRef": "MON Margin II EUR (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_assembly"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_assembly",
+              "nativeQueryRef": "MON c_eur_assembly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_pln_assembly"
+                }
+              },
+              "queryRef": "_Miary.MON c_pln_assembly",
+              "nativeQueryRef": "MON c_pln_assembly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_comm"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_comm",
+              "nativeQueryRef": "MON c_eur_comm"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_compl_act"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_compl_act",
+              "nativeQueryRef": "MON c_eur_compl_act"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_compl_prod"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_compl_prod",
+              "nativeQueryRef": "MON c_eur_compl_prod"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_lic"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_lic",
+              "nativeQueryRef": "MON c_eur_lic"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_sinsuran"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_sinsuran",
+              "nativeQueryRef": "MON c_eur_sinsuran"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_stock_deprec"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_stock_deprec",
+              "nativeQueryRef": "MON c_eur_stock_deprec"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_transport"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_transport",
+              "nativeQueryRef": "MON c_eur_transport"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON c_eur_varfixed"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_varfixed",
+              "nativeQueryRef": "MON c_eur_varfixed"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Atributes"
+                    }
+                  },
+                  "Property": "Parameter"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "183.14285714285714D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.MON s_eur_net"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dc8ad33afb6b79f61e7c",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3257b0644c66ea592da3",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "bed838192d8960bc417a",
+        "ordinal": 2,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_assembly"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "42786855faa21a979cc3",
+        "ordinal": 3,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_comm"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "71f9a00d3506a87e131b",
+        "ordinal": 4,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_compl_act"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1ec2af5b2847d342edbe",
+        "ordinal": 5,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_compl_prod"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dc788de86585956d7a26",
+        "ordinal": 6,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_lic"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "984869f422839c990468",
+        "ordinal": 7,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_sinsuran"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b49cee7a71c9af383055",
+        "ordinal": 8,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_stock_deprec"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b62b7d559bf140f54dc1",
+        "ordinal": 9,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_transport"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "286c25ed368eea440e9f",
+        "ordinal": 10,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_eur_varfixed"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a186aab91c8b901de50a",
+        "ordinal": 11,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON c_pln_assembly"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6aef4621db2c35723caf",
+        "ordinal": 12,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON Margin II EUR (%)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a03491c406ba3a14382a",
+        "ordinal": 13,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON s_eur_net"
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

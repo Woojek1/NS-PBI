@@ -39,24 +39,7 @@ table d_pricelist
 
 	partition d_pricelist = m
 		mode: import
-		source =
-				Value.NativeQuery(
-				    Databricks.Catalogs(
-				        "adb-16306551450739.19.azuredatabricks.net",
-				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
-				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
-				    ){[Name="zenith", Kind="Database"]}[Data],
-				    "
-				    select
-				        pricelist_id,
-				        pricelist_code,
-				        pricelist_name,
-				        category_id
-				    from zenith.edw.d_pricelist
-				    ",
-				    null,
-				    [EnableFolding=true]
-				)
+		source = Value.NativeQuery(Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]){[Name="zenith",Kind="Database"]}[Data], "select#(lf)        pricelist_id,#(lf)        pricelist_code,#(lf)        pricelist_name,#(lf)        category_id#(lf)    from zenith.edw.d_pricelist", null, [EnableFolding=true])
 
 	annotation PBI_NavigationStepName = Navigation
 

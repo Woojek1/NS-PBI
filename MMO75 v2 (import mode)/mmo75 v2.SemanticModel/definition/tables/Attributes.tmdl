@@ -40,10 +40,10 @@ table Attributes
 		mode: import
 		source = ```
 				{
-				    ("Department", NAMEOF('d_organization'[Department]), 0),
-				    ("Department Code", NAMEOF('d_organization'[Department Code]), 1),
-				    ("Section", NAMEOF('d_organization'[Section]), 2),
-				    ("Section Code", NAMEOF('d_organization'[Section Code]), 3),
+				    ("Department", NAMEOF('d_organization_team'[Department]), 0),
+				    ("Department Code", NAMEOF('d_organization_team'[Department Code]), 1),
+				    ("Section", NAMEOF('d_organization_team'[Section]), 2),
+				    ("Section Code", NAMEOF('d_organization_team'[Section Code]), 3),
 				    ("Salesperson", NAMEOF('d_organization'[Salesperson]), 4),
 				    ("Company", NAMEOF('d_company'[Company]), 5),
 				    ("Company Code", NAMEOF('d_company'[Company Code]), 6),

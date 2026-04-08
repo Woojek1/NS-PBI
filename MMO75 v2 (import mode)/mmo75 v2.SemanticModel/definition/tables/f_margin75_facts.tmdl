@@ -306,7 +306,7 @@ table f_margin75_facts
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: b42665ff-024c-4cd1-826b-dfb2fcf75354
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: team_id
 
 		changedProperty = IsHidden
@@ -745,7 +745,7 @@ table f_margin75_facts
 				        c_eur_stock_deprec,
 				        c_pln_compl_act,
 				        c_eur_compl_act
-				    from zenith.mmo75.f_margin_facts
+				    from zenith.mmo75.f_margin75_facts
 				    ",
 				    null,
 				    [EnableFolding=true]

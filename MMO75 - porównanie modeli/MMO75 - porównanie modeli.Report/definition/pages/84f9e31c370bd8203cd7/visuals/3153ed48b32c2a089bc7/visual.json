@@ -1,0 +1,491 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "3153ed48b32c2a089bc7",
+  "position": {
+    "x": 12.590163934426231,
+    "y": 110.16393442622952,
+    "z": 1000,
+    "height": 960,
+    "width": 1894.8196721311476,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": []
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_customer"
+                    }
+                  },
+                  "Property": "Customer Code"
+                }
+              },
+              "queryRef": "d_customer.Customer Code",
+              "nativeQueryRef": "Customer code",
+              "active": true,
+              "displayName": "Customer code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time_mon"
+                    }
+                  },
+                  "Property": "mon_name"
+                }
+              },
+              "queryRef": "d_time_mon.mon_name",
+              "nativeQueryRef": "mon_name",
+              "active": true,
+              "displayName": "mon_name"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Atributes"
+                    }
+                  },
+                  "Property": "Parameter"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON s_eur_net"
+                }
+              },
+              "queryRef": "_Miary.MON s_eur_net",
+              "nativeQueryRef": "Net Sale EUR",
+              "displayName": "Net Sale EUR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON s_eur_corp_cost"
+                }
+              },
+              "queryRef": "_Miary.MON s_eur_corp_cost",
+              "nativeQueryRef": "Manufacturing Cost EUR",
+              "displayName": "Manufacturing Cost EUR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "MON Wybrana wartość"
+                }
+              },
+              "queryRef": "_Miary.Wybrana wartość MON",
+              "nativeQueryRef": "MON Measures",
+              "displayName": "MON Measures"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "YTD DELTA Wybrana wartość"
+                }
+              },
+              "queryRef": "_Miary.Wybrana wartość YTD DELTA",
+              "nativeQueryRef": "YTD DELTA Measures",
+              "displayName": "YTD DELTA Measures"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "YTD Wybrana wartość"
+                }
+              },
+              "queryRef": "_Miary.YTD Wybrana wartość",
+              "nativeQueryRef": "YTD Wybrana wartość"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "diff_%"
+                }
+              },
+              "queryRef": "_Miary.diff_%",
+              "nativeQueryRef": "diff_%"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_time_mon"
+                  }
+                },
+                "Property": "mon_name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "d_customer.Customer Code"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_time_mon.mon_name"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "247.86515016142374D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wybrana wartość MON"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "237D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wybrana wartość YTD DELTA"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "277.6234259807186D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_customer.Customer Code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "161.54674810033148D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.diff_%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "203.6721271645334D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Line"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "147.14284728173854D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.MON s_eur_net"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "202.56827950601883D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.MON s_eur_corp_cost"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "197.2959139547139D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.YTD Wybrana wartość"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "134ad90cbe69be4a7b2d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON Wybrana wartość"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "8f22f47a179c524004e4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "YTD Wybrana wartość"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "047a39c2d0831262aba9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "YTD DELTA Wybrana wartość"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "f85a04c61280cf8defa2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "diff_%"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "6a844d3173f0a71a6050",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "b62d2db0d25fd6dad644",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer Code"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "03037193f5ead3094f96",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON s_eur_net"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "896fe96f8f157011954e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "MON s_eur_corp_cost"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
