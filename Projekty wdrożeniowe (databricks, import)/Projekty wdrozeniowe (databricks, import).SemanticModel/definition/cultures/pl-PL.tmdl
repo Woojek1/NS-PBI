@@ -11001,6 +11001,16 @@ cultureInfo pl-PL
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "Typ budżetu": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -11187,11 +11197,245 @@ cultureInfo pl-PL
 			            },
 			            "Weight": 0.582
 			          }
+			        },
+			        {
+			          "Budżet na rok": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "f_capex_imp_cost_data_has_vm_pbi_d_gl_project": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_gl_project"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_vm_pbi_d_gl_projects"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "f_capex_imp_cost_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_f_capex_imp_cost_data"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_d_impl_cat_cost": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "d_impl_cat_cost": {
+			          "Target": {
+			            "Entity": "d_impl_cat_cost"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "d_impl_cat_cost"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_d_impl_cat_costs"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_impl_cat_cost"
+			            },
+			            "Object": {
+			              "Role": "f_capex_imp_cost_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_impl_cat_costs_have_f_capex_imp_cost_data"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_projects_budget_has_budget_year": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_projects_budget"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_projects_budget": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget"
+			          }
+			        },
+			        "vm_pbi_d_projects_budget.budget_year": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget.budget_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_projects_budget"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_projects_budget.budget_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_projects_budgets_have_budget_years"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_projects_budget_has_project_year": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_projects_budget"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_projects_budget": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget"
+			          }
+			        },
+			        "vm_pbi_d_projects_budget.project_year": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget.project_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_projects_budget"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_projects_budget.project_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_projects_budgets_have_project_years"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_projects_budget_has_budget_type": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_projects_budget"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_projects_budget": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget"
+			          }
+			        },
+			        "vm_pbi_d_projects_budget.budget_type": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget.budget_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_projects_budget"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_projects_budget.budget_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_projects_budgets_have_budget_types"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_projects_budget_has_code_c": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_projects_budget"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_projects_budget": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget"
+			          }
+			        },
+			        "vm_pbi_d_projects_budget.code_c": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget.code_c"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_projects_budget"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_projects_budget.code_c"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_projects_budgets_have_code_c"
+			        }
+			      ]
+			    },
 			    "entity__miary_has_userprincipalname": {
 			      "Binding": {
 			        "ConceptualEntity": "_Miary"
@@ -16683,230 +16927,6 @@ cultureInfo pl-PL
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "f_capex_imp_cost_data_are_mixed_on_src_mixed_payment_dates"
-			        }
-			      ]
-			    },
-			    "vm_pbi_d_projects_budget_has_code_c": {
-			      "Binding": {
-			        "ConceptualEntity": "vm_pbi_d_projects_budget"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "vm_pbi_d_projects_budget": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_projects_budget"
-			          }
-			        },
-			        "vm_pbi_d_projects_budget.code_c": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_projects_budget.code_c"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "vm_pbi_d_projects_budget"
-			            },
-			            "Object": {
-			              "Role": "vm_pbi_d_projects_budget.code_c"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "vm_pbi_d_projects_budgets_have_code_c"
-			        }
-			      ]
-			    },
-			    "vm_pbi_d_projects_budget_has_budget_type": {
-			      "Binding": {
-			        "ConceptualEntity": "vm_pbi_d_projects_budget"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "vm_pbi_d_projects_budget": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_projects_budget"
-			          }
-			        },
-			        "vm_pbi_d_projects_budget.budget_type": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_projects_budget.budget_type"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "vm_pbi_d_projects_budget"
-			            },
-			            "Object": {
-			              "Role": "vm_pbi_d_projects_budget.budget_type"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "vm_pbi_d_projects_budgets_have_budget_types"
-			        }
-			      ]
-			    },
-			    "vm_pbi_d_projects_budget_has_project_year": {
-			      "Binding": {
-			        "ConceptualEntity": "vm_pbi_d_projects_budget"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "vm_pbi_d_projects_budget": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_projects_budget"
-			          }
-			        },
-			        "vm_pbi_d_projects_budget.project_year": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_projects_budget.project_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "vm_pbi_d_projects_budget"
-			            },
-			            "Object": {
-			              "Role": "vm_pbi_d_projects_budget.project_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "vm_pbi_d_projects_budgets_have_project_years"
-			        }
-			      ]
-			    },
-			    "vm_pbi_d_projects_budget_has_budget_year": {
-			      "Binding": {
-			        "ConceptualEntity": "vm_pbi_d_projects_budget"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "vm_pbi_d_projects_budget": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_projects_budget"
-			          }
-			        },
-			        "vm_pbi_d_projects_budget.budget_year": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_projects_budget.budget_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "vm_pbi_d_projects_budget"
-			            },
-			            "Object": {
-			              "Role": "vm_pbi_d_projects_budget.budget_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "vm_pbi_d_projects_budgets_have_budget_years"
-			        }
-			      ]
-			    },
-			    "f_capex_imp_cost_data_has_d_impl_cat_cost": {
-			      "Binding": {
-			        "ConceptualEntity": "f_capex_imp_cost_data"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_capex_imp_cost_data": {
-			          "Target": {
-			            "Entity": "f_capex_imp_cost_data"
-			          }
-			        },
-			        "d_impl_cat_cost": {
-			          "Target": {
-			            "Entity": "d_impl_cat_cost"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_capex_imp_cost_data"
-			            },
-			            "Object": {
-			              "Role": "d_impl_cat_cost"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_capex_imp_cost_data_have_d_impl_cat_costs"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_impl_cat_cost"
-			            },
-			            "Object": {
-			              "Role": "f_capex_imp_cost_data"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_impl_cat_costs_have_f_capex_imp_cost_data"
-			        }
-			      ]
-			    },
-			    "f_capex_imp_cost_data_has_vm_pbi_d_gl_project": {
-			      "Binding": {
-			        "ConceptualEntity": "f_capex_imp_cost_data"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_capex_imp_cost_data": {
-			          "Target": {
-			            "Entity": "f_capex_imp_cost_data"
-			          }
-			        },
-			        "vm_pbi_d_gl_project": {
-			          "Target": {
-			            "Entity": "vm_pbi_d_gl_project"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_capex_imp_cost_data"
-			            },
-			            "Object": {
-			              "Role": "vm_pbi_d_gl_project"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_capex_imp_cost_data_have_vm_pbi_d_gl_projects"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "vm_pbi_d_gl_project"
-			            },
-			            "Object": {
-			              "Role": "f_capex_imp_cost_data"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "vm_pbi_d_gl_projects_have_f_capex_imp_cost_data"
 			        }
 			      ]
 			    },

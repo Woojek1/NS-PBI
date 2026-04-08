@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "14e8d93278440234675e",
+  "name": "6b27610518304e9620fe",
   "position": {
-    "x": 1558,
-    "y": 262,
-    "z": 5000,
-    "height": 86,
-    "width": 338,
-    "tabOrder": 5000
+    "x": 1555,
+    "y": 261.66666666666669,
+    "z": 15000,
+    "height": 76.666666666666671,
+    "width": 340,
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,18 +20,21 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_projects_budget"
+                      "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "budget_year"
+                  "Property": "status"
                 }
               },
-              "queryRef": "vm_pbi_d_projects_budget.budget_year",
-              "nativeQueryRef": "budget_year",
+              "queryRef": "vm_pbi_d_gl_project.status",
+              "nativeQueryRef": "status",
               "active": true
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -48,6 +51,26 @@
           }
         }
       ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Status'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
       "selection": [
         {
           "properties": {
@@ -57,17 +80,11 @@
                   "Value": "false"
                 }
               }
-            }
-          }
-        }
-      ],
-      "header": [
-        {
-          "properties": {
-            "textSize": {
+            },
+            "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "true"
                 }
               }
             }
@@ -77,13 +94,6 @@
       "items": [
         {
           "properties": {
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -100,6 +110,13 @@
               "expr": {
                 "Literal": {
                   "Value": "5D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
                 }
               }
             }
@@ -229,7 +246,69 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "status1",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
-  "isHidden": true
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "96766067edb23838e042",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_date"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "year_date"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Literal": {
+                          "Value": "datetime'2020-01-01T00:00:00'"
+                        }
+                      },
+                      "TimeUnit": 5
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
 }

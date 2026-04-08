@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "ad4e7a9206c3af4630cc",
+  "name": "4a9249d0bcf64bb6db4e",
   "position": {
-    "x": 1555,
-    "y": 161.66666666666669,
-    "z": 9000,
-    "height": 76.666666666666671,
-    "width": 340,
-    "tabOrder": 9000
+    "x": 1558.153846153846,
+    "y": 481.47692307692307,
+    "z": 5000,
+    "height": 82,
+    "width": 338,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,21 +20,18 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon"
+                      "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "year_name"
+                  "Property": "brand"
                 }
               },
-              "queryRef": "d_time_mon_2.year_name",
-              "nativeQueryRef": "year_name",
+              "queryRef": "vm_pbi_d_gl_project.brand",
+              "nativeQueryRef": "brand",
               "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "isDefaultSort": true
       }
     },
     "objects": {
@@ -51,26 +48,6 @@
           }
         }
       ],
-      "header": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Rok wydatków'"
-                }
-              }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            }
-          }
-        }
-      ],
       "selection": [
         {
           "properties": {
@@ -80,6 +57,33 @@
                   "Value": "false"
                 }
               }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Brand'"
+                }
+              }
             }
           }
         }
@@ -87,6 +91,13 @@
       "items": [
         {
           "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -105,20 +116,21 @@
                   "Value": "5D"
                 }
               }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
             }
           }
         }
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -239,69 +251,6 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "year_name",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "96766067edb23838e042",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "year_date"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "d_time_mon",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 2,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "year_date"
-                    }
-                  },
-                  "Right": {
-                    "DateSpan": {
-                      "Expression": {
-                        "Literal": {
-                          "Value": "datetime'2020-01-01T00:00:00'"
-                        }
-                      },
-                      "TimeUnit": 5
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      }
-    ]
   }
 }

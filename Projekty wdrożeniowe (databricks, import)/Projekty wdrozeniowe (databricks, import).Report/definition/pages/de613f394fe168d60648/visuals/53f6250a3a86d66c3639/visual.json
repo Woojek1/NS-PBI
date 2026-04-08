@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "3732e6dd3a13eda38196",
+  "name": "53f6250a3a86d66c3639",
   "position": {
     "x": 1555,
     "y": 161.66666666666669,
-    "z": 13000,
-    "height": 76.666666666666671,
-    "width": 340,
-    "tabOrder": 13000
+    "z": 3000,
+    "height": 82,
+    "width": 338,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon"
+                      "Entity": "vm_pbi_d_projects_budget"
                     }
                   },
-                  "Property": "year_name"
+                  "Property": "project_year"
                 }
               },
-              "queryRef": "d_time_mon_2.year_name",
-              "nativeQueryRef": "year_name",
+              "queryRef": "vm_pbi_d_projects_budget.project_year",
+              "nativeQueryRef": "project_year",
               "active": true
             }
           ]
@@ -57,7 +57,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rok wydatków'"
+                  "Value": "'Rok rozpoczęcia projektu'"
                 }
               }
             },
@@ -78,6 +78,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

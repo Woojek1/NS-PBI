@@ -86,7 +86,15 @@ table vm_pbi_d_projects_budget
 				    null,
 				    [EnableFolding=true]
 				),
-				    #"Inserted Last Characters" = Table.AddColumn(vm_pbi_d_projects_budget, "Last Characters", each Text.End([code_c], 2), type text),
+				    #"Inserted Last Characters" = Table.AddColumn(
+				    vm_pbi_d_projects_budget,
+				    "Last Characters",
+				    each 
+				        if Text.End([code_c], 2) = "ST" then "Standardowy"
+				        else if Text.End([code_c], 2) = "EX" then "Extra"
+				        else Text.End([code_c], 2),
+				    type text
+				),
 				    #"Renamed Columns" = Table.RenameColumns(#"Inserted Last Characters",{{"Last Characters", "budget_type"}}),
 				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Rok projektu", each "20" & Text.Middle([code_f], 2, 2)),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Added Custom",{{"Rok projektu", "project_year"}}),

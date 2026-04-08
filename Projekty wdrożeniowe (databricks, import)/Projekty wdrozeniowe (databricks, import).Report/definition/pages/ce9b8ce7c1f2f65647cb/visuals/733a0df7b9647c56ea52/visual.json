@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_gl_project"
+                      "Entity": "vm_pbi_d_projects_budget"
                     }
                   },
-                  "Property": "status"
+                  "Property": "budget_year"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.status",
-              "nativeQueryRef": "Status",
-              "active": true,
-              "displayName": "Status"
+              "queryRef": "vm_pbi_d_projects_budget.budget_year",
+              "nativeQueryRef": "budget_year",
+              "active": true
             }
           ]
         }
@@ -230,29 +229,7 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "status",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5cc01bef266f4c1b73fe",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vm_pbi_d_gl_project"
-              }
-            },
-            "Property": "status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "isHidden": true
 }

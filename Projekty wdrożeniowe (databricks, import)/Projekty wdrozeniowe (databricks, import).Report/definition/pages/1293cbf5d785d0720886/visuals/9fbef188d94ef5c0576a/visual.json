@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "14e8d93278440234675e",
+  "name": "9fbef188d94ef5c0576a",
   "position": {
-    "x": 1558,
-    "y": 262,
-    "z": 5000,
-    "height": 86,
-    "width": 338,
-    "tabOrder": 5000
+    "x": 1556.6666666666667,
+    "y": 159,
+    "z": 13000,
+    "height": 81.666666666666671,
+    "width": 338.33333333333337,
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_projects_budget"
+                      "Entity": "d_time_mon"
                     }
                   },
-                  "Property": "budget_year"
+                  "Property": "year_name"
                 }
               },
-              "queryRef": "vm_pbi_d_projects_budget.budget_year",
-              "nativeQueryRef": "budget_year",
+              "queryRef": "d_time_mon.year_name",
+              "nativeQueryRef": "year_name",
               "active": true
             }
           ]
@@ -35,19 +35,6 @@
       }
     },
     "objects": {
-      "data": [
-        {
-          "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Dropdown'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "selection": [
         {
           "properties": {
@@ -55,6 +42,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -68,6 +62,13 @@
               "expr": {
                 "Literal": {
                   "Value": "14D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rok'"
                 }
               }
             }
@@ -100,6 +101,19 @@
               "expr": {
                 "Literal": {
                   "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -229,7 +243,11 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "year_name1",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
-  },
-  "isHidden": true
+  }
 }

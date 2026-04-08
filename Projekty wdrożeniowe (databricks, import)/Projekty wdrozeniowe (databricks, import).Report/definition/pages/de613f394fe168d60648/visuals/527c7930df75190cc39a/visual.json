@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "14e8d93278440234675e",
+  "name": "527c7930df75190cc39a",
   "position": {
     "x": 1558,
     "y": 262,
-    "z": 5000,
-    "height": 86,
+    "z": 2000,
+    "height": 82,
     "width": 338,
-    "tabOrder": 5000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -57,6 +57,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -68,6 +75,13 @@
               "expr": {
                 "Literal": {
                   "Value": "14D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Budżet na rok'"
                 }
               }
             }
@@ -229,7 +243,11 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "status",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
-  },
-  "isHidden": true
+  }
 }
