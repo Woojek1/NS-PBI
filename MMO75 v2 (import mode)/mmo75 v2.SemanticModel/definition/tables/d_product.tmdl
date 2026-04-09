@@ -190,7 +190,7 @@ table d_product
 				    from zenith.edw.d_product p
 				    where exists (
 				        select 1
-				        from zenith.mmo75.f_margin75_facts f
+				        from zenith.mmo75.f_margin_ytd_delta_facts f
 				        where f.prod_inv_id = p.prod_si_id
 				    )
 				    ",
