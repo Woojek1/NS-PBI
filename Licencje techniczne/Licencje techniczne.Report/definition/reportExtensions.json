@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Sales Measures",
+      "measures": [
+        {
+          "name": "Technical Licence Cost (2,5%)",
+          "dataType": "Double",
+          "expression": "\nROUND(\n    [Net Sales CUR Dom] * 0.025,\n    2\n)",
+          "formatString": "#,0.00",
+          "displayFolder": "Technical Licence",
+          "references": {
+            "measures": [
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales CUR Dom"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
