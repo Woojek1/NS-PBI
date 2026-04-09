@@ -1,0 +1,378 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "cffd3541daf953ba942b",
+  "position": {
+    "x": 722.28571428571433,
+    "y": 0,
+    "z": 2001,
+    "height": 77.714285714285708,
+    "width": 1083.4285714285713,
+    "tabOrder": 2001
+  },
+  "visual": {
+    "visualType": "textSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product Inventory"
+                    }
+                  },
+                  "Property": "Inventory Item Name"
+                }
+              },
+              "queryRef": "Product Inventory.Inventory Item Name",
+              "nativeQueryRef": "Inventory Item Name"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "p",
+                    "Entity": "Product Inventory",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Or": {
+                        "Left": {
+                          "Or": {
+                            "Left": {
+                              "Or": {
+                                "Left": {
+                                  "Or": {
+                                    "Left": {
+                                      "Or": {
+                                        "Left": {
+                                          "Or": {
+                                            "Left": {
+                                              "Or": {
+                                                "Left": {
+                                                  "Or": {
+                                                    "Left": {
+                                                      "Or": {
+                                                        "Left": {
+                                                          "Or": {
+                                                            "Left": {
+                                                              "Or": {
+                                                                "Left": {
+                                                                  "Contains": {
+                                                                    "Left": {
+                                                                      "Column": {
+                                                                        "Expression": {
+                                                                          "SourceRef": {
+                                                                            "Source": "p"
+                                                                          }
+                                                                        },
+                                                                        "Property": "Inventory Item Name"
+                                                                      }
+                                                                    },
+                                                                    "Right": {
+                                                                      "Literal": {
+                                                                        "Value": "'Convenio'"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "Right": {
+                                                                  "Contains": {
+                                                                    "Left": {
+                                                                      "Column": {
+                                                                        "Expression": {
+                                                                          "SourceRef": {
+                                                                            "Source": "p"
+                                                                          }
+                                                                        },
+                                                                        "Property": "Inventory Item Name"
+                                                                      }
+                                                                    },
+                                                                    "Right": {
+                                                                      "Literal": {
+                                                                        "Value": "'Denuo'"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "Right": {
+                                                              "Contains": {
+                                                                "Left": {
+                                                                  "Column": {
+                                                                    "Expression": {
+                                                                      "SourceRef": {
+                                                                        "Source": "p"
+                                                                      }
+                                                                    },
+                                                                    "Property": "Inventory Item Name"
+                                                                  }
+                                                                },
+                                                                "Right": {
+                                                                  "Literal": {
+                                                                    "Value": "'Duo Back'"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "Right": {
+                                                          "Contains": {
+                                                            "Left": {
+                                                              "Column": {
+                                                                "Expression": {
+                                                                  "SourceRef": {
+                                                                    "Source": "p"
+                                                                  }
+                                                                },
+                                                                "Property": "Inventory Item Name"
+                                                              }
+                                                            },
+                                                            "Right": {
+                                                              "Literal": {
+                                                                "Value": "'Ixo'"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "Right": {
+                                                      "Contains": {
+                                                        "Left": {
+                                                          "Column": {
+                                                            "Expression": {
+                                                              "SourceRef": {
+                                                                "Source": "p"
+                                                              }
+                                                            },
+                                                            "Property": "Inventory Item Name"
+                                                          }
+                                                        },
+                                                        "Right": {
+                                                          "Literal": {
+                                                            "Value": "'Kassenstuhle'"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "Right": {
+                                                  "Contains": {
+                                                    "Left": {
+                                                      "Column": {
+                                                        "Expression": {
+                                                          "SourceRef": {
+                                                            "Source": "p"
+                                                          }
+                                                        },
+                                                        "Property": "Inventory Item Name"
+                                                      }
+                                                    },
+                                                    "Right": {
+                                                      "Literal": {
+                                                        "Value": "'Sand'"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "Right": {
+                                              "Contains": {
+                                                "Left": {
+                                                  "Column": {
+                                                    "Expression": {
+                                                      "SourceRef": {
+                                                        "Source": "p"
+                                                      }
+                                                    },
+                                                    "Property": "Inventory Item Name"
+                                                  }
+                                                },
+                                                "Right": {
+                                                  "Literal": {
+                                                    "Value": "'Scudo'"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "Right": {
+                                          "Contains": {
+                                            "Left": {
+                                              "Column": {
+                                                "Expression": {
+                                                  "SourceRef": {
+                                                    "Source": "p"
+                                                  }
+                                                },
+                                                "Property": "Inventory Item Name"
+                                              }
+                                            },
+                                            "Right": {
+                                              "Literal": {
+                                                "Value": "'Xenium'"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Right": {
+                                      "Contains": {
+                                        "Left": {
+                                          "Column": {
+                                            "Expression": {
+                                              "SourceRef": {
+                                                "Source": "p"
+                                              }
+                                            },
+                                            "Property": "Inventory Item Name"
+                                          }
+                                        },
+                                        "Right": {
+                                          "Literal": {
+                                            "Value": "'XIO'"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Right": {
+                                  "Contains": {
+                                    "Left": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "p"
+                                          }
+                                        },
+                                        "Property": "Inventory Item Name"
+                                      }
+                                    },
+                                    "Right": {
+                                      "Literal": {
+                                        "Value": "'Xpendo'"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "Right": {
+                              "Contains": {
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "p"
+                                      }
+                                    },
+                                    "Property": "Inventory Item Name"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "'eModel 2.0'"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "Right": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "p"
+                                  }
+                                },
+                                "Property": "Inventory Item Name"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'Xilium'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "dropdown": [
+        {
+          "properties": {
+            "filterMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Filter_Contains_Any'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "slicerSettings": [
+        {
+          "properties": {
+            "multiselect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f0eacd25d2f1ae882ae8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product Inventory"
+              }
+            },
+            "Property": "Inventory Item Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -9,6 +9,7 @@
     "filters": [
       {
         "name": "ec529c0803db19722c49",
+        "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
@@ -63,15 +64,16 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "42434b1a6ab1a2e87b59",
+        "name": "0f4a0f5309eba18263b2",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Product Inventory"
+                "Entity": "Date"
               }
             },
-            "Property": "Inventory Item Name"
+            "Property": "Year"
           }
         },
         "type": "Advanced",
@@ -79,28 +81,29 @@
           "Version": 2,
           "From": [
             {
-              "Name": "p",
-              "Entity": "Product Inventory",
+              "Name": "d",
+              "Entity": "Date",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "Contains": {
+                "Comparison": {
+                  "ComparisonKind": 2,
                   "Left": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Source": "p"
+                          "Source": "d"
                         }
                       },
-                      "Property": "Inventory Item Name"
+                      "Property": "Year"
                     }
                   },
                   "Right": {
                     "Literal": {
-                      "Value": "'youteam'"
+                      "Value": "2026L"
                     }
                   }
                 }
@@ -110,7 +113,8 @@
         },
         "howCreated": "User"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   },
   "objects": {
     "outspacePane": [
@@ -119,7 +123,7 @@
           "width": {
             "expr": {
               "Literal": {
-                "Value": "320L"
+                "Value": "185L"
               }
             }
           }

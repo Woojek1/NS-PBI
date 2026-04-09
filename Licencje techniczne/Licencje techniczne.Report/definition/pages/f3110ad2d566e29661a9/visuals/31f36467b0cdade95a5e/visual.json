@@ -194,10 +194,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Date"
+                    "Entity": "Product Inventory"
                   }
                 },
-                "Property": "Quarter Code"
+                "Property": "Inventory Item Name"
               }
             },
             "direction": "Ascending"
@@ -218,8 +218,211 @@
             }
           }
         }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "201.61507786138327D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Product.Line"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "271.0952380952381D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Department.Section"
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e5d9e2c1f2e11cdfd247",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5d6bd46b3d74958fb767",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Quarter Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ecdaba30ac5d4147901e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Company"
+              }
+            },
+            "Property": "Company Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a017e7b61e7df8ff3b01",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Department"
+              }
+            },
+            "Property": "Section Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8c45cf35ee8ff2c75e35",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Department"
+              }
+            },
+            "Property": "Section"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "35a76cbae44836c20509",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0c67fb6552517a7a62ea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product Inventory"
+              }
+            },
+            "Property": "Inventory Item Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ea15ebfb93c8245f393d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product Inventory"
+              }
+            },
+            "Property": "Inventory Item Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0be00066fa91e8364fc8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product Inventory"
+              }
+            },
+            "Property": "PI Manufacturer Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c95d9df0d2ba1e4fd320",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Net Sales CUR Dom"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9ab4642cea47941e09c0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Technical Licence Cost (2,5%)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "391a0ad5a592b75102da",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Sales Quantity"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
