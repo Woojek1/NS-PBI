@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "4a9249d0bcf64bb6db4e",
+  "name": "5d4ba02ad71ad1421b11",
   "position": {
-    "x": 1558.153846153846,
-    "y": 481.47692307692307,
-    "z": 5000,
-    "height": 82,
-    "width": 338,
-    "tabOrder": 5000
+    "x": 1556.5714285714287,
+    "y": 345,
+    "z": 11005,
+    "height": 69.94285714285715,
+    "width": 340.11428571428576,
+    "tabOrder": 11005
   },
   "visual": {
     "visualType": "slicer",
@@ -23,15 +23,18 @@
                       "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "brand"
+                  "Property": "kategoria"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.brand",
-              "nativeQueryRef": "brand",
+              "queryRef": "vm_pbi_d_gl_project.kategoria",
+              "nativeQueryRef": "kategoria",
               "active": true
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -48,40 +51,40 @@
           }
         }
       ],
-      "selection": [
-        {
-          "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "selectAllCheckboxEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
       "header": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Kategoria'"
+                }
+              }
+            },
             "textSize": {
               "expr": {
                 "Literal": {
                   "Value": "14D"
                 }
               }
-            },
-            "text": {
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "'Brand'"
+                  "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -110,6 +113,13 @@
                 }
               }
             },
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
             "padding": {
               "expr": {
                 "Literal": {
@@ -120,17 +130,22 @@
           }
         }
       ],
-      "general": [
+      "pendingChangesIcon": [
         {
           "properties": {
-            "selfFilterEnabled": {
+            "size": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "12D"
                 }
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },
@@ -249,8 +264,91 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
+    "syncGroup": {
+      "groupName": "kategoria",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "96766067edb23838e042",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_date"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "year_date"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Literal": {
+                          "Value": "datetime'2020-01-01T00:00:00'"
+                        }
+                      },
+                      "TimeUnit": 5
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

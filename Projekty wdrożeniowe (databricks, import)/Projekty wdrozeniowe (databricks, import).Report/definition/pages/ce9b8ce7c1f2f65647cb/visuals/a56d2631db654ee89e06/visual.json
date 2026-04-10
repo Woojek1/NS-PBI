@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "6b27610518304e9620fe",
+  "name": "a56d2631db654ee89e06",
   "position": {
-    "x": 1555,
-    "y": 261.66666666666669,
-    "z": 15000,
-    "height": 76.666666666666671,
-    "width": 340,
-    "tabOrder": 15000
+    "x": 1556.5714285714287,
+    "y": 345,
+    "z": 14005,
+    "height": 69.94285714285715,
+    "width": 340.11428571428576,
+    "tabOrder": 14005
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,11 @@
                       "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "status"
+                  "Property": "kategoria"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.status",
-              "nativeQueryRef": "status",
+              "queryRef": "vm_pbi_d_gl_project.kategoria",
+              "nativeQueryRef": "kategoria",
               "active": true
             }
           ]
@@ -57,7 +57,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Status'"
+                  "Value": "'Kategoria'"
                 }
               }
             },
@@ -74,17 +74,17 @@
       "selection": [
         {
           "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -94,6 +94,13 @@
       "items": [
         {
           "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -106,17 +113,30 @@
                 }
               }
             },
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
             "padding": {
               "expr": {
                 "Literal": {
                   "Value": "5D"
                 }
               }
-            },
-            "textSize": {
+            }
+          }
+        }
+      ],
+      "pendingChangesIcon": [
+        {
+          "properties": {
+            "size": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "12D"
                 }
               }
             }
@@ -244,10 +264,30 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "syncGroup": {
-      "groupName": "status1",
+      "groupName": "kategoria",
       "fieldChanges": true,
       "filterChanges": true
     },

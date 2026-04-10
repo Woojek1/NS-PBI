@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ef56303d75fac6f272bd",
   "position": {
-    "x": 1555,
-    "y": 261.66666666666669,
+    "x": 1556.5714285714287,
+    "y": 185,
     "z": 12000,
-    "height": 76.666666666666671,
-    "width": 340,
+    "height": 70,
+    "width": 340.11428571428576,
     "tabOrder": 12000
   },
   "visual": {
@@ -74,17 +74,17 @@
       "selection": [
         {
           "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -94,6 +94,13 @@
       "items": [
         {
           "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -106,26 +113,34 @@
                 }
               }
             },
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
             "padding": {
               "expr": {
                 "Literal": {
                   "Value": "5D"
                 }
               }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
             }
           }
         }
       ],
-      "general": [
+      "pendingChangesIcon": [
         {
-          "properties": {}
+          "properties": {
+            "size": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -239,6 +254,26 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

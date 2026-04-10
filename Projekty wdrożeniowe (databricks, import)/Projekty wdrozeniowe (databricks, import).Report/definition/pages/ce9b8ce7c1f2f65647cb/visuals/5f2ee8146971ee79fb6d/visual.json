@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "527c7930df75190cc39a",
+  "name": "5f2ee8146971ee79fb6d",
   "position": {
-    "x": 1558,
-    "y": 262,
-    "z": 2000,
-    "height": 82,
-    "width": 338,
-    "tabOrder": 2000
+    "x": 1555.2,
+    "y": 105,
+    "z": 14003,
+    "height": 70,
+    "width": 338.74285714285713,
+    "tabOrder": 14003
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_projects_budget"
+                      "Entity": "d_time_mon"
                     }
                   },
-                  "Property": "budget_year"
+                  "Property": "year_name"
                 }
               },
-              "queryRef": "vm_pbi_d_projects_budget.budget_year",
-              "nativeQueryRef": "budget_year",
+              "queryRef": "d_time_mon.year_name",
+              "nativeQueryRef": "year_name",
               "active": true
             }
           ]
@@ -35,33 +35,20 @@
       }
     },
     "objects": {
-      "data": [
-        {
-          "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Dropdown'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "selection": [
         {
           "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -71,17 +58,17 @@
       "header": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rok'"
+                }
+              }
+            },
             "textSize": {
               "expr": {
                 "Literal": {
                   "Value": "14D"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Budżet na rok'"
                 }
               }
             }
@@ -110,6 +97,13 @@
                 }
               }
             },
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
             "padding": {
               "expr": {
                 "Literal": {
@@ -120,9 +114,30 @@
           }
         }
       ],
-      "general": [
+      "data": [
         {
-          "properties": {}
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "pendingChangesIcon": [
+        {
+          "properties": {
+            "size": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -241,10 +256,30 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "syncGroup": {
-      "groupName": "status",
+      "groupName": "year_name1",
       "fieldChanges": true,
       "filterChanges": true
     },

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "53f6250a3a86d66c3639",
+  "name": "e8bf20eec7aafdd8946c",
   "position": {
-    "x": 1555,
-    "y": 161.66666666666669,
-    "z": 3000,
-    "height": 82,
-    "width": 338,
-    "tabOrder": 3000
+    "x": 1556.5714285714287,
+    "y": 185,
+    "z": 11002,
+    "height": 70,
+    "width": 340.11428571428576,
+    "tabOrder": 11002
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_projects_budget"
+                      "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "project_year"
+                  "Property": "status"
                 }
               },
-              "queryRef": "vm_pbi_d_projects_budget.project_year",
-              "nativeQueryRef": "project_year",
+              "queryRef": "vm_pbi_d_gl_project.status",
+              "nativeQueryRef": "status",
               "active": true
             }
           ]
@@ -57,7 +57,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rok rozpoczęcia projektu'"
+                  "Value": "'Status'"
                 }
               }
             },
@@ -74,17 +74,17 @@
       "selection": [
         {
           "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -94,6 +94,13 @@
       "items": [
         {
           "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -106,26 +113,34 @@
                 }
               }
             },
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
             "padding": {
               "expr": {
                 "Literal": {
                   "Value": "5D"
                 }
               }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
             }
           }
         }
       ],
-      "general": [
+      "pendingChangesIcon": [
         {
-          "properties": {}
+          "properties": {
+            "size": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -244,10 +259,30 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "syncGroup": {
-      "groupName": "year_name",
+      "groupName": "status1",
       "fieldChanges": true,
       "filterChanges": true
     },

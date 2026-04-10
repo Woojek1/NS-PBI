@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "083e01808d4750bf9890",
+  "name": "b51b9d6a453cb937157a",
   "position": {
-    "x": 1556.6666666666667,
-    "y": 159,
-    "z": 13000,
-    "height": 81.666666666666671,
-    "width": 338.33333333333337,
-    "tabOrder": 13000
+    "x": 1555.2,
+    "y": 105,
+    "z": 11003,
+    "height": 70,
+    "width": 338.74285714285713,
+    "tabOrder": 11003
   },
   "visual": {
     "visualType": "slicer",
@@ -38,17 +38,17 @@
       "selection": [
         {
           "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -58,17 +58,17 @@
       "header": [
         {
           "properties": {
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            },
             "text": {
               "expr": {
                 "Literal": {
                   "Value": "'Rok'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
                 }
               }
             }
@@ -97,6 +97,13 @@
                 }
               }
             },
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
             "padding": {
               "expr": {
                 "Literal": {
@@ -120,9 +127,17 @@
           }
         }
       ],
-      "general": [
+      "pendingChangesIcon": [
         {
-          "properties": {}
+          "properties": {
+            "size": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -236,6 +251,26 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

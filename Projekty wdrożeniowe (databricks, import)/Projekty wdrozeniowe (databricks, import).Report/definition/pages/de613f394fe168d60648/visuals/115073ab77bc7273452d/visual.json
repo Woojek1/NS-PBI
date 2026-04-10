@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "2184d74aa85492bf1bd9",
+  "name": "115073ab77bc7273452d",
   "position": {
-    "x": 1558.153846153846,
-    "y": 373.66153846153844,
-    "z": 4000,
-    "height": 82,
-    "width": 338,
-    "tabOrder": 4000
+    "x": 1555.2,
+    "y": 265,
+    "z": 4,
+    "height": 70,
+    "width": 340.11428571428576,
+    "tabOrder": 4
   },
   "visual": {
     "visualType": "slicer",
@@ -20,18 +20,21 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_projects_budget"
+                      "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "budget_type"
+                  "Property": "brand"
                 }
               },
-              "queryRef": "vm_pbi_d_projects_budget.budget_type",
-              "nativeQueryRef": "budget_type",
+              "queryRef": "vm_pbi_d_gl_project.brand",
+              "nativeQueryRef": "brand",
               "active": true
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -48,40 +51,40 @@
           }
         }
       ],
-      "selection": [
-        {
-          "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "selectAllCheckboxEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
       "header": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Brand'"
+                }
+              }
+            },
             "textSize": {
               "expr": {
                 "Literal": {
                   "Value": "14D"
                 }
               }
-            },
-            "text": {
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "'Typ budżetu'"
+                  "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -110,6 +113,13 @@
                 }
               }
             },
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
             "padding": {
               "expr": {
                 "Literal": {
@@ -120,9 +130,17 @@
           }
         }
       ],
-      "general": [
+      "pendingChangesIcon": [
         {
-          "properties": {}
+          "properties": {
+            "size": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -241,8 +259,91 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
+    "syncGroup": {
+      "groupName": "brand",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "96766067edb23838e042",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_date"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "year_date"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Literal": {
+                          "Value": "datetime'2020-01-01T00:00:00'"
+                        }
+                      },
+                      "TimeUnit": 5
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }
