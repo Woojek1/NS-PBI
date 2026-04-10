@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "0b105bc3a0f0ef9a8ca2",
+  "name": "e38f37ee079943bb6cb7",
   "position": {
     "x": 24,
     "y": 234.85714285714283,
@@ -23,10 +23,10 @@
                       "Entity": "_Miary_Data"
                     }
                   },
-                  "Property": "DATA MON c_eur_varfixed"
+                  "Property": "DATA YTD c_eur_varfixed"
                 }
               },
-              "queryRef": "_Miary_Data.DATA MON c_eur_varfixed",
+              "queryRef": "_Miary_Data.DATA YTD c_eur_varfixed",
               "nativeQueryRef": "Variance Fixed Cost EUR",
               "displayName": "Variance Fixed Cost EUR"
             },
@@ -63,14 +63,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "f_margin_mon_data"
+                      "Entity": "f_margin_ytd_data"
                     }
                   },
                   "Property": "src_info"
                 }
               },
-              "queryRef": "f_margin_mon_data.src_info",
-              "nativeQueryRef": "src_info"
+              "queryRef": "f_margin_ytd_data.src_info",
+              "nativeQueryRef": "src_info1"
             }
           ],
           "fieldParameters": [
@@ -79,14 +79,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Parameter DATA MON"
+                      "Entity": "Parameter DATA YTD"
                     }
                   },
-                  "Property": "Parameter DATA MON"
+                  "Property": "Parameter DATA YTD"
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 1,
+              "sortDirection": "Descending"
             }
           ]
         }
@@ -95,50 +96,22 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "d_time_mon"
+                    "Entity": "_Miary_Data"
                   }
                 },
-                "Property": "mon_name"
+                "Property": "DATA YTD c_eur_varfixed"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
     },
     "objects": {
       "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "1531.859592785295D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "f_margin_mon_data.src_info"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "159D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Miary_Data.DATA MON c_eur_comm"
-          }
-        },
         {
           "properties": {
             "value": {

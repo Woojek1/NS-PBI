@@ -1,0 +1,203 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "88dfc288427e97317fc9",
+  "position": {
+    "x": 1036.4745762711864,
+    "y": 0,
+    "z": 4000,
+    "height": 234.30508474576268,
+    "width": 826.57627118644064,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin_ytd_data"
+                    }
+                  },
+                  "Property": "src_step"
+                }
+              },
+              "queryRef": "f_margin_ytd_data.src_step",
+              "nativeQueryRef": "src_step1",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin_ytd_data"
+                    }
+                  },
+                  "Property": "src_phase"
+                }
+              },
+              "queryRef": "f_margin_ytd_data.src_phase",
+              "nativeQueryRef": "src_phase1",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary_Data"
+                    }
+                  },
+                  "Property": "DATA YTD c_eur_varfixed"
+                }
+              },
+              "queryRef": "_Miary_Data.DATA YTD c_eur_varfixed",
+              "nativeQueryRef": "Variance Fixed Cost EUR",
+              "displayName": "Variance Fixed Cost EUR"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Parameter DATA YTD"
+                    }
+                  },
+                  "Property": "Parameter DATA YTD"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "titleAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117.04918032786885D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_margin_mon_data"
+                        }
+                      },
+                      "Property": "src_step"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "198.1639319615173D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "f_margin_mon_data"
+                          }
+                        },
+                        "Property": "src_step"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'1: time/cust/team joined'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

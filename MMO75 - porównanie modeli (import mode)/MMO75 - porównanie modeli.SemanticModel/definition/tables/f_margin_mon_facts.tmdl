@@ -86,7 +86,7 @@ table f_margin_mon_facts
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 64938a89-0a7b-48b5-9761-1e861fbb7972
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: comp_cost_id
 
 		annotation SummarizationSetBy = Automatic
@@ -470,5 +470,5 @@ table f_margin_mon_facts
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

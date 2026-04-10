@@ -1,11 +1,11 @@
-table f_margin_ytd_delta_facts
-	lineageTag: dfe1fe3d-b5e1-46e4-aac0-556310d150f0
+table f_margin_ytd_data
+	lineageTag: 6c2a284b-a6ed-4b7d-b5ae-1395dbd39200
 
 	column time_id
 		dataType: int64
 		formatString: 0
 		sourceProviderType: smallint
-		lineageTag: c8014ce8-cc28-4e62-ae72-2358c3791525
+		lineageTag: 01bece29-1827-4711-8262-48b63f56fafc
 		summarizeBy: none
 		sourceColumn: time_id
 
@@ -15,7 +15,7 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: 67e4d045-f6d0-4375-8be7-4a1f53a89f74
+		lineageTag: 148653f4-11fa-47b9-899c-f0242d6fb05a
 		summarizeBy: sum
 		sourceColumn: comp_id
 
@@ -25,7 +25,7 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: 32d7a60a-ce7f-4882-ae0e-e2230bc235fb
+		lineageTag: 7d5b39c2-be92-47bd-bbe1-ef2130b79c20
 		summarizeBy: none
 		sourceColumn: cust_id
 
@@ -35,7 +35,7 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: 1494354f-5d21-4942-aca2-88b1d59b8954
+		lineageTag: 2bc44d91-d33b-41bc-a99a-02e3a41478c6
 		summarizeBy: none
 		sourceColumn: prod_inv_id
 
@@ -45,7 +45,7 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: 1717e98a-4566-40d6-9162-a4205ff23fc5
+		lineageTag: 78dd1648-cd4e-4a1e-9797-eed6733b8ca4
 		summarizeBy: sum
 		sourceColumn: mnf_id
 
@@ -55,7 +55,7 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: 780444b7-d16d-48a7-ba60-af424223e2e7
+		lineageTag: 926d90f7-1b94-4b9d-9990-de6cfa01e0a6
 		summarizeBy: sum
 		sourceColumn: org_id
 
@@ -65,7 +65,7 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: 711bd4be-77f0-4fc5-a634-689bc03044d8
+		lineageTag: ee90b25f-e50a-4ad0-89c9-74d3865cfe40
 		summarizeBy: sum
 		sourceColumn: team_id
 
@@ -75,7 +75,7 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: a9ea2114-099f-4d8f-8050-490d12195444
+		lineageTag: 433e5f42-0e85-49e6-80a8-06300836d0bd
 		summarizeBy: sum
 		sourceColumn: d_term_id
 
@@ -85,7 +85,7 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: 7fbd8ee0-eafb-4ccd-bd91-b505e10a60c3
+		lineageTag: 340422f0-5287-458a-98cd-f42d982ae733
 		summarizeBy: none
 		sourceColumn: comp_cost_id
 
@@ -95,97 +95,79 @@ table f_margin_ytd_delta_facts
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
-		lineageTag: 89f31e00-fb6c-4a8c-8fbc-9e74eaa83bb1
+		lineageTag: 3748770e-3b16-45bb-a042-0fafd0a9ee6d
 		summarizeBy: sum
 		sourceColumn: pricelist_id
 
 		annotation SummarizationSetBy = Automatic
 
-	column mon_name
+	column src_alo_table
 		dataType: string
 		sourceProviderType: nvarchar(65535)
-		lineageTag: de4da724-10e2-4930-89ea-37e937234762
+		lineageTag: 2d3bd17e-e408-4d3c-ab15-9a23ee0032a5
 		summarizeBy: none
-		sourceColumn: mon_name
+		sourceColumn: src_alo_table
 
 		annotation SummarizationSetBy = Automatic
 
-	column comp_code
+	column src_info
 		dataType: string
 		sourceProviderType: nvarchar(65535)
-		lineageTag: 39377f2f-b201-41ed-8540-fdca63919e51
+		lineageTag: ff289680-16ba-4e21-a3ad-43e882032bd4
 		summarizeBy: none
-		sourceColumn: comp_code
+		sourceColumn: src_info
 
 		annotation SummarizationSetBy = Automatic
 
-	column cust_code
+	column src_row_path
 		dataType: string
 		sourceProviderType: nvarchar(65535)
-		lineageTag: fc0e1967-9f55-4da8-9aed-c598ae390d44
+		lineageTag: 4eb17eeb-c89f-412a-b51c-f9c1b6f45669
 		summarizeBy: none
-		sourceColumn: cust_code
+		sourceColumn: src_row_path
 
 		annotation SummarizationSetBy = Automatic
 
-	column prod_si_code
+	column src_row_path_phase_step
 		dataType: string
 		sourceProviderType: nvarchar(65535)
-		lineageTag: 356f3ca4-61c7-419c-a67d-3fe62aa7a668
+		lineageTag: 00e1f9fd-6a6f-4cb0-b521-832fdc7b2613
 		summarizeBy: none
-		sourceColumn: prod_si_code
+		sourceColumn: src_row_path_phase_step
 
 		annotation SummarizationSetBy = Automatic
 
-	column sman_code
+	column src_hash
 		dataType: string
 		sourceProviderType: nvarchar(65535)
-		lineageTag: 12242fe8-e166-4fbc-8df6-0ee25ffe7299
+		lineageTag: d3c5549a-2846-452f-9ac8-ef1c3fd19b73
 		summarizeBy: none
-		sourceColumn: sman_code
+		sourceColumn: src_hash
 
 		annotation SummarizationSetBy = Automatic
 
-	column team_code
+	column src_phase
 		dataType: string
 		sourceProviderType: nvarchar(65535)
-		lineageTag: 904b4944-0aea-450e-8e84-4187bb962f15
+		lineageTag: 8f831a9f-d9cd-4d18-9f8e-d4710d958c20
 		summarizeBy: none
-		sourceColumn: team_code
+		sourceColumn: src_phase
 
 		annotation SummarizationSetBy = Automatic
 
-	column dept_code
+	column src_step
 		dataType: string
 		sourceProviderType: nvarchar(65535)
-		lineageTag: cf2f10ef-9c78-44e1-863f-61ded5af05ed
+		lineageTag: b6578e41-9e3a-4fc8-9d4f-76682f2e49c6
 		summarizeBy: none
-		sourceColumn: dept_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column d_term_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 821bc0d3-89aa-4be6-9016-003ee2ee00d5
-		summarizeBy: none
-		sourceColumn: d_term_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column comp_cost_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: aebc808c-4c05-4850-912c-a2f503cf4d1e
-		summarizeBy: none
-		sourceColumn: comp_cost_code
+		sourceColumn: src_step
 
 		annotation SummarizationSetBy = Automatic
 
 	column sale_qty
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 4c3d303c-2bde-4abc-ba5c-4a157d89430b
+		lineageTag: fe74e468-b675-4a5a-88b9-e1f487936e62
 		summarizeBy: sum
 		sourceColumn: sale_qty
 
@@ -196,7 +178,7 @@ table f_margin_ytd_delta_facts
 	column s_pln_net
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 0e5d0438-6b8b-45c9-b680-7e36bfe91741
+		lineageTag: 8ecaad2c-d11e-4a82-a701-94905eea3030
 		summarizeBy: sum
 		sourceColumn: s_pln_net
 
@@ -207,7 +189,7 @@ table f_margin_ytd_delta_facts
 	column s_eur_net
 		dataType: double
 		sourceProviderType: double
-		lineageTag: bf91ed0a-36ed-4a03-837e-a5ae0ddcb28e
+		lineageTag: f155cf06-b961-4034-b8d7-872905c1449b
 		summarizeBy: sum
 		sourceColumn: s_eur_net
 
@@ -218,7 +200,7 @@ table f_margin_ytd_delta_facts
 	column s_pln_corp_cost
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 88308c7d-7f29-4a82-9da3-c34fdd5f09ed
+		lineageTag: ed334a08-eef5-417f-90a2-d53890fd9a7f
 		summarizeBy: sum
 		sourceColumn: s_pln_corp_cost
 
@@ -229,7 +211,7 @@ table f_margin_ytd_delta_facts
 	column s_eur_corp_cost
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 722065ad-d690-403b-8d54-ed6a2373be5f
+		lineageTag: 2a9450cf-a5a8-4369-b99a-5f74f646d84a
 		summarizeBy: sum
 		sourceColumn: s_eur_corp_cost
 
@@ -240,7 +222,7 @@ table f_margin_ytd_delta_facts
 	column c_pln_lic
 		dataType: double
 		sourceProviderType: double
-		lineageTag: e7cdd66c-901d-4c06-a45a-35bc64cb8a06
+		lineageTag: d72976a1-d104-4984-a5c1-d81f0d32da42
 		summarizeBy: sum
 		sourceColumn: c_pln_lic
 
@@ -251,7 +233,7 @@ table f_margin_ytd_delta_facts
 	column c_eur_lic
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 9ead27f5-fd83-4afc-98a6-b1d746169fe6
+		lineageTag: f00d0426-95ec-4f8d-b5c3-b3f6187fd02f
 		summarizeBy: sum
 		sourceColumn: c_eur_lic
 
@@ -262,7 +244,7 @@ table f_margin_ytd_delta_facts
 	column s_pln_base
 		dataType: double
 		sourceProviderType: double
-		lineageTag: b97476cc-9dc1-45f9-b6c3-dc9ee04bed10
+		lineageTag: 3c1222d6-b286-4295-82e0-47b6020299e9
 		summarizeBy: sum
 		sourceColumn: s_pln_base
 
@@ -273,75 +255,9 @@ table f_margin_ytd_delta_facts
 	column s_eur_base
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 5b479ef5-3bd1-49dc-a030-6c9f4aec350f
+		lineageTag: 33f1bfea-e5e9-4bda-b30f-6c1fd0150fcf
 		summarizeBy: sum
 		sourceColumn: s_eur_base
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column c_pln_varfixed
-		dataType: double
-		sourceProviderType: double
-		lineageTag: 7dacefc6-0d62-43f8-8383-2b82ee1536fa
-		summarizeBy: sum
-		sourceColumn: c_pln_varfixed
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column c_eur_varfixed
-		dataType: double
-		sourceProviderType: double
-		lineageTag: 56830bd2-3b27-48d6-965e-a933bf0b9a76
-		summarizeBy: sum
-		sourceColumn: c_eur_varfixed
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column c_pln_transport
-		dataType: double
-		sourceProviderType: double
-		lineageTag: f3078c8e-7440-4253-aab7-91a4680d715a
-		summarizeBy: sum
-		sourceColumn: c_pln_transport
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column c_eur_transport
-		dataType: double
-		sourceProviderType: double
-		lineageTag: 219ad88b-3f8f-4a7a-954b-1cb9e6983c1e
-		summarizeBy: sum
-		sourceColumn: c_eur_transport
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column c_pln_compl_prod
-		dataType: double
-		sourceProviderType: double
-		lineageTag: f9e4f3e1-d1d4-4751-91d4-a360297efe70
-		summarizeBy: sum
-		sourceColumn: c_pln_compl_prod
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column c_eur_compl_prod
-		dataType: double
-		sourceProviderType: double
-		lineageTag: a9894547-04b8-4d7e-ae57-9227fd5c649f
-		summarizeBy: sum
-		sourceColumn: c_eur_compl_prod
 
 		annotation SummarizationSetBy = Automatic
 
@@ -350,7 +266,7 @@ table f_margin_ytd_delta_facts
 	column c_pln_comm
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 7298c733-efe9-4f2d-b0eb-58c17da14aa3
+		lineageTag: 9a67487f-9f25-4e4c-83d3-49ef3a24615f
 		summarizeBy: sum
 		sourceColumn: c_pln_comm
 
@@ -361,9 +277,75 @@ table f_margin_ytd_delta_facts
 	column c_eur_comm
 		dataType: double
 		sourceProviderType: double
-		lineageTag: f215c049-81e8-4d98-91f7-37c7385e5e51
+		lineageTag: 7cd4381c-ed26-4f1d-bd4b-10df3ee91714
 		summarizeBy: sum
 		sourceColumn: c_eur_comm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_varfixed
+		dataType: double
+		sourceProviderType: double
+		lineageTag: b3ce7ccd-be1f-4d63-b601-9d399d016735
+		summarizeBy: sum
+		sourceColumn: c_pln_varfixed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_varfixed
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 6fe780d0-2844-4722-b05e-645b1f1ada74
+		summarizeBy: sum
+		sourceColumn: c_eur_varfixed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_transport
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 41af039d-0a43-4afc-89ef-395065d03666
+		summarizeBy: sum
+		sourceColumn: c_pln_transport
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_transport
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 064bd5a6-f18c-427b-a282-f0e676857541
+		summarizeBy: sum
+		sourceColumn: c_eur_transport
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_pln_compl_prod
+		dataType: double
+		sourceProviderType: double
+		lineageTag: a2a2725d-f7df-45f9-8ae2-806ebd9543d6
+		summarizeBy: sum
+		sourceColumn: c_pln_compl_prod
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column c_eur_compl_prod
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 8ba094ed-f2d4-4481-80ca-cdf50271f037
+		summarizeBy: sum
+		sourceColumn: c_eur_compl_prod
 
 		annotation SummarizationSetBy = Automatic
 
@@ -372,7 +354,7 @@ table f_margin_ytd_delta_facts
 	column c_pln_sinsuran
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 87ffcabd-acc8-4804-b108-b77524130c56
+		lineageTag: 38438eb4-b598-4cbb-b726-107040426c0b
 		summarizeBy: sum
 		sourceColumn: c_pln_sinsuran
 
@@ -383,7 +365,7 @@ table f_margin_ytd_delta_facts
 	column c_eur_sinsuran
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 223a8cf8-cdae-418b-a4eb-6572f10b4f83
+		lineageTag: aee1556d-5a08-4407-8bbf-29f93a4bde42
 		summarizeBy: sum
 		sourceColumn: c_eur_sinsuran
 
@@ -394,7 +376,7 @@ table f_margin_ytd_delta_facts
 	column c_pln_assembly
 		dataType: double
 		sourceProviderType: double
-		lineageTag: fea87dcd-1178-40e0-aa96-7de8af752a40
+		lineageTag: 8e3d263f-1e5c-496d-990b-9031eae9bb3f
 		summarizeBy: sum
 		sourceColumn: c_pln_assembly
 
@@ -405,7 +387,7 @@ table f_margin_ytd_delta_facts
 	column c_eur_assembly
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 452d5588-b83d-4ef1-93b4-d830fce836f8
+		lineageTag: 6df51013-50af-441e-af62-08f685944176
 		summarizeBy: sum
 		sourceColumn: c_eur_assembly
 
@@ -416,7 +398,7 @@ table f_margin_ytd_delta_facts
 	column c_pln_stock_deprec
 		dataType: double
 		sourceProviderType: double
-		lineageTag: bd27ea46-04ec-4c1f-8ee2-873a04062b9f
+		lineageTag: 72dcd062-4588-47fd-94db-75311eaac824
 		summarizeBy: sum
 		sourceColumn: c_pln_stock_deprec
 
@@ -427,7 +409,7 @@ table f_margin_ytd_delta_facts
 	column c_eur_stock_deprec
 		dataType: double
 		sourceProviderType: double
-		lineageTag: aaaad5fb-1df9-43ce-9946-04bec505bf94
+		lineageTag: ba182bda-e403-41ac-b18f-aa3bac848fba
 		summarizeBy: sum
 		sourceColumn: c_eur_stock_deprec
 
@@ -438,7 +420,7 @@ table f_margin_ytd_delta_facts
 	column c_pln_compl_act
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 5b04749c-0511-489b-81f0-0e0dfe735a85
+		lineageTag: 1dc92479-252e-4e32-a74f-1e997c3cda2a
 		summarizeBy: sum
 		sourceColumn: c_pln_compl_act
 
@@ -449,7 +431,7 @@ table f_margin_ytd_delta_facts
 	column c_eur_compl_act
 		dataType: double
 		sourceProviderType: double
-		lineageTag: 9445066b-0716-4f6f-ac69-6a9eeb3bfdd1
+		lineageTag: a3a974a5-e19d-49ba-bf1d-8e070f20654c
 		summarizeBy: sum
 		sourceColumn: c_eur_compl_act
 
@@ -457,16 +439,36 @@ table f_margin_ytd_delta_facts
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition f_margin_ytd_delta_facts = m
-		mode: import
+	column hash_key
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 84dd35d7-bf6d-4511-8d70-3bb6397222d5
+		summarizeBy: none
+		sourceColumn: hash_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column etl_timestamp
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: af9cd9ac-4857-462e-b63f-6a3b38025e3d
+		summarizeBy: none
+		sourceColumn: etl_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition f_margin_ytd_data = m
+		mode: directQuery
 		source =
 				let
 				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]),
 				    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
 				    mmo75_Schema = zenith_Database{[Name="mmo75",Kind="Schema"]}[Data],
-				    f_margin_ytd_delta_facts_Table = mmo75_Schema{[Name="f_margin_ytd_delta_facts",Kind="Table"]}[Data]
+				    f_margin_ytd_data_Table = mmo75_Schema{[Name="f_margin_ytd_data",Kind="Table"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(f_margin_ytd_data_Table,{"etl_comment", "mon_name", "comp_code", "cust_code", "prod_si_code", "sman_code", "team_code", "dept_code", "d_term_code", "comp_cost_code"})
 				in
-				    f_margin_ytd_delta_facts_Table
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

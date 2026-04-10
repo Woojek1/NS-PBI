@@ -74,6 +74,14 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
+	column Brand
+		dataType: string
+		lineageTag: 5e70c593-1d92-4787-a94f-05505d2a9bcf
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
 	partition d_product = m
 		mode: import
 		source =
@@ -93,12 +101,12 @@ table d_product
 				        p.sgrp_name        as `Product Subgroup`,
 				        p.supergrp_name    as `Product Supergroup`,
 				        p.grp_name         as `Product Group`,
-				         p.prod_si_name     as `Index Name`,
-				        p.prod_si_code     as `Index Code`
+				        p.prod_si_name     as `Index Name`,
+				        p.prod_si_code     as `Index Code`,
+				       p.brand_name        as `Brand`
 				--p.bcg1_name_en     as `Business category`,
 				--p.bcg2_name_en     as `Business subcategory`,
 				--p.bcg3_name_en     as `Business cluster`,
-				--p.brand_name       as `Brand`,
 				--case
 				--when p.line_status_name = 'PrzesuniÄ™te' then 'Przesunięte'
 				--else p.line_status_name

@@ -1,0 +1,45 @@
+table 'Parameter DATA YTD'
+	lineageTag: 0463b541-9123-4ed8-b78a-bc16b0abdbe2
+
+	column 'Parameter DATA YTD'
+		lineageTag: c17e6370-cdfd-4d77-a17e-21b7db3cc533
+		summarizeBy: none
+		sourceColumn: [Value1]
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter DATA YTD Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter DATA YTD Fields'
+		isHidden
+		lineageTag: 184b17e6-ba52-42f1-9749-d760fba0a270
+		summarizeBy: none
+		sourceColumn: [Value2]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter DATA YTD' = calculated
+		mode: import
+		source =
+				{
+				    ("Assembly EUR ", NAMEOF('_Miary_Data'[DATA YTD c_eur_assembly])),
+				    ("Commission EUR", NAMEOF('_Miary_Data'[DATA YTD c_eur_comm])),
+				    ("Manufacturing Cost EUR", NAMEOF('_Miary_Data'[DATA YTD s_eur_corp_cost])),
+				    ("License EUR", NAMEOF('_Miary_Data'[DATA YTD c_eur_lic])),
+				    ("Transport EUR", NAMEOF('_Miary_Data'[DATA YTD c_eur_transport])),
+				    ("Complaint Product EUR", NAMEOF(_Miary_Data[DATA YTD c_eur_compl_prod])),
+				    ("Complaint Activity EUR", NAMEOF(_Miary_Data[DATA YTD c_eur_compl_act])),
+				    ("Variance Fixed Cost EUR", NAMEOF(_Miary_Data[DATA YTD c_eur_varfixed])),
+				    ("Sold Insurance EUR", NAMEOF(_Miary_Data[DATA YTD c_eur_sinsuran])),
+				    ("Stock Depreciation EUR", NAMEOF(_Miary_Data[DATA YTD c_eur_stock_deprec]))
+				}
+
+	annotation PBI_Id = ee602fa986854c5aabfac7147eedcdb3
+

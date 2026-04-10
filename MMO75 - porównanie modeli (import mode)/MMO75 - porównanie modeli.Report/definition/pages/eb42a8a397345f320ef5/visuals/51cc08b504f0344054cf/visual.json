@@ -4,10 +4,10 @@
   "position": {
     "x": 402.28571428571428,
     "y": 0,
-    "z": 2001,
+    "z": 3000,
     "height": 109.71428571428571,
     "width": 573.71428571428567,
-    "tabOrder": 2001
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "_Miary.Wybrana miara",
-              "nativeQueryRef": "Wybrana miara"
+              "nativeQueryRef": "Wybrana miara na stronie Porównanie",
+              "displayName": "Wybrana miara na stronie Porównanie"
             }
           ]
         }
@@ -85,23 +86,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "958f1a4c73b485c25d44",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary_Facts"
-              }
-            },
-            "Property": "Wybrana miara"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

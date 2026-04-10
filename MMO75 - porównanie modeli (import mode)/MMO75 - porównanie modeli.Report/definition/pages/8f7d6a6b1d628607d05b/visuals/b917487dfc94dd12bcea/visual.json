@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "90930090be3c60bb1041",
+  "name": "b917487dfc94dd12bcea",
   "position": {
-    "x": 436.66666666666669,
+    "x": 99.428571428571431,
     "y": 0,
-    "z": 1000,
-    "height": 71.666666666666671,
-    "width": 365,
+    "z": 2000,
+    "height": 74.285714285714292,
+    "width": 257.14285714285717,
     "tabOrder": 1000
   },
   "visual": {
@@ -20,45 +20,45 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Atributes"
+                      "Entity": "Parameter DATA YTD"
                     }
                   },
-                  "Property": "Parameter"
+                  "Property": "Parameter DATA YTD"
                 }
               },
-              "queryRef": "Parameter.Parameter",
-              "nativeQueryRef": "Atributes",
-              "active": true,
-              "displayName": "Atributes"
+              "queryRef": "Parameter DATA YTD.Parameter DATA YTD",
+              "nativeQueryRef": "Parameter DATA YTD",
+              "active": true
             }
           ]
         }
       }
     },
     "objects": {
-      "data": [
-        {
-          "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Dropdown'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "general": [
         {
           "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "a",
-                    "Entity": "Atributes",
+                    "Name": "p",
+                    "Entity": "Parameter DATA YTD",
                     "Type": 0
                   }
                 ],
@@ -71,10 +71,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "a"
+                                  "Source": "p"
                                 }
                               },
-                              "Property": "Parameter Fields"
+                              "Property": "Parameter DATA YTD Fields"
                             }
                           }
                         ],
@@ -82,7 +82,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''d_customer''[Customer Code]'"
+                                "Value": "'''_Miary_Data''[DATA YTD c_eur_varfixed]'"
                               }
                             }
                           ]
@@ -96,10 +96,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Entity": "Atributes"
+                                  "Entity": "Parameter DATA YTD"
                                 }
                               },
-                              "Property": "Parameter"
+                              "Property": "Parameter DATA YTD"
                             }
                           }
                         ],
@@ -110,7 +110,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''d_customer''[Customer Code]'"
+                                      "Value": "'''_Miary_Data''[DATA YTD c_eur_varfixed]'"
                                     }
                                   }
                                 ]
@@ -123,10 +123,10 @@
                                 "Column": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Atributes"
+                                      "Entity": "Parameter DATA YTD"
                                     }
                                   },
-                                  "Property": "Parameter Fields"
+                                  "Property": "Parameter DATA YTD Fields"
                                 }
                               }
                             }
@@ -134,7 +134,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Customer code"
+                            "0": "Variance Fixed Cost EUR"
                           }
                         ]
                       }
@@ -145,12 +145,33 @@
             }
           }
         }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
-    },
-    "syncGroup": {
-      "groupName": "Parameter",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

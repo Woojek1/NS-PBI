@@ -121,7 +121,128 @@ table _Miary_Data
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'DATA YTD c_eur_assembly' = SUM(f_margin_ytd_data[c_eur_assembly])
+		displayFolder: DATA YTD
+		lineageTag: f2484674-cae3-4386-b7dd-d344d97598be
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_eur_comm' = SUM(f_margin_ytd_data[c_eur_comm])
+		displayFolder: DATA YTD
+		lineageTag: 7f42b709-bd7a-481a-a2d5-ea419d2fe3b5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_eur_compl_act' = SUM(f_margin_ytd_data[c_eur_compl_act])
+		displayFolder: DATA YTD
+		lineageTag: cbaec44c-dbef-4f61-be75-fe9d67552b77
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_eur_compl_prod' = SUM(f_margin_ytd_data[c_eur_compl_prod])
+		displayFolder: DATA YTD
+		lineageTag: 8578dfa8-0986-4cf2-85c3-eb7fe9bec7ad
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_eur_lic' = SUM(f_margin_ytd_data[c_eur_lic])
+		displayFolder: DATA YTD
+		lineageTag: 4044610a-d5c5-43d5-b402-a646495bb6e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_eur_sinsuran' = SUM(f_margin_ytd_data[c_eur_sinsuran])
+		displayFolder: DATA YTD
+		lineageTag: 45322c81-688b-480a-a386-4287a33b0d65
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_eur_stock_deprec' = SUM(f_margin_ytd_data[c_eur_stock_deprec])
+		displayFolder: DATA YTD
+		lineageTag: 4aed2c5e-077f-4425-a973-3fa14e42cf5e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_eur_transport' = SUM(f_margin_ytd_data[c_eur_transport])
+		displayFolder: DATA YTD
+		lineageTag: 38583e87-239e-4cae-a15a-c0c737d232c3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_eur_varfixed' = SUM(f_margin_ytd_data[c_eur_varfixed])
+		displayFolder: DATA YTD
+		lineageTag: 40b99615-5539-42d0-a78c-55c587d3df96
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_assembly' = SUM(f_margin_ytd_data[c_pln_assembly])
+		displayFolder: DATA YTD
+		lineageTag: e10d3d9b-66fb-40cc-bc79-ebc0e1b69126
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_comm' = SUM(f_margin_ytd_data[c_pln_comm])
+		displayFolder: DATA YTD
+		lineageTag: 784817d5-e37d-454d-97c7-07b7f6b35511
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_compl_act' = SUM(f_margin_ytd_data[c_pln_compl_act])
+		displayFolder: DATA YTD
+		lineageTag: 623ba9cc-e775-4879-9b76-7aaeae3194cf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_compl_prod' = SUM(f_margin_ytd_data[c_pln_compl_prod])
+		displayFolder: DATA YTD
+		lineageTag: 2c4a1669-c34f-4a7e-9534-8fa53834c4e4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_lic' = SUM(f_margin_ytd_data[c_pln_assembly])
+		displayFolder: DATA YTD
+		lineageTag: fe6ea526-93e9-4f2c-baa9-0e5a768566ea
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_sinsuran' = SUM(f_margin_ytd_data[c_pln_sinsuran])
+		displayFolder: DATA YTD
+		lineageTag: 598c727f-2113-4f17-ae48-90919ac61b96
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_stock_deprec' = SUM(f_margin_YTD_data[c_pln_stock_deprec])
+		displayFolder: DATA YTD
+		lineageTag: a6319a22-33cf-44e9-9622-30bc7acfcf7b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_transport' = SUM(f_margin_ytd_data[c_pln_transport])
+		displayFolder: DATA YTD
+		lineageTag: 4ecadef4-4057-4b61-9d78-ee504cf96d46
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD c_pln_varfixed' = SUM(f_margin_ytd_data[c_pln_varfixed])
+		displayFolder: DATA YTD
+		lineageTag: 1d08479c-34ae-4844-b7f8-c34acdd7a480
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD s_eur_corp_cost' = SUM(f_margin_ytd_data[s_eur_corp_cost])
+		displayFolder: DATA YTD
+		lineageTag: 8489bb19-09f2-43f6-8163-8c44b28fb8ae
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DATA YTD s_pln_corp_cost' = SUM(f_margin_ytd_data[s_pln_corp_cost])
+		displayFolder: DATA YTD
+		lineageTag: 00196f35-a933-4ca7-86d6-9ef554be4658
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Value
+		isHidden
 		formatString: 0
 		lineageTag: c0f453e4-9b46-48af-8ef8-2495b4383a58
 		summarizeBy: sum

@@ -45,6 +45,13 @@
                 }
               }
             },
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -75,7 +82,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''_Miary_Data''[DATA MON c_eur_comm]'"
+                                "Value": "'''_Miary_Data''[DATA MON c_eur_varfixed]'"
                               }
                             }
                           ]
@@ -103,7 +110,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''_Miary_Data''[DATA MON c_eur_comm]'"
+                                      "Value": "'''_Miary_Data''[DATA MON c_eur_varfixed]'"
                                     }
                                   }
                                 ]
@@ -127,20 +134,13 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Commission EUR"
+                            "0": "Variance Fixed Cost EUR"
                           }
                         ]
                       }
                     }
                   }
                 ]
-              }
-            },
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
               }
             }
           }
@@ -179,23 +179,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "27535f7834c7af067547",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Parameter DATA MON"
-              }
-            },
-            "Property": "Parameter DATA MON"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

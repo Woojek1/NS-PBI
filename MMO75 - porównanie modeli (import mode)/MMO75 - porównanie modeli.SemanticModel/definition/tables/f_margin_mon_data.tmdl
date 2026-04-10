@@ -95,89 +95,8 @@ table f_margin_mon_data
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 57b53540-24d4-46a8-a159-6d7a0296c051
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: comp_cost_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column mon_name
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: e08fadc2-47b3-4d36-8c19-16c9b27397ca
-		summarizeBy: none
-		sourceColumn: mon_name
-
-		annotation SummarizationSetBy = Automatic
-
-	column comp_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 38778cf2-ca18-4ea3-b85b-41ff1208f95e
-		summarizeBy: none
-		sourceColumn: comp_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column cust_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 32234ce0-4928-4955-b5b3-9cdc2f134e3c
-		summarizeBy: none
-		sourceColumn: cust_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column prod_si_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 640d17f9-78e4-461d-acb5-a886ffb280ae
-		summarizeBy: none
-		sourceColumn: prod_si_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column sman_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: e7678b50-a507-4e9f-8c8c-2b0a0b79f4ac
-		summarizeBy: none
-		sourceColumn: sman_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column team_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 825cfe1d-39ab-4c7c-b608-0ba22eedd333
-		summarizeBy: none
-		sourceColumn: team_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column dept_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 3c805045-c836-49c4-ae5c-c1ad9c47c8b0
-		summarizeBy: none
-		sourceColumn: dept_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column d_term_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: 62a2f82f-5ba4-4170-bf68-a1d8f5a2d6d9
-		summarizeBy: none
-		sourceColumn: d_term_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column comp_cost_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: e5126c06-ed5b-43d6-acb9-a777a36ab481
-		summarizeBy: none
-		sourceColumn: comp_cost_code
 
 		annotation SummarizationSetBy = Automatic
 
@@ -555,9 +474,10 @@ table f_margin_mon_data
 				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]),
 				    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
 				    mmo75_Schema = zenith_Database{[Name="mmo75",Kind="Schema"]}[Data],
-				    f_margin_mon_data_Table = mmo75_Schema{[Name="f_margin_mon_data",Kind="Table"]}[Data]
+				    f_margin_mon_data_Table = mmo75_Schema{[Name="f_margin_mon_data",Kind="Table"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(f_margin_mon_data_Table,{"mon_name", "comp_code", "cust_code", "prod_si_code", "sman_code", "team_code", "dept_code", "d_term_code", "comp_cost_code"})
 				in
-				    f_margin_mon_data_Table
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

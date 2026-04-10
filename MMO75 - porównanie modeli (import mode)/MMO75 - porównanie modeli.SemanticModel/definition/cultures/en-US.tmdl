@@ -235,6 +235,57 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated"
+			    },
+			    "table_miary_facts.wybrana_miara": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary_Facts",
+			          "ConceptualProperty": "Wybrana miara"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Wybrana miara na stronie Porównanie": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "d_product.brand": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_product",
+			          "ConceptualProperty": "Brand"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_miary_data.data_mon_c_eur_comm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary_Data",
+			          "ConceptualProperty": "DATA MON c_eur_comm"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Commission EUR": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  }
 			}
