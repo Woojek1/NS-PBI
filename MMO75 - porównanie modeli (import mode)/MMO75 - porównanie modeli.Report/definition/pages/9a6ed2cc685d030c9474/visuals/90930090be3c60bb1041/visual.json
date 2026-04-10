@@ -82,7 +82,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''d_product''[Model]'"
+                                "Value": "'''d_customer''[Customer Code]'"
                               }
                             }
                           ]
@@ -110,7 +110,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''d_product''[Model]'"
+                                      "Value": "'''d_customer''[Customer Code]'"
                                     }
                                   }
                                 ]
@@ -134,7 +134,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Model"
+                            "0": "Customer code"
                           }
                         ]
                       }
@@ -153,5 +153,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2559e42d70294e2457e9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Atributes"
+              }
+            },
+            "Property": "Parameter"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

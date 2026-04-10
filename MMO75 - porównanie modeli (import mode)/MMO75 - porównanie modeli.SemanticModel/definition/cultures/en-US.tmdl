@@ -42,7 +42,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Customer Code"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Customer code": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "parameter.parameter": {
 			      "Definition": {
@@ -89,7 +101,7 @@ cultureInfo en-US
 			    "table_miary.mon_wybrana_wartość": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "_Miary",
+			          "ConceptualEntity": "_Miary_Facts",
 			          "ConceptualProperty": "MON Wybrana wartość"
 			        }
 			      },
@@ -110,7 +122,7 @@ cultureInfo en-US
 			    "table_miary.ytd_delta_wybrana_wartość": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "_Miary",
+			          "ConceptualEntity": "_Miary_Facts",
 			          "ConceptualProperty": "YTD DELTA Wybrana wartość"
 			        }
 			      },
@@ -131,7 +143,7 @@ cultureInfo en-US
 			    "table_miary.mon_s_eur_net": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "_Miary",
+			          "ConceptualEntity": "_Miary_Facts",
 			          "ConceptualProperty": "MON s_eur_net"
 			        }
 			      },
@@ -152,7 +164,7 @@ cultureInfo en-US
 			    "table_miary.mon_s_eur_corp_cost": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "_Miary",
+			          "ConceptualEntity": "_Miary_Facts",
 			          "ConceptualProperty": "MON s_eur_corp_cost"
 			        }
 			      },
@@ -186,19 +198,43 @@ cultureInfo en-US
 			          "ConceptualProperty": "Line"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Line": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
+			      "State": "Generated"
+			    },
+			    "d_product.model": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_product",
+			          "ConceptualProperty": "Model"
 			        }
-			      ]
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_mon_data.c_eur_comm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_margin_mon_data",
+			          "ConceptualProperty": "c_eur_comm"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_data.commision_pln": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F Margin Data",
+			          "ConceptualProperty": "Commision PLN"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "f_margin_mon_data.c_eur_assembly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_margin_mon_data",
+			          "ConceptualProperty": "c_eur_assembly"
+			        }
+			      },
+			      "State": "Generated"
 			    }
 			  }
 			}

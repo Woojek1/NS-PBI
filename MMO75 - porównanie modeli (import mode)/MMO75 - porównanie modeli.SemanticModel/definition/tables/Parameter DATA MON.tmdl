@@ -1,0 +1,45 @@
+table 'Parameter DATA MON'
+	lineageTag: e9256034-ddf2-4c80-82c7-402f26f3187e
+
+	column 'Parameter DATA MON'
+		lineageTag: 575b9a1b-0e54-4f1c-872a-f564016c1926
+		summarizeBy: none
+		sourceColumn: [Value1]
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter DATA MON Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter DATA MON Fields'
+		isHidden
+		lineageTag: f3e687fa-5336-4e45-95a2-c193212ccdde
+		summarizeBy: none
+		sourceColumn: [Value2]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter DATA MON' = calculated
+		mode: import
+		source =
+				{
+				    ("Assembly EUR ", NAMEOF('_Miary_Data'[DATA MON c_eur_assembly])),
+				    ("Commission EUR", NAMEOF('_Miary_Data'[DATA MON c_eur_comm])),
+				    ("Manufacturing Cost EUR", NAMEOF('_Miary_Data'[DATA MON s_eur_corp_cost])),
+				    ("License EUR", NAMEOF('_Miary_Data'[DATA MON c_eur_lic])),
+				    ("Transport EUR", NAMEOF('_Miary_Data'[DATA MON c_eur_transport])),
+				    ("Complaint Product EUR", NAMEOF(_Miary_Data[DATA MON c_eur_compl_prod])),
+				    ("Complaint Activity EUR", NAMEOF(_Miary_Data[DATA MON c_eur_compl_act])),
+				    ("Variance Fixed Cost EUR", NAMEOF(_Miary_Data[DATA MON c_eur_varfixed])),
+				    ("Sold Insurance EUR", NAMEOF(_Miary_Data[DATA MON c_eur_sinsuran])),
+				    ("Stock Depreciation EUR", NAMEOF(_Miary_Data[DATA MON c_eur_stock_deprec]))
+				}
+
+	annotation PBI_Id = 96fecd0146c74fd7b30e35973e670722
+

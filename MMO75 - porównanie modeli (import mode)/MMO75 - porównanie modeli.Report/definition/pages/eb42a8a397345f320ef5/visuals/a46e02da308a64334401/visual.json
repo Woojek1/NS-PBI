@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "dc254c61a7ac80dc8662",
+  "name": "a46e02da308a64334401",
   "position": {
-    "x": 436.66666666666669,
+    "x": 99.428571428571431,
     "y": 0,
     "z": 2000,
-    "height": 71.666666666666671,
-    "width": 365,
-    "tabOrder": 2000
+    "height": 74.285714285714292,
+    "width": 257.14285714285717,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,45 +20,38 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Atributes"
+                      "Entity": "Parameter DATA MON"
                     }
                   },
-                  "Property": "Parameter"
+                  "Property": "Parameter DATA MON"
                 }
               },
-              "queryRef": "Parameter.Parameter",
-              "nativeQueryRef": "Atributes",
-              "active": true,
-              "displayName": "Atributes"
+              "queryRef": "Parameter DATA MON.Parameter DATA MON",
+              "nativeQueryRef": "Parameter DATA MON",
+              "active": true
             }
           ]
         }
       }
     },
     "objects": {
-      "data": [
-        {
-          "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Dropdown'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "general": [
         {
           "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "a",
-                    "Entity": "Atributes",
+                    "Name": "p",
+                    "Entity": "Parameter DATA MON",
                     "Type": 0
                   }
                 ],
@@ -71,10 +64,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "a"
+                                  "Source": "p"
                                 }
                               },
-                              "Property": "Parameter Fields"
+                              "Property": "Parameter DATA MON Fields"
                             }
                           }
                         ],
@@ -82,7 +75,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''d_customer''[Customer Code]'"
+                                "Value": "'''_Miary_Data''[DATA MON c_eur_comm]'"
                               }
                             }
                           ]
@@ -96,10 +89,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Entity": "Atributes"
+                                  "Entity": "Parameter DATA MON"
                                 }
                               },
-                              "Property": "Parameter"
+                              "Property": "Parameter DATA MON"
                             }
                           }
                         ],
@@ -110,7 +103,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''d_customer''[Customer Code]'"
+                                      "Value": "'''_Miary_Data''[DATA MON c_eur_comm]'"
                                     }
                                   }
                                 ]
@@ -123,10 +116,10 @@
                                 "Column": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Atributes"
+                                      "Entity": "Parameter DATA MON"
                                     }
                                   },
-                                  "Property": "Parameter Fields"
+                                  "Property": "Parameter DATA MON Fields"
                                 }
                               }
                             }
@@ -134,7 +127,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Customer code"
+                            "0": "Commission EUR"
                           }
                         ]
                       }
@@ -142,16 +135,67 @@
                   }
                 ]
               }
+            },
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
       ]
     },
     "syncGroup": {
-      "groupName": "Parameter",
+      "groupName": "MiaraLabel",
       "fieldChanges": true,
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "27535f7834c7af067547",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Parameter DATA MON"
+              }
+            },
+            "Property": "Parameter DATA MON"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

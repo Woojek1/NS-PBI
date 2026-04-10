@@ -59,44 +59,6 @@
                 }
               }
             },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "m",
-                    "Entity": "Measure_selector",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "m"
-                              }
-                            },
-                            "Property": "MiaraLabel"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'asse'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
-            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -127,7 +89,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Assembly EUR'"
+                                "Value": "'Commission EUR'"
                               }
                             }
                           ]
@@ -143,23 +105,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b1bad38dbc3f910aa657",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measure_selector"
-              }
-            },
-            "Property": "MiaraLabel"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

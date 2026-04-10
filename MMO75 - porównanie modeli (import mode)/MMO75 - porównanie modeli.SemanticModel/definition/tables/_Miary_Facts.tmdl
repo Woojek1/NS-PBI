@@ -1,4 +1,4 @@
-table _Miary
+table _Miary_Facts
 	lineageTag: 825a9c9e-6901-4769-a65a-098b4bbef881
 
 	measure 'MON sale_qty' = ```
@@ -860,7 +860,7 @@ table _Miary
 
 		annotation SummarizationSetBy = Automatic
 
-	partition _Miary = calculated
+	partition _Miary_Facts = calculated
 		mode: import
 		source = {0}
 

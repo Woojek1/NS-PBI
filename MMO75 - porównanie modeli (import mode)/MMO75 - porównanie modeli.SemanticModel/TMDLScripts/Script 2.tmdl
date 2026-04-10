@@ -1,476 +1,870 @@
 createOrReplace
 
-	table f_margin_ytd_delta_facts
-		lineageTag: dfe1fe3d-b5e1-46e4-aac0-556310d150f0
+	table _Miary_Facts
+		lineageTag: 825a9c9e-6901-4769-a65a-098b4bbef881
 
-		column time_id
-			dataType: int64
+		measure 'MON sale_qty' = ```
+				SUM(f_margin_mon_facts[sale_qty])
+				
+				```
+			displayFolder: MON
+			lineageTag: 97a66ca8-dcae-438e-a34f-e0c6fe7dec90
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON s_pln_net' = SUM(f_margin_mon_facts[s_pln_net])
+			displayFolder: MON
+			lineageTag: 0da4e066-38c3-4ae2-9feb-3ee2957e16f7
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON s_pln_corp_cost' = ```
+				SUM(f_margin_mon_facts[s_pln_corp_cost])
+				
+				```
+			displayFolder: MON
+			lineageTag: e192733d-3e18-40b8-81b3-2cc664e15220
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD sale_qty' = ```
+				SUM(f_margin_ytd_facts[sale_qty])
+				
+				```
+			displayFolder: YTD
+			lineageTag: 53cd5842-cf75-4702-89e5-aa821d3d3b77
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD s_pln_net' = SUM(f_margin_ytd_facts[s_pln_net])
+			displayFolder: YTD
+			lineageTag: b3ca5550-a4cd-4d60-b6d5-113f1db99d1d
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD s_pln_corp_cost' = ```
+				SUM(f_margin_ytd_facts[s_pln_corp_cost])
+				
+				```
+			displayFolder: YTD
+			lineageTag: 4327b17c-7d37-4b4b-9b11-be3d2fda221e
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON Wybrana wartość' =
+				
+				VAR _miara = SELECTEDVALUE(Measure_selector[MiaraKey], "s_pln_net")
+				RETURN
+				    SWITCH(
+				        _miara,
+				        "sale_qty", [MON sale_qty],
+				        "s_pln_net", [MON s_pln_net],
+				        "s_eur_net", [MON s_eur_net],
+				        "s_pln_corp_cost", [MON s_pln_corp_cost],
+				        "s_eur_corp_cost", [MON s_eur_corp_cost],
+				        "c_pln_lic", [MON c_pln_lic],
+				        "c_eur_lic", [MON c_eur_lic],
+				        "s_pln_base", [MON s_pln_base],
+				        "s_eur_base", [MON s_eur_base],
+				        "c_pln_varfixed", [MON c_pln_varfixed],
+				        "c_eur_varfixed", [MON c_eur_varfixed],
+				        "c_pln_transport", [MON c_pln_transport],
+				        "c_eur_transport", [MON c_eur_transport],
+				        "c_pln_compl_prod", [MON c_pln_compl_prod],
+				        "c_eur_compl_prod", [MON c_eur_compl_prod],
+				        "c_pln_comm", [MON c_pln_comm],
+				        "c_eur_comm", [MON c_eur_comm],
+				        "c_pln_sinsuran", [MON c_pln_sinsuran],
+				        "c_eur_sinsuran", [MON c_eur_sinsuran],
+				        "c_pln_assembly", [MON c_pln_assembly],
+				        "c_eur_assembly", [MON c_eur_assembly],
+				        "c_pln_stock_deprec", [MON c_pln_stock_deprec],
+				        "c_eur_stock_deprec", [MON c_eur_stock_deprec],
+				        "c_pln_compl_act", [MON c_pln_compl_act],
+				        "c_eur_compl_act", [MON c_eur_compl_act],
+				        "Margin I PLN", [MON Margin I PLN],
+				        "Margin I EUR", [MON Margin I EUR],
+				        "Margin I PLN (%)", [MON Margin I PLN (%)],
+				        "Margin I EUR (%)", [MON Margin I EUR (%)],
+				        "Margin II PLN", [MON Margin II PLN],
+				        "Margin II EUR", [MON Margin II EUR],
+				        "Margin II PLN (%)", [MON Margin II PLN (%)],
+				        "Margin II EUR (%)", [MON Margin II EUR (%)],
+				        BLANK()
+				    )
+			displayFolder: MON
+			lineageTag: 2e58f50b-2b58-42d9-8e8f-96822b86e745
+
+			formatStringDefinition =
+					VAR _miara = SELECTEDVALUE(Measure_selector[MiaraKey], "s_pln_net")
+					RETURN
+					    SWITCH(
+					        _miara,
+					        "Margin I PLN (%)", "0.00%",
+					        "Margin I EUR (%)", "0.00%",
+					        "Margin II PLN (%)", "0.00%",
+					        "Margin II EUR (%)", "0.00%",
+					        "sale_qty", "#,##0",
+					        "#,##0.00"
+					    )
+
+		measure 'YTD Wybrana wartość' =
+				
+				VAR _miara = SELECTEDVALUE(Measure_selector[MiaraKey], "s_pln_net")
+				RETURN
+				    SWITCH(
+				        _miara,
+				        "sale_qty", [YTD sale_qty],
+				        "s_pln_net", [YTD s_pln_net],
+				        "s_eur_net", [YTD s_eur_net],
+				        "s_pln_corp_cost", [YTD s_pln_corp_cost],
+				        "s_eur_corp_cost", [YTD s_eur_corp_cost],
+				        "c_pln_lic", [YTD c_pln_lic],
+				        "c_eur_lic", [YTD c_eur_lic],
+				        "s_pln_base", [YTD s_pln_base],
+				        "s_eur_base", [YTD s_eur_base],
+				        "c_pln_varfixed", [YTD c_pln_varfixed],
+				        "c_eur_varfixed", [YTD c_eur_varfixed],
+				        "c_pln_transport", [YTD c_pln_transport],
+				        "c_eur_transport", [YTD c_eur_transport],
+				        "c_pln_compl_prod", [YTD c_pln_compl_prod],
+				        "c_eur_compl_prod", [YTD c_eur_compl_prod],
+				        "c_pln_comm", [YTD c_pln_comm],
+				        "c_eur_comm", [YTD c_eur_comm],
+				        "c_pln_sinsuran", [YTD c_pln_sinsuran],
+				        "c_eur_sinsuran", [YTD c_eur_sinsuran],
+				        "c_pln_assembly", [YTD c_pln_assembly],
+				        "c_eur_assembly", [YTD c_eur_assembly],
+				        "c_pln_stock_deprec", [YTD c_pln_stock_deprec],
+				        "c_eur_stock_deprec", [YTD c_eur_stock_deprec],
+				        "c_pln_compl_act", [YTD c_pln_compl_act],
+				        "c_eur_compl_act", [YTD c_eur_compl_act],
+				        "Margin I PLN", [YTD Margin I PLN],
+				        "Margin I EUR", [YTD Margin I EUR],
+				        "Margin I PLN (%)", [YTD Margin I PLN (%)],
+				        "Margin I EUR (%)", [YTD Margin I EUR (%)],
+				        "Margin II PLN", [YTD Margin II PLN],
+				        "Margin II EUR", [YTD Margin II EUR],
+				        "Margin II PLN (%)", [YTD Margin II PLN (%)],
+				        "Margin II EUR (%)", [YTD Margin II EUR (%)],
+				        BLANK()
+				    )
+			displayFolder: YTD
+			lineageTag: b2deadfd-f9d4-4d48-896c-af8ce1e03b17
+
+			formatStringDefinition =
+					VAR _miara = SELECTEDVALUE(Measure_selector[MiaraKey], "s_pln_net")
+					RETURN
+					    SWITCH(
+					        _miara,
+					        "Margin I PLN (%)", "0.00%",
+					        "Margin I EUR (%)", "0.00%",
+					        "Margin II PLN (%)", "0.00%",
+					        "Margin II EUR (%)", "0.00%",
+					        "sale_qty", "#,##0",
+					        "#,##0.00"
+					    )
+
+		measure 'YTD DELTA s_pln_corp_cost' = ```
+				SUM(f_margin_ytd_delta_facts[s_pln_corp_cost])
+				
+				```
+			displayFolder: YTD DELTA
+			lineageTag: bd3d1450-0c6f-4014-b838-9cb3111b93af
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA s_pln_net' = SUM(f_margin_ytd_delta_facts[s_pln_net])
+			displayFolder: YTD DELTA
+			lineageTag: f5220ad1-2e5d-4421-b6dd-765492890d17
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA sale_qty' = SUM(f_margin_ytd_delta_facts[sale_qty])
+			displayFolder: YTD DELTA
+			lineageTag: 6b25136d-735a-48a6-9f7c-4d89115a9fd7
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA Wybrana wartość' =
+				
+				VAR _miara = SELECTEDVALUE(Measure_selector[MiaraKey], "s_pln_net")
+				RETURN
+				    SWITCH(
+				        _miara,
+				        "sale_qty", [YTD DELTA sale_qty],
+				        "s_pln_net", [YTD DELTA s_pln_net],
+				        "s_eur_net", [YTD DELTA s_eur_net],
+				        "s_pln_corp_cost", [YTD DELTA s_pln_corp_cost],
+				        "s_eur_corp_cost", [YTD DELTA s_eur_corp_cost],
+				        "c_pln_lic", [YTD DELTA c_pln_lic],
+				        "c_eur_lic", [YTD DELTA c_eur_lic],
+				        "s_pln_base", [YTD DELTA s_pln_base],
+				        "s_eur_base", [YTD DELTA s_eur_base],
+				        "c_pln_varfixed", [YTD DELTA c_pln_varfixed],
+				        "c_eur_varfixed", [YTD DELTA c_eur_varfixed],
+				        "c_pln_transport", [YTD DELTA c_pln_transport],
+				        "c_eur_transport", [YTD DELTA c_eur_transport],
+				        "c_pln_compl_prod", [YTD DELTA c_pln_compl_prod],
+				        "c_eur_compl_prod", [YTD DELTA c_eur_compl_prod],
+				        "c_pln_comm", [YTD DELTA c_pln_comm],
+				        "c_eur_comm", [YTD DELTA c_eur_comm],
+				        "c_pln_sinsuran", [YTD DELTA c_pln_sinsuran],
+				        "c_eur_sinsuran", [YTD DELTA c_eur_sinsuran],
+				        "c_pln_assembly", [YTD DELTA c_pln_assembly],
+				        "c_eur_assembly", [YTD DELTA c_eur_assembly],
+				        "c_pln_stock_deprec", [YTD DELTA c_pln_stock_deprec],
+				        "c_eur_stock_deprec", [YTD DELTA c_eur_stock_deprec],
+				        "c_pln_compl_act", [YTD DELTA c_pln_compl_act],
+				        "c_eur_compl_act", [YTD DELTA c_eur_compl_act],
+				        "Margin I PLN", [YTD DELTA Margin I PLN],
+				        "Margin I EUR", [YTD DELTA Margin I EUR],
+				        "Margin I PLN (%)", [YTD DELTA Margin I PLN (%)],
+				        "Margin I EUR (%)", [YTD DELTA Margin I EUR (%)],
+				        "Margin II PLN", [YTD DELTA Margin II PLN],
+				        "Margin II EUR", [YTD DELTA Margin II EUR],
+				        "Margin II PLN (%)", [YTD DELTA Margin II PLN (%)],
+				        "Margin II EUR (%)", [YTD DELTA Margin II EUR (%)],
+				        BLANK()
+				    )
+			displayFolder: YTD DELTA
+			lineageTag: 74b743c2-01d2-496f-b874-bb608274794a
+
+			formatStringDefinition =
+					VAR _miara = SELECTEDVALUE(Measure_selector[MiaraKey], "s_pln_net")
+					RETURN
+					    SWITCH(
+					        _miara,
+					        "Margin I PLN (%)", "0.00%",
+					        "Margin I EUR (%)", "0.00%",
+					        "Margin II PLN (%)", "0.00%",
+					        "Margin II EUR (%)", "0.00%",
+					        "sale_qty", "#,##0",
+					        "#,##0.00"
+					    )
+
+		measure 'MON c_pln_assembly' = SUM(f_margin_mon_facts[c_pln_assembly])
+			displayFolder: MON
+			lineageTag: 982417d7-dbca-4d90-b93e-d886d5630249
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_assembly' = SUM(f_margin_ytd_facts[c_pln_assembly])
+			displayFolder: YTD
+			lineageTag: e867af13-a5bd-4f1d-b65a-ab9607abfd43
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_assembly' = SUM(f_margin_ytd_delta_facts[c_pln_assembly])
+			displayFolder: YTD DELTA
+			lineageTag: 5dc46bc0-ff9f-4c69-a1d5-159a8ccfe4d8
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_assembly' = SUM(f_margin_mon_facts[c_eur_assembly])
+			displayFolder: MON
+			lineageTag: f5d54d41-69b3-449f-9d0e-7b0aa4a58d25
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_assembly' = SUM(f_margin_ytd_facts[c_eur_assembly])
+			displayFolder: YTD
+			lineageTag: 64858b87-2234-433c-960d-f476b0ef2f36
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_assembly' = SUM(f_margin_ytd_delta_facts[c_eur_assembly])
+			displayFolder: YTD DELTA
+			lineageTag: 2dbdab8b-7891-4de6-8666-73a8a47553c3
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'Wybrana miara' = SELECTEDVALUE(Measure_selector[MiaraLabel], "Net Sale PLN")
+			lineageTag: 53ebdb40-c619-4372-b8b8-aff6cd948d73
+
+		measure 'MON s_eur_net' = SUM(f_margin_mon_facts[s_eur_net])
+			displayFolder: MON
+			lineageTag: 643264c2-1be6-41b3-b6a2-5b77e4773b66
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD s_eur_net' = SUM(f_margin_ytd_facts[s_eur_net])
+			displayFolder: YTD
+			lineageTag: e1cd765d-7834-4aa5-84e3-e558cfa1a4cc
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA s_eur_net' = SUM(f_margin_ytd_delta_facts[s_eur_net])
+			displayFolder: YTD DELTA
+			lineageTag: 4bdbda2e-e6dd-4745-95b1-4f4c9f26759b
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure diff_% = ```
+				
+				VAR _diff_nom = 
+				    [MON Wybrana wartość] - [YTD DELTA Wybrana wartość]
+				RETURN
+				ABS(
+				    DIVIDE(
+				        _diff_nom,
+				        [MON Wybrana wartość]
+				    )
+				)
+				```
+			formatString: 0.00%;-0.00%;0.00%
+			lineageTag: 9e45c06e-1d12-42a8-9832-a4d5d96f3418
+
+		measure 'MON s_eur_corp_cost' = SUM(f_margin_mon_facts[s_eur_corp_cost])
+			displayFolder: MON
+			lineageTag: 8dfc0858-580b-4129-ab2b-76ee9610e986
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD s_eur_corp_cost' = SUM(f_margin_ytd_facts[s_eur_corp_cost])
+			displayFolder: YTD
+			lineageTag: b98b8e24-d7a4-4413-9c09-4d20a95211db
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA s_eur_corp_cost' = SUM(f_margin_ytd_delta_facts[s_eur_corp_cost])
+			displayFolder: YTD DELTA
+			lineageTag: b5aae0d2-f445-49ee-9a36-a7cb7b847d9b
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_pln_lic' = SUM(f_margin_mon_facts[c_pln_lic])
+			displayFolder: MON
+			lineageTag: bdee1bf6-8684-4b92-a4c2-698531fc7a13
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_lic' = SUM(f_margin_ytd_facts[c_pln_lic])
+			displayFolder: YTD
+			lineageTag: ea0c1f1e-cd80-465c-8ce6-43f4bb60908a
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_lic' = SUM(f_margin_ytd_delta_facts[c_pln_lic])
+			displayFolder: YTD DELTA
+			lineageTag: b450aca1-0278-435d-b780-377a655d901b
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_lic' = SUM(f_margin_mon_facts[c_eur_lic])
+			displayFolder: MON
+			lineageTag: 3b8ee62c-5065-4668-8149-b243e0e1239f
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_lic' = SUM(f_margin_ytd_facts[c_eur_lic])
+			displayFolder: YTD
+			lineageTag: 47041d43-05a7-4868-b562-5a89cae5bb23
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_lic' = ```
+				SUM(f_margin_ytd_delta_facts[c_eur_lic])
+				
+				```
+			displayFolder: YTD DELTA
+			lineageTag: 5ca1f131-fa8e-40cb-955d-fa40e5f076d4
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_pln_transport' = SUM(f_margin_mon_facts[c_pln_transport])
+			displayFolder: MON
+			lineageTag: 7d1f2eb0-4427-4cbc-8677-466bace5b3c8
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_transport' = SUM(f_margin_ytd_facts[c_pln_transport])
+			displayFolder: YTD
+			lineageTag: b07e2386-5bdc-4786-85c3-b29aa11b5f2f
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_transport' = SUM(f_margin_ytd_delta_facts[c_pln_transport])
+			displayFolder: YTD DELTA
+			lineageTag: 832346c4-e7c8-4dad-84ae-1d311c6c5f26
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_transport' = SUM(f_margin_ytd_delta_facts[c_eur_transport])
+			displayFolder: YTD DELTA
+			lineageTag: 2279ce82-edcf-4d05-a7fc-a14c85e8d8ce
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_transport' = SUM(f_margin_ytd_facts[c_eur_transport])
+			displayFolder: YTD
+			lineageTag: 90b5be84-45ec-496d-8527-a3c03e337f60
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_transport' = SUM(f_margin_mon_facts[c_eur_transport])
+			displayFolder: MON
+			lineageTag: eedbc42b-ed22-478d-a1d8-ca7d8215b621
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_pln_compl_prod' = SUM(f_margin_mon_facts[c_pln_compl_prod])
+			displayFolder: MON
+			lineageTag: 206b8baf-2374-4c25-91a2-6b115c957674
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_compl_prod' = SUM(f_margin_mon_facts[c_eur_compl_prod])
+			displayFolder: MON
+			lineageTag: 1fc253a8-dc90-4ee9-a8b6-f2a9b725989e
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_compl_prod' = SUM(f_margin_ytd_facts[c_pln_compl_prod])
+			displayFolder: YTD
+			lineageTag: ed503119-9573-4082-96c1-95cd40b488d6
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_compl_prod' = SUM(f_margin_ytd_facts[c_eur_compl_prod])
+			displayFolder: YTD
+			lineageTag: 9da42db8-5f60-48b9-ab5b-1663a20c5329
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_compl_prod' = SUM(f_margin_ytd_delta_facts[c_pln_compl_prod])
+			displayFolder: YTD DELTA
+			lineageTag: 576d8433-3c0d-4fc2-adef-5e911eb86f2b
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_compl_prod' = SUM(f_margin_ytd_delta_facts[c_eur_compl_prod])
+			displayFolder: YTD DELTA
+			lineageTag: 31db9719-06ee-4977-8030-3484c9fd449c
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_pln_compl_act' = SUM(f_margin_mon_facts[c_pln_compl_act])
+			displayFolder: MON
+			lineageTag: 3ae74117-4016-4ca4-a9f3-fa56749e70b0
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_compl_act' = SUM(f_margin_mon_facts[c_eur_compl_act])
+			displayFolder: MON
+			lineageTag: 35848b76-747b-45e3-8cad-0c57f45d8d39
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_compl_act' = SUM(f_margin_ytd_facts[c_pln_compl_act])
+			displayFolder: YTD
+			lineageTag: 42b0d586-436b-41fb-a340-fe90559f2874
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_compl_act' = SUM(f_margin_ytd_facts[c_eur_compl_act])
+			displayFolder: YTD
+			lineageTag: 34d41083-be28-4c09-a0f4-fc76eaab2ab6
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_compl_act' = SUM(f_margin_ytd_delta_facts[c_eur_compl_act])
+			displayFolder: YTD DELTA
+			lineageTag: 8b323199-ad3a-4034-ba1a-1a70447cbf12
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_compl_act' = SUM(f_margin_ytd_delta_facts[c_pln_compl_act])
+			displayFolder: YTD DELTA
+			lineageTag: ee299c78-adf6-460c-9e5e-9783585dfcf5
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_pln_comm' = SUM(f_margin_mon_facts[c_pln_comm])
+			displayFolder: MON
+			lineageTag: e9d8b3f8-bc6f-4ae1-a9c6-28a9cf0746b3
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_comm' = SUM(f_margin_mon_facts[c_eur_comm])
+			displayFolder: MON
+			lineageTag: 3d4e8ca9-fff1-4f4d-8f93-3d2efc6a0297
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_comm' = SUM(f_margin_ytd_facts[c_eur_comm])
+			displayFolder: YTD
+			lineageTag: 54cfc46b-2dfd-48e7-9799-8ca0ede8adcb
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_comm' = SUM(f_margin_ytd_facts[c_pln_comm])
+			displayFolder: YTD
+			lineageTag: 2bd234e9-e6ce-4a93-a2a5-7347d58e1455
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_comm' = SUM(f_margin_ytd_delta_facts[c_eur_comm])
+			displayFolder: YTD DELTA
+			lineageTag: 45bd5c19-ae93-4ef9-8621-b6fcfed3ef70
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_comm' = SUM(f_margin_ytd_delta_facts[c_pln_comm])
+			displayFolder: YTD DELTA
+			lineageTag: 05a5c940-a3a8-41d1-811c-467cd5890606
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_pln_sinsuran' = SUM(f_margin_mon_facts[c_pln_sinsuran])
+			displayFolder: MON
+			lineageTag: 79b01326-9048-45b8-89ec-b515a4328e75
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_sinsuran' = SUM(f_margin_mon_facts[c_eur_sinsuran])
+			displayFolder: MON
+			lineageTag: fe85e86a-e2c5-498b-85ef-337bca919903
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_sinsuran' = SUM(f_margin_ytd_facts[c_pln_sinsuran])
+			displayFolder: YTD
+			lineageTag: 92cd2880-d30a-4224-833d-42261a8323b7
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_sinsuran' = SUM(f_margin_ytd_facts[c_eur_sinsuran])
+			displayFolder: YTD
+			lineageTag: decc14fe-3c0b-4bf5-ac04-c90d2331a6d8
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_sinsuran' = SUM(f_margin_ytd_delta_facts[c_eur_sinsuran])
+			displayFolder: YTD DELTA
+			lineageTag: ae4fca14-4d4f-47e4-9ce3-77c3f6008fe3
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_sinsuran' = SUM(f_margin_ytd_delta_facts[c_pln_sinsuran])
+			displayFolder: YTD DELTA
+			lineageTag: 3fed66f3-85c0-4645-922c-ff8550065ed9
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_pln_stock_deprec' = SUM(f_margin_mon_facts[c_pln_stock_deprec])
+			displayFolder: MON
+			lineageTag: ad8f59de-0d95-4032-b3aa-5d89d80fb709
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_stock_deprec' = SUM(f_margin_mon_facts[c_eur_stock_deprec])
+			displayFolder: MON
+			lineageTag: c8505a92-2c22-46b4-9880-42e9f1de8667
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_stock_deprec' = SUM(f_margin_ytd_facts[c_eur_stock_deprec])
+			displayFolder: YTD
+			lineageTag: 02b617f2-e922-491b-9d1b-319da332340d
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_stock_deprec' = SUM(f_margin_ytd_facts[c_pln_stock_deprec])
+			displayFolder: YTD
+			lineageTag: fd6bda2f-6da5-418a-a7a7-9726e6e9993d
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_stock_deprec' = SUM(f_margin_ytd_delta_facts[c_eur_stock_deprec])
+			displayFolder: YTD DELTA
+			lineageTag: f729b3fa-acd1-4cde-b023-5a320d58d46f
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_stock_deprec' = SUM(f_margin_ytd_delta_facts[c_pln_stock_deprec])
+			displayFolder: YTD DELTA
+			lineageTag: 6fd4dfdf-4b70-453c-b579-5b42892f3c09
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON s_pln_base' = SUM(f_margin_mon_facts[s_pln_base])
+			displayFolder: MON
+			lineageTag: 4007eb43-a632-49bb-8686-df6da6120b7d
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON s_eur_base' = SUM(f_margin_mon_facts[s_eur_base])
+			displayFolder: MON
+			lineageTag: 74c870bd-0e7f-4158-a1d8-17e6dc1a48e2
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD s_pln_base' = SUM(f_margin_ytd_facts[s_pln_base])
+			displayFolder: YTD
+			lineageTag: 259ee70d-7a20-46de-8281-8122bac197a6
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD s_eur_base' = SUM(f_margin_ytd_facts[s_eur_base])
+			displayFolder: YTD
+			lineageTag: 8370ff7e-829c-4ce6-92e7-507a03bae5c8
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA s_eur_base' = SUM(f_margin_ytd_delta_facts[s_eur_base])
+			displayFolder: YTD DELTA
+			lineageTag: 1a49b607-324e-4138-b0b3-4b58ba9afd01
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA s_pln_base' = SUM(f_margin_ytd_delta_facts[s_pln_base])
+			displayFolder: YTD DELTA
+			lineageTag: 84d9b6a6-7f5b-4b24-a757-342864a1858b
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_pln_varfixed' = SUM(f_margin_mon_facts[c_pln_varfixed])
+			displayFolder: MON
+			lineageTag: 8c84c919-7544-4812-844b-26b960372835
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON c_eur_varfixed' = SUM(f_margin_mon_facts[c_eur_varfixed])
+			displayFolder: MON
+			lineageTag: f4665bdc-3b09-4e40-8514-07d908e728e4
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_eur_varfixed' = SUM(f_margin_ytd_facts[c_eur_varfixed])
+			displayFolder: YTD
+			lineageTag: 7aa6b4b0-ddd3-43cb-b3c4-98ad86d38b8a
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD c_pln_varfixed' = SUM(f_margin_ytd_facts[c_pln_varfixed])
+			displayFolder: YTD
+			lineageTag: b75a90be-d33c-44be-bdda-08758e4d40a5
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_pln_varfixed' = SUM(f_margin_ytd_delta_facts[c_pln_varfixed])
+			displayFolder: YTD DELTA
+			lineageTag: 5485069d-094b-4860-954a-99d4f38ac2f2
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA c_eur_varfixed' = SUM(f_margin_ytd_delta_facts[c_eur_varfixed])
+			displayFolder: YTD DELTA
+			lineageTag: fb76aa2c-bf91-47b2-9bfb-39bba6899dc3
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON Margin I PLN' = [MON s_pln_net] - [MON s_pln_corp_cost]
+			displayFolder: MON
+			lineageTag: 9803beb6-2add-4c30-9da1-58fe0ae46755
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD Margin I PLN' = [YTD s_pln_net] - [YTD s_pln_corp_cost]
+			displayFolder: YTD
+			lineageTag: 47e3d477-9d6d-492d-bc95-cc3c4b6d288a
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA Margin I PLN' = [YTD DELTA s_pln_net] - [YTD DELTA s_pln_corp_cost]
+			displayFolder: YTD DELTA
+			lineageTag: 08c9b47b-d9b4-4bf3-9336-c00b64c72d69
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON Margin I EUR' = [MON s_eur_net] - [MON s_eur_corp_cost]
+			displayFolder: MON
+			lineageTag: 3614f0ec-7693-434d-ba1d-6d21347cb514
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD Margin I EUR' = [YTD s_eur_net] - [YTD s_eur_corp_cost]
+			displayFolder: YTD
+			lineageTag: 26116f68-4f8f-4e27-8e0b-6cf2903ec660
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA Margin I EUR' = [YTD DELTA s_eur_net] - [YTD DELTA s_eur_corp_cost]
+			displayFolder: YTD DELTA
+			lineageTag: a129478d-3020-4434-af08-12351f2d3260
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON Margin I EUR (%)' =
+				
+				DIVIDE(
+				    [MON Margin I EUR],
+				    [MON s_eur_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: MON
+			lineageTag: 840c1a8a-b837-4499-9998-900771873b36
+
+		measure 'MON Margin I PLN (%)' =
+				
+				DIVIDE(
+				    [MON Margin I PLN],
+				    [MON s_PLN_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: MON
+			lineageTag: 8bee36ab-2c84-48fd-a309-4a817862fa91
+
+		measure 'MON Margin II EUR' = [MON Margin I EUR] - [MON c_eur_assembly] - [MON c_eur_comm] - [MON c_eur_compl_act] - [MON c_eur_compl_prod] - [MON c_eur_lic] - [MON c_eur_sinsuran] - [MON c_eur_stock_deprec] - [MON c_eur_transport] - [MON c_eur_varfixed]
+			displayFolder: MON
+			lineageTag: 74a04416-f823-475c-ac94-234184d72df7
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON Margin II PLN' = [MON Margin I PLN] - [MON c_pln_assembly] - [MON c_pln_comm] - [MON c_pln_compl_act] - [MON c_pln_compl_prod] - [MON c_pln_lic] - [MON c_pln_sinsuran] - [MON c_pln_stock_deprec] - [MON c_pln_transport] - [MON c_pln_varfixed]
+			displayFolder: MON
+			lineageTag: 6218af7e-81d5-4ebe-a2ad-11012614422b
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'MON Margin II EUR (%)' =
+				
+				DIVIDE(
+				    [MON Margin II EUR],
+				    [MON s_eur_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: MON
+			lineageTag: a5e0e1b5-d926-4bfd-98ad-b34b0d1f1f8d
+
+		measure 'MON Margin II PLN (%)' =
+				
+				DIVIDE(
+				    [MON Margin II PLN],
+				    [MON s_pln_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: MON
+			lineageTag: 3ea631c4-80d6-4145-a001-b8396fa46465
+
+		measure 'YTD Margin I EUR (%)' =
+				
+				DIVIDE(
+				    [YTD Margin I EUR],
+				    [YTD s_eur_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: YTD
+			lineageTag: a9fd5e2d-197e-4211-87de-6e45233c6ca3
+
+		measure 'YTD Margin I PLN (%)' =
+				
+				DIVIDE(
+				    [YTD Margin I PLN],
+				    [YTD s_pln_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: YTD
+			lineageTag: 581fbad1-9ded-4d79-8a92-a44942e60d5d
+
+		measure 'YTD Margin II EUR' = [YTD Margin I EUR] - [YTD c_eur_assembly] - [YTD c_eur_comm] - [YTD c_eur_compl_act] - [YTD c_eur_compl_prod] - [YTD c_eur_lic] - [YTD c_eur_sinsuran] - [YTD c_eur_stock_deprec] - [YTD c_eur_transport] - [YTD c_eur_varfixed]
+			displayFolder: YTD
+			lineageTag: a6fadc39-39b7-4d2a-9d4b-624264b1cb26
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD Margin II PLN' = [YTD Margin I PLN] - [YTD c_pln_assembly] - [YTD c_pln_comm] - [YTD c_pln_compl_act] - [YTD c_pln_compl_prod] - [YTD c_pln_lic] - [YTD c_pln_sinsuran] - [YTD c_pln_stock_deprec] - [YTD c_pln_transport] - [YTD c_pln_varfixed]
+			displayFolder: YTD
+			lineageTag: 5e28a65d-70c3-4466-9608-6eeed76dcee5
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD Margin II EUR (%)' =
+				
+				DIVIDE(
+				    [YTD Margin II EUR],
+				    [YTD s_eur_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: YTD
+			lineageTag: 5ea4c77b-0226-4541-bc43-5765b0739fbb
+
+		measure 'YTD Margin II PLN (%)' =
+				
+				DIVIDE(
+				    [YTD Margin II PLN],
+				    [YTD s_pln_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: YTD
+			lineageTag: f600a69b-7a88-49a7-b792-8f3a5c07fd16
+
+		measure 'YTD DELTA Margin I EUR (%)' =
+				
+				DIVIDE(
+				    [YTD DELTA Margin I EUR],
+				    [YTD DELTA s_eur_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: YTD DELTA
+			lineageTag: 8f89104f-1a46-470c-a73b-98cf41f74cf0
+
+		measure 'YTD DELTA Margin I PLN (%)' =
+				
+				DIVIDE(
+				    [YTD DELTA Margin I PLN],
+				    [YTD DELTA s_pln_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: YTD DELTA
+			lineageTag: 45b872d0-38d3-4527-b39a-31a14f8f815d
+
+		measure 'YTD DELTA Margin II EUR' = [YTD DELTA Margin I EUR] - [YTD DELTA c_eur_assembly] - [YTD DELTA c_eur_comm] - [YTD DELTA c_eur_compl_act] - [YTD DELTA c_eur_compl_prod] - [YTD DELTA c_eur_lic] - [YTD DELTA c_eur_sinsuran] - [YTD DELTA c_eur_stock_deprec] - [YTD DELTA c_eur_transport] - [YTD DELTA c_eur_varfixed]
+			displayFolder: YTD DELTA
+			lineageTag: f523f665-a71e-4cd3-8c05-73aefdae5d12
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA Margin II PLN' = [YTD DELTA Margin I PLN] - [YTD DELTA c_pln_assembly] - [YTD DELTA c_pln_comm] - [YTD DELTA c_pln_compl_act] - [YTD DELTA c_pln_compl_prod] - [YTD DELTA c_pln_lic] - [YTD DELTA c_pln_sinsuran] - [YTD DELTA c_pln_stock_deprec] - [YTD DELTA c_pln_transport] - [YTD DELTA c_pln_varfixed]
+			displayFolder: YTD DELTA
+			lineageTag: 97b7b1d8-ff23-4603-9a50-3db629543cf3
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'YTD DELTA Margin II EUR (%)' =
+				
+				DIVIDE(
+				    [YTD DELTA Margin II EUR],
+				    [YTD DELTA s_eur_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: YTD DELTA
+			lineageTag: f924f954-0eb0-44f0-9f21-b4db81437517
+
+		measure 'YTD DELTA Margin II PLN (%)' =
+				
+				DIVIDE(
+				    [YTD DELTA Margin II PLN],
+				    [YTD DELTA s_pln_net]
+				)
+			formatString: 0.00%;-0.00%;0.00%
+			displayFolder: YTD DELTA
+			lineageTag: 60fd961c-03af-42d0-8e15-0469f79d68eb
+
+		column Value
+			isHidden
 			formatString: 0
-			sourceProviderType: smallint
-			lineageTag: c8014ce8-cc28-4e62-ae72-2358c3791525
-			summarizeBy: none
-			sourceColumn: time_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column comp_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: 67e4d045-f6d0-4375-8be7-4a1f53a89f74
+			lineageTag: 7b4fab82-5078-4834-a748-a40050b8bac5
 			summarizeBy: sum
-			sourceColumn: comp_id
+			isNameInferred
+			sourceColumn: [Value]
 
 			annotation SummarizationSetBy = Automatic
 
-		column cust_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: 32d7a60a-ce7f-4882-ae0e-e2230bc235fb
-			summarizeBy: none
-			sourceColumn: cust_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column prod_inv_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: 1494354f-5d21-4942-aca2-88b1d59b8954
-			summarizeBy: none
-			sourceColumn: prod_inv_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column mnf_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: 1717e98a-4566-40d6-9162-a4205ff23fc5
-			summarizeBy: sum
-			sourceColumn: mnf_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column org_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: 780444b7-d16d-48a7-ba60-af424223e2e7
-			summarizeBy: sum
-			sourceColumn: org_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column team_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: 711bd4be-77f0-4fc5-a634-689bc03044d8
-			summarizeBy: sum
-			sourceColumn: team_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column d_term_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: a9ea2114-099f-4d8f-8050-490d12195444
-			summarizeBy: sum
-			sourceColumn: d_term_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column comp_cost_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: 7fbd8ee0-eafb-4ccd-bd91-b505e10a60c3
-			summarizeBy: sum
-			sourceColumn: comp_cost_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column pricelist_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: 89f31e00-fb6c-4a8c-8fbc-9e74eaa83bb1
-			summarizeBy: sum
-			sourceColumn: pricelist_id
-
-			annotation SummarizationSetBy = Automatic
-
-		column mon_name
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: de4da724-10e2-4930-89ea-37e937234762
-			summarizeBy: none
-			sourceColumn: mon_name
-
-			annotation SummarizationSetBy = Automatic
-
-		column comp_code
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 39377f2f-b201-41ed-8540-fdca63919e51
-			summarizeBy: none
-			sourceColumn: comp_code
-
-			annotation SummarizationSetBy = Automatic
-
-		column cust_code
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: fc0e1967-9f55-4da8-9aed-c598ae390d44
-			summarizeBy: none
-			sourceColumn: cust_code
-
-			annotation SummarizationSetBy = Automatic
-
-		column prod_si_code
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 356f3ca4-61c7-419c-a67d-3fe62aa7a668
-			summarizeBy: none
-			sourceColumn: prod_si_code
-
-			annotation SummarizationSetBy = Automatic
-
-		column sman_code
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 12242fe8-e166-4fbc-8df6-0ee25ffe7299
-			summarizeBy: none
-			sourceColumn: sman_code
-
-			annotation SummarizationSetBy = Automatic
-
-		column team_code
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 904b4944-0aea-450e-8e84-4187bb962f15
-			summarizeBy: none
-			sourceColumn: team_code
-
-			annotation SummarizationSetBy = Automatic
-
-		column dept_code
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: cf2f10ef-9c78-44e1-863f-61ded5af05ed
-			summarizeBy: none
-			sourceColumn: dept_code
-
-			annotation SummarizationSetBy = Automatic
-
-		column d_term_code
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 821bc0d3-89aa-4be6-9016-003ee2ee00d5
-			summarizeBy: none
-			sourceColumn: d_term_code
-
-			annotation SummarizationSetBy = Automatic
-
-		column comp_cost_code
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: aebc808c-4c05-4850-912c-a2f503cf4d1e
-			summarizeBy: none
-			sourceColumn: comp_cost_code
-
-			annotation SummarizationSetBy = Automatic
-
-		column sale_qty
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 4c3d303c-2bde-4abc-ba5c-4a157d89430b
-			summarizeBy: sum
-			sourceColumn: sale_qty
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column s_pln_net
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 0e5d0438-6b8b-45c9-b680-7e36bfe91741
-			summarizeBy: sum
-			sourceColumn: s_pln_net
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column s_eur_net
-			dataType: double
-			sourceProviderType: double
-			lineageTag: bf91ed0a-36ed-4a03-837e-a5ae0ddcb28e
-			summarizeBy: sum
-			sourceColumn: s_eur_net
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column s_pln_corp_cost
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 88308c7d-7f29-4a82-9da3-c34fdd5f09ed
-			summarizeBy: sum
-			sourceColumn: s_pln_corp_cost
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column s_eur_corp_cost
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 722065ad-d690-403b-8d54-ed6a2373be5f
-			summarizeBy: sum
-			sourceColumn: s_eur_corp_cost
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_lic
-			dataType: double
-			sourceProviderType: double
-			lineageTag: e7cdd66c-901d-4c06-a45a-35bc64cb8a06
-			summarizeBy: sum
-			sourceColumn: c_pln_lic
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_lic
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 9ead27f5-fd83-4afc-98a6-b1d746169fe6
-			summarizeBy: sum
-			sourceColumn: c_eur_lic
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column s_pln_base
-			dataType: double
-			sourceProviderType: double
-			lineageTag: b97476cc-9dc1-45f9-b6c3-dc9ee04bed10
-			summarizeBy: sum
-			sourceColumn: s_pln_base
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column s_eur_base
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 5b479ef5-3bd1-49dc-a030-6c9f4aec350f
-			summarizeBy: sum
-			sourceColumn: s_eur_base
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_varfixed
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 7dacefc6-0d62-43f8-8383-2b82ee1536fa
-			summarizeBy: sum
-			sourceColumn: c_pln_varfixed
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_varfixed
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 56830bd2-3b27-48d6-965e-a933bf0b9a76
-			summarizeBy: sum
-			sourceColumn: c_eur_varfixed
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_transport
-			dataType: double
-			sourceProviderType: double
-			lineageTag: f3078c8e-7440-4253-aab7-91a4680d715a
-			summarizeBy: sum
-			sourceColumn: c_pln_transport
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_transport
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 219ad88b-3f8f-4a7a-954b-1cb9e6983c1e
-			summarizeBy: sum
-			sourceColumn: c_eur_transport
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_compl_prod
-			dataType: double
-			sourceProviderType: double
-			lineageTag: f9e4f3e1-d1d4-4751-91d4-a360297efe70
-			summarizeBy: sum
-			sourceColumn: c_pln_compl_prod
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_compl_prod
-			dataType: double
-			sourceProviderType: double
-			lineageTag: a9894547-04b8-4d7e-ae57-9227fd5c649f
-			summarizeBy: sum
-			sourceColumn: c_eur_compl_prod
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_comm
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 7298c733-efe9-4f2d-b0eb-58c17da14aa3
-			summarizeBy: sum
-			sourceColumn: c_pln_comm
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_comm
-			dataType: double
-			sourceProviderType: double
-			lineageTag: f215c049-81e8-4d98-91f7-37c7385e5e51
-			summarizeBy: sum
-			sourceColumn: c_eur_comm
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_sinsuran
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 87ffcabd-acc8-4804-b108-b77524130c56
-			summarizeBy: sum
-			sourceColumn: c_pln_sinsuran
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_sinsuran
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 223a8cf8-cdae-418b-a4eb-6572f10b4f83
-			summarizeBy: sum
-			sourceColumn: c_eur_sinsuran
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_assembly
-			dataType: double
-			sourceProviderType: double
-			lineageTag: fea87dcd-1178-40e0-aa96-7de8af752a40
-			summarizeBy: sum
-			sourceColumn: c_pln_assembly
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_assembly
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 452d5588-b83d-4ef1-93b4-d830fce836f8
-			summarizeBy: sum
-			sourceColumn: c_eur_assembly
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_stock_deprec
-			dataType: double
-			sourceProviderType: double
-			lineageTag: bd27ea46-04ec-4c1f-8ee2-873a04062b9f
-			summarizeBy: sum
-			sourceColumn: c_pln_stock_deprec
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_stock_deprec
-			dataType: double
-			sourceProviderType: double
-			lineageTag: aaaad5fb-1df9-43ce-9946-04bec505bf94
-			summarizeBy: sum
-			sourceColumn: c_eur_stock_deprec
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_pln_compl_act
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 5b04749c-0511-489b-81f0-0e0dfe735a85
-			summarizeBy: sum
-			sourceColumn: c_pln_compl_act
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		column c_eur_compl_act
-			dataType: double
-			sourceProviderType: double
-			lineageTag: 9445066b-0716-4f6f-ac69-6a9eeb3bfdd1
-			summarizeBy: sum
-			sourceColumn: c_eur_compl_act
-
-			annotation SummarizationSetBy = Automatic
-
-			annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-		partition f_margin_ytd_delta_facts = m
-			mode:import
-			source =
-					let
-					    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]),
-					    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
-					    mmo75_Schema = zenith_Database{[Name="mmo75",Kind="Schema"]}[Data],
-					    f_margin_ytd_delta_facts_Table = mmo75_Schema{[Name="f_margin_ytd_delta_facts",Kind="Table"]}[Data]
-					in
-					    f_margin_ytd_delta_facts_Table
-
-		annotation PBI_NavigationStepName = Navigation
-
-		annotation PBI_ResultType = Table
+		partition _Miary_Facts = calculated
+			mode: import
+			source = {0}
+
+		annotation PBI_Id = 937d1f641ed54fb784ff34c798fc9b37
 

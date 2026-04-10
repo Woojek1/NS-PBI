@@ -20,16 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_product"
+                      "Entity": "d_customer"
                     }
                   },
-                  "Property": "Model"
+                  "Property": "Customer Code"
                 }
               },
-              "queryRef": "d_product.Model",
-              "nativeQueryRef": "Model",
+              "queryRef": "d_customer.Customer Code",
+              "nativeQueryRef": "Customer code",
               "active": true,
-              "displayName": "Model"
+              "displayName": "Customer code"
             },
             {
               "field": {
@@ -44,7 +44,7 @@
               },
               "queryRef": "d_time_mon.mon_name",
               "nativeQueryRef": "mon_name",
-              "active": false,
+              "active": true,
               "displayName": "mon_name"
             }
           ],
@@ -72,7 +72,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Miary"
+                      "Entity": "_Miary_Facts"
                     }
                   },
                   "Property": "MON s_eur_net"
@@ -87,7 +87,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Miary"
+                      "Entity": "_Miary_Facts"
                     }
                   },
                   "Property": "MON s_eur_corp_cost"
@@ -102,7 +102,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Miary"
+                      "Entity": "_Miary_Facts"
                     }
                   },
                   "Property": "MON Wybrana wartość"
@@ -117,7 +117,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Miary"
+                      "Entity": "_Miary_Facts"
                     }
                   },
                   "Property": "YTD DELTA Wybrana wartość"
@@ -132,7 +132,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Miary"
+                      "Entity": "_Miary_Facts"
                     }
                   },
                   "Property": "diff_%"
@@ -162,6 +162,55 @@
         ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "d_customer.Customer Code"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_customer"
+                    }
+                  },
+                  "Property": "Customer Code"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_time_mon.mon_name"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'ATU15447005'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
     "objects": {
       "values": [
         {
@@ -388,7 +437,7 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Miary"
+                "Entity": "_Miary_Facts"
               }
             },
             "Property": "MON Wybrana wartość"
@@ -403,7 +452,7 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Miary"
+                "Entity": "_Miary_Facts"
               }
             },
             "Property": "YTD Wybrana wartość"
@@ -419,7 +468,7 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Miary"
+                "Entity": "_Miary_Facts"
               }
             },
             "Property": "YTD DELTA Wybrana wartość"
@@ -434,7 +483,7 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Miary"
+                "Entity": "_Miary_Facts"
               }
             },
             "Property": "diff_%"
@@ -471,16 +520,15 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
-        "name": "5275e590cd3d9198985d",
+        "name": "b7b3bb747fbcdca5e5c0",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Miary"
+                "Entity": "_Miary_Facts"
               }
             },
             "Property": "MON s_eur_net"
@@ -489,32 +537,18 @@
         "type": "Advanced"
       },
       {
-        "name": "7a9bbc5473b15ee72fa5",
+        "name": "6a11081eb1531214ec8e",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Miary"
+                "Entity": "_Miary_Facts"
               }
             },
             "Property": "MON s_eur_corp_cost"
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "01bdd4cb0dc8e32f2709",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_product"
-              }
-            },
-            "Property": "Model"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

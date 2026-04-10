@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "0b105bc3a0f0ef9a8ca2",
   "position": {
-    "x": 25.806451612903224,
-    "y": 221.93548387096774,
+    "x": 24,
+    "y": 234.85714285714283,
     "z": 0,
-    "height": 486.19354838709677,
-    "width": 1233.5483870967741,
+    "height": 821.14285714285711,
+    "width": 1875.4285714285713,
     "tabOrder": 0
   },
   "visual": {
@@ -17,22 +17,18 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "f_margin_mon_data"
-                        }
-                      },
-                      "Property": "c_eur_assembly"
+                    "SourceRef": {
+                      "Entity": "_Miary_Data"
                     }
                   },
-                  "Function": 0
+                  "Property": "DATA MON c_eur_comm"
                 }
               },
-              "queryRef": "Sum(f_margin_mon_data.c_eur_assembly)",
-              "nativeQueryRef": "Sum of c_eur_assembly"
+              "queryRef": "_Miary_Data.DATA MON c_eur_comm",
+              "nativeQueryRef": "Commission EUR",
+              "displayName": "Commission EUR"
             },
             {
               "field": {
@@ -62,6 +58,22 @@
               "queryRef": "f_margin_mon_data.src_info",
               "nativeQueryRef": "src_info"
             }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Parameter DATA MON"
+                    }
+                  },
+                  "Property": "Parameter DATA MON"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
           ]
         }
       },
@@ -69,32 +81,99 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "f_margin_mon_data"
-                      }
-                    },
-                    "Property": "c_eur_assembly"
+                  "SourceRef": {
+                    "Entity": "d_time_mon"
                   }
                 },
-                "Function": 0
+                "Property": "mon_name"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "1531.859592785295D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "f_margin_mon_data.src_info"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "159D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary_Data.DATA MON c_eur_comm"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "137.00001358853507D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_time_mon.mon_name"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "318cde664067e9a3e739",
+        "name": "477bdccc12d156727963",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "03a03035170bee6f1fc3",
         "field": {
           "Column": {
             "Expression": {
@@ -108,37 +187,18 @@
         "type": "Categorical"
       },
       {
-        "name": "e7d9c01e7751935e6985",
+        "name": "b29364f195f8b7868397",
         "field": {
-          "Aggregation": {
+          "Measure": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "f_margin_mon_data"
-                  }
-                },
-                "Property": "c_eur_assembly"
+              "SourceRef": {
+                "Entity": "_Miary_Data"
               }
             },
-            "Function": 0
+            "Property": "DATA MON c_eur_comm"
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "1bf9132b7715de56cd7f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "mon_name"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
