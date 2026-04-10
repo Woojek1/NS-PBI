@@ -1,0 +1,428 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "1de6fe440fb32eb67d52",
+  "position": {
+    "x": 32.857142857142861,
+    "y": 20,
+    "z": 0,
+    "height": 1047.1428571428571,
+    "width": 1877.1428571428573,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time_mon"
+                    }
+                  },
+                  "Property": "year_name"
+                }
+              },
+              "queryRef": "d_time_mon.year_name",
+              "nativeQueryRef": "year_name",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Brand"
+                }
+              },
+              "queryRef": "d_product.Brand",
+              "nativeQueryRef": "Brand",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_organization_team"
+                    }
+                  },
+                  "Property": "Department Code"
+                }
+              },
+              "queryRef": "d_organization_team.Department Code",
+              "nativeQueryRef": "Department Code",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_organization_team"
+                    }
+                  },
+                  "Property": "Section Code"
+                }
+              },
+              "queryRef": "d_organization_team.Section Code",
+              "nativeQueryRef": "Section Code",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Line"
+                }
+              },
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Product Group"
+                }
+              },
+              "queryRef": "d_product.Product Group",
+              "nativeQueryRef": "Product Group",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Net Sales PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Net Sales PLN",
+              "nativeQueryRef": "Net Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Manufacturing Cost PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Manufacturing Cost PLN",
+              "nativeQueryRef": "Manufacturing Cost PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Variance Fixed Cost PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Variance Fixed Cost PLN",
+              "nativeQueryRef": "Variance Fixed Cost PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Transport PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Transport PLN",
+              "nativeQueryRef": "Transport PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Assembly PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Assembly PLN",
+              "nativeQueryRef": "Assembly PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Commission PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Commission PLN",
+              "nativeQueryRef": "Commission PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "License PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.License PLN",
+              "nativeQueryRef": "License PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Complaint Activity PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Complaint Activity PLN",
+              "nativeQueryRef": "Complaint Activity PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Complaint Product PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Complaint Product PLN",
+              "nativeQueryRef": "Complaint Product PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Sold Insurance PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Sold Insurance PLN",
+              "nativeQueryRef": "Sold Insurance PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Stock Depreciation PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Stock Depreciation PLN",
+              "nativeQueryRef": "Stock Depreciation PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Margin I % (PLN)"
+                }
+              },
+              "queryRef": "f_margin75_facts.Margin I % (PLN)",
+              "nativeQueryRef": "Margin I % (PLN)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Margin II % (PLN)"
+                }
+              },
+              "queryRef": "f_margin75_facts.Margin II % (PLN)",
+              "nativeQueryRef": "Margin II % (PLN)"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "d_product.Brand"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Brand"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_organization_team.Department Code"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_organization_team"
+                    }
+                  },
+                  "Property": "Department Code"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_organization_team.Section Code"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "d_product.Line"
+            ],
+            "isCollapsed": true
+          },
+          {
+            "queryRefs": [
+              "d_product.Product Group"
+            ],
+            "isCollapsed": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "282.000013588531D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Brand"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
