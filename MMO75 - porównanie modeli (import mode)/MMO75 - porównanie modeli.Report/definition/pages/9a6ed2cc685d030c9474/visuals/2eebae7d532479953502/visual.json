@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_customer"
+                      "Entity": "d_product"
                     }
                   },
-                  "Property": "Customer Code"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "d_customer.Customer Code",
-              "nativeQueryRef": "Customer code",
-              "displayName": "Customer code"
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
+              "displayName": "Line"
             },
             {
               "field": {
@@ -66,11 +66,11 @@
                       "Entity": "_Miary_Facts"
                     }
                   },
-                  "Property": "MON c_eur_assembly"
+                  "Property": "MON Margin II EUR"
                 }
               },
-              "queryRef": "_Miary.MON c_eur_assembly",
-              "nativeQueryRef": "MON c_eur_assembly"
+              "queryRef": "_Miary_Facts.MON Margin II EUR",
+              "nativeQueryRef": "MON Margin II EUR"
             },
             {
               "field": {
@@ -80,11 +80,25 @@
                       "Entity": "_Miary_Facts"
                     }
                   },
-                  "Property": "MON c_pln_assembly"
+                  "Property": "MON s_eur_corp_cost"
                 }
               },
-              "queryRef": "_Miary.MON c_pln_assembly",
-              "nativeQueryRef": "MON c_pln_assembly"
+              "queryRef": "_Miary_Facts.MON s_eur_corp_cost",
+              "nativeQueryRef": "MON s_eur_corp_cost"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary_Facts"
+                    }
+                  },
+                  "Property": "MON c_eur_assembly"
+                }
+              },
+              "queryRef": "_Miary.MON c_eur_assembly",
+              "nativeQueryRef": "MON c_eur_assembly"
             },
             {
               "field": {
@@ -279,7 +293,9 @@
             "Property": "Customer Code"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       },
       {
         "name": "3257b0644c66ea592da3",
@@ -295,7 +311,8 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User"
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       },
       {
         "name": "bed838192d8960bc417a",
@@ -310,7 +327,8 @@
             "Property": "MON c_eur_assembly"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "42786855faa21a979cc3",
@@ -325,7 +343,8 @@
             "Property": "MON c_eur_comm"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "71f9a00d3506a87e131b",
@@ -340,7 +359,8 @@
             "Property": "MON c_eur_compl_act"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "1ec2af5b2847d342edbe",
@@ -355,7 +375,8 @@
             "Property": "MON c_eur_compl_prod"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "dc788de86585956d7a26",
@@ -370,7 +391,8 @@
             "Property": "MON c_eur_lic"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "984869f422839c990468",
@@ -385,7 +407,8 @@
             "Property": "MON c_eur_sinsuran"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "b49cee7a71c9af383055",
@@ -400,7 +423,8 @@
             "Property": "MON c_eur_stock_deprec"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "b62b7d559bf140f54dc1",
@@ -415,7 +439,8 @@
             "Property": "MON c_eur_transport"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "286c25ed368eea440e9f",
@@ -430,7 +455,8 @@
             "Property": "MON c_eur_varfixed"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "a186aab91c8b901de50a",
@@ -445,7 +471,9 @@
             "Property": "MON c_pln_assembly"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       },
       {
         "name": "6aef4621db2c35723caf",
@@ -460,7 +488,8 @@
             "Property": "MON Margin II EUR (%)"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
         "name": "a03491c406ba3a14382a",
@@ -473,6 +502,98 @@
               }
             },
             "Property": "MON s_eur_net"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "e6dd4f20149eeb640099",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Model"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "c7d1fa86ec54a0102141",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "8ebbdd66000d36616067",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Brand"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "d928c72366ada0e22120",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer Name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "76b66b570587db40119a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "MON Margin II EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "eb64ee07393e70c0e688",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "MON s_eur_corp_cost"
           }
         },
         "type": "Advanced"

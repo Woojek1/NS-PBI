@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_customer"
+                      "Entity": "d_product"
                     }
                   },
-                  "Property": "Customer Code"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "d_customer.Customer Code",
-              "nativeQueryRef": "Customer code",
-              "displayName": "Customer code"
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line",
+              "displayName": "Line"
             },
             {
               "field": {
@@ -57,6 +57,34 @@
               },
               "queryRef": "_Miary.YTD DELTA Margin II EUR (%)",
               "nativeQueryRef": "YTD DELTA Margin II EUR (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary_Facts"
+                    }
+                  },
+                  "Property": "YTD DELTA Margin II EUR"
+                }
+              },
+              "queryRef": "_Miary_Facts.YTD DELTA Margin II EUR",
+              "nativeQueryRef": "YTD DELTA Margin II EUR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary_Facts"
+                    }
+                  },
+                  "Property": "YTD DELTA s_eur_corp_cost"
+                }
+              },
+              "queryRef": "_Miary_Facts.YTD DELTA s_eur_corp_cost",
+              "nativeQueryRef": "YTD DELTA s_eur_corp_cost"
             },
             {
               "field": {
@@ -249,5 +277,281 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "06a0c953a9800d291082",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer Code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "3c12e5fc040dcacc242b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA s_eur_net"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "10d00d7caa38ed4dc410",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA Margin II EUR (%)"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "a33afdc2780e01050a33",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_assembly"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "7ac9593a788c960b3204",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_comm"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "0b4803c61c0296a80801",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_compl_act"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "5577c4f01e1c75db8446",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_compl_prod"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "43ae8a76483e1145b178",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_lic"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "7ff18ea0b1392ac640b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_sinsuran"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "de42797460a2327acb30",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_stock_deprec"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "6f6767cd05ed0bea588a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_transport"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "15626805975214a0a450",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA c_eur_varfixed"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "ae881a93c63d54c4e59d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Model"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "cf7d0def5381b06ae047",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customer"
+              }
+            },
+            "Property": "Customer Name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "9ed469321c730049d33c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Brand"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "a129221d65be653000e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "5215064e3d26cadc6456",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA Margin II EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "837e6a8cdc53240922b1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA s_eur_corp_cost"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

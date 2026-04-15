@@ -191,7 +191,8 @@
             "queryRefs": [
               "d_time_mon.mon_name"
             ],
-            "isCollapsed": true
+            "isCollapsed": true,
+            "isPinned": true
           }
         ],
         "root": {}
@@ -509,7 +510,7 @@
         "isHiddenInViewMode": true
       },
       {
-        "name": "6e4c209ae8b730f32a00",
+        "name": "98ad9cc557e556199a17",
         "field": {
           "Measure": {
             "Expression": {
@@ -520,10 +521,11 @@
             "Property": "MON s_eur_net"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
       },
       {
-        "name": "8216700c38b3673197a6",
+        "name": "0fdffbb47e265710e004",
         "field": {
           "Measure": {
             "Expression": {
@@ -534,7 +536,24 @@
             "Property": "MON s_eur_corp_cost"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "31b9a39e4d9290031890",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD Margin II PLN (%)"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       }
     ]
   }

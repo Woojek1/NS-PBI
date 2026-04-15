@@ -273,10 +273,40 @@ cultureInfo en-US
 			          "ConceptualProperty": "DATA MON c_eur_comm"
 			        }
 			      },
+			      "State": "Generated"
+			    },
+			    "table_miary_data.data_mon_c_eur_varfixed": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary_Data",
+			          "ConceptualProperty": "DATA MON c_eur_varfixed"
+			        }
+			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Commission EUR": {
+			          "Variance Fixed Cost EUR": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_miary_data.data_ytd_c_eur_varfixed": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary_Data",
+			          "ConceptualProperty": "DATA YTD c_eur_varfixed"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Variance Fixed Cost EUR": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

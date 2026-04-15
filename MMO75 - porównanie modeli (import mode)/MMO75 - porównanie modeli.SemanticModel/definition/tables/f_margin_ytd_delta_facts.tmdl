@@ -460,13 +460,32 @@ table f_margin_ytd_delta_facts
 	partition f_margin_ytd_delta_facts = m
 		mode: import
 		source =
-				let
-				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]),
-				    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
-				    mmo75_Schema = zenith_Database{[Name="mmo75",Kind="Schema"]}[Data],
-				    f_margin_ytd_delta_facts_Table = mmo75_Schema{[Name="f_margin_ytd_delta_facts",Kind="Table"]}[Data]
-				in
-				    f_margin_ytd_delta_facts_Table
+				// let
+				//     Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]),
+				//     zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
+				//     mmo75_Schema = zenith_Database{[Name="mmo75",Kind="Schema"]}[Data],
+				//     f_margin_ytd_delta_facts_Table = mmo75_Schema{[Name="f_margin_ytd_delta_facts",Kind="Table"]}[Data]
+				// in
+				//     f_margin_ytd_delta_facts_Table
+				
+				
+				
+				
+				
+				    Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]
+				    ){[Name="zenith",Kind="Database"]}[Data],
+				    "
+				    select *
+				    from `zenith`.`mmo75`.`f_margin_ytd_delta_facts`
+				    where mon_name >= 'M-2023-01'
+				    ",
+				    null,
+				    [EnableFolding=true]
+				    )
 
 	annotation PBI_NavigationStepName = Navigation
 
