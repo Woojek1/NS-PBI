@@ -75,13 +75,6 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''f_margin75_facts''[Assembly PLN]'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
                                 "Value": "'''f_margin75_facts''[Margin II % (PLN)]'"
                               }
                             }
@@ -105,17 +98,6 @@
                         ],
                         "decomposedIdentities": {
                           "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'''f_margin75_facts''[Assembly PLN]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
                             [
                               {
                                 "0": [
@@ -145,51 +127,10 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Assembly PLN"
-                          },
-                          {
                             "0": "Margin II % (PLN)"
                           }
                         ]
                       }
-                    }
-                  }
-                ]
-              }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "m",
-                    "Entity": "Miary",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "m"
-                              }
-                            },
-                            "Property": "Measures"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'marg'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
                     }
                   }
                 ]
