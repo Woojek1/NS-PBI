@@ -39,7 +39,7 @@ table d_time_mon
 
 	partition d_time_mon = m
 		mode: import
-		source = Value.NativeQuery(Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]){[Name="zenith",Kind="Database"]}[Data], "select #(lf)        mon_id,#(lf)        year_name,#(lf)        quart_name,#(lf)        mon_name#(lf)    from zenith.edw.d_time_mon#(lf)    where#(lf)        year_name >= 2023#(lf)    and#(lf)         year_name <= year(current_date())", null, [EnableFolding=true])
+		source = Value.NativeQuery(Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]){[Name="zenith",Kind="Database"]}[Data], "select #(lf)        mon_id,#(lf)        year_name,#(lf)        quart_name,#(lf)        mon_name#(lf)    from zenith.edw.d_time_mon#(lf)    where#(lf)        year_name >= 2022#(lf)    and#(lf)         year_name <= year(current_date())", null, [EnableFolding=true])
 
 	annotation PBI_NavigationStepName = Navigation
 
