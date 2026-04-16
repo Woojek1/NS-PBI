@@ -61,12 +61,12 @@
                       "Entity": "_Miary_Data"
                     }
                   },
-                  "Property": "DATA MON c_eur_varfixed"
+                  "Property": "DATA MON c_eur_assembly"
                 }
               },
-              "queryRef": "_Miary_Data.DATA MON c_eur_varfixed",
-              "nativeQueryRef": "Variance Fixed Cost EUR",
-              "displayName": "Variance Fixed Cost EUR"
+              "queryRef": "_Miary_Data.DATA MON c_eur_assembly",
+              "nativeQueryRef": "Assembly EUR ",
+              "displayName": "Assembly EUR "
             }
           ],
           "fieldParameters": [
@@ -245,7 +245,22 @@
           }
         },
         "type": "Advanced",
+        "howCreated": "User",
         "isHiddenInViewMode": true
+      },
+      {
+        "name": "b904c1b4c1d41d0ced0c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Data"
+              }
+            },
+            "Property": "DATA MON c_eur_assembly"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

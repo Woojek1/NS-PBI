@@ -82,7 +82,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''_Miary_Data''[DATA MON c_eur_varfixed]'"
+                                "Value": "'''_Miary_Data''[DATA MON c_eur_assembly]'"
                               }
                             }
                           ]
@@ -110,7 +110,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''_Miary_Data''[DATA MON c_eur_varfixed]'"
+                                      "Value": "'''_Miary_Data''[DATA MON c_eur_assembly]'"
                                     }
                                   }
                                 ]
@@ -134,7 +134,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Variance Fixed Cost EUR"
+                            "0": "Assembly EUR "
                           }
                         ]
                       }
@@ -179,5 +179,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6c974b910e8b3246a888",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Parameter DATA MON"
+              }
+            },
+            "Property": "Parameter DATA MON"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

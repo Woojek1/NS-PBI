@@ -173,26 +173,13 @@
               "d_customer.Customer Code"
             ],
             "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "d_customer"
-                    }
-                  },
-                  "Property": "Customer Code"
-                }
-              }
-            ],
             "isPinned": true
           },
           {
             "queryRefs": [
               "d_time_mon.mon_name"
             ],
-            "isCollapsed": true,
-            "isPinned": true
+            "isCollapsed": true
           }
         ],
         "root": {}
@@ -552,6 +539,22 @@
           }
         },
         "type": "Advanced",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "457d448398dace33e4e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Model"
+          }
+        },
+        "type": "Categorical",
         "howCreated": "User",
         "isHiddenInViewMode": true
       }

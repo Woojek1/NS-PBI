@@ -15,6 +15,7 @@
     "filters": [
       {
         "name": "7b97113ec3fd882c06e3",
+        "displayName": "Year",
         "ordinal": 0,
         "field": {
           "Column": {
@@ -31,6 +32,7 @@
       },
       {
         "name": "300274e51f1710130751",
+        "displayName": "Month name",
         "ordinal": 1,
         "field": {
           "Column": {
@@ -78,8 +80,40 @@
         "howCreated": "User"
       },
       {
-        "name": "b791b9b2f062e16f9cd8",
+        "name": "4925a22f967e4003c9d9",
         "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_organization_team"
+              }
+            },
+            "Property": "Department Code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "240c3b9b706550176bb0",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_organization_team"
+              }
+            },
+            "Property": "Section Code"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "b791b9b2f062e16f9cd8",
+        "ordinal": 6,
         "field": {
           "Column": {
             "Expression": {
@@ -95,7 +129,7 @@
       },
       {
         "name": "1c3d414f395add68571a",
-        "ordinal": 5,
+        "ordinal": 7,
         "field": {
           "Column": {
             "Expression": {
@@ -111,7 +145,7 @@
       },
       {
         "name": "bd88d494ee7ac1d0f7cd",
-        "ordinal": 6,
+        "ordinal": 8,
         "field": {
           "Column": {
             "Expression": {

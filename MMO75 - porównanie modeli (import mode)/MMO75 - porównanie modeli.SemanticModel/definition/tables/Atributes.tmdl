@@ -42,9 +42,11 @@ table Atributes
 				{
 				    ("Customer code", NAMEOF('d_customer'[Customer Code]), 1),
 				    ("Customer name", NAMEOF('d_customer'[Customer Name]), 1),
-				    ("Line", NAMEOF(d_product[Line]),2),
-				    ("Model", NAMEOF(d_product[Model]),2),
-				    ("Brand", NAMEOF(d_product[Brand]),2)
+				    ("Department code", NAMEOF(d_organization_team[Department Code]),2),
+				    ("Section code", NAMEOF(d_organization_team[Section Code]),2),
+				    ("Line", NAMEOF(d_product[Line]),3),
+				    ("Model", NAMEOF(d_product[Model]),3),
+				    ("Brand", NAMEOF(d_product[Brand]),3)
 				}
 
 	annotation PBI_Id = 1f148f3a4cf24af183fb8e6fe50aaf22

@@ -78,3 +78,23 @@ relationship 8ec2d3f2-f4ca-35a8-991e-8b7c4a0d33cc
 	fromColumn: f_margin_ytd_data.comp_cost_id
 	toColumn: d_company_cost.comp_id
 
+relationship AutoDetected_1449558d-4f77-45f3-a14a-96633eb5b61f
+	fromColumn: f_margin_mon_facts.team_id
+	toColumn: d_organization_team.team_id
+
+relationship AutoDetected_26fa2827-c086-4a1f-8576-5082ec1124b2
+	fromColumn: f_margin_ytd_delta_facts.team_id
+	toColumn: d_organization_team.team_id
+
+relationship 0a455c57-0f6b-62ca-b02a-3ac38e3dd672
+	fromColumn: f_margin_ytd_facts.team_id
+	toColumn: d_organization_team.team_id
+
+relationship cc2ba940-06f1-b1fd-39c6-8e8088c39afb
+	fromColumn: f_margin_mon_data.team_id
+	toColumn: d_organization_team.team_id
+
+relationship 3371c425-82d0-410f-1b45-d0e9e28426ba
+	fromColumn: f_margin_ytd_data.team_id
+	toColumn: d_organization_team.team_id
+

@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["f_margin_ytd_data","f_margin_ytd_facts","f_margin_mon_data","f_margin_mon_facts","f_margin_ytd_delta_facts","d_customer","d_time_mon","d_product","d_company_cost"]
+annotation PBI_QueryOrder = ["f_margin_ytd_data","f_margin_ytd_facts","f_margin_mon_data","f_margin_mon_facts","f_margin_ytd_delta_facts","d_customer","d_time_mon","d_product","d_company_cost","d_organization_team"]
 
 annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
 
@@ -27,6 +27,7 @@ ref table _Miary_Data
 ref table d_company_cost
 ref table f_margin_ytd_data
 ref table 'Parameter DATA YTD'
+ref table d_organization_team
 
 ref cultureInfo en-US
 
