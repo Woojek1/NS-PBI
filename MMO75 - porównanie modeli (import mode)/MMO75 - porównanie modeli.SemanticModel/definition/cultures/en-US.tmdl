@@ -322,6 +322,48 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "table_miary_facts.ytd_delta_s_pln_net": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary_Facts",
+			          "ConceptualProperty": "YTD DELTA s_pln_net"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Sale PLN": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_miary_facts.ytd_delta_s_pln_corp_cost": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary_Facts",
+			          "ConceptualProperty": "YTD DELTA s_pln_corp_cost"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Manufacturing Cost PLN": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  }
 			}

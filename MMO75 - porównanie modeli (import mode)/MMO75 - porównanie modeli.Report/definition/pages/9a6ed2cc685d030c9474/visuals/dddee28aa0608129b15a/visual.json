@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "dddee28aa0608129b15a",
   "position": {
-    "x": 39.876923076923077,
-    "y": 119.63076923076922,
+    "x": 40.5,
+    "y": 120,
     "z": 0,
-    "height": 175.75384615384615,
-    "width": 1834.3384615384614,
+    "height": 451.5,
+    "width": 1833,
     "tabOrder": 0
   },
   "visual": {
@@ -276,6 +276,68 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'YTD DELTA'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
@@ -523,34 +585,6 @@
         "type": "Categorical",
         "howCreated": "User",
         "isHiddenInViewMode": true
-      },
-      {
-        "name": "bbfbbb029ba94aba9c39",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary_Facts"
-              }
-            },
-            "Property": "YTD DELTA Margin II EUR"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "13d74ead00d991005027",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Miary_Facts"
-              }
-            },
-            "Property": "YTD DELTA s_eur_corp_cost"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
