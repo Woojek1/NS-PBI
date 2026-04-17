@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "6a29d516df521454e942",
   "position": {
-    "x": 419.04761904761904,
-    "y": 96,
+    "x": 418.33333333333337,
+    "y": 96.666666666666671,
     "z": 0,
-    "height": 559.23809523809518,
-    "width": 1500.952380952381,
+    "height": 560,
+    "width": 1501.6666666666667,
     "tabOrder": 0
   },
   "visual": {
@@ -141,6 +141,90 @@
               },
               "queryRef": "d_time_mon.mon_name",
               "nativeQueryRef": "mon_name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Faktor"
+                }
+              },
+              "queryRef": "f_margin75_facts.Faktor",
+              "nativeQueryRef": "Faktor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Margin II % (PLN)"
+                }
+              },
+              "queryRef": "f_margin75_facts.Margin II % (PLN)",
+              "nativeQueryRef": "Margin II % (PLN)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Base Sales PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Base Sales PLN",
+              "nativeQueryRef": "Base Sales PLN"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Base Sales EUR"
+                }
+              },
+              "queryRef": "f_margin75_facts.Base Sales EUR",
+              "nativeQueryRef": "Base Sales EUR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Unit Base Sales"
+                }
+              },
+              "queryRef": "f_margin75_facts.Unit Base Sales",
+              "nativeQueryRef": "Unit Base Sales"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Sale Quantity"
+                }
+              },
+              "queryRef": "f_margin75_facts.Sale Quantity",
+              "nativeQueryRef": "Sale Quantity"
             }
           ]
         }
@@ -155,7 +239,7 @@
                     "Entity": "d_product"
                   }
                 },
-                "Property": "Pricelist model name"
+                "Property": "Index Code"
               }
             },
             "direction": "Ascending"
@@ -253,5 +337,252 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9a69d2cfe1510dac39a2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "63b80fdc8e46ccd76064",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Pricelist model name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a5041baf406037dcb4c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Index Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6020dd7fec00d7e0043e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Index Code"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_product",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Contains": {
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "Index Code"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'WK40173-00000005'"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "d23839e29a50878c6876",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Unit Manufacturing Cost"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4d4d41522224545d01c0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Unit Factor"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f06eb5cd7ac54762020b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_pricelist"
+              }
+            },
+            "Property": "sales_price_group_id"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "43137dd7209460284b1b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_pricelist"
+              }
+            },
+            "Property": "pricelist_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5636f552020e3bd1b5cc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "51de60d1010d393a038b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Faktor"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ef8a7bed0e0e4ed0b30c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin II % (PLN)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7ece5aa10d032e38ece5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Base Sales PLN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "be0bc40e58c837001935",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Unit Base Sales"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8d318f1b17c8077dc99e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Base Sales EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ec2e3675c8052b112d06",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Sale Quantity"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
