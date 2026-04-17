@@ -481,7 +481,8 @@ table f_margin_ytd_delta_facts
 				    "
 				    select *
 				    from `zenith`.`mmo75`.`f_margin_ytd_delta_facts`
-				    where mon_name >= 'M-2023-01'
+				    where time_id >= 302
+				    -- M-2023-01
 				    ",
 				    null,
 				    [EnableFolding=true]

@@ -82,7 +82,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''_Miary_Data''[DATA YTD c_eur_varfixed]'"
+                                "Value": "'''_Miary_Data''[DATA YTD c_eur_assembly]'"
                               }
                             }
                           ]
@@ -110,7 +110,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''_Miary_Data''[DATA YTD c_eur_varfixed]'"
+                                      "Value": "'''_Miary_Data''[DATA YTD c_eur_assembly]'"
                                     }
                                   }
                                 ]
@@ -134,7 +134,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Variance Fixed Cost EUR"
+                            "0": "Assembly EUR "
                           }
                         ]
                       }
@@ -171,8 +171,39 @@
             }
           }
         }
+      ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Measures'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "41e69bf7b9bc03135619",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Parameter DATA YTD"
+              }
+            },
+            "Property": "Parameter DATA YTD"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

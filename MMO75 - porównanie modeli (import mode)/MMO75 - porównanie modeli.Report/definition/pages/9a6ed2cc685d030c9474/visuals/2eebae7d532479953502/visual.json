@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_product"
+                      "Entity": "d_customer"
                     }
                   },
-                  "Property": "Line"
+                  "Property": "Customer Code"
                 }
               },
-              "queryRef": "d_product.Line",
-              "nativeQueryRef": "Line",
-              "displayName": "Line"
+              "queryRef": "d_customer.Customer Code",
+              "nativeQueryRef": "Customer code",
+              "displayName": "Customer code"
             },
             {
               "field": {
@@ -294,7 +294,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -536,6 +535,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -568,6 +568,36 @@
         },
         "type": "Categorical",
         "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "b0d876dfed893aa5d17a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "MON Margin II EUR"
+          }
+        },
+        "type": "Advanced",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "54dc0bf10b76c34d073a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "MON s_eur_corp_cost"
+          }
+        },
+        "type": "Advanced",
         "isHiddenInViewMode": true
       }
     ],

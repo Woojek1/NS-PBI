@@ -37,7 +37,8 @@ table d_time_mon
 	partition d_time_mon = m
 		mode: import
 		source = ```
-				Value.NativeQuery(
+				let
+				    d_time_mon = Value.NativeQuery(
 				    Databricks.Catalogs(
 				        "adb-16306551450739.19.azuredatabricks.net",
 				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
@@ -53,7 +54,10 @@ table d_time_mon
 				        where year_name >= 2023 and year_name <= year(current_date())
 				        ",
 				        null,
-				    [EnableFolding=true])
+				    [EnableFolding=true]),
+				    #"Sorted Rows" = Table.Sort(d_time_mon,{{"mon_id", Order.Ascending}})
+				in
+				    #"Sorted Rows"
 				```
 
 	annotation PBI_NavigationStepName = Navigation

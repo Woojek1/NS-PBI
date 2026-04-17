@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_product"
+                      "Entity": "d_customer"
                     }
                   },
-                  "Property": "Line"
+                  "Property": "Customer Code"
                 }
               },
-              "queryRef": "d_product.Line",
-              "nativeQueryRef": "Line",
-              "displayName": "Line"
+              "queryRef": "d_customer.Customer Code",
+              "nativeQueryRef": "Customer code",
+              "displayName": "Customer code"
             },
             {
               "field": {
@@ -293,7 +293,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -522,7 +521,36 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
+      },
+      {
+        "name": "bbfbbb029ba94aba9c39",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA Margin II EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "13d74ead00d991005027",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary_Facts"
+              }
+            },
+            "Property": "YTD DELTA s_eur_corp_cost"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
