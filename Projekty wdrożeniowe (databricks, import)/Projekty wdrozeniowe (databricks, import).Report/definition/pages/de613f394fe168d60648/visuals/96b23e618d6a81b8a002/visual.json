@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "96b23e618d6a81b8a002",
   "position": {
-    "x": 1556.5714285714287,
-    "y": 185,
+    "x": 1555,
+    "y": 265,
     "z": 2000,
     "height": 70,
     "width": 340.11428571428576,
@@ -343,6 +343,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "39b359176d85eec75e4a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

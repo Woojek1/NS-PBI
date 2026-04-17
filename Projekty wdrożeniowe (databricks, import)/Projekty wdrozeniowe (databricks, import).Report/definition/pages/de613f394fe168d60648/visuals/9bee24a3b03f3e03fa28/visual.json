@@ -1009,5 +1009,84 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "46e451c36d0740ea30c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8d9c62ddcc755099eb83",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "adf109ab7c359e075a90",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_projects_budget"
+              }
+            },
+            "Property": "budget_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dc4c40ad2ce139545640",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vm_pbi_d_projects_budget"
+                  }
+                },
+                "Property": "debet_amount"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7c48950baeca7342880d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_projects_budget"
+              }
+            },
+            "Property": "budget_year"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

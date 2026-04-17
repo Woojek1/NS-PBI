@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon"
+                      "Entity": "vm_pbi_d_projects_budget"
                     }
                   },
-                  "Property": "year_name"
+                  "Property": "budget_year"
                 }
               },
-              "queryRef": "d_time_mon.year_name",
-              "nativeQueryRef": "year_name",
+              "queryRef": "vm_pbi_d_projects_budget.budget_year",
+              "nativeQueryRef": "budget_year",
               "active": true
             }
           ]
@@ -138,6 +138,11 @@
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },

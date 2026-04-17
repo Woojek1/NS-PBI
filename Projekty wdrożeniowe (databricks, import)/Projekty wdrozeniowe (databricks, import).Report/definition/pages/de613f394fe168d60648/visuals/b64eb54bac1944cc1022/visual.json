@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "b64eb54bac1944cc1022",
   "position": {
-    "x": 1555.2,
-    "y": 105,
+    "x": 1555,
+    "y": 185,
     "z": 3000,
     "height": 70,
     "width": 338.74285714285713,
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon"
+                      "Entity": "vm_pbi_d_projects_budget"
                     }
                   },
-                  "Property": "year_name"
+                  "Property": "budget_year"
                 }
               },
-              "queryRef": "d_time_mon.year_name",
-              "nativeQueryRef": "year_name",
+              "queryRef": "vm_pbi_d_projects_budget.budget_year",
+              "nativeQueryRef": "budget_year",
               "active": true
             }
           ]
@@ -61,7 +61,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rok'"
+                  "Value": "'Budżet na rok'"
                 }
               }
             },
@@ -138,6 +138,11 @@
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },
@@ -284,5 +289,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fb0b2df4ca1bcd4beb13",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_projects_budget"
+              }
+            },
+            "Property": "budget_year"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

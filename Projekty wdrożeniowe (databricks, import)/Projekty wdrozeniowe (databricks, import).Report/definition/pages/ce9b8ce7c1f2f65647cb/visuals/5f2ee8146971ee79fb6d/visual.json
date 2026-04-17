@@ -6,7 +6,7 @@
     "y": 105,
     "z": 16000,
     "height": 70,
-    "width": 338.74285714285713,
+    "width": 340,
     "tabOrder": 16000
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon"
+                      "Entity": "vm_pbi_d_projects_budget"
                     }
                   },
-                  "Property": "year_name"
+                  "Property": "budget_year"
                 }
               },
-              "queryRef": "d_time_mon.year_name",
-              "nativeQueryRef": "year_name",
+              "queryRef": "vm_pbi_d_projects_budget.budget_year",
+              "nativeQueryRef": "budget_year",
               "active": true
             }
           ]
@@ -138,6 +138,11 @@
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },
@@ -284,5 +289,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dfaea3907150420d0b06",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_projects_budget"
+              }
+            },
+            "Property": "budget_year"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
