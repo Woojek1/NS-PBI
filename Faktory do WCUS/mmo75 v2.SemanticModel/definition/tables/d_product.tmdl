@@ -151,6 +151,16 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
+	column TKW
+		dataType: double
+		lineageTag: 00232091-f205-4e0c-9116-570d7d986c1f
+		summarizeBy: none
+		sourceColumn: TKW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition d_product = m
 		mode: import
 		source =
@@ -186,11 +196,14 @@ table d_product
 				            when npi_no is null then false
 				            else true
 				        end                as `NPI flag`,
-				        p.price_model_name as `Pricelist model name`
+				        p.price_model_name as `Pricelist model name`,
+				        tkw.cost            as `TKW`
 				    from zenith.edw.d_product p
+				    inner join zenith.prod_tkw.tkw_today tkw
+				    on p.prod_si_id = tkw.prod_si_id
 				    where exists (
 				        select 1
-				        from zenith.mmo75.f_margin75_facts f
+				        from zenith.mmo75.f_margin_ytd_delta_facts f
 				        where f.prod_inv_id = p.prod_si_id
 				    )
 				    ",

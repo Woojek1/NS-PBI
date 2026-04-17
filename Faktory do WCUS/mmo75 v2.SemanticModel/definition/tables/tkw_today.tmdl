@@ -1,0 +1,350 @@
+table tkw_today
+	lineageTag: fd369655-30af-4c89-9435-389206dc1fa9
+
+	column company
+		dataType: string
+		lineageTag: cc0d0238-4989-4c36-a424-5ab441625a2a
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column contract
+		dataType: string
+		lineageTag: 170b89b6-28e6-4994-83f5-e734eb9cd769
+		summarizeBy: none
+		sourceColumn: contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_no
+		dataType: string
+		lineageTag: 0c939576-d3af-41e3-b76c-932191cdf0fc
+		summarizeBy: none
+		sourceColumn: part_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_code_db
+		dataType: string
+		lineageTag: 39e40a54-d6cb-4f34-ba77-024874a73744
+		summarizeBy: none
+		sourceColumn: type_code_db
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_code
+		dataType: string
+		lineageTag: a1386724-2328-45a2-b60a-28640578c818
+		summarizeBy: none
+		sourceColumn: type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column objstate
+		dataType: string
+		lineageTag: 8da01024-b124-4745-86c5-764ef37d4089
+		summarizeBy: none
+		sourceColumn: objstate
+
+		annotation SummarizationSetBy = Automatic
+
+	column activeind_db
+		dataType: string
+		lineageTag: a4b073ee-a95c-4306-8071-8d269f42a1d5
+		summarizeBy: none
+		sourceColumn: activeind_db
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_status
+		dataType: string
+		lineageTag: 9800d9dc-44a0-4a29-9d36-03a9f2e8543c
+		summarizeBy: none
+		sourceColumn: part_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column kwdr_value
+		dataType: double
+		lineageTag: f8355134-7397-4d80-a36b-5ea06f011d99
+		summarizeBy: sum
+		sourceColumn: kwdr_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lic_value
+		dataType: double
+		lineageTag: 297266db-b4aa-4ab0-87c1-333faf18d007
+		summarizeBy: sum
+		sourceColumn: lic_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lic_uom
+		dataType: string
+		lineageTag: fe1bb288-bcf3-4c05-9142-2ba37b75ff42
+		summarizeBy: none
+		sourceColumn: lic_uom
+
+		annotation SummarizationSetBy = Automatic
+
+	column kl000_amount
+		dataType: double
+		lineageTag: 9677b6f1-9b3b-43c1-93d5-519f6818a8b5
+		summarizeBy: sum
+		sourceColumn: kl000_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cost_currency
+		dataType: string
+		lineageTag: 3ef5829c-d853-4078-aef2-26ef57bfc3f6
+		summarizeBy: none
+		sourceColumn: cost_currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column curr_rate_pln
+		dataType: double
+		lineageTag: 446f6bf7-327f-44a7-9dfd-57906d88b2fb
+		summarizeBy: sum
+		sourceColumn: curr_rate_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column calculate_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c917792d-9bef-4fdb-ac49-e7b8787e4f38
+		summarizeBy: none
+		sourceColumn: calculate_date
+
+		variation Variation
+			isDefault
+			relationship: 4bf27f10-0dab-4152-9af6-f3951d04c3f5
+			defaultHierarchy: LocalDateTable_49ea3510-391d-440a-a603-e0aaf5fe281f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column prod_si_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ef44d799-cafd-4028-8f18-de2c3598d6d5
+		summarizeBy: sum
+		sourceColumn: prod_si_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column materialy_bezp
+		dataType: double
+		lineageTag: 21a75911-ef19-4917-b82a-2fe29aac501c
+		summarizeBy: sum
+		sourceColumn: materialy_bezp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column spawanie
+		dataType: double
+		lineageTag: 9c3c72c5-36a9-4896-87aa-691c020e6c3c
+		summarizeBy: sum
+		sourceColumn: spawanie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column chromowanie
+		dataType: double
+		lineageTag: 4f60b2a8-f984-4ab0-ac26-376d1d70f5d4
+		summarizeBy: sum
+		sourceColumn: chromowanie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mat_pakunkowe
+		dataType: double
+		lineageTag: f4e7d4cb-768e-4780-bf5b-c68e0dea8ea9
+		summarizeBy: sum
+		sourceColumn: mat_pakunkowe
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column koszty_pracy_bezp
+		dataType: double
+		lineageTag: 1b54cb93-b1d8-45a0-8a9c-f98d676fbbd7
+		summarizeBy: sum
+		sourceColumn: koszty_pracy_bezp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column koszty_wydz_zmienne
+		dataType: double
+		lineageTag: bc4647d6-4f28-407d-8463-ea110ed286ea
+		summarizeBy: sum
+		sourceColumn: koszty_wydz_zmienne
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column koszty_op_zewn
+		dataType: double
+		lineageTag: 4ed9a206-6f8b-4fb5-829d-c4b6c18596c7
+		summarizeBy: sum
+		sourceColumn: koszty_op_zewn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column koszty_proc_op_zewn
+		dataType: double
+		lineageTag: e41bd907-4e23-4b0e-bd0f-ca0487fbb351
+		summarizeBy: sum
+		sourceColumn: koszty_proc_op_zewn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dostawa_wew
+		dataType: double
+		lineageTag: 4e948d57-e195-47b6-b45b-2036b4f0c9e1
+		summarizeBy: sum
+		sourceColumn: dostawa_wew
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column braki
+		dataType: double
+		lineageTag: d5246135-4f8b-414b-9c08-55ec2e8af7f9
+		summarizeBy: sum
+		sourceColumn: braki
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column luszczki
+		dataType: double
+		lineageTag: 89a0e9fd-0ba1-4301-bc1c-7eb476af01fd
+		summarizeBy: sum
+		sourceColumn: luszczki
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column opp_zmienne
+		dataType: double
+		lineageTag: 9a5bdfd0-e5cc-4caa-bbd9-2398732b0264
+		summarizeBy: sum
+		sourceColumn: opp_zmienne
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column koszty_zmienne
+		dataType: double
+		lineageTag: 85ab472a-dda3-4528-a415-9071ebbc5c76
+		summarizeBy: sum
+		sourceColumn: koszty_zmienne
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amortyzacja
+		dataType: double
+		lineageTag: d12543ac-9448-45ee-805a-b6c19a1b78e2
+		summarizeBy: sum
+		sourceColumn: amortyzacja
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column koszty_wydz_stale
+		dataType: double
+		lineageTag: 62096aa3-f8c6-4034-b5fb-8132dac36adc
+		summarizeBy: sum
+		sourceColumn: koszty_wydz_stale
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column opp_stale
+		dataType: double
+		lineageTag: 108a063b-594a-45a7-bbc0-86eae626271b
+		summarizeBy: sum
+		sourceColumn: opp_stale
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column koszty_stale
+		dataType: double
+		lineageTag: 356f563a-70f0-4a00-ae0b-12d9e1ed41c1
+		summarizeBy: sum
+		sourceColumn: koszty_stale
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cost
+		dataType: double
+		lineageTag: bbe559f2-0009-4604-8a46-7ed31a1c641e
+		summarizeBy: sum
+		sourceColumn: cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition tkw_today = m
+		mode: import
+		source =
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        *
+				    from zenith.prod_tkw.tkw_today
+				    ",
+				    null,
+				    [EnableFolding=true]
+				)
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

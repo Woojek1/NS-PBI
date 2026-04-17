@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["f_margin75_facts","d_customer","d_product","d_organization","d_company","d_time_mon","d_pricelist"]
+annotation PBI_QueryOrder = ["f_margin75_facts","d_customer","d_product","d_organization","d_company","d_time_mon","d_pricelist","tkw_today"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -22,6 +22,9 @@ ref table Date
 ref table Miary
 ref table d_time_mon
 ref table d_pricelist
+ref table tkw_today
+ref table DateTableTemplate_cf2a4d34-c692-4040-9f62-21fe19e062bc
+ref table LocalDateTable_49ea3510-391d-440a-a603-e0aaf5fe281f
 
 ref cultureInfo en-US
 

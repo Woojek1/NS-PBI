@@ -22,3 +22,13 @@ relationship AutoDetected_5fd7fb37-2f74-42c9-b2bb-87cea407df3f
 	fromColumn: f_margin75_facts.pricelist_id
 	toColumn: d_pricelist.pricelist_id
 
+relationship 4bf27f10-0dab-4152-9af6-f3951d04c3f5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: tkw_today.calculate_date
+	toColumn: LocalDateTable_49ea3510-391d-440a-a603-e0aaf5fe281f.Date
+
+relationship 56b32244-c812-53d5-fae6-50d5269755e4
+	isActive: false
+	fromColumn: f_margin75_facts.prod_inv_id
+	toColumn: tkw_today.prod_si_id
+
