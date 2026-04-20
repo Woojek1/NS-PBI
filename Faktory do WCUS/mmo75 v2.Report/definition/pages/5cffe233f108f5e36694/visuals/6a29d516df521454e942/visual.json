@@ -48,6 +48,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "d_pricelist"
+                    }
+                  },
+                  "Property": "pricelist_code"
+                }
+              },
+              "queryRef": "d_pricelist.pricelist_code",
+              "nativeQueryRef": "pricelist_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "d_product"
                     }
                   },
@@ -225,6 +239,20 @@
               },
               "queryRef": "f_margin75_facts.Sale Quantity",
               "nativeQueryRef": "Sale Quantity"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Manufacturing Cost EUR"
+                }
+              },
+              "queryRef": "f_margin75_facts.Manufacturing Cost EUR",
+              "nativeQueryRef": "Manufacturing Cost EUR"
             }
           ]
         }
@@ -394,40 +422,7 @@
             "Property": "Index Code"
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "d_product",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Contains": {
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "Index Code"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "'WK40173-00000005'"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "type": "Advanced"
       },
       {
         "name": "d23839e29a50878c6876",
@@ -579,6 +574,49 @@
               }
             },
             "Property": "Sale Quantity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "28ca91e10cdb8d4e47e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_pricelist"
+              }
+            },
+            "Property": "pricelist_code"
+          }
+        },
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "4955436f2add44d98d0c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Manufacturing Cost EUR"
           }
         },
         "type": "Advanced"
