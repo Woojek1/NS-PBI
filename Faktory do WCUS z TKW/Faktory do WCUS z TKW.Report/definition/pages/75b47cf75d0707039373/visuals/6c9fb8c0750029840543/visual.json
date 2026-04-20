@@ -1,0 +1,327 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "6c9fb8c0750029840543",
+  "position": {
+    "x": 0,
+    "y": 150,
+    "z": 1000,
+    "height": 727.5,
+    "width": 1867.5,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Model"
+                }
+              },
+              "queryRef": "d_product.Model",
+              "nativeQueryRef": "Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Index Code"
+                }
+              },
+              "queryRef": "d_product.Index Code",
+              "nativeQueryRef": "Index Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Index Name"
+                }
+              },
+              "queryRef": "d_product.Index Name",
+              "nativeQueryRef": "Index Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist"
+                    }
+                  },
+                  "Property": "price_list_no"
+                }
+              },
+              "queryRef": "pricelist.price_list_no",
+              "nativeQueryRef": "Kod Cennika",
+              "displayName": "Kod Cennika"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pricelist"
+                        }
+                      },
+                      "Property": "sales_price"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Sum(pricelist.sales_price)",
+              "nativeQueryRef": "Cena cennikowa",
+              "displayName": "Cena cennikowa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist"
+                    }
+                  },
+                  "Property": "currency_code"
+                }
+              },
+              "queryRef": "pricelist.currency_code",
+              "nativeQueryRef": "Waluta cennika",
+              "displayName": "Waluta cennika"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Faktor"
+                }
+              },
+              "queryRef": "_Measures.Faktor",
+              "nativeQueryRef": "Faktor"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "pricelist"
+                      }
+                    },
+                    "Property": "sales_price"
+                  }
+                },
+                "Function": 4
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "368.1017885135044D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Model"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "721.8498268411465D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Index Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "167.33335812353556D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pricelist.sales_price)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "219.8992868082978D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Index Code"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e3268b3ee682ab308067",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Model"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_product",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Model"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'!Niesklasyfikowane'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

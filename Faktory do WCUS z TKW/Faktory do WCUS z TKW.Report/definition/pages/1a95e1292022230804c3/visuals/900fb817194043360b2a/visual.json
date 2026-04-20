@@ -1,0 +1,470 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "900fb817194043360b2a",
+  "position": {
+    "x": 0,
+    "y": 230,
+    "z": 1000,
+    "height": 726,
+    "width": 1920,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Index Name"
+                }
+              },
+              "queryRef": "d_product.Index Name",
+              "nativeQueryRef": "Index Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Index Code"
+                }
+              },
+              "queryRef": "d_product.Index Code",
+              "nativeQueryRef": "Index Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Model"
+                }
+              },
+              "queryRef": "d_product.Model",
+              "nativeQueryRef": "Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist"
+                    }
+                  },
+                  "Property": "price_list_no"
+                }
+              },
+              "queryRef": "pricelist.price_list_no",
+              "nativeQueryRef": "Kod cennika",
+              "displayName": "Kod cennika"
+            },
+            {
+              "field": {
+                "NativeVisualCalculation": {
+                  "Language": "dax",
+                  "Expression": "EXPANDALL(MAX([Sum of sales_price_Base]), ROWS COLUMNS)",
+                  "Name": "Cena cennikowa"
+                },
+                "Annotations": {
+                  "customTotalMetadata": {
+                    "baseQueryName": "Sum(pricelist.sales_price)"
+                  }
+                }
+              },
+              "queryRef": "select1",
+              "nativeQueryRef": "Cena cennikowa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist"
+                    }
+                  },
+                  "Property": "currency_code"
+                }
+              },
+              "queryRef": "pricelist.currency_code",
+              "nativeQueryRef": "Waluta cennika",
+              "displayName": "Waluta cennika"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pricelist"
+                        }
+                      },
+                      "Property": "sales_price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pricelist.sales_price)",
+              "nativeQueryRef": "Sum of sales_price_Base",
+              "hidden": true,
+              "displayName": "Sum of sales_price_Base"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "TKW cost for current pricelist"
+                }
+              },
+              "queryRef": "_Measures.TKW cost for current pricelist",
+              "nativeQueryRef": "TKW",
+              "displayName": "TKW"
+            },
+            {
+              "field": {
+                "NativeVisualCalculation": {
+                  "Language": "dax",
+                  "Expression": "EXPANDALL(MAX([Faktor_Base]), ROWS COLUMNS)",
+                  "Name": "Faktor"
+                },
+                "Annotations": {
+                  "customTotalMetadata": {
+                    "baseQueryName": "_Measures.Faktor"
+                  }
+                }
+              },
+              "queryRef": "select",
+              "nativeQueryRef": "Faktor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Faktor"
+                }
+              },
+              "queryRef": "_Measures.Faktor",
+              "nativeQueryRef": "Faktor_Base",
+              "hidden": true,
+              "displayName": "Faktor_Base"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_product"
+                  }
+                },
+                "Property": "Index Code"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "605.5280943183825D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Index Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "384.00543627736323D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Model"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "137D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.TKW cost for current pricelist"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "210D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "d_product.Index Code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "177.5000060415491D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select1"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "pricelist.price_list_no"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "select"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.TKW cost for current pricelist"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select1"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

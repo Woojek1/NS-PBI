@@ -1,0 +1,96 @@
+table tkw_hist
+	lineageTag: 2dfe6ddf-e05f-4e81-8534-f96f8606f49a
+
+	column prod_si_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a39b94cb-9cd9-4e71-9be4-bb3ae2a6a996
+		summarizeBy: none
+		sourceColumn: prod_si_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_no
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 59a9fe27-187b-4819-ae0e-fc5ca0963a94
+		summarizeBy: none
+		sourceColumn: part_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_status
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 07c5622c-fe97-46ed-a0e3-0254d60a572b
+		summarizeBy: none
+		sourceColumn: part_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column calculate_date
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 8c512d36-a490-443d-b2ed-d175181a3a2f
+		summarizeBy: none
+		sourceColumn: calculate_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column cost_currency
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0683056c-0389-4bbc-a17c-18ea5ecbbbe6
+		summarizeBy: none
+		sourceColumn: cost_currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost
+		dataType: double
+		sourceProviderType: decimal(18, 4)
+		lineageTag: b503d2bb-f1cc-42e3-9db4-1210d1357585
+		summarizeBy: sum
+		sourceColumn: cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition tkw_hist = m
+		mode: import
+		source =
+				let
+				    d_product = Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    select
+				        prod_si_id,
+				        part_no,
+				        part_status,
+				        calculate_date,
+				        cost_currency,
+				        cost
+				    from
+				        zenith.prod_tkw.tkw_today
+				--    where
+				--        calculate_date >= date_sub(current_date(), 2)
+				    ",
+				    null,
+				    [EnableFolding=true]
+				    )
+				in
+				    d_product
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

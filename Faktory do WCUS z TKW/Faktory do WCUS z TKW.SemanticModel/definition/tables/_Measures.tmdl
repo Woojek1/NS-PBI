@@ -1,0 +1,60 @@
+table _Measures
+	lineageTag: 3fad77aa-e5ef-489f-964e-46914a6cee3c
+
+	measure Faktor = ```
+			
+			ROUND(
+			    DIVIDE(
+			        SUM(pricelist[sales_price]),
+			        [TKW cost for current pricelist]
+			        
+			    ),
+			    2
+			)
+			```
+		formatString: 0.00
+		lineageTag: 411e9768-5cad-46f7-b536-4a53560dbdc2
+
+	measure 'TKW cost for current pricelist' =
+			
+			SUMX(
+			    VALUES(pricelist[prod_si_id]),
+			    VAR _Prod = pricelist[prod_si_id]
+			    VAR _LastDate =
+			        CALCULATE(
+			            MAX(tkw_hist[calculate_date]),
+			            FILTER(
+			                ALL(tkw_hist),
+			                tkw_hist[prod_si_id] = _Prod
+			            )
+			        )
+			    RETURN
+			        CALCULATE(
+			            SUM(tkw_hist[cost]),   -- jeśli ma być jeden koszt na produkt, możesz zmienić na MAX
+			            FILTER(
+			                ALL(tkw_hist),
+			                tkw_hist[prod_si_id] = _Prod
+			                    && tkw_hist[calculate_date] = _LastDate
+			            )
+			        )
+			)
+		lineageTag: 9f95664a-b713-4908-a42c-2b7d7e25a637
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: 544e7969-1fe9-4edc-8a41-3f14f01d7a53
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = d794ce221dec4160a83f32629af73f6d
+
