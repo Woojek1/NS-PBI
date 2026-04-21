@@ -22,25 +22,31 @@ table _Measures
 			    VAR _Prod = pricelist[prod_si_id]
 			    VAR _LastDate =
 			        CALCULATE(
-			            MAX(tkw_hist[calculate_date]),
+			            MAX(tkw_today[calculate_date]),
 			            FILTER(
-			                ALL(tkw_hist),
-			                tkw_hist[prod_si_id] = _Prod
+			                ALL(tkw_today),
+			                tkw_today[prod_si_id] = _Prod
 			            )
 			        )
 			    RETURN
 			        CALCULATE(
-			            SUM(tkw_hist[cost]),   -- jeśli ma być jeden koszt na produkt, możesz zmienić na MAX
+			            MAX(tkw_today[tkw]),
 			            FILTER(
-			                ALL(tkw_hist),
-			                tkw_hist[prod_si_id] = _Prod
-			                    && tkw_hist[calculate_date] = _LastDate
+			                ALL(tkw_today),
+			                tkw_today[prod_si_id] = _Prod
+			                    && tkw_today[calculate_date] = _LastDate
 			            )
 			        )
 			)
 		lineageTag: 9f95664a-b713-4908-a42c-2b7d7e25a637
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ilosc_cennikow =
+			
+			DISTINCTCOUNT('pricelist'[price_list_no])
+		formatString: 0
+		lineageTag: f65a04d5-7352-4ee4-9115-8b5e405d49e0
 
 	column Value
 		isHidden

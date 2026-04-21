@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "b768770704a6e0303160",
   "position": {
-    "x": 902,
-    "y": 38,
+    "x": 1270,
+    "y": 36.666666666666671,
     "z": 2000,
-    "height": 88,
-    "width": 368,
+    "height": 86.666666666666671,
+    "width": 368.33333333333337,
     "tabOrder": 2000
   },
   "visual": {
@@ -27,14 +27,43 @@
                 }
               },
               "queryRef": "pricelist.price_list_no",
-              "nativeQueryRef": "Kod Cennika",
+              "nativeQueryRef": "Price List Code ",
               "active": true,
-              "displayName": "Kod Cennika"
+              "displayName": "Price List Code "
             }
           ]
         }
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "pricelist.price_list_no"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist"
+                    }
+                  },
+                  "Property": "price_list_no"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "data": [
         {

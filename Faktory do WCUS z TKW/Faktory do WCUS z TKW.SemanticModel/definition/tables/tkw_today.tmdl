@@ -1,4 +1,4 @@
-table tkw_hist
+table tkw_today
 	lineageTag: 2dfe6ddf-e05f-4e81-8534-f96f8606f49a
 
 	column prod_si_id
@@ -50,18 +50,17 @@ table tkw_hist
 
 		annotation SummarizationSetBy = Automatic
 
-	column cost
+	column tkw
 		dataType: double
-		sourceProviderType: decimal(18, 4)
-		lineageTag: b503d2bb-f1cc-42e3-9db4-1210d1357585
+		lineageTag: 9dbdae4b-a569-4076-bdb8-b7d3c1d473b9
 		summarizeBy: sum
-		sourceColumn: cost
+		sourceColumn: tkw
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition tkw_hist = m
+	partition tkw_today = m
 		mode: import
 		source =
 				let
@@ -78,11 +77,9 @@ table tkw_hist
 				        part_status,
 				        calculate_date,
 				        cost_currency,
-				        cost
+				        cost as tkw
 				    from
 				        zenith.prod_tkw.tkw_today
-				--    where
-				--        calculate_date >= date_sub(current_date(), 2)
 				    ",
 				    null,
 				    [EnableFolding=true]

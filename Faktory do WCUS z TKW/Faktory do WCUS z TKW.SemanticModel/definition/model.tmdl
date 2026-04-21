@@ -8,12 +8,12 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["d_product","tkw_hist","pricelist"]
+annotation PBI_QueryOrder = ["d_product","tkw_today","pricelist"]
 
 annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
 
 ref table d_product
-ref table tkw_hist
+ref table tkw_today
 ref table pricelist
 ref table _Measures
 

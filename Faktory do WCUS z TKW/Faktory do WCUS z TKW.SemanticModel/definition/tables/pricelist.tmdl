@@ -135,26 +135,6 @@ table pricelist
 
 		annotation SummarizationSetBy = Automatic
 
-	column cost
-		dataType: double
-		sourceProviderType: decimal(18, 4)
-		lineageTag: 27198f0f-4d77-45e1-8c2b-aee281f47678
-		summarizeBy: sum
-		sourceColumn: cost
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column line_code
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: f65fbe78-fbc2-40fb-ada0-0f7ded21e2d0
-		summarizeBy: none
-		sourceColumn: line_code
-
-		annotation SummarizationSetBy = Automatic
-
 	partition pricelist = m
 		mode: import
 		source =
@@ -169,7 +149,7 @@ table pricelist
 				    select
 				          *
 				    from
-				        sandbox.price_list.price_list_faktor
+				        controlling.faktory.price_list_faktor
 				    ",
 				    null,
 				    [EnableFolding=true]
