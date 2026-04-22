@@ -5,7 +5,7 @@
     "x": 0,
     "y": 230,
     "z": 1000,
-    "height": 726,
+    "height": 818.33333333333337,
     "width": 1920,
     "tabOrder": 1000
   },
@@ -466,5 +466,126 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f4e5c7fa24dc2a9d329c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Index Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "18bcadccb8e1003207cc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Index Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ad8101fd6b370040ec3b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_product"
+              }
+            },
+            "Property": "Model"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "83eeda44a03043b01446",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist"
+              }
+            },
+            "Property": "price_list_no"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ba624ae027d8019354c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist"
+              }
+            },
+            "Property": "currency_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fb567262d22843a89010",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pricelist"
+                  }
+                },
+                "Property": "sales_price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fd2aaec2e26672e10687",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "TKW cost for current pricelist"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a9b95720d659e9202457",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Faktor"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
