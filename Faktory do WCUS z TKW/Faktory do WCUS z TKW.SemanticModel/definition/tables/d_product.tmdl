@@ -75,7 +75,7 @@ table d_product
 		annotation SummarizationSetBy = Automatic
 
 	partition d_product = m
-		mode: import
+		mode: directQuery
 		source =
 				let
 				    d_product = Value.NativeQuery(
@@ -114,8 +114,8 @@ table d_product
 				-- from zenith.mmo75.f_margin_ytd_delta_facts f
 				-- where f.prod_inv_id = p.prod_si_id
 				-- )
-				    where
-				        p.prod_si_id in (select s.prod_id from zenith.edw.f_sale_data s)
+				--    where
+				--    p.prod_si_id in (select s.prod_id from zenith.edw.f_sale_data s)
 				    ",
 				    null,
 				    [EnableFolding=true]

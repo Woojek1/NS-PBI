@@ -1,0 +1,131 @@
+createOrReplace
+
+	table d_product
+		lineageTag: b5dd12ae-2e97-4eb0-8362-c9f5f2c2bd2f
+
+		column prod_si_id
+			dataType: int64
+			formatString: 0
+			sourceProviderType: int
+			lineageTag: fcc115e6-3efc-4beb-ad99-ddfd9157a95c
+			summarizeBy: none
+			sourceColumn: prod_si_id
+
+			annotation SummarizationSetBy = Automatic
+
+		column Line
+			dataType: string
+			sourceProviderType: nvarchar(65535)
+			lineageTag: 2cd22df8-e4fc-4e3c-a212-bd796fe5fdf8
+			summarizeBy: none
+			sourceColumn: Line
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Model Code'
+			dataType: string
+			sourceProviderType: nvarchar(65535)
+			lineageTag: 38aecd31-5026-456f-99bb-d472f8b70912
+			summarizeBy: none
+			sourceColumn: Model Code
+
+			annotation SummarizationSetBy = Automatic
+
+		column Model
+			dataType: string
+			sourceProviderType: nvarchar(65535)
+			lineageTag: d86b285b-f9f6-4bf0-a6f4-ab334d921b48
+			summarizeBy: none
+			sourceColumn: Model
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Index Name'
+			dataType: string
+			sourceProviderType: nvarchar(65535)
+			lineageTag: 43734dcd-1832-440d-8a4d-bbf27a08e5eb
+			summarizeBy: none
+			sourceColumn: Index Name
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Index Code'
+			dataType: string
+			sourceProviderType: nvarchar(65535)
+			lineageTag: c53189a5-ccc6-4bcd-80e7-a573535dbc41
+			summarizeBy: none
+			sourceColumn: Index Code
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Pricelist Model Code'
+			dataType: string
+			sourceProviderType: nvarchar(65535)
+			lineageTag: 4530296c-9f4a-4f67-ba2f-646f640c9e23
+			summarizeBy: none
+			sourceColumn: Pricelist Model Code
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Pricelist Model Name'
+			dataType: string
+			sourceProviderType: nvarchar(65535)
+			lineageTag: 32884d50-856e-4325-8be8-a95790029403
+			summarizeBy: none
+			sourceColumn: Pricelist Model Name
+
+			annotation SummarizationSetBy = Automatic
+
+		partition d_product = m
+			mode:directQuery
+			source =
+					let
+					    d_product = Value.NativeQuery(
+					    Databricks.Catalogs(
+					        "adb-16306551450739.19.azuredatabricks.net",
+					        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+					        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+					    ){[Name="zenith", Kind="Database"]}[Data],
+					    "
+					    select
+					        p.prod_si_id,
+					        p.line_name        as `Line`,
+					        p.model_code       as `Model Code`,
+					        p.model_name       as `Model`,
+					        p.price_model_code as `Pricelist Model Code`,
+					        p.price_model_name as `Pricelist Model Name`,
+					-- p.sgrp_name        as `Product Subgroup`,
+					-- p.supergrp_name    as `Product Supergroup`,
+					-- p.grp_name         as `Product Group`,
+					        p.prod_si_name     as `Index Name`,
+					        p.prod_si_code     as `Index Code`
+					-- p.brand_name        as `Brand`
+					-- p.bcg1_name_en     as `Business category`,
+					-- p.bcg2_name_en     as `Business subcategory`,
+					-- p.bcg3_name_en     as `Business cluster`,
+					-- p.line_novelties_flag as `Novelties flag`,
+					-- p.npi_no           as `NPI No`,
+					        -- case
+					        --     when npi_no is null then false
+					        --     else true
+					        -- end                as `NPI flag`,
+					        -- p.price_model_name as `Pricelist model name`
+					    from zenith.edw.d_product p
+					-- where exists (
+					-- select 1
+					-- from zenith.mmo75.f_margin_ytd_delta_facts f
+					-- where f.prod_inv_id = p.prod_si_id
+					-- )
+					--    where
+					--    p.prod_si_id in (select s.prod_id from zenith.edw.f_sale_data s)
+					    ",
+					    null,
+					    [EnableFolding=true]
+					    )
+					in
+					    d_product
+
+		annotation PBI_NavigationStepName = Navigation
+
+		annotation PBI_ResultType = Table
+
