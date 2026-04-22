@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "ef36139009ee40b1d7b0",
   "position": {
     "x": 1555.1999999999998,
     "y": 105,
-    "z": 5001,
+    "z": 6000,
     "height": 69.41538461538461,
     "width": 338.21538461538461,
-    "tabOrder": 5001
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_projects_budget"
+                      "Entity": "vm_pbi_d_gl_project"
                     }
                   },
                   "Property": "project_year"
                 }
               },
-              "queryRef": "vm_pbi_d_projects_budget.project_year",
-              "nativeQueryRef": "project_year",
+              "queryRef": "vm_pbi_d_gl_project.project_year",
+              "nativeQueryRef": "project_year1",
               "active": true
             }
           ]
@@ -121,6 +121,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -337,7 +344,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
     ]
   }

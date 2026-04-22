@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "ac1625e912d8b121ab7d",
+  "name": "3690a137874d8026cd68",
   "position": {
-    "x": 1555,
-    "y": 425,
-    "z": 5000,
-    "height": 69.94285714285715,
-    "width": 340.11428571428576,
-    "tabOrder": 5000
+    "x": 0,
+    "y": 15,
+    "z": 1000,
+    "height": 70,
+    "width": 270,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -23,20 +23,91 @@
                       "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "kategoria"
+                  "Property": "prj_desc"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.kategoria",
-              "nativeQueryRef": "kategoria",
+              "queryRef": "vm_pbi_d_gl_project.prj_desc",
+              "nativeQueryRef": "prj_desc",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "hprj_code"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.hprj_code",
+              "nativeQueryRef": "hprj_code",
               "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "isDefaultSort": true
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "vm_pbi_d_gl_project.prj_desc"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "prj_desc"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "vm_pbi_d_gl_project.hprj_code"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'(X) Mollen'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Meti – meble metalowe'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
     "objects": {
       "data": [
         {
@@ -51,20 +122,13 @@
           }
         }
       ],
-      "header": [
+      "general": [
         {
           "properties": {
-            "text": {
+            "selfFilterEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "'Kategoria produktowa'"
-                }
-              }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
+                  "Value": "true"
                 }
               }
             }
@@ -74,17 +138,37 @@
       "selection": [
         {
           "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            },
-            "singleSelect": {
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "14D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Nazwa projektu, kod'"
                 }
               }
             }
@@ -113,17 +197,17 @@
                 }
               }
             },
-            "steppedLayoutIndentation": {
-              "expr": {
-                "Literal": {
-                  "Value": "15D"
-                }
-              }
-            },
             "padding": {
               "expr": {
                 "Literal": {
                   "Value": "5D"
+                }
+              }
+            },
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }
@@ -141,11 +225,6 @@
               }
             }
           }
-        }
-      ],
-      "general": [
-        {
-          "properties": {}
         }
       ]
     },
@@ -287,7 +366,7 @@
       ]
     },
     "syncGroup": {
-      "groupName": "kategoria",
+      "groupName": "prj_desc1",
       "fieldChanges": true,
       "filterChanges": true
     },
@@ -296,50 +375,113 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "96766067edb23838e042",
+        "name": "4ad2059907703d300cb0",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time_mon"
+                "Entity": "vm_pbi_d_gl_project"
               }
             },
-            "Property": "year_date"
+            "Property": "prj_desc"
           }
         },
-        "type": "Advanced",
+        "type": "Categorical",
         "filter": {
           "Version": 2,
           "From": [
             {
-              "Name": "d",
-              "Entity": "d_time_mon",
+              "Name": "v",
+              "Entity": "vm_pbi_d_gl_project",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 2,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "v"
+                            }
+                          },
+                          "Property": "prj_desc"
                         }
                       },
-                      "Property": "year_date"
-                    }
-                  },
-                  "Right": {
-                    "DateSpan": {
-                      "Expression": {
+                      "Right": {
                         "Literal": {
-                          "Value": "datetime'2020-01-01T00:00:00'"
+                          "Value": "''"
                         }
-                      },
-                      "TimeUnit": 5
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "2bc76f60332a4b99bea5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vm_pbi_d_gl_project",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "v"
+                              }
+                            },
+                            "Property": "hprj_code"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "''"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
                     }
                   }
                 }
@@ -347,7 +489,21 @@
             }
           ]
         },
-        "howCreated": "User"
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

@@ -277,16 +277,34 @@ table vm_pbi_d_gl_project
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column project_year
+		dataType: string
+		lineageTag: d8669954-781e-4b4d-9d1d-9458cdedb605
+		summarizeBy: none
+		sourceColumn: project_year
+
+		annotation SummarizationSetBy = Automatic
+
 	partition vm_pbi_d_gl_project = m
 		mode: import
 		source =
 				let
-				    Źródło = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", null),
-				    controlling_Database = Źródło{[Name="controlling",Kind="Database"]}[Data],
-				    capex_implement_Schema = controlling_Database{[Name="capex_implement",Kind="Schema"]}[Data],
-				    vm_pbi_d_gl_project_View = capex_implement_Schema{[Name="vm_pbi_d_gl_project",Kind="View"]}[Data]
+				    Źródło = Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        null
+				    ),
+				    controlling_Database = Źródło{[Name="controlling", Kind="Database"]}[Data],
+				    capex_implement_Schema = controlling_Database{[Name="capex_implement", Kind="Schema"]}[Data],
+				    vm_pbi_d_gl_project_View = capex_implement_Schema{[Name="vm_pbi_d_gl_project", Kind="View"]}[Data],
+				    #"Added Custom" = Table.AddColumn(
+				        vm_pbi_d_gl_project_View,
+				        "project_year",
+				        each "20" & Text.Middle([hprj_code], 2, 2),
+				        type text
+				    )
 				in
-				    vm_pbi_d_gl_project_View
+				    #"Added Custom"
 
 	annotation PBI_NavigationStepName = Navigation
 

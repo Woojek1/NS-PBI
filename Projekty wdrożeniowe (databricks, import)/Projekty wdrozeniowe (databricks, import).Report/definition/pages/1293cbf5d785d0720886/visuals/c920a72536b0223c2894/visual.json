@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "c920a72536b0223c2894",
   "position": {
     "x": 1555.2,
@@ -45,6 +45,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -141,6 +148,11 @@
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },
@@ -343,20 +355,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "208eaddc8d1c50d20ac3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vm_pbi_d_gl_project"
-              }
-            },
-            "Property": "brand"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

@@ -48,6 +48,16 @@ cultureInfo pl-PL
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Wydatki total": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -408,6 +418,16 @@ cultureInfo pl-PL
 			        },
 			        {
 			          "Rok": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Budżet na rok": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -11197,15 +11217,506 @@ cultureInfo pl-PL
 			            },
 			            "Weight": 0.582
 			          }
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project.project_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vm_pbi_d_gl_project",
+			          "ConceptualProperty": "project_year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "project year": {
+			            "State": "Generated"
+			          }
 			        },
 			        {
-			          "Budżet na rok": {
+			          "project_year": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "project yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "assignment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "development year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "blueprint year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "design year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "estimate year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "forecast year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "initiative year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "plan year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "task year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.wydatki__AWDR01": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki - A-WDR-01"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wydatki - A-WDR-01": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wydatki A-WDR-01": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "A-WDR-01": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
 			              "Agent": "PowerBI.VisualColumnRename"
 			            },
 			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.wydatki__AWDR02": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki - A-WDR-02"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wydatki - A-WDR-02": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wydatki A-WDR-02": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "A-WDR-02": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.wydatki__AWDR03": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki - A-WDR-03"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wydatki - A-WDR-03": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wydatki A-WDR-03": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "A-WDR-03": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.wydatki__AWDR04": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki - A-WDR-04"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wydatki - A-WDR-04": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wydatki A-WDR-04": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "A-WDR-04": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.wydatki__AWDR05": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki - A-WDR-05"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wydatki - A-WDR-05": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wydatki A-WDR-05": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "A-WDR-05": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.wydatki__AWDR06": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki - A-WDR-06"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wydatki - A-WDR-06": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wydatki A-WDR-06": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "A-WDR-06": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.wydatki__AWDR07": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki - A-WDR-07"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wydatki - A-WDR-07": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wydatki A-WDR-07": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "A-WDR-07": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.budget_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Budget Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "budget type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "type": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "budget category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "budget genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "budget manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "budget variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "budget brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "budget class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "Typ budżetu": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__miary.wydatki__AWDR99": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Miary",
+			          "ConceptualProperty": "Wydatki - A-WDR-99"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wydatki - A-WDR-99": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wydatki A-WDR-99": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -11301,6 +11812,336 @@ cultureInfo pl-PL
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_impl_cat_costs_have_f_capex_imp_cost_data"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_wydatki__AWDR99": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.wydatki__AWDR99": {
+			          "Target": {
+			            "Entity": "entity__miary.wydatki__AWDR99"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.wydatki__AWDR99"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_wydatki__AWDR99"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_projects_budget_has_entity__miary_budget_type": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_projects_budget"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_projects_budget": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_projects_budget"
+			          }
+			        },
+			        "entity__miary.budget_type": {
+			          "Target": {
+			            "Entity": "entity__miary.budget_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_projects_budget"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.budget_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_projects_budgets_have_budget_type"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_wydatki__AWDR07": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.wydatki__AWDR07": {
+			          "Target": {
+			            "Entity": "entity__miary.wydatki__AWDR07"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.wydatki__AWDR07"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_wydatki__AWDR07"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_wydatki__AWDR06": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.wydatki__AWDR06": {
+			          "Target": {
+			            "Entity": "entity__miary.wydatki__AWDR06"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.wydatki__AWDR06"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_wydatki__AWDR06"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_wydatki__AWDR05": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.wydatki__AWDR05": {
+			          "Target": {
+			            "Entity": "entity__miary.wydatki__AWDR05"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.wydatki__AWDR05"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_wydatki__AWDR05"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_wydatki__AWDR04": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.wydatki__AWDR04": {
+			          "Target": {
+			            "Entity": "entity__miary.wydatki__AWDR04"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.wydatki__AWDR04"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_wydatki__AWDR04"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_wydatki__AWDR03": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.wydatki__AWDR03": {
+			          "Target": {
+			            "Entity": "entity__miary.wydatki__AWDR03"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.wydatki__AWDR03"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_wydatki__AWDR03"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_wydatki__AWDR02": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.wydatki__AWDR02": {
+			          "Target": {
+			            "Entity": "entity__miary.wydatki__AWDR02"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.wydatki__AWDR02"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_wydatki__AWDR02"
+			        }
+			      ]
+			    },
+			    "f_capex_imp_cost_data_has_entity__miary_wydatki__AWDR01": {
+			      "Binding": {
+			        "ConceptualEntity": "f_capex_imp_cost_data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_capex_imp_cost_data": {
+			          "Target": {
+			            "Entity": "f_capex_imp_cost_data"
+			          }
+			        },
+			        "entity__miary.wydatki__AWDR01": {
+			          "Target": {
+			            "Entity": "entity__miary.wydatki__AWDR01"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_capex_imp_cost_data"
+			            },
+			            "Object": {
+			              "Role": "entity__miary.wydatki__AWDR01"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_capex_imp_cost_data_have_wydatki__AWDR01"
+			        }
+			      ]
+			    },
+			    "vm_pbi_d_gl_project_has_project_year": {
+			      "Binding": {
+			        "ConceptualEntity": "vm_pbi_d_gl_project"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "vm_pbi_d_gl_project": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project"
+			          }
+			        },
+			        "vm_pbi_d_gl_project.project_year": {
+			          "Target": {
+			            "Entity": "vm_pbi_d_gl_project.project_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "vm_pbi_d_gl_project"
+			            },
+			            "Object": {
+			              "Role": "vm_pbi_d_gl_project.project_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "vm_pbi_d_gl_projects_have_project_years"
 			        }
 			      ]
 			    },

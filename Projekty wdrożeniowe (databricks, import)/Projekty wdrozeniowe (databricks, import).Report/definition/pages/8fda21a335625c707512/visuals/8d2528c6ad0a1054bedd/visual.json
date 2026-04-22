@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "9bee24a3b03f3e03fa28",
+  "name": "8d2528c6ad0a1054bedd",
   "position": {
     "x": 0,
-    "y": 56.123076923076923,
+    "y": 105,
     "z": 0,
-    "height": 999.876923076923,
-    "width": 1544.8615384615384,
+    "height": 953.33333333333337,
+    "width": 1920,
     "tabOrder": 0
   },
   "visual": {
@@ -50,13 +50,28 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_projects_budget"
+                      "Entity": "d_time_mon"
                     }
                   },
-                  "Property": "budget_type"
+                  "Property": "year_name"
                 }
               },
-              "queryRef": "vm_pbi_d_projects_budget.budget_type",
+              "queryRef": "d_time_mon.year_name",
+              "nativeQueryRef": "Rok",
+              "displayName": "Rok"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Budget Type"
+                }
+              },
+              "queryRef": "_Miary.Budget Type",
               "nativeQueryRef": "Typ budżetu",
               "displayName": "Typ budżetu"
             },
@@ -82,18 +97,137 @@
             },
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon"
+                      "Entity": "_Miary"
                     }
                   },
-                  "Property": "year_name"
+                  "Property": "Wydatki"
                 }
               },
-              "queryRef": "d_time_mon.year_name",
-              "nativeQueryRef": "Budżet na rok",
-              "displayName": "Budżet na rok"
+              "queryRef": "_Miary.Wydatki",
+              "nativeQueryRef": "Wydatki total",
+              "displayName": "Wydatki total"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki - A-WDR-01"
+                }
+              },
+              "queryRef": "_Miary.A-WDR-01 - Wydatki",
+              "nativeQueryRef": "A-WDR-01",
+              "displayName": "A-WDR-01"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki - A-WDR-02"
+                }
+              },
+              "queryRef": "_Miary.Wydatki - A-WDR-02",
+              "nativeQueryRef": "A-WDR-02",
+              "displayName": "A-WDR-02"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki - A-WDR-03"
+                }
+              },
+              "queryRef": "_Miary.Wydatki - A-WDR-03",
+              "nativeQueryRef": "A-WDR-03",
+              "displayName": "A-WDR-03"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki - A-WDR-04"
+                }
+              },
+              "queryRef": "_Miary.Wydatki - A-WDR-04",
+              "nativeQueryRef": "A-WDR-04",
+              "displayName": "A-WDR-04"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki - A-WDR-05"
+                }
+              },
+              "queryRef": "_Miary.Wydatki - A-WDR-05",
+              "nativeQueryRef": "A-WDR-05",
+              "displayName": "A-WDR-05"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki - A-WDR-06"
+                }
+              },
+              "queryRef": "_Miary.Wydatki - A-WDR-06",
+              "nativeQueryRef": "A-WDR-06",
+              "displayName": "A-WDR-06"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki - A-WDR-07"
+                }
+              },
+              "queryRef": "_Miary.Wydatki - A-WDR-07",
+              "nativeQueryRef": "A-WDR-07",
+              "displayName": "A-WDR-07"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Wydatki - A-WDR-99"
+                }
+              },
+              "queryRef": "_Miary.Wydatki - A-WDR-08",
+              "nativeQueryRef": "Wydatki - A-WDR-99"
             }
           ]
         }
@@ -123,7 +257,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "168.27155749378906D"
+                  "Value": "130.5885221917925D"
                 }
               }
             }
@@ -137,13 +271,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "777.631228242909D"
+                  "Value": "495.87881473802753D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "vm_pbi_d_gl_project.prj_desc"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119.83842098310652D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki"
           }
         },
         {
@@ -263,7 +411,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "199.96030638052684D"
+                  "Value": "121.55281436320446D"
                 }
               }
             }
@@ -277,13 +425,125 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "136.00000322937439D"
+                  "Value": "87.2608454497415D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "d_time_mon.year_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.98052906956569D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.A-WDR-01 - Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119.33332225435127D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-02"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.33332527589184D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-03"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "115.9999909353783D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-04"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116.00000604308721D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-05"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.00972875068595D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-06"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "106.00000201436241D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-07"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.66666949236954D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Budget Type"
           }
         }
       ],
@@ -320,7 +580,7 @@
             }
           },
           "selector": {
-            "metadata": "select"
+            "metadata": "_Miary.Wydatki"
           }
         },
         {
@@ -748,13 +1008,209 @@
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'Right'"
+                  "Value": "'Center'"
                 }
               }
             }
           },
           "selector": {
             "metadata": "d_time_mon.year_name"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.A-WDR-01 - Wydatki"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-02"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-03"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-04"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-05"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-06"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Miary.Wydatki - A-WDR-07"
           }
         }
       ],
@@ -918,5 +1374,210 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fa7fedce2a4a7a742d9c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2c20892017b090d501bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1b91208f5073de582010",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vm_pbi_d_projects_budget"
+                  }
+                },
+                "Property": "debet_amount"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e7b0679f6758742de7a3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e310c839c53097515160",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cdc70f42e1c128e20ecc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-01"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dc7c912f3cc3e15ee19c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-02"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b512f3d020ade744c80e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-03"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "17ff3cd9d0d717ceb6c6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-04"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "88fc3fe6d8030bca5ed0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-05"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "98c04479071a0a8c880e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-06"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cb013398053b0018ca1b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-07"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9faf59de95e20acb3157",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Budget Type"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4cc42ef040e824c39086",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-99"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

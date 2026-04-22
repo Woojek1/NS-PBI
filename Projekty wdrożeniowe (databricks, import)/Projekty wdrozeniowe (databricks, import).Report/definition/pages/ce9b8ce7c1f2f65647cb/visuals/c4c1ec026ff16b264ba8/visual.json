@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "c4c1ec026ff16b264ba8",
   "position": {
     "x": 1556.5714285714287,
@@ -141,6 +141,11 @@
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },
@@ -343,20 +348,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "b5ee9abcc283ae26a538",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vm_pbi_d_gl_project"
-              }
-            },
-            "Property": "status"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

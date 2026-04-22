@@ -162,6 +162,124 @@ table _Miary
 	measure userprincipalname = USERPRINCIPALNAME()
 		lineageTag: 69f07fed-d54e-480b-b910-d1b267c33cf2
 
+	measure 'Wydatki - A-WDR-01' =
+			
+			ROUND(
+			    CALCULATE(
+			        SUM(f_capex_imp_cost_data[amount_pln]),
+			        d_impl_cat_cost[impl_cat_cost_code] = "A-WDR-01"
+			    ),
+			    0
+			)
+		formatString: #,0
+		lineageTag: c032c9d9-fe78-4f4c-80bc-95f2ab299378
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Wydatki - A-WDR-02' =
+			
+			ROUND(
+			    CALCULATE(
+			        SUM(f_capex_imp_cost_data[amount_pln]),
+			        d_impl_cat_cost[impl_cat_cost_code] = "A-WDR-02"
+			    ),
+			    0
+			)
+		formatString: #,0
+		lineageTag: a3835af6-076b-46b2-afc5-b295096a961d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Wydatki - A-WDR-03' =
+			
+			ROUND(
+			    CALCULATE(
+			        SUM(f_capex_imp_cost_data[amount_pln]),
+			        d_impl_cat_cost[impl_cat_cost_code] = "A-WDR-03"
+			    ),
+			    0
+			)
+		formatString: #,0
+		lineageTag: 456b8924-198f-4a24-bd03-3c744fb7c4e2
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Wydatki - A-WDR-04' =
+			
+			ROUND(
+			    CALCULATE(
+			        SUM(f_capex_imp_cost_data[amount_pln]),
+			        d_impl_cat_cost[impl_cat_cost_code] = "A-WDR-04"
+			    ),
+			    0
+			)
+		formatString: #,0
+		lineageTag: f2c1989f-e56f-4e22-8e54-747f97d7a07d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Wydatki - A-WDR-05' =
+			
+			ROUND(
+			    CALCULATE(
+			        SUM(f_capex_imp_cost_data[amount_pln]),
+			        d_impl_cat_cost[impl_cat_cost_code] = "A-WDR-05"
+			    ),
+			    0
+			)
+		formatString: #,0
+		lineageTag: 3b16b795-5da8-4082-9773-9017b164d6be
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Wydatki - A-WDR-06' =
+			
+			ROUND(
+			    CALCULATE(
+			        SUM(f_capex_imp_cost_data[amount_pln]),
+			        d_impl_cat_cost[impl_cat_cost_code] = "A-WDR-06"
+			    ),
+			    0
+			)
+		formatString: #,0
+		lineageTag: 29b1049e-d75f-4abd-97ef-041386a02a09
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Wydatki - A-WDR-07' =
+			
+			ROUND(
+			    CALCULATE(
+			        SUM(f_capex_imp_cost_data[amount_pln]),
+			        d_impl_cat_cost[impl_cat_cost_code] = "A-WDR-07"
+			    ),
+			    0
+			)
+		formatString: #,0
+		lineageTag: f11f0a4a-7679-4f7d-9274-b6a1d3f45ca8
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Budget Type' =
+			
+			SELECTEDVALUE(
+			    vm_pbi_d_projects_budget[budget_type]
+			)
+		lineageTag: 89d7cbf1-1c09-4631-92ae-968831b2acbd
+
+	measure 'Wydatki - A-WDR-99' =
+			
+			ROUND(
+			    CALCULATE(
+			        SUM(f_capex_imp_cost_data[amount_pln]),
+			        d_impl_cat_cost[impl_cat_cost_code] = "A-WDR-99"
+			    ),
+			    0
+			)
+		lineageTag: f97acb70-0ba0-46a7-ab96-7f95de9d61d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Value
 		formatString: 0
 		lineageTag: 7128fcce-d1b2-4ff6-9247-20bcb975a017

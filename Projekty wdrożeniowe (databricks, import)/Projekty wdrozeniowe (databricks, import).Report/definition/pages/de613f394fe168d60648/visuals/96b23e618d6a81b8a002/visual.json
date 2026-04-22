@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "96b23e618d6a81b8a002",
   "position": {
     "x": 1555,
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_gl_project"
+                      "Entity": "vm_pbi_d_projects_budget"
                     }
                   },
-                  "Property": "status"
+                  "Property": "budget_type"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.status",
-              "nativeQueryRef": "status",
+              "queryRef": "vm_pbi_d_projects_budget.budget_type",
+              "nativeQueryRef": "budget_type",
               "active": true
             }
           ]
@@ -57,7 +57,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Status'"
+                  "Value": "'Typ budżetu'"
                 }
               }
             },
@@ -141,6 +141,11 @@
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },
@@ -281,11 +286,6 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "status1",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
@@ -343,20 +343,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "39b359176d85eec75e4a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vm_pbi_d_gl_project"
-              }
-            },
-            "Property": "status"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

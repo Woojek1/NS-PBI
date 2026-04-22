@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "ac1625e912d8b121ab7d",
+  "name": "8ae78cb70c8435b04609",
   "position": {
-    "x": 1555,
-    "y": 425,
-    "z": 5000,
-    "height": 69.94285714285715,
-    "width": 340.11428571428576,
-    "tabOrder": 5000
+    "x": 290,
+    "y": 15,
+    "z": 6000,
+    "height": 70,
+    "width": 270,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -23,54 +23,18 @@
                       "Entity": "vm_pbi_d_gl_project"
                     }
                   },
-                  "Property": "kategoria"
+                  "Property": "project_year"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.kategoria",
-              "nativeQueryRef": "kategoria",
+              "queryRef": "vm_pbi_d_gl_project.project_year",
+              "nativeQueryRef": "project_year1",
               "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "isDefaultSort": true
       }
     },
     "objects": {
-      "data": [
-        {
-          "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Dropdown'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "header": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Kategoria produktowa'"
-                }
-              }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            }
-          }
-        }
-      ],
       "selection": [
         {
           "properties": {
@@ -85,6 +49,26 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rok rozpoczęcia projektu'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
                 }
               }
             }
@@ -124,6 +108,19 @@
               "expr": {
                 "Literal": {
                   "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -286,25 +283,20 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "kategoria",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "96766067edb23838e042",
+        "name": "0dcfd8fd49cb5e6302c0",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "d_time_mon"
+                "Entity": "vm_pbi_d_projects_budget"
               }
             },
-            "Property": "year_date"
+            "Property": "project_year"
           }
         },
         "type": "Advanced",
@@ -312,34 +304,33 @@
           "Version": 2,
           "From": [
             {
-              "Name": "d",
-              "Entity": "d_time_mon",
+              "Name": "v",
+              "Entity": "vm_pbi_d_projects_budget",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 2,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "v"
+                            }
+                          },
+                          "Property": "project_year"
                         }
                       },
-                      "Property": "year_date"
-                    }
-                  },
-                  "Right": {
-                    "DateSpan": {
-                      "Expression": {
+                      "Right": {
                         "Literal": {
-                          "Value": "datetime'2020-01-01T00:00:00'"
+                          "Value": "null"
                         }
-                      },
-                      "TimeUnit": 5
+                      }
                     }
                   }
                 }
