@@ -470,14 +470,35 @@ table f_margin_mon_data
 	partition f_margin_mon_data = m
 		mode: directQuery
 		source =
-				let
-				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]),
-				    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
-				    mmo75_Schema = zenith_Database{[Name="mmo75",Kind="Schema"]}[Data],
-				    f_margin_mon_data_Table = mmo75_Schema{[Name="f_margin_mon_data",Kind="Table"]}[Data],
-				    #"Removed Columns" = Table.RemoveColumns(f_margin_mon_data_Table,{"mon_name", "comp_code", "cust_code", "prod_si_code", "sman_code", "team_code", "dept_code", "d_term_code", "comp_cost_code"})
-				in
-				    #"Removed Columns"
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]
+				    ){[Name="zenith",Kind="Database"]}[Data],
+				    "
+				    SELECT *
+				        EXCEPT (
+				            `mon_name`, `comp_code`, `cust_code`, `prod_si_code`,
+				            `sman_code`, `team_code`, `dept_code`, `d_term_code`, `comp_cost_code`
+				        )
+				        FROM `zenith`.`mmo75`.`f_margin_mon_data`
+				        WHERE time_id >= 302
+				    -- M-2023-01
+				    ",
+				    null,
+				    [EnableFolding=true]
+				    )
+				
+				
+				// let
+				//     Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]),
+				//     zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
+				//     mmo75_Schema = zenith_Database{[Name="mmo75",Kind="Schema"]}[Data],
+				//     f_margin_mon_data_Table = mmo75_Schema{[Name="f_margin_mon_data",Kind="Table"]}[Data],
+				//     #"Removed Columns" = Table.RemoveColumns(f_margin_mon_data_Table,{"mon_name", "comp_code", "cust_code", "prod_si_code", "sman_code", "team_code", "dept_code", "d_term_code", "comp_cost_code"})
+				// in
+				//     #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 
