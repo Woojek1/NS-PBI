@@ -4,10 +4,10 @@
   "position": {
     "x": 860,
     "y": 36.666666666666671,
-    "z": 4001,
+    "z": 5000,
     "height": 86.666666666666671,
     "width": 370,
-    "tabOrder": 4001
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -43,6 +43,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -84,23 +91,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "18f2f194db4ced532e01",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pricelist"
-              }
-            },
-            "Property": "price_list_category"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -17,15 +17,38 @@ table _Measures
 
 	measure 'TKW cost for current pricelist' =
 			
+			// SUMX(
+			//     VALUES(d_product[prod_si_id]),
+			//     VAR _Prod = d_product[prod_si_id]
+			//     VAR _LastDate =
+			//         CALCULATE(
+			//             MAX(tkw_today[calculate_date]),
+			//             FILTER(
+			//                 ALL(tkw_today),
+			//                 tkw_today[prod_si_id] = _Prod
+			//             )
+			//         )
+			//     RETURN
+			//         CALCULATE(
+			//             MAX(tkw_today[tkw]),
+			//             FILTER(
+			//                 ALL(tkw_today),
+			//                 tkw_today[prod_si_id] = _Prod
+			//                     && tkw_today[calculate_date] = _LastDate
+			//             )
+			//         )
+			// )
+			
+			
 			SUMX(
-			    VALUES(pricelist[prod_si_id]),
-			    VAR _Prod = pricelist[prod_si_id]
+			    VALUES(pricelist[CATALOG_NO]),
+			    VAR _Prod = pricelist[CATALOG_NO]
 			    VAR _LastDate =
 			        CALCULATE(
 			            MAX(tkw_today[calculate_date]),
 			            FILTER(
 			                ALL(tkw_today),
-			                tkw_today[prod_si_id] = _Prod
+			                tkw_today[part_no] = _Prod
 			            )
 			        )
 			    RETURN
@@ -33,7 +56,7 @@ table _Measures
 			            MAX(tkw_today[tkw]),
 			            FILTER(
 			                ALL(tkw_today),
-			                tkw_today[prod_si_id] = _Prod
+			                tkw_today[part_no] = _Prod
 			                    && tkw_today[calculate_date] = _LastDate
 			            )
 			        )
@@ -47,6 +70,68 @@ table _Measures
 			DISTINCTCOUNT('pricelist'[price_list_no])
 		formatString: 0
 		lineageTag: f65a04d5-7352-4ee4-9115-8b5e405d49e0
+
+	measure '_TKW cost for current pricelist' =
+			
+			SUMX(
+			    VALUES(pricelist[prod_si_id]),
+			    VAR _Prod = pricelist[prod_si_id]
+			    RETURN
+			        CALCULATE(
+			            MAX(tkw_today[tkw]),
+			            FILTER(
+			                ALL(tkw_today),
+			                tkw_today[prod_si_id] = _Prod
+			            )
+			        )
+			)
+		lineageTag: 0aa69d79-2ca3-40f9-b769-a8947369041f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_TKW all products no pricelist visual' =
+			
+			IF(
+			    ISINSCOPE(pricelist[price_list_no]),
+			    BLANK(),
+			    SUMX(
+			        VALUES(d_product[prod_si_id]),
+			        CALCULATE(
+			            MAX(tkw_today[tkw]),
+			            REMOVEFILTERS(pricelist)
+			        )
+			    )
+			)
+		lineageTag: 7fd105ea-4b05-4208-a42f-04af8902c245
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_Price list nos' =
+			
+			CONCATENATEX(
+			    VALUES(pricelist[price_list_no]),
+			    pricelist[price_list_no],
+			    ", ",
+			    pricelist[price_list_no],
+			    ASC
+			)
+		lineageTag: 1d4f366d-4409-45c0-8166-edc32a6daca8
+
+	measure '_Sales price single' =
+			
+			SELECTEDVALUE(
+			    pricelist[sales_price]
+			)
+		lineageTag: 984f4a3d-a5f2-4786-9e6f-d69d0e8cae40
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_Sales currency single' =
+			
+			SELECTEDVALUE(
+			    pricelist[currency_code]
+			)
+		lineageTag: b6e1db7a-a2ca-4530-96fa-0a25c68600c2
 
 	column Value
 		isHidden

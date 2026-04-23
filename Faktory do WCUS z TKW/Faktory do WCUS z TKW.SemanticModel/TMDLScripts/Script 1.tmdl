@@ -1,131 +1,488 @@
 createOrReplace
 
-	table d_product
-		lineageTag: b5dd12ae-2e97-4eb0-8362-c9f5f2c2bd2f
+	model Model
+		culture: en-US
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: pl-PL
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
 
-		column prod_si_id
-			dataType: int64
-			formatString: 0
-			sourceProviderType: int
-			lineageTag: fcc115e6-3efc-4beb-ad99-ddfd9157a95c
-			summarizeBy: none
-			sourceColumn: prod_si_id
+		table d_product
+			lineageTag: b5dd12ae-2e97-4eb0-8362-c9f5f2c2bd2f
 
-			annotation SummarizationSetBy = Automatic
+			column prod_si_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: fcc115e6-3efc-4beb-ad99-ddfd9157a95c
+				summarizeBy: none
+				sourceColumn: prod_si_id
 
-		column Line
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 2cd22df8-e4fc-4e3c-a212-bd796fe5fdf8
-			summarizeBy: none
-			sourceColumn: Line
+				annotation SummarizationSetBy = Automatic
 
-			annotation SummarizationSetBy = Automatic
+			column Line
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2cd22df8-e4fc-4e3c-a212-bd796fe5fdf8
+				summarizeBy: none
+				sourceColumn: Line
 
-		column 'Model Code'
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 38aecd31-5026-456f-99bb-d472f8b70912
-			summarizeBy: none
-			sourceColumn: Model Code
+				annotation SummarizationSetBy = Automatic
 
-			annotation SummarizationSetBy = Automatic
+			column 'Model Code'
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 38aecd31-5026-456f-99bb-d472f8b70912
+				summarizeBy: none
+				sourceColumn: Model Code
 
-		column Model
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: d86b285b-f9f6-4bf0-a6f4-ab334d921b48
-			summarizeBy: none
-			sourceColumn: Model
+				annotation SummarizationSetBy = Automatic
 
-			annotation SummarizationSetBy = Automatic
+			column Model
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: d86b285b-f9f6-4bf0-a6f4-ab334d921b48
+				summarizeBy: none
+				sourceColumn: Model
 
-		column 'Index Name'
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 43734dcd-1832-440d-8a4d-bbf27a08e5eb
-			summarizeBy: none
-			sourceColumn: Index Name
+				annotation SummarizationSetBy = Automatic
 
-			annotation SummarizationSetBy = Automatic
+			column 'Index Name'
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 43734dcd-1832-440d-8a4d-bbf27a08e5eb
+				summarizeBy: none
+				sourceColumn: Index Name
 
-		column 'Index Code'
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: c53189a5-ccc6-4bcd-80e7-a573535dbc41
-			summarizeBy: none
-			sourceColumn: Index Code
+				annotation SummarizationSetBy = Automatic
 
-			annotation SummarizationSetBy = Automatic
+			column 'Index Code'
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c53189a5-ccc6-4bcd-80e7-a573535dbc41
+				summarizeBy: none
+				sourceColumn: Index Code
 
-		column 'Pricelist Model Code'
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 4530296c-9f4a-4f67-ba2f-646f640c9e23
-			summarizeBy: none
-			sourceColumn: Pricelist Model Code
+				annotation SummarizationSetBy = Automatic
 
-			annotation SummarizationSetBy = Automatic
+			column 'Pricelist Model Code'
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 4530296c-9f4a-4f67-ba2f-646f640c9e23
+				summarizeBy: none
+				sourceColumn: Pricelist Model Code
 
-		column 'Pricelist Model Name'
-			dataType: string
-			sourceProviderType: nvarchar(65535)
-			lineageTag: 32884d50-856e-4325-8be8-a95790029403
-			summarizeBy: none
-			sourceColumn: Pricelist Model Name
+				annotation SummarizationSetBy = Automatic
 
-			annotation SummarizationSetBy = Automatic
+			column 'Pricelist Model Name'
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 32884d50-856e-4325-8be8-a95790029403
+				summarizeBy: none
+				sourceColumn: Pricelist Model Name
 
-		partition d_product = m
-			mode: import
-			source =
-					let
-					    d_product = Value.NativeQuery(
-					    Databricks.Catalogs(
-					        "adb-16306551450739.19.azuredatabricks.net",
-					        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
-					        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
-					    ){[Name="zenith", Kind="Database"]}[Data],
-					    "
-					    select
-					        p.prod_si_id,
-					        p.line_name        as `Line`,
-					        p.model_code       as `Model Code`,
-					        p.model_name       as `Model`,
-					        p.price_model_code as `Pricelist Model Code`,
-					        p.price_model_name as `Pricelist Model Name`,
-					-- p.sgrp_name        as `Product Subgroup`,
-					-- p.supergrp_name    as `Product Supergroup`,
-					-- p.grp_name         as `Product Group`,
-					        p.prod_si_name     as `Index Name`,
-					        p.prod_si_code     as `Index Code`
-					-- p.brand_name        as `Brand`
-					-- p.bcg1_name_en     as `Business category`,
-					-- p.bcg2_name_en     as `Business subcategory`,
-					-- p.bcg3_name_en     as `Business cluster`,
-					-- p.line_novelties_flag as `Novelties flag`,
-					-- p.npi_no           as `NPI No`,
-					        -- case
-					        --     when npi_no is null then false
-					        --     else true
-					        -- end                as `NPI flag`,
-					        -- p.price_model_name as `Pricelist model name`
-					    from zenith.edw.d_product p
-					-- where exists (
-					-- select 1
-					-- from zenith.mmo75.f_margin_ytd_delta_facts f
-					-- where f.prod_inv_id = p.prod_si_id
-					-- )
-					    where
-					        p.prod_si_id in (select s.prod_id from zenith.edw.f_sale_data s)
-					    ",
-					    null,
-					    [EnableFolding=true]
-					    )
-					in
-					    d_product
+				annotation SummarizationSetBy = Automatic
 
-		annotation PBI_NavigationStepName = Navigation
+			partition d_product = m
+				mode: directQuery
+				source =
+						let
+						    d_product = Value.NativeQuery(
+						    Databricks.Catalogs(
+						        "adb-16306551450739.19.azuredatabricks.net",
+						        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+						        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+						    ){[Name="zenith", Kind="Database"]}[Data],
+						    "
+						    select
+						        p.prod_si_id,
+						        p.line_name        as `Line`,
+						        p.model_code       as `Model Code`,
+						        p.model_name       as `Model`,
+						        p.price_model_code as `Pricelist Model Code`,
+						        p.price_model_name as `Pricelist Model Name`,
+						-- p.sgrp_name        as `Product Subgroup`,
+						-- p.supergrp_name    as `Product Supergroup`,
+						-- p.grp_name         as `Product Group`,
+						        p.prod_si_name     as `Index Name`,
+						        p.prod_si_code     as `Index Code`
+						-- p.brand_name        as `Brand`
+						-- p.bcg1_name_en     as `Business category`,
+						-- p.bcg2_name_en     as `Business subcategory`,
+						-- p.bcg3_name_en     as `Business cluster`,
+						-- p.line_novelties_flag as `Novelties flag`,
+						-- p.npi_no           as `NPI No`,
+						        -- case
+						        --     when npi_no is null then false
+						        --     else true
+						        -- end                as `NPI flag`,
+						        -- p.price_model_name as `Pricelist model name`
+						    from zenith.edw.d_product p
+						-- where exists (
+						-- select 1
+						-- from zenith.mmo75.f_margin_ytd_delta_facts f
+						-- where f.prod_inv_id = p.prod_si_id
+						-- )
+						--    where
+						--    p.prod_si_id in (select s.prod_id from zenith.edw.f_sale_data s)
+						    ",
+						    null,
+						    [EnableFolding=true]
+						    )
+						in
+						    d_product
 
-		annotation PBI_ResultType = Table
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Exception
+
+		table tkw_today
+			lineageTag: 2dfe6ddf-e05f-4e81-8534-f96f8606f49a
+
+			column prod_si_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: bigint
+				lineageTag: a39b94cb-9cd9-4e71-9be4-bb3ae2a6a996
+				summarizeBy: none
+				sourceColumn: prod_si_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column part_no
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 59a9fe27-187b-4819-ae0e-fc5ca0963a94
+				summarizeBy: none
+				sourceColumn: part_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column part_status
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 07c5622c-fe97-46ed-a0e3-0254d60a572b
+				summarizeBy: none
+				sourceColumn: part_status
+
+				annotation SummarizationSetBy = Automatic
+
+			column calculate_date
+				dataType: dateTime
+				formatString: Short Date
+				sourceProviderType: date
+				lineageTag: 8c512d36-a490-443d-b2ed-d175181a3a2f
+				summarizeBy: none
+				sourceColumn: calculate_date
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column cost_currency
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 0683056c-0389-4bbc-a17c-18ea5ecbbbe6
+				summarizeBy: none
+				sourceColumn: cost_currency
+
+				annotation SummarizationSetBy = Automatic
+
+			column tkw
+				dataType: double
+				lineageTag: 9dbdae4b-a569-4076-bdb8-b7d3c1d473b9
+				summarizeBy: sum
+				sourceColumn: tkw
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition tkw_today = m
+				mode: import
+				source =
+						let
+						    d_product = Value.NativeQuery(
+						    Databricks.Catalogs(
+						        "adb-16306551450739.19.azuredatabricks.net",
+						        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+						        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+						    ){[Name="zenith", Kind="Database"]}[Data],
+						    "
+						    select
+						        prod_si_id,
+						        part_no,
+						        part_status,
+						        calculate_date,
+						        cost_currency,
+						        cost as tkw
+						    from
+						        zenith.prod_tkw.tkw_today
+						    ",
+						    null,
+						    [EnableFolding=true]
+						    )
+						in
+						    d_product
+
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Table
+
+		table pricelist
+			lineageTag: b42405e6-373a-40bd-91f9-627ad918e5ee
+
+			column CATALOG_NO
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 132a5a70-21b8-47e4-9ac4-5681d0d6febd
+				summarizeBy: none
+				sourceColumn: CATALOG_NO
+
+				annotation SummarizationSetBy = Automatic
+
+			column prod_si_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: b61ab630-4d26-4e38-a3f9-d96f73b6902d
+				summarizeBy: none
+				sourceColumn: prod_si_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_category_id
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a64ccc04-215f-4839-baf8-ef9927920211
+				summarizeBy: none
+				sourceColumn: price_list_category_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_category
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 3e4dfe09-d9cb-40fe-a0cc-aebb50304be3
+				summarizeBy: none
+				sourceColumn: price_list_category
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_no
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: ce77656d-8650-4449-b1da-ce8ccf21784d
+				summarizeBy: none
+				sourceColumn: price_list_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_desc
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: d64ebc7e-7338-4183-8395-e1c28a96ddd9
+				summarizeBy: none
+				sourceColumn: price_list_desc
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_valid_from
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: c76b6298-601e-4620-82a6-4150bafbd33e
+				summarizeBy: none
+				sourceColumn: price_list_valid_from
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_valid_to
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: e8f7ed56-83f0-44af-ac10-08c25a9398ec
+				summarizeBy: none
+				sourceColumn: price_list_valid_to
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_line_valid_from
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 836115a7-4f49-4064-9d79-8b8d237e0bd3
+				summarizeBy: none
+				sourceColumn: price_list_line_valid_from
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_line_valid_to
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: e144c8b5-b488-4b5b-a2c9-707c7447fbbb
+				summarizeBy: none
+				sourceColumn: price_list_line_valid_to
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_line_is_current_today
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 503f571b-0bf5-4b47-9290-fb97c5b5ad8e
+				summarizeBy: sum
+				sourceColumn: price_list_line_is_current_today
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_line_obj_state
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 0132e880-b530-4680-b352-d145f3409a8a
+				summarizeBy: none
+				sourceColumn: price_list_line_obj_state
+
+				annotation SummarizationSetBy = Automatic
+
+			column sales_price
+				dataType: double
+				sourceProviderType: decimal(38, 10)
+				lineageTag: 13e05ad9-bf02-4a94-8b1b-1a6181ba6f06
+				summarizeBy: sum
+				sourceColumn: sales_price
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column currency_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 4479e618-33e1-443f-9bbd-5ed3d47cc5f0
+				summarizeBy: none
+				sourceColumn: currency_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column price_list_country
+				dataType: string
+				lineageTag: a0af5d91-d47d-491f-8dc4-b1327e4de0bf
+				summarizeBy: none
+				sourceColumn: price_list_country
+
+				annotation SummarizationSetBy = Automatic
+
+			partition pricelist = m
+				mode: import
+				source =
+						let
+						    pricelist = Value.NativeQuery(
+						    Databricks.Catalogs(
+						        "adb-16306551450739.19.azuredatabricks.net",
+						        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+						        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+						    ){[Name="sandbox", Kind="Database"]}[Data],
+						    "
+						    select
+						          *
+						    from
+						        controlling.faktory.price_list_faktor
+						    ",
+						    null,
+						    [EnableFolding=true]
+						    )
+						in
+						    pricelist
+
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Table
+
+		table _Measures
+			lineageTag: 3fad77aa-e5ef-489f-964e-46914a6cee3c
+
+			measure Faktor = ```
+					
+					ROUND(
+					    DIVIDE(
+					        SUM(pricelist[sales_price]),
+					        [TKW cost for current pricelist]
+					        
+					    ),
+					    2
+					)
+					```
+				formatString: 0.00
+				lineageTag: 411e9768-5cad-46f7-b536-4a53560dbdc2
+
+			measure 'TKW cost for current pricelist' =
+					
+					SUMX(
+					    VALUES(pricelist[prod_si_id]),
+					    VAR _Prod = pricelist[prod_si_id]
+					    VAR _LastDate =
+					        CALCULATE(
+					            MAX(tkw_today[calculate_date]),
+					            FILTER(
+					                ALL(tkw_today),
+					                tkw_today[prod_si_id] = _Prod
+					            )
+					        )
+					    RETURN
+					        CALCULATE(
+					            MAX(tkw_today[tkw]),
+					            FILTER(
+					                ALL(tkw_today),
+					                tkw_today[prod_si_id] = _Prod
+					                    && tkw_today[calculate_date] = _LastDate
+					            )
+					        )
+					)
+				lineageTag: 9f95664a-b713-4908-a42c-2b7d7e25a637
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure ilosc_cennikow =
+					
+					DISTINCTCOUNT('pricelist'[price_list_no])
+				formatString: 0
+				lineageTag: f65a04d5-7352-4ee4-9115-8b5e405d49e0
+
+			column Value
+				isHidden
+				formatString: 0
+				lineageTag: 544e7969-1fe9-4edc-8a41-3f14f01d7a53
+				summarizeBy: sum
+				isNameInferred
+				sourceColumn: [Value]
+
+				annotation SummarizationSetBy = Automatic
+
+			partition _Measures = calculated
+				mode: import
+				source = {0}
+
+			annotation PBI_Id = d794ce221dec4160a83f32629af73f6d
+
+		relationship 781edbc4-a336-adad-9d91-8996d1710b2f
+			fromColumn: tkw_today.prod_si_id
+			toColumn: d_product.prod_si_id
+
+		relationship 4d2eae3d-bd51-391c-dd7d-9a2fb1c058a3
+			fromColumn: pricelist.prod_si_id
+			toColumn: d_product.prod_si_id
+
+		cultureInfo en-US
+
+			linguisticMetadata = {"Version":"4.1.0","Language":"en-US","Entities":{"entity__measure.faktor":{"Definition":{"Binding":{"ConceptualEntity":"_Measures","ConceptualProperty":"Faktor"}},"State":"Generated","Terms":[{"faktor":{"State":"Generated"}},{"Faktor_Base":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"pricelist.price_list_no":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_no"}},"State":"Generated","Terms":[{"price list no":{"State":"Generated"}},{"price_list_no":{"Type":"Noun","State":"Generated","Weight":0.99}},{"list no":{"State":"Generated","Weight":0.97}},{"price list number":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"list number":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"price chronology no":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.609}},{"chronology no":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.6}},{"price directory no":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"price catalog no":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"price catalogue no":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"price inventory no":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"price record no":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"directory no":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.582}},{"Kod cennika":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}},{"Price List Code":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"entity__measure.TKW_cost_for_current_pricelist":{"Definition":{"Binding":{"ConceptualEntity":"_Measures","ConceptualProperty":"TKW cost for current pricelist"}},"State":"Generated","Terms":[{"TKW cost for current pricelist":{"State":"Generated"}},{"tkw cost for latest pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"tkw cost for contemporary pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"tkw cost for present pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"tkw price for current pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"tkw charge for current pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"tkw rate for current pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"tkw fee for current pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"tkw total for current pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"tkw cost for present day pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.503}},{"tkw expenditure for current pricelist":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.494}},{"TKW (PLN)":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"pricelist.currency_code":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"currency_code"}},"State":"Generated","Terms":[{"currency code":{"State":"Generated"}},{"currency_code":{"Type":"Noun","State":"Generated","Weight":0.99}},{"currency id":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"currency key":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"Waluta cennika":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"d_product":{"Definition":{"Binding":{"ConceptualEntity":"d_product"}},"State":"Generated","Terms":[{"d product":{"State":"Generated"}},{"d_product":{"Type":"Noun","State":"Generated","Weight":0.99}},{"product":{"State":"Generated","Weight":0.97}},{"d artifact":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"artifact":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.736}},{"d item":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"d merchandise":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"d produce":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"item":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.714}},{"merchandise":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.714}},{"produce":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.714}}]},"d_product.prod_si_id":{"Definition":{"Binding":{"ConceptualEntity":"d_product","ConceptualProperty":"prod_si_id"}},"State":"Generated","Terms":[{"prod si id":{"State":"Generated"}},{"prod_si_id":{"Type":"Noun","State":"Generated","Weight":0.99}},{"si":{"State":"Generated","Weight":0.97}},{"prod si":{"State":"Generated","Weight":0.97}},{"si id":{"State":"Generated","Weight":0.97}},{"prod si identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"prod si identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"prod si identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"si identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"si identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"si identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"prod si credential":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"si credential":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"d_product.line":{"Definition":{"Binding":{"ConceptualEntity":"d_product","ConceptualProperty":"Line"}},"State":"Generated","Terms":[{"line":{"State":"Generated"}},{"streak":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"stroke":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"stripe":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"contour":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"mark":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"connection":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"link":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.452}},{"route":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.452}},{"track":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.452}},{"course":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.452}}]},"d_product.model_code":{"Definition":{"Binding":{"ConceptualEntity":"d_product","ConceptualProperty":"Model Code"}},"State":"Generated","Terms":[{"model code":{"State":"Generated"}},{"model id":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"model key":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"d_product.model":{"Definition":{"Binding":{"ConceptualEntity":"d_product","ConceptualProperty":"Model"}},"State":"Generated","Terms":[{"model":{"State":"Generated"}},{"perfect":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"classic":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"ideal":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"standard":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"representative":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"mockup":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"representation":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"simulation":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"replica":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.452}},{"copy":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.452}}]},"d_product.index_name":{"Definition":{"Binding":{"ConceptualEntity":"d_product","ConceptualProperty":"Index Name"}},"State":"Generated","Terms":[{"index name":{"State":"Generated"}},{"index":{"State":"Generated","Weight":0.97}},{"index nickname":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"index title":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"index label":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"index tag":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"directory":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"catalogue":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"catalog":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"guide":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"file":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"key":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}}]},"d_product.index_code":{"Definition":{"Binding":{"ConceptualEntity":"d_product","ConceptualProperty":"Index Code"}},"State":"Generated","Terms":[{"index code":{"State":"Generated"}},{"index id":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"index key":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"d_product.pricelist_model_code":{"Definition":{"Binding":{"ConceptualEntity":"d_product","ConceptualProperty":"Pricelist Model Code"}},"State":"Generated","Terms":[{"pricelist model code":{"State":"Generated"}},{"pricelist model id":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"pricelist model key":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}}]},"d_product.pricelist_model_name":{"Definition":{"Binding":{"ConceptualEntity":"d_product","ConceptualProperty":"Pricelist Model Name"}},"State":"Generated","Terms":[{"pricelist model name":{"State":"Generated"}},{"pricelist model":{"State":"Generated","Weight":0.97}},{"model name":{"State":"Generated","Weight":0.97}},{"pricelist model nickname":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"pricelist model title":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"pricelist model label":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"pricelist model tag":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"model nickname":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"model title":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"model label":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"model tag":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"pricelist mockup":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}},{"pricelist representation":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}}]},"tkw_today":{"Definition":{"Binding":{"ConceptualEntity":"tkw_today"}},"State":"Generated","Terms":[{"tkw today":{"State":"Generated"}},{"tkw_today":{"Type":"Noun","State":"Generated","Weight":0.99}}]},"tkw_today.prod_si_id":{"Definition":{"Binding":{"ConceptualEntity":"tkw_today","ConceptualProperty":"prod_si_id"}},"State":"Generated","Visibility":{"Value":"Hidden"},"Terms":[{"prod si id":{"State":"Generated"}},{"prod_si_id":{"Type":"Noun","State":"Generated","Weight":0.99}},{"si":{"State":"Generated","Weight":0.97}},{"prod si":{"State":"Generated","Weight":0.97}},{"si id":{"State":"Generated","Weight":0.97}},{"prod si identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"prod si identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"prod si identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"si identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"si identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"si identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"prod si credential":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"si credential":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"tkw_today.part_no":{"Definition":{"Binding":{"ConceptualEntity":"tkw_today","ConceptualProperty":"part_no"}},"State":"Generated","Terms":[{"part no":{"State":"Generated"}},{"part_no":{"Type":"Noun","State":"Generated","Weight":0.99}},{"part number":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"tkw_today.part_status":{"Definition":{"Binding":{"ConceptualEntity":"tkw_today","ConceptualProperty":"part_status"}},"State":"Generated","Terms":[{"part status":{"State":"Generated"}},{"part_status":{"Type":"Noun","State":"Generated","Weight":0.99}},{"status":{"State":"Generated","Weight":0.97}},{"part category":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"part importance":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"part prestige":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"part prominence":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"importance":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.736}},{"prestige":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.736}},{"prominence":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.736}},{"part condition":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"part class":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"part grade":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"tkw_today.calculate_date":{"Definition":{"Binding":{"ConceptualEntity":"tkw_today","ConceptualProperty":"calculate_date"}},"State":"Generated","Terms":[{"calculate date":{"State":"Generated"}},{"calculate_date":{"Type":"Noun","State":"Generated","Weight":0.99}},{"date":{"State":"Generated","Weight":0.7}},{"calculate moment":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"calculate period":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}],"SemanticType":"Time"},"tkw_today.cost_currency":{"Definition":{"Binding":{"ConceptualEntity":"tkw_today","ConceptualProperty":"cost_currency"}},"State":"Generated","Terms":[{"cost currency":{"State":"Generated"}},{"cost_currency":{"Type":"Noun","State":"Generated","Weight":0.99}},{"currency":{"State":"Generated","Weight":0.97}},{"cost money":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.5}},{"cost coinage":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.5}},{"money":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.491}},{"coinage":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.491}},{"cost exchange":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"cost cash":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"exchange":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"cash":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"cost prevalence":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}},{"cost frequency":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}}]},"tkw_today.tkw":{"Definition":{"Binding":{"ConceptualEntity":"tkw_today","ConceptualProperty":"tkw"}},"State":"Generated","Terms":[{"tkw":{"State":"Generated"}}]},"pricelist":{"Definition":{"Binding":{"ConceptualEntity":"pricelist"}},"State":"Generated","Terms":[{"pricelist":{"State":"Generated"}},{"tariff":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"rate":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"charge":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"cost":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"fare":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"bill":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}}]},"pricelist.catalog_no":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"CATALOG_NO"}},"State":"Generated","Terms":[{"catalog no":{"State":"Generated"}},{"CATALOG_NO":{"Type":"Noun","State":"Generated","Weight":0.99}},{"catalog number":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"pricelist.prod_si_id":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"prod_si_id"}},"State":"Generated","Visibility":{"Value":"Hidden"},"Terms":[{"prod si id":{"State":"Generated"}},{"prod_si_id":{"Type":"Noun","State":"Generated","Weight":0.99}},{"si":{"State":"Generated","Weight":0.97}},{"prod si":{"State":"Generated","Weight":0.97}},{"si id":{"State":"Generated","Weight":0.97}},{"prod si identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"prod si identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"prod si identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"si identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"si identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"si identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"prod si credential":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"si credential":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"pricelist.price_list_category_id":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_category_id"}},"State":"Generated","Terms":[{"price list category id":{"State":"Generated"}},{"price_list_category_id":{"Type":"Noun","State":"Generated","Weight":0.99}},{"category":{"State":"Generated","Weight":0.97}},{"list category":{"State":"Generated","Weight":0.97}},{"category id":{"State":"Generated","Weight":0.97}},{"list category id":{"State":"Generated","Weight":0.97}},{"price list category identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.771}},{"price list category identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.771}},{"price list category identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.771}},{"list category identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"list category identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"list category identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"list classification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"category identification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"category identity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"category identifier":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}}]},"pricelist.price_list_category":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_category"}},"State":"Generated","Terms":[{"price list category":{"State":"Generated"}},{"price_list_category":{"Type":"Noun","State":"Generated","Weight":0.99}},{"category":{"State":"Generated","Weight":0.97}},{"list category":{"State":"Generated","Weight":0.97}},{"price list classification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"list classification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.75}},{"price list class":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"price list group":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"price list type":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"price list grouping":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"price list kind":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.739}},{"classification":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.736}},{"list class":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"list group":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}}]},"pricelist.price_list_desc":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_desc"}},"State":"Generated","Terms":[{"price list desc":{"State":"Generated"}},{"price_list_desc":{"Type":"Noun","State":"Generated","Weight":0.99}},{"price list description":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.762}},{"price chronology desc":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.609}},{"price directory desc":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"price catalog desc":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"price catalogue desc":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"price inventory desc":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"price record desc":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}}]},"pricelist.price_list_valid_from":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_valid_from"}},"State":"Generated","Terms":[{"price list valid from":{"State":"Generated"}},{"price_list_valid_from":{"Type":"Noun","State":"Generated","Weight":0.99}},{"date":{"State":"Generated","Weight":0.7}},{"price chronology valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.771}},{"price directory valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}},{"price catalog valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}},{"price catalogue valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}},{"price inventory valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}},{"price record valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}}],"SemanticType":"Time"},"pricelist.price_list_valid_to":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_valid_to"}},"State":"Generated","Terms":[{"price list valid to":{"State":"Generated"}},{"price_list_valid_to":{"Type":"Noun","State":"Generated","Weight":0.99}},{"date":{"State":"Generated","Weight":0.7}},{"price chronology valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.771}},{"price directory valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}},{"price catalog valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}},{"price catalogue valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}},{"price inventory valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}},{"price record valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.748}}],"SemanticType":"Time"},"pricelist.price_list_line_valid_from":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_line_valid_from"}},"State":"Generated","Terms":[{"price list line valid from":{"State":"Generated"}},{"price_list_line_valid_from":{"Type":"Noun","State":"Generated","Weight":0.99}},{"date":{"State":"Generated","Weight":0.7}},{"price chronology line valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.624}},{"price directory line valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price catalog line valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price catalogue line valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price inventory line valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price record line valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price list streak valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"price list stroke valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"price list stripe valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"price list contour valid from":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}}],"SemanticType":"Time"},"pricelist.price_list_line_valid_to":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_line_valid_to"}},"State":"Generated","Terms":[{"price list line valid to":{"State":"Generated"}},{"price_list_line_valid_to":{"Type":"Noun","State":"Generated","Weight":0.99}},{"date":{"State":"Generated","Weight":0.7}},{"price chronology line valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.624}},{"price directory line valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price catalog line valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price catalogue line valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price inventory line valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price record line valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price list streak valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"price list stroke valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"price list stripe valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"price list contour valid to":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}}],"SemanticType":"Time"},"pricelist.price_list_line_is_current_today":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_line_is_current_today"}},"State":"Generated","Terms":[{"price list line is current today":{"State":"Generated"}},{"price_list_line_is_current_today":{"Type":"Noun","State":"Generated","Weight":0.99}},{"current today":{"State":"Generated","Weight":0.97}},{"is current today":{"State":"Generated","Weight":0.97}},{"line is current today":{"State":"Generated","Weight":0.97}},{"list line is current today":{"State":"Generated","Weight":0.97}},{"chronology line is current today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.624}},{"directory line is current today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"catalog line is current today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"catalogue line is current today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"inventory line is current today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"record line is current today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"list line is latest today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"list line is contemporary today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"list line is present today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"line is latest today":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.599}}]},"pricelist.price_list_line_obj_state":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_line_obj_state"}},"State":"Generated","Terms":[{"price list line obj state":{"State":"Generated"}},{"price_list_line_obj_state":{"Type":"Noun","State":"Generated","Weight":0.99}},{"price list line obj location":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.78}},{"price list line obj province":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.78}},{"price list line obj territory":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.78}},{"price list line obj nation":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.78}},{"price list line obj condition":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.757}},{"price list line obj country":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.757}},{"price chronology line obj state":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.624}},{"price directory line obj state":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price catalog line obj state":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}},{"price catalogue line obj state":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.605}}]},"pricelist.sales_price":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"sales_price"}},"State":"Generated","Terms":[{"sales price":{"State":"Generated"}},{"sale price":{"Type":"Noun","State":"Generated","Weight":0.78}},{"sales_price":{"Type":"Noun","State":"Generated","Weight":0.99}},{"price":{"State":"Generated","Weight":0.97}},{"sale value":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"sale worth":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"sale fee":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"sale charge":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"sale amount":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"sale bill":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"sale rate":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"sale expense":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"sale cost":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}}]},"entity__measure":{"Definition":{"Binding":{"ConceptualEntity":"_Measures"}},"State":"Generated","Terms":[{"_measure":{"State":"Generated"}},{"_ degree":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.5}},{"_ quantity":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.5}},{"_ quota":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.5}},{"_ extent":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.5}},{"_ amount":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"_ portion":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"_ ration":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"_ size":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}}]},"entity__measure.value":{"Definition":{"Binding":{"ConceptualEntity":"_Measures","ConceptualProperty":"Value"}},"State":"Generated","Visibility":{"Value":"Hidden"},"Terms":[{"value":{"State":"Generated"}},{"assessment":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.491}},{"worth":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"cost":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"charge":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"rate":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"importance":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"significance":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"usefulness":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"consequence":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"use":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.452}}]},"entity__measure.ilosc_cennikow":{"Definition":{"Binding":{"ConceptualEntity":"_Measures","ConceptualProperty":"ilosc_cennikow"}},"State":"Generated","Terms":[{"ilosc cennikow":{"State":"Generated"}},{"ilosc_cennikow":{"Type":"Noun","State":"Generated","Weight":0.99}}]},"pricelist.price_list_country":{"Definition":{"Binding":{"ConceptualEntity":"pricelist","ConceptualProperty":"price_list_country"}},"State":"Generated","Terms":[{"Price List Country":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]}},"Relationships":{"tkw_today_has_d_product":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"d_product":{"Target":{"Entity":"d_product"},"Nouns":[{"si":{"State":"Generated"}},{"prod si":{"State":"Generated"}}]}},"Phrasings":[{"Attribute":{"Subject":{"Role":"tkw_today"},"Object":{"Role":"d_product"}},"State":"Generated","Weight":0.99,"ID":"tkw_todays_have_d_products"},{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"tkw_today"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_tkw_todays"}]},"pricelist_has_entity__measure_ilosc_cennikow":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"entity__measure.ilosc_cennikow":{"Target":{"Entity":"entity__measure.ilosc_cennikow"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"entity__measure.ilosc_cennikow"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_ilosc_cennikow"}]},"pricelist_has_sales_price":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.sales_price":{"Target":{"Entity":"pricelist.sales_price"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.sales_price"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_sales_prices"},{"Adjective":{"Subject":{"Role":"pricelist"},"Adjectives":[{"expensive":{"State":"Generated"}}],"Antonyms":[{"cheap":{"State":"Generated"}}],"Measurement":{"Role":"pricelist.sales_price"}},"State":"Generated","Weight":0.99,"ID":"sales_price_indicates_how_expensive_pricelists_are"}]},"pricelist_has_price_list_line_obj_state":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_line_obj_state":{"Target":{"Entity":"pricelist.price_list_line_obj_state"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_line_obj_state"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_line_obj_states"}]},"pricelist_has_price_list_line_is_current_today":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_line_is_current_today":{"Target":{"Entity":"pricelist.price_list_line_is_current_today"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_line_is_current_today"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_line_is_current_todays"}]},"pricelist_has_price_list_line_valid_to":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_line_valid_to":{"Target":{"Entity":"pricelist.price_list_line_valid_to"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_line_valid_to"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_line_valid_to"}]},"pricelist_has_price_list_line_valid_from":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_line_valid_from":{"Target":{"Entity":"pricelist.price_list_line_valid_from"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_line_valid_from"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_line_valid_from"}]},"pricelist_has_price_list_valid_to":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_valid_to":{"Target":{"Entity":"pricelist.price_list_valid_to"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_valid_to"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_valid_to"}]},"pricelist_has_price_list_valid_from":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_valid_from":{"Target":{"Entity":"pricelist.price_list_valid_from"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_valid_from"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_valid_from"}]},"pricelist_has_price_list_desc":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_desc":{"Target":{"Entity":"pricelist.price_list_desc"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_desc"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_descs"}]},"pricelist_has_price_list_category":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_category":{"Target":{"Entity":"pricelist.price_list_category"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_category"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_categories"}]},"pricelist_has_price_list_category_id":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_category_id":{"Target":{"Entity":"pricelist.price_list_category_id"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_category_id"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_category_ids"}]},"pricelist_has_catalog_no":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.catalog_no":{"Target":{"Entity":"pricelist.catalog_no"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.catalog_no"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_catalog_noes"}]},"tkw_today_has_tkw":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"tkw_today.tkw":{"Target":{"Entity":"tkw_today.tkw"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"tkw_today"},"Object":{"Role":"tkw_today.tkw"}},"State":"Generated","Weight":0.99,"ID":"tkw_todays_have_tkws"}]},"tkw_today_has_cost_currency":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"tkw_today.cost_currency":{"Target":{"Entity":"tkw_today.cost_currency"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"tkw_today"},"Object":{"Role":"tkw_today.cost_currency"}},"State":"Generated","Weight":0.99,"ID":"tkw_todays_have_cost_currencies"}]},"tkw_today_has_calculate_date":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"tkw_today.calculate_date":{"Target":{"Entity":"tkw_today.calculate_date"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"tkw_today"},"Object":{"Role":"tkw_today.calculate_date"}},"State":"Generated","Weight":0.99,"ID":"tkw_todays_have_calculate_date"}]},"tkw_today_has_part_status":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"tkw_today.part_status":{"Target":{"Entity":"tkw_today.part_status"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"tkw_today"},"Object":{"Role":"tkw_today.part_status"}},"State":"Generated","Weight":0.99,"ID":"tkw_todays_have_part_statuses"}]},"tkw_today_has_part_no":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"tkw_today.part_no":{"Target":{"Entity":"tkw_today.part_no"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"tkw_today"},"Object":{"Role":"tkw_today.part_no"}},"State":"Generated","Weight":0.99,"ID":"tkw_todays_have_part_noes"}]},"d_product_has_pricelist_model_name":{"Binding":{"ConceptualEntity":"d_product"},"State":"Generated","Roles":{"d_product":{"Target":{"Entity":"d_product"}},"d_product.pricelist_model_name":{"Target":{"Entity":"d_product.pricelist_model_name"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"d_product.pricelist_model_name"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_pricelist_model_names"}]},"d_product_has_pricelist_model_code":{"Binding":{"ConceptualEntity":"d_product"},"State":"Generated","Roles":{"d_product":{"Target":{"Entity":"d_product"}},"d_product.pricelist_model_code":{"Target":{"Entity":"d_product.pricelist_model_code"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"d_product.pricelist_model_code"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_pricelist_model_codes"}]},"d_product_has_index_code":{"Binding":{"ConceptualEntity":"d_product"},"State":"Generated","Roles":{"d_product":{"Target":{"Entity":"d_product"}},"d_product.index_code":{"Target":{"Entity":"d_product.index_code"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"d_product.index_code"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_index_codes"}]},"d_product_has_index_name":{"Binding":{"ConceptualEntity":"d_product"},"State":"Generated","Roles":{"d_product":{"Target":{"Entity":"d_product"}},"d_product.index_name":{"Target":{"Entity":"d_product.index_name"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"d_product.index_name"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_index_names"}]},"d_product_has_model":{"Binding":{"ConceptualEntity":"d_product"},"State":"Generated","Roles":{"d_product":{"Target":{"Entity":"d_product"}},"d_product.model":{"Target":{"Entity":"d_product.model"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"d_product.model"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_models"}]},"d_product_has_model_code":{"Binding":{"ConceptualEntity":"d_product"},"State":"Generated","Roles":{"d_product":{"Target":{"Entity":"d_product"}},"d_product.model_code":{"Target":{"Entity":"d_product.model_code"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"d_product.model_code"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_model_codes"}]},"d_product_has_line":{"Binding":{"ConceptualEntity":"d_product"},"State":"Generated","Roles":{"d_product":{"Target":{"Entity":"d_product"}},"d_product.line":{"Target":{"Entity":"d_product.line"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"d_product.line"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_lines"}]},"d_product_has_prod_si_id":{"Binding":{"ConceptualEntity":"d_product"},"State":"Generated","Roles":{"d_product":{"Target":{"Entity":"d_product"}},"d_product.prod_si_id":{"Target":{"Entity":"d_product.prod_si_id"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"d_product.prod_si_id"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_prod_si_ids"}]},"pricelist_has_currency_code":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.currency_code":{"Target":{"Entity":"pricelist.currency_code"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.currency_code"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_currency_codes"}]},"tkw_today_has_entity__measure_TKW_cost_for_current_pricelist":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"entity__measure.TKW_cost_for_current_pricelist":{"Target":{"Entity":"entity__measure.TKW_cost_for_current_pricelist"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"tkw_today"},"Object":{"Role":"entity__measure.TKW_cost_for_current_pricelist"}},"State":"Generated","Weight":0.99,"ID":"tkw_todays_have_TKW_cost_for_current_pricelist"}]},"pricelist_has_entity__measure_TKW_cost_for_current_pricelist":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"entity__measure.TKW_cost_for_current_pricelist":{"Target":{"Entity":"entity__measure.TKW_cost_for_current_pricelist"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"entity__measure.TKW_cost_for_current_pricelist"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_TKW_cost_for_current_pricelist"}]},"pricelist_has_price_list_no":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_no":{"Target":{"Entity":"pricelist.price_list_no"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"pricelist.price_list_no"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_price_list_noes"}]},"tkw_today_has_entity__measure_faktor":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"entity__measure.faktor":{"Target":{"Entity":"entity__measure.faktor"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"tkw_today"},"Object":{"Role":"entity__measure.faktor"}},"State":"Generated","Weight":0.99,"ID":"tkw_todays_have_faktor"}]},"pricelist_has_entity__measure_faktor":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"entity__measure.faktor":{"Target":{"Entity":"entity__measure.faktor"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"entity__measure.faktor"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_faktor"}]},"pricelist_in_price_list_line_obj_state":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"pricelist.price_list_line_obj_state":{"Target":{"Entity":"pricelist.price_list_line_obj_state"}}},"SemanticSlots":{"Where":{"Role":"pricelist.price_list_line_obj_state"}},"Phrasings":[{"Preposition":{"Subject":{"Role":"pricelist"},"Prepositions":[{"in":{"State":"Generated"}}],"Object":{"Role":"pricelist.price_list_line_obj_state"}},"State":"Generated","Weight":0.99,"ID":"pricelists_are_in_price_list_line_obj_states"}]},"tkw_today_is_calculated_on_calculate_date":{"Binding":{"ConceptualEntity":"tkw_today"},"State":"Generated","Roles":{"tkw_today":{"Target":{"Entity":"tkw_today"}},"tkw_today.calculate_date":{"Target":{"Entity":"tkw_today.calculate_date"}}},"SemanticSlots":{"When":{"Role":"tkw_today.calculate_date"}},"Phrasings":[{"Verb":{"Verbs":[{"calculate":{"State":"Generated"}}],"Object":{"Role":"tkw_today"}},"State":"Generated","Weight":0.9,"ID":"tkw_todays_are_calculated_on_calculate_date"}]},"pricelist_has_d_product":{"Binding":{"ConceptualEntity":"pricelist"},"State":"Generated","Roles":{"pricelist":{"Target":{"Entity":"pricelist"}},"d_product":{"Target":{"Entity":"d_product"},"Nouns":[{"si":{"State":"Generated"}},{"prod si":{"State":"Generated"}}]}},"Phrasings":[{"Attribute":{"Subject":{"Role":"pricelist"},"Object":{"Role":"d_product"}},"State":"Generated","Weight":0.99,"ID":"pricelists_have_d_products"},{"Attribute":{"Subject":{"Role":"d_product"},"Object":{"Role":"pricelist"}},"State":"Generated","Weight":0.99,"ID":"d_products_have_pricelists"}]}},"Agents":{"Internal":{"Version":"1.1.0"}}}
+				contentType: json
+
+		annotation __PBI_TimeIntelligenceEnabled = 0
+
+		annotation PBI_QueryOrder = ["d_product","tkw_today","pricelist"]
+
+		annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
 

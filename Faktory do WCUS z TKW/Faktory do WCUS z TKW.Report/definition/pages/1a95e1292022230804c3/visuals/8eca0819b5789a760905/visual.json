@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "fb6e58923ed6530d2049",
+  "name": "8eca0819b5789a760905",
   "position": {
-    "x": 28.952380952380953,
-    "y": 38.095238095238095,
-    "z": 3000,
-    "height": 88.38095238095238,
-    "width": 425.14285714285717,
-    "tabOrder": 3000
+    "x": 1251.047619047619,
+    "y": 36.571428571428569,
+    "z": 6000,
+    "height": 85.333333333333329,
+    "width": 281.90476190476193,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,15 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_product"
+                      "Entity": "pricelist"
                     }
                   },
-                  "Property": "Model"
+                  "Property": "price_list_country"
                 }
               },
-              "queryRef": "d_product.Model",
-              "nativeQueryRef": "Model",
-              "active": true
+              "queryRef": "pricelist.price_list_country",
+              "nativeQueryRef": "Price List Country",
+              "active": true,
+              "displayName": "Price List Country"
             }
           ]
         }
@@ -51,6 +52,13 @@
       "general": [
         {
           "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
             "selfFilterEnabled": {
               "expr": {
                 "Literal": {

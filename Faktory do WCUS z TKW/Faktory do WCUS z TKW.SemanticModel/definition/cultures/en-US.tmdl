@@ -159,7 +159,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Kod cennika": {
+			          "Price List Code": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -169,7 +169,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Price List Code": {
+			          "Kod Cennika": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -292,16 +292,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.494
-			          }
-			        },
-			        {
-			          "TKW (PLN)": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -3357,6 +3347,111 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "pricelist.price_list_country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pricelist",
+			          "ConceptualProperty": "price_list_country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Price List Country": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column_tkw_all_products_no_pricelist_visual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "_TKW all products no pricelist visual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TKW (PLN)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column_price_list_nos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "_Price list nos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Kod cennika": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column_sales_price_single": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "_Sales price single"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cena cennikowa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.column_sales_currency_single": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "_Sales currency single"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Waluta cennika": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
