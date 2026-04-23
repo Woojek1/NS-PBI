@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "654ef557953e60d10815",
+  "name": "c6549ff4c5819dc4d589",
   "position": {
-    "x": 873.33333333333337,
-    "y": 15,
-    "z": 2000,
-    "height": 70,
-    "width": 271.66666666666669,
-    "tabOrder": 2000
+    "x": 870.85714285714278,
+    "y": 15.428571428571427,
+    "z": 6001,
+    "height": 70.285714285714278,
+    "width": 284.57142857142856,
+    "tabOrder": 6001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vm_pbi_d_gl_project"
+                      "Entity": "vm_pbi_d_projects_budget"
                     }
                   },
-                  "Property": "status"
+                  "Property": "budget_type"
                 }
               },
-              "queryRef": "vm_pbi_d_gl_project.status",
-              "nativeQueryRef": "status",
+              "queryRef": "vm_pbi_d_projects_budget.budget_type",
+              "nativeQueryRef": "budget_type",
               "active": true
             }
           ]
@@ -287,7 +287,7 @@
       ]
     },
     "syncGroup": {
-      "groupName": "status1",
+      "groupName": "budget_type",
       "fieldChanges": true,
       "filterChanges": true
     },
@@ -348,6 +348,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "525a7f32bd1d060c289e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_projects_budget"
+              }
+            },
+            "Property": "budget_type"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

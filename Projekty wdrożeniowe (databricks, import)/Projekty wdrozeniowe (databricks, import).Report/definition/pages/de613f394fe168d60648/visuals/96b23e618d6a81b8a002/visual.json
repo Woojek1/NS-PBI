@@ -286,6 +286,11 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "budget_type",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
@@ -343,6 +348,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "0cac842ec85821375e3d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_projects_budget"
+              }
+            },
+            "Property": "budget_type"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
