@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "2331dd8bf4724b706b72",
+  "name": "014c43168b0a827e4400",
   "position": {
-    "x": 372.22222222222229,
+    "x": 542.35051546391753,
     "y": 0,
-    "z": 1000,
-    "height": 63.333333333333329,
-    "width": 145.55555555555554,
-    "tabOrder": 1000
+    "z": 4001,
+    "height": 63.340206185567006,
+    "width": 145.48453608247422,
+    "tabOrder": 4001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Organization"
+                      "Entity": "Category Cost"
                     }
                   },
-                  "Property": "MPK Code"
+                  "Property": "Synth 6 ch Code"
                 }
               },
-              "queryRef": "Organization.MPK Code",
-              "nativeQueryRef": "MPK Code",
+              "queryRef": "Category Cost.Synth 6 ch Code",
+              "nativeQueryRef": "Synth 6 ch Code",
               "active": true
             }
           ]
@@ -50,7 +50,15 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
         }
       ],
       "items": [
@@ -108,25 +116,20 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "MPK Code",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "c79289bbd7da940aa4a6",
+        "name": "87959dbab300495041ac",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Organization"
+                "Entity": "Category Cost"
               }
             },
-            "Property": "MPK Code"
+            "Property": "Synth 6 ch Code"
           }
         },
         "type": "Categorical"
