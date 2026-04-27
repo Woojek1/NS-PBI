@@ -77,7 +77,7 @@ createOrReplace
 			annotation SummarizationSetBy = Automatic
 
 		partition d_product = m
-			mode:directQuery
+			mode:import
 			source =
 					let
 					    d_product = Value.NativeQuery(

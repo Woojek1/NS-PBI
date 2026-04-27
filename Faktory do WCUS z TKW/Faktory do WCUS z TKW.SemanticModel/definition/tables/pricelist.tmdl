@@ -135,6 +135,14 @@ table pricelist
 
 		annotation SummarizationSetBy = Automatic
 
+	column price_list_country
+		dataType: string
+		lineageTag: a0af5d91-d47d-491f-8dc4-b1327e4de0bf
+		summarizeBy: none
+		sourceColumn: price_list_country
+
+		annotation SummarizationSetBy = Automatic
+
 	partition pricelist = m
 		mode: import
 		source =
