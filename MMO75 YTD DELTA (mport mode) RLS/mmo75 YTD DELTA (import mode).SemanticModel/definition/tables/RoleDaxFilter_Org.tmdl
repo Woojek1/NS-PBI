@@ -1,0 +1,65 @@
+table RoleDaxFilter_Org
+	isHidden
+	lineageTag: 9e78e804-a928-4070-8a67-e7382c732676
+
+	column user_name
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: varchar(100)
+		lineageTag: eadb3d44-35c1-47c5-badd-9b86d0ffceb5
+		summarizeBy: none
+		sourceColumn: user_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 22eeb9be-0233-48d5-9642-18aa61ee3265
+		summarizeBy: sum
+		sourceColumn: team_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RoleDaxFilter_Org = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database(
+				        "sql-solet-prod.database.windows.net",
+				        "SQLDB-solet-prod_01"
+				    ),
+				
+				    Query = "
+				        select r.user_name, o.team_id
+				from v_role_dax_filter_config r join vd_organization_team o on o.dept_code = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
+				where r.privilege_grp='MMO_MODEL' and r.col_name='DEPT_CODE'
+				union all
+				select r.user_name, o.team_id
+				from v_role_dax_filter_config r join vd_organization_team o on o.team_code = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
+				where r.privilege_grp='MMO_MODEL' and r.col_name='TEAM_CODE'
+				    ",
+				
+				    Result = Value.NativeQuery(
+				        Source,
+				        Query,
+				        null,
+				        [EnableFolding = true]
+				    )
+				in
+				    Result
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

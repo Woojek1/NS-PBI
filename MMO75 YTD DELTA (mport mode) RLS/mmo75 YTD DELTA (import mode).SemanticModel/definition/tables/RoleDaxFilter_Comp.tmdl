@@ -1,0 +1,68 @@
+table RoleDaxFilter_Comp
+	isHidden
+	lineageTag: 32f6a3eb-a22f-442a-b3b4-fcb5ff3f991d
+
+	column user_name
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: varchar(100)
+		lineageTag: 63ec65a5-1184-42a9-b38c-702b08e20a0e
+		summarizeBy: none
+		sourceColumn: user_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9d2dc38b-e3f3-4860-8c8c-cbd5efe90119
+		summarizeBy: sum
+		sourceColumn: comp_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RoleDaxFilter_Comp = m
+		mode: directQuery
+		source = ```
+				let
+				    Source = Sql.Database(
+				        "sql-solet-prod.database.windows.net",
+				        "SQLDB-solet-prod_01"
+				    ),
+				
+				    Query = "
+				        SELECT 
+				            r.user_name, 
+				            t.comp_id
+				        FROM v_role_dax_filter_config AS r
+				        INNER JOIN vd_company AS t
+				            ON t.comp_name_s = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
+				        WHERE 
+				            r.privilege_grp = 'MMO_MODEL'
+				            AND r.col_name = 'COMP_NAME_S'
+				    ",
+				
+				    Result = Value.NativeQuery(
+				        Source,
+				        Query,
+				        null,
+				        [EnableFolding = true]
+				    )
+				in
+				    Result
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
