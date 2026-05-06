@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "4dc6d21a06765870500e",
+  "position": {
+    "x": 11.016393442622951,
+    "y": 31.475409836065577,
+    "z": 1,
+    "height": 81.8360655737705,
+    "width": 299.016393442623,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Company"
+                    }
+                  },
+                  "Property": "Company Code"
+                }
+              },
+              "queryRef": "Company.Company Code",
+              "nativeQueryRef": "Company Code",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5d73c2e15102c2476712",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Company"
+              }
+            },
+            "Property": "Company Code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

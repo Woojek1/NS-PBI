@@ -1,0 +1,773 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "68f927aafdddd33b307a",
+  "position": {
+    "x": 11.016393442622951,
+    "y": 121.18032786885247,
+    "z": 0,
+    "height": 956.85245901639348,
+    "width": 1894.8196721311476,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Company"
+                    }
+                  },
+                  "Property": "Company Code"
+                }
+              },
+              "queryRef": "Company.Company Code",
+              "nativeQueryRef": "Company Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "Date.Year",
+              "nativeQueryRef": "Year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Code"
+                }
+              },
+              "queryRef": "Date.Month Code",
+              "nativeQueryRef": "Month Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product Inventory"
+                    }
+                  },
+                  "Property": "Inventory Item Code"
+                }
+              },
+              "queryRef": "Product Inventory.Inventory Item Code",
+              "nativeQueryRef": "Inventory Item Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product Inventory"
+                    }
+                  },
+                  "Property": "Inventory Item Name"
+                }
+              },
+              "queryRef": "Product Inventory.Inventory Item Name",
+              "nativeQueryRef": "Inventory Item Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Manufacturer Code"
+                }
+              },
+              "queryRef": "Product.Manufacturer Code",
+              "nativeQueryRef": "Manufacturer Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Brand Code"
+                }
+              },
+              "queryRef": "Product.Brand Code",
+              "nativeQueryRef": "Brand Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Brand"
+                }
+              },
+              "queryRef": "Product.Brand",
+              "nativeQueryRef": "Brand"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Line Code"
+                }
+              },
+              "queryRef": "Product.Line Code",
+              "nativeQueryRef": "Line Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Line"
+                }
+              },
+              "queryRef": "Product.Line",
+              "nativeQueryRef": "Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Model Code"
+                }
+              },
+              "queryRef": "Product.Model Code",
+              "nativeQueryRef": "Model Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Model"
+                }
+              },
+              "queryRef": "Product.Model",
+              "nativeQueryRef": "Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Product Group Code"
+                }
+              },
+              "queryRef": "Product.Product Group Code",
+              "nativeQueryRef": "Product Group Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Product Group"
+                }
+              },
+              "queryRef": "Product.Product Group",
+              "nativeQueryRef": "Product Group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Product Subgroup Code"
+                }
+              },
+              "queryRef": "Product.Product Subgroup Code",
+              "nativeQueryRef": "Product Subgroup Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Product Subgroup"
+                }
+              },
+              "queryRef": "Product.Product Subgroup",
+              "nativeQueryRef": "Product Subgroup"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer"
+                    }
+                  },
+                  "Property": "Customer Code"
+                }
+              },
+              "queryRef": "Customer.Customer Code",
+              "nativeQueryRef": "Customer Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer"
+                    }
+                  },
+                  "Property": "Customer"
+                }
+              },
+              "queryRef": "Customer.Customer",
+              "nativeQueryRef": "Customer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Supplier"
+                    }
+                  },
+                  "Property": "Supplier"
+                }
+              },
+              "queryRef": "Supplier.Supplier",
+              "nativeQueryRef": "Supplier"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Supplier"
+                    }
+                  },
+                  "Property": "Supplier Code"
+                }
+              },
+              "queryRef": "Supplier.Supplier Code",
+              "nativeQueryRef": "Supplier Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Order number"
+                }
+              },
+              "queryRef": "Sales Measures.Order number",
+              "nativeQueryRef": "Order number"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Invoice number"
+                }
+              },
+              "queryRef": "Sales Measures.Invoice number",
+              "nativeQueryRef": "Invoice number"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Department"
+                    }
+                  },
+                  "Property": "Section Code"
+                }
+              },
+              "queryRef": "Department.Section Code",
+              "nativeQueryRef": "Section Code"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Net Sales CUR Dom"
+                }
+              },
+              "queryRef": "Sales Measures.Net Sales CUR Dom",
+              "nativeQueryRef": "Net Sales CUR Dom"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Curr Norm Cost CUR Dom"
+                }
+              },
+              "queryRef": "Sales Measures.Curr Norm Cost CUR Dom",
+              "nativeQueryRef": "Curr Norm Cost CUR Dom"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.8688573512214D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Product.Model Code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.01639344262296D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Product.Line"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "357c45881d325cdc680d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Company"
+              }
+            },
+            "Property": "Company Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f7cd9aaa0b911402485e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "de844296ba058009cb90",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "23883ddde03991c00e76",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product Inventory"
+              }
+            },
+            "Property": "Inventory Item Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d0346cda46251c74984e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product Inventory"
+              }
+            },
+            "Property": "Inventory Item Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e61b640ec809d38c1460",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Manufacturer Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "48cac97bbc47cd8dda83",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Brand Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c6ddf07370b0408be53a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Brand"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3ceb141008a03eb9aba1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Line Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1315d480b633d2a03bb1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Line"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "97f00509640c0d63a877",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Model Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f049acd42210c0dcc2e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Model"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "71c9012707e7c2318971",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Product Group Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c586db644e4704a0a344",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Product Group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4ccbf52718321704ea26",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Product Subgroup Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "06df6695c8a26a18c7b8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product"
+              }
+            },
+            "Property": "Product Subgroup"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "25c7494906cc83c11a43",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Customer"
+              }
+            },
+            "Property": "Customer Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9fa6f291abeac0195413",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Customer"
+              }
+            },
+            "Property": "Customer"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ad223c4a0407311e34c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Supplier"
+              }
+            },
+            "Property": "Supplier"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e8d9e794a071902922d1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Supplier"
+              }
+            },
+            "Property": "Supplier Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4a8a548640e064e7ce06",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Order number"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2e1d6099b193b5020e7e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Invoice number"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c5ab747249b68986b887",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Department"
+              }
+            },
+            "Property": "Section Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "003c50ae55c529a6e121",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Net Sales CUR Dom"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c624662b7857403015ce",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Curr Norm Cost CUR Dom"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
