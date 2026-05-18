@@ -26,3 +26,17 @@ relationship AutoDetected_c5fec2fb-6946-4bca-af9b-acbb3b773781
 	fromColumn: f_margin75_facts.team_id
 	toColumn: d_organization_team.team_id
 
+relationship AutoDetected_5fed51f5-e58c-47fb-8a28-a7d20d3a4e1a
+	fromColumn: RoleDaxFilter_Comp.comp_id
+	toColumn: d_company.comp_id
+
+relationship AutoDetected_c013aeb5-1833-4c8e-84d1-1fecf57edac1
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: RoleDaxFilter_Cust.cust_id
+	toColumn: d_customer.cust_id
+
+relationship AutoDetected_48e6a480-13e7-47cc-9302-343c44d62bc4
+	fromColumn: RoleDaxFilter_Org.team_id
+	toColumn: d_organization_team.team_id
+

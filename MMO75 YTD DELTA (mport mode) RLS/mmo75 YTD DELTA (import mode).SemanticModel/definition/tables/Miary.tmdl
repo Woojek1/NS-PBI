@@ -40,7 +40,6 @@ table Miary
 		mode: import
 		source = ```
 				{
-				    ("!Discount% (PLN)", NAMEOF('f_margin75_facts'[!Discount% (PLN)]), 0),
 				    ("Sale Quantity ", NAMEOF('f_margin75_facts'[Sale Quantity]), 0),
 				    ("Net Sales PLN", NAMEOF('f_margin75_facts'[Net Sales PLN]), 1),
 				    ("Base Sales PLN", NAMEOF('f_margin75_facts'[Base Sales PLN]), 2),
@@ -60,6 +59,7 @@ table Miary
 				    ("Variance Fixed Cost PLN", NAMEOF('f_margin75_facts'[Variance Fixed Cost PLN]), 16),
 				    ("Margin II PLN", NAMEOF('f_margin75_facts'[Margin II PLN]), 17),
 				    ("Margin II % (PLN)", NAMEOF('f_margin75_facts'[Margin II % (PLN)]), 18),
+				    ("Discount% (PLN)", NAMEOF('f_margin75_facts'[Discount% (PLN)]), 19),
 				    ("Net Sales EUR", NAMEOF('f_margin75_facts'[Net Sales EUR]), 19),
 				    ("Base Sales EUR", NAMEOF('f_margin75_facts'[Base Sales EUR]), 20),
 				    ("Manufacturing Cost EUR", NAMEOF('f_margin75_facts'[Manufacturing Cost EUR]), 21),
@@ -77,7 +77,7 @@ table Miary
 				    ("Transport EUR", NAMEOF('f_margin75_facts'[Transport EUR]), 33),
 				    ("Variance Fixed Cost EUR", NAMEOF('f_margin75_facts'[Variance Fixed Cost EUR]), 34),
 				    ("Margin II EUR", NAMEOF('f_margin75_facts'[Margin II EUR]), 35),
-				    ("Margin II % (EUR)", NAMEOF('f_margin75_facts'[Margin II % (EUR)]), 36)    
+				    ("Margin II % (EUR)", NAMEOF('f_margin75_facts'[Margin II % (EUR)]), 36)  
 				}
 				```
 

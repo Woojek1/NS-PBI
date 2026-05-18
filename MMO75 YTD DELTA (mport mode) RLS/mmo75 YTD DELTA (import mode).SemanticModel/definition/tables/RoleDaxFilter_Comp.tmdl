@@ -1,66 +1,50 @@
 table RoleDaxFilter_Comp
-	isHidden
-	lineageTag: 32f6a3eb-a22f-442a-b3b4-fcb5ff3f991d
+	lineageTag: 7fa1bb1b-adf8-4a92-83c2-4e240b792b59
 
 	column user_name
 		dataType: string
-		isHidden
-		isNullable: false
-		sourceProviderType: varchar(100)
-		lineageTag: 63ec65a5-1184-42a9-b38c-702b08e20a0e
+		lineageTag: 5f75d443-f013-407c-b417-2a2831969d31
 		summarizeBy: none
 		sourceColumn: user_name
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column comp_id
 		dataType: int64
-		isHidden
-		isNullable: false
 		formatString: 0
-		sourceProviderType: int
-		lineageTag: 9d2dc38b-e3f3-4860-8c8c-cbd5efe90119
-		summarizeBy: sum
+		lineageTag: 6896b5ed-10c1-44e1-901b-1e6a88e859f5
+		summarizeBy: none
 		sourceColumn: comp_id
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	partition RoleDaxFilter_Comp = m
-		mode: directQuery
+		mode: import
 		source = ```
-				let
-				    Source = Sql.Database(
-				        "sql-solet-prod.database.windows.net",
-				        "SQLDB-solet-prod_01"
-				    ),
-				
-				    Query = "
-				        SELECT 
-				            r.user_name, 
-				            t.comp_id
-				        FROM v_role_dax_filter_config AS r
-				        INNER JOIN vd_company AS t
-				            ON t.comp_name_s = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
-				        WHERE 
-				            r.privilege_grp = 'MMO_MODEL'
-				            AND r.col_name = 'COMP_NAME_S'
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				    SELECT 
+				        r.user_name, 
+				        t.comp_id
+				    FROM
+				        zenith.edw.role_dax_filter_config r
+				    INNER JOIN
+				        zenith.edw.d_company t
+				    ON
+				        t.comp_name_s = r.value_code
+				    WHERE 
+				        r.privilege_grp = 'MMO_MODEL'
+				    AND r.col_name = 'COMP_NAME_S'
 				    ",
-				
-				    Result = Value.NativeQuery(
-				        Source,
-				        Query,
-				        null,
-				        [EnableFolding = true]
-				    )
-				in
-				    Result
+				    null,
+				    [EnableFolding=true]
+				)
 				```
-
-	changedProperty = IsHidden
 
 	annotation PBI_NavigationStepName = Navigation
 

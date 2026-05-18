@@ -1,71 +1,91 @@
 table RoleDaxFilter_Cust
-	isHidden
-	lineageTag: 586e7cae-fbfd-4812-9247-5d30fd0b30c6
+	lineageTag: 411d148a-f77f-4e0a-83a5-db0e279b844d
 
 	column user_name
 		dataType: string
-		isHidden
-		isNullable: false
-		sourceProviderType: varchar(100)
-		lineageTag: 80c7f57d-891b-4382-aa84-7455d46ddff1
+		lineageTag: 3552ef12-a6b0-4108-b024-1f7af11579e9
 		summarizeBy: none
 		sourceColumn: user_name
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column cust_id
 		dataType: int64
-		isHidden
-		isNullable: false
 		formatString: 0
-		sourceProviderType: int
-		lineageTag: fcba78f1-1569-4ea7-b7bf-6d28d21edce1
-		summarizeBy: sum
+		lineageTag: 129dacf6-7ebf-4c3f-9cde-547e74e249ae
+		summarizeBy: none
 		sourceColumn: cust_id
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	partition RoleDaxFilter_Cust = m
-		mode: directQuery
-		source =
-				let
-				    Source = Sql.Database(
-				        "sql-solet-prod.database.windows.net",
-				        "SQLDB-solet-prod_01"
-				    ),
+		mode: import
+		source = ```
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				select 
+				    r.user_name,
+				    o.cust_id
+				from
+				    zenith.edw.role_dax_filter_config r
+				join
+				    zenith.edw.d_customer o 
+				on 
+				    o.country_code = r.value_code
+				where
+				    r.privilege_grp='MMO_MODEL' and r.col_name='COUNTRY_NAME'
 				
-				    Query = "
-				        select r.user_name, o.cust_id
-				from v_role_dax_filter_config r join vd_customer o on o.country_code = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
-				where r.privilege_grp='MMO_MODEL' and r.col_name='COUNTRY_NAME'
-				union all
-				select r.user_name, o.cust_id
-				from v_role_dax_filter_config r join vd_customer o on o.mseg_code = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
-				where r.privilege_grp='MMO_MODEL' and r.col_name='MSEG_CODE'
-				union all
-				select r.user_name, o.cust_id
-				from v_role_dax_filter_config r join vd_customer o on o.cust_code = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
-				where r.privilege_grp='MMO_MODEL' and r.col_name='CUST_CODE'
-				union all
-				select r.user_name, o.cust_id
-				from v_role_dax_filter_config r join vd_customer o on o.cust_hier_code = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
-				where r.privilege_grp='MMO_MODEL' and r.col_name='HIERARCHY_CODE'
-				    ",
+				UNION ALL
 				
-				    Result = Value.NativeQuery(
-				        Source,
-				        Query,
-				        null,
-				        [EnableFolding = true]
-				    )
-				in
-				    Result
-
-	changedProperty = IsHidden
+				select
+				    r.user_name,
+				    o.cust_id
+				from
+				    zenith.edw.role_dax_filter_config r
+				join 
+				    zenith.edw.d_customer o 
+				on
+				    o.mseg_code = r.value_code
+				where
+				    r.privilege_grp='MMO_MODEL' and r.col_name='MSEG_CODE'
+				
+				UNION ALL
+				
+				select
+				    r.user_name,
+				    o.cust_id
+				from
+				    zenith.edw.role_dax_filter_config r
+				join
+				    zenith.edw.d_customer o 
+				on
+				    o.cust_code = r.value_code
+				where
+				    r.privilege_grp='MMO_MODEL' and r.col_name='CUST_CODE'
+				
+				UNION ALL
+				
+				select
+				    r.user_name,
+				    o.cust_id
+				from
+				    zenith.edw.role_dax_filter_config r
+				join
+				    zenith.edw.d_customer o
+				on
+				    o.cust_hier_code = r.value_code
+				where
+				    r.privilege_grp='MMO_MODEL' and r.col_name='HIERARCHY_CODE'
+				",
+				    null,
+				    [EnableFolding=true]
+				)
+				```
 
 	annotation PBI_NavigationStepName = Navigation
 

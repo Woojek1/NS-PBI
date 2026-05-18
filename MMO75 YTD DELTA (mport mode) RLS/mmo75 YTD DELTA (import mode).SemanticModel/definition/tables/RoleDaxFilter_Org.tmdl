@@ -1,63 +1,74 @@
 table RoleDaxFilter_Org
-	isHidden
-	lineageTag: 9e78e804-a928-4070-8a67-e7382c732676
+	lineageTag: 176b8cbc-bf41-47e9-9f85-8561b988873e
 
 	column user_name
 		dataType: string
-		isHidden
-		isNullable: false
-		sourceProviderType: varchar(100)
-		lineageTag: eadb3d44-35c1-47c5-badd-9b86d0ffceb5
+		lineageTag: 414e9796-a241-4ef1-a668-3b8e8b6172ea
 		summarizeBy: none
 		sourceColumn: user_name
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column team_id
 		dataType: int64
-		isHidden
-		isNullable: false
 		formatString: 0
-		sourceProviderType: int
-		lineageTag: 22eeb9be-0233-48d5-9642-18aa61ee3265
-		summarizeBy: sum
+		lineageTag: d2101113-d812-492b-a76e-c6d6b6d1911b
+		summarizeBy: none
 		sourceColumn: team_id
 
-		changedProperty = IsHidden
+		annotation SummarizationSetBy = Automatic
+
+	column team_code
+		dataType: string
+		lineageTag: 729cd355-8729-48f7-8cc7-7d33dff4e828
+		summarizeBy: none
+		sourceColumn: team_code
 
 		annotation SummarizationSetBy = Automatic
 
 	partition RoleDaxFilter_Org = m
-		mode: directQuery
-		source =
-				let
-				    Source = Sql.Database(
-				        "sql-solet-prod.database.windows.net",
-				        "SQLDB-solet-prod_01"
-				    ),
+		mode: import
+		source = ```
+				Value.NativeQuery(
+				    Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				        [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]
+				    ){[Name="zenith", Kind="Database"]}[Data],
+				    "
+				select
+				    r.user_name,
+				    o.team_id,
+				    o.team_code
 				
-				    Query = "
-				        select r.user_name, o.team_id
-				from v_role_dax_filter_config r join vd_organization_team o on o.dept_code = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
-				where r.privilege_grp='MMO_MODEL' and r.col_name='DEPT_CODE'
-				union all
-				select r.user_name, o.team_id
-				from v_role_dax_filter_config r join vd_organization_team o on o.team_code = r.value_code COLLATE SQL_Latin1_General_CP1_CI_AS
-				where r.privilege_grp='MMO_MODEL' and r.col_name='TEAM_CODE'
+				from 
+				    zenith.edw.role_dax_filter_config r 
+				join
+				    zenith.edw.d_organization_team o
+				on
+				    o.dept_code = r.value_code 
+				where
+				    r.privilege_grp='MMO_MODEL' and r.col_name='DEPT_CODE'
+				
+				UNION ALL
+				
+				select
+				    r.user_name,
+				    o.team_id,
+				    o.team_code
+				from
+				    zenith.edw.role_dax_filter_config r
+				join
+				    zenith.edw.d_organization_team o
+				on
+				    o.team_code = r.value_code
+				where
+				    r.privilege_grp='MMO_MODEL' and r.col_name='TEAM_CODE'
 				    ",
-				
-				    Result = Value.NativeQuery(
-				        Source,
-				        Query,
-				        null,
-				        [EnableFolding = true]
-				    )
-				in
-				    Result
-
-	changedProperty = IsHidden
+				    null,
+				    [EnableFolding=true]
+				)
+				```
 
 	annotation PBI_NavigationStepName = Navigation
 
