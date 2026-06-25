@@ -1,0 +1,635 @@
+table 'Salary Costs Measures'
+	lineageTag: fed804ab-c98c-498f-94cc-c99220e97e01
+
+	measure 'Salary Costs PLN' = EXTERNALMEASURE("Salary Costs PLN", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+		formatString: #,0\ "zł";-#,0\ "zł";#,0\ "zł"
+		lineageTag: c2cc69c5-4762-4421-bfe2-e0e0626820ce
+		sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Salary Costs PLN
+		dataCategory: Uncategorized
+
+	measure 'Salary Costs EUR' = EXTERNALMEASURE("Salary Costs EUR", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: 2e7a7db5-baec-4f63-84b7-4f0931c65307
+		sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Salary Costs EUR
+		dataCategory: Uncategorized
+
+	measure 'Salary rbh' = EXTERNALMEASURE("Salary rbh", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+		formatString: #,0
+		lineageTag: d7c40bb8-59fe-45b7-a88c-2fd20a642949
+		sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Salary rbh
+		dataCategory: Uncategorized
+
+	measure 'Absencja chorobowa BP' = ```
+			
+			DIVIDE(
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {"9600","9610","9620","9630","9650","9660"},
+			        'Empl Type'[Empl Type Code] = "BP"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "6020",
+			        'Empl Type'[Empl Type Code] = "BP"
+			    ),
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9590",
+			        'Empl Type'[Empl Type Code] = "BP"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {
+			            "9635","9640","9642","9645","9690","9700",
+			            "9740","9810","9820","9830","9636","1112"
+			        },
+			        'Empl Type'[Empl Type Code] = "BP"
+			    ),
+			    BLANK()
+			)
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 0f1d698e-acf3-488b-bc12-f2626fb227cb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Absencja urlopowa BP' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9720",
+			        'Empl Type'[Empl Type Code] = "BP"
+			    ),
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9590",
+			        'Empl Type'[Empl Type Code] = "BP"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {
+			            "9635","9640","9642","9645","9690","9700",
+			            "9740","9810","9820","9830","9636","1112"
+			        },
+			        'Empl Type'[Empl Type Code] = "BP"
+			    ),
+			    BLANK()
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 058aa38b-d846-49dc-a453-b74a9099fee6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Produktywność BP 1' = ```
+			
+			VAR Labor =
+			    [Labor Crew Time]
+			 
+			VAR SalaryBP =
+			    CALCULATE (
+			        [Salary rbh],
+			        KEEPFILTERS ( 'Salary Component'[Component Code] IN { "9970", "6030" } ),
+			        KEEPFILTERS ( 'Empl Type'[Empl Type Code] = "BP" )
+			    )
+			 
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Labor )
+			            && NOT ISBLANK ( SalaryBP )
+			            && Labor <> 0
+			            && SalaryBP <> 0,
+			        DIVIDE ( Labor, SalaryBP )
+			    )
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: b987dc45-ce2f-4113-b9f2-70ca17517886
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Produktywność BP 2' = ```
+			
+			VAR Labor =
+			    [Labor Crew Time]
+			 
+			VAR SalaryBP =
+			    CALCULATE (
+			        [Salary rbh],
+			        KEEPFILTERS ( 'Salary Component'[Component Code] IN { "9970", "6030", "6060" } ),
+			        KEEPFILTERS ( 'Empl Type'[Empl Type Code] = "BP" )
+			    )
+			 
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Labor )
+			            && NOT ISBLANK ( SalaryBP )
+			            && Labor <> 0
+			            && SalaryBP <> 0,
+			        DIVIDE ( Labor, SalaryBP )
+			    )
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: e9e713ea-28c2-4141-818d-cdb5c66cb468
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Produktywność BP,PP,U 3' = ```
+			
+			VAR Labor =
+			    [Labor Crew Time]
+			 
+			VAR SalaryBP =
+			    CALCULATE (
+			        [Salary rbh],
+			        KEEPFILTERS ( 'Salary Component'[Component Code] IN { "9970", "6030", "6060" } ),
+			        KEEPFILTERS ( 'Empl Type'[Empl Type Code] IN {"BP", "PP", "U"} )
+			    )
+			 
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Labor )
+			            && NOT ISBLANK ( SalaryBP )
+			            && Labor <> 0
+			            && SalaryBP <> 0,
+			        DIVIDE ( Labor, SalaryBP )
+			    )
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 12a3f722-ed6e-4da2-b989-aee52ad43dc8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure BK = -'Salary Costs Measures'[Salary rbh]
+		formatString: 0
+		lineageTag: 37276e6b-6c9d-4d47-979a-15042fd1f586
+
+	measure BK_realizacja_% =
+			
+			-1*(
+			    DIVIDE(
+			        'Manufacturing Costs Measures'[Labor Crew Time],
+			        (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030"},'Empl Type'[Empl Type Code]="BP")),
+			        BLANK()
+			        )
+			    -
+			    DIVIDE(
+			        'Manufacturing Costs Measures'[Labor Crew Time],
+			        (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030","6060"},'Empl Type'[Empl Type Code]="BP")),
+			        BLANK()
+			        )
+			    )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 7f175636-f6f5-4fea-a691-0b107b854c6c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Godziny nadliczbowe BP % ACT' =
+			
+			DIVIDE(
+			        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"1230","1220"}, 'Empl Type'[Empl Type Code]="BP"),
+			        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"9970","6030"},'Empl Type'[Empl Type Code]="BP"),
+			        BLANK())
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: fbbfbfc9-3742-49c1-9390-2510eaca68f5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Godziny nocne BP % ACT' =
+			
+			DIVIDE(
+			    CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"1240"},'Empl Type'[Empl Type Code]="BP"),
+			    (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030"},'Empl Type'[Empl Type Code]="BP")),
+			    BLANK())
+		lineageTag: 5952171c-5db7-4f93-9a4d-f7953e5bd72c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Absencja chorobowa PP' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {"9600","9610","9620","9630","9650","9660"},
+			        'Empl Type'[Empl Type Code] = "PP"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "6020",
+			        'Empl Type'[Empl Type Code] = "PP"
+			    ),
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9590",
+			        'Empl Type'[Empl Type Code] = "PP"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {
+			            "9635","9640","9642","9645","9690","9700",
+			            "9740","9810","9820","9830","9636","1112"
+			        },
+			        'Empl Type'[Empl Type Code] = "PP"
+			    ),
+			    BLANK()
+			)
+		lineageTag: d7f60fdc-1376-47dc-8dac-af641b61d7f3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Absencja chorobowa U' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {"9600","9610","9620","9630","9650","9660"},
+			        'Empl Type'[Empl Type Code] = "U"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "6020",
+			        'Empl Type'[Empl Type Code] = "U"
+			    ),
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9590",
+			        'Empl Type'[Empl Type Code] = "U"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {
+			            "9635","9640","9642","9645","9690","9700",
+			            "9740","9810","9820","9830","9636","1112"
+			        },
+			        'Empl Type'[Empl Type Code] = "U"
+			    ),
+			    BLANK()
+			)
+		lineageTag: f41fef0b-cbec-40cb-bf91-b057af1d1f35
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Absencja urlopowa PP' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9720",
+			        'Empl Type'[Empl Type Code] = "PP"
+			    ),
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9590",
+			        'Empl Type'[Empl Type Code] = "PP"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {
+			            "9635","9640","9642","9645","9690","9700",
+			            "9740","9810","9820","9830","9636","1112"
+			        },
+			        'Empl Type'[Empl Type Code] = "PP"
+			    ),
+			    BLANK()
+			)
+		lineageTag: 0ace882d-ad7c-44ea-bc78-aa7b893a923d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Absencja urlopowa U' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9720",
+			        'Empl Type'[Empl Type Code] = "U"
+			    ),
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] = "9590",
+			        'Empl Type'[Empl Type Code] = "U"
+			    )
+			    -
+			    CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Code] IN {
+			            "9635","9640","9642","9645","9690","9700",
+			            "9740","9810","9820","9830","9636","1112"
+			        },
+			        'Empl Type'[Empl Type Code] = "U"
+			    ),
+			    BLANK()
+			)
+		lineageTag: bad46ba3-4675-47ba-bea6-ca75108d7a81
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Godziny nadliczbowe PP % ACT' =
+			
+			DIVIDE(
+			        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"1230","1220"}, 'Empl Type'[Empl Type Code]="PP"),
+			        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"9970","6030"},'Empl Type'[Empl Type Code]="PP"),
+			        BLANK())
+		lineageTag: 265862d3-9936-4ff4-bf0b-ca98286cc328
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Godziny nadliczbowe U % ACT' =
+			
+			DIVIDE(
+			        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"1230","1220"}, 'Empl Type'[Empl Type Code]="U"),
+			        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"9970","6030"},'Empl Type'[Empl Type Code]="U"),
+			        BLANK())
+		lineageTag: 92dcced9-8964-4a49-ad66-0372257a7272
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Godziny nocne PP % ACT' =
+			
+			DIVIDE(
+			    CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"1240"},'Empl Type'[Empl Type Code]="PP"),
+			    (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030"},'Empl Type'[Empl Type Code]="PP")),
+			    BLANK())
+		lineageTag: 1b6ac4c4-311e-4c76-b647-261908cffead
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Godziny nocne U % ACT' =
+			
+			DIVIDE(
+			    CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"1240"},'Empl Type'[Empl Type Code]="U"),
+			    (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030"},'Empl Type'[Empl Type Code]="U")),
+			    BLANK())
+		lineageTag: 3594c925-4f83-433d-8409-7fa4366e92d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Absencja urlopowa' = CALCULATE([Salary rbh],'Salary Component'[Component Code]="9720")/(CALCULATE([Salary rbh],'Salary Component'[Component Code]="9590")-CALCULATE([Salary rbh],'Salary Component'[Component Code] in {"9635","9640","9642","9645","9690","9700","9740","9810","9820", "9830","9636","1112"}))
+		lineageTag: 42b89d13-1bb6-47ea-98d5-29856cfef7d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Absencja chorobowa' =
+			(CALCULATE([Salary rbh],'Salary Component'[Component Code] in {"9600","9610","9620","9630","9650","9660"})-CALCULATE([Salary rbh],'Salary Component'[Component Code] = "6020"))/
+			(
+			    CALCULATE([Salary rbh],'Salary Component'[Component Code] = "9590") - CALCULATE([Salary rbh],'Salary Component'[Component Code] in {"9635","9640","9642","9645","9690","9700","9740","9810","9820", "9830","9636","1112"}))
+		lineageTag: 6bda2b46-843f-4012-bee3-9251e41dbb43
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Godz B. Karty' =
+			CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Grp 2 Code] IN {"K2_G_B_KARTY"}
+			    )
+		formatString: 0
+		lineageTag: 46d21b8a-3921-4312-a7f5-5bcd2fd787ed
+
+	measure 'Godz Przepracowane' = ```
+			CALCULATE(
+			        [Salary rbh],
+			        'Salary Component'[Component Grp 2 Code] IN {"K2_G_PRZEP", "K2_G_PRZEP_ZEW"}
+			    )
+			 
+			```
+		formatString: 0
+		lineageTag: 5d00d6bd-c8c4-429d-bc0a-772312835f80
+
+	column mon_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: aeaf74c1-3372-4a35-92fd-0efb595bedbd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 45f2c718-f100-4a90-81c9-3970a600665b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_comp_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a60794fa-833b-4240-994c-cc5392fd9f3a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sal_comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cfc5a907-f1d9-4e47-9017-08f4da300a3d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cost_ledg_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0d5e6df5-f867-4196-84da-f94348fcf380
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: sal_cost_ledg_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cost_empl_type_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4baf7f2a-9e92-4a02-a157-643a9eb129bf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sal_cost_empl_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cost_pln
+		dataType: double
+		isHidden
+		lineageTag: 21773f02-60f1-42ef-afb1-e67671809448
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: sal_cost_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sal_cost_eur
+		dataType: double
+		isHidden
+		lineageTag: 89d1533d-5ea6-4fd9-8425-3aca38dbe224
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: sal_cost_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sal_cost_h
+		dataType: double
+		isHidden
+		lineageTag: ccdea507-58b5-4229-bf79-45f58061cc4e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: sal_cost_h
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column src_mon_name
+		dataType: string
+		isHidden
+		lineageTag: 78b1cc47-29cb-4028-b486-bb0895c8b590
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_comp_bi_code
+		dataType: string
+		isHidden
+		lineageTag: 5a545c47-15fa-4bd7-a853-6ff3dec8351d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_comp_bi_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_list_num
+		dataType: string
+		isHidden
+		lineageTag: 5a91261a-ae6a-4c65-9c28-ce3ef6bf75eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_list_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_list_name
+		dataType: string
+		isHidden
+		lineageTag: 96142c2c-59b5-4912-8864-9811fa9d92fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_list_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_row_num
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b771f3e2-0460-4794-b06b-a980c38329a1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: src_row_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_sal_comp_code
+		dataType: string
+		isHidden
+		lineageTag: 9a9c20b5-7fdb-46ca-97f6-b3386f8e8d73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_sal_comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_sal_comp_name
+		dataType: string
+		isHidden
+		lineageTag: 46358326-9856-4da0-9411-4eb615eb7eb4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_sal_comp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_mpk_code
+		dataType: string
+		isHidden
+		lineageTag: 628e3473-d943-45f0-926a-08d792429685
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_mpk_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_mpk_name
+		dataType: string
+		isHidden
+		lineageTag: 162aa6c3-602d-49ec-8176-a8bac02bb4d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_mpk_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_property
+		dataType: string
+		isHidden
+		lineageTag: 6ee3c597-1e82-429f-8f1e-da1c84d41fca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_property
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_ledg_mark
+		dataType: string
+		isHidden
+		lineageTag: 87aa2c8c-ef1c-4048-885c-0e283cba7b6a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_ledg_mark
+
+		annotation SummarizationSetBy = Automatic
+
+	column wc_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7f57f671-7c1e-4f5d-bfc7-28d490e284a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Salary Costs Measures' = entity
+		mode: directQuery
+		source
+			entityName: Salary Costs Measures
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+

@@ -1,0 +1,190 @@
+table 'Manufacturing Costs Measures'
+	lineageTag: 83647e4a-a995-4579-91ee-3c0389ebb970
+
+	measure 'Labor Crew Time' = EXTERNALMEASURE("Labor Crew Time", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+		formatString: #,0
+		lineageTag: b05b246c-d282-4dc0-b852-7837746e6a2c
+		sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Labor Crew Time
+		dataCategory: Uncategorized
+
+	measure 'Machine Time' = EXTERNALMEASURE("Machine Time", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+		formatString: #,0
+		lineageTag: 4bab79de-2a42-4385-b410-7ef702c5ef81
+		sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Machine Time
+		dataCategory: Uncategorized
+
+	measure Productivity = EXTERNALMEASURE("Productivity", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+		formatString: #,0
+		displayFolder: Productivity Measures
+		lineageTag: 53b92aef-4a46-4dc7-be4e-2c402c4e5c4e
+		sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Productivity
+		dataCategory: Uncategorized
+
+	column time_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9b85ab52-ea9f-4913-b975-322212615e28
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0a7c8709-a871-4172-a6ef-6647aa0f3206
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: eb59bbde-7765-4f23-85fe-790d4a628ef6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: contr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column wc_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 994f5bac-c4db-4c98-9878-f249b3eafb46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 790dbece-3ded-42e6-ac9d-d9f3340f8978
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column labor_class_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5e8f8a1b-9ebd-40f7-8018-49762f1500cd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: labor_class_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_cnt_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 95b50069-930c-4819-bfe8-958892eb1aae
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mnf_cnt_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column labor_crew_time
+		dataType: double
+		isHidden
+		lineageTag: 9c3ad03e-9057-48c8-83ee-17d4017ed122
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: labor_crew_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column manufacturing_time
+		dataType: double
+		isHidden
+		lineageTag: 0e70dfd4-6534-4065-862a-cc271d960718
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: manufacturing_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column src_db_code
+		dataType: string
+		isHidden
+		lineageTag: 4dade3c5-bacc-408a-9cc1-60c34d8e2130
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_date_applied
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: c57c1a83-2b6c-4f73-93ac-18c214e29f1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_date_applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_contract
+		dataType: string
+		isHidden
+		lineageTag: 77b3b2df-d9d6-46c9-b1a7-331ec2b85184
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_work_center_no
+		dataType: string
+		isHidden
+		lineageTag: 39aa4470-891c-4175-9ac9-3b1450691245
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_work_center_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_labor_class_no
+		dataType: string
+		isHidden
+		lineageTag: 8a396483-e4e6-4dc2-84c9-805340599fde
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_labor_class_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_order_code_db
+		dataType: string
+		isHidden
+		lineageTag: 78742345-6677-4c4c-9f26-36b9025b3492
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: src_order_code_db
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Manufacturing Costs Measures' = entity
+		mode: directQuery
+		source
+			entityName: Manufacturing Costs Measures
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+

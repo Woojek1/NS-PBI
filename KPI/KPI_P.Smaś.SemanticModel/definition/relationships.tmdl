@@ -1,0 +1,55 @@
+relationship 4d2359dc-36a3-4a9f-8f1f-3457cb1504cd
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Salary Costs Measures'.mon_id
+	toColumn: Date.mon_id
+
+relationship 45580842-09d9-47dd-85e5-0bd445adfd3d
+	fromColumn: 'Salary Costs Measures'.sal_comp_id
+	toColumn: 'Salary Component'.sal_comp_id
+
+relationship 703e1f3f-4ea6-4c58-b3a4-65cf95afc597
+	fromColumn: 'Salary Costs Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship 0d001e2e-dfda-485b-8fb7-73fa1d732af6
+	fromColumn: 'Salary Costs Measures'.sal_cost_empl_type_id
+	toColumn: 'Empl Type'.empl_type_id
+
+relationship b3857ab5-f3fb-4295-9fce-bcc6593c3dbd
+	fromColumn: 'Salary Costs Measures'.mpk_id
+	toColumn: Organization.mpk_id
+
+relationship 211768a3-f7df-4f24-b905-cb9887e9388e
+	fromColumn: 'Salary Costs Measures'.wc_id
+	toColumn: 'Work Center'.wc_id
+
+relationship 28d7f7c7-ade5-4874-93db-4b8ef5f92bfb
+	fromColumn: 'Manufacturing Costs Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship b4bd59bd-4942-4411-b908-27d3f27145bc
+	fromColumn: 'Manufacturing Costs Measures'.time_id
+	toColumn: Date.day_id
+
+relationship 47041998-d12a-42d4-a6ee-034fb977b6c9
+	fromColumn: 'Manufacturing Costs Measures'.mpk_id
+	toColumn: Organization.mpk_id
+
+relationship cd8d1dbc-2ea5-4698-a514-0df7f834b328
+	fromColumn: 'Manufacturing Costs Measures'.wc_id
+	toColumn: 'Work Center'.wc_id
+
+relationship f449fa1c-1db4-45b2-92c7-741a4e4ec3c5
+	toCardinality: many
+	fromColumn: 'KPI Measures'.time_id
+	toColumn: Date.mon_id
+
+relationship d8133927-d22e-4be6-9321-b15dd826e3ba
+	fromColumn: 'KPI Measures'.mnf_kpi_id
+	toColumn: 'KPI Line'.mnf_kpi_id
+
+relationship ef372cd3-a229-4181-a3b1-6ca941477575
+	fromColumn: 'KPI Measures'.mpk_id
+	toColumn: Organization.mpk_id
+

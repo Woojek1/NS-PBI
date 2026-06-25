@@ -1,0 +1,28 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - Productivity Tabular Model"]
+
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+
+ref table Date
+ref table Organization
+ref table Company
+ref table 'Salary Component'
+ref table 'Empl Type'
+ref table 'Salary Costs Measures'
+ref table 'Manufacturing Costs Measures'
+ref table RoleDaxFilter
+ref table 'KPI Line'
+ref table 'Work Center'
+ref table 'KPI Measures'
+
+ref cultureInfo en-US
+

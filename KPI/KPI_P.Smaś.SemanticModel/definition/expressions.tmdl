@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - Productivity Tabular Model' =
+		let
+		    Source = AnalysisServices.Database("asazure://northeurope.asazure.windows.net/asnsgsolet", "Productivity Tabular Model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Productivity Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 28c81613-6847-4050-8956-4884093cea4e
+
+	annotation PBI_IncludeFutureArtifacts = True
+

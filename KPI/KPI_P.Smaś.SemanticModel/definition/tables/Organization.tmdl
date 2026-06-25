@@ -1,0 +1,256 @@
+table Organization
+	lineageTag: 61b4cb15-7bea-4166-bacb-3550a302a108
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: ec807146-48e9-4383-8b48-f86a00b810fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MPK Code'
+		dataType: string
+		lineageTag: 5a773f1b-d899-4360-8366-f0afdba3496d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MPK Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column MPK
+		dataType: string
+		lineageTag: b2ac6bd0-5f32-40cc-880e-b6a4bd8169de
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MPK
+
+		annotation SummarizationSetBy = Automatic
+
+	column sect_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ec19afdc-e6a2-4551-9128-e9d2b835abb7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: sect_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Section Code'
+		dataType: string
+		lineageTag: bcb9d8dd-7f70-4d80-8218-bb98010d6661
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Section Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Section
+		dataType: string
+		lineageTag: b7f95fc2-0683-4fb0-9c80-a0b2aa49ebc1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Section
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c520eed8-f460-4ca2-a06c-e9bb231ec3dc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: dept_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Code'
+		dataType: string
+		lineageTag: a95dbfa6-5a10-4bc3-86ff-d28fa5800197
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: fa90ce06-64db-4f2c-9805-3c8cc25eba20
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column pion_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2dbef418-7530-44ac-969d-fb4b561fb7bd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: pion_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code'
+		dataType: string
+		lineageTag: 746431eb-4d62-4f6e-8195-e6bced2061a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Division Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: d29f3158-2fb0-435b-8eef-cfe7006488f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column fac_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 097cfb07-5502-4d40-8604-eed6cd820966
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: fac_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Facility Code'
+		dataType: string
+		lineageTag: b3754439-ba5d-4010-9133-55a938eecd40
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Facility Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facility
+		dataType: string
+		lineageTag: 29445acf-9267-43a2-b09e-6016ee38f48b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Facility
+
+		annotation SummarizationSetBy = Automatic
+
+	column bi_visible
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5bca572d-27f3-403f-9678-ada566180e0f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: bi_visible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MPK I segment'
+		dataType: string
+		lineageTag: 666af42c-acab-45e1-aa44-96834c7b895b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MPK I segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MPK 2 segment'
+		dataType: string
+		lineageTag: 846c2056-69e2-4182-8451-27bcd3ef8749
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MPK 2 segment
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Organization - Department Hierarchy'
+		lineageTag: 4540e618-0545-4c84-a16a-f316663ef3b0
+		sourceLineageTag: Organization - Department Hierarchy
+
+		level Department
+			lineageTag: 3b003d30-d4fe-48ba-99f8-30bf6267a539
+			column: Department
+
+		level Section
+			lineageTag: 4f228d75-3055-4bb7-9358-4c5262780f33
+			column: Section
+
+		level MPK
+			lineageTag: 79c6863b-0910-452d-8779-24d98aac539f
+			column: MPK
+
+	hierarchy 'Organization - Facility Hierarchy'
+		lineageTag: f52005e9-44b9-43fb-9885-f399c35f6835
+		sourceLineageTag: Organization - Facility Hierarchy
+
+		level Facility
+			lineageTag: 6b99754d-f359-47ee-b998-ddc7679f082f
+			column: Facility
+
+		level Division
+			lineageTag: b359d5b3-db77-41e5-9ae6-8851b00a2ecc
+			column: Division
+
+		level Department
+			lineageTag: cb75c0e4-a303-4bc4-95cb-a025ae8016a9
+			column: Department
+
+		level Section
+			lineageTag: 19f89913-32b5-4dae-8472-ee78973367dd
+			column: Section
+
+		level MPK
+			lineageTag: cf16b7e6-52ec-4336-a13c-d870b22e27a3
+			column: MPK
+
+	hierarchy 'Organization - Division Hierarchy'
+		lineageTag: 0a224a72-748f-4300-bec0-ad9cb585dfea
+		sourceLineageTag: Organization - Division Hierarchy
+
+		level Division
+			lineageTag: a6c1b726-467b-460f-8374-e206a81dfa93
+			column: Division
+
+		level Department
+			lineageTag: 1f01c944-e647-409a-8bf5-597868602b8c
+			column: Department
+
+		level Section
+			lineageTag: 2ce0ef74-e853-49f8-85b9-2f7758ab670f
+			column: Section
+
+		level MPK
+			lineageTag: 3611081e-8e8c-4fcf-acd0-024100c401d5
+			column: MPK
+
+	hierarchy 'Organization - Section Hierarchy'
+		lineageTag: 541396ad-5dc5-4fc8-b55d-2ae01f38bb71
+		sourceLineageTag: Organization - Section Hierarchy
+
+		level Section
+			lineageTag: 71121e18-5166-4f22-8dbc-019e65d3acca
+			column: Section
+
+		level 'Section Code'
+			lineageTag: fb003fdd-5aa8-418f-825f-cd8e40278b6c
+			column: 'Section Code'
+
+	partition Organization = entity
+		mode: directQuery
+		source
+			entityName: Organization
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+

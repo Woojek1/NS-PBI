@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "89b515875a4441894574",
+  "position": {
+    "x": 48.516129032258064,
+    "y": 317.93548387096774,
+    "z": 7002,
+    "height": 117.6774193548387,
+    "width": 300.38709677419354,
+    "tabOrder": 7002
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KPI Measures"
+                    }
+                  },
+                  "Property": "KPI Value Target"
+                }
+              },
+              "queryRef": "KPI Measures.KPI Value Target",
+              "nativeQueryRef": "KPI Value Target"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KPI Measures"
+                    }
+                  },
+                  "Property": "KPI Value Act"
+                }
+              },
+              "queryRef": "KPI Measures.KPI Value Act",
+              "nativeQueryRef": "KPI Value Act"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "KPI Measures"
+                  }
+                },
+                "Property": "KPI Value Target"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

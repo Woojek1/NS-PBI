@@ -1,0 +1,144 @@
+table 'Salary Component'
+	lineageTag: f4196d33-4ba3-42b3-a146-3d3a0949fc51
+
+	column sal_comp_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: d07bba4d-9d19-4352-942b-3e9c3f55e7aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sal_comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Code'
+		dataType: string
+		lineageTag: b1b7a1ca-fcd8-444b-8d8f-8941a0945c0d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Component Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Component
+		dataType: string
+		lineageTag: bedfc3f4-49ca-4ca8-a4da-335845017a7d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Component
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat1_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c67cab67-3a0b-4817-abc8-5a6aa0eb0b7a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sal_cat1_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Grp 1 Code'
+		dataType: string
+		lineageTag: d4883778-79ca-4425-a25c-be6d53010b3c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Component Grp 1 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Grp 1'
+		dataType: string
+		lineageTag: 67a088d8-bda6-47f6-ae09-8e29d8f08874
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Component Grp 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat2_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f5f72672-0cdc-4591-8dbb-f6db0c6dbf3b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sal_cat2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Grp 2 Code'
+		dataType: string
+		lineageTag: 1f8b315f-e9a0-4bdd-b60a-16611855a581
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Component Grp 2 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Grp 2'
+		dataType: string
+		lineageTag: 67f9da5c-7f55-40d5-8de6-7e8caaf839c9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Component Grp 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat3_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ec62cec9-53e0-4475-87f2-c75d5194d34e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sal_cat3_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Grp 3 Code'
+		dataType: string
+		lineageTag: f6d16a49-5cdf-41ef-a216-2e469545a76b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Component Grp 3 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Grp 3'
+		dataType: string
+		lineageTag: 1f0bddf0-f6b9-451f-ad3b-805be87ac9ec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Component Grp 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Cost Category'
+		dataType: string
+		lineageTag: 00e3f6ba-299f-40d3-b6e7-61bb0cccc639
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Cost Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost 4 Type'
+		dataType: string
+		lineageTag: dacd7bf0-d7f9-4d12-aa4d-b734643fe85b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost 4 Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Salary Component' = entity
+		mode: directQuery
+		source
+			entityName: Salary Component
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+

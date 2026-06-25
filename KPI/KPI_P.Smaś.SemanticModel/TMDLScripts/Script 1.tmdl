@@ -1,0 +1,2781 @@
+createOrReplace
+
+	model Model
+		culture: en-US
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: pl-PL
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
+
+		table Date
+			lineageTag: c7a64069-248a-4ba9-88ed-ae0d1587945f
+
+			column day_id
+				dataType: int64
+				isHidden
+				isNullable: false
+				formatString: 0
+				lineageTag: d56be418-65ff-4c5d-89e4-37c727b7f050
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: day_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_name
+				dataType: string
+				isHidden
+				lineageTag: 9480c5b1-6a8f-4929-bccb-34b89ae86b99
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: day_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_name_s
+				dataType: string
+				isHidden
+				lineageTag: 9008984e-3dce-48ea-8c7f-1bdedff611cb
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: day_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_date
+				dataType: dateTime
+				isHidden
+				isNullable: false
+				formatString: General Date
+				lineageTag: 7f1d636e-4389-4350-8884-d2c59bdc486e
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: day_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ee70f281-14bf-450c-a531-f7d363ef1205
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: day_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_count_work
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 1e8a4baa-eb00-46d3-a5c2-2fd21b318a46
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: day_count_work
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_hist
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ea7c19e2-4ad1-4bc9-9041-2d6c15afa336
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: day_hist
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_type
+				dataType: string
+				isHidden
+				lineageTag: 85b7f313-cc94-4011-af04-7e522909335c
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: day_type
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_week
+				dataType: string
+				isHidden
+				lineageTag: 79f75f07-f9c5-482f-aa78-a2858e8c243b
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: day_week
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f4c2288b-8b71-4db3-89db-b6fc7aa6be11
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: week_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_name
+				dataType: string
+				isHidden
+				lineageTag: eef4b455-9091-4cd8-8a15-91687c37f4b9
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: week_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_name_s
+				dataType: string
+				isHidden
+				lineageTag: 9b226f3d-3d70-4d25-adb5-36fbc111af98
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: week_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: a90056e0-badd-4f36-8d5d-8ed70a037b63
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: week_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 4a298582-43d5-4cd6-88c2-f7894afd4474
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: week_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column cycle_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 8b439044-a12d-45eb-95c0-e3a88e857c64
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: cycle_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column cycle_name
+				dataType: string
+				isHidden
+				lineageTag: e4d5d647-66eb-40fb-8ec6-a518dd8aa291
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: cycle_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column cycle_name_s
+				dataType: string
+				isHidden
+				lineageTag: 1d0c0d1c-eb4d-4f5f-bd94-92bfc0e773a8
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: cycle_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column cycle_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 2e5b9488-4130-4bca-bb10-141b4d577352
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: cycle_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column cycle_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 103f4191-21f7-482a-9010-6243c28fb859
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: cycle_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearc_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: b628e93c-2133-4937-99d4-63c33c7a208b
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: yearc_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearc_name
+				dataType: string
+				isHidden
+				lineageTag: ba287ada-ce8f-4546-b7e1-71dc7e1d0990
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: yearc_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearc_name_s
+				dataType: string
+				isHidden
+				lineageTag: 60bf29e4-6238-4aee-822a-64095f0f5db7
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: yearc_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearc_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 2d1b129a-77f6-46b0-9ce5-6f38781422b8
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: yearc_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearc_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 0b2afc3e-0dd6-4730-98c4-7da4b194a530
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: yearc_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9673c40b-8120-45cc-bc7f-3698eac254fb
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mon_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Month Code'
+				dataType: string
+				isNullable: false
+				lineageTag: 84d1594e-272c-4d07-ba75-9d1c92c3e502
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Month Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Month Short'
+				dataType: string
+				isNullable: false
+				lineageTag: b1baebe6-a86b-4acd-a036-65aabb1d31fd
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Month Short
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 4801b0de-d6a5-43c8-be23-157841df2f27
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mon_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 28cb7464-2a07-45af-a223-4d6a36fe2ccd
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: mon_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: a6ed21a4-1573-4b37-bb3d-a51446dd2896
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: quart_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Quarter Code'
+				dataType: string
+				lineageTag: 6f3acf8d-e77d-4cd1-a06d-49d2eb4417b5
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Quarter Code
+				sortByColumn: quart_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Quarter Short'
+				dataType: string
+				lineageTag: daa698c6-9201-4c86-af4c-86ac731374fd
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Quarter Short
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: dedd31d2-e3a0-4e1f-aabf-1ba5fdbbc8f1
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: quart_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: dc6f545e-8b84-43aa-b770-eacdd80faa4e
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: quart_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearh_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 92de8f36-69e0-4e61-b011-d93fd3aaf526
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: yearh_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column Half-Year
+				dataType: string
+				lineageTag: 4512f4db-46d9-4c0e-bbe2-a8175718814d
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Half-Year
+				sortByColumn: yearh_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearh_name_s
+				dataType: string
+				isHidden
+				lineageTag: b4c6a8f6-63f2-42af-98ad-ce8e0984b49f
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: yearh_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearh_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: ceac27d1-a989-4b4b-828f-dc55c8c20469
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: yearh_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearh_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f763da55-343b-4702-8871-f2b6caec6da4
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: yearh_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c753d851-b374-4b7d-8cbc-9bc1c09786de
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: year_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column Year
+				dataType: int64
+				formatString: 0
+				lineageTag: 19c90f64-c5a8-4f61-b942-dbf1270abc93
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Year
+				sortByColumn: year_id
+
+				annotation SummarizationSetBy = User
+
+			column year_name_s
+				dataType: string
+				isHidden
+				lineageTag: 46c2ec79-4c24-4a86-826a-1c75e530f224
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: year_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: d53d6eb4-c5c3-4b03-a60f-c1071929d92a
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: year_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: e0f44fbc-8e40-44ac-b242-a51d1a7a9d0a
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: year_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column act_ptr
+				dataType: string
+				isHidden
+				lineageTag: 48a3b0b0-5708-47f7-8ce0-85699a1827a1
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: act_ptr
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: afcae50e-b97d-4aeb-b874-dbb16b5702b9
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: day_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 452b649b-dce4-4263-9c93-5e9a37533ce8
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: mon_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: b4e6ad29-e757-4d7c-bb26-b6602e94518d
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: quart_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3d3082a2-767c-4a41-a74b-02ff35b817b2
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: year_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearh_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 61faaf79-78fc-4b09-9148-ca1797b51ee3
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: yearh_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: aee126af-865f-49ec-9315-6b8138305a9e
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: week_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column cycle_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 872d7a1c-1ef9-4993-9918-39df6de95f0a
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: cycle_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearc_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 764e726a-09c6-4389-91d9-06cdaa9ea766
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: yearc_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 489ccd03-e450-4dde-ac89-2ff5154c55e8
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: day_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 2d9ca1bc-4bf1-4365-9635-1adc020ffb0b
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: mon_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 7420718c-0597-45c1-ac75-0c3af1386cf9
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: quart_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearh_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: bd4fdff2-eb6b-401f-83d4-290d9b3ea182
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: yearh_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 836cb087-cf04-4974-8514-0f40e0e3f876
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: year_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 2eff7d0f-1f4f-4a5d-b38f-ac171abcf4e4
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: week_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column cycle_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3f22295e-82d9-4e2c-ac85-3e58ebcd0573
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: cycle_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearc_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 4c4ba504-c10f-4d50-8ff0-6ad0ab968d4a
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: yearc_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column decade_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 2158213f-502e-4277-b9db-473089211b32
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: decade_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column decade_name
+				dataType: string
+				isHidden
+				lineageTag: 4890b715-d5a8-41cb-9d66-1f026212db31
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: decade_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column decade_name_s
+				dataType: string
+				isHidden
+				lineageTag: 36996a05-1c39-4762-a644-413dc95943dc
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: decade_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column decade_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: c365a6b2-4417-49da-9e93-b99383dc1ef9
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: decade_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column decade_count
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9a698a7a-3186-4ab8-9673-d837cad1e8c2
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: decade_count
+
+				annotation SummarizationSetBy = Automatic
+
+			column decade_bfr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: d06c9784-0963-4684-a90d-6f1f98691d04
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: decade_bfr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column decade_ya_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ffaa517f-a830-4018-8fe2-aefd737c1ba5
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: decade_ya_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon2_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 47f9115b-e72a-44ef-b886-a1efa4f45f77
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: mon2_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column Month
+				dataType: string
+				isNullable: false
+				lineageTag: eb1fd519-b095-4478-b685-ec1194320ac6
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Month
+				sortByColumn: 'Month Short'
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon2_name_int
+				dataType: string
+				isHidden
+				lineageTag: 08757f72-0aa7-448d-a687-c98d19aadca0
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mon2_name_int
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart2_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: fc459268-73cd-4f66-ab84-4c34a1161c8a
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: quart2_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column Quarter
+				dataType: string
+				lineageTag: dacf222e-de13-4685-9088-0ea490f2ca96
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Quarter
+
+				annotation SummarizationSetBy = Automatic
+
+			column week2_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 8ee35765-0b15-4070-bdbd-7857b566fef7
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: week2_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column week2_name
+				dataType: string
+				isHidden
+				lineageTag: 6856367d-4aee-42af-8e20-2077d968f17b
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: week2_name
+
+				annotation SummarizationSetBy = Automatic
+
+			partition Date = entity
+				mode: directQuery
+				source
+					entityName: Date
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table Organization
+			lineageTag: 61b4cb15-7bea-4166-bacb-3550a302a108
+
+			column mpk_id
+				dataType: int64
+				isHidden
+				isNullable: false
+				formatString: 0
+				lineageTag: ec807146-48e9-4383-8b48-f86a00b810fa
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'MPK Code'
+				dataType: string
+				lineageTag: 5a773f1b-d899-4360-8366-f0afdba3496d
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: MPK Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column MPK
+				dataType: string
+				lineageTag: b2ac6bd0-5f32-40cc-880e-b6a4bd8169de
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: MPK
+
+				annotation SummarizationSetBy = Automatic
+
+			column sect_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ec19afdc-e6a2-4551-9128-e9d2b835abb7
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: sect_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Section Code'
+				dataType: string
+				lineageTag: bcb9d8dd-7f70-4d80-8218-bb98010d6661
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Section Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column Section
+				dataType: string
+				lineageTag: b7f95fc2-0683-4fb0-9c80-a0b2aa49ebc1
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Section
+
+				annotation SummarizationSetBy = Automatic
+
+			column dept_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c520eed8-f460-4ca2-a06c-e9bb231ec3dc
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: dept_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Department Code'
+				dataType: string
+				lineageTag: a95dbfa6-5a10-4bc3-86ff-d28fa5800197
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Department Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column Department
+				dataType: string
+				lineageTag: fa90ce06-64db-4f2c-9805-3c8cc25eba20
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Department
+
+				annotation SummarizationSetBy = Automatic
+
+			column pion_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 2dbef418-7530-44ac-969d-fb4b561fb7bd
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: pion_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Division Code'
+				dataType: string
+				lineageTag: 746431eb-4d62-4f6e-8195-e6bced2061a3
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Division Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column Division
+				dataType: string
+				lineageTag: d29f3158-2fb0-435b-8eef-cfe7006488f8
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Division
+
+				annotation SummarizationSetBy = Automatic
+
+			column fac_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 097cfb07-5502-4d40-8604-eed6cd820966
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: fac_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Facility Code'
+				dataType: string
+				lineageTag: b3754439-ba5d-4010-9133-55a938eecd40
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Facility Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column Facility
+				dataType: string
+				lineageTag: 29445acf-9267-43a2-b09e-6016ee38f48b
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Facility
+
+				annotation SummarizationSetBy = Automatic
+
+			column bi_visible
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 5bca572d-27f3-403f-9678-ada566180e0f
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: bi_visible
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'MPK I segment'
+				dataType: string
+				lineageTag: 666af42c-acab-45e1-aa44-96834c7b895b
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: MPK I segment
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'MPK 2 segment'
+				dataType: string
+				lineageTag: 846c2056-69e2-4182-8451-27bcd3ef8749
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: MPK 2 segment
+
+				annotation SummarizationSetBy = Automatic
+
+			hierarchy 'Organization - Department Hierarchy'
+				lineageTag: 4540e618-0545-4c84-a16a-f316663ef3b0
+				sourceLineageTag: Organization - Department Hierarchy
+
+				level Department
+					lineageTag: 3b003d30-d4fe-48ba-99f8-30bf6267a539
+					column: Department
+
+				level Section
+					lineageTag: 4f228d75-3055-4bb7-9358-4c5262780f33
+					column: Section
+
+				level MPK
+					lineageTag: 79c6863b-0910-452d-8779-24d98aac539f
+					column: MPK
+
+			hierarchy 'Organization - Facility Hierarchy'
+				lineageTag: f52005e9-44b9-43fb-9885-f399c35f6835
+				sourceLineageTag: Organization - Facility Hierarchy
+
+				level Facility
+					lineageTag: 6b99754d-f359-47ee-b998-ddc7679f082f
+					column: Facility
+
+				level Division
+					lineageTag: b359d5b3-db77-41e5-9ae6-8851b00a2ecc
+					column: Division
+
+				level Department
+					lineageTag: cb75c0e4-a303-4bc4-95cb-a025ae8016a9
+					column: Department
+
+				level Section
+					lineageTag: 19f89913-32b5-4dae-8472-ee78973367dd
+					column: Section
+
+				level MPK
+					lineageTag: cf16b7e6-52ec-4336-a13c-d870b22e27a3
+					column: MPK
+
+			hierarchy 'Organization - Division Hierarchy'
+				lineageTag: 0a224a72-748f-4300-bec0-ad9cb585dfea
+				sourceLineageTag: Organization - Division Hierarchy
+
+				level Division
+					lineageTag: a6c1b726-467b-460f-8374-e206a81dfa93
+					column: Division
+
+				level Department
+					lineageTag: 1f01c944-e647-409a-8bf5-597868602b8c
+					column: Department
+
+				level Section
+					lineageTag: 2ce0ef74-e853-49f8-85b9-2f7758ab670f
+					column: Section
+
+				level MPK
+					lineageTag: 3611081e-8e8c-4fcf-acd0-024100c401d5
+					column: MPK
+
+			hierarchy 'Organization - Section Hierarchy'
+				lineageTag: 541396ad-5dc5-4fc8-b55d-2ae01f38bb71
+				sourceLineageTag: Organization - Section Hierarchy
+
+				level Section
+					lineageTag: 71121e18-5166-4f22-8dbc-019e65d3acca
+					column: Section
+
+				level 'Section Code'
+					lineageTag: fb003fdd-5aa8-418f-825f-cd8e40278b6c
+					column: 'Section Code'
+
+			partition Organization = entity
+				mode: directQuery
+				source
+					entityName: Organization
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table Company
+			lineageTag: 2f666284-04da-4bcd-942c-06b6b41d260c
+
+			column comp_id
+				dataType: int64
+				isHidden
+				isNullable: false
+				formatString: 0
+				lineageTag: f1a303e3-3fa3-42f7-9708-e872d76fe102
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Company Code'
+				dataType: string
+				lineageTag: b327ffed-c1a7-45d7-a228-30043bcba9a2
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Company Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column Company
+				dataType: string
+				lineageTag: 1e041bb9-f3d3-4002-a41b-b7ad266e71c1
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Company
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_name_s
+				dataType: string
+				isHidden
+				lineageTag: b99c7200-9ad5-401b-9e4d-3e6306cd8913
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: comp_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_code_sys
+				dataType: string
+				isHidden
+				lineageTag: 21866fe0-3986-468d-85f8-d9c5f6abccc7
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: comp_code_sys
+
+				annotation SummarizationSetBy = Automatic
+
+			partition Company = entity
+				mode: directQuery
+				source
+					entityName: Company
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table 'Salary Component'
+			lineageTag: f4196d33-4ba3-42b3-a146-3d3a0949fc51
+
+			column sal_comp_id
+				dataType: int64
+				isHidden
+				isNullable: false
+				formatString: 0
+				lineageTag: d07bba4d-9d19-4352-942b-3e9c3f55e7aa
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: sal_comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Component Code'
+				dataType: string
+				lineageTag: b1b7a1ca-fcd8-444b-8d8f-8941a0945c0d
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Component Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column Component
+				dataType: string
+				lineageTag: bedfc3f4-49ca-4ca8-a4da-335845017a7d
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Component
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat1_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c67cab67-3a0b-4817-abc8-5a6aa0eb0b7a
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: sal_cat1_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Component Grp 1 Code'
+				dataType: string
+				lineageTag: d4883778-79ca-4425-a25c-be6d53010b3c
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Component Grp 1 Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Component Grp 1'
+				dataType: string
+				lineageTag: 67a088d8-bda6-47f6-ae09-8e29d8f08874
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Component Grp 1
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat2_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f5f72672-0cdc-4591-8dbb-f6db0c6dbf3b
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: sal_cat2_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Component Grp 2 Code'
+				dataType: string
+				lineageTag: 1f8b315f-e9a0-4bdd-b60a-16611855a581
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Component Grp 2 Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Component Grp 2'
+				dataType: string
+				lineageTag: 67f9da5c-7f55-40d5-8de6-7e8caaf839c9
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Component Grp 2
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat3_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ec62cec9-53e0-4475-87f2-c75d5194d34e
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: sal_cat3_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Component Grp 3 Code'
+				dataType: string
+				lineageTag: f6d16a49-5cdf-41ef-a216-2e469545a76b
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Component Grp 3 Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Component Grp 3'
+				dataType: string
+				lineageTag: 1f0bddf0-f6b9-451f-ad3b-805be87ac9ec
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Component Grp 3
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'TMC Cost Category'
+				dataType: string
+				lineageTag: 00e3f6ba-299f-40d3-b6e7-61bb0cccc639
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: TMC Cost Category
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Cost 4 Type'
+				dataType: string
+				lineageTag: dacd7bf0-d7f9-4d12-aa4d-b734643fe85b
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Cost 4 Type
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Salary Component' = entity
+				mode: directQuery
+				source
+					entityName: Salary Component
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table 'Empl Type'
+			lineageTag: f74e5483-7f7c-460c-b56b-1eb238a46d8a
+
+			column empl_type_id
+				dataType: int64
+				isHidden
+				isNullable: false
+				formatString: 0
+				lineageTag: 0d206857-a551-4713-b0ec-9b8bc3938952
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: empl_type_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Empl Type Code'
+				dataType: string
+				lineageTag: f3c61979-3157-4a20-aff1-6d65c7e2bad3
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Empl Type Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Empl Type'
+				dataType: string
+				lineageTag: c6c20623-c0d7-40c0-aab6-1b0cdca58549
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Empl Type
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Empl Type' = entity
+				mode: directQuery
+				source
+					entityName: Empl Type
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table 'Salary Costs Measures'
+			lineageTag: fed804ab-c98c-498f-94cc-c99220e97e01
+
+			measure 'Salary Costs PLN' = EXTERNALMEASURE("Salary Costs PLN", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+				formatString: #,0\ "zł";-#,0\ "zł";#,0\ "zł"
+				lineageTag: c2cc69c5-4762-4421-bfe2-e0e0626820ce
+				sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Salary Costs PLN
+				dataCategory: Uncategorized
+
+			measure 'Salary Costs EUR' = EXTERNALMEASURE("Salary Costs EUR", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+				formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+				lineageTag: 2e7a7db5-baec-4f63-84b7-4f0931c65307
+				sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Salary Costs EUR
+				dataCategory: Uncategorized
+
+			measure 'Salary rbh' = EXTERNALMEASURE("Salary rbh", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+				formatString: #,0
+				lineageTag: d7c40bb8-59fe-45b7-a88c-2fd20a642949
+				sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Salary rbh
+				dataCategory: Uncategorized
+
+			measure 'Absencja chorobowa BP' = ```
+					
+					DIVIDE(
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {"9600","9610","9620","9630","9650","9660"},
+					        'Empl Type'[Empl Type Code] = "BP"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "6020",
+					        'Empl Type'[Empl Type Code] = "BP"
+					    ),
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9590",
+					        'Empl Type'[Empl Type Code] = "BP"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {
+					            "9635","9640","9642","9645","9690","9700",
+					            "9740","9810","9820","9830","9636","1112"
+					        },
+					        'Empl Type'[Empl Type Code] = "BP"
+					    ),
+					    BLANK()
+					)
+					
+					```
+				formatString: 0.00\ %;-0.00\ %;0.00\ %
+				lineageTag: 0f1d698e-acf3-488b-bc12-f2626fb227cb
+
+				annotation PBI_FormatHint = {"isCustom":true}
+
+			measure 'Absencja urlopowa BP' =
+					
+					DIVIDE(
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9720",
+					        'Empl Type'[Empl Type Code] = "BP"
+					    ),
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9590",
+					        'Empl Type'[Empl Type Code] = "BP"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {
+					            "9635","9640","9642","9645","9690","9700",
+					            "9740","9810","9820","9830","9636","1112"
+					        },
+					        'Empl Type'[Empl Type Code] = "BP"
+					    ),
+					    BLANK()
+					)
+				formatString: 0.00\ %;-0.00\ %;0.00\ %
+				lineageTag: 058aa38b-d846-49dc-a453-b74a9099fee6
+
+				annotation PBI_FormatHint = {"isCustom":true}
+
+			measure 'Produktywność BP 1' = ```
+					
+					VAR Labor =
+					    [Labor Crew Time]
+					 
+					VAR SalaryBP =
+					    CALCULATE (
+					        [Salary rbh],
+					        KEEPFILTERS ( 'Salary Component'[Component Code] IN { "9970", "6030" } ),
+					        KEEPFILTERS ( 'Empl Type'[Empl Type Code] = "BP" )
+					    )
+					 
+					RETURN
+					    IF (
+					        NOT ISBLANK ( Labor )
+					            && NOT ISBLANK ( SalaryBP )
+					            && Labor <> 0
+					            && SalaryBP <> 0,
+					        DIVIDE ( Labor, SalaryBP )
+					    )
+					```
+				formatString: 0.00\ %;-0.00\ %;0.00\ %
+				lineageTag: b987dc45-ce2f-4113-b9f2-70ca17517886
+
+				annotation PBI_FormatHint = {"isCustom":true}
+
+			measure 'Produktywność BP 2' = ```
+					
+					VAR Labor =
+					    [Labor Crew Time]
+					 
+					VAR SalaryBP =
+					    CALCULATE (
+					        [Salary rbh],
+					        KEEPFILTERS ( 'Salary Component'[Component Code] IN { "9970", "6030", "6060" } ),
+					        KEEPFILTERS ( 'Empl Type'[Empl Type Code] = "BP" )
+					    )
+					 
+					RETURN
+					    IF (
+					        NOT ISBLANK ( Labor )
+					            && NOT ISBLANK ( SalaryBP )
+					            && Labor <> 0
+					            && SalaryBP <> 0,
+					        DIVIDE ( Labor, SalaryBP )
+					    )
+					```
+				formatString: 0.00\ %;-0.00\ %;0.00\ %
+				lineageTag: e9e713ea-28c2-4141-818d-cdb5c66cb468
+
+				annotation PBI_FormatHint = {"isCustom":true}
+
+			measure 'Produktywność BP,PP,U 3' = ```
+					
+					VAR Labor =
+					    [Labor Crew Time]
+					 
+					VAR SalaryBP =
+					    CALCULATE (
+					        [Salary rbh],
+					        KEEPFILTERS ( 'Salary Component'[Component Code] IN { "9970", "6030", "6060" } ),
+					        KEEPFILTERS ( 'Empl Type'[Empl Type Code] IN {"BP", "PP", "U"} )
+					    )
+					 
+					RETURN
+					    IF (
+					        NOT ISBLANK ( Labor )
+					            && NOT ISBLANK ( SalaryBP )
+					            && Labor <> 0
+					            && SalaryBP <> 0,
+					        DIVIDE ( Labor, SalaryBP )
+					    )
+					```
+				formatString: 0.00\ %;-0.00\ %;0.00\ %
+				lineageTag: 12a3f722-ed6e-4da2-b989-aee52ad43dc8
+
+				annotation PBI_FormatHint = {"isCustom":true}
+
+			measure BK = -'Salary Costs Measures'[Salary rbh]
+				formatString: 0
+				lineageTag: 37276e6b-6c9d-4d47-979a-15042fd1f586
+
+			measure BK_realizacja_% =
+					
+					-1*(
+					    DIVIDE(
+					        'Manufacturing Costs Measures'[Labor Crew Time],
+					        (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030"},'Empl Type'[Empl Type Code]="BP")),
+					        BLANK()
+					        )
+					    -
+					    DIVIDE(
+					        'Manufacturing Costs Measures'[Labor Crew Time],
+					        (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030","6060"},'Empl Type'[Empl Type Code]="BP")),
+					        BLANK()
+					        )
+					    )
+				formatString: 0.00\ %;-0.00\ %;0.00\ %
+				lineageTag: 7f175636-f6f5-4fea-a691-0b107b854c6c
+
+				annotation PBI_FormatHint = {"isCustom":true}
+
+			measure 'Godziny nadliczbowe BP % ACT' =
+					
+					DIVIDE(
+					        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"1230","1220"}, 'Empl Type'[Empl Type Code]="BP"),
+					        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"9970","6030"},'Empl Type'[Empl Type Code]="BP"),
+					        BLANK())
+				formatString: 0.00\ %;-0.00\ %;0.00\ %
+				lineageTag: fbbfbfc9-3742-49c1-9390-2510eaca68f5
+
+				annotation PBI_FormatHint = {"isCustom":true}
+
+			measure 'Godziny nocne BP % ACT' =
+					
+					DIVIDE(
+					    CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"1240"},'Empl Type'[Empl Type Code]="BP"),
+					    (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030"},'Empl Type'[Empl Type Code]="BP")),
+					    BLANK())
+				lineageTag: 5952171c-5db7-4f93-9a4d-f7953e5bd72c
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Absencja chorobowa PP' =
+					
+					DIVIDE(
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {"9600","9610","9620","9630","9650","9660"},
+					        'Empl Type'[Empl Type Code] = "PP"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "6020",
+					        'Empl Type'[Empl Type Code] = "PP"
+					    ),
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9590",
+					        'Empl Type'[Empl Type Code] = "PP"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {
+					            "9635","9640","9642","9645","9690","9700",
+					            "9740","9810","9820","9830","9636","1112"
+					        },
+					        'Empl Type'[Empl Type Code] = "PP"
+					    ),
+					    BLANK()
+					)
+				lineageTag: d7f60fdc-1376-47dc-8dac-af641b61d7f3
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Absencja chorobowa U' =
+					
+					DIVIDE(
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {"9600","9610","9620","9630","9650","9660"},
+					        'Empl Type'[Empl Type Code] = "U"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "6020",
+					        'Empl Type'[Empl Type Code] = "U"
+					    ),
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9590",
+					        'Empl Type'[Empl Type Code] = "U"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {
+					            "9635","9640","9642","9645","9690","9700",
+					            "9740","9810","9820","9830","9636","1112"
+					        },
+					        'Empl Type'[Empl Type Code] = "U"
+					    ),
+					    BLANK()
+					)
+				lineageTag: f41fef0b-cbec-40cb-bf91-b057af1d1f35
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Absencja urlopowa PP' =
+					
+					DIVIDE(
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9720",
+					        'Empl Type'[Empl Type Code] = "PP"
+					    ),
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9590",
+					        'Empl Type'[Empl Type Code] = "PP"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {
+					            "9635","9640","9642","9645","9690","9700",
+					            "9740","9810","9820","9830","9636","1112"
+					        },
+					        'Empl Type'[Empl Type Code] = "PP"
+					    ),
+					    BLANK()
+					)
+				lineageTag: 0ace882d-ad7c-44ea-bc78-aa7b893a923d
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Absencja urlopowa U' =
+					
+					DIVIDE(
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9720",
+					        'Empl Type'[Empl Type Code] = "U"
+					    ),
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9590",
+					        'Empl Type'[Empl Type Code] = "U"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {
+					            "9635","9640","9642","9645","9690","9700",
+					            "9740","9810","9820","9830","9636","1112"
+					        },
+					        'Empl Type'[Empl Type Code] = "U"
+					    ),
+					    BLANK()
+					)
+				lineageTag: bad46ba3-4675-47ba-bea6-ca75108d7a81
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Godziny nadliczbowe PP % ACT' =
+					
+					DIVIDE(
+					        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"1230","1220"}, 'Empl Type'[Empl Type Code]="PP"),
+					        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"9970","6030"},'Empl Type'[Empl Type Code]="PP"),
+					        BLANK())
+				lineageTag: 265862d3-9936-4ff4-bf0b-ca98286cc328
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Godziny nadliczbowe U % ACT' =
+					
+					DIVIDE(
+					        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"1230","1220"}, 'Empl Type'[Empl Type Code]="U"),
+					        CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] IN {"9970","6030"},'Empl Type'[Empl Type Code]="U"),
+					        BLANK())
+				lineageTag: 92dcced9-8964-4a49-ad66-0372257a7272
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Godziny nocne PP % ACT' =
+					
+					DIVIDE(
+					    CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"1240"},'Empl Type'[Empl Type Code]="PP"),
+					    (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030"},'Empl Type'[Empl Type Code]="PP")),
+					    BLANK())
+				lineageTag: 1b6ac4c4-311e-4c76-b647-261908cffead
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Godziny nocne U % ACT' =
+					
+					DIVIDE(
+					    CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"1240"},'Empl Type'[Empl Type Code]="U"),
+					    (CALCULATE('Salary Costs Measures'[Salary rbh],'Salary Component'[Component Code] in {"9970","6030"},'Empl Type'[Empl Type Code]="U")),
+					    BLANK())
+				lineageTag: 3594c925-4f83-433d-8409-7fa4366e92d9
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Absencja urlopowa' = CALCULATE([Salary rbh],'Salary Component'[Component Code]="9720")/(CALCULATE([Salary rbh],'Salary Component'[Component Code]="9590")-CALCULATE([Salary rbh],'Salary Component'[Component Code] in {"9635","9640","9642","9645","9690","9700","9740","9810","9820", "9830","9636","1112"}))
+				lineageTag: 42b89d13-1bb6-47ea-98d5-29856cfef7d9
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Absencja chorobowa' =
+					(CALCULATE([Salary rbh],'Salary Component'[Component Code] in {"9600","9610","9620","9630","9650","9660"})-CALCULATE([Salary rbh],'Salary Component'[Component Code] = "6020"))/
+					(
+					    CALCULATE([Salary rbh],'Salary Component'[Component Code] = "9590") - CALCULATE([Salary rbh],'Salary Component'[Component Code] in {"9635","9640","9642","9645","9690","9700","9740","9810","9820", "9830","9636","1112"}))
+				lineageTag: 6bda2b46-843f-4012-bee3-9251e41dbb43
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Godz B. Karty' =
+					CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Grp 2 Code] IN {"K2_G_B_KARTY"}
+					    )
+				formatString: 0
+				lineageTag: 46d21b8a-3921-4312-a7f5-5bcd2fd787ed
+
+			measure 'Godz Przepracowane' = ```
+					CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Grp 2 Code] IN {"K2_G_PRZEP", "K2_G_PRZEP_ZEW"}
+					    )
+					 
+					```
+				formatString: 0
+				lineageTag: 5d00d6bd-c8c4-429d-bc0a-772312835f80
+
+			column mon_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: aeaf74c1-3372-4a35-92fd-0efb595bedbd
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mon_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 45f2c718-f100-4a90-81c9-3970a600665b
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_comp_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: a60794fa-833b-4240-994c-cc5392fd9f3a
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: sal_comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: cfc5a907-f1d9-4e47-9017-08f4da300a3d
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cost_ledg_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 0d5e6df5-f867-4196-84da-f94348fcf380
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: sal_cost_ledg_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cost_empl_type_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 4baf7f2a-9e92-4a02-a157-643a9eb129bf
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: sal_cost_empl_type_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cost_pln
+				dataType: double
+				isHidden
+				lineageTag: 21773f02-60f1-42ef-afb1-e67671809448
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: sal_cost_pln
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column sal_cost_eur
+				dataType: double
+				isHidden
+				lineageTag: 89d1533d-5ea6-4fd9-8425-3aca38dbe224
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: sal_cost_eur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column sal_cost_h
+				dataType: double
+				isHidden
+				lineageTag: ccdea507-58b5-4229-bf79-45f58061cc4e
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: sal_cost_h
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column src_mon_name
+				dataType: string
+				isHidden
+				lineageTag: 78b1cc47-29cb-4028-b486-bb0895c8b590
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_mon_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_comp_bi_code
+				dataType: string
+				isHidden
+				lineageTag: 5a545c47-15fa-4bd7-a853-6ff3dec8351d
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_comp_bi_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_list_num
+				dataType: string
+				isHidden
+				lineageTag: 5a91261a-ae6a-4c65-9c28-ce3ef6bf75eb
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_list_num
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_list_name
+				dataType: string
+				isHidden
+				lineageTag: 96142c2c-59b5-4912-8864-9811fa9d92fc
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_list_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_row_num
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: b771f3e2-0460-4794-b06b-a980c38329a1
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: src_row_num
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_sal_comp_code
+				dataType: string
+				isHidden
+				lineageTag: 9a9c20b5-7fdb-46ca-97f6-b3386f8e8d73
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_sal_comp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_sal_comp_name
+				dataType: string
+				isHidden
+				lineageTag: 46358326-9856-4da0-9411-4eb615eb7eb4
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_sal_comp_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_mpk_code
+				dataType: string
+				isHidden
+				lineageTag: 628e3473-d943-45f0-926a-08d792429685
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_mpk_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_mpk_name
+				dataType: string
+				isHidden
+				lineageTag: 162aa6c3-602d-49ec-8176-a8bac02bb4d0
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_mpk_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_property
+				dataType: string
+				isHidden
+				lineageTag: 6ee3c597-1e82-429f-8f1e-da1c84d41fca
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_property
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_ledg_mark
+				dataType: string
+				isHidden
+				lineageTag: 87aa2c8c-ef1c-4048-885c-0e283cba7b6a
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_ledg_mark
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 7f57f671-7c1e-4f5d-bfc7-28d490e284a3
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: wc_id
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Salary Costs Measures' = entity
+				mode: directQuery
+				source
+					entityName: Salary Costs Measures
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table 'Manufacturing Costs Measures'
+			lineageTag: 83647e4a-a995-4579-91ee-3c0389ebb970
+
+			measure 'Labor Crew Time' = EXTERNALMEASURE("Labor Crew Time", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+				formatString: #,0
+				lineageTag: b05b246c-d282-4dc0-b852-7837746e6a2c
+				sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Labor Crew Time
+				dataCategory: Uncategorized
+
+			measure 'Machine Time' = EXTERNALMEASURE("Machine Time", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+				formatString: #,0
+				lineageTag: 4bab79de-2a42-4385-b410-7ef702c5ef81
+				sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Machine Time
+				dataCategory: Uncategorized
+
+			measure Productivity = EXTERNALMEASURE("Productivity", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+				formatString: #,0
+				displayFolder: Productivity Measures
+				lineageTag: 53b92aef-4a46-4dc7-be4e-2c402c4e5c4e
+				sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.Productivity
+				dataCategory: Uncategorized
+
+			column time_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9b85ab52-ea9f-4913-b975-322212615e28
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: time_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 0a7c8709-a871-4172-a6ef-6647aa0f3206
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: eb59bbde-7765-4f23-85fe-790d4a628ef6
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: contr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 994f5bac-c4db-4c98-9878-f249b3eafb46
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: wc_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 790dbece-3ded-42e6-ac9d-d9f3340f8978
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column labor_class_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 5e8f8a1b-9ebd-40f7-8018-49762f1500cd
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: labor_class_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mnf_cnt_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 95b50069-930c-4819-bfe8-958892eb1aae
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: mnf_cnt_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column labor_crew_time
+				dataType: double
+				isHidden
+				lineageTag: 9c3ad03e-9057-48c8-83ee-17d4017ed122
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: labor_crew_time
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column manufacturing_time
+				dataType: double
+				isHidden
+				lineageTag: 0e70dfd4-6534-4065-862a-cc271d960718
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: manufacturing_time
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column src_db_code
+				dataType: string
+				isHidden
+				lineageTag: 4dade3c5-bacc-408a-9cc1-60c34d8e2130
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_db_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_date_applied
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: c57c1a83-2b6c-4f73-93ac-18c214e29f1c
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_date_applied
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_contract
+				dataType: string
+				isHidden
+				lineageTag: 77b3b2df-d9d6-46c9-b1a7-331ec2b85184
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_contract
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_work_center_no
+				dataType: string
+				isHidden
+				lineageTag: 39aa4470-891c-4175-9ac9-3b1450691245
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_work_center_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_labor_class_no
+				dataType: string
+				isHidden
+				lineageTag: 8a396483-e4e6-4dc2-84c9-805340599fde
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_labor_class_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_order_code_db
+				dataType: string
+				isHidden
+				lineageTag: 78742345-6677-4c4c-9f26-36b9025b3492
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: src_order_code_db
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Manufacturing Costs Measures' = entity
+				mode: directQuery
+				source
+					entityName: Manufacturing Costs Measures
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table RoleDaxFilter
+			isHidden
+			lineageTag: 899f2301-311d-457c-8538-8ce51816a32b
+
+			column user_name
+				dataType: string
+				lineageTag: 6b7cd039-93f7-44a6-9430-f2849e2d52ce
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: user_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column col_name
+				dataType: string
+				lineageTag: 5c4de1b4-f383-4e98-a7a9-563d953669e1
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: col_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column value_code
+				dataType: string
+				lineageTag: 34a748d5-1b46-485b-86f6-44b7d9d080c7
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: value_code
+
+				annotation SummarizationSetBy = Automatic
+
+			partition RoleDaxFilter = entity
+				mode: directQuery
+				source
+					entityName: RoleDaxFilter
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table 'KPI Line'
+			lineageTag: 70ea6859-cf4a-4d0d-843d-21ab68f49148
+
+			column mnf_kpi_id
+				dataType: int64
+				isHidden
+				isNullable: false
+				formatString: 0
+				lineageTag: b3aa8a37-65e5-40dd-aad1-f81c7417f570
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mnf_kpi_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'KPI Code'
+				dataType: string
+				lineageTag: 16566a5b-b648-4e36-8dcf-579305307b85
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: KPI Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column KPI
+				dataType: string
+				lineageTag: 9ff03848-d327-4df0-bd06-7e14bc834672
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: KPI
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'KPI Category'
+				dataType: string
+				lineageTag: 89691b39-b016-4366-ba16-c43255938de0
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: KPI Category
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'KPI (en)'
+				dataType: string
+				lineageTag: 08394b3b-4c18-4421-bf85-a31c99674af2
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: KPI (en)
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'KPI Category (en)'
+				dataType: string
+				lineageTag: 0bb0e53f-9b8a-40fb-be91-5b16dc5665c1
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: KPI Category (en)
+
+				annotation SummarizationSetBy = Automatic
+
+			column direction
+				dataType: int64
+				formatString: 0
+				lineageTag: 7ad9a1f3-0390-4556-9e45-e37e38bc6d32
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: direction
+
+				annotation SummarizationSetBy = User
+
+			partition 'KPI Line' = entity
+				mode: directQuery
+				source
+					entityName: KPI Line
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table 'Work Center'
+			lineageTag: 12e7a66b-c351-4b31-823c-8f41abf2d4ed
+
+			column wc_id
+				dataType: int64
+				isHidden
+				isNullable: false
+				formatString: 0
+				lineageTag: f2b47dd2-2b89-4798-9508-60d22561ecc3
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: wc_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column db_code
+				dataType: string
+				isHidden
+				lineageTag: c68f7400-7ca9-47b0-877c-772f103d9457
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: db_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_contract
+				dataType: string
+				isHidden
+				lineageTag: d819687e-eb39-47f0-9766-f69bf94b75c4
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: wc_contract
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_code
+				dataType: string
+				isHidden
+				lineageTag: 1f270e1e-a87d-413e-8898-3d1665b9f403
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: wc_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_name
+				dataType: string
+				isHidden
+				lineageTag: 9c609437-806a-496b-aad1-9809e356b74d
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: wc_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_dept_no
+				dataType: string
+				isHidden
+				lineageTag: 1f724ee4-f713-4fbd-986e-33eba6548d65
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: wc_dept_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_cost_center_id
+				dataType: string
+				isHidden
+				lineageTag: f23efd33-4e81-4024-b51b-5e8916863880
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: wc_cost_center_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 49328ac2-696c-412c-b6de-15f10ad0b77d
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: contr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_code
+				dataType: string
+				isHidden
+				lineageTag: ebd0cde3-4260-4207-8567-a53014daab8c
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: contr_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_name
+				dataType: string
+				isHidden
+				lineageTag: 4268479e-e589-4fe5-8bdf-49b66b389282
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: contr_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_name2
+				dataType: string
+				isHidden
+				lineageTag: 7e18f8b1-8f64-4a59-aa3b-2c00d7434b48
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: contr_name2
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ebf87781-1a6a-476a-b6f2-cd4dbbcd604f
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_code
+				dataType: string
+				isHidden
+				lineageTag: 39a3a0c0-b555-4968-8758-d157cfe76069
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: comp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_name
+				dataType: string
+				isHidden
+				lineageTag: 6c98bd05-15ab-4fa1-8119-10012c5a5441
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: comp_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_name_s
+				dataType: string
+				isHidden
+				lineageTag: a87d8450-99df-4bf1-b851-1b7a21894f24
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: comp_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: b91476f9-6dab-4a27-9853-bb317533469c
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_code
+				dataType: string
+				isHidden
+				lineageTag: 37d1a49b-4595-42a2-9474-c0f46aeb659e
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mpk_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_name
+				dataType: string
+				isHidden
+				lineageTag: c229d74f-29a7-4699-94d1-49e77973ea41
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mpk_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_group_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 1f83f63a-fa48-4fed-9c23-57a113a933ed
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: mpk_group_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_group_code
+				dataType: string
+				isHidden
+				lineageTag: c74d435e-ac48-473b-a118-285d8da2f63a
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mpk_group_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_group_name
+				dataType: string
+				isHidden
+				lineageTag: 6a91e53f-501d-4481-8e9a-865a78e69643
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mpk_group_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column group_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 1407e64d-82a9-4be4-987c-a4417e76d542
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: group_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column group_code
+				dataType: string
+				isHidden
+				lineageTag: acb12fd0-7d87-4277-8431-8e0e1f680b26
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: group_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column group_name
+				dataType: string
+				isHidden
+				lineageTag: 99f1affc-7890-4f9e-8003-19ef3bacfe44
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: group_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Area Code'
+				dataType: string
+				lineageTag: ae117d02-9e6e-40ba-ac0e-cd853969f1b7
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Area Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column Area
+				dataType: string
+				lineageTag: c2f9b462-95b7-4611-ae1f-ed163880c304
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: Area
+				sortByColumn: 'Area Code'
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Work Center' = entity
+				mode: directQuery
+				source
+					entityName: Work Center
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		table 'KPI Measures'
+			lineageTag: 9d4415e6-3173-41c9-805e-38d48f716518
+
+			measure 'KPI Value Target' = EXTERNALMEASURE("KPI Value Target", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+				formatString: #,0.00%;-#,0.00%;#,0.00%
+				lineageTag: 615f023c-7837-4611-93e0-2a9fa42dca1f
+				sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.KPI Value Target
+				dataCategory: Uncategorized
+
+			measure 'KPI Value Act' = EXTERNALMEASURE("KPI Value Act", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+				formatString: #,0.00%;-#,0.00%;#,0.00%
+				lineageTag: d65fe512-6418-4cfd-84be-9330bebeda4d
+				sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.KPI Value Act
+				dataCategory: Uncategorized
+
+			measure 'TKW Act Obl' =
+					
+					SWITCH(
+					    SELECTEDVALUE('KPI Line'[KPI Code]),
+					    "PROD.BP.BRU", [Produktywność BP 2],
+					    "PROD.BP.NET", [Produktywność BP 1],
+					    "ABS.CHO.BP", [Absencja chorobowa BP],
+					    "ABS.CHO.PP", [Absencja chorobowa PP],
+					    "ABS.CHO.U", [Absencja chorobowa U],
+					    "ABS.URL.BP", [Absencja urlopowa BP],
+					    "ABS.URL.PP", [Absencja urlopowa PP],
+					    "ABS.URL.U", [Absencja urlopowa U],
+					    "GODZ.BK", [BK_realizacja_%],
+					    "PROD.BP.PP.U", [Produktywność BP,PP,U 3],
+					    "ZLOM", [KPI Value Act],
+					    "GODZ.NAD.BP", [Godziny nadliczbowe BP % ACT],
+					    "GODZ.NAD.PP", [Godziny nadliczbowe PP % ACT],
+					    "GODZ.NAD.U", [Godziny nadliczbowe U % ACT],
+					    "GODZ.NOC.BP", [Godziny nocne BP % ACT],
+					    "GODZ.NOC.PP", [Godziny nocne PP % ACT],
+					    "GODZ.NOC.U", [Godziny nocne U % ACT],
+					    "WYN.ZAK", [KPI Value Act],
+					    [KPI Value Act]
+					)
+				lineageTag: 930aabd3-eb4c-4177-9925-c1b1f4cea947
+
+				formatStringDefinition = ```
+						// SWITCH(
+						//     SELECTEDVALUE('KPI Line'[KPI Category (en)]),
+						
+						//     -- wartości liczbowe
+						//     "Value", "#,0.00",
+						
+						//     -- domyślnie
+						//     "0.00%"
+						// )
+						
+						SWITCH(
+						    SELECTEDVALUE('KPI Line'[KPI Code]),
+						
+						    -- procenty
+						    "PROD.BP.BRU", "0.00%",
+						    "PROD.BP.NET", "#,0.00",
+						    "ABS.CHO.BP", "0.00%",
+						    "ABS.CHO.PP", "0.00%",
+						    "ABS.CHO.U", "0.00%",
+						    "ABS.URL.BP", "0.00%",
+						    "ABS.URL.PP", "0.00%",
+						    "ABS.URL.U", "0.00%",
+						    "GODZ.BK", "0.00%",
+						    "PROD.BP.PP.U", "0.00%",
+						    "GODZ.NAD.BP", "0.00%",
+						    "GODZ.NAD.PP", "0.00%",
+						    "GODZ.NAD.U", "0.00%",
+						    "GODZ.NOC.BP", "0.00%",
+						    "GODZ.NOC.PP", "0.00%",
+						    "GODZ.NOC.U", "0.00%",
+						    
+						
+						
+						    -- wartości liczbowe
+						    "ZLOM", "#,0.00",
+						    "WYN.ZAK", "#,0.00",
+						
+						    -- domyślnie
+						    "#,0.00"
+						)
+						```
+
+				changedProperty = FormatString
+
+				changedProperty = FormatStringDefinition
+
+			measure formatowanie =
+					
+					IF(
+					     ISBLANK ( 'KPI Measures'[KPI Value Target] ),
+					    BLANK(),
+					    ('KPI Measures'[KPI Value Target] - 'KPI Measures'[TKW Act Obl] ) * SELECTEDVALUE ( 'KPI Line'[direction] )
+					)
+				lineageTag: b4b40597-420b-42a6-91e7-6506f75f2bd0
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'KPI Value Act Dynamic' = ```
+					
+					 AVERAGE('KPI Measures'[act_value])
+					```
+				lineageTag: c22225b9-9c45-4de5-b58f-7c2e4e304c47
+
+				changedProperty = Name
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column time_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 0a8fcb84-a70f-4caa-8e95-8bb3d48127d0
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: time_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mnf_kpi_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f51c6043-d06c-4907-ae3f-dda7605f2b62
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mnf_kpi_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: baf90242-5f55-4488-8e4a-b717ffce0a64
+				dataCategory: Uncategorized
+				summarizeBy: none
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column tgt_value
+				dataType: double
+				isHidden
+				lineageTag: eb5a7a54-1321-4ca8-9ff6-adb67491ea7e
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: tgt_value
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column act_value
+				dataType: double
+				isHidden
+				lineageTag: 2a7db19f-3462-478c-b365-5d845df88661
+				dataCategory: Uncategorized
+				summarizeBy: sum
+				sourceColumn: act_value
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition 'KPI Measures' = entity
+				mode: directQuery
+				source
+					entityName: KPI Measures
+					expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
+		relationship 4d2359dc-36a3-4a9f-8f1f-3457cb1504cd
+			crossFilteringBehavior: bothDirections
+			toCardinality: many
+			fromColumn: 'Salary Costs Measures'.mon_id
+			toColumn: Date.mon_id
+
+		relationship 45580842-09d9-47dd-85e5-0bd445adfd3d
+			fromColumn: 'Salary Costs Measures'.sal_comp_id
+			toColumn: 'Salary Component'.sal_comp_id
+
+		relationship 703e1f3f-4ea6-4c58-b3a4-65cf95afc597
+			fromColumn: 'Salary Costs Measures'.comp_id
+			toColumn: Company.comp_id
+
+		relationship 0d001e2e-dfda-485b-8fb7-73fa1d732af6
+			fromColumn: 'Salary Costs Measures'.sal_cost_empl_type_id
+			toColumn: 'Empl Type'.empl_type_id
+
+		relationship b3857ab5-f3fb-4295-9fce-bcc6593c3dbd
+			fromColumn: 'Salary Costs Measures'.mpk_id
+			toColumn: Organization.mpk_id
+
+		relationship 211768a3-f7df-4f24-b905-cb9887e9388e
+			fromColumn: 'Salary Costs Measures'.wc_id
+			toColumn: 'Work Center'.wc_id
+
+		relationship 28d7f7c7-ade5-4874-93db-4b8ef5f92bfb
+			fromColumn: 'Manufacturing Costs Measures'.comp_id
+			toColumn: Company.comp_id
+
+		relationship b4bd59bd-4942-4411-b908-27d3f27145bc
+			fromColumn: 'Manufacturing Costs Measures'.time_id
+			toColumn: Date.day_id
+
+		relationship 47041998-d12a-42d4-a6ee-034fb977b6c9
+			fromColumn: 'Manufacturing Costs Measures'.mpk_id
+			toColumn: Organization.mpk_id
+
+		relationship cd8d1dbc-2ea5-4698-a514-0df7f834b328
+			fromColumn: 'Manufacturing Costs Measures'.wc_id
+			toColumn: 'Work Center'.wc_id
+
+		relationship f449fa1c-1db4-45b2-92c7-741a4e4ec3c5
+			toCardinality: many
+			fromColumn: 'KPI Measures'.time_id
+			toColumn: Date.mon_id
+
+		relationship d8133927-d22e-4be6-9321-b15dd826e3ba
+			fromColumn: 'KPI Measures'.mnf_kpi_id
+			toColumn: 'KPI Line'.mnf_kpi_id
+
+		relationship ef372cd3-a229-4181-a3b1-6ca941477575
+			fromColumn: 'KPI Measures'.mpk_id
+			toColumn: Organization.mpk_id
+
+		cultureInfo en-US
+
+			linguisticMetadata = {"Version":"2.0.0","Language":"en-US","Entities":{"kpi_measures.tkw_act_obl":{"Definition":{"Binding":{"ConceptualEntity":"KPI Measures","ConceptualProperty":"TKW Act Obl"}},"State":"Generated","Terms":[{"KPI ACT":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}},{"ACT BK":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"kpi_measures.kpi_value_target":{"Definition":{"Binding":{"ConceptualEntity":"KPI Measures","ConceptualProperty":"KPI Value Target"}},"State":"Generated","Terms":[{"Target BK":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"salary_costs_measures.godz_b__karty":{"Definition":{"Binding":{"ConceptualEntity":"Salary Costs Measures","ConceptualProperty":"Godz B. Karty"}},"State":"Generated","Terms":[{"G.BIAŁE KARTY":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"salary_costs_measures.godz_przepracowane":{"Definition":{"Binding":{"ConceptualEntity":"Salary Costs Measures","ConceptualProperty":"Godz Przepracowane"}},"State":"Generated","Terms":[{"G.PRZEPRACOWANE":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"salary_component.component_grp_3":{"Definition":{"Binding":{"ConceptualEntity":"Salary Component","ConceptualProperty":"Component Grp 3"}},"State":"Generated","Terms":[{"Kategoria":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"salary_component.component":{"Definition":{"Binding":{"ConceptualEntity":"Salary Component","ConceptualProperty":"Component"}},"State":"Generated","Terms":[{"Typ BK":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]}}}
+				contentType: json
+
+		expression 'DirectQuery to AS - Productivity Tabular Model' =
+				let
+				    Source = AnalysisServices.Database("asazure://northeurope.asazure.windows.net/asnsgsolet", "Productivity Tabular Model"),
+				    Cubes = Table.Combine(Source[Data]),
+				    Cube = Cubes{[Id="Productivity Model", Kind="Cube"]}[Data]
+				in
+				    Cube
+			lineageTag: 28c81613-6847-4050-8956-4884093cea4e
+
+			annotation PBI_IncludeFutureArtifacts = True
+
+		annotation __PBI_TimeIntelligenceEnabled = 0
+
+		annotation PBI_QueryOrder = ["DirectQuery to AS - Productivity Tabular Model"]
+
+		annotation PBI_ProTooling = ["DevMode"]
+

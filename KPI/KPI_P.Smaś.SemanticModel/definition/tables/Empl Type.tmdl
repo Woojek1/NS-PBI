@@ -1,0 +1,39 @@
+table 'Empl Type'
+	lineageTag: f74e5483-7f7c-460c-b56b-1eb238a46d8a
+
+	column empl_type_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 0d206857-a551-4713-b0ec-9b8bc3938952
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: empl_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Empl Type Code'
+		dataType: string
+		lineageTag: f3c61979-3157-4a20-aff1-6d65c7e2bad3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Empl Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Empl Type'
+		dataType: string
+		lineageTag: c6c20623-c0d7-40c0-aab6-1b0cdca58549
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Empl Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Empl Type' = entity
+		mode: directQuery
+		source
+			entityName: Empl Type
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+

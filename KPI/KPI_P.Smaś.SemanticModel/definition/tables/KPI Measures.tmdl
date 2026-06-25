@@ -1,0 +1,172 @@
+table 'KPI Measures'
+	lineageTag: 9d4415e6-3173-41c9-805e-38d48f716518
+
+	measure 'KPI Value Target' = EXTERNALMEASURE("KPI Value Target", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 615f023c-7837-4611-93e0-2a9fa42dca1f
+		sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.KPI Value Target
+		dataCategory: Uncategorized
+
+	measure 'KPI Value Act' = EXTERNALMEASURE("KPI Value Act", DOUBLE, "DirectQuery to AS - Productivity Tabular Model")
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: d65fe512-6418-4cfd-84be-9330bebeda4d
+		sourceLineageTag: DirectQuery to AS - Productivity Tabular Model.KPI Value Act
+		dataCategory: Uncategorized
+
+	measure 'TKW Act Obl' =
+			
+			SWITCH(
+			    SELECTEDVALUE('KPI Line'[KPI Code]),
+			    "PROD.BP.BRU", [Produktywność BP 2],
+			    "PROD.BP.NET", [Produktywność BP 1],
+			    "ABS.CHO.BP", [Absencja chorobowa BP],
+			    "ABS.CHO.PP", [Absencja chorobowa PP],
+			    "ABS.CHO.U", [Absencja chorobowa U],
+			    "ABS.URL.BP", [Absencja urlopowa BP],
+			    "ABS.URL.PP", [Absencja urlopowa PP],
+			    "ABS.URL.U", [Absencja urlopowa U],
+			    "GODZ.BK", [BK_realizacja_%],
+			    "PROD.BP.PP.U", [Produktywność BP,PP,U 3],
+			    "ZLOM", [KPI Value Act],
+			    "GODZ.NAD.BP", [Godziny nadliczbowe BP % ACT],
+			    "GODZ.NAD.PP", [Godziny nadliczbowe PP % ACT],
+			    "GODZ.NAD.U", [Godziny nadliczbowe U % ACT],
+			    "GODZ.NOC.BP", [Godziny nocne BP % ACT],
+			    "GODZ.NOC.PP", [Godziny nocne PP % ACT],
+			    "GODZ.NOC.U", [Godziny nocne U % ACT],
+			    "WYN.ZAK", [KPI Value Act],
+			    [KPI Value Act]
+			)
+		lineageTag: 930aabd3-eb4c-4177-9925-c1b1f4cea947
+
+		formatStringDefinition = ```
+				// SWITCH(
+				//     SELECTEDVALUE('KPI Line'[KPI Category (en)]),
+				
+				//     -- wartości liczbowe
+				//     "Value", "#,0.00",
+				
+				//     -- domyślnie
+				//     "0.00%"
+				// )
+				
+				SWITCH(
+				    SELECTEDVALUE('KPI Line'[KPI Code]),
+				
+				    -- procenty
+				    "PROD.BP.BRU", "0.00%",
+				    "PROD.BP.NET", "#,0.00",
+				    "ABS.CHO.BP", "0.00%",
+				    "ABS.CHO.PP", "0.00%",
+				    "ABS.CHO.U", "0.00%",
+				    "ABS.URL.BP", "0.00%",
+				    "ABS.URL.PP", "0.00%",
+				    "ABS.URL.U", "0.00%",
+				    "GODZ.BK", "0.00%",
+				    "PROD.BP.PP.U", "0.00%",
+				    "GODZ.NAD.BP", "0.00%",
+				    "GODZ.NAD.PP", "0.00%",
+				    "GODZ.NAD.U", "0.00%",
+				    "GODZ.NOC.BP", "0.00%",
+				    "GODZ.NOC.PP", "0.00%",
+				    "GODZ.NOC.U", "0.00%",
+				    
+				
+				
+				    -- wartości liczbowe
+				    "ZLOM", "#,0.00",
+				    "WYN.ZAK", "#,0.00",
+				
+				    -- domyślnie
+				    "#,0.00"
+				)
+				```
+
+		changedProperty = FormatString
+
+		changedProperty = FormatStringDefinition
+
+	measure formatowanie =
+			
+			IF(
+			     ISBLANK ( 'KPI Measures'[KPI Value Target] ),
+			    BLANK(),
+			    ('KPI Measures'[KPI Value Target] - 'KPI Measures'[TKW Act Obl] ) * SELECTEDVALUE ( 'KPI Line'[direction] )
+			)
+		lineageTag: b4b40597-420b-42a6-91e7-6506f75f2bd0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'KPI Value Act Dynamic' = ```
+			
+			 AVERAGE('KPI Measures'[act_value])
+			```
+		lineageTag: c22225b9-9c45-4de5-b58f-7c2e4e304c47
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column time_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0a8fcb84-a70f-4caa-8e95-8bb3d48127d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_kpi_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f51c6043-d06c-4907-ae3f-dda7605f2b62
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mnf_kpi_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: baf90242-5f55-4488-8e4a-b717ffce0a64
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tgt_value
+		dataType: double
+		isHidden
+		lineageTag: eb5a7a54-1321-4ca8-9ff6-adb67491ea7e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: tgt_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column act_value
+		dataType: double
+		isHidden
+		lineageTag: 2a7db19f-3462-478c-b365-5d845df88661
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: act_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'KPI Measures' = entity
+		mode: directQuery
+		source
+			entityName: KPI Measures
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+

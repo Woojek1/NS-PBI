@@ -1,0 +1,59 @@
+table Company
+	lineageTag: 2f666284-04da-4bcd-942c-06b6b41d260c
+
+	column comp_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: f1a303e3-3fa3-42f7-9708-e872d76fe102
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: b327ffed-c1a7-45d7-a228-30043bcba9a2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 1e041bb9-f3d3-4002-a41b-b7ad266e71c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_name_s
+		dataType: string
+		isHidden
+		lineageTag: b99c7200-9ad5-401b-9e4d-3e6306cd8913
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code_sys
+		dataType: string
+		isHidden
+		lineageTag: 21866fe0-3986-468d-85f8-d9c5f6abccc7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code_sys
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Company = entity
+		mode: directQuery
+		source
+			entityName: Company
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+

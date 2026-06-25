@@ -1,0 +1,125 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7acdb602a54c641b8770",
+  "position": {
+    "x": 103,
+    "y": 41,
+    "z": 0,
+    "height": 620,
+    "width": 1073,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KPI Line"
+                    }
+                  },
+                  "Property": "KPI"
+                }
+              },
+              "queryRef": "KPI Line.KPI",
+              "nativeQueryRef": "KPI"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KPI Line"
+                    }
+                  },
+                  "Property": "KPI (en)"
+                }
+              },
+              "queryRef": "KPI Line.KPI (en)",
+              "nativeQueryRef": "KPI (en)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KPI Line"
+                    }
+                  },
+                  "Property": "KPI Category"
+                }
+              },
+              "queryRef": "KPI Line.KPI Category",
+              "nativeQueryRef": "KPI Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KPI Line"
+                    }
+                  },
+                  "Property": "KPI Category (en)"
+                }
+              },
+              "queryRef": "KPI Line.KPI Category (en)",
+              "nativeQueryRef": "KPI Category (en)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KPI Line"
+                    }
+                  },
+                  "Property": "KPI Code"
+                }
+              },
+              "queryRef": "KPI Line.KPI Code",
+              "nativeQueryRef": "KPI Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KPI Line"
+                    }
+                  },
+                  "Property": "direction"
+                }
+              },
+              "queryRef": "KPI Line.direction",
+              "nativeQueryRef": "direction"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "KPI Line"
+                  }
+                },
+                "Property": "KPI Category"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

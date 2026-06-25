@@ -1,0 +1,76 @@
+table 'KPI Line'
+	lineageTag: 70ea6859-cf4a-4d0d-843d-21ab68f49148
+
+	column mnf_kpi_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: b3aa8a37-65e5-40dd-aad1-f81c7417f570
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mnf_kpi_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI Code'
+		dataType: string
+		lineageTag: 16566a5b-b648-4e36-8dcf-579305307b85
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: KPI Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI
+		dataType: string
+		lineageTag: 9ff03848-d327-4df0-bd06-7e14bc834672
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: KPI
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI Category'
+		dataType: string
+		lineageTag: 89691b39-b016-4366-ba16-c43255938de0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: KPI Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI (en)'
+		dataType: string
+		lineageTag: 08394b3b-4c18-4421-bf85-a31c99674af2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: KPI (en)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI Category (en)'
+		dataType: string
+		lineageTag: 0bb0e53f-9b8a-40fb-be91-5b16dc5665c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: KPI Category (en)
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ad9a1f3-0390-4556-9e45-e37e38bc6d32
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = User
+
+	partition 'KPI Line' = entity
+		mode: directQuery
+		source
+			entityName: KPI Line
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+

@@ -1,0 +1,37 @@
+table RoleDaxFilter
+	isHidden
+	lineageTag: 899f2301-311d-457c-8538-8ce51816a32b
+
+	column user_name
+		dataType: string
+		lineageTag: 6b7cd039-93f7-44a6-9430-f2849e2d52ce
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column col_name
+		dataType: string
+		lineageTag: 5c4de1b4-f383-4e98-a7a9-563d953669e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: col_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column value_code
+		dataType: string
+		lineageTag: 34a748d5-1b46-485b-86f6-44b7d9d080c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: value_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RoleDaxFilter = entity
+		mode: directQuery
+		source
+			entityName: RoleDaxFilter
+			expressionSource: 'DirectQuery to AS - Productivity Tabular Model'
+
