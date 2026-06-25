@@ -1,0 +1,64 @@
+table 'KPI Line'
+	lineageTag: 990f3b0e-b3ef-4142-821c-183c2740f876
+
+	column 'KPI Code'
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: b04b447b-332a-4803-b506-eac43b20a2a1
+		summarizeBy: none
+		sourceColumn: KPI Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 7b214ced-91e1-4735-b1f4-09f5f257a569
+		summarizeBy: none
+		sourceColumn: KPI
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI Category'
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 6fe0acf0-fbed-4f9e-8f56-686d6dc8efeb
+		summarizeBy: none
+		sourceColumn: KPI Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI (en)'
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: ca7492cc-d09d-4caa-9c5d-32d6c1fda36b
+		summarizeBy: none
+		sourceColumn: KPI (en)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI Category (en)'
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: c8a08635-2088-4822-a2e1-e6c6a9fe1aaf
+		summarizeBy: none
+		sourceColumn: KPI Category (en)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'KPI Line' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+				    solet_Schema = prd_Database{[Name="ext",Kind="Schema"]}[Data],
+				    d_mnf_kpi_Table = solet_Schema{[Name="ext_mnf_kpi_dim",Kind="Table"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(d_mnf_kpi_Table,{{"CODE", "KPI Code"}, {"NAME", "KPI"}, {"CATEGORY", "KPI Category"}, {"CATEGORY_EN", "KPI Category (en)"}, {"NAME_EN", "KPI (en)"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

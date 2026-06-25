@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Company","Date","Empl Type","KPI Line","KPI Measures","Manufacturing Costs Measures","Salary Component","Salary Cost Measures","Work Center","Organization"]
+
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+
+ref table Company
+ref table Date
+ref table 'Empl Type'
+ref table 'KPI Line'
+ref table 'KPI Measures'
+ref table 'Manufacturing Costs Measures'
+ref table _Measures
+ref table 'Salary Component'
+ref table 'Salary Cost Measures'
+ref table 'Work Center'
+ref table Organization
+
+ref cultureInfo en-US
+ref cultureInfo pl-PL
+

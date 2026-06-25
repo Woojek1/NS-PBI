@@ -1,0 +1,56 @@
+table _Measures
+	lineageTag: b844acda-107e-434a-9db1-595d469a3711
+
+	measure 'KPI Value Act' = AVERAGE('KPI Measures'[act_value])
+		lineageTag: 1816b969-eb26-4e39-b8a3-93c21b832bda
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'KPI Value Target' = AVERAGE('KPI Measures'[tgt_value])
+		lineageTag: 4bf22750-8869-4e39-8188-70bfe795c341
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TKW Act Obl' =
+			
+			SWITCH(
+			    SELECTEDVALUE('KPI Line'[KPI Code]),
+			    // "PROD.BP.BRU", [Produktywność BP 2],
+			    "PROD.BP.NET", [Produktywność BP 1],
+			    "ABS.CHO.BP", [Absencja chorobowa BP],
+			    // "ABS.CHO.PP", [Absencja chorobowa PP],
+			    // "ABS.CHO.U", [Absencja chorobowa U],
+			    // "ABS.URL.BP", [Absencja urlopowa BP],
+			    // "ABS.URL.PP", [Absencja urlopowa PP],
+			    // "ABS.URL.U", [Absencja urlopowa U],
+			    // "GODZ.BK", [BK_realizacja_%],
+			    // "PROD.BP.PP.U", [Produktywność BP,PP,U 3],
+			    "ZLOM", [KPI Value Act],
+			    // "GODZ.NAD.BP", [Godziny nadliczbowe BP % ACT],
+			    // "GODZ.NAD.PP", [Godziny nadliczbowe PP % ACT],
+			    // "GODZ.NAD.U", [Godziny nadliczbowe U % ACT],
+			    // "GODZ.NOC.BP", [Godziny nocne BP % ACT],
+			    // "GODZ.NOC.PP", [Godziny nocne PP % ACT],
+			    // "GODZ.NOC.U", [Godziny nocne U % ACT],
+			    "WYN.ZAK", [KPI Value Act],
+			    [KPI Value Act]
+			)
+		lineageTag: 91e7c1d9-a0dc-4371-a4dd-93d12cba7ce6
+
+		formatStringDefinition = "#00,0"
+
+	column Value
+		formatString: 0
+		lineageTag: b82d326d-8fd9-4cb8-9fed-dc69f131dfce
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = f3b13f0c68094b5da91c2c70ee1a777a
+

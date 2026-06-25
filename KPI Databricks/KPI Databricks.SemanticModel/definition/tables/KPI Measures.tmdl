@@ -1,0 +1,116 @@
+table 'KPI Measures'
+	lineageTag: 2b9fdf0f-9bde-4267-991d-8c72ef5d7995
+
+	column record_source
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 11aa969e-f4e7-43e2-952b-77b508617e4d
+		summarizeBy: none
+		sourceColumn: record_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_version
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b9629277-f627-45cd-8d56-2f29ad925702
+		summarizeBy: none
+		sourceColumn: record_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 41bac34b-437c-40f9-892f-2be83a87288e
+		summarizeBy: sum
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_kpi_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c633e24f-220e-48de-9bc1-4d13d122f429
+		summarizeBy: sum
+		sourceColumn: mnf_kpi_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cbe30213-2ccc-47ad-afd6-6456d263e828
+		summarizeBy: sum
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tgt_value
+		dataType: double
+		sourceProviderType: decimal(18, 4)
+		lineageTag: 5b7a83a2-7d5b-48b0-b12d-b4fcd345468c
+		summarizeBy: sum
+		sourceColumn: tgt_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column act_value
+		dataType: double
+		sourceProviderType: decimal(18, 4)
+		lineageTag: e6034a38-09b2-48ae-874a-154d73f4b147
+		summarizeBy: sum
+		sourceColumn: act_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column src_kpi_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 94da4847-95a8-495e-bf64-ec246052714d
+		summarizeBy: none
+		sourceColumn: src_kpi_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_mpk_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 91429254-9ca5-4759-9863-5059cb3141f1
+		summarizeBy: none
+		sourceColumn: src_mpk_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_month
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b31969ed-8248-4ae7-b376-6cc45241ad1c
+		summarizeBy: none
+		sourceColumn: src_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'KPI Measures' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+				    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+				    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+				    f_mnf_kpi_data_Table = solet_Schema{[Name="f_mnf_kpi_data",Kind="Table"]}[Data]
+				in
+				    f_mnf_kpi_data_Table
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

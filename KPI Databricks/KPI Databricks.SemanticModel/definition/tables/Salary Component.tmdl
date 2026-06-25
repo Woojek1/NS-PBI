@@ -1,0 +1,197 @@
+table 'Salary Component'
+	lineageTag: fe07ec92-c4f8-4b26-a37a-12db0747cd21
+
+	column record_source
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ca87edb0-a020-443c-af0e-50627251b174
+		summarizeBy: none
+		sourceColumn: record_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_version
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9d6f404d-7b59-47e7-8890-d627e4b84213
+		summarizeBy: none
+		sourceColumn: record_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_load_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c3936b50-127c-4b51-83c7-cbbcddda486d
+		summarizeBy: none
+		sourceColumn: first_load_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_seen_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 42b5dc84-a62f-4b2f-8904-c9e41f86224c
+		summarizeBy: none
+		sourceColumn: last_seen_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_exist
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 9620053f-0f94-4aad-b9b0-0738c202d1f6
+		summarizeBy: none
+		sourceColumn: source_exist
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_comp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bf9df3c8-6b76-4c57-ab95-21a19568a6e8
+		summarizeBy: none
+		sourceColumn: sal_comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Component Code'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c69ecc2c-ab36-44ca-b525-7a0d8e21d211
+		summarizeBy: none
+		sourceColumn: Component Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_comp_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 26f7d20e-ac55-4265-880f-d594535ed926
+		summarizeBy: none
+		sourceColumn: sal_comp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat1_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 79a53531-d81c-4f0c-bab2-c937322ecb26
+		summarizeBy: none
+		sourceColumn: sal_cat1_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat1_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f2b6688b-33d5-4e96-81e3-5e33ab5fa4d6
+		summarizeBy: none
+		sourceColumn: sal_cat1_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat1_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 09237e3c-306a-40a3-b47c-01a563cb3338
+		summarizeBy: none
+		sourceColumn: sal_cat1_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat2_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f488bff0-153d-4fef-9c07-6322568a0223
+		summarizeBy: none
+		sourceColumn: sal_cat2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat2_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ea2fc104-a13d-443b-9c04-1f366f1c6435
+		summarizeBy: none
+		sourceColumn: sal_cat2_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat2_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 562500eb-87dd-4cea-a7d3-674cbad1b85c
+		summarizeBy: none
+		sourceColumn: sal_cat2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat3_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: de3f0191-72de-48c9-8654-ffc8319a7254
+		summarizeBy: none
+		sourceColumn: sal_cat3_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat3_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: bbf84584-ca5b-4c24-b1b7-f53dac37eba8
+		summarizeBy: none
+		sourceColumn: sal_cat3_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sal_cat3_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: aa2d0abf-f099-4a4c-a587-aed33648e2ca
+		summarizeBy: none
+		sourceColumn: sal_cat3_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tmc_cat
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c20dc9db-5f40-43b1-b331-7f2fc6b91385
+		summarizeBy: none
+		sourceColumn: tmc_cat
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_4_type
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 357b7c1c-b408-488c-b813-8f4c9431646f
+		summarizeBy: none
+		sourceColumn: cost_4_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Salary Component' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+				    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+				    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+				    d_salary_components_Table = solet_Schema{[Name="d_salary_components",Kind="Table"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(d_salary_components_Table,{{"sal_comp_code", "Component Code"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

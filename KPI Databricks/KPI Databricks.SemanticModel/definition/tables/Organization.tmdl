@@ -1,0 +1,216 @@
+table Organization
+	lineageTag: 4c66e114-2d3f-43e7-abb5-df214933cedd
+
+	column record_source
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 637868d7-fa32-4cd8-83d0-d15061ec7904
+		summarizeBy: none
+		sourceColumn: record_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_version
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e28770bb-279d-473d-9707-5b7e7e0b53df
+		summarizeBy: none
+		sourceColumn: record_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_load_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: cdbaa01d-b877-4617-b9c1-bba817c3d00e
+		summarizeBy: none
+		sourceColumn: first_load_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_seen_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a35b7766-6f39-4a41-bdf6-d14aa0e8e788
+		summarizeBy: none
+		sourceColumn: last_seen_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_exist
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0d4a78b9-bc8e-44a7-899a-2c877151d583
+		summarizeBy: none
+		sourceColumn: source_exist
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0eb0185c-61b1-4c60-afe6-c934fc7bb0bb
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 2a85edd0-9194-4d0a-9602-943360504c84
+		summarizeBy: none
+		sourceColumn: mpk_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c7f60912-bc4a-4fb1-a794-7c415cf58cb6
+		summarizeBy: none
+		sourceColumn: mpk_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sect_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 502152c1-eea0-4cac-85b2-bb6b47a7bec3
+		summarizeBy: none
+		sourceColumn: sect_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sect_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3b6c183c-f3d4-480f-896f-66722e22df5f
+		summarizeBy: none
+		sourceColumn: sect_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sect_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b023bfe3-68f1-43c1-806c-f10fe7f5f168
+		summarizeBy: none
+		sourceColumn: sect_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 632de056-ceb8-4209-a2bd-5c9694d4bade
+		summarizeBy: none
+		sourceColumn: dept_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f12275f6-3c04-4382-b0cc-0486f559fed2
+		summarizeBy: none
+		sourceColumn: dept_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a04f1960-c119-42ff-b566-cae6113c7e2e
+		summarizeBy: none
+		sourceColumn: dept_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column pion_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: df958d40-a4ee-4fb0-be04-d64744f29a78
+		summarizeBy: none
+		sourceColumn: pion_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pion_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 894a8d40-9422-4cac-b5ae-d0dfcc375f62
+		summarizeBy: none
+		sourceColumn: pion_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column pion_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 08d6cd4a-50ce-49d3-aeeb-320f45f55068
+		summarizeBy: none
+		sourceColumn: pion_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column fac_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 38245234-345d-43d6-8156-30ff42ae9221
+		summarizeBy: none
+		sourceColumn: fac_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fac_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cb5e03a9-35e1-4539-9a92-b49a22b8ba11
+		summarizeBy: none
+		sourceColumn: fac_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column fac_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b6fa58da-c201-4455-ba14-4dea0446cf32
+		summarizeBy: none
+		sourceColumn: fac_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bi_visible
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 2dee11d9-2734-4db3-9a76-cd992e91b3d7
+		summarizeBy: none
+		sourceColumn: bi_visible
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Organization = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+				    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+				    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+				    d_cnt_organization_Table = solet_Schema{[Name="d_cnt_organization",Kind="Table"]}[Data]
+				in
+				    d_cnt_organization_Table
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

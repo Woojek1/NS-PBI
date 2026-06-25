@@ -1,0 +1,171 @@
+table Date
+	lineageTag: 09c35199-5c7b-4e38-8127-e1c19dfddba2
+
+	column day_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 0f23b0c9-39b1-4128-adbc-014076eac91f
+		summarizeBy: sum
+		sourceColumn: day_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 7f93345c-8707-4af4-b9e9-853827d2a24a
+		summarizeBy: none
+		sourceColumn: day_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column day_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b10efffa-6f2e-42f1-aa6b-2a23d7df22bb
+		summarizeBy: none
+		sourceColumn: day_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_week
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 199bb2c0-e7c3-407c-98bf-c9fb2db7c40e
+		summarizeBy: none
+		sourceColumn: day_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 386804c8-8692-4842-a02b-f3bfcd37b56c
+		summarizeBy: sum
+		sourceColumn: week_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: bcd1ad01-819c-4b03-ad6a-408a381bf60e
+		summarizeBy: none
+		sourceColumn: week_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 912579be-2aa9-4fa5-9a39-7c340ddb28ae
+		summarizeBy: none
+		sourceColumn: week_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: fac836c6-65cf-469e-89a2-624a8fd01a66
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8119363f-14e1-4a64-a890-7e4bf4b74ba3
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0ebc0848-e738-4f5b-9300-6ef44558c6b5
+		summarizeBy: none
+		sourceColumn: mon_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 732c3bc8-a127-4ff9-b868-9c6b4dcc99ec
+		summarizeBy: sum
+		sourceColumn: quart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 92268ae3-0a0a-43a3-8bb8-4c75ce24484f
+		summarizeBy: none
+		sourceColumn: quart_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a403358d-1ce6-4ac6-9f27-1edc7ced2d90
+		summarizeBy: none
+		sourceColumn: quart_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 06424f5d-00d0-4fc2-b76d-fd5a8b137008
+		summarizeBy: sum
+		sourceColumn: year_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 33cae1f8-eae4-4ee9-8de4-5243fe62c31c
+		summarizeBy: none
+		sourceColumn: year_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_count_work
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: d25e465d-cf5b-4473-97d4-b29077fb6b37
+		summarizeBy: sum
+		sourceColumn: day_count_work
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+				    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
+				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+				    d_time_View = edw_Schema{[Name="d_time",Kind="View"]}[Data]
+				in
+				    d_time_View
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

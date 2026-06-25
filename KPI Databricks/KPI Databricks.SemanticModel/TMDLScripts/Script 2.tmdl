@@ -1,0 +1,2177 @@
+createOrReplace
+
+	model Model
+		culture: en-US
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: pl-PL
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
+
+		table Company
+			lineageTag: 1fd31cd3-59c0-449a-907d-ccab0928bb8f
+
+			column comp_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 374113b8-2774-4b39-bd0c-441f37f8864b
+				summarizeBy: none
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: b89713f4-0a2e-4e50-b210-e4afd62c137c
+				summarizeBy: none
+				sourceColumn: comp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 6ba1e173-6976-4bbb-93c9-b9c0d40df241
+				summarizeBy: none
+				sourceColumn: comp_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_name_s
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 0075659a-00b6-4632-ab53-9d3cc16ddf1d
+				summarizeBy: none
+				sourceColumn: comp_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column curr_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 5280e22d-0dc0-45f2-b5aa-32e4f8f8042b
+				summarizeBy: none
+				sourceColumn: curr_code
+
+				annotation SummarizationSetBy = Automatic
+
+			partition Company = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
+						    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+						    d_company_View = edw_Schema{[Name="d_company",Kind="View"]}[Data]
+						in
+						    d_company_View
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		table Date
+			lineageTag: 09c35199-5c7b-4e38-8127-e1c19dfddba2
+
+			column day_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: smallint
+				lineageTag: 0f23b0c9-39b1-4128-adbc-014076eac91f
+				summarizeBy: sum
+				sourceColumn: day_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_date
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 7f93345c-8707-4af4-b9e9-853827d2a24a
+				summarizeBy: none
+				sourceColumn: day_date
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column day_name_s
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: b10efffa-6f2e-42f1-aa6b-2a23d7df22bb
+				summarizeBy: none
+				sourceColumn: day_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_week
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 199bb2c0-e7c3-407c-98bf-c9fb2db7c40e
+				summarizeBy: none
+				sourceColumn: day_week
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: smallint
+				lineageTag: 386804c8-8692-4842-a02b-f3bfcd37b56c
+				summarizeBy: sum
+				sourceColumn: week_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: bcd1ad01-819c-4b03-ad6a-408a381bf60e
+				summarizeBy: none
+				sourceColumn: week_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column week_name_s
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 912579be-2aa9-4fa5-9a39-7c340ddb28ae
+				summarizeBy: none
+				sourceColumn: week_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: smallint
+				lineageTag: fac836c6-65cf-469e-89a2-624a8fd01a66
+				summarizeBy: none
+				sourceColumn: mon_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8119363f-14e1-4a64-a890-7e4bf4b74ba3
+				summarizeBy: none
+				sourceColumn: mon_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_name_s
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 0ebc0848-e738-4f5b-9300-6ef44558c6b5
+				summarizeBy: none
+				sourceColumn: mon_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: smallint
+				lineageTag: 732c3bc8-a127-4ff9-b868-9c6b4dcc99ec
+				summarizeBy: sum
+				sourceColumn: quart_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 92268ae3-0a0a-43a3-8bb8-4c75ce24484f
+				summarizeBy: none
+				sourceColumn: quart_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column quart_name_s
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a403358d-1ce6-4ac6-9f27-1edc7ced2d90
+				summarizeBy: none
+				sourceColumn: quart_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: tinyint
+				lineageTag: 06424f5d-00d0-4fc2-b76d-fd5a8b137008
+				summarizeBy: sum
+				sourceColumn: year_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 33cae1f8-eae4-4ee9-8de4-5243fe62c31c
+				summarizeBy: none
+				sourceColumn: year_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_count_work
+				dataType: int64
+				formatString: 0
+				sourceProviderType: tinyint
+				lineageTag: d25e465d-cf5b-4473-97d4-b29077fb6b37
+				summarizeBy: sum
+				sourceColumn: day_count_work
+
+				annotation SummarizationSetBy = Automatic
+
+			partition Date = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
+						    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+						    d_time_View = edw_Schema{[Name="d_time",Kind="View"]}[Data]
+						in
+						    d_time_View
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		table 'Empl Type'
+			lineageTag: 86ce385c-0d0f-4aa7-a3ac-a30b0c530568
+
+			column empl_type_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 713b83e0-4b2f-43d5-8cbe-47c794936d6c
+				summarizeBy: none
+				sourceColumn: empl_type_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Empl Type Code'
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: bf33d0b6-d233-481b-a756-15a43d95b1c6
+				summarizeBy: none
+				sourceColumn: Empl Type Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column empl_type_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 357d6fb3-8ec5-4762-a510-e1579f16f25d
+				summarizeBy: none
+				sourceColumn: empl_type_name
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Empl Type' = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+						    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+						    d_salary_cost_empl_type_Table = solet_Schema{[Name="d_salary_cost_empl_type",Kind="Table"]}[Data],
+						    #"Renamed Columns" = Table.RenameColumns(d_salary_cost_empl_type_Table,{{"empl_type_code", "Empl Type Code"}})
+						in
+						    #"Renamed Columns"
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		table 'KPI Line'
+			lineageTag: 990f3b0e-b3ef-4142-821c-183c2740f876
+
+			column 'KPI Code'
+				dataType: string
+				sourceProviderType: nvarchar(max)
+				lineageTag: b04b447b-332a-4803-b506-eac43b20a2a1
+				summarizeBy: none
+				sourceColumn: KPI Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column KPI
+				dataType: string
+				sourceProviderType: nvarchar(max)
+				lineageTag: 7b214ced-91e1-4735-b1f4-09f5f257a569
+				summarizeBy: none
+				sourceColumn: KPI
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'KPI Category'
+				dataType: string
+				sourceProviderType: nvarchar(max)
+				lineageTag: 6fe0acf0-fbed-4f9e-8f56-686d6dc8efeb
+				summarizeBy: none
+				sourceColumn: KPI Category
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'KPI (en)'
+				dataType: string
+				sourceProviderType: nvarchar(max)
+				lineageTag: ca7492cc-d09d-4caa-9c5d-32d6c1fda36b
+				summarizeBy: none
+				sourceColumn: KPI (en)
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'KPI Category (en)'
+				dataType: string
+				sourceProviderType: nvarchar(max)
+				lineageTag: c8a08635-2088-4822-a2e1-e6c6a9fe1aaf
+				summarizeBy: none
+				sourceColumn: KPI Category (en)
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'KPI Line' = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+						    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+						    solet_Schema = prd_Database{[Name="ext",Kind="Schema"]}[Data],
+						    d_mnf_kpi_Table = solet_Schema{[Name="ext_mnf_kpi_dim",Kind="Table"]}[Data],
+						    #"Renamed Columns" = Table.RenameColumns(d_mnf_kpi_Table,{{"CODE", "KPI Code"}, {"NAME", "KPI"}, {"CATEGORY", "KPI Category"}, {"CATEGORY_EN", "KPI Category (en)"}, {"NAME_EN", "KPI (en)"}})
+						in
+						    #"Renamed Columns"
+
+			annotation PBI_ResultType = Table
+
+			annotation PBI_NavigationStepName = Navigation
+
+		table 'KPI Measures'
+			lineageTag: 2b9fdf0f-9bde-4267-991d-8c72ef5d7995
+
+			column record_source
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 11aa969e-f4e7-43e2-952b-77b508617e4d
+				summarizeBy: none
+				sourceColumn: record_source
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_version
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: b9629277-f627-45cd-8d56-2f29ad925702
+				summarizeBy: none
+				sourceColumn: record_version
+
+				annotation SummarizationSetBy = Automatic
+
+			column time_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 41bac34b-437c-40f9-892f-2be83a87288e
+				summarizeBy: sum
+				sourceColumn: time_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mnf_kpi_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: c633e24f-220e-48de-9bc1-4d13d122f429
+				summarizeBy: sum
+				sourceColumn: mnf_kpi_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: cbe30213-2ccc-47ad-afd6-6456d263e828
+				summarizeBy: sum
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column tgt_value
+				dataType: double
+				sourceProviderType: decimal(18, 4)
+				lineageTag: 5b7a83a2-7d5b-48b0-b12d-b4fcd345468c
+				summarizeBy: sum
+				sourceColumn: tgt_value
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column act_value
+				dataType: double
+				sourceProviderType: decimal(18, 4)
+				lineageTag: e6034a38-09b2-48ae-874a-154d73f4b147
+				summarizeBy: sum
+				sourceColumn: act_value
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column src_kpi_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 94da4847-95a8-495e-bf64-ec246052714d
+				summarizeBy: none
+				sourceColumn: src_kpi_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_mpk_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 91429254-9ca5-4759-9863-5059cb3141f1
+				summarizeBy: none
+				sourceColumn: src_mpk_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_month
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: b31969ed-8248-4ae7-b376-6cc45241ad1c
+				summarizeBy: none
+				sourceColumn: src_month
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'KPI Measures' = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+						    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+						    f_mnf_kpi_data_Table = solet_Schema{[Name="f_mnf_kpi_data",Kind="Table"]}[Data]
+						in
+						    f_mnf_kpi_data_Table
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		table 'Manufacturing Costs Measures'
+			lineageTag: 67afbfc4-d8fe-4d87-aced-37e47350aa3f
+
+			measure 'Labor Crew Time' = ```
+					
+					 SUM('Manufacturing Costs Measures'[labor_crew_time])
+					```
+				lineageTag: c4177f1c-c23a-4be6-81e8-e4d83ced93ea
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column record_source
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 424ec3d0-9a4b-457b-99fb-a20213be5fe2
+				summarizeBy: none
+				sourceColumn: record_source
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_version
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 5e8a6b1d-ca29-496a-af88-16081b083c41
+				summarizeBy: none
+				sourceColumn: record_version
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: b1b0e31e-f521-42f9-91d7-eed052e937d4
+				summarizeBy: sum
+				sourceColumn: mon_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column time_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: a5a6d982-8b66-4460-bc85-c990e4758fed
+				summarizeBy: sum
+				sourceColumn: time_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: a7be330c-70d4-4e92-9669-2c541e34b2fd
+				summarizeBy: none
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: b712f9b8-2545-4a7f-b060-329d4458940f
+				summarizeBy: sum
+				sourceColumn: contr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: c0e9965d-4077-4cbf-84dd-b47f3a69f354
+				summarizeBy: sum
+				sourceColumn: wc_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 91bcb756-2b08-4daf-89ee-7ae857feb2bb
+				summarizeBy: sum
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column labor_class_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: fa7d4b3c-0eb4-45ca-a881-b8fb43e1fc70
+				summarizeBy: sum
+				sourceColumn: labor_class_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mnf_cnt_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 2687b6f3-6c66-4353-8a31-9d04f9236bf7
+				summarizeBy: sum
+				sourceColumn: mnf_cnt_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column labor_crew_time
+				dataType: double
+				sourceProviderType: decimal(20, 10)
+				lineageTag: 45e8a70b-0b8d-4cb6-a89f-3e55d63e8f8d
+				summarizeBy: sum
+				sourceColumn: labor_crew_time
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column manufacturing_time
+				dataType: double
+				sourceProviderType: decimal(20, 10)
+				lineageTag: ff4cc757-5757-4a19-8776-30d5bb64526f
+				summarizeBy: sum
+				sourceColumn: manufacturing_time
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column src_db_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 954fb6a8-717d-48e0-a247-0673e157bd6c
+				summarizeBy: none
+				sourceColumn: src_db_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_date_applied
+				dataType: dateTime
+				formatString: Long Date
+				sourceProviderType: date
+				lineageTag: 9da57852-c444-4ddd-9982-344a55b6dd61
+				summarizeBy: none
+				sourceColumn: src_date_applied
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column src_contract
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 6ee7ee3f-48e5-4de1-939d-64bd849cdf0d
+				summarizeBy: none
+				sourceColumn: src_contract
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_work_center_no
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 54cf7c6e-4485-4cc1-a159-f79d60de23a9
+				summarizeBy: none
+				sourceColumn: src_work_center_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_labor_class_no
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 08a49551-1f8b-4473-bc8f-c2755c48ae3b
+				summarizeBy: none
+				sourceColumn: src_labor_class_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_order_code_db
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2f8a2c50-7d6d-4d91-a9e5-2f720c25d33d
+				summarizeBy: none
+				sourceColumn: src_order_code_db
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Manufacturing Costs Measures' = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+						    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+						    f_mnf_hours_data_Table = solet_Schema{[Name="f_mnf_hours_data",Kind="Table"]}[Data]
+						in
+						    f_mnf_hours_data_Table
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		table _Measures
+			lineageTag: b844acda-107e-434a-9db1-595d469a3711
+
+			measure 'KPI Value Act' = AVERAGE('KPI Measures'[act_value])
+				lineageTag: 1816b969-eb26-4e39-b8a3-93c21b832bda
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'KPI Value Target' = AVERAGE('KPI Measures'[tgt_value])
+				lineageTag: 4bf22750-8869-4e39-8188-70bfe795c341
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'TKW Act Obl' =
+					
+					SWITCH(
+					    SELECTEDVALUE('KPI Line'[KPI Code]),
+					    // "PROD.BP.BRU", [Produktywność BP 2],
+					    "PROD.BP.NET", [Produktywność BP 1],
+					    "ABS.CHO.BP", [Absencja chorobowa BP],
+					    // "ABS.CHO.PP", [Absencja chorobowa PP],
+					    // "ABS.CHO.U", [Absencja chorobowa U],
+					    // "ABS.URL.BP", [Absencja urlopowa BP],
+					    // "ABS.URL.PP", [Absencja urlopowa PP],
+					    // "ABS.URL.U", [Absencja urlopowa U],
+					    // "GODZ.BK", [BK_realizacja_%],
+					    // "PROD.BP.PP.U", [Produktywność BP,PP,U 3],
+					    "ZLOM", [KPI Value Act],
+					    // "GODZ.NAD.BP", [Godziny nadliczbowe BP % ACT],
+					    // "GODZ.NAD.PP", [Godziny nadliczbowe PP % ACT],
+					    // "GODZ.NAD.U", [Godziny nadliczbowe U % ACT],
+					    // "GODZ.NOC.BP", [Godziny nocne BP % ACT],
+					    // "GODZ.NOC.PP", [Godziny nocne PP % ACT],
+					    // "GODZ.NOC.U", [Godziny nocne U % ACT],
+					    "WYN.ZAK", [KPI Value Act],
+					    [KPI Value Act]
+					)
+				lineageTag: 91e7c1d9-a0dc-4371-a4dd-93d12cba7ce6
+
+				formatStringDefinition = "#00,0"
+
+			column Value
+				formatString: 0
+				lineageTag: b82d326d-8fd9-4cb8-9fed-dc69f131dfce
+				summarizeBy: sum
+				isNameInferred
+				sourceColumn: [Value]
+
+				annotation SummarizationSetBy = Automatic
+
+			partition _Measures = calculated
+				mode: import
+				source = {0}
+
+			annotation PBI_Id = f3b13f0c68094b5da91c2c70ee1a777a
+
+		table 'Salary Component'
+			lineageTag: fe07ec92-c4f8-4b26-a37a-12db0747cd21
+
+			column record_source
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: ca87edb0-a020-443c-af0e-50627251b174
+				summarizeBy: none
+				sourceColumn: record_source
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_version
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 9d6f404d-7b59-47e7-8890-d627e4b84213
+				summarizeBy: none
+				sourceColumn: record_version
+
+				annotation SummarizationSetBy = Automatic
+
+			column first_load_date
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: c3936b50-127c-4b51-83c7-cbbcddda486d
+				summarizeBy: none
+				sourceColumn: first_load_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column last_seen_date
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 42b5dc84-a62f-4b2f-8904-c9e41f86224c
+				summarizeBy: none
+				sourceColumn: last_seen_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column source_exist
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 9620053f-0f94-4aad-b9b0-0738c202d1f6
+				summarizeBy: none
+				sourceColumn: source_exist
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_comp_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: bf9df3c8-6b76-4c57-ab95-21a19568a6e8
+				summarizeBy: none
+				sourceColumn: sal_comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Component Code'
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c69ecc2c-ab36-44ca-b525-7a0d8e21d211
+				summarizeBy: none
+				sourceColumn: Component Code
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_comp_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 26f7d20e-ac55-4265-880f-d594535ed926
+				summarizeBy: none
+				sourceColumn: sal_comp_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat1_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 79a53531-d81c-4f0c-bab2-c937322ecb26
+				summarizeBy: none
+				sourceColumn: sal_cat1_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat1_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f2b6688b-33d5-4e96-81e3-5e33ab5fa4d6
+				summarizeBy: none
+				sourceColumn: sal_cat1_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat1_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 09237e3c-306a-40a3-b47c-01a563cb3338
+				summarizeBy: none
+				sourceColumn: sal_cat1_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat2_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: f488bff0-153d-4fef-9c07-6322568a0223
+				summarizeBy: none
+				sourceColumn: sal_cat2_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat2_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: ea2fc104-a13d-443b-9c04-1f366f1c6435
+				summarizeBy: none
+				sourceColumn: sal_cat2_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat2_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 562500eb-87dd-4cea-a7d3-674cbad1b85c
+				summarizeBy: none
+				sourceColumn: sal_cat2_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat3_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: de3f0191-72de-48c9-8654-ffc8319a7254
+				summarizeBy: none
+				sourceColumn: sal_cat3_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat3_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: bbf84584-ca5b-4c24-b1b7-f53dac37eba8
+				summarizeBy: none
+				sourceColumn: sal_cat3_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cat3_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: aa2d0abf-f099-4a4c-a587-aed33648e2ca
+				summarizeBy: none
+				sourceColumn: sal_cat3_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column tmc_cat
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c20dc9db-5f40-43b1-b331-7f2fc6b91385
+				summarizeBy: none
+				sourceColumn: tmc_cat
+
+				annotation SummarizationSetBy = Automatic
+
+			column cost_4_type
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 357b7c1c-b408-488c-b813-8f4c9431646f
+				summarizeBy: none
+				sourceColumn: cost_4_type
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Salary Component' = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+						    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+						    d_salary_components_Table = solet_Schema{[Name="d_salary_components",Kind="Table"]}[Data],
+						    #"Renamed Columns" = Table.RenameColumns(d_salary_components_Table,{{"sal_comp_code", "Component Code"}})
+						in
+						    #"Renamed Columns"
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		table 'Salary Cost Measures'
+			lineageTag: 2db5f3ec-a186-4509-9b1a-24e85dce4333
+
+			measure 'Produktywność BP 1' = ```
+					
+					VAR Labor =
+					    [Labor Crew Time]
+					 
+					VAR SalaryBP =
+					    CALCULATE (
+					        [Salary rbh],
+					        KEEPFILTERS ( 'Salary Component'[Component Code] IN { "9970", "6030" } ),
+					        KEEPFILTERS ( 'Empl Type'[Empl Type Code] = "BP" )
+					    )
+					 
+					RETURN
+					    IF (
+					        NOT ISBLANK ( Labor )
+					            && NOT ISBLANK ( SalaryBP )
+					            && Labor <> 0
+					            && SalaryBP <> 0,
+					        DIVIDE ( Labor, SalaryBP )
+					    )
+					```
+				lineageTag: 705e6982-1816-49c9-897f-70d6b16d9344
+
+			measure 'Salary rbh' = ```
+					
+					 SUM('Salary Cost Measures'[sal_cost_h])
+					```
+				lineageTag: b740a1e4-c470-4fea-915c-7f65a7a9eb27
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure 'Absencja chorobowa BP' = ```
+					
+					DIVIDE(
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {"9600","9610","9620","9630","9650","9660"},
+					        'Empl Type'[Empl Type Code] = "BP"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "6020",
+					        'Empl Type'[Empl Type Code] = "BP"
+					    ),
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] = "9590",
+					        'Empl Type'[Empl Type Code] = "BP"
+					    )
+					    -
+					    CALCULATE(
+					        [Salary rbh],
+					        'Salary Component'[Component Code] IN {
+					            "9635","9640","9642","9645","9690","9700",
+					            "9740","9810","9820","9830","9636","1112"
+					        },
+					        'Empl Type'[Empl Type Code] = "BP"
+					    ),
+					    BLANK()
+					)
+					
+					```
+				lineageTag: 4b1e7f05-889f-44a4-85f7-b207aa8fb095
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column record_source
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 1000f428-68e2-4761-a8d7-8d447f808e24
+				summarizeBy: none
+				sourceColumn: record_source
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_version
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: c2cdcdd1-46a6-4ac3-ba26-344fad21675f
+				summarizeBy: none
+				sourceColumn: record_version
+
+				annotation SummarizationSetBy = Automatic
+
+			column mon_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 2aeca00e-6a3e-488d-b1ce-f2d2c4813ef3
+				summarizeBy: none
+				sourceColumn: mon_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 6db235ac-f488-4fae-bb55-0b8e1bf8a273
+				summarizeBy: none
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_comp_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 8a831fc6-56dd-4be1-80a0-da40ed720edd
+				summarizeBy: none
+				sourceColumn: sal_comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: b86b99bf-e424-41ca-add4-4216830ac219
+				summarizeBy: none
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cost_ledg_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 8b238143-276a-49ae-9a41-baf4d55c3e97
+				summarizeBy: sum
+				sourceColumn: sal_cost_ledg_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cost_empl_type_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 6e95e0b6-1c57-46eb-950a-e9280af82b45
+				summarizeBy: none
+				sourceColumn: sal_cost_empl_type_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_cost_pln
+				dataType: double
+				sourceProviderType: decimal(12, 2)
+				lineageTag: d042dcbc-bed2-4cb7-8a39-7b52aee4876f
+				summarizeBy: sum
+				sourceColumn: sal_cost_pln
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column sal_cost_eur
+				dataType: double
+				sourceProviderType: decimal(12, 2)
+				lineageTag: f3d3ccf8-1aa3-41a8-9d89-bd6291bac992
+				summarizeBy: sum
+				sourceColumn: sal_cost_eur
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column sal_cost_h
+				dataType: double
+				sourceProviderType: decimal(12, 2)
+				lineageTag: 5b4c2263-8ba4-4c81-8fba-7b7b81af2cef
+				summarizeBy: sum
+				sourceColumn: sal_cost_h
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column src_mon_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 40f98f25-5ed7-47fc-91c9-3f4b897077d1
+				summarizeBy: none
+				sourceColumn: src_mon_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_comp_bi_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2b01211d-8574-4a9d-93f3-3f3e1c038b81
+				summarizeBy: none
+				sourceColumn: src_comp_bi_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_list_num
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2a5012c0-8473-4bc9-ba9f-82117710af55
+				summarizeBy: none
+				sourceColumn: src_list_num
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_list_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f8069ed8-6a1d-40df-a59a-cab16db747f7
+				summarizeBy: none
+				sourceColumn: src_list_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_row_num
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 87a03de1-c8ff-4ab1-95d9-4e66c94bf090
+				summarizeBy: sum
+				sourceColumn: src_row_num
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_sal_comp_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 09c49905-270a-4114-9b50-32f1f458a61d
+				summarizeBy: none
+				sourceColumn: src_sal_comp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_sal_comp_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: ce49df40-f406-461a-904c-8fe0e1ebd0aa
+				summarizeBy: none
+				sourceColumn: src_sal_comp_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_mpk_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 54956b59-f16b-459b-a6a0-d106c3b20e17
+				summarizeBy: none
+				sourceColumn: src_mpk_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_mpk_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8171901b-01a4-41bf-bb70-e79137deaae7
+				summarizeBy: none
+				sourceColumn: src_mpk_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_property
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 987186a5-b2da-4a2a-a205-ff9bf64b36ef
+				summarizeBy: none
+				sourceColumn: src_property
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_ledg_mark
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 6ee55867-4ef2-483b-a10d-c9a43a7262f4
+				summarizeBy: none
+				sourceColumn: src_ledg_mark
+
+				annotation SummarizationSetBy = Automatic
+
+			column sal_hc
+				dataType: double
+				sourceProviderType: decimal(12, 2)
+				lineageTag: a0314dba-36e2-45eb-8bdd-d1b5ae01c736
+				summarizeBy: sum
+				sourceColumn: sal_hc
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column src_org_unit
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 149f5170-fd62-4e44-b5c8-015880295347
+				summarizeBy: none
+				sourceColumn: src_org_unit
+
+				annotation SummarizationSetBy = Automatic
+
+			column src_area
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8cd614c0-b31f-458e-8689-083933249063
+				summarizeBy: none
+				sourceColumn: src_area
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 639fdbbb-f348-47f9-a208-9ad8d4a60ccf
+				summarizeBy: none
+				sourceColumn: wc_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: ef3272a9-e1ab-4144-ab79-0be9c25aa137
+				summarizeBy: none
+				sourceColumn: wc_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 9690c7b1-d859-4d8d-917a-3cec69bfbe9a
+				summarizeBy: none
+				sourceColumn: wc_name
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Salary Cost Measures' = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+						    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+						    f_salary_cost_data_Table = solet_Schema{[Name="f_salary_cost_data",Kind="Table"]}[Data]
+						in
+						    f_salary_cost_data_Table
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		table 'Work Center'
+			lineageTag: 0fcd7f49-2f24-443e-805c-2d81d665cd0d
+
+			column record_source
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 997f0869-16fa-4551-9c6c-2fb9af323ff7
+				summarizeBy: none
+				sourceColumn: record_source
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_version
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 03adf8e1-424a-498c-8043-f59d386ef5b2
+				summarizeBy: none
+				sourceColumn: record_version
+
+				annotation SummarizationSetBy = Automatic
+
+			column first_load_date
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 23158964-a0de-44a1-8328-b717afa967fa
+				summarizeBy: none
+				sourceColumn: first_load_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column last_seen_date
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: 7ccdc62d-1b18-4c95-9667-6a5251ef17fd
+				summarizeBy: none
+				sourceColumn: last_seen_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column source_exist
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 930040b0-3ef3-4651-8585-f9a636b19d0b
+				summarizeBy: none
+				sourceColumn: source_exist
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 58d1ba36-033d-4911-a13b-ca0d0cdf9d4a
+				summarizeBy: none
+				sourceColumn: wc_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column db_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2399ca6a-2b51-417b-aa5d-f6399bed9081
+				summarizeBy: none
+				sourceColumn: db_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_contract
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: b12028df-e8a4-42dc-98a3-e35fb8ae9f78
+				summarizeBy: none
+				sourceColumn: wc_contract
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f3c1dc39-747d-41b5-8f48-ee3cc9e7ed7b
+				summarizeBy: none
+				sourceColumn: wc_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 17f447b5-e953-4138-a029-f3ec3ed5f65b
+				summarizeBy: none
+				sourceColumn: wc_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_dept_no
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 20247c63-dc41-4087-979f-2d8daf448240
+				summarizeBy: none
+				sourceColumn: wc_dept_no
+
+				annotation SummarizationSetBy = Automatic
+
+			column wc_cost_center_id
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 35cb665c-60b4-4659-b5e6-5f002c3e1ddd
+				summarizeBy: none
+				sourceColumn: wc_cost_center_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: f488804c-6f44-4703-9e3b-16a7da88525e
+				summarizeBy: none
+				sourceColumn: contr_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: e22b69c4-4b72-4c33-b14f-c4117d2df66c
+				summarizeBy: none
+				sourceColumn: contr_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: aefe9ef2-a2f3-4b31-94fe-609390f9ed0d
+				summarizeBy: none
+				sourceColumn: contr_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column contr_name2
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2a476f6d-d06e-4a71-8b66-3be652dd7b99
+				summarizeBy: none
+				sourceColumn: contr_name2
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: b2f558cb-d3d9-4b2a-8ecf-22964ec9ee03
+				summarizeBy: none
+				sourceColumn: comp_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 7cc6e8a1-60dd-4850-8361-e360d09ef876
+				summarizeBy: none
+				sourceColumn: comp_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c22d4e7c-d20b-4a84-a019-c51fa3c0cf69
+				summarizeBy: none
+				sourceColumn: comp_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column comp_name_s
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c479eb57-b7d0-422a-988f-c6005569c9d4
+				summarizeBy: none
+				sourceColumn: comp_name_s
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 8b2a9722-2d4d-4da1-8eb6-9b65b686ad1d
+				summarizeBy: none
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8141b8f9-2467-4552-8231-ad4b78549b93
+				summarizeBy: none
+				sourceColumn: mpk_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 145ecae5-4bcc-46f6-9375-6b5b3804a6e9
+				summarizeBy: none
+				sourceColumn: mpk_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_group_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 68394234-86e5-4f07-9380-09fa3c41b1f7
+				summarizeBy: none
+				sourceColumn: mpk_group_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_group_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 54c101bc-2049-43f8-9ac8-f1bc9a475216
+				summarizeBy: none
+				sourceColumn: mpk_group_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_group_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 5f426efa-5f5b-468c-a48f-924dd2fb631e
+				summarizeBy: none
+				sourceColumn: mpk_group_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column group_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 1bab9a89-b6a0-4cd8-bdf5-cf07b4131cd4
+				summarizeBy: none
+				sourceColumn: group_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column group_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 086281a1-2100-40bd-adcb-13d5e8dc36c6
+				summarizeBy: none
+				sourceColumn: group_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column group_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 9dc43419-d00d-482b-aed3-f7872e617c56
+				summarizeBy: none
+				sourceColumn: group_name
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Work Center' = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+						    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+						    d_work_center_Table = solet_Schema{[Name="d_work_center",Kind="Table"]}[Data]
+						in
+						    d_work_center_Table
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		table Organization
+			lineageTag: 4c66e114-2d3f-43e7-abb5-df214933cedd
+
+			column record_source
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 637868d7-fa32-4cd8-83d0-d15061ec7904
+				summarizeBy: none
+				sourceColumn: record_source
+
+				annotation SummarizationSetBy = Automatic
+
+			column record_version
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: e28770bb-279d-473d-9707-5b7e7e0b53df
+				summarizeBy: none
+				sourceColumn: record_version
+
+				annotation SummarizationSetBy = Automatic
+
+			column first_load_date
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: cdbaa01d-b877-4617-b9c1-bba817c3d00e
+				summarizeBy: none
+				sourceColumn: first_load_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column last_seen_date
+				dataType: dateTime
+				formatString: General Date
+				sourceProviderType: datetime2
+				lineageTag: a35b7766-6f39-4a41-bdf6-d14aa0e8e788
+				summarizeBy: none
+				sourceColumn: last_seen_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column source_exist
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 0d4a78b9-bc8e-44a7-899a-2c877151d583
+				summarizeBy: none
+				sourceColumn: source_exist
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 0eb0185c-61b1-4c60-afe6-c934fc7bb0bb
+				summarizeBy: none
+				sourceColumn: mpk_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 2a85edd0-9194-4d0a-9602-943360504c84
+				summarizeBy: none
+				sourceColumn: mpk_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column mpk_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: c7f60912-bc4a-4fb1-a794-7c415cf58cb6
+				summarizeBy: none
+				sourceColumn: mpk_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column sect_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 502152c1-eea0-4cac-85b2-bb6b47a7bec3
+				summarizeBy: none
+				sourceColumn: sect_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column sect_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 3b6c183c-f3d4-480f-896f-66722e22df5f
+				summarizeBy: none
+				sourceColumn: sect_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column sect_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: b023bfe3-68f1-43c1-806c-f10fe7f5f168
+				summarizeBy: none
+				sourceColumn: sect_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column dept_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 632de056-ceb8-4209-a2bd-5c9694d4bade
+				summarizeBy: none
+				sourceColumn: dept_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column dept_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: f12275f6-3c04-4382-b0cc-0486f559fed2
+				summarizeBy: none
+				sourceColumn: dept_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column dept_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: a04f1960-c119-42ff-b566-cae6113c7e2e
+				summarizeBy: none
+				sourceColumn: dept_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column pion_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: df958d40-a4ee-4fb0-be04-d64744f29a78
+				summarizeBy: none
+				sourceColumn: pion_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column pion_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 894a8d40-9422-4cac-b5ae-d0dfcc375f62
+				summarizeBy: none
+				sourceColumn: pion_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column pion_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 08d6cd4a-50ce-49d3-aeeb-320f45f55068
+				summarizeBy: none
+				sourceColumn: pion_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column fac_id
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 38245234-345d-43d6-8156-30ff42ae9221
+				summarizeBy: none
+				sourceColumn: fac_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column fac_code
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: cb5e03a9-35e1-4539-9a92-b49a22b8ba11
+				summarizeBy: none
+				sourceColumn: fac_code
+
+				annotation SummarizationSetBy = Automatic
+
+			column fac_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: b6fa58da-c201-4455-ba14-4dea0446cf32
+				summarizeBy: none
+				sourceColumn: fac_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column bi_visible
+				dataType: int64
+				formatString: 0
+				sourceProviderType: tinyint
+				lineageTag: 2dee11d9-2734-4db3-9a76-cd992e91b3d7
+				summarizeBy: none
+				sourceColumn: bi_visible
+
+				annotation SummarizationSetBy = Automatic
+
+			partition Organization = m
+				mode: directQuery
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+						    prd_Database = Source{[Name="prd",Kind="Database"]}[Data],
+						    solet_Schema = prd_Database{[Name="solet",Kind="Schema"]}[Data],
+						    d_cnt_organization_Table = solet_Schema{[Name="d_cnt_organization",Kind="Table"]}[Data]
+						in
+						    d_cnt_organization_Table
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		relationship 29fc1740-a38e-250d-85d5-d032962f3853
+			fromColumn: 'Salary Cost Measures'.comp_id
+			toColumn: Company.comp_id
+
+		relationship 751c188d-83af-f7d5-d45c-b1c534ffa260
+			fromColumn: 'Manufacturing Costs Measures'.comp_id
+			toColumn: Company.comp_id
+
+		relationship 9907d1a3-fbf8-0b14-93db-cde05b137e8f
+			fromColumn: 'Salary Cost Measures'.sal_comp_id
+			toColumn: 'Salary Component'.sal_comp_id
+
+		relationship dbbd1227-cb82-ac44-d6ef-c18ba875ecd0
+			fromColumn: 'Salary Cost Measures'.wc_id
+			toColumn: 'Work Center'.wc_id
+
+		relationship 3ec673a1-d9f8-5e16-0f8f-41834ff0e687
+			fromColumn: 'Salary Cost Measures'.mpk_id
+			toColumn: Organization.mpk_id
+
+		relationship 2c541e01-47c5-dbfa-9fe6-7de339e6e0f9
+			crossFilteringBehavior: bothDirections
+			toCardinality: many
+			fromColumn: Date.mon_id
+			toColumn: 'Salary Cost Measures'.mon_id
+
+		relationship 072cdd9f-20b7-f352-973d-f9d172c1cc3c
+			fromColumn: 'Salary Cost Measures'.sal_cost_empl_type_id
+			toColumn: 'Empl Type'.empl_type_id
+
+		cultureInfo en-US
+
+		cultureInfo pl-PL
+			translations
+				model Model
+					caption: Model
+					table Company
+						caption: Firma
+						column comp_id
+							caption: ID firmy
+						column comp_code
+							caption: Kod firmy
+						column comp_name
+							caption: Nazwa firmy
+						column comp_name_s
+							caption: Skrócona nazwa firmy
+						column curr_code
+							caption: Kod waluty
+					table Date
+						caption: Data
+						column day_id
+							caption: ID dnia
+						column day_date
+							caption: Data
+						column day_name_s
+							caption: Nazwa dnia
+						column day_week
+							caption: Tydzień
+						column week_id
+							caption: ID tygodnia
+						column week_name
+							caption: Nazwa tygodnia
+						column week_name_s
+							caption: Skrócona nazwa tygodnia
+						column mon_id
+							caption: ID miesiąca
+						column mon_name
+							caption: Nazwa miesiąca
+						column mon_name_s
+							caption: Skrócona nazwa miesiąca
+						column quart_id
+							caption: ID kwartału
+						column quart_name
+							caption: Nazwa kwartału
+						column quart_name_s
+							caption: Skrócona nazwa kwartału
+						column year_id
+							caption: ID roku
+						column year_name
+							caption: Rok
+						column day_count_work
+							caption: Liczba dni roboczych
+					table 'Empl Type'
+						caption: Typ pracownika
+						column empl_type_id
+							caption: ID typu pracownika
+						column 'Empl Type Code'
+							caption: Kod typu pracownika
+						column empl_type_name
+							caption: Nazwa typu pracownika
+					table 'KPI Line'
+						caption: Linia KPI
+						column 'KPI Code'
+							caption: Kod KPI
+						column KPI
+							caption: KPI
+						column 'KPI Category'
+							caption: Kategoria KPI
+						column 'KPI (en)'
+							caption: KPI (angielski)
+						column 'KPI Category (en)'
+							caption: Kategoria KPI (angielski)
+					table 'KPI Measures'
+						caption: Dane KPI
+						column record_source
+							caption: Źródło rekordu
+						column record_version
+							caption: Wersja rekordu
+						column time_id
+							caption: ID czasu
+						column mnf_kpi_id
+							caption: ID KPI produkcyjnego
+						column mpk_id
+							caption: ID MPK
+						column tgt_value
+							caption: Wartość docelowa
+						column act_value
+							caption: Wartość rzeczywista
+						column src_kpi_code
+							caption: Kod KPI źródłowy
+						column src_mpk_code
+							caption: Kod MPK źródłowy
+						column src_month
+							caption: Miesiąc źródłowy
+					table 'Manufacturing Costs Measures'
+						caption: Miary kosztów produkcji
+						measure 'Labor Crew Time'
+							caption: Czas załogi
+						column record_source
+							caption: Źródło rekordu
+						column record_version
+							caption: Wersja rekordu
+						column mon_id
+							caption: ID miesiąca
+						column time_id
+							caption: ID czasu
+						column comp_id
+							caption: ID firmy
+						column contr_id
+							caption: ID kontraktu
+						column wc_id
+							caption: ID stanowiska roboczego
+						column mpk_id
+							caption: ID MPK
+						column labor_class_id
+							caption: ID klasy robocizny
+						column mnf_cnt_id
+							caption: ID centrum produkcyjnego
+						column labor_crew_time
+							caption: Czas załogi
+						column manufacturing_time
+							caption: Czas produkcji
+						column src_db_code
+							caption: Kod bazy źródłowej
+						column src_date_applied
+							caption: Data zastosowania źródłowa
+						column src_contract
+							caption: Kontrakt źródłowy
+						column src_work_center_no
+							caption: Nr stanowiska roboczego źródłowy
+						column src_labor_class_no
+							caption: Nr klasy robocizny źródłowy
+						column src_order_code_db
+							caption: Kod zamówienia DB źródłowy
+					table _Measures
+						caption: Miary
+						measure 'KPI Value Act'
+							caption: Wartość KPI rzeczywista
+						measure 'KPI Value Target'
+							caption: Wartość KPI docelowa
+						measure 'TKW Act Obl'
+							caption: TKW wykonanie obliczone
+						column Value
+							caption: Wartość
+					table 'Salary Component'
+						caption: Składnik wynagrodzenia
+						column record_source
+							caption: Źródło rekordu
+						column record_version
+							caption: Wersja rekordu
+						column first_load_date
+							caption: Data pierwszego ładowania
+						column last_seen_date
+							caption: Data ostatniej obserwacji
+						column source_exist
+							caption: Istnieje w źródle
+						column sal_comp_id
+							caption: ID składnika wynagrodzenia
+						column 'Component Code'
+							caption: Kod składnika
+						column sal_comp_name
+							caption: Nazwa składnika wynagrodzenia
+						column sal_cat1_id
+							caption: ID kategorii wynagrodzeń 1
+						column sal_cat1_code
+							caption: Kod kategorii wynagrodzeń 1
+						column sal_cat1_name
+							caption: Nazwa kategorii wynagrodzeń 1
+						column sal_cat2_id
+							caption: ID kategorii wynagrodzeń 2
+						column sal_cat2_code
+							caption: Kod kategorii wynagrodzeń 2
+						column sal_cat2_name
+							caption: Nazwa kategorii wynagrodzeń 2
+						column sal_cat3_id
+							caption: ID kategorii wynagrodzeń 3
+						column sal_cat3_code
+							caption: Kod kategorii wynagrodzeń 3
+						column sal_cat3_name
+							caption: Nazwa kategorii wynagrodzeń 3
+						column tmc_cat
+							caption: Kategoria TMC
+						column cost_4_type
+							caption: Typ kosztu 4
+					table 'Salary Cost Measures'
+						caption: Miary kosztów wynagrodzeń
+						measure 'Produktywność BP 1'
+							caption: Produktywność BP 1
+						measure 'Salary rbh'
+							caption: Rbh płacowe
+						measure 'Absencja chorobowa BP'
+							caption: Absencja chorobowa BP
+						column record_source
+							caption: Źródło rekordu
+						column record_version
+							caption: Wersja rekordu
+						column mon_id
+							caption: ID miesiąca
+						column comp_id
+							caption: ID firmy
+						column sal_comp_id
+							caption: ID składnika wynagrodzenia
+						column mpk_id
+							caption: ID MPK
+						column sal_cost_ledg_id
+							caption: ID zapisu kosztów wynagrodzeń
+						column sal_cost_empl_type_id
+							caption: ID typu pracownika dla kosztów wynagrodzeń
+						column sal_cost_pln
+							caption: Koszt wynagrodzeń PLN
+						column sal_cost_eur
+							caption: Koszt wynagrodzeń EUR
+						column sal_cost_h
+							caption: Godziny kosztów wynagrodzeń
+						column src_mon_name
+							caption: Nazwa miesiąca źródłowa
+						column src_comp_bi_code
+							caption: Kod BI firmy źródłowy
+						column src_list_num
+							caption: Numer listy źródłowy
+						column src_list_name
+							caption: Nazwa listy źródłowa
+						column src_row_num
+							caption: Numer wiersza źródłowy
+						column src_sal_comp_code
+							caption: Kod składnika wynagrodzenia źródłowy
+						column src_sal_comp_name
+							caption: Nazwa składnika wynagrodzenia źródłowa
+						column src_mpk_code
+							caption: Kod MPK źródłowy
+						column src_mpk_name
+							caption: src_mpk_name
+						column src_property
+							caption: Cecha źródłowa
+						column src_ledg_mark
+							caption: Oznaczenie księgowe źródłowe
+						column sal_hc
+							caption: Stan zatrudnienia
+						column src_org_unit
+							caption: Jednostka organizacyjna źródłowa
+						column src_area
+							caption: Obszar źródłowy
+						column wc_id
+							caption: ID stanowiska roboczego
+						column wc_code
+							caption: Kod stanowiska roboczego
+						column wc_name
+							caption: Nazwa stanowiska roboczego
+					table 'Work Center'
+						caption: Stanowisko robocze
+						column record_source
+							caption: Źródło rekordu
+						column record_version
+							caption: Wersja rekordu
+						column first_load_date
+							caption: Data pierwszego ładowania
+						column last_seen_date
+							caption: Data ostatniej obserwacji
+						column source_exist
+							caption: Istnieje w źródle
+						column wc_id
+							caption: ID stanowiska roboczego
+						column db_code
+							caption: Kod bazy
+						column wc_contract
+							caption: Kontrakt stanowiska roboczego
+						column wc_code
+							caption: Kod stanowiska roboczego
+						column wc_name
+							caption: Nazwa stanowiska roboczego
+						column wc_dept_no
+							caption: Nr działu stanowiska roboczego
+						column wc_cost_center_id
+							caption: ID centrum kosztów stanowiska roboczego
+						column contr_id
+							caption: ID kontraktu
+						column contr_code
+							caption: Kod kontraktu
+						column contr_name
+							caption: Nazwa kontraktu
+						column contr_name2
+							caption: Nazwa kontraktu 2
+						column comp_id
+							caption: ID firmy
+						column comp_code
+							caption: Kod firmy
+						column comp_name
+							caption: Nazwa firmy
+						column comp_name_s
+							caption: Skrócona nazwa firmy
+						column mpk_id
+							caption: ID MPK
+						column mpk_code
+							caption: Kod MPK
+						column mpk_name
+							caption: Nazwa MPK
+						column mpk_group_id
+							caption: ID grupy MPK
+						column mpk_group_code
+							caption: Kod grupy MPK
+						column mpk_group_name
+							caption: Nazwa grupy MPK
+						column group_id
+							caption: ID grupy
+						column group_code
+							caption: Kod grupy
+						column group_name
+							caption: Nazwa grupy
+					table Organization
+						caption: Organizacja
+						column record_source
+							caption: Źródło rekordu
+						column record_version
+							caption: Wersja rekordu
+						column first_load_date
+							caption: Data pierwszego ładowania
+						column last_seen_date
+							caption: Data ostatniej obserwacji
+						column source_exist
+							caption: Istnieje w źródle
+						column mpk_id
+							caption: ID MPK
+						column mpk_code
+							caption: Kod MPK
+						column mpk_name
+							caption: Nazwa MPK
+						column sect_id
+							caption: ID sekcji
+						column sect_code
+							caption: Kod sekcji
+						column sect_name
+							caption: Nazwa sekcji
+						column dept_id
+							caption: ID działu
+						column dept_code
+							caption: Kod działu
+						column dept_name
+							caption: Nazwa działu
+						column pion_id
+							caption: ID pionu
+						column pion_code
+							caption: Kod pionu
+						column pion_name
+							caption: Nazwa pionu
+						column fac_id
+							caption: ID zakładu
+						column fac_code
+							caption: Kod zakładu
+						column fac_name
+							caption: Nazwa zakładu
+						column bi_visible
+							caption: Widoczne w BI
+
+
+		annotation __PBI_TimeIntelligenceEnabled = 0
+
+		annotation PBI_QueryOrder = ["Company","Date","Empl Type","KPI Line","KPI Measures","Manufacturing Costs Measures","Salary Component","Salary Cost Measures","Work Center","Organization"]
+
+		annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+

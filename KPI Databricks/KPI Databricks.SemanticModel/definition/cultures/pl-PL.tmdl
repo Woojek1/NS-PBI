@@ -1,0 +1,351 @@
+cultureInfo pl-PL
+	translations
+		model Model
+			caption: Model
+			table Company
+				caption: Firma
+				column comp_id
+					caption: ID firmy
+				column comp_code
+					caption: Kod firmy
+				column comp_name
+					caption: Nazwa firmy
+				column comp_name_s
+					caption: Skrócona nazwa firmy
+				column curr_code
+					caption: Kod waluty
+			table Date
+				caption: Data
+				column day_id
+					caption: ID dnia
+				column day_date
+					caption: Data
+				column day_name_s
+					caption: Nazwa dnia
+				column day_week
+					caption: Tydzień
+				column week_id
+					caption: ID tygodnia
+				column week_name
+					caption: Nazwa tygodnia
+				column week_name_s
+					caption: Skrócona nazwa tygodnia
+				column mon_id
+					caption: ID miesiąca
+				column mon_name
+					caption: Nazwa miesiąca
+				column mon_name_s
+					caption: Skrócona nazwa miesiąca
+				column quart_id
+					caption: ID kwartału
+				column quart_name
+					caption: Nazwa kwartału
+				column quart_name_s
+					caption: Skrócona nazwa kwartału
+				column year_id
+					caption: ID roku
+				column year_name
+					caption: Rok
+				column day_count_work
+					caption: Liczba dni roboczych
+			table 'Empl Type'
+				caption: Typ pracownika
+				column empl_type_id
+					caption: ID typu pracownika
+				column 'Empl Type Code'
+					caption: Kod typu pracownika
+				column empl_type_name
+					caption: Nazwa typu pracownika
+			table 'KPI Line'
+				caption: Linia KPI
+				column 'KPI Code'
+					caption: Kod KPI
+				column KPI
+					caption: KPI
+				column 'KPI Category'
+					caption: Kategoria KPI
+				column 'KPI (en)'
+					caption: KPI (angielski)
+				column 'KPI Category (en)'
+					caption: Kategoria KPI (angielski)
+			table 'KPI Measures'
+				caption: Dane KPI
+				column record_source
+					caption: Źródło rekordu
+				column record_version
+					caption: Wersja rekordu
+				column time_id
+					caption: ID czasu
+				column mnf_kpi_id
+					caption: ID KPI produkcyjnego
+				column mpk_id
+					caption: ID MPK
+				column tgt_value
+					caption: Wartość docelowa
+				column act_value
+					caption: Wartość rzeczywista
+				column src_kpi_code
+					caption: Kod KPI źródłowy
+				column src_mpk_code
+					caption: Kod MPK źródłowy
+				column src_month
+					caption: Miesiąc źródłowy
+			table 'Manufacturing Costs Measures'
+				caption: Miary kosztów produkcji
+				column record_source
+					caption: Źródło rekordu
+				column record_version
+					caption: Wersja rekordu
+				column mon_id
+					caption: ID miesiąca
+				column time_id
+					caption: ID czasu
+				column comp_id
+					caption: ID firmy
+				column contr_id
+					caption: ID kontraktu
+				column wc_id
+					caption: ID stanowiska roboczego
+				column mpk_id
+					caption: ID MPK
+				column labor_class_id
+					caption: ID klasy robocizny
+				column mnf_cnt_id
+					caption: ID centrum produkcyjnego
+				column labor_crew_time
+					caption: Czas załogi
+				column manufacturing_time
+					caption: Czas produkcji
+				column src_db_code
+					caption: Kod bazy źródłowej
+				column src_date_applied
+					caption: Data zastosowania źródłowa
+				column src_contract
+					caption: Kontrakt źródłowy
+				column src_work_center_no
+					caption: Nr stanowiska roboczego źródłowy
+				column src_labor_class_no
+					caption: Nr klasy robocizny źródłowy
+				column src_order_code_db
+					caption: Kod zamówienia DB źródłowy
+				measure 'Labor Crew Time'
+					caption: Czas załogi
+			table _Measures
+				caption: Miary
+				column Value
+					caption: Wartość
+				measure 'KPI Value Act'
+					caption: Wartość KPI rzeczywista
+				measure 'KPI Value Target'
+					caption: Wartość KPI docelowa
+				measure 'TKW Act Obl'
+					caption: TKW wykonanie obliczone
+			table 'Salary Component'
+				caption: Składnik wynagrodzenia
+				column record_source
+					caption: Źródło rekordu
+				column record_version
+					caption: Wersja rekordu
+				column first_load_date
+					caption: Data pierwszego ładowania
+				column last_seen_date
+					caption: Data ostatniej obserwacji
+				column source_exist
+					caption: Istnieje w źródle
+				column sal_comp_id
+					caption: ID składnika wynagrodzenia
+				column 'Component Code'
+					caption: Kod składnika
+				column sal_comp_name
+					caption: Nazwa składnika wynagrodzenia
+				column sal_cat1_id
+					caption: ID kategorii wynagrodzeń 1
+				column sal_cat1_code
+					caption: Kod kategorii wynagrodzeń 1
+				column sal_cat1_name
+					caption: Nazwa kategorii wynagrodzeń 1
+				column sal_cat2_id
+					caption: ID kategorii wynagrodzeń 2
+				column sal_cat2_code
+					caption: Kod kategorii wynagrodzeń 2
+				column sal_cat2_name
+					caption: Nazwa kategorii wynagrodzeń 2
+				column sal_cat3_id
+					caption: ID kategorii wynagrodzeń 3
+				column sal_cat3_code
+					caption: Kod kategorii wynagrodzeń 3
+				column sal_cat3_name
+					caption: Nazwa kategorii wynagrodzeń 3
+				column tmc_cat
+					caption: Kategoria TMC
+				column cost_4_type
+					caption: Typ kosztu 4
+			table 'Salary Cost Measures'
+				caption: Miary kosztów wynagrodzeń
+				column record_source
+					caption: Źródło rekordu
+				column record_version
+					caption: Wersja rekordu
+				column mon_id
+					caption: ID miesiąca
+				column comp_id
+					caption: ID firmy
+				column sal_comp_id
+					caption: ID składnika wynagrodzenia
+				column mpk_id
+					caption: ID MPK
+				column sal_cost_ledg_id
+					caption: ID zapisu kosztów wynagrodzeń
+				column sal_cost_empl_type_id
+					caption: ID typu pracownika dla kosztów wynagrodzeń
+				column sal_cost_pln
+					caption: Koszt wynagrodzeń PLN
+				column sal_cost_eur
+					caption: Koszt wynagrodzeń EUR
+				column sal_cost_h
+					caption: Godziny kosztów wynagrodzeń
+				column src_mon_name
+					caption: Nazwa miesiąca źródłowa
+				column src_comp_bi_code
+					caption: Kod BI firmy źródłowy
+				column src_list_num
+					caption: Numer listy źródłowy
+				column src_list_name
+					caption: Nazwa listy źródłowa
+				column src_row_num
+					caption: Numer wiersza źródłowy
+				column src_sal_comp_code
+					caption: Kod składnika wynagrodzenia źródłowy
+				column src_sal_comp_name
+					caption: Nazwa składnika wynagrodzenia źródłowa
+				column src_mpk_code
+					caption: Kod MPK źródłowy
+				column src_mpk_name
+					caption: src_mpk_name
+				column src_property
+					caption: Cecha źródłowa
+				column src_ledg_mark
+					caption: Oznaczenie księgowe źródłowe
+				column sal_hc
+					caption: Stan zatrudnienia
+				column src_org_unit
+					caption: Jednostka organizacyjna źródłowa
+				column src_area
+					caption: Obszar źródłowy
+				column wc_id
+					caption: ID stanowiska roboczego
+				column wc_code
+					caption: Kod stanowiska roboczego
+				column wc_name
+					caption: Nazwa stanowiska roboczego
+				measure 'Produktywność BP 1'
+					caption: Produktywność BP 1
+				measure 'Salary rbh'
+					caption: Rbh płacowe
+				measure 'Absencja chorobowa BP'
+					caption: Absencja chorobowa BP
+			table 'Work Center'
+				caption: Stanowisko robocze
+				column record_source
+					caption: Źródło rekordu
+				column record_version
+					caption: Wersja rekordu
+				column first_load_date
+					caption: Data pierwszego ładowania
+				column last_seen_date
+					caption: Data ostatniej obserwacji
+				column source_exist
+					caption: Istnieje w źródle
+				column wc_id
+					caption: ID stanowiska roboczego
+				column db_code
+					caption: Kod bazy
+				column wc_contract
+					caption: Kontrakt stanowiska roboczego
+				column wc_code
+					caption: Kod stanowiska roboczego
+				column wc_name
+					caption: Nazwa stanowiska roboczego
+				column wc_dept_no
+					caption: Nr działu stanowiska roboczego
+				column wc_cost_center_id
+					caption: ID centrum kosztów stanowiska roboczego
+				column contr_id
+					caption: ID kontraktu
+				column contr_code
+					caption: Kod kontraktu
+				column contr_name
+					caption: Nazwa kontraktu
+				column contr_name2
+					caption: Nazwa kontraktu 2
+				column comp_id
+					caption: ID firmy
+				column comp_code
+					caption: Kod firmy
+				column comp_name
+					caption: Nazwa firmy
+				column comp_name_s
+					caption: Skrócona nazwa firmy
+				column mpk_id
+					caption: ID MPK
+				column mpk_code
+					caption: Kod MPK
+				column mpk_name
+					caption: Nazwa MPK
+				column mpk_group_id
+					caption: ID grupy MPK
+				column mpk_group_code
+					caption: Kod grupy MPK
+				column mpk_group_name
+					caption: Nazwa grupy MPK
+				column group_id
+					caption: ID grupy
+				column group_code
+					caption: Kod grupy
+				column group_name
+					caption: Nazwa grupy
+			table Organization
+				caption: Organizacja
+				column record_source
+					caption: Źródło rekordu
+				column record_version
+					caption: Wersja rekordu
+				column first_load_date
+					caption: Data pierwszego ładowania
+				column last_seen_date
+					caption: Data ostatniej obserwacji
+				column source_exist
+					caption: Istnieje w źródle
+				column mpk_id
+					caption: ID MPK
+				column mpk_code
+					caption: Kod MPK
+				column mpk_name
+					caption: Nazwa MPK
+				column sect_id
+					caption: ID sekcji
+				column sect_code
+					caption: Kod sekcji
+				column sect_name
+					caption: Nazwa sekcji
+				column dept_id
+					caption: ID działu
+				column dept_code
+					caption: Kod działu
+				column dept_name
+					caption: Nazwa działu
+				column pion_id
+					caption: ID pionu
+				column pion_code
+					caption: Kod pionu
+				column pion_name
+					caption: Nazwa pionu
+				column fac_id
+					caption: ID zakładu
+				column fac_code
+					caption: Kod zakładu
+				column fac_name
+					caption: Nazwa zakładu
+				column bi_visible
+					caption: Widoczne w BI
+

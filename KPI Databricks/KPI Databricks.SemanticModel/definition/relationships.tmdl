@@ -1,0 +1,30 @@
+relationship 29fc1740-a38e-250d-85d5-d032962f3853
+	fromColumn: 'Salary Cost Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship 751c188d-83af-f7d5-d45c-b1c534ffa260
+	fromColumn: 'Manufacturing Costs Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship 9907d1a3-fbf8-0b14-93db-cde05b137e8f
+	fromColumn: 'Salary Cost Measures'.sal_comp_id
+	toColumn: 'Salary Component'.sal_comp_id
+
+relationship dbbd1227-cb82-ac44-d6ef-c18ba875ecd0
+	fromColumn: 'Salary Cost Measures'.wc_id
+	toColumn: 'Work Center'.wc_id
+
+relationship 3ec673a1-d9f8-5e16-0f8f-41834ff0e687
+	fromColumn: 'Salary Cost Measures'.mpk_id
+	toColumn: Organization.mpk_id
+
+relationship 2c541e01-47c5-dbfa-9fe6-7de339e6e0f9
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Date.mon_id
+	toColumn: 'Salary Cost Measures'.mon_id
+
+relationship 072cdd9f-20b7-f352-973d-f9d172c1cc3c
+	fromColumn: 'Salary Cost Measures'.sal_cost_empl_type_id
+	toColumn: 'Empl Type'.empl_type_id
+

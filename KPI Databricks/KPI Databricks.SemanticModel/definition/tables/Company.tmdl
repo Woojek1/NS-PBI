@@ -1,0 +1,64 @@
+table Company
+	lineageTag: 1fd31cd3-59c0-449a-907d-ccab0928bb8f
+
+	column comp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 374113b8-2774-4b39-bd0c-441f37f8864b
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b89713f4-0a2e-4e50-b210-e4afd62c137c
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6ba1e173-6976-4bbb-93c9-b9c0d40df241
+		summarizeBy: none
+		sourceColumn: comp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_name_s
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0075659a-00b6-4632-ab53-9d3cc16ddf1d
+		summarizeBy: none
+		sourceColumn: comp_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column curr_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5280e22d-0dc0-45f2-b5aa-32e4f8f8042b
+		summarizeBy: none
+		sourceColumn: curr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Company = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+				    zenith_Database = Source{[Name="zenith",Kind="Database"]}[Data],
+				    edw_Schema = zenith_Database{[Name="edw",Kind="Schema"]}[Data],
+				    d_company_View = edw_Schema{[Name="d_company",Kind="View"]}[Data]
+				in
+				    d_company_View
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
