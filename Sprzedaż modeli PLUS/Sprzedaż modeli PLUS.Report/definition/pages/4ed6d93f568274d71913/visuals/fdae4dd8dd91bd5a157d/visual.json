@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "fdae4dd8dd91bd5a157d",
   "position": {
-    "x": 21.76,
-    "y": 15.36,
+    "x": 25,
+    "y": 20,
     "z": 1,
-    "height": 687.36,
-    "width": 1235.2,
+    "height": 1041.6666666666667,
+    "width": 1870,
     "tabOrder": 1
   },
   "visual": {
@@ -113,7 +113,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "153D"
+                  "Value": "181D"
                 }
               }
             }
@@ -141,7 +141,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "136D"
+                  "Value": "168D"
                 }
               }
             }
@@ -155,7 +155,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "168D"
+                  "Value": "184D"
                 }
               }
             }
@@ -169,7 +169,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "85D"
+                  "Value": "175D"
                 }
               }
             }
@@ -183,7 +183,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "113D"
+                  "Value": "145D"
                 }
               }
             }
@@ -199,7 +199,27 @@
             "autoSizeColumnWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fitToContent'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }
@@ -346,7 +366,45 @@
             "Property": "Net Sales PLN"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "Sales Measures",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "s"
+                            }
+                          },
+                          "Property": "Net Sales PLN"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       },
       {
         "name": "ae6cc0b16aa15a657294",

@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "1a7cf8c74f106e8ab4ec",
   "position": {
-    "x": 21.714285714285715,
-    "y": 37.714285714285715,
+    "x": 40,
+    "y": 151.66666666666669,
     "z": 1,
-    "height": 665.14285714285711,
-    "width": 1235.4285714285713,
+    "height": 896.66666666666674,
+    "width": 1850,
     "tabOrder": 1
   },
   "visual": {
@@ -290,7 +290,7 @@
             "autoSizeColumnWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -408,46 +408,7 @@
             "Property": "Line"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "p",
-              "Entity": "Product",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "p"
-                          }
-                        },
-                        "Property": "Line"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Easy Space'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        }
+        "type": "Categorical"
       },
       {
         "name": "f42b0caec8abc9e84a12",
@@ -461,63 +422,7 @@
             "Property": "Model"
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "p",
-              "Entity": "Product",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Or": {
-                  "Left": {
-                    "Contains": {
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "p"
-                            }
-                          },
-                          "Property": "Model"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "'UPPER SIDE DESK PANEL'"
-                        }
-                      }
-                    }
-                  },
-                  "Right": {
-                    "Contains": {
-                      "Left": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "p"
-                            }
-                          },
-                          "Property": "Model"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "'UPPER FRONT DESK PANEL'"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "type": "Advanced"
       },
       {
         "name": "a2b03c87f50117439d01",
