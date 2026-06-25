@@ -1,0 +1,810 @@
+table f_opex_costs_projects_facts
+	lineageTag: dbfca1bf-7c57-4435-8ebc-8831f759fa31
+
+	column record_source
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: db1846ca-9bb1-43fb-b21d-d98a4b470690
+		summarizeBy: none
+		sourceColumn: record_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_version
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 231638c1-370e-4dba-a338-e3bc67bac552
+		summarizeBy: none
+		sourceColumn: record_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 977a31aa-51b7-429d-94cb-6dc000a3b6a3
+		summarizeBy: none
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: adb023b0-9ce2-48a7-95b0-fc7fc60d5fa2
+		summarizeBy: sum
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b89b3b2b-f64a-4ec3-bb2f-3e54dfc801d0
+		summarizeBy: sum
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column acc_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: baeb1205-83a7-4bc2-a8b3-b23f5c31a3ba
+		summarizeBy: sum
+		sourceColumn: acc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prj_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0dccbc0e-ede4-4867-975f-898b5c3de984
+		summarizeBy: sum
+		sourceColumn: prj_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d9b18efb-8d4b-4733-8ff6-840ce7000334
+		summarizeBy: sum
+		sourceColumn: cust_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column supp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3564f95a-904f-416c-ae59-1553f9c81773
+		summarizeBy: sum
+		sourceColumn: supp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column curr_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4019c679-beff-4302-8507-ff118dafd973
+		summarizeBy: sum
+		sourceColumn: curr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8833ae68-08c4-476e-9a56-c72507da9506
+		summarizeBy: sum
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column var_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ded7747a-34ba-4d95-8922-d7d33949382a
+		summarizeBy: sum
+		sourceColumn: var_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column scat_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cb545060-cc18-4dfb-b7bf-a89234d36db6
+		summarizeBy: sum
+		sourceColumn: scat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column intc_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ec3dd297-cbea-4ac8-a7c8-642887366894
+		summarizeBy: sum
+		sourceColumn: intc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d016f57a-fc29-448f-8aed-7fdb995ae349
+		summarizeBy: sum
+		sourceColumn: prod_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cnt_trans_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 018b739f-016f-4acc-a9db-2a7d29437f6d
+		summarizeBy: sum
+		sourceColumn: cnt_trans_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cnt_sect_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: fece88c0-f722-447f-a48c-07a52e2fa9c0
+		summarizeBy: sum
+		sourceColumn: cnt_sect_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mng_resp_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 70b948a2-5387-4d98-8d6f-90f681ae7fbc
+		summarizeBy: sum
+		sourceColumn: mng_resp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column obj_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: da0e1b70-5c52-41c9-ac59-cbe25575cdb5
+		summarizeBy: sum
+		sourceColumn: obj_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fixed_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5852c752-8c3a-45af-a301-581b9f6a1ae4
+		summarizeBy: sum
+		sourceColumn: fixed_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin_curr_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1a0cff6c-953f-4c79-90c3-ef8e146304d9
+		summarizeBy: sum
+		sourceColumn: fin_curr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7ca8cd82-0f5f-41f5-a5a9-9a8a73842b51
+		summarizeBy: sum
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column debet_amount_pln
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 3e9d93ea-fc71-4fe7-9291-fa010df747da
+		summarizeBy: sum
+		sourceColumn: debet_amount_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_pln
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 04e028e0-5a37-4a41-8f5a-be321e1f54c8
+		summarizeBy: sum
+		sourceColumn: credit_amount_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_pln
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 203639d0-f72a-4a0b-bc3f-eaf40a77a3fe
+		summarizeBy: sum
+		sourceColumn: amount_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_bpln
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: a6dad9dd-2433-46e7-a63f-d32c9508ce40
+		summarizeBy: sum
+		sourceColumn: debet_amount_bpln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_bpln
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: b8485aa9-55f3-4475-8061-ac715a1fc341
+		summarizeBy: sum
+		sourceColumn: credit_amount_bpln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_bpln
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 68e28cf4-dd95-4ac3-9c8e-ebfa9f82f322
+		summarizeBy: sum
+		sourceColumn: amount_bpln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_eur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 2eecd690-60a5-4913-be03-bb1e033726f3
+		summarizeBy: sum
+		sourceColumn: debet_amount_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_eur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: eadf5345-4c9b-4388-ab3a-61754be273e4
+		summarizeBy: sum
+		sourceColumn: credit_amount_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_eur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: f9d3d3f7-4498-42f1-a797-6cebd9c56e6f
+		summarizeBy: sum
+		sourceColumn: amount_eur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_beur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 11567b96-59f1-4734-9f29-9c8a136a9545
+		summarizeBy: sum
+		sourceColumn: debet_amount_beur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_beur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 47f343c5-25d9-42df-b15a-acf36b682edc
+		summarizeBy: sum
+		sourceColumn: credit_amount_beur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_beur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 72d1a970-3454-4e9f-9f24-439860cb627f
+		summarizeBy: sum
+		sourceColumn: amount_beur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_cur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 1fd4a7fb-4318-4f7d-9522-f08dd33a83d0
+		summarizeBy: sum
+		sourceColumn: debet_amount_cur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_cur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: dc6e6069-0085-4b06-99f3-8e32317c46f9
+		summarizeBy: sum
+		sourceColumn: credit_amount_cur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_cur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: a6fa0e45-1748-4f83-818b-ae0f226107ae
+		summarizeBy: sum
+		sourceColumn: amount_cur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debet_amount_fcur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: adff8a44-1bc3-49db-941c-33f580acde11
+		summarizeBy: sum
+		sourceColumn: debet_amount_fcur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_amount_fcur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: ef941f42-fdee-49c0-bd94-830c1a1c858f
+		summarizeBy: sum
+		sourceColumn: credit_amount_fcur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_fcur
+		dataType: double
+		sourceProviderType: decimal(14, 2)
+		lineageTag: 5fba19d5-ad6d-4546-8c12-1dd23054fc5e
+		summarizeBy: sum
+		sourceColumn: amount_fcur
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quantity
+		dataType: double
+		sourceProviderType: decimal(14, 4)
+		lineageTag: f9f8ed3d-2ce0-4a82-b35a-265b797886fb
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column voucher_number
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cbe9e723-a532-4e7a-ab6f-7aec2b84cee3
+		summarizeBy: none
+		sourceColumn: voucher_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column bi
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: cfa38450-1397-4bf7-bc9c-0f74000b6f20
+		summarizeBy: sum
+		sourceColumn: bi
+
+		annotation SummarizationSetBy = Automatic
+
+	column bi_costs
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: c0b3f46c-ab6e-4886-92bf-e4c5124aae87
+		summarizeBy: sum
+		sourceColumn: bi_costs
+
+		annotation SummarizationSetBy = Automatic
+
+	column wfd_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: aca61772-33ca-44a0-8866-0bad14346215
+		summarizeBy: sum
+		sourceColumn: wfd_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column link
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 04f2d415-3eca-46d4-a582-164f478d2f01
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: link
+
+		annotation SummarizationSetBy = Automatic
+
+	column workflow
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 1f7d79c2-4a78-441b-8342-fcf0b071b37b
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: workflow
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_db_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 612bc7cd-145b-4b24-9c2a-52d31491ae3d
+		summarizeBy: none
+		sourceColumn: src_db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_company
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: fd7708e8-74d8-4feb-85aa-e63adaad8242
+		summarizeBy: none
+		sourceColumn: src_company
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_gl_company
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 695d6ffd-80d2-4d06-aa62-a75c9565b3c4
+		summarizeBy: none
+		sourceColumn: src_gl_company
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_year_period_key
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cff3d497-28e5-4758-a872-f07f701d5645
+		summarizeBy: sum
+		sourceColumn: src_year_period_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_voucher_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 561b318c-191a-4386-a1b6-61e248dea76d
+		summarizeBy: none
+		sourceColumn: src_voucher_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column src_voucher_type
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c764fd04-fc0b-4000-a820-a41b67888691
+		summarizeBy: none
+		sourceColumn: src_voucher_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_voucher_no
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ac118874-3db5-4aba-9169-4862ce771f3c
+		summarizeBy: sum
+		sourceColumn: src_voucher_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_event_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 59274334-5393-47a8-97b9-617b7782cf18
+		summarizeBy: none
+		sourceColumn: src_event_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column src_doc_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: cca4ccad-7f69-47d1-842b-e7f2c34c1172
+		summarizeBy: none
+		sourceColumn: src_doc_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column src_reference_number
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d802862d-ac2d-4946-bfc9-83da476e5cec
+		summarizeBy: none
+		sourceColumn: src_reference_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_reference_row_no
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e5b1b7d6-f434-4cf6-8ef1-30c18476c44d
+		summarizeBy: sum
+		sourceColumn: src_reference_row_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_reference_serie
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d54de462-37bb-4789-a25c-782f1e2da849
+		summarizeBy: none
+		sourceColumn: src_reference_serie
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_account
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ccfacd0e-c356-42e7-9f37-e5de751f059d
+		summarizeBy: none
+		sourceColumn: src_account
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_b
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cc08bda9-8922-4864-9aae-bb4320b154bd
+		summarizeBy: none
+		sourceColumn: src_code_b
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_c
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 445e0e4c-26c3-4996-9ad9-59fd0d92fd4a
+		summarizeBy: none
+		sourceColumn: src_code_c
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_d
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: fe75046f-5b55-4332-9263-e53aa50b6b85
+		summarizeBy: none
+		sourceColumn: src_code_d
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_e
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d341ad18-9ce3-4f82-9155-74599a55558a
+		summarizeBy: none
+		sourceColumn: src_code_e
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_f
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 201a72f6-817e-4dc4-8c98-ba151b684ad8
+		summarizeBy: none
+		sourceColumn: src_code_f
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_g
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 79e3fc63-35c5-44ff-8235-637a9762479b
+		summarizeBy: none
+		sourceColumn: src_code_g
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_g_description
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4ed4b7d6-0088-4c45-b16b-96e128f13e76
+		summarizeBy: none
+		sourceColumn: src_code_g_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_h
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 58386c32-170f-4eef-b749-bdbb21329740
+		summarizeBy: none
+		sourceColumn: src_code_h
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_i
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 73c55b45-d4f8-48ac-ac41-c52de2846ecd
+		summarizeBy: none
+		sourceColumn: src_code_i
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_j
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4c1f70ad-b9d1-42a9-b91d-e9a0a728b339
+		summarizeBy: none
+		sourceColumn: src_code_j
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_party_type_id
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 61fb9045-6946-49b9-9d6f-beda06180d57
+		summarizeBy: none
+		sourceColumn: src_party_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_currency_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: be491dcc-5787-4fa9-bd91-bf30e8c12b90
+		summarizeBy: none
+		sourceColumn: src_currency_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_text
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 385f2278-04d1-4829-8fdc-5851ea4279c5
+		summarizeBy: none
+		sourceColumn: src_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_variant
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c2b5dbac-0ee6-45d3-8d83-1a4c8c3a0830
+		summarizeBy: none
+		sourceColumn: src_variant
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_trans_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e8cf939f-4067-4ac5-83ea-28e3271a7e32
+		summarizeBy: none
+		sourceColumn: src_trans_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_team_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 9a7c9fec-3a11-4ecb-bc9a-082c13ecd704
+		summarizeBy: none
+		sourceColumn: src_team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_code_d_cnt
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6b97a378-4442-4a12-a704-3e8d2802b668
+		summarizeBy: none
+		sourceColumn: src_code_d_cnt
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_f
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: f1140be4-d8bf-4112-b535-86674b3cc5e8
+		summarizeBy: none
+		sourceColumn: code_f
+
+		annotation SummarizationSetBy = Automatic
+
+	column account
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: 091b74bc-cece-49f0-8fea-28e62de44fc3
+		summarizeBy: none
+		sourceColumn: account
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODE_C
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: 87a3e19b-3eba-470c-9a12-62d66910d0da
+		summarizeBy: none
+		sourceColumn: CODE_C
+
+		annotation SummarizationSetBy = Automatic
+
+	partition f_opex_costs_projects_facts = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, Protocol=null]),
+				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
+				    costs_projects_Schema = sandbox_Database{[Name="costs_projects",Kind="Schema"]}[Data],
+				    f_opex_costs_projects_facts_View = costs_projects_Schema{[Name="f_opex_costs_projects_facts",Kind="View"]}[Data]
+				in
+				    f_opex_costs_projects_facts_View
+

@@ -1,0 +1,234 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "19f6b057b4417914922e",
+  "position": {
+    "x": 57.6,
+    "y": 66.327272727272728,
+    "z": 0,
+    "height": 946.03636363636372,
+    "width": 1225.3090909090911,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_opex_costs_projects_facts"
+                    }
+                  },
+                  "Property": "code_f"
+                }
+              },
+              "queryRef": "f_opex_costs_projects_facts.code_f",
+              "nativeQueryRef": "code_f"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_opex_costs_projects_facts"
+                    }
+                  },
+                  "Property": "src_code_f"
+                }
+              },
+              "queryRef": "f_opex_costs_projects_facts.src_code_f",
+              "nativeQueryRef": "src_code_f"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_opex_costs_projects_facts"
+                    }
+                  },
+                  "Property": "link"
+                }
+              },
+              "queryRef": "f_opex_costs_projects_facts.link",
+              "nativeQueryRef": "link"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_time_mon"
+                    }
+                  },
+                  "Property": "mon_name"
+                }
+              },
+              "queryRef": "d_time_mon.mon_name",
+              "nativeQueryRef": "mon_name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_opex_costs_projects_facts"
+                        }
+                      },
+                      "Property": "amount_pln"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_opex_costs_projects_facts.amount_pln)",
+              "nativeQueryRef": "Sum of amount_pln"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_opex_costs_projects_facts"
+                        }
+                      },
+                      "Property": "credit_amount_pln"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_opex_costs_projects_facts.credit_amount_pln)",
+              "nativeQueryRef": "Sum of credit_amount_pln"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_opex_costs_projects_facts"
+                        }
+                      },
+                      "Property": "debet_amount_pln"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_opex_costs_projects_facts.debet_amount_pln)",
+              "nativeQueryRef": "Sum of debet_amount_pln"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "d_time_mon"
+                  }
+                },
+                "Property": "mon_name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tytuł'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "26089a99c51bdb810e70",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "d_time_mon",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "year_name"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'2026'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "ee8fed421e5c078ae015",
+  "position": {
+    "x": 1293.3818181818183,
+    "y": 66.327272727272728,
+    "z": 1000,
+    "height": 946.03636363636372,
+    "width": 586.4727272727273,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_opex_costs_projects_facts"
+                    }
+                  },
+                  "Property": "account"
+                }
+              },
+              "queryRef": "f_opex_costs_projects_facts.account",
+              "nativeQueryRef": "account",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_opex_costs_projects_facts"
+                    }
+                  },
+                  "Property": "code_f"
+                }
+              },
+              "queryRef": "f_opex_costs_projects_facts.code_f",
+              "nativeQueryRef": "code_f",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_opex_costs_projects_facts"
+                  }
+                },
+                "Property": "code_f"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
