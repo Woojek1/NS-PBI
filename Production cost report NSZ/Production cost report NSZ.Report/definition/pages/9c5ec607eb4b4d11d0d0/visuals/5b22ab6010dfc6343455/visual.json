@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "a8ea8d131f1988f2be6e",
+  "name": "5b22ab6010dfc6343455",
   "position": {
     "x": 0,
-    "y": 182.22222222222223,
+    "y": 182.85714285714286,
     "z": 0,
-    "height": 537.77777777777771,
+    "height": 537.6,
     "width": 1280,
     "tabOrder": 0
   },
@@ -54,6 +54,36 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "Category Cost"
+                    }
+                  },
+                  "Property": "Synth 6 ch Code"
+                }
+              },
+              "queryRef": "Category Cost.Synth 6 ch Code",
+              "nativeQueryRef": "Synth 6 ch Code",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Category Cost"
+                    }
+                  },
+                  "Property": "Synth 6 ch (en)"
+                }
+              },
+              "queryRef": "Category Cost.Synth 6 ch (en)",
+              "nativeQueryRef": "Synth 6 ch (en)",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "Organization"
                     }
                   },
@@ -62,7 +92,7 @@
               },
               "queryRef": "Organization.MPK Code",
               "nativeQueryRef": "MPK Code",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -92,36 +122,6 @@
               },
               "queryRef": "Sales Category Cost.SC Type (en)",
               "nativeQueryRef": "SC Type (en)",
-              "active": false
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Category Cost"
-                    }
-                  },
-                  "Property": "Synth 6 ch Code"
-                }
-              },
-              "queryRef": "Category Cost.Synth 6 ch Code",
-              "nativeQueryRef": "Synth 6 ch Code",
-              "active": false
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Category Cost"
-                    }
-                  },
-                  "Property": "Synth 6 ch (en)"
-                }
-              },
-              "queryRef": "Category Cost.Synth 6 ch (en)",
-              "nativeQueryRef": "Synth 6 ch (en)",
               "active": false
             }
           ]
@@ -215,6 +215,44 @@
         "levels": [
           {
             "queryRefs": [
+              "Category Cost.Synth 6 ch Code"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Category Cost"
+                    }
+                  },
+                  "Property": "Synth 6 ch Code"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Category Cost.Synth 6 ch (en)"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Category Cost"
+                    }
+                  },
+                  "Property": "Synth 6 ch (en)"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
               "Organization.MPK Code"
             ],
             "isCollapsed": true,
@@ -265,44 +303,6 @@
                     }
                   },
                   "Property": "SC Type (en)"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Category Cost.Synth 6 ch Code"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Category Cost"
-                    }
-                  },
-                  "Property": "Synth 6 ch Code"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Category Cost.Synth 6 ch (en)"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Category Cost"
-                    }
-                  },
-                  "Property": "Synth 6 ch (en)"
                 }
               }
             ],
