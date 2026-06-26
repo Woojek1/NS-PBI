@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "0cb1dfa97fbf0d05c5a2",
   "position": {
     "x": 0,
@@ -550,5 +550,137 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ffb0d9275ac8fd3adda6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ee9e32824b091e2f1162",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3a794694d61f47e20332",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e8642eed0bb89139f0bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bbfd9b7ce37636a5b45f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch (en)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eb3cb0417dbaec51f8a2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Debit/active balance EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "58b8e3f012938c5245a6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Bud Measures"
+              }
+            },
+            "Property": "Budget CUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "870116deb70cca6fbea8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "Act vs Bdg"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fb1ea701376d2f4fd413",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "% Act/Bdg"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

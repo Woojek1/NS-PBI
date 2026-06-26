@@ -21,6 +21,21 @@
         },
         "type": "Categorical",
         "howCreated": "Drillthrough"
+      },
+      {
+        "name": "389d57161bdb03433998",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Actuals YTD EUR"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
       }
     ]
   },
@@ -41,6 +56,22 @@
             "Property": "Debit/active balance EUR"
           }
         }
+      },
+      {
+        "name": "c869d637366039f222be",
+        "boundFilter": "389d57161bdb03433998",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Actuals YTD EUR"
+          }
+        }
       }
     ]
   },
@@ -59,5 +90,6 @@
       }
     ]
   },
-  "visibility": "HiddenInViewMode"
+  "visibility": "HiddenInViewMode",
+  "type": "Drillthrough"
 }

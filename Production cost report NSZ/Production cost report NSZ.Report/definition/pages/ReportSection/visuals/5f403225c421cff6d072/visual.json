@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "5f403225c421cff6d072",
   "position": {
     "x": 0,
@@ -714,5 +714,165 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e9b11d2e8dd3a12dc6b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d90fef3d40203c89bb63",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "058dfa2c3bb35cab20f5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "952ac4c10c9890e9204a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d220d5ad89ff6f1cb3fd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Category Cost"
+              }
+            },
+            "Property": "SC Type (en)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4bdd4861418683833f3b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a515aaacf02df03c8665",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch (en)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "52f2b6f338eef365b696",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Debit/active balance EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "08cffd7ce78da2aa63c9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Bud Measures"
+              }
+            },
+            "Property": "Budget CUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9a4b32c053a9ccb53e7a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "Act vs Bdg"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cd752af21757a14233c2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "% Act/Bdg"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

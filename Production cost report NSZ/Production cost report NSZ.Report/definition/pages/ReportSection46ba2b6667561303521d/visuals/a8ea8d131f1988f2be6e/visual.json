@@ -654,5 +654,165 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "129a1e0f5d44da0b5b40",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1545fd568d29fdb1556f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5d5a2bae56acb1b10a2d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "981d71fb67b97f7c928e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4513741d66bd4d25668c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Category Cost"
+              }
+            },
+            "Property": "SC Type (en)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "38d2d9ef2907fa5296d9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9588f9c4998cc0ec7a2d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch (en)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d083720202bc1e56f058",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Actuals YTD EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "15f83006226afbef5c06",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Bud Measures"
+              }
+            },
+            "Property": "Budget YTD EUR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3803b6ae6251442ad68f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "YTD Act vs Bdg"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4b8e30bc4fe874841e09",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Activity Category 5 pct"
+              }
+            },
+            "Property": "% YTD Act/Bdg"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "6afcf727b562e0618b94",
   "position": {
     "x": 0,
@@ -1064,6 +1064,34 @@
               }
             },
             "Property": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0a2394ff54ccaa4b0c48",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cfe82384d00d730172da",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch (en)"
           }
         },
         "type": "Categorical"

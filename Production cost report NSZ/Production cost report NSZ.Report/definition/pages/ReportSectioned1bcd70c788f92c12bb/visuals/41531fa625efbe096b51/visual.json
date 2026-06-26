@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "41531fa625efbe096b51",
   "position": {
     "x": 23.993480032599837,
@@ -388,6 +388,11 @@
             "metadata": "Supplier.Supplier"
           }
         }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
       ]
     },
     "visualContainerObjects": {
@@ -550,6 +555,104 @@
             }
           ]
         }
+      },
+      {
+        "name": "aa752dc93dce29e6545e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 3 ch (en)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1e236168b83efcffd6b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Category Cost"
+              }
+            },
+            "Property": "Synth 6 ch Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a0aceac856ffb4522998",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "91a28d6e1f131c88bb40",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Voucher Annotation"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eecf1623f63c10091def",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Workflow (link)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5d2db0fb741119c573c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Document Number"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a69d1935d4fb4b8536d0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "OPEX Measures"
+              }
+            },
+            "Property": "Debit/active balance EUR"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
