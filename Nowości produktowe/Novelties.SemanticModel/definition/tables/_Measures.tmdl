@@ -1,0 +1,36 @@
+table _Measures
+	lineageTag: 41cb0a58-744d-42cb-a36f-45d8e3dfe517
+
+	measure Forecast = sum(novelties_sales[forecast_qty])
+		formatString: #,0
+		lineageTag: f8d2a271-5fe9-4e44-bce8-5e0e9e820b50
+
+	measure 'Forecast realization' = VALUES(novelties_sales[qty_invoiced_realization])
+		formatString: 0%;-0%;0%
+		lineageTag: 7e8569ea-2526-4435-870d-5fb4d8d1b0c1
+
+	measure Sale_quantity_invoiced = SUM(novelties_sales[qty_invoiced])
+		formatString: #,0
+		lineageTag: 6fa33442-1095-4de9-9bb4-ac8f1c92646a
+
+	measure Sale_quantity_to_be_invoiced =
+			
+			SUM(novelties_sales[qty_to_be_invoiced])
+		formatString: #,0
+		lineageTag: b54366e4-80c7-42a1-87bd-78f7faa5f669
+
+	column Value
+		formatString: 0
+		lineageTag: e16d9edc-d0b3-48bd-a9fb-3193774e9c80
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = fdc6e80dc53d41f891c4bb4f1a732f30
+

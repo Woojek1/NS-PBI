@@ -1,0 +1,161 @@
+createOrReplace
+
+	model Model
+		culture: en-US
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: pl-PL
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
+
+		table novelties_sales
+			lineageTag: 64bc1a10-d398-4682-a172-cc2cdc896b69
+
+			column line_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 17e0e052-6104-49d9-968c-d03c26ca382d
+				summarizeBy: none
+				sourceColumn: line_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column grp_name_en
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 71896d51-8df0-4d6d-8122-011877e1d94e
+				summarizeBy: none
+				sourceColumn: grp_name_en
+
+				annotation SummarizationSetBy = Automatic
+
+			column yearh_name
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 285f187d-a64f-4671-8166-fe4acd7c1e62
+				summarizeBy: none
+				sourceColumn: yearh_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column b_key
+				dataType: string
+				sourceProviderType: nvarchar(65535)
+				lineageTag: 8e3419e9-b540-41ae-98f8-5ab1a721fd61
+				summarizeBy: none
+				sourceColumn: b_key
+
+				annotation SummarizationSetBy = Automatic
+
+			column forecast_qty
+				dataType: int64
+				formatString: #,0
+				sourceProviderType: int
+				lineageTag: b7d842e8-8f6d-4322-b56c-754d66fcb224
+				summarizeBy: sum
+				sourceColumn: forecast_qty
+
+				annotation SummarizationSetBy = Automatic
+
+			column qty_invoiced
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 8b1c14e7-009f-4181-ae2f-50de4a6c3e88
+				summarizeBy: sum
+				sourceColumn: qty_invoiced
+
+				annotation SummarizationSetBy = Automatic
+
+			column qty_to_be_invoiced
+				dataType: int64
+				formatString: 0
+				sourceProviderType: int
+				lineageTag: 7cc7a417-f85d-41c5-acb6-59644eacb522
+				summarizeBy: sum
+				sourceColumn: qty_to_be_invoiced
+
+				annotation SummarizationSetBy = Automatic
+
+			column qty_invoiced_realization
+				dataType: double
+				sourceProviderType: double
+				lineageTag: 0c506b78-4696-4ed2-b645-795150098289
+				summarizeBy: sum
+				sourceColumn: qty_invoiced_realization
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition novelties_sales = m
+				mode: import
+				source =
+						let
+						    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", null),
+						    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
+						    novelties_report_Schema = sandbox_Database{[Name="novelties_report",Kind="Schema"]}[Data],
+						    novelties_sales_View = novelties_report_Schema{[Name="novelties_sales",Kind="View"]}[Data]
+						in
+						    novelties_sales_View
+
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Table
+
+		table _Measures
+			lineageTag: 41cb0a58-744d-42cb-a36f-45d8e3dfe517
+
+			measure Forecast_line = sum(novelties_sales[forecast_qty])
+				formatString: 0
+				lineageTag: f8d2a271-5fe9-4e44-bce8-5e0e9e820b50
+
+			measure Realization_formatting = VALUES(novelties_sales[qty_invoiced_realization])
+				lineageTag: 7e8569ea-2526-4435-870d-5fb4d8d1b0c1
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			measure realization_formatting2 = VALUES(novelties_sales[qty_invoiced_realization])
+				formatString: 0.00%;-0.00%;0.00%
+				lineageTag: 6921dc17-3d53-47da-a550-868efb2afcff
+
+			measure Forecast_line2 = sum(novelties_sales[forecast_qty])
+				formatString: #,0
+				lineageTag: 1f86d78a-3f12-4d12-a969-cea9b1724316
+
+			measure Sale_quantity_invoiced = SUM(novelties_sales[qty_invoiced])
+				formatString: #,0
+				lineageTag: 6fa33442-1095-4de9-9bb4-ac8f1c92646a
+
+			measure Sale_quantity_to_be_invoiced =
+					
+					SUM(novelties_sales[qty_to_be_invoiced])
+				formatString: #,0
+				lineageTag: b54366e4-80c7-42a1-87bd-78f7faa5f669				
+
+			column Value
+				formatString: 0
+				lineageTag: e16d9edc-d0b3-48bd-a9fb-3193774e9c80
+				summarizeBy: sum
+				isNameInferred
+				sourceColumn: [Value]
+
+				annotation SummarizationSetBy = Automatic
+
+			partition _Measures = calculated
+				mode: import
+				source = {0}
+
+			annotation PBI_Id = fdc6e80dc53d41f891c4bb4f1a732f30
+
+		cultureInfo en-US
+
+			linguisticMetadata = {"Version":"4.1.0","Language":"en-US","Entities":{"novelties_sale.forecast_line":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"Forecast_line2"}},"State":"Generated","Terms":[{"forecast line":{"State":"Generated"}},{"Forecast_line":{"Type":"Noun","State":"Generated","Weight":0.99}},{"prediction line":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.6}},{"projection line":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.6}},{"report line":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.582}},{"estimate line":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.582}},{"forecast streak":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"forecast stroke":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"forecast stripe":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"forecast contour":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"forecast mark":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"forecast connection":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}},{"Forecast":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"novelties_sale":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales"}},"State":"Generated","Terms":[{"novelties sale":{"State":"Generated"}},{"novelty sale":{"Type":"Noun","State":"Generated","Weight":0.78}},{"novelties_sales":{"Type":"Noun","State":"Generated","Weight":0.99}},{"sale":{"State":"Generated","Weight":0.97}},{"novelty auction":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.485}},{"auction":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"novelty transaction":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}},{"transaction":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.466}},{"novelty deal":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.461}},{"novelty trade":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.461}},{"novelty vending":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.461}},{"novelty retailing":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.461}},{"novelty selling":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.461}},{"deal":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.452}}]},"novelties_sale.line_name":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"line_name"}},"State":"Generated","Terms":[{"line name":{"State":"Generated"}},{"line_name":{"Type":"Noun","State":"Generated","Weight":0.99}},{"line nickname":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"line title":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"line label":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"line tag":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"Line":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"novelties_sale.grp_name_en":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"grp_name_en"}},"State":"Generated","Terms":[{"grp name en":{"State":"Generated"}},{"grp_name_en":{"Type":"Noun","State":"Generated","Weight":0.99}},{"grp nickname en":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"grp title en":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"grp label en":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"grp tag en":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.591}},{"Group":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"novelties_sale.yearh_name":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"yearh_name"}},"State":"Generated","Terms":[{"yearh name":{"State":"Generated"}},{"yearh_name":{"Type":"Noun","State":"Generated","Weight":0.99}},{"yearh nickname":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"yearh title":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"yearh label":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"yearh tag":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.727}},{"Half year":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"novelties_sale.b_key":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"b_key"}},"State":"Generated","Terms":[{"b key":{"State":"Generated"}},{"b_key":{"Type":"Noun","State":"Generated","Weight":0.99}},{"key":{"State":"Generated","Weight":0.97}},{"main":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"basic":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"fundamental":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"central":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"major":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"keynote":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"essential":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.476}},{"b solution":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}},{"b explanation":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}},{"b basis":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.475}}]},"novelties_sale.forecast_qty":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"forecast_qty"}},"State":"Generated","Terms":[{"forecast qty":{"State":"Generated"}},{"forecast_qty":{"Type":"Noun","State":"Generated","Weight":0.99}},{"prediction qty":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.6}},{"projection qty":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.6}},{"report qty":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.582}},{"estimate qty":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.582}}]},"novelties_sale.qty_invoiced":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"qty_invoiced"}},"State":"Generated","Terms":[{"qty invoiced":{"State":"Generated"}},{"qty_invoiced":{"Type":"Noun","State":"Generated","Weight":0.99}}]},"novelties_sale.qty_to_be_invoiced":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"qty_to_be_invoiced"}},"State":"Generated","Terms":[{"qty to be invoiced":{"State":"Generated"}},{"qty_to_be_invoiced":{"Type":"Noun","State":"Generated","Weight":0.99}}]},"novelties_sale.qty_invoiced_realization":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"qty_invoiced_realization"}},"State":"Generated","Terms":[{"qty invoiced realization":{"State":"Generated"}},{"qty_invoiced_realization":{"Type":"Noun","State":"Generated","Weight":0.99}},{"qty invoiced comprehension":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.508}},{"qty invoiced consciousness":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.508}},{"qty invoiced awareness":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.508}},{"qty invoiced recognition":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.508}},{"qty invoiced apprehension":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.508}},{"qty invoiced insight":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.508}},{"qty invoiced understanding":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.492}},{"qty invoiced grasp":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.492}},{"qty invoiced fulfilment":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.482}},{"qty invoiced fulfillment":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.482}}]},"novelties_sale.realization_formatting":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"realization_formatting2"}},"State":"Generated","Terms":[{"realization formatting":{"State":"Generated"}},{"realization_formatting":{"Type":"Noun","State":"Generated","Weight":0.99}},{"formatting":{"State":"Generated","Weight":0.97}},{"Forecast realization":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"novelties_sale.sale_quantity_invoiced":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"Sale_quantity_invoiced"}},"State":"Generated","Terms":[{"sale quantity invoiced":{"State":"Generated"}},{"Sale_quantity_invoiced":{"Type":"Noun","State":"Generated","Weight":0.99}},{"sale extent invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.508}},{"sale magnitude invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.508}},{"sale amount invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.492}},{"sale number invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.492}},{"sale measure invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.492}},{"sale size invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.492}},{"sale capacity invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.492}},{"sale mass invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.492}},{"Invoiced sales quantity":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]},"novelties_sale.sale_quantity_to_be_invoiced":{"Definition":{"Binding":{"ConceptualEntity":"novelties_sales","ConceptualProperty":"Sale_quantity_to_be_invoiced"}},"State":"Generated","Terms":[{"sale quantity to be invoiced":{"State":"Generated"}},{"Sale_quantity_to_be_invoiced":{"Type":"Noun","State":"Generated","Weight":0.99}},{"sale extent to be invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.52}},{"sale magnitude to be invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.52}},{"sale amount to be invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"sale number to be invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"sale measure to be invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"sale size to be invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"sale capacity to be invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"sale mass to be invoiced":{"Type":"Noun","State":"Suggested","Source":{"Agent":"Thesaurus"},"Weight":0.504}},{"To be invoiced sales quantity":{"State":"Suggested","Source":{"Type":"External","Agent":"PowerBI.VisualColumnRename"},"Weight":0.9}}]}},"Relationships":{"novelties_sale_has_sale_quantity_to_be_invoiced":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.sale_quantity_to_be_invoiced":{"Target":{"Entity":"novelties_sale.sale_quantity_to_be_invoiced"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.sale_quantity_to_be_invoiced"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_sale_quantity_to_be_invoiced"}]},"novelties_sale_has_sale_quantity_invoiced":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.sale_quantity_invoiced":{"Target":{"Entity":"novelties_sale.sale_quantity_invoiced"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.sale_quantity_invoiced"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_sale_quantity_invoiced"}]},"novelties_sale_has_realization_formatting":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.realization_formatting":{"Target":{"Entity":"novelties_sale.realization_formatting"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.realization_formatting"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_realization_formatting"}]},"novelties_sale_has_qty_invoiced_realization":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.qty_invoiced_realization":{"Target":{"Entity":"novelties_sale.qty_invoiced_realization"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.qty_invoiced_realization"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_qty_invoiced_realizations"}]},"novelties_sale_has_qty_to_be_invoiced":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.qty_to_be_invoiced":{"Target":{"Entity":"novelties_sale.qty_to_be_invoiced"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.qty_to_be_invoiced"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_qty_to_be_invoiced"}]},"novelties_sale_has_qty_invoiced":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.qty_invoiced":{"Target":{"Entity":"novelties_sale.qty_invoiced"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.qty_invoiced"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_qty_invoiced"}]},"novelties_sale_has_forecast_qty":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.forecast_qty":{"Target":{"Entity":"novelties_sale.forecast_qty"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.forecast_qty"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_forecast_qties"}]},"novelties_sale_has_b_key":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.b_key":{"Target":{"Entity":"novelties_sale.b_key"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.b_key"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_b_keys"}]},"novelties_sale_has_yearh_name":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.yearh_name":{"Target":{"Entity":"novelties_sale.yearh_name"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.yearh_name"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_yearh_names"}]},"novelties_sale_has_grp_name_en":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.grp_name_en":{"Target":{"Entity":"novelties_sale.grp_name_en"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.grp_name_en"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_grp_name_ens"}]},"novelties_sale_has_line_name":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.line_name":{"Target":{"Entity":"novelties_sale.line_name"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.line_name"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_line_names"}]},"novelties_sale_has_forecast_line":{"Binding":{"ConceptualEntity":"novelties_sales"},"State":"Generated","Roles":{"novelties_sale":{"Target":{"Entity":"novelties_sale"}},"novelties_sale.forecast_line":{"Target":{"Entity":"novelties_sale.forecast_line"}}},"Phrasings":[{"Attribute":{"Subject":{"Role":"novelties_sale"},"Object":{"Role":"novelties_sale.forecast_line"}},"State":"Generated","Weight":0.99,"ID":"novelties_sales_have_forecast_line"}]}},"Agents":{"Internal":{"Version":"1.1.0"}}}
+				contentType: json
+
+		annotation __PBI_TimeIntelligenceEnabled = 0
+
+		annotation PBI_QueryOrder = ["novelties_sales"]
+
+		annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+

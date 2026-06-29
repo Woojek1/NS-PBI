@@ -1,0 +1,95 @@
+table novelties_sales
+	lineageTag: 64bc1a10-d398-4682-a172-cc2cdc896b69
+
+	column line_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 17e0e052-6104-49d9-968c-d03c26ca382d
+		summarizeBy: none
+		sourceColumn: line_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 71896d51-8df0-4d6d-8122-011877e1d94e
+		summarizeBy: none
+		sourceColumn: grp_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 285f187d-a64f-4671-8166-fe4acd7c1e62
+		summarizeBy: none
+		sourceColumn: yearh_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column b_key
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8e3419e9-b540-41ae-98f8-5ab1a721fd61
+		summarizeBy: none
+		sourceColumn: b_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column forecast_qty
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: int
+		lineageTag: b7d842e8-8f6d-4322-b56c-754d66fcb224
+		summarizeBy: sum
+		sourceColumn: forecast_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_invoiced
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8b1c14e7-009f-4181-ae2f-50de4a6c3e88
+		summarizeBy: sum
+		sourceColumn: qty_invoiced
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_to_be_invoiced
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7cc7a417-f85d-41c5-acb6-59644eacb522
+		summarizeBy: sum
+		sourceColumn: qty_to_be_invoiced
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_invoiced_realization
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 0c506b78-4696-4ed2-b645-795150098289
+		summarizeBy: sum
+		sourceColumn: qty_invoiced_realization
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition novelties_sales = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", null),
+				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
+				    novelties_report_Schema = sandbox_Database{[Name="novelties_report",Kind="Schema"]}[Data],
+				    novelties_sales_View = novelties_report_Schema{[Name="novelties_sales",Kind="View"]}[Data]
+				in
+				    novelties_sales_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
