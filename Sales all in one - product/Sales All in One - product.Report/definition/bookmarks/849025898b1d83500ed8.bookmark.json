@@ -1,0 +1,967 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "SALES BY CUSTOMER EUR",
+  "name": "849025898b1d83500ed8",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "dac97af5eacebaeb43d9",
+    "filters": {
+      "byName": {
+        "22afdb05618171861b57": {
+          "name": "22afdb05618171861b57",
+          "type": "Advanced",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Date"
+                }
+              },
+              "Property": "Year"
+            }
+          },
+          "howCreated": 1
+        }
+      },
+      "byExpr": [
+        {
+          "name": "598b959ff97c6147f524",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "s",
+                "Entity": "Sales Measures",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "s"
+                            }
+                          },
+                          "Property": "BI Sales"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "1L"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Sales Measures"
+                }
+              },
+              "Property": "BI Sales"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "e982ef8192332b842044",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "s",
+                "Entity": "Sales Measures",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "s"
+                            }
+                          },
+                          "Property": "Internal sales"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'N'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Sales Measures"
+                }
+              },
+              "Property": "Internal sales"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "c4de7c0a8b3e5ad4761a",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "d",
+                "Entity": "Department",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Department Code"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'!UNC'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Department"
+                }
+              },
+              "Property": "Department Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "6c94360f69b64a7c818e",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "s",
+                "Entity": "Sale Status",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "s"
+                            }
+                          },
+                          "Property": "Sale Status Code Name Int"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Invoiced'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Sale Status"
+                }
+              },
+              "Property": "Sale Status Code Name Int"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "d2abb43d5c475846f732",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "d",
+                "Entity": "Date",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d"
+                            }
+                          },
+                          "Property": "Year"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2025L"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2026L"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Date"
+                }
+              },
+              "Property": "Year"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "a18ea32b7b32da327ca4",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Date"
+                }
+              },
+              "Property": "Quarter Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "5ff8337d5ec9828af3f8",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Date"
+                }
+              },
+              "Property": "Month Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "9b029955f60159e6bfd8",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Date"
+                }
+              },
+              "Property": "Month"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "a7994331028f65a0b205",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Department"
+                }
+              },
+              "Property": "Department"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "b0981f0cc56b07f64003",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Department"
+                }
+              },
+              "Property": "Department Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "d2559c43485eae1908c2",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Department"
+                }
+              },
+              "Property": "Section"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "0686bae05bbaf3daa9d0",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Department"
+                }
+              },
+              "Property": "Section Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "326209ef8e7583c370e1",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Department"
+                }
+              },
+              "Property": "Salesman"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "a3684aa5d0be31cb4e96",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Department"
+                }
+              },
+              "Property": "Salesman Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "cf75c523391d148af23d",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Company"
+                }
+              },
+              "Property": "Company"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "94d1152720de2c890e54",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Company"
+                }
+              },
+              "Property": "Company Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "d154e0cf30b53fa2de13",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Currency"
+                }
+              },
+              "Property": "Currency"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "a960ce0b8c14523b90c7",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Customer"
+                }
+              },
+              "Property": "Hierarchy"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "1662ee82551a48f4cf45",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Customer"
+                }
+              },
+              "Property": "Customer Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "5c65c98f49b21bae4a64",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Customer"
+                }
+              },
+              "Property": "Customer"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "7bf8592f0b722e83047a",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Customer Group"
+                }
+              },
+              "Property": "Customer Group"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "bd7786023c168b332b3c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Customer"
+                }
+              },
+              "Property": "Customer Country"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "f1beca94d2d812594dab",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "Brand"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "f5afe8b39d5f73ff4789",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "Line Novelties Flag"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "48bf79a18f75aa7f04d1",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "SuperGroup Name"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "6e7057bc4f5eda017876",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "Product Group"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "c562b31afcfb08664b06",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "Product Subgroup"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "5f1ad011a7ea47a74395",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "BC Grp1 (en)"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "69726e22db27601164d3",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "BC Grp2 (en)"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "7a7476fa1e9d70fcb3e3",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "Cluster (en)"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "738c0250b8d558860315",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "Line"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "3ca837344b01bf794924",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "Model"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "b9a589deb141643f2935",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product Inventory"
+                }
+              },
+              "Property": "Inventory Item Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "267d7f9729888683b358",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product Inventory"
+                }
+              },
+              "Property": "Inventory Item Name"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "287090c831119c6a59fc",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Product"
+                }
+              },
+              "Property": "Manufacturer"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "ba1e6db088a2a5ed3103",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Project"
+                }
+              },
+              "Property": "Project Code"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "fb7cf87b68bed0fa6407",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Project"
+                }
+              },
+              "Property": "Project"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "b9d9d64132b7a752db08",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Sales Measures"
+                }
+              },
+              "Property": "Invoice number"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "501bb384fba6c20a132c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Sales Measures"
+                }
+              },
+              "Property": "Order ID"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "1334e0dfecf55b62278c",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Sales Measures"
+                }
+              },
+              "Property": "Order number"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "02f0057793530caf4963",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Coordinator"
+                }
+              },
+              "Property": "Coordinator"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "dcb1985de914d89a5308",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Customer"
+                }
+              },
+              "Property": "Account Manager"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "4d2d1301f2ef65364b30",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Destination"
+                }
+              },
+              "Property": "Destination Address Name"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "59c4ac4645c36873976b",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Destination"
+                }
+              },
+              "Property": "Destination Address"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "e29c834066c07a2a20d8",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Skonto"
+                }
+              },
+              "Property": "Skonto"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "79d4966dd68fecea740b",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Price List"
+                }
+              },
+              "Property": "PriceList Category"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "7655b37e15392a2b1f64",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Price List"
+                }
+              },
+              "Property": "PriceList"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "dac97af5eacebaeb43d9": {
+        "visualContainers": {}
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
