@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "f_opex_costs_projects_facts"
+                      "Entity": "d_time_mon"
                     }
                   },
-                  "Property": "src_code_b"
+                  "Property": "year_name"
                 }
               },
-              "queryRef": "f_opex_costs_projects_facts.src_code_b",
-              "nativeQueryRef": "src_code_b",
+              "queryRef": "d_time_mon.year_name",
+              "nativeQueryRef": "year_name",
               "active": true
             }
           ]
@@ -62,6 +62,21 @@
               },
               "queryRef": "f_opex_costs_projects_facts.account",
               "nativeQueryRef": "account",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_opex_costs_projects_facts"
+                    }
+                  },
+                  "Property": "src_code_b"
+                }
+              },
+              "queryRef": "f_opex_costs_projects_facts.src_code_b",
+              "nativeQueryRef": "src_code_b",
               "active": true
             }
           ]
@@ -135,6 +150,12 @@
           {
             "queryRefs": [
               "f_opex_costs_projects_facts.account"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "f_opex_costs_projects_facts.src_code_b"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -391,7 +412,7 @@
         "type": "Categorical"
       },
       {
-        "name": "3cf36a76a8142053a7ea",
+        "name": "ca9761b5409b83d61821",
         "field": {
           "Column": {
             "Expression": {
@@ -400,6 +421,20 @@
               }
             },
             "Property": "src_code_b"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f3cd608b2a0390304582",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
           }
         },
         "type": "Categorical"
