@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "79e2c844b0a34ee80290",
   "position": {
     "x": 11.2,
@@ -66,6 +66,22 @@
               "nativeQueryRef": "Line",
               "active": true,
               "displayName": "Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales"
+                    }
+                  },
+                  "Property": "data_publikacji_p3s"
+                }
+              },
+              "queryRef": "novelties_sales.data_publikacji_p3s",
+              "nativeQueryRef": "Data publikacji p3s",
+              "active": true,
+              "displayName": "Data publikacji p3s"
             }
           ]
         },
@@ -166,7 +182,6 @@
             "queryRefs": [
               "novelties_sales.line_name"
             ],
-            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -179,6 +194,13 @@
                 }
               }
             ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "novelties_sales.data_publikacji_p3s"
+            ],
+            "isCollapsed": true,
             "isPinned": true
           }
         ],
@@ -390,7 +412,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "202.693051625683D"
+                  "Value": "142.60056881514348D"
                 }
               }
             }
@@ -428,7 +450,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "190.84097040508178D"
+                  "Value": "177.4956294331731D"
                 }
               }
             }
@@ -466,7 +488,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "261.35638205534497D"
+                  "Value": "208.11236238647635D"
                 }
               }
             }
@@ -504,7 +526,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "204.67693658349222D"
+                  "Value": "121.2099471873426D"
                 }
               }
             }
@@ -573,6 +595,44 @@
               }
             ],
             "metadata": "_Measures.Realization_formatting"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "168.00002141583664D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "novelties_sales"
+                          }
+                        },
+                        "Property": "yearh_name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'P-2026-02'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "_Measures.Sale_quantity_to_be_invoiced"
           }
         }
       ],

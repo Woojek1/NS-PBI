@@ -78,6 +78,17 @@ table novelties_sales
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column data_publikacji_p3s
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9cbe8cdd-f397-4054-90eb-6378f0795bf4
+		summarizeBy: none
+		sourceColumn: data_publikacji_p3s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
 	partition novelties_sales = m
 		mode: import
 		source =

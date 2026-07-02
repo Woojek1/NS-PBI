@@ -1334,6 +1334,116 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "novelties_sale.data_publikacji_p_3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales",
+			          "ConceptualProperty": "data_publikacji_p3s"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data publikacji p 3": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data_publikacji_p3s": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "information publikacji p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "fact publikacji p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "info publikacji p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "statistic publikacji p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "document publikacji p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "figure publikacji p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "record publikacji p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Data publikacji p3s": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
 			    }
 			  },
 			  "Relationships": {
@@ -1763,6 +1873,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "novelties_sales_have_forecast_realization"
+			        }
+			      ]
+			    },
+			    "novelties_sale_has_data_publikacji_p_3": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sale": {
+			          "Target": {
+			            "Entity": "novelties_sale"
+			          }
+			        },
+			        "novelties_sale.data_publikacji_p_3": {
+			          "Target": {
+			            "Entity": "novelties_sale.data_publikacji_p_3"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sale"
+			            },
+			            "Object": {
+			              "Role": "novelties_sale.data_publikacji_p_3"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_have_data_publikacji_p_3"
 			        }
 			      ]
 			    }
