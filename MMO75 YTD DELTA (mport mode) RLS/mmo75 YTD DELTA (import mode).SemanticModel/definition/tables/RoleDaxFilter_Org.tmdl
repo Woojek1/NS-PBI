@@ -1,28 +1,38 @@
 table RoleDaxFilter_Org
+	isHidden
 	lineageTag: 176b8cbc-bf41-47e9-9f85-8561b988873e
 
 	column user_name
 		dataType: string
+		isHidden
 		lineageTag: 414e9796-a241-4ef1-a668-3b8e8b6172ea
 		summarizeBy: none
 		sourceColumn: user_name
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column team_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: d2101113-d812-492b-a76e-c6d6b6d1911b
 		summarizeBy: none
 		sourceColumn: team_id
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column team_code
 		dataType: string
+		isHidden
 		lineageTag: 729cd355-8729-48f7-8cc7-7d33dff4e828
 		summarizeBy: none
 		sourceColumn: team_code
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -69,6 +79,8 @@ table RoleDaxFilter_Org
 				    [EnableFolding=true]
 				)
 				```
+
+	changedProperty = IsHidden
 
 	annotation PBI_NavigationStepName = Navigation
 

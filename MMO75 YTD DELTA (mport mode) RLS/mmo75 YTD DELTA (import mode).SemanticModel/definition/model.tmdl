@@ -6,11 +6,11 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_QueryOrder = ["f_margin75_facts","d_customer","d_product","d_organization","d_company","d_time_mon","d_pricelist","d_organization_team","RoleDaxFilter_Comp","RoleDaxFilter_Cust","RoleDaxFilter_Org"]
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
 
 ref table f_margin75_facts
 ref table d_customer

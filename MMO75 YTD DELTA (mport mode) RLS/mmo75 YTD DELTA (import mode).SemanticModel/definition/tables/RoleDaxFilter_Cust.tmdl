@@ -1,20 +1,27 @@
 table RoleDaxFilter_Cust
+	isHidden
 	lineageTag: 411d148a-f77f-4e0a-83a5-db0e279b844d
 
 	column user_name
 		dataType: string
+		isHidden
 		lineageTag: 3552ef12-a6b0-4108-b024-1f7af11579e9
 		summarizeBy: none
 		sourceColumn: user_name
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column cust_id
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 129dacf6-7ebf-4c3f-9cde-547e74e249ae
 		summarizeBy: none
 		sourceColumn: cust_id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -86,6 +93,8 @@ table RoleDaxFilter_Cust
 				    [EnableFolding=true]
 				)
 				```
+
+	changedProperty = IsHidden
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -151,6 +151,22 @@ table d_product
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Manufacturer code'
+		dataType: string
+		lineageTag: d8383d58-b4f3-45ce-aadd-492243585f76
+		summarizeBy: none
+		sourceColumn: Manufacturer code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manufacturer name'
+		dataType: string
+		lineageTag: 3efdd2d8-7054-4e51-b174-bf2b7d98fda0
+		summarizeBy: none
+		sourceColumn: Manufacturer name
+
+		annotation SummarizationSetBy = Automatic
+
 	partition d_product = m
 		mode: import
 		source =
@@ -164,6 +180,8 @@ table d_product
 				    "
 				    select
 				        p.prod_si_id,
+				        p.mnf_code         as `Manufacturer code`,
+				        p.mnf_name         as `Manufacturer name`,
 				        p.line_name        as `Line`,
 				        p.model_code       as `Model Code`,
 				        p.model_name       as `Model`,
