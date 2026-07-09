@@ -1433,7 +1433,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Data publikacji p3s": {
+			          "p3s publication date": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1444,9 +1444,296 @@ cultureInfo en-US
 			        }
 			      ],
 			      "SemanticType": "Time"
+			    },
+			    "novelties_sale.index_type_corr_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales",
+			          "ConceptualProperty": "index_type_corr_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "index type corr name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "index_type_corr_name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "index type corr nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "index type corr title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "index type corr label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "index type corr tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "index category corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "index genre corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "index manner corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "index variety corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "index brand corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "index class corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Line type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sale.month_in_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales",
+			          "ConceptualProperty": "month_in_sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month in sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month_in_sales": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "in sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "mth in sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "in sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "month in sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "Months in sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "novelties_sale_has_index_type_corr_name": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sale": {
+			          "Target": {
+			            "Entity": "novelties_sale"
+			          }
+			        },
+			        "novelties_sale.index_type_corr_name": {
+			          "Target": {
+			            "Entity": "novelties_sale.index_type_corr_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sale"
+			            },
+			            "Object": {
+			              "Role": "novelties_sale.index_type_corr_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_have_index_type_corr_names"
+			        },
+			        {
+			          "DynamicAdjective": {
+			            "Subject": {
+			              "Role": "novelties_sale"
+			            },
+			            "Adjective": {
+			              "Role": "novelties_sale.index_type_corr_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "index_type_corr_names_describe_novelties_sales"
+			        }
+			      ]
+			    },
+			    "novelties_sale_has_data_publikacji_p_3": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sale": {
+			          "Target": {
+			            "Entity": "novelties_sale"
+			          }
+			        },
+			        "novelties_sale.data_publikacji_p_3": {
+			          "Target": {
+			            "Entity": "novelties_sale.data_publikacji_p_3"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sale"
+			            },
+			            "Object": {
+			              "Role": "novelties_sale.data_publikacji_p_3"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_have_data_publikacji_p_3"
+			        }
+			      ]
+			    },
 			    "novelties_sale_has_entity__measure_sale_quantity_to_be_invoiced": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales"
@@ -1876,7 +2163,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "novelties_sale_has_data_publikacji_p_3": {
+			    "novelties_sale_has_month_in_sales": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales"
 			      },
@@ -1887,9 +2174,9 @@ cultureInfo en-US
 			            "Entity": "novelties_sale"
 			          }
 			        },
-			        "novelties_sale.data_publikacji_p_3": {
+			        "novelties_sale.month_in_sales": {
 			          "Target": {
-			            "Entity": "novelties_sale.data_publikacji_p_3"
+			            "Entity": "novelties_sale.month_in_sales"
 			          }
 			        }
 			      },
@@ -1900,12 +2187,12 @@ cultureInfo en-US
 			              "Role": "novelties_sale"
 			            },
 			            "Object": {
-			              "Role": "novelties_sale.data_publikacji_p_3"
+			              "Role": "novelties_sale.month_in_sales"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "novelties_sales_have_data_publikacji_p_3"
+			          "ID": "novelties_sales_have_month_in_sales"
 			        }
 			      ]
 			    }

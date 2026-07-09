@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "79e2c844b0a34ee80290",
   "position": {
-    "x": 11.016393442622951,
-    "y": 23.606557377049182,
+    "x": 19.2,
+    "y": 0,
     "z": 0,
-    "height": 1046.5573770491803,
-    "width": 1883.8032786885246,
+    "height": 1080,
+    "width": 1881.6,
     "tabOrder": 0
   },
   "visual": {
@@ -75,13 +75,45 @@
                       "Entity": "novelties_sales"
                     }
                   },
+                  "Property": "index_type_corr_name"
+                }
+              },
+              "queryRef": "novelties_sales.index_type_corr_name",
+              "nativeQueryRef": "Line type",
+              "active": true,
+              "displayName": "Line type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales"
+                    }
+                  },
                   "Property": "data_publikacji_p3s"
                 }
               },
               "queryRef": "novelties_sales.data_publikacji_p3s",
-              "nativeQueryRef": "Data publikacji p3s",
+              "nativeQueryRef": "p3s publication date",
               "active": true,
-              "displayName": "Data publikacji p3s"
+              "displayName": "p3s publication date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales"
+                    }
+                  },
+                  "Property": "month_in_sales"
+                }
+              },
+              "queryRef": "novelties_sales.month_in_sales",
+              "nativeQueryRef": "Months in sales",
+              "active": true,
+              "displayName": "Months in sales"
             }
           ]
         },
@@ -176,6 +208,18 @@
             "queryRefs": [
               "novelties_sales.grp_name_en"
             ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales"
+                    }
+                  },
+                  "Property": "grp_name_en"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -198,7 +242,19 @@
           },
           {
             "queryRefs": [
+              "novelties_sales.index_type_corr_name"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
               "novelties_sales.data_publikacji_p3s"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "novelties_sales.month_in_sales"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -241,7 +297,7 @@
             "titleAlignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'Center'"
+                  "Value": "'Left'"
                 }
               }
             },
@@ -308,7 +364,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "133.41686411759554D"
+                  "Value": "127.34018730023003D"
                 }
               }
             }
@@ -450,7 +506,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "177.4956294331731D"
+                  "Value": "132.8178937170009D"
                 }
               }
             }
@@ -488,7 +544,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "208.11236238647635D"
+                  "Value": "166.53422588974234D"
                 }
               }
             }
@@ -564,7 +620,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "180.63076018543293D"
+                  "Value": "129.32446260757825D"
                 }
               }
             }
@@ -633,6 +689,48 @@
               }
             ],
             "metadata": "_Measures.Sale_quantity_to_be_invoiced"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "novelties_sales.month_in_sales"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "135.23533031383448D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "novelties_sales.data_publikacji_p3s"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "149.04761904761904D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "novelties_sales.index_type_corr_name"
           }
         }
       ],
@@ -946,6 +1044,104 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "cba7d8a6f35d9f141903",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales"
+              }
+            },
+            "Property": "data_publikacji_p3s"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0ca2af7d0b8a464ab2a1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Forecast"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d49dba0c1f31bfecbdf2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Sale_quantity_invoiced"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ec85a654115bb85dd94a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Forecast realization"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ffc78d3967536eed9951",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Sale_quantity_to_be_invoiced"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b6608eae0c331f2be6ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales"
+              }
+            },
+            "Property": "index_type_corr_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2152533a275eccff2762",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales"
+              }
+            },
+            "Property": "month_in_sales"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

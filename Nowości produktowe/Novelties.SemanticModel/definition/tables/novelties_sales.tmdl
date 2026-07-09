@@ -89,6 +89,23 @@ table novelties_sales
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column index_type_corr_name
+		dataType: string
+		lineageTag: 964fc758-a42a-4289-b386-cf30f84f4372
+		summarizeBy: none
+		sourceColumn: index_type_corr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_in_sales
+		dataType: double
+		formatString: 0.0
+		lineageTag: 8b560e74-81ac-40c4-8949-53bfe0ef48a4
+		summarizeBy: sum
+		sourceColumn: month_in_sales
+
+		annotation SummarizationSetBy = Automatic
+
 	partition novelties_sales = m
 		mode: import
 		source =
@@ -96,9 +113,10 @@ table novelties_sales
 				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", null),
 				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
 				    novelties_report_Schema = sandbox_Database{[Name="novelties_report",Kind="Schema"]}[Data],
-				    novelties_sales_View = novelties_report_Schema{[Name="novelties_sales",Kind="View"]}[Data]
+				    novelties_sales_View = novelties_report_Schema{[Name="novelties_sales",Kind="View"]}[Data],
+				    #"Rounded Off" = Table.TransformColumns(novelties_sales_View,{{"month_in_sales", each Number.Round(_, 1), type number}})
 				in
-				    novelties_sales_View
+				    #"Rounded Off"
 
 	annotation PBI_NavigationStepName = Navigation
 
