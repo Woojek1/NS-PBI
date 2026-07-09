@@ -1,0 +1,91 @@
+table 'Mnf Bud Time Measures'
+	lineageTag: c7924017-62dc-42dc-92f6-720863296216
+
+	measure 'Bud Labor Crew Time' = EXTERNALMEASURE("Bud Labor Crew Time", DOUBLE, "Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model")
+		formatString: #,0
+		lineageTag: 07948cd1-9d05-48b2-ba8f-4681d44fefc0
+		sourceLineageTag: Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model.Bud Labor Crew Time
+		dataCategory: Uncategorized
+
+	measure 'Bud Manufacturing Time' = EXTERNALMEASURE("Bud Manufacturing Time", DOUBLE, "Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model")
+		formatString: #,0
+		lineageTag: c58a1694-745e-4e2a-b9d5-5a25858ad8ec
+		sourceLineageTag: Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model.Bud Manufacturing Time
+		dataCategory: Uncategorized
+
+	column mon_id
+		dataType: int64
+		isHidden
+		lineageTag: 621fd5c0-ef4f-47f6-b02a-70a6c57c5fec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		lineageTag: 5f0f992e-4e3d-4bcc-ad8c-2351f910db3d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_id
+		dataType: int64
+		isHidden
+		lineageTag: f0804963-879e-4cc9-b4eb-dc802910c44e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column wc_id
+		dataType: int64
+		isHidden
+		lineageTag: e2c359bf-3a41-432a-96bc-c7637c5bfc91
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		lineageTag: aea8f808-bc17-4c57-bb62-d91e025097c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column bud_labor_crew_time
+		dataType: double
+		isHidden
+		lineageTag: c940333f-0575-448f-8da5-7a4d251ce781
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: bud_labor_crew_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column bud_manufacturing_time
+		dataType: double
+		isHidden
+		lineageTag: 64ef9e8b-0789-4782-91fb-cf96b7e7f58a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: bud_manufacturing_time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Mnf Bud Time Measures' = entity
+		mode: directQuery
+		source
+			entityName: Mnf Bud Time Measures
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model'
+

@@ -1,0 +1,118 @@
+table Contract
+	lineageTag: f89136c3-bf3c-4b59-b366-090f376df6b6
+
+	column contr_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 0d3f235b-b43b-477c-bc2d-b7dc0a27e397
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Code'
+		dataType: string
+		lineageTag: 7dd9d181-2410-4189-bd84-d847882170ef
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contract Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract
+		dataType: string
+		lineageTag: 73f805e7-c06b-4e98-8655-2b3d049af496
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		lineageTag: f20bd729-2aac-4dc7-87c3-7ac5188edabf
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		isHidden
+		lineageTag: 93867825-af18-48eb-abb7-aee8dd39690c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_name_s
+		dataType: string
+		isHidden
+		lineageTag: 743035b0-deb8-45d6-8f39-18e368fd81c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_id
+		dataType: int64
+		isHidden
+		lineageTag: 91240203-20c7-4a2d-8e4e-2401ffcbb7ad
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: country_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		isHidden
+		lineageTag: 04858f70-d84f-4ee4-92b8-fb13a78c5668
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code_3
+		dataType: string
+		isHidden
+		lineageTag: 2c8517f4-3881-4577-8d81-7e3791ebcee6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_code_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		isHidden
+		lineageTag: 0b64cf82-522f-4e97-aa4b-fa41d749c139
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name_en
+		dataType: string
+		isHidden
+		lineageTag: 0adedef1-778d-468b-bc78-19dbc1fb8b89
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Contract = entity
+		mode: directQuery
+		source
+			entityName: Contract
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model'
+

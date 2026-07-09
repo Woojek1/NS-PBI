@@ -1,0 +1,279 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "f09883b0b9e853a1d58c",
+  "position": {
+    "x": 665.02463054187194,
+    "y": 219.90147783251231,
+    "z": 4000,
+    "height": 481.47783251231527,
+    "width": 272.21674876847288
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Organization"
+                    }
+                  },
+                  "Property": "MPK Code"
+                }
+              },
+              "queryRef": "Organization.MPK Code",
+              "nativeQueryRef": "MPK Code"
+            },
+            {
+              "field": {
+                "Arithmetic": {
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Cnt Manufacturer"
+                        }
+                      },
+                      "Property": "Labor Crew Time plus Machine Time"
+                    }
+                  },
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Cnt Manufacturer"
+                            }
+                          },
+                          "Property": "Labor Crew Time plus Machine Time"
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
+                }
+              },
+              "queryRef": "Divide(Cnt Manufacturer.Labor Crew Time plus Machine Time, ScopedEval(Cnt Manufacturer.Labor Crew Time plus Machine Time, []))",
+              "nativeQueryRef": "%GT Labor Crew Time plus Machine Time"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Arithmetic": {
+                "Left": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Cnt Manufacturer"
+                      }
+                    },
+                    "Property": "Labor Crew Time plus Machine Time"
+                  }
+                },
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Measure": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Cnt Manufacturer"
+                          }
+                        },
+                        "Property": "Labor Crew Time plus Machine Time"
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "Organization.MPK Code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "145.82268724555422D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Divide(Cnt Manufacturer.Labor Crew Time plus Machine Time, ScopedEval(Cnt Manufacturer.Labor Crew Time plus Machine Time, []))"
+          }
+        }
+      ],
+      "accessibility": [
+        {
+          "properties": {
+            "rowWithReferenceText": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter75ef53c1966d240146ed",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter9c104aef287ded0cb065",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "c790f07a8b64b1ac3a3b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Contract"
+              }
+            },
+            "Property": "Contract Code"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Contract",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "Contract Code"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'NSF'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

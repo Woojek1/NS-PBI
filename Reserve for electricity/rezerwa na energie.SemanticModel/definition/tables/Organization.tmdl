@@ -1,0 +1,160 @@
+table Organization
+	lineageTag: 9156e140-1a51-4bbc-9942-6634f5d71936
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: e7948b35-e4ae-49ef-aee1-b520e279bbd5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MPK Code'
+		dataType: string
+		lineageTag: 5fd0ba4c-94b5-475b-a6a7-92005de644bc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MPK Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column MPK
+		dataType: string
+		lineageTag: bd1b2d52-783e-4203-a75f-8825e0035f4e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MPK
+
+		annotation SummarizationSetBy = Automatic
+
+	column sect_id
+		dataType: int64
+		isHidden
+		lineageTag: 7fbda24e-b68f-4a05-96fd-243399f274ce
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: sect_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Section Code'
+		dataType: string
+		lineageTag: f1e7ef4f-7928-4a12-8fae-fa97fe5c7234
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Section Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Section
+		dataType: string
+		lineageTag: 7eb77a03-0e32-4e2b-aabf-102f84b01150
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Section
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_id
+		dataType: int64
+		isHidden
+		lineageTag: e7ccd352-44f9-4b60-bd29-c57dc256f88e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: dept_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Code'
+		dataType: string
+		lineageTag: bd2ce087-9291-4b5a-8271-8df5f08e18af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: ca7ce177-b35c-4279-999f-94ad9edc7256
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column pion_id
+		dataType: int64
+		isHidden
+		lineageTag: b0046193-6abb-49f8-8cca-3bd0dd3de7aa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: pion_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code'
+		dataType: string
+		lineageTag: 1ddbd0db-f03a-49ac-8895-1c5b9a24a360
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Division Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		lineageTag: c752666b-a81e-43a4-9e87-18b6fe4a6b74
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column fac_id
+		dataType: int64
+		isHidden
+		lineageTag: 1be5ad0d-2d89-4655-97ae-63ed127b41f6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: fac_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Facility Code'
+		dataType: string
+		lineageTag: 5facaf00-d35a-46bc-9f4e-2f47c3986f55
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Facility Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facility
+		dataType: string
+		lineageTag: 5a76ecdc-e37b-4478-b665-30ed549448d5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Facility
+
+		annotation SummarizationSetBy = Automatic
+
+	column bi_visible
+		dataType: int64
+		isHidden
+		lineageTag: 04e37cde-48af-4a17-9b49-b017692a8250
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: bi_visible
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Organization = entity
+		mode: directQuery
+		source
+			entityName: Organization
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model'
+

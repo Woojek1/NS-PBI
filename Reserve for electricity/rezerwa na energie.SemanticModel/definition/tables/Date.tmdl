@@ -1,0 +1,811 @@
+table Date
+	lineageTag: bea528a6-71db-493c-8db3-2d8fdabe77bc
+
+	column day_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: e08a3fc2-add3-4cd8-b6ce-b7c07f7b43da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: day_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_name
+		dataType: string
+		isHidden
+		lineageTag: 56cc7ab9-c8c5-4d47-9819-d897eb6ed180
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: day_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_name_s
+		dataType: string
+		isHidden
+		lineageTag: b75965f5-ccdb-4e5b-b96b-ab03087534a2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: day_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_count
+		dataType: int64
+		isHidden
+		lineageTag: 86f43a9f-4a2e-4990-8f96-ea459adb5ac3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: day_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_hist
+		dataType: int64
+		isHidden
+		lineageTag: 7e5f036a-7c08-4556-be1f-e524f9c879f6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: day_hist
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_type
+		dataType: string
+		isHidden
+		lineageTag: 2f941784-41d1-4121-a4e2-3fd858b4ee4e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: day_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_week
+		dataType: string
+		isHidden
+		lineageTag: 6bbd30b5-38f0-4159-b310-7e116fec693d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: day_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_id
+		dataType: int64
+		isHidden
+		lineageTag: 8fbfa839-3831-403e-ba81-51a69d3dc979
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: week_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_name_s
+		dataType: string
+		isHidden
+		lineageTag: b8ab231f-3d25-4732-8672-093239d1dd87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: week_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 044e1e4e-f101-456a-8a09-8faedfda1a00
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: week_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_count
+		dataType: int64
+		isHidden
+		lineageTag: 5f77a2ca-a873-46f3-8beb-ff663a91abb3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: week_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column cycle_id
+		dataType: int64
+		isHidden
+		lineageTag: 95a5ac99-1a64-496b-b3d0-25f17b5cac7a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: cycle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cycle_name
+		dataType: string
+		isHidden
+		lineageTag: 1ed17e77-3d93-4150-87bd-58b6d732e8d1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cycle_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cycle_name_s
+		dataType: string
+		isHidden
+		lineageTag: f15d9fec-6fbe-4501-9f15-6f4b42eb8db7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cycle_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column cycle_date
+		dataType: dateTime
+		isHidden
+		lineageTag: c25c8f54-041c-44e2-95d0-0aa44e5b271a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cycle_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cycle_count
+		dataType: int64
+		isHidden
+		lineageTag: 82bb6942-9f7f-4136-a8fa-0be59c95d0fa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: cycle_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearc_id
+		dataType: int64
+		isHidden
+		lineageTag: bfdf50df-4aff-4489-9538-f07c445ec2ef
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearc_name
+		dataType: string
+		isHidden
+		lineageTag: 0be6eea0-41f5-492b-b51f-39bf4d480fab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: yearc_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearc_name_s
+		dataType: string
+		isHidden
+		lineageTag: 7b6fed5d-ac6f-4c78-9e66-3d372fce4d67
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: yearc_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearc_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 9da3cc0d-2fc0-4772-af31-12f5bab853b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: yearc_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearc_count
+		dataType: int64
+		isHidden
+		lineageTag: 0e0172bc-5e61-4b56-92de-0d1cde3f904e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearc_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_id
+		dataType: int64
+		isHidden
+		lineageTag: d61cd098-99dd-4934-8ae1-2b845ffa477d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 75af749f-c1d4-429f-a392-d5b142825efe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_count
+		dataType: int64
+		isHidden
+		lineageTag: b6313a2c-dea8-4daf-824a-8247c31da9d4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mon_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_id
+		dataType: int64
+		isHidden
+		lineageTag: 7eed804b-3287-4ea1-b8bb-b9062440c613
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name_s
+		dataType: string
+		isHidden
+		lineageTag: a2229bea-0c99-4c51-85fd-f902bd881335
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: quart_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 4c883e68-f9e1-4269-a332-7a20bf5e5336
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: quart_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_count
+		dataType: int64
+		isHidden
+		lineageTag: 771d49f4-060d-4f53-9acc-c7242ff76609
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quart_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_id
+		dataType: int64
+		isHidden
+		lineageTag: 1c2fb962-55d1-4e97-bcb4-1f7c5c329275
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearh_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_name_s
+		dataType: string
+		isHidden
+		lineageTag: f75a793f-cf01-45e7-9839-0ecbc10b4f0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: yearh_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 9fb25ed4-0986-4337-b9c0-b30dffc3ddc5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: yearh_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_count
+		dataType: int64
+		isHidden
+		lineageTag: 0fc49964-4763-4c6b-bd27-26c635522f98
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearh_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_id
+		dataType: int64
+		isHidden
+		lineageTag: bc2bd67c-e2b0-422e-bc04-e14e470d975b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: year_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name_s
+		dataType: string
+		isHidden
+		lineageTag: 86bb839a-c5d3-4402-9645-58c71bb619ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: year_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_date
+		dataType: dateTime
+		isHidden
+		lineageTag: ec1d499c-08f7-4a84-8ff0-a047f9ae02d7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: year_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_count
+		dataType: int64
+		isHidden
+		lineageTag: 7254cebb-7f92-4295-a56c-800144e364c7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: year_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column act_ptr
+		dataType: string
+		isHidden
+		lineageTag: 78e71d7b-4a9f-4da5-a38c-5b17f0418bef
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: act_ptr
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: 5298bf39-5282-45b9-8cd4-d8fa93e2a230
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: day_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: 040ec05c-4165-422c-8699-490ff20621fa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mon_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: 4db55601-771b-4fef-b4d0-656844e4f757
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quart_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: 3b558aa0-61ab-455f-9ecc-d584815ab670
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: year_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: 1ec97328-a3fd-4625-a88e-045346eb82a9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearh_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: 186147cf-5e52-41aa-b7e9-650ad05b9313
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: week_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cycle_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: cfb3763f-8ba6-43d2-be4d-dda2e7d6d011
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: cycle_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearc_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: 4c2d952f-fa6e-445f-975e-fc1cc2bc74e0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearc_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: 3dcbf681-7e31-4eda-80e0-2b8d31809c63
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: day_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: bdae4573-cbd9-4cbc-a643-0d25c5aaa565
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mon_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: 67ec7823-4a7e-4a7a-813f-0f10c792a212
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quart_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: ad1a2707-0952-4e7d-b932-64f7444f8a14
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearh_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: 8de9fdb3-0b0b-4311-95b6-6e134cd434bf
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: year_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: 0a582b99-779b-4fb6-89ec-edf1a39c7d7e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: week_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cycle_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: 474335a2-fc2c-4821-b933-36d98f42678f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: cycle_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearc_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: f0d87e8b-82a2-44a9-9185-3bc3d26f6667
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearc_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_id
+		dataType: int64
+		isHidden
+		lineageTag: 594849c3-0688-4ec9-bfdf-2adaf4ceb024
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: decade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_name
+		dataType: string
+		isHidden
+		lineageTag: 0ea63c78-e0e8-405f-bb6f-26d0320ab5f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: decade_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_name_s
+		dataType: string
+		isHidden
+		lineageTag: f49d49ca-3773-4567-96df-5a77fac70a8e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: decade_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 9dc2f073-6b69-44e6-95fc-24eb6d196e24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: decade_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_count
+		dataType: int64
+		isHidden
+		lineageTag: 7da735f4-0de9-4402-b599-254d755d5b63
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: decade_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_bfr_id
+		dataType: int64
+		isHidden
+		lineageTag: e62692ee-c5b0-4414-970a-f35cf1c44c6f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: decade_bfr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_ya_id
+		dataType: int64
+		isHidden
+		lineageTag: 54520203-2ba0-4510-9046-2d7f7b53d8f9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: decade_ya_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_id
+		dataType: int64
+		isHidden
+		lineageTag: 7a9b00d8-0925-4f68-b9a9-af5e2585f85c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mon2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_name
+		dataType: string
+		isHidden
+		lineageTag: 71c4d048-6de4-4877-ba61-bf53a34192a2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart2_id
+		dataType: int64
+		isHidden
+		lineageTag: 1d724ba7-57cb-47a7-9a46-e7aa91502be7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quart2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column week2_id
+		dataType: int64
+		isHidden
+		lineageTag: b2ff1bd6-8e15-4a5f-b776-f62cb7dfbbcd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: week2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isNullable: false
+		lineageTag: 2ca976e8-5192-4b57-9a78-cf542ed7705e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Working Days Qty'
+		dataType: int64
+		formatString: 0
+		lineageTag: a1fc0a5e-7b56-4106-8e94-b74315a734a1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Working Days Qty
+
+		annotation SummarizationSetBy = User
+
+	column 'Week Code'
+		dataType: string
+		lineageTag: f6e98a31-45d4-463a-859f-ece08b19b7e8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Code'
+		dataType: string
+		isNullable: false
+		lineageTag: e7671799-6b5a-45fa-bf9e-a55c63bcdb7a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Short'
+		dataType: string
+		isNullable: false
+		lineageTag: 65a62649-4fdd-4e7c-bb8a-cb387ce9d9a0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Code'
+		dataType: string
+		lineageTag: 9b7e0562-0ce0-4328-b78a-61ad321b3b99
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Quarter Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Half-Year
+		dataType: string
+		lineageTag: a7d770e7-3ae6-43d0-a2f4-43a98bf172d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Half-Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: dd41665d-8692-4a42-b4e3-6bd8415c2568
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		isNullable: false
+		lineageTag: d6d092df-24e3-48a0-81c3-c55b9f58c43a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Month Short'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: c375fc30-5523-4449-b5c7-463e09f99368
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: string
+		lineageTag: cbfeb683-6c75-46e8-8673-4bf9bebee748
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Date Year Hierarchy'
+		lineageTag: f6a365ea-a0d5-439f-a2cf-52904958e245
+		sourceLineageTag: Date Year Hierarchy
+
+		level Year
+			lineageTag: 78ee7c75-506b-4184-b951-a8de25e1c5c4
+			column: Year
+
+		level Half-Year
+			lineageTag: 781e477c-8bbc-4532-901a-5e65bf2d269f
+			column: Half-Year
+
+		level 'Quarter Code'
+			lineageTag: af72d951-d2bf-453e-903f-3868f981394b
+			column: 'Quarter Code'
+
+		level Month
+			lineageTag: f5520123-102d-44ee-b96c-59b82cad7c6e
+			column: Month
+
+		level Date
+			lineageTag: 4daf98b6-2ea4-42f4-bed3-90b56565223d
+			column: Date
+
+	hierarchy 'Date Quarter Hierarchy'
+		lineageTag: 03f7ea9d-8266-4ada-8dad-a62f15ace192
+		sourceLineageTag: Date Quarter Hierarchy
+
+		level Quarter
+			lineageTag: 0860d154-5d48-430d-a75f-6c701a00ee3c
+			column: Quarter
+
+		level Month
+			lineageTag: c5b5b86c-8493-4162-af2f-b330ee53150c
+			column: Month
+
+		level Date
+			lineageTag: 4d661828-406c-47da-8b7f-41c269e5132b
+			column: Date
+
+	hierarchy 'Date Week Hierarchy'
+		lineageTag: eee3295c-129a-439e-8cb4-9f4d325d1c47
+		sourceLineageTag: Date Week Hierarchy
+
+		level Week
+			lineageTag: cd863906-2c9e-432a-8fd5-7f952a68fd44
+			column: Week
+
+		level 'Week Code'
+			lineageTag: 081347bc-7b08-4bfc-b94e-a14465ec8b85
+			column: 'Week Code'
+
+		level Date
+			lineageTag: 355c35e5-9b11-4043-a95c-603aadc2c7cf
+			column: Date
+
+	partition Date = entity
+		mode: directQuery
+		source
+			entityName: Date
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model'
+

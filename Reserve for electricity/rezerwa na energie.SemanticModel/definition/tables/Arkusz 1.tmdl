@@ -1,0 +1,69 @@
+table 'Arkusz 1'
+	lineageTag: 6ed21d07-85e6-400e-a419-c262a3f851eb
+
+	measure Rezerwa =
+			
+			VAR UnitEnergyCost =
+			    CALCULATE (
+			        MAX ( 'Arkusz 1'[unit energy cost] ),
+			        TREATAS (
+			            VALUES ( Organization[MPK Code] ),
+			            'Arkusz 1'[MPK kod]
+			        ),
+			        TREATAS (
+			            VALUES ( 'Date'[Month Code] ),
+			            'Arkusz 1'[month code]
+			        )
+			    )
+			RETURN
+			    [Machine Time] * UnitEnergyCost
+		lineageTag: 9504a903-b603-4b43-88a2-ecdc3aa197e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Test =
+			
+			VALUES ( 'Date'[Month Code] )
+		lineageTag: b2d73a3b-ea05-489d-8c61-1228621ad6b5
+
+	column 'MPK kod'
+		dataType: string
+		lineageTag: 3585e022-6bc8-46e4-8d4c-21880499f117
+		summarizeBy: none
+		sourceColumn: MPK kod
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'unit energy cost'
+		dataType: double
+		lineageTag: d77419fc-1aae-44ee-af8f-34f8614ba199
+		summarizeBy: none
+		sourceColumn: unit energy cost
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'month code'
+		dataType: string
+		lineageTag: 6c3f01ad-0c23-49e1-bfa7-3f531e1cc553
+		summarizeBy: none
+		sourceColumn: month code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Arkusz 1' = m
+		mode: import
+		source =
+				let
+				    Źródło = Excel.Workbook(File.Contents("C:\Users\joanna.klimkowska\OneDrive - Nowy Styl Sp. z o.o\Pulpit\stawki enegrii - test.xlsx"), null, true),
+				    #"Arkusz 1_Sheet" = Źródło{[Item="Arkusz 1",Kind="Sheet"]}[Data],
+				    #"Nagłówki o podwyższonym poziomie" = Table.PromoteHeaders(#"Arkusz 1_Sheet", [PromoteAllScalars=true]),
+				    #"Zmieniono typ" = Table.TransformColumnTypes(#"Nagłówki o podwyższonym poziomie",{{"MPK kod", type text}, {"unit energy cost", type number}, {"month code", type text}})
+				in
+				    #"Zmieniono typ"
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,225 @@
+cultureInfo pl-PL
+	translations
+		model Model
+			table 'Mnf Time Measures'
+				caption: Produkcja godziny
+				column 'Order Code'
+					caption: Kod pracy
+				measure 'Machine Time'
+					caption: Maszynogodziny
+				measure 'Labor Crew Time'
+					caption: Roboczogodziny
+			table 'Mnf Qty Measures'
+				caption: Ilość wyprodukowana
+				measure 'Manufacturing Qty'
+					caption: Produkcja ilość
+				measure 'Manufacturing Value'
+					caption: Produkcja wartość
+			table 'Mnf Cost Measures'
+				caption: Koszt produkcji
+				column 'Cost Type'
+					caption: Typ kosztu
+				measure 'Mnf Cost PLN'
+					caption: Koszt produkcji PLN
+			table 'Mnf TMC Price Measures'
+				caption: Koszt produkcji TMC
+			table Date
+				caption: Czas
+				column Date
+					caption: Dzień
+				column 'Working Days Qty'
+					caption: Ilość dni roboczych
+				column 'Week Code'
+					caption: Tydzień kod
+				column 'Month Code'
+					caption: Miesiąc kod
+				column 'Month Short'
+					caption: Miesiąc krótki
+				column 'Quarter Code'
+					caption: Kwartał kod
+				column Half-Year
+					caption: Półrocze
+				column Year
+					caption: Rok
+				column Month
+					caption: Miesiąc
+				column Quarter
+					caption: Kwartał
+				column Week
+					caption: Tydzień
+				hierarchy 'Date Year Hierarchy'
+					caption: Rok Hierarchia
+					level Year
+						caption: Rok
+					level Half-Year
+						caption: Półrocze
+					level 'Quarter Code'
+						caption: Kwartał kod
+					level Month
+						caption: Miesiąc
+					level Date
+						caption: Dzień
+				hierarchy 'Date Quarter Hierarchy'
+					caption: Kwartał Hierarchia
+					level Quarter
+						caption: Kwartał
+					level Month
+						caption: Miesiąc
+					level Date
+						caption: Dzień
+				hierarchy 'Date Week Hierarchy'
+					level Week
+						caption: Tydzień
+					level 'Week Code'
+						caption: Tydzień kod
+					level Date
+						caption: Dzień
+			table Contract
+				caption: Umiejscowienie
+				column 'Contract Code'
+					caption: Umiejscowienie kod
+				column Contract
+					caption: Umiejscowienie
+			table Organization
+				caption: Organizacja
+				column 'MPK Code'
+					caption: MPK kod
+				column 'Section Code'
+					caption: Sekcja kod
+				column Section
+					caption: Sekcja
+				column 'Department Code'
+					caption: Dział kod
+				column Department
+					caption: Dział
+				column 'Division Code'
+					caption: Oddział kod
+				column Division
+					caption: Oddział
+				column 'Facility Code'
+					caption: Fabryka kod
+				column Facility
+					caption: Fabryka
+			table Company
+				caption: Spółka
+				column Company
+					caption: Spółka
+				column 'Company Code'
+					caption: Spółka kod
+			table 'Work Center'
+				column 'MPK Group Code'
+					caption: MPK Grupa kod
+				column 'MPK Group'
+					caption: MPK Grupa
+				column 'Group Code'
+					caption: Grupa kod
+				column Group
+					caption: Grupa
+			table 'Cnt Manufacturer'
+				caption: Producent KNT
+				column 'Cnt Manufacturer Code'
+					caption: Producent KNT kod
+				column 'Cnt Manufacturer'
+					caption: Producent KNT
+			table Product
+				caption: Produkt
+				column 'Sale Item Code'
+					caption: Przedmiot sprzedaży kod
+				column 'Sale Item'
+					caption: Przedmiot sprzedaży
+				column 'Inventory Item'
+					caption: Pozycja z inwentarza
+				column 'Curr Mnf Cost'
+					caption: Aktualny koszt produkcji
+				column 'Model Code'
+					caption: Model kod
+				column 'Line Code'
+					caption: Linia kod
+				column Line
+					caption: Linia
+				column 'Brand Code'
+					caption: Marka kod
+				column Brand
+					caption: Marka
+				column 'Product Subgroup Code'
+					caption: Podgrupa produktowa kod
+				column 'Product Subgroup'
+					caption: Podgrupa produktowa
+				column 'Product Group Code'
+					caption: Grupa produktowa kod
+				column 'Product Group'
+					caption: Grupa produktowa
+				column 'License Code'
+					caption: Licencja kod
+				column License
+					caption: Licencja
+				column 'Manufacturer Code'
+					caption: Producent kod
+				column Manufacturer
+					caption: Producent
+				column 'Cnt Manufacturer Code'
+					caption: Producent KNT kod
+				column 'Cnt Manufacturer'
+					caption: Producent KNT
+				hierarchy 'Group Hierarchy'
+					caption: Grupa Hierarchia
+					level 'Product Group'
+						caption: Grupa produktowa
+					level 'Product Subgroup'
+						caption: Podgrupa produktowa
+					level 'Inventory Item'
+						caption: Pozycja z inwentarza
+					level 'Sale Item'
+						caption: Przedmiot sprzedaży
+				hierarchy 'Brand Hierarchy'
+					caption: Marka Hierarchia
+					level Brand
+						caption: Marka
+					level Line
+						caption: Linia
+					level 'Inventory Item'
+						caption: Pozycja z inwentarza
+					level 'Sale Item'
+						caption: Przedmiot sprzedaży
+			table 'Product Inventory Type'
+				caption: Typ inwentarza produktu
+				column 'Type Code'
+					caption: Typ kod
+				column Type
+					caption: Typ
+			table 'TMC Category Cost'
+				caption: Kategoria kosztów TMC
+				column 'TMC Cost Code'
+					caption: Koszt TMC kod
+				column 'TMC Cost'
+					caption: Koszt TMC
+				column 'TMC Category'
+					caption: Kategoria TMC
+				column 'TMC Grp1 Code'
+					caption: TMC Grupa 1 kod
+				column 'TMC Grp1'
+					caption: TMC Grupa 1
+				column 'TMC Grp2 Code'
+					caption: TMC Grupa 2 kod
+				column 'TMC Grp2'
+					caption: TMC Grupa 2
+				column 'TMC Grp3 Code'
+					caption: TMC Grupa 3 kod
+				column 'TMC Grp3'
+					caption: TMC Grupa 3
+			table 'Month Mnf Cost'
+				column 'Month Code'
+					caption: Miesiąc kod
+				column 'Month Date'
+					caption: Miesiąc data
+				column 'Quarter Code'
+					caption: Kwartał kod
+				column Half-Year
+					caption: Półrocze
+				column Year
+					caption: Rok
+				column Month
+					caption: Miesiąc
+				column Quarter
+					caption: Kwartał
+

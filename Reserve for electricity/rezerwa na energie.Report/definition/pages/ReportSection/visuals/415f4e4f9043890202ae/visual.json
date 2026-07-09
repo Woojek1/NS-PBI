@@ -1,0 +1,213 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "415f4e4f9043890202ae",
+  "position": {
+    "x": 21.028571428571428,
+    "y": 98.742857142857147,
+    "z": 0,
+    "height": 554.05714285714282,
+    "width": 1216
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "Date.Year",
+              "nativeQueryRef": "Year",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Code"
+                }
+              },
+              "queryRef": "Date.Month Code",
+              "nativeQueryRef": "Month Code",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Organization"
+                    }
+                  },
+                  "Property": "MPK Code"
+                }
+              },
+              "queryRef": "Organization.MPK Code",
+              "nativeQueryRef": "MPK Code"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mnf Time Measures"
+                    }
+                  },
+                  "Property": "Machine Time"
+                }
+              },
+              "queryRef": "Mnf Time Measures.Machine Time",
+              "nativeQueryRef": "Machine Time"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Arkusz 1"
+                    }
+                  },
+                  "Property": "Rezerwa"
+                }
+              },
+              "queryRef": "Arkusz 1.Rezerwa",
+              "nativeQueryRef": "Rezerwa"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Property": "Year"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Property": "Month Code"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter9c104aef287ded0cb065",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "1eff38b36417ff7fc47c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "16d46523538e861139c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ae6fcab695d3d9eb94a8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Arkusz 1"
+              }
+            },
+            "Property": "Rezerwa"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "576be6f86c242b916363",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Organization"
+              }
+            },
+            "Property": "MPK Code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

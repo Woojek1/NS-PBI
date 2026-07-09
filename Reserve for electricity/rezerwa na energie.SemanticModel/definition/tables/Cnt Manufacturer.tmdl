@@ -1,0 +1,44 @@
+table 'Cnt Manufacturer'
+	lineageTag: dc9fdbc0-ee78-410a-b734-f45927871103
+
+	measure 'Labor Crew Time plus Machine Time' =
+			
+			[Labor Crew Time] + [Machine Time]
+		formatString: 0.00
+		lineageTag: a554d63f-8a5a-4431-ab58-350f166eea4e
+
+	column mnf_cnt_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 1222fcfa-7b75-46e3-8383-83832b4b5800
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mnf_cnt_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cnt Manufacturer Code'
+		dataType: string
+		lineageTag: 777c9f6e-807c-4942-97a5-70ddfa126c5b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cnt Manufacturer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cnt Manufacturer'
+		dataType: string
+		lineageTag: 3dcebb7b-5db3-4cf8-8ffb-9a31ef52cc36
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cnt Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cnt Manufacturer' = entity
+		mode: directQuery
+		source
+			entityName: Cnt Manufacturer
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model'
+

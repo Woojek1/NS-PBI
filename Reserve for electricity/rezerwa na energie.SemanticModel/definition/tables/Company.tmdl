@@ -1,0 +1,58 @@
+table Company
+	lineageTag: 735ec3db-4607-42f7-bff7-d1fc6d04ddd8
+
+	column comp_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 42b94ace-2ba4-4711-a923-d7d0f7dedb47
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		isHidden
+		lineageTag: 557aa848-43a9-4091-835e-1c92f32c5993
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code_sys
+		dataType: string
+		isHidden
+		lineageTag: 4490c90d-1d8e-4901-bd94-ff76061d8aad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code_sys
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 1d565238-0305-479a-af67-a181456439cc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: cd935c68-98f4-4b44-a3d2-3b15e5fb3997
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Company = entity
+		mode: directQuery
+		source
+			entityName: Company
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model'
+

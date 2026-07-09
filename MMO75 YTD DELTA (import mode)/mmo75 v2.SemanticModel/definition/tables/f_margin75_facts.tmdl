@@ -209,14 +209,14 @@ table f_margin75_facts
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	measure '!Discount (PLN)' =
+	measure 'Discount (PLN)' =
 			
 			[Base Sales PLN] - [Net Sales PLN]
 		lineageTag: 9acfb5c6-ae46-4568-b7ad-5cf5c5b0be53
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure '!Discount% (PLN)' =
+	measure 'Discount% (PLN)' =
 			
 			DIVIDE([Base Sales PLN] - [Net sales PLN], [Base Sales PLN], 0)
 		formatString: 0.00%;-0.00%;0.00%

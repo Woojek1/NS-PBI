@@ -1985,7 +1985,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "f_margin75_facts",
-			          "ConceptualProperty": "!Discount% (PLN)"
+			          "ConceptualProperty": "Discount% (PLN)"
 			        }
 			      },
 			      "State": "Generated",
@@ -5199,7 +5199,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "f_margin75_facts",
-			          "ConceptualProperty": "!Discount (PLN)"
+			          "ConceptualProperty": "Discount (PLN)"
 			        }
 			      },
 			      "State": "Generated",
@@ -9411,7 +9411,19 @@ cultureInfo en-US
 			          "ConceptualProperty": "Department Code"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Department Code": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "d_organization_team.section": {
 			      "Definition": {

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "db92d811952df02695fa",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 280,
+    "width": 280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Arkusz1"
+                    }
+                  },
+                  "Property": "Rezerwa na energię elektryczną"
+                }
+              },
+              "queryRef": "Arkusz1.Rezerwa na energię elektryczną",
+              "nativeQueryRef": "Rezerwa na energię elektryczną"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

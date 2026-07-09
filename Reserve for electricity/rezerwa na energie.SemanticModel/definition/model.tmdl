@@ -1,0 +1,35 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model","Arkusz 1"]
+
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+
+ref table 'Mnf Time Measures'
+ref table 'Mnf Qty Measures'
+ref table 'Mnf Cost Measures'
+ref table 'Mnf TMC Price Measures'
+ref table Date
+ref table Contract
+ref table Organization
+ref table Company
+ref table 'Labor Class'
+ref table 'Work Center'
+ref table 'Cnt Manufacturer'
+ref table Product
+ref table 'Product Inventory Type'
+ref table 'TMC Category Cost'
+ref table 'Month Mnf Cost'
+ref table 'Mnf Bud Time Measures'
+ref table RoleDaxFilter
+ref table 'Arkusz 1'
+
+ref cultureInfo pl-PL
+

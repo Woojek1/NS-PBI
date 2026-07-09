@@ -1,0 +1,94 @@
+table 'Mnf Cost Measures'
+	lineageTag: 73f62cd2-b48f-4fc2-a9cc-d69a7684c4bd
+
+	measure 'Mnf Cost PLN' = EXTERNALMEASURE("Mnf Cost PLN", DOUBLE, "Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model")
+		formatString: #,0.00\ "zł";-#,0.00\ "zł";#,0.00\ "zł"
+		lineageTag: 86166352-c825-4b7f-a884-88726e220de4
+		sourceLineageTag: Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model.Mnf Cost PLN
+		dataCategory: Uncategorized
+
+	column time_id
+		dataType: int64
+		isHidden
+		lineageTag: 5d644675-7c71-49c3-b4b1-1d404fba0eb9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		lineageTag: 630a21c2-a125-40ff-ad20-9966cdedf255
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_id
+		dataType: int64
+		isHidden
+		lineageTag: 38a70435-deb8-4c96-bc5f-b608c07066ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		lineageTag: f7391168-9392-4801-bbd1-a9fbb4c391e4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_id
+		dataType: int64
+		isHidden
+		lineageTag: 364a42f6-2112-474d-b15a-9005547a3070
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tkw_type_id
+		dataType: int64
+		isHidden
+		lineageTag: 3e8ad0d9-b6ee-4ef9-9676-fcac9e90c3af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: tkw_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_cost_pln
+		dataType: double
+		isHidden
+		lineageTag: 076d68e7-0c21-4567-9ade-eaf71b9b3797
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mnf_cost_pln
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Type'
+		dataType: string
+		lineageTag: c8e1371d-5ab7-4176-bfe3-26f1477b13eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Mnf Cost Measures' = entity
+		mode: directQuery
+		source
+			entityName: Mnf Cost Measures
+			expressionSource: 'Połączenie DirectQuery z elementem AS — Manufacturing Costs Tabular Model'
+
