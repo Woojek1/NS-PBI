@@ -895,6 +895,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.714
 			          }
+			        },
+			        {
+			          "Brief  forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1652,9 +1662,1550 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "novelties_sales_stock": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "novelties sales stock": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "novelty sale stock": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "novelties_sales_stock": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "stock": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sales stock": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sale stock": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.7566
+			          }
+			        },
+			        {
+			          "novelty sale inventory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "sale inventory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "inventory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.linia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "Linia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "linia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Line": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.publication_date_p_3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "publication_date_p3s"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "publication date p 3": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "publication_date_p3s": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "p 3": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "date p 3": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "publication moment p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "moment p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "publication period p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "period p 3": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "p3s publication date": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "novelties_sales_stock.month_in_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "months_in_sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month in sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "months_in_sales": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "in sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "mth in sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "in sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "month in sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "Months in sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.index_type_corr_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "index_type_corr_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "index type corr name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "index_type_corr_name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "index type corr nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "index type corr title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "index type corr label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "index type corr tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "index category corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "index genre corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "index manner corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "index variety corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "index brand corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "index class corr name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Line type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.invoiced_sale_qty_2025": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "invoiced_sale_qty_2025"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "invoiced sale qty 2025": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "invoiced_sale_qty_2025": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.invoiced_sale_qty_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "invoiced_sale_qty_2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "invoiced sale qty 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "invoiced_sale_qty_2026": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.qty_supply": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "qty_supply"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qty supply": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qty_supply": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "qty quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "qty allocation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "qty source": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty hoard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty stream": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty resource": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty fund": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty reserve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty store": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.qty_demand": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "qty_demand"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qty demand": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qty_demand": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "qty ultimatum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "qty plea": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "qty request": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty call": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty claim": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty petition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty mandate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "qty requirement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "qty exigence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "qty exigency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.qty_reserved": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "qty_reserved"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qty reserved": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qty_reserved": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.qty_stock": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "qty_stock"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qty stock": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qty_stock": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "qty inventory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.val_pln_stock": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "val_pln_stock"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "val pln stock": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "val_pln_stock": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "val pln inventory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.last_day_of_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "last_day_of_year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "last day of year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "last_day_of_year": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "last day": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "last day of yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "end day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "final day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "closing day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "concluding day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "finishing day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "former day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "latest day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "latter day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "past day of year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "novelties_sales_stock.brief_forecast_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "brief_forecast_2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "brief forecast 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "brief_forecast_2026": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "forecast 2026": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "brief prediction 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "brief projection 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prediction 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "projection 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "brief report 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "brief estimate 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "report 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "estimate 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.forecast_realisation_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "forecast_realisation_2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "forecast realisation 2026": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "forecast_realisation_2026": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "realisation 2026": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "prediction realisation 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "projection realisation 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "report realisation 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "estimate realisation 2026": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "novelties_sales_stock_has_last_day_of_year": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.last_day_of_year": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.last_day_of_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.last_day_of_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_last_day_of_year"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_val_pln_stock": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.val_pln_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.val_pln_stock"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.val_pln_stock"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_val_pln_stocks"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_qty_stock": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.qty_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.qty_stock"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.qty_stock"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_qty_stocks"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_qty_reserved": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.qty_reserved": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.qty_reserved"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.qty_reserved"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_qty_reserved"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_qty_demand": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.qty_demand": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.qty_demand"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.qty_demand"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_qty_demands"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_qty_supply": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.qty_supply": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.qty_supply"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.qty_supply"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_qty_supplies"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_invoiced_sale_qty_2026": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.invoiced_sale_qty_2026": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.invoiced_sale_qty_2026"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.invoiced_sale_qty_2026"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_invoiced_sale_qty_2026"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_invoiced_sale_qty_2025": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.invoiced_sale_qty_2025": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.invoiced_sale_qty_2025"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.invoiced_sale_qty_2025"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_invoiced_sale_qty_2025"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_index_type_corr_name": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.index_type_corr_name": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.index_type_corr_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.index_type_corr_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_index_type_corr_names"
+			        },
+			        {
+			          "DynamicAdjective": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Adjective": {
+			              "Role": "novelties_sales_stock.index_type_corr_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "index_type_corr_names_describe_novelties_sales_stocks"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_month_in_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.month_in_sales": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.month_in_sales"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.month_in_sales"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_month_in_sales"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_publication_date_p_3": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.publication_date_p_3": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.publication_date_p_3"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.publication_date_p_3"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_publication_date_p_3"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_linia": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.linia": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.linia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.linia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_linias"
+			        }
+			      ]
+			    },
+			    "novelties_sale_has_month_in_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sale": {
+			          "Target": {
+			            "Entity": "novelties_sale"
+			          }
+			        },
+			        "novelties_sale.month_in_sales": {
+			          "Target": {
+			            "Entity": "novelties_sale.month_in_sales"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sale"
+			            },
+			            "Object": {
+			              "Role": "novelties_sale.month_in_sales"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_have_month_in_sales"
+			        }
+			      ]
+			    },
 			    "novelties_sale_has_index_type_corr_name": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales"
@@ -2163,20 +3714,62 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "novelties_sale_has_month_in_sales": {
+			    "novelties_sales_stock_is_lasted_on_last_day_of_year": {
 			      "Binding": {
-			        "ConceptualEntity": "novelties_sales"
+			        "ConceptualEntity": "novelties_sales_stock"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "novelties_sale": {
+			        "novelties_sales_stock": {
 			          "Target": {
-			            "Entity": "novelties_sale"
+			            "Entity": "novelties_sales_stock"
 			          }
 			        },
-			        "novelties_sale.month_in_sales": {
+			        "novelties_sales_stock.last_day_of_year": {
 			          "Target": {
-			            "Entity": "novelties_sale.month_in_sales"
+			            "Entity": "novelties_sales_stock.last_day_of_year"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "novelties_sales_stock.last_day_of_year"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "last": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "novelties_sales_stock"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "novelties_sales_stocks_are_lasted_on_last_day_of_year"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_brief_forecast_2026": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.brief_forecast_2026": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.brief_forecast_2026"
 			          }
 			        }
 			      },
@@ -2184,15 +3777,48 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "novelties_sale"
+			              "Role": "novelties_sales_stock"
 			            },
 			            "Object": {
-			              "Role": "novelties_sale.month_in_sales"
+			              "Role": "novelties_sales_stock.brief_forecast_2026"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "novelties_sales_have_month_in_sales"
+			          "ID": "novelties_sales_stocks_have_brief_forecast_2026"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_forecast_realisation_2026": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.forecast_realisation_2026": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.forecast_realisation_2026"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.forecast_realisation_2026"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_forecast_realisation_2026"
 			        }
 			      ]
 			    }

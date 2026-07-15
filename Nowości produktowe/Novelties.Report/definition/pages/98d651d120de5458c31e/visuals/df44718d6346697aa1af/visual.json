@@ -1,0 +1,815 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "df44718d6346697aa1af",
+  "position": {
+    "x": 19.80952380952381,
+    "y": 10.666666666666666,
+    "z": 0,
+    "height": 1056,
+    "width": 1880.3809523809523,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales_stock"
+                    }
+                  },
+                  "Property": "Linia"
+                }
+              },
+              "queryRef": "novelties_sales_stock.Linia",
+              "nativeQueryRef": "Line",
+              "active": true,
+              "displayName": "Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales_stock"
+                    }
+                  },
+                  "Property": "index_type_corr_name"
+                }
+              },
+              "queryRef": "novelties_sales_stock.index_type_corr_name",
+              "nativeQueryRef": "Line type",
+              "active": true,
+              "displayName": "Line type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales_stock"
+                    }
+                  },
+                  "Property": "publication_date_p3s"
+                }
+              },
+              "queryRef": "novelties_sales_stock.publication_date_p3s",
+              "nativeQueryRef": "p3s publication date",
+              "active": true,
+              "displayName": "p3s publication date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales_stock"
+                    }
+                  },
+                  "Property": "months_in_sales"
+                }
+              },
+              "queryRef": "novelties_sales_stock.months_in_sales",
+              "nativeQueryRef": "Months in sales",
+              "active": true,
+              "displayName": "Months in sales"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "invoiced_sale_qty_2025"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.invoiced_sale_qty_2025)",
+              "nativeQueryRef": "Invoiced qty 2025",
+              "displayName": "Invoiced qty 2025"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "brief_forecast_2026"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.brief_forecast_2026)",
+              "nativeQueryRef": "Brief forecast 2026",
+              "displayName": "Brief forecast 2026"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "invoiced_sale_qty_2026"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.invoiced_sale_qty_2026)",
+              "nativeQueryRef": "Invoiced qty 2026",
+              "displayName": "Invoiced qty 2026"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "forecast_realisation_2026"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.forecast_realisation_2026)",
+              "nativeQueryRef": "Forecast realisation 2026",
+              "displayName": "Forecast realisation 2026"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "qty_stock"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.qty_stock)",
+              "nativeQueryRef": "Stock qty",
+              "displayName": "Stock qty"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "val_pln_stock"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.val_pln_stock)",
+              "nativeQueryRef": "Stock qty pln",
+              "displayName": "Stock qty pln"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "qty_supply"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.qty_supply)",
+              "nativeQueryRef": "Supply qty",
+              "displayName": "Supply qty"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "qty_demand"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.qty_demand)",
+              "nativeQueryRef": "Demand qty",
+              "displayName": "Demand qty"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "qty_reserved"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.qty_reserved)",
+              "nativeQueryRef": "Reserved qty",
+              "displayName": "Reserved qty"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "Linia"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "novelties_sales_stock.Linia"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "novelties_sales_stock.index_type_corr_name"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "novelties_sales_stock.publication_date_p3s"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "novelties_sales_stock.months_in_sales"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "titleAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "repeatRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "blankRows": [
+        {
+          "properties": {
+            "showBlankRows": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "novelties_sales_stock"
+                                            }
+                                          },
+                                          "Property": "forecast_realisation_2026"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "novelties_sales_stock"
+                                            }
+                                          },
+                                          "Property": "forecast_realisation_2026"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1000D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#C4CA9F'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "novelties_sales_stock"
+                                            }
+                                          },
+                                          "Property": "forecast_realisation_2026"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "novelties_sales_stock"
+                                            }
+                                          },
+                                          "Property": "forecast_realisation_2026"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "1D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#E4B38E'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "novelties_sales_stock"
+                                            }
+                                          },
+                                          "Property": "forecast_realisation_2026"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Entity": "novelties_sales_stock"
+                                            }
+                                          },
+                                          "Property": "forecast_realisation_2026"
+                                        }
+                                      },
+                                      "Function": 0
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.85D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#EF9C9C'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Sum(novelties_sales_stock.forecast_realisation_2026)"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {}
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "124.69632839773686D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "novelties_sales_stock.Linia"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "134.55555555555554D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "novelties_sales_stock.months_in_sales"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "147.49195716566933D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "novelties_sales_stock.index_type_corr_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "107.66666666666667D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.qty_stock)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "134.88888888888889D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.val_pln_stock)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "164.55555555555554D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.invoiced_sale_qty_2026)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "171.66666666666666D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.invoiced_sale_qty_2025)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "142.48276082978646D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "novelties_sales_stock.publication_date_p3s"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

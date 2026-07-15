@@ -8,12 +8,13 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["novelties_sales"]
+annotation PBI_QueryOrder = ["novelties_sales","novelties_sales_stock"]
 
 annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
 
 ref table novelties_sales
 ref table _Measures
+ref table novelties_sales_stock
 
 ref cultureInfo en-US
 

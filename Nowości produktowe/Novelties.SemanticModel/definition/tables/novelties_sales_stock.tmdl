@@ -1,0 +1,163 @@
+table novelties_sales_stock
+	lineageTag: d8b5b9bf-4b26-4bbb-9547-d647c6fa9f05
+
+	column Linia
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 61b824b9-9452-4e97-a3ed-af940d74c06e
+		summarizeBy: none
+		sourceColumn: Linia
+
+		annotation SummarizationSetBy = Automatic
+
+	column publication_date_p3s
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		sourceProviderType: date
+		lineageTag: 8d224bba-58d5-4699-baec-784aa82eb89d
+		summarizeBy: none
+		sourceColumn: publication_date_p3s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column months_in_sales
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 53433985-76e6-486c-8269-a21352614cb2
+		summarizeBy: sum
+		sourceColumn: months_in_sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column index_type_corr_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cae8ce35-44ba-48b9-a700-5d324977174c
+		summarizeBy: none
+		sourceColumn: index_type_corr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoiced_sale_qty_2025
+		dataType: double
+		formatString: #,0
+		sourceProviderType: decimal(25, 0)
+		lineageTag: aae63944-f34a-4d44-93eb-185120fb4e53
+		summarizeBy: sum
+		sourceColumn: invoiced_sale_qty_2025
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column invoiced_sale_qty_2026
+		dataType: double
+		formatString: #,0
+		sourceProviderType: decimal(25, 0)
+		lineageTag: af4ef74f-132e-4ccb-bacd-4ef4a28d64d6
+		summarizeBy: sum
+		sourceColumn: invoiced_sale_qty_2026
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column qty_supply
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: int
+		lineageTag: f60d339d-1559-4fdc-ad54-8d354a06072d
+		summarizeBy: sum
+		sourceColumn: qty_supply
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_demand
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: int
+		lineageTag: 8e5c43e7-f683-44ec-aa53-50911e33b796
+		summarizeBy: sum
+		sourceColumn: qty_demand
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_reserved
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: int
+		lineageTag: ebc72af3-2fa1-425d-ac23-3267acb1ea7a
+		summarizeBy: sum
+		sourceColumn: qty_reserved
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_stock
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: int
+		lineageTag: efa7f466-c39b-4c0f-88bc-150b012f57b5
+		summarizeBy: sum
+		sourceColumn: qty_stock
+
+		annotation SummarizationSetBy = Automatic
+
+	column val_pln_stock
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: int
+		lineageTag: 16f0a463-5738-4a69-83df-311681decb8a
+		summarizeBy: sum
+		sourceColumn: val_pln_stock
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_day_of_year
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a3ed309e-8582-40d8-a657-417678ee94f1
+		summarizeBy: none
+		sourceColumn: last_day_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column brief_forecast_2026
+		dataType: int64
+		formatString: #,0
+		lineageTag: 75ee608d-6d38-487c-b6b3-07e694994a83
+		summarizeBy: sum
+		sourceColumn: brief_forecast_2026
+
+		annotation SummarizationSetBy = Automatic
+
+	column forecast_realisation_2026
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: 0d4ae3b7-ead3-4bf5-b5cd-d700b3ff2194
+		summarizeBy: sum
+		sourceColumn: forecast_realisation_2026
+
+		annotation SummarizationSetBy = Automatic
+
+	partition novelties_sales_stock = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", null),
+				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
+				    novelties_report_Schema = sandbox_Database{[Name="novelties_report",Kind="Schema"]}[Data],
+				    novelties_sales_View = novelties_report_Schema{[Name="novelties_report_stock",Kind="View"]}[Data]
+				in novelties_sales_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
