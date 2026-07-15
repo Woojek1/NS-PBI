@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "df44718d6346697aa1af",
   "position": {
-    "x": 19.80952380952381,
-    "y": 10.666666666666666,
+    "x": 10,
+    "y": 4.2857142857142856,
     "z": 0,
-    "height": 1056,
-    "width": 1880.3809523809523,
+    "height": 1070,
+    "width": 1898.5714285714287,
     "tabOrder": 0
   },
   "visual": {
@@ -160,8 +160,8 @@
                 }
               },
               "queryRef": "Sum(novelties_sales_stock.forecast_realisation_2026)",
-              "nativeQueryRef": "Forecast realisation 2026",
-              "displayName": "Forecast realisation 2026"
+              "nativeQueryRef": "Brief forecast realisation 2026",
+              "displayName": "Brief forecast realisation 2026"
             },
             {
               "field": {
@@ -200,8 +200,8 @@
                 }
               },
               "queryRef": "Sum(novelties_sales_stock.val_pln_stock)",
-              "nativeQueryRef": "Stock qty pln",
-              "displayName": "Stock qty pln"
+              "nativeQueryRef": "Stock value pln",
+              "displayName": "Stock value pln"
             },
             {
               "field": {
@@ -262,6 +262,46 @@
               "queryRef": "Sum(novelties_sales_stock.qty_reserved)",
               "nativeQueryRef": "Reserved qty",
               "displayName": "Reserved qty"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "stock_eoy_2026"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.stock_eoy_2026)",
+              "nativeQueryRef": "Stock EOY",
+              "displayName": "Stock EOY"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "ordered_qty_orders"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.ordered_qty_orders)",
+              "nativeQueryRef": "Ordered qty (oredrs)",
+              "displayName": "Ordered qty (oredrs)"
             }
           ]
         }
@@ -293,6 +333,18 @@
           {
             "queryRefs": [
               "novelties_sales_stock.Linia"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "novelties_sales_stock"
+                    }
+                  },
+                  "Property": "Linia"
+                }
+              }
             ],
             "isPinned": true
           },
@@ -674,7 +726,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "134.55555555555554D"
+                  "Value": "101.99556765112155D"
                 }
               }
             }
@@ -702,7 +754,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "107.66666666666667D"
+                  "Value": "111.73595567776435D"
                 }
               }
             }
@@ -716,7 +768,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "134.88888888888889D"
+                  "Value": "140.3023564754874D"
                 }
               }
             }
@@ -730,7 +782,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "164.55555555555554D"
+                  "Value": "123.88048646880465D"
                 }
               }
             }
@@ -744,7 +796,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "171.66666666666666D"
+                  "Value": "131.022056240593D"
                 }
               }
             }
@@ -765,6 +817,90 @@
           },
           "selector": {
             "metadata": "novelties_sales_stock.publication_date_p3s"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "143.85395401708203D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.forecast_realisation_2026)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.90140845070422D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.brief_forecast_2026)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119.12482026641767D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.ordered_qty_orders)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111.11267172294217D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.qty_demand)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "96.0563404539314D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.qty_supply)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "95.72727272727272D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(novelties_sales_stock.stock_eoy_2026)"
           }
         }
       ]

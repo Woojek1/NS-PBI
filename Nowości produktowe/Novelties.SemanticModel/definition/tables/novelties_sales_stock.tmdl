@@ -108,27 +108,6 @@ table novelties_sales_stock
 
 		annotation SummarizationSetBy = Automatic
 
-	column val_pln_stock
-		dataType: int64
-		formatString: #,0
-		sourceProviderType: int
-		lineageTag: 16f0a463-5738-4a69-83df-311681decb8a
-		summarizeBy: sum
-		sourceColumn: val_pln_stock
-
-		annotation SummarizationSetBy = Automatic
-
-	column last_day_of_year
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: a3ed309e-8582-40d8-a657-417678ee94f1
-		summarizeBy: none
-		sourceColumn: last_day_of_year
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
 	column brief_forecast_2026
 		dataType: int64
 		formatString: #,0
@@ -144,6 +123,35 @@ table novelties_sales_stock
 		lineageTag: 0d4ae3b7-ead3-4bf5-b5cd-d700b3ff2194
 		summarizeBy: sum
 		sourceColumn: forecast_realisation_2026
+
+		annotation SummarizationSetBy = Automatic
+
+	column ordered_qty_orders
+		dataType: double
+		formatString: #,0
+		lineageTag: 086171e3-8ddc-4142-9c17-42cd0ac490d5
+		summarizeBy: sum
+		sourceColumn: ordered_qty_orders
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column stock_eoy_2026
+		dataType: int64
+		formatString: #,0
+		lineageTag: 7ca35aae-f678-42b5-95f0-c2fc2286147b
+		summarizeBy: sum
+		sourceColumn: stock_eoy_2026
+
+		annotation SummarizationSetBy = Automatic
+
+	column val_pln_stock
+		dataType: int64
+		formatString: #,0
+		lineageTag: 7726c26a-642f-4ad0-9f26-0f5eed98323f
+		summarizeBy: sum
+		sourceColumn: val_pln_stock
 
 		annotation SummarizationSetBy = Automatic
 
