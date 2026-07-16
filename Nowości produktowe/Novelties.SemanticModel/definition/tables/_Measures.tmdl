@@ -19,6 +19,15 @@ table _Measures
 		formatString: #,0
 		lineageTag: b54366e4-80c7-42a1-87bd-78f7faa5f669
 
+	measure Stock_EOY_Purchased =
+			
+			CALCULATE(
+			    SUM(novelties_sales_stock[stock_eoy_2026]),
+			    novelties_sales_stock[index_type_corr_name] = "Purchased"
+			)
+		formatString: #,0
+		lineageTag: a8f63431-a58f-4d8e-a14b-52b23521ee87
+
 	column Value
 		formatString: 0
 		lineageTag: e16d9edc-d0b3-48bd-a9fb-3193774e9c80

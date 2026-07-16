@@ -2781,6 +2781,39 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.stock_EOY_purchased": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Stock_EOY_Purchased"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "stock EOY purchased": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Stock_EOY_Purchased": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "inventory eoy purchased": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -3830,6 +3863,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "novelties_sales_stocks_have_val_pln_stocks"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_entity__measure_stock_EOY_purchased": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "entity__measure.stock_EOY_purchased": {
+			          "Target": {
+			            "Entity": "entity__measure.stock_EOY_purchased"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.stock_EOY_purchased"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_stock_EOY_purchased"
 			        }
 			      ]
 			    }

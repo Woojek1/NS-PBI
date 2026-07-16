@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "df44718d6346697aa1af",
   "position": {
-    "x": 10,
-    "y": 4.2857142857142856,
+    "x": 0,
+    "y": 0,
     "z": 0,
-    "height": 1070,
-    "width": 1898.5714285714287,
+    "height": 1069.7142857142858,
+    "width": 1899.4285714285716,
     "tabOrder": 0
   },
   "visual": {
@@ -265,23 +265,18 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "novelties_sales_stock"
-                        }
-                      },
-                      "Property": "stock_eoy_2026"
+                    "SourceRef": {
+                      "Entity": "_Measures"
                     }
                   },
-                  "Function": 0
+                  "Property": "Stock_EOY_Purchased"
                 }
               },
-              "queryRef": "Sum(novelties_sales_stock.stock_eoy_2026)",
-              "nativeQueryRef": "Stock EOY",
-              "displayName": "Stock EOY"
+              "queryRef": "_Measures.Stock_EOY_Purchased",
+              "nativeQueryRef": "Stock EOY Purchased",
+              "displayName": "Stock EOY Purchased"
             },
             {
               "field": {
@@ -894,13 +889,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "95.72727272727272D"
+                  "Value": "106.5D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Sum(novelties_sales_stock.stock_eoy_2026)"
+            "metadata": "_Measures.Stock_EOY_Purchased"
           }
         }
       ]
@@ -944,8 +939,277 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {}
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "37044199a51bc8b0866b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales_stock"
+              }
+            },
+            "Property": "Linia"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fd801a541a9b0f3d15ef",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales_stock"
+              }
+            },
+            "Property": "index_type_corr_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7248e5d6cbc7aede6d5e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales_stock"
+              }
+            },
+            "Property": "publication_date_p3s"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7336c8aa682dc00eeb50",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales_stock"
+              }
+            },
+            "Property": "months_in_sales"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8eebd0f70dddcf4dbb82",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "invoiced_sale_qty_2025"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f454ad62f8af1db5b751",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "brief_forecast_2026"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6424f5dfbd2924c888ad",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "invoiced_sale_qty_2026"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4397c5a8cf7af401150a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "forecast_realisation_2026"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5152a6d7f2ddd29a95ac",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "qty_stock"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "022f330140fced7a0e6f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "val_pln_stock"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e87ebb7b7948e7274c00",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "qty_supply"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2bee3db4e8ed33c8c11c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "qty_demand"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f2303b4ac30fdb5bc2c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "qty_reserved"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "485e973fae139f91c6d3",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "ordered_qty_orders"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ee32a14b0df48bfb89dc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Stock_EOY_Purchased"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
