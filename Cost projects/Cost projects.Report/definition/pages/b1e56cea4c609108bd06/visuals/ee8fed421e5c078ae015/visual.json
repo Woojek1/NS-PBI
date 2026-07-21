@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "ee8fed421e5c078ae015",
   "position": {
-    "x": 1293.3818181818183,
-    "y": 66.327272727272728,
+    "x": 1259.016393442623,
+    "y": 66.098360655737707,
     "z": 1000,
-    "height": 946.03636363636372,
-    "width": 586.4727272727273,
+    "height": 945.8360655737705,
+    "width": 620.06557377049182,
     "tabOrder": 1000
   },
   "visual": {
@@ -50,6 +50,29 @@
               "active": true
             }
           ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "f_opex_costs_projects_facts"
+                        }
+                      },
+                      "Property": "debet_amount_pln"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(f_opex_costs_projects_facts.debet_amount_pln)",
+              "nativeQueryRef": "Sum of debet_amount_pln"
+            }
+          ]
         }
       },
       "sortDefinition": {
@@ -86,5 +109,56 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "68b5d0cf30760c682178",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_opex_costs_projects_facts"
+              }
+            },
+            "Property": "account"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b75dabfb652d37bb5034",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_opex_costs_projects_facts"
+              }
+            },
+            "Property": "code_f"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4152dbe6c4337b05e585",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_opex_costs_projects_facts"
+                  }
+                },
+                "Property": "debet_amount_pln"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

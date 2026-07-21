@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "19f6b057b4417914922e",
   "position": {
-    "x": 57.6,
-    "y": 66.327272727272728,
+    "x": 58.229508196721312,
+    "y": 66.098360655737707,
     "z": 0,
-    "height": 946.03636363636372,
-    "width": 1225.3090909090911,
+    "height": 945.8360655737705,
+    "width": 1175.6065573770493,
     "tabOrder": 0
   },
   "visual": {
@@ -228,6 +228,119 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "b1d3e557bac369bbcfac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_opex_costs_projects_facts"
+              }
+            },
+            "Property": "code_f"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1d357572572123a24eef",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_opex_costs_projects_facts"
+              }
+            },
+            "Property": "src_code_f"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9c6961c9400d1cb60dea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_opex_costs_projects_facts"
+              }
+            },
+            "Property": "link"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2285164eb1eb71f7233d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "mon_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7076e03ec407dbd8f9cd",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_opex_costs_projects_facts"
+                  }
+                },
+                "Property": "amount_pln"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "76e154cb8a8558dc08b5",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_opex_costs_projects_facts"
+                  }
+                },
+                "Property": "credit_amount_pln"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8f3da6e3a073f68c319a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "f_opex_costs_projects_facts"
+                  }
+                },
+                "Property": "debet_amount_pln"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
