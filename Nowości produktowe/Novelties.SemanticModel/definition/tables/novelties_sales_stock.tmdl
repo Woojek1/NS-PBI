@@ -126,17 +126,6 @@ table novelties_sales_stock
 
 		annotation SummarizationSetBy = Automatic
 
-	column ordered_qty_orders
-		dataType: double
-		formatString: #,0
-		lineageTag: 086171e3-8ddc-4142-9c17-42cd0ac490d5
-		summarizeBy: sum
-		sourceColumn: ordered_qty_orders
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isDecimal":true}
-
 	column stock_eoy_2026
 		dataType: int64
 		formatString: #,0
@@ -155,6 +144,28 @@ table novelties_sales_stock
 
 		annotation SummarizationSetBy = Automatic
 
+	column ordered_qty_ord
+		dataType: double
+		formatString: #,0
+		lineageTag: 5850abed-7678-4830-8269-3f90d1afab8e
+		summarizeBy: sum
+		sourceColumn: ordered_qty_ord
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column offered_qty_quot
+		dataType: double
+		formatString: #,0
+		lineageTag: 99d43a78-5593-46ef-a49e-0d9a9e63d075
+		summarizeBy: sum
+		sourceColumn: offered_qty_quot
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
 	partition novelties_sales_stock = m
 		mode: import
 		source =
@@ -162,7 +173,7 @@ table novelties_sales_stock
 				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", null),
 				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
 				    novelties_report_Schema = sandbox_Database{[Name="novelties_report",Kind="Schema"]}[Data],
-				    novelties_sales_View = novelties_report_Schema{[Name="novelties_report_stock",Kind="View"]}[Data]
+				    novelties_sales_View = novelties_report_Schema{[Name="novelties_report_stock_and_demand",Kind="View"]}[Data]
 				in novelties_sales_View
 
 	annotation PBI_NavigationStepName = Navigation

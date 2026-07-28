@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "df44718d6346697aa1af",
   "position": {
-    "x": 0,
-    "y": 0,
+    "x": 10,
+    "y": 5,
     "z": 0,
     "height": 1069.7142857142858,
     "width": 1899.4285714285716,
@@ -288,15 +288,35 @@
                           "Entity": "novelties_sales_stock"
                         }
                       },
-                      "Property": "ordered_qty_orders"
+                      "Property": "ordered_qty_ord"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(novelties_sales_stock.ordered_qty_orders)",
-              "nativeQueryRef": "Ordered qty (oredrs)",
-              "displayName": "Ordered qty (oredrs)"
+              "queryRef": "Sum(novelties_sales_stock.ordered_qty_ord)",
+              "nativeQueryRef": "Ordered qty",
+              "displayName": "Ordered qty"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "novelties_sales_stock"
+                        }
+                      },
+                      "Property": "offered_qty_quot"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(novelties_sales_stock.offered_qty_quot)",
+              "nativeQueryRef": "Offered qty",
+              "displayName": "Offered qty"
             }
           ]
         }
@@ -707,7 +727,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "124.69632839773686D"
+                  "Value": "118.01295465645285D"
                 }
               }
             }
@@ -721,7 +741,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "101.99556765112155D"
+                  "Value": "76.9917324194566D"
                 }
               }
             }
@@ -735,7 +755,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "147.49195716566933D"
+                  "Value": "135.86360750686438D"
                 }
               }
             }
@@ -777,7 +797,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "123.88048646880465D"
+                  "Value": "108.86535270883434D"
                 }
               }
             }
@@ -791,7 +811,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "131.022056240593D"
+                  "Value": "122.68971674546282D"
                 }
               }
             }
@@ -833,7 +853,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "121.90140845070422D"
+                  "Value": "111.89243440683047D"
                 }
               }
             }
@@ -943,6 +963,19 @@
       "background": [
         {
           "properties": {}
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -1178,25 +1211,6 @@
         "type": "Advanced"
       },
       {
-        "name": "485e973fae139f91c6d3",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "novelties_sales_stock"
-                  }
-                },
-                "Property": "ordered_qty_orders"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "ee32a14b0df48bfb89dc",
         "field": {
           "Measure": {
@@ -1206,6 +1220,44 @@
               }
             },
             "Property": "Stock_EOY_Purchased"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e8b4d2e49614ab270330",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "ordered_qty_ord"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "75d54debb0692d0c5a88",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
+                  }
+                },
+                "Property": "offered_qty_quot"
+              }
+            },
+            "Function": 0
           }
         },
         "type": "Advanced"

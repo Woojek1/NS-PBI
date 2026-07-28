@@ -2593,129 +2593,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "novelties_sales_stock.ordered_qty_order": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "novelties_sales_stock",
-			          "ConceptualProperty": "ordered_qty_orders"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "ordered qty order": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "ordered_qty_orders": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "ordered qty instruction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "ordered qty direction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "ordered qty edict": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "ordered qty command": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "ordered qty directive": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "ordered qty demand": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "ordered qty mandate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "ordered qty imperative": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "ordered qty stability": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "ordered qty harmony": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        }
-			      ]
-			    },
 			    "novelties_sales_stock.stock_eoy_2026": {
 			      "Definition": {
 			        "Binding": {
@@ -2814,9 +2691,121 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "novelties_sales_stock.ordered_qty_ord": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "ordered_qty_ord"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ordered qty ord": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ordered_qty_ord": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock.offered_qty_quot": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "offered_qty_quot"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "offered qty quot": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "offered_qty_quot": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "novelties_sales_stock_has_entity__measure_stock_EOY_purchased": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "entity__measure.stock_EOY_purchased": {
+			          "Target": {
+			            "Entity": "entity__measure.stock_EOY_purchased"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.stock_EOY_purchased"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_stock_EOY_purchased"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_val_pln_stock": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.val_pln_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.val_pln_stock"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.val_pln_stock"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_val_pln_stocks"
+			        }
+			      ]
+			    },
 			    "novelties_sales_stock_has_stock_eoy_2026": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales_stock"
@@ -2847,39 +2836,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "novelties_sales_stocks_have_stock_eoy_2026"
-			        }
-			      ]
-			    },
-			    "novelties_sales_stock_has_ordered_qty_order": {
-			      "Binding": {
-			        "ConceptualEntity": "novelties_sales_stock"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "novelties_sales_stock": {
-			          "Target": {
-			            "Entity": "novelties_sales_stock"
-			          }
-			        },
-			        "novelties_sales_stock.ordered_qty_order": {
-			          "Target": {
-			            "Entity": "novelties_sales_stock.ordered_qty_order"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "novelties_sales_stock"
-			            },
-			            "Object": {
-			              "Role": "novelties_sales_stock.ordered_qty_order"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "novelties_sales_stocks_have_ordered_qty_orders"
 			        }
 			      ]
 			    },
@@ -3833,7 +3789,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "novelties_sales_stock_has_val_pln_stock": {
+			    "novelties_sales_stock_has_ordered_qty_ord": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales_stock"
 			      },
@@ -3844,9 +3800,9 @@ cultureInfo en-US
 			            "Entity": "novelties_sales_stock"
 			          }
 			        },
-			        "novelties_sales_stock.val_pln_stock": {
+			        "novelties_sales_stock.ordered_qty_ord": {
 			          "Target": {
-			            "Entity": "novelties_sales_stock.val_pln_stock"
+			            "Entity": "novelties_sales_stock.ordered_qty_ord"
 			          }
 			        }
 			      },
@@ -3857,16 +3813,16 @@ cultureInfo en-US
 			              "Role": "novelties_sales_stock"
 			            },
 			            "Object": {
-			              "Role": "novelties_sales_stock.val_pln_stock"
+			              "Role": "novelties_sales_stock.ordered_qty_ord"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "novelties_sales_stocks_have_val_pln_stocks"
+			          "ID": "novelties_sales_stocks_have_ordered_qty_ord"
 			        }
 			      ]
 			    },
-			    "novelties_sales_stock_has_entity__measure_stock_EOY_purchased": {
+			    "novelties_sales_stock_has_offered_qty_quot": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales_stock"
 			      },
@@ -3877,9 +3833,9 @@ cultureInfo en-US
 			            "Entity": "novelties_sales_stock"
 			          }
 			        },
-			        "entity__measure.stock_EOY_purchased": {
+			        "novelties_sales_stock.offered_qty_quot": {
 			          "Target": {
-			            "Entity": "entity__measure.stock_EOY_purchased"
+			            "Entity": "novelties_sales_stock.offered_qty_quot"
 			          }
 			        }
 			      },
@@ -3890,12 +3846,12 @@ cultureInfo en-US
 			              "Role": "novelties_sales_stock"
 			            },
 			            "Object": {
-			              "Role": "entity__measure.stock_EOY_purchased"
+			              "Role": "novelties_sales_stock.offered_qty_quot"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "novelties_sales_stocks_have_stock_EOY_purchased"
+			          "ID": "novelties_sales_stocks_have_offered_qty_quots"
 			        }
 			      ]
 			    }
