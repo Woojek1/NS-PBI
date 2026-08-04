@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "d69109e221ee7c040b60",
+  "name": "fc2b394e9a2be3ac0242",
   "position": {
-    "x": 564.265873015873,
-    "y": 15,
-    "z": 3000,
+    "x": 846.39880952380952,
+    "y": 15.714285714285715,
+    "z": 6001,
     "height": 70,
-    "width": 270,
-    "tabOrder": 3000
+    "width": 200,
+    "tabOrder": 6001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "d_time_mon"
+                      "Entity": "vm_pbi_d_projects_budget"
                     }
                   },
-                  "Property": "year_name"
+                  "Property": "budget_type"
                 }
               },
-              "queryRef": "d_time_mon.year_name",
-              "nativeQueryRef": "year_name",
+              "queryRef": "vm_pbi_d_projects_budget.budget_type",
+              "nativeQueryRef": "budget_type",
               "active": true
             }
           ]
@@ -61,7 +61,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Budżet i wydatki na rok'"
+                  "Value": "'Typ budżetu'"
                 }
               }
             },
@@ -283,11 +283,70 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "year_name1",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d8a898298a8a202ab9ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_projects_budget"
+              }
+            },
+            "Property": "budget_type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "vm_pbi_d_projects_budget",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "v"
+                          }
+                        },
+                        "Property": "budget_type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Standardowy'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Extra'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
 }

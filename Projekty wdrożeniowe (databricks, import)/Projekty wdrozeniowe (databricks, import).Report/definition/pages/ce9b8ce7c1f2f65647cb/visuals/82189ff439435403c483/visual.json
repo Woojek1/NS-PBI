@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "82189ff439435403c483",
   "position": {
     "x": 0,
@@ -49,6 +49,51 @@
               "nativeQueryRef": "Kategorie wydatków",
               "active": true,
               "displayName": "Kategorie wydatków"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_c"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_code_c",
+              "nativeQueryRef": "src_code_c",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_d"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_code_d",
+              "nativeQueryRef": "src_code_d",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_text"
+                }
+              },
+              "queryRef": "f_capex_imp_cost_data.src_text",
+              "nativeQueryRef": "src_text",
+              "active": false
             }
           ]
         },
@@ -112,6 +157,51 @@
                 }
               }
             ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "f_capex_imp_cost_data.src_code_c"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_c"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "f_capex_imp_cost_data.src_code_d"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_capex_imp_cost_data"
+                    }
+                  },
+                  "Property": "src_code_d"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "f_capex_imp_cost_data.src_text"
+            ],
+            "isCollapsed": true,
             "isPinned": true
           }
         ],
