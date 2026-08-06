@@ -1,0 +1,257 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "ea50fd3ae8167b804dc1",
+  "position": {
+    "x": 58.571428571428577,
+    "y": 122.85714285714286,
+    "z": 0,
+    "height": 825.71428571428578,
+    "width": 850,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product Inventory"
+                    }
+                  },
+                  "Property": "PI Cnt Manufacturer Code"
+                }
+              },
+              "queryRef": "Product Inventory.PI Cnt Manufacturer Code",
+              "nativeQueryRef": "PI Cnt Manufacturer Code",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Code"
+                }
+              },
+              "queryRef": "Date.Month Code",
+              "nativeQueryRef": "Month Code",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Net Sales CUR Dom"
+                }
+              },
+              "queryRef": "Sales Measures.Net Sales CUR Dom",
+              "nativeQueryRef": "Net Sales CUR Dom"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Curr Norm Cost CUR Dom"
+                }
+              },
+              "queryRef": "Sales Measures.Curr Norm Cost CUR Dom",
+              "nativeQueryRef": "Curr Norm Cost CUR Dom"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Margin I CUR DOM"
+                }
+              },
+              "queryRef": "Sales Measures.Margin I CUR DOM",
+              "nativeQueryRef": "Margin I CUR DOM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Margin I (%) CUR DOM"
+                }
+              },
+              "queryRef": "Sales Measures.Margin I (%) CUR DOM",
+              "nativeQueryRef": "Margin I (%) CUR DOM"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Product Inventory.PI Cnt Manufacturer Code"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Date.Month Code"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Code"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Compact'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "582d6ce0b0a1b4c80739",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Net Sales CUR Dom"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dbfc9ca9625d180ce2e5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Curr Norm Cost CUR Dom"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "39d91d20dc188b57b937",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Margin I CUR DOM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8dc573ac62cad40a6971",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Margin I (%) CUR DOM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ced5401788b3210ba59b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

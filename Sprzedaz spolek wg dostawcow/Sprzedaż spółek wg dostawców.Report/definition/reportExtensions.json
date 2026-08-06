@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "Sales Measures",
+      "measures": [
+        {
+          "name": "Margin I CUR DOM",
+          "dataType": "Double",
+          "expression": "\r\nROUND(\r\n    [Net Sales CUR Dom] - [Curr Norm Cost CUR Dom],\r\n    0\r\n)",
+          "formatString": "#,0",
+          "displayFolder": "Report LRD",
+          "references": {
+            "measures": [
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales CUR Dom"
+              },
+              {
+                "entity": "Sales Measures",
+                "name": "Curr Norm Cost CUR Dom"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Margin I (%) CUR DOM",
+          "dataType": "Double",
+          "expression": "\r\nROUND(\r\n    [Margin I CUR DOM] / [Net Sales CUR Dom],\r\n    2\r\n)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "displayFolder": "Report LRD",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Sales Measures",
+                "name": "Margin I CUR DOM"
+              },
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales CUR Dom"
+              }
+            ]
+          }
+        },
+        {
+          "name": "AVG",
+          "dataType": "Double",
+          "expression": "\r\nCALCULATE(\r\n    [Margin I (%) CUR DOM],\r\n    REMOVEFILTERS(),\r\n    'Date'[yearc_name] = \"2026\"\r\n)",
+          "formatString": "General Number",
+          "displayFolder": "Report LRD",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Sales Measures",
+                "name": "Margin I (%) CUR DOM"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
