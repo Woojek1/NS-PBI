@@ -38,11 +38,26 @@
                       "Entity": "Product Inventory"
                     }
                   },
-                  "Property": "PI Cnt Manufacturer Code"
+                  "Property": "PI Manufacturer Code"
                 }
               },
-              "queryRef": "Product Inventory.PI Cnt Manufacturer Code",
-              "nativeQueryRef": "PI Cnt Manufacturer Code",
+              "queryRef": "Product Inventory.PI Manufacturer Code",
+              "nativeQueryRef": "PI Manufacturer Code",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Supplier"
+                    }
+                  },
+                  "Property": "Supplier Code"
+                }
+              },
+              "queryRef": "Supplier.Supplier Code",
+              "nativeQueryRef": "Supplier Code",
               "active": true
             }
           ]
@@ -138,7 +153,6 @@
             "queryRefs": [
               "Company.Company Code"
             ],
-            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -155,7 +169,7 @@
           },
           {
             "queryRefs": [
-              "Product Inventory.PI Cnt Manufacturer Code"
+              "Product Inventory.PI Manufacturer Code"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -166,10 +180,17 @@
                       "Entity": "Product Inventory"
                     }
                   },
-                  "Property": "PI Cnt Manufacturer Code"
+                  "Property": "PI Manufacturer Code"
                 }
               }
             ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Supplier.Supplier Code"
+            ],
+            "isCollapsed": true,
             "isPinned": true
           }
         ],
@@ -179,21 +200,73 @@
               "identityValues": [
                 {
                   "Literal": {
-                    "Value": "'NS FR'"
+                    "Value": "'KC DE'"
                   }
                 }
               ],
-              "isToggled": true
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Z-RG'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
             },
             {
               "identityValues": [
                 {
                   "Literal": {
-                    "Value": "'NS CZ'"
+                    "Value": "'NS AT'"
                   }
                 }
               ],
-              "isToggled": true
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Z-NS'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Z-KD'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Z-DE'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Z-AT'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
             }
           ]
         }
@@ -230,95 +303,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dbf71eae105cbdcd07da",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Company"
-              }
-            },
-            "Property": "Company Code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b177142482832db069e9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sales Measures"
-              }
-            },
-            "Property": "Net Sales CUR Dom"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0bcf6400d419b601c10b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sales Measures"
-              }
-            },
-            "Property": "Curr Norm Cost CUR Dom"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d815e89c66d5d540d075",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Schema": "extension",
-                "Entity": "Sales Measures"
-              }
-            },
-            "Property": "Margin I CUR DOM"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "99c006b07ae735032b80",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Schema": "extension",
-                "Entity": "Sales Measures"
-              }
-            },
-            "Property": "Margin I (%) CUR DOM"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "922b71be032239237785",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Product Inventory"
-              }
-            },
-            "Property": "PI Cnt Manufacturer Code"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
