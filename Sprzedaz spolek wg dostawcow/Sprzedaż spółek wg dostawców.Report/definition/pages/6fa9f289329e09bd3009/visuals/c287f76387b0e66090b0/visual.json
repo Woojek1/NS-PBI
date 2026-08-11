@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c287f76387b0e66090b0",
   "position": {
-    "x": 58.571428571428577,
-    "y": 122.85714285714286,
+    "x": 58.94736842105263,
+    "y": 122.94736842105263,
     "z": 0,
-    "height": 907.14285714285722,
-    "width": 987.14285714285722,
+    "height": 907.78947368421052,
+    "width": 1771.7894736842106,
     "tabOrder": 0
   },
   "visual": {
@@ -58,7 +58,7 @@
               },
               "queryRef": "Supplier.Supplier Code",
               "nativeQueryRef": "Supplier Code",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -116,31 +116,29 @@
                       "Entity": "Sales Measures"
                     }
                   },
-                  "Property": "Margin I (%) CUR DOM"
+                  "Property": "Spolka_z_kodu_Supplier_zakup"
                 }
               },
-              "queryRef": "Sales Measures.Margin I (%) CUR DOM",
-              "nativeQueryRef": "Margin I (%) CUR DOM"
+              "queryRef": "Sales Measures.Spolka_z_kodu",
+              "nativeQueryRef": "Spolka_z_kodu_Supplier_zakup"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Schema": "extension",
+                      "Entity": "Sales Measures"
+                    }
+                  },
+                  "Property": "Spolka_dostawca"
+                }
+              },
+              "queryRef": "Sales Measures.Spolka_dostawca",
+              "nativeQueryRef": "Spolka_dostawca"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Company"
-                  }
-                },
-                "Property": "Company Code"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "expansionStates": [
@@ -191,85 +189,22 @@
               "Supplier.Supplier Code"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Supplier"
+                    }
+                  },
+                  "Property": "Supplier Code"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'KC DE'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Z-RG'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'NS AT'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Z-NS'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                },
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Z-KD'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                },
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Z-DE'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                },
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Z-AT'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -303,5 +238,124 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cb4043381bae093e1400",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Company"
+              }
+            },
+            "Property": "Company Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0bb467ccb82d207bce84",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product Inventory"
+              }
+            },
+            "Property": "PI Manufacturer Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a48696749ade46add566",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Supplier"
+              }
+            },
+            "Property": "Supplier Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a00e144b664542e27aba",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Net Sales CUR Dom"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a8d2a200cd2093e79c10",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Curr Norm Cost CUR Dom"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "067e46b5d4e68861d443",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Margin I CUR DOM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d9e1eead905843dc9060",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Spolka_z_kodu_Supplier_zakup"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1c6596b7709a2e907217",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "Sales Measures"
+              }
+            },
+            "Property": "Spolka_dostawca"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

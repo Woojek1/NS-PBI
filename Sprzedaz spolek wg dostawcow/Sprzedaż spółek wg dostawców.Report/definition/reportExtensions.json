@@ -48,7 +48,6 @@
           "name": "AVG",
           "dataType": "Double",
           "expression": "\r\nCALCULATE(\r\n    [Margin I (%) CUR DOM],\r\n    REMOVEFILTERS(),\r\n    'Date'[yearc_name] = \"2026\"\r\n)",
-          "formatString": "General Number",
           "displayFolder": "Report LRD",
           "references": {
             "measures": [
@@ -56,6 +55,61 @@
                 "schema": "extension",
                 "entity": "Sales Measures",
                 "name": "Margin I (%) CUR DOM"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Spolka_z_kodu_Supplier_zakup",
+          "dataType": "Double",
+          "expression": "\nVAR ManufacturerCode =\n    SELECTEDVALUE(\n        'Product Inventory'[PI Manufacturer Code]\n    )\nVAR PozycjaZ =\n    SEARCH(\"Z-\", ManufacturerCode, 1, 0)\nVAR NetSales =\n    [Net Sales CUR Dom]\nRETURN\n    IF(\n        PozycjaZ > 0\n            && NOT ISBLANK(NetSales),\n        MID(\n            ManufacturerCode,\n            PozycjaZ + 2,\n            LEN(ManufacturerCode)\n        ),\n        BLANK()\n    )",
+          "formatString": "General Number",
+          "displayFolder": "Report LRD",
+          "references": {
+            "measures": [
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales CUR Dom"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Czy_ta_sama_spolka",
+          "dataType": "Double",
+          "expression": "\nVAR Spolka =\n    [Spolka_z_kodu_Supplier_zakup]\nVAR CompanyCode =\n    SELECTEDVALUE('Company'[Company Code])\nVAR NetSales =\n    [Net Sales CUR Dom]\nRETURN\n    IF(\n        ISBLANK(NetSales) || NetSales = 0,\n        BLANK(),\n        IF(\n            ISINSCOPE('Product Inventory'[PI Manufacturer Code]),\n            CONTAINSSTRING(CompanyCode, Spolka),\n            BLANK()\n        )\n    )",
+          "formatString": "General Number",
+          "displayFolder": "Report LRD",
+          "references": {
+            "measures": [
+              {
+                "schema": "extension",
+                "entity": "Sales Measures",
+                "name": "Spolka_z_kodu_Supplier_zakup"
+              },
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales CUR Dom"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Spolka_dostawca",
+          "dataType": "Double",
+          "expression": "\nVAR Sprzedaz = [Net Sales CUR Dom]\n\nVAR dostawca = [Spolka_z_kodu_Supplier_zakup]\n\nVAR CompanyCode =\n    SELECTEDVALUE('Company'[Company Code])\n\nVAR CompanyCode_nadrzedny = \n    IF(\n        ISBLANK([Net Sales CUR Dom]),\n        BLANK(),\n        CompanyCode\n    )\n\nVAR Czy_supplier_zawiera_sie_w_company =\n    IF(\n        NOT ISBLANK(dostawca)\n        &&\n        CONTAINSSTRING(CompanyCode_nadrzedny, dostawca),\n        \"Tak\"\n        )\n\nVAR Wartosc_sprzedazy =\n    IF (\n        Czy_supplier_zawiera_sie_w_company = \"Tak\",\n      Sprzedaz\n    )\n\nRETURN\nround(Wartosc_sprzedazy, 0)",
+          "formatString": "#,0",
+          "displayFolder": "Report LRD",
+          "references": {
+            "measures": [
+              {
+                "entity": "Sales Measures",
+                "name": "Net Sales CUR Dom"
+              },
+              {
+                "schema": "extension",
+                "entity": "Sales Measures",
+                "name": "Spolka_z_kodu_Supplier_zakup"
               }
             ]
           }
