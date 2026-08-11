@@ -285,6 +285,17 @@ table vm_pbi_d_gl_project
 
 		annotation SummarizationSetBy = Automatic
 
+	column sale_qty_from_sales
+		dataType: double
+		formatString: #,0
+		lineageTag: 5ab64bfc-3133-462e-bd4b-7b14ff0f0359
+		summarizeBy: sum
+		sourceColumn: sale_qty_from_sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
 	partition vm_pbi_d_gl_project = m
 		mode: import
 		source =
