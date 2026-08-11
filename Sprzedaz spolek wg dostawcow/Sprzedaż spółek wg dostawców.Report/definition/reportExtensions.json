@@ -63,7 +63,6 @@
           "name": "Spolka_z_kodu_Supplier_zakup",
           "dataType": "Double",
           "expression": "\nVAR ManufacturerCode =\n    SELECTEDVALUE(\n        'Product Inventory'[PI Manufacturer Code]\n    )\nVAR PozycjaZ =\n    SEARCH(\"Z-\", ManufacturerCode, 1, 0)\nVAR NetSales =\n    [Net Sales CUR Dom]\nRETURN\n    IF(\n        PozycjaZ > 0\n            && NOT ISBLANK(NetSales),\n        MID(\n            ManufacturerCode,\n            PozycjaZ + 2,\n            LEN(ManufacturerCode)\n        ),\n        BLANK()\n    )",
-          "formatString": "General Number",
           "displayFolder": "Report LRD",
           "references": {
             "measures": [
@@ -78,7 +77,6 @@
           "name": "Czy_ta_sama_spolka",
           "dataType": "Double",
           "expression": "\nVAR Spolka =\n    [Spolka_z_kodu_Supplier_zakup]\nVAR CompanyCode =\n    SELECTEDVALUE('Company'[Company Code])\nVAR NetSales =\n    [Net Sales CUR Dom]\nRETURN\n    IF(\n        ISBLANK(NetSales) || NetSales = 0,\n        BLANK(),\n        IF(\n            ISINSCOPE('Product Inventory'[PI Manufacturer Code]),\n            CONTAINSSTRING(CompanyCode, Spolka),\n            BLANK()\n        )\n    )",
-          "formatString": "General Number",
           "displayFolder": "Report LRD",
           "references": {
             "measures": [
@@ -106,6 +104,22 @@
                 "entity": "Sales Measures",
                 "name": "Net Sales CUR Dom"
               },
+              {
+                "schema": "extension",
+                "entity": "Sales Measures",
+                "name": "Spolka_z_kodu_Supplier_zakup"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Colaesce",
+          "dataType": "Double",
+          "expression": "\nVAR ManufacturerCode =\n    SELECTEDVALUE(\n        'Product Inventory'[PI Manufacturer Code]\n    )\n\nRETURN\nCOALESCE([Spolka_z_kodu_Supplier_zakup], ManufacturerCode)",
+          "formatString": "General Number",
+          "displayFolder": "Report LRD",
+          "references": {
+            "measures": [
               {
                 "schema": "extension",
                 "entity": "Sales Measures",
