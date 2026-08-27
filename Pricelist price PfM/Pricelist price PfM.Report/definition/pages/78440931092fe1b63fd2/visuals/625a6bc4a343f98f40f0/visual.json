@@ -1,0 +1,513 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "625a6bc4a343f98f40f0",
+  "position": {
+    "x": 20,
+    "y": 105,
+    "z": 0,
+    "height": 950,
+    "width": 1885,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_si_code_a"
+                    }
+                  },
+                  "Property": "prod_si_name"
+                }
+              },
+              "queryRef": "prod_si_code_a.prod_si_name",
+              "nativeQueryRef": "Pozycja sprzedaży",
+              "displayName": "Pozycja sprzedaży"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm_a"
+                    }
+                  },
+                  "Property": "PRICE_LIST_NO"
+                }
+              },
+              "queryRef": "pm_pfm_a.PRICE_LIST_NO",
+              "nativeQueryRef": "Nr cennika",
+              "displayName": "Nr cennika"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm_a"
+                    }
+                  },
+                  "Property": "price"
+                }
+              },
+              "queryRef": "Sum(pm_pfm_a.price)",
+              "nativeQueryRef": "Cena katalogowa",
+              "displayName": "Cena katalogowa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm_a"
+                    }
+                  },
+                  "Property": "tkw"
+                }
+              },
+              "queryRef": "Sum(pm_pfm_a.tkw)",
+              "nativeQueryRef": "TKW",
+              "displayName": "TKW"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm_a"
+                    }
+                  },
+                  "Property": "m2_proc"
+                }
+              },
+              "queryRef": "Sum(pm_pfm_a.m2_proc)",
+              "nativeQueryRef": "Model M2 %",
+              "displayName": "Model M2 %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm_a"
+                    }
+                  },
+                  "Property": "discount_proc"
+                }
+              },
+              "queryRef": "Sum(pm_pfm_a.discount_proc)",
+              "nativeQueryRef": "Model Rabat%",
+              "displayName": "Model Rabat%"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_si_code_a"
+                    }
+                  },
+                  "Property": "prod_si_code"
+                }
+              },
+              "queryRef": "prod_si_code_a.prod_si_code",
+              "nativeQueryRef": "prod_si_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm_a"
+                    }
+                  },
+                  "Property": "PART_NO"
+                }
+              },
+              "queryRef": "pm_pfm_a.PART_NO",
+              "nativeQueryRef": "PART_NO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "opcje_v2a"
+                    }
+                  },
+                  "Property": "quotation_no"
+                }
+              },
+              "queryRef": "opcje_v2a.quotation_no",
+              "nativeQueryRef": "quotation_no"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pm_pfm_a"
+                  }
+                },
+                "Property": "price"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111.23833291757873D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pm_pfm_a.tkw)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "174.34276199284443D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pm_pfm_a.m2_proc)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "168.4467049494121D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "pm_pfm_a.PRICE_LIST_NO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "151.1781392969995D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pm_pfm_a.price)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "804.2701495327414D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "prod_si_code_a.prod_si_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105.6670514072627D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pm_pfm_a.discount_proc)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "132.85714285714286D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "opcje_v2a.quotation_no"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "191.42857142857144D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "prod_si_code_a.prod_si_code"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fixedWidth'"
+                }
+              }
+            },
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "pm_pfm_a.PRICE_LIST_NO"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pm_pfm_a.price)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pm_pfm_a.tkw)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pm_pfm_a.m2_proc)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(pm_pfm_a.discount_proc)"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'759bf60422a5db69a2e2'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

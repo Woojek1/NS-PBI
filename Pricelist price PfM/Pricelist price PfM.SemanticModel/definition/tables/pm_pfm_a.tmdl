@@ -1,0 +1,120 @@
+table pm_pfm_a
+	lineageTag: d232d5d2-917e-4f34-9c83-8276f5ae9d26
+
+	column PART_NO
+		dataType: string
+		lineageTag: 9525aff2-2b84-4f83-b27b-9f0a466efe43
+		summarizeBy: none
+		sourceColumn: PART_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_LIST_NO
+		dataType: string
+		lineageTag: e9c1e563-3b41-4fa4-a9aa-8f051d2637ae
+		summarizeBy: none
+		sourceColumn: PRICE_LIST_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONFIGURATION_ID
+		dataType: string
+		lineageTag: 33a9053f-1eb1-4c24-9042-d81abb0ab43d
+		summarizeBy: none
+		sourceColumn: CONFIGURATION_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_code
+		dataType: string
+		lineageTag: ceb6dffd-f51e-498a-957e-f6aa4691eb77
+		summarizeBy: none
+		sourceColumn: prod_si_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_code
+		dataType: string
+		lineageTag: cd097dab-c524-4b40-8cb4-2fe55ccfe4fc
+		summarizeBy: none
+		sourceColumn: line_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column catalog_desc
+		dataType: string
+		lineageTag: 8270ad6c-2f9d-4a3d-ba09-70144e5b9f42
+		summarizeBy: none
+		sourceColumn: catalog_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		lineageTag: f5c6619d-d70e-44fc-b17c-9607a93ac489
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tkw
+		dataType: double
+		lineageTag: 9476dcf3-c901-45cb-8b3c-295fafb79883
+		summarizeBy: sum
+		sourceColumn: tkw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tkw_cost_currency
+		dataType: string
+		lineageTag: d6b59c11-0f1f-4771-985e-b8bbeae2601b
+		summarizeBy: none
+		sourceColumn: tkw_cost_currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column m2_proc
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9cb3322f-c1d2-43b8-a543-b384407eedc2
+		summarizeBy: sum
+		sourceColumn: m2_proc
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_proc
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 2068b905-de8a-4d17-87d3-9612c726436a
+		summarizeBy: sum
+		sourceColumn: discount_proc
+
+		annotation SummarizationSetBy = Automatic
+
+	column hash_part_configuration
+		dataType: string
+		lineageTag: 2928628f-7f93-483c-bd85-409230dcc318
+		summarizeBy: none
+		sourceColumn: hash_part_configuration
+
+		annotation SummarizationSetBy = Automatic
+
+	partition pm_pfm_a = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
+				    pricelist_price_Schema = sandbox_Database{[Name="pricelist_price",Kind="Schema"]}[Data],
+				    pm_pfm_a_View = pricelist_price_Schema{[Name="pm_pfm_a",Kind="View"]}[Data]
+				in
+				    pm_pfm_a_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,11 @@
+relationship 50a704b6-9913-be9d-e3df-67ee4a94a8b7
+	toCardinality: many
+	fromColumn: pm_pfm_a.prod_si_code
+	toColumn: prod_si_code_a.prod_si_code
+
+relationship 0b715d4f-23b7-92e4-6c73-d92a618b99cd
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: opcje_v2a.prod_si_code
+	toColumn: prod_si_code_a.prod_si_code
+

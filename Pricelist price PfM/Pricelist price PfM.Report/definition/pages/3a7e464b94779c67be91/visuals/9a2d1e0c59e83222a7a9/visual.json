@@ -1,0 +1,178 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "9a2d1e0c59e83222a7a9",
+  "position": {
+    "x": 50,
+    "y": 104,
+    "z": 1000,
+    "height": 946,
+    "width": 1834,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_si_code_a"
+                    }
+                  },
+                  "Property": "prod_si_code"
+                }
+              },
+              "queryRef": "prod_si_code_a.prod_si_code",
+              "nativeQueryRef": "prod_si_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "opcje_v2a"
+                    }
+                  },
+                  "Property": "catalog_desc"
+                }
+              },
+              "queryRef": "opcje_v2a.catalog_desc",
+              "nativeQueryRef": "Catalog name",
+              "displayName": "Catalog name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "opcje_v2a"
+                    }
+                  },
+                  "Property": "characteristic_description"
+                }
+              },
+              "queryRef": "opcje_v2a.characteristic_description",
+              "nativeQueryRef": "Opcja",
+              "displayName": "Opcja"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "opcje_v2a"
+                    }
+                  },
+                  "Property": "option_description"
+                }
+              },
+              "queryRef": "opcje_v2a.option_description",
+              "nativeQueryRef": "Wartość",
+              "displayName": "Wartość"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "303.66669180567663D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "opcje_v2a.characteristic_description"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "582.3333356962901D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "opcje_v2a.option_description"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "566.3333356695434D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "opcje_v2a.catalog_desc"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "171.66666666666669D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "prod_si_code_a.prod_si_code"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fixedWidth'"
+                }
+              }
+            },
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

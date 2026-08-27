@@ -1,0 +1,114 @@
+table opcje_v2a
+	lineageTag: ada9882e-b307-4645-ba19-f515f6c6148b
+
+	column PART_NO
+		dataType: string
+		lineageTag: da5ceb43-95a3-465b-be4c-d0b1121bf662
+		summarizeBy: none
+		sourceColumn: PART_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONFIGURATION_ID
+		dataType: string
+		lineageTag: 553f7b04-8fe7-47c8-bdb1-bb0032be4e1a
+		summarizeBy: none
+		sourceColumn: CONFIGURATION_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHARACTERISTIC_ID
+		dataType: string
+		lineageTag: dc601d69-6b68-4504-a91b-a4758ecbc6cd
+		summarizeBy: none
+		sourceColumn: CHARACTERISTIC_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column characteristic_description
+		dataType: string
+		lineageTag: 6b681b0a-e500-4e34-85ed-73c7bc157438
+		summarizeBy: none
+		sourceColumn: characteristic_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHARACTERISTIC_VALUE
+		dataType: string
+		lineageTag: 43152dfe-008c-46a0-b4d5-cbaa90159b1a
+		summarizeBy: none
+		sourceColumn: CHARACTERISTIC_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column option_description
+		dataType: string
+		lineageTag: e750f851-7723-44ea-bf09-a61f0399f2fc
+		summarizeBy: none
+		sourceColumn: option_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_code
+		dataType: string
+		lineageTag: 8b22e8d8-923c-444d-bb1f-0b5a28e5daef
+		summarizeBy: none
+		sourceColumn: prod_si_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column catalog_desc
+		dataType: string
+		lineageTag: 3fca588f-e187-453d-bfd9-58fe27e6e967
+		summarizeBy: none
+		sourceColumn: catalog_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column hash_part_option_value
+		dataType: string
+		lineageTag: 9f2d5130-52a2-4bb3-93f4-0b21b81cbfc8
+		summarizeBy: none
+		sourceColumn: hash_part_option_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column hash_part_configuration
+		dataType: string
+		lineageTag: a991b719-723a-44a6-9f83-324fbb83ee6a
+		summarizeBy: none
+		sourceColumn: hash_part_configuration
+
+		annotation SummarizationSetBy = Automatic
+
+	column quotation_no
+		dataType: string
+		lineageTag: f031a53d-d3a7-4864-ac70-ad2ec681bcf0
+		summarizeBy: none
+		sourceColumn: quotation_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_list_no
+		dataType: string
+		lineageTag: 4cab291d-0148-4b53-9d7f-f79da7e6bdc0
+		summarizeBy: none
+		sourceColumn: price_list_no
+
+		annotation SummarizationSetBy = Automatic
+
+	partition opcje_v2a = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
+				    pricelist_price_Schema = sandbox_Database{[Name="pricelist_price",Kind="Schema"]}[Data],
+				    opcje_v2a_View = pricelist_price_Schema{[Name="opcje_v2a",Kind="View"]}[Data]
+				in
+				    opcje_v2a_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
