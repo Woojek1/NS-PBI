@@ -20,22 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "prod_si_code_a"
-                    }
-                  },
-                  "Property": "prod_si_name"
-                }
-              },
-              "queryRef": "prod_si_code_a.prod_si_name",
-              "nativeQueryRef": "Pozycja sprzedaży",
-              "displayName": "Pozycja sprzedaży"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pm_pfm_a"
+                      "Entity": "pm_pfm"
                     }
                   },
                   "Property": "PRICE_LIST_NO"
@@ -50,7 +35,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pm_pfm_a"
+                      "Entity": "pm_pfm"
                     }
                   },
                   "Property": "price"
@@ -65,7 +50,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pm_pfm_a"
+                      "Entity": "pm_pfm"
                     }
                   },
                   "Property": "tkw"
@@ -80,7 +65,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pm_pfm_a"
+                      "Entity": "pm_pfm"
                     }
                   },
                   "Property": "m2_proc"
@@ -95,7 +80,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pm_pfm_a"
+                      "Entity": "pm_pfm"
                     }
                   },
                   "Property": "discount_proc"
@@ -110,42 +95,28 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "prod_si_code_a"
+                      "Entity": "pm_pfm"
                     }
                   },
-                  "Property": "prod_si_code"
+                  "Property": "CATALOG_DESC"
                 }
               },
-              "queryRef": "prod_si_code_a.prod_si_code",
-              "nativeQueryRef": "prod_si_code"
+              "queryRef": "pm_pfm.CATALOG_DESC",
+              "nativeQueryRef": "CATALOG_DESC"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pm_pfm_a"
+                      "Entity": "pm_pfm"
                     }
                   },
-                  "Property": "PART_NO"
+                  "Property": "price_status"
                 }
               },
-              "queryRef": "pm_pfm_a.PART_NO",
-              "nativeQueryRef": "PART_NO"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "opcje_v2a"
-                    }
-                  },
-                  "Property": "quotation_no"
-                }
-              },
-              "queryRef": "opcje_v2a.quotation_no",
-              "nativeQueryRef": "quotation_no"
+              "queryRef": "pm_pfm.price_status",
+              "nativeQueryRef": "price_status"
             }
           ]
         }
@@ -157,10 +128,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "pm_pfm_a"
+                    "Entity": "pm_pfm"
                   }
                 },
-                "Property": "price"
+                "Property": "price_status"
               }
             },
             "direction": "Descending"
@@ -231,20 +202,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "804.2701495327414D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "prod_si_code_a.prod_si_name"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "105.6670514072627D"
                 }
               }
@@ -259,13 +216,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "132.85714285714286D"
+                  "Value": "779.0322580645161D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "opcje_v2a.quotation_no"
+            "metadata": "pm_pfm.CATALOG_DESC"
           }
         },
         {
@@ -273,13 +230,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "191.42857142857144D"
+                  "Value": "184.4516129032258D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "prod_si_code_a.prod_si_code"
+            "metadata": "pm_pfm.price_status"
           }
         }
       ],
@@ -509,5 +466,107 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "29677ae67fb8fc884a1f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pm_pfm"
+              }
+            },
+            "Property": "PRICE_LIST_NO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "401fa33ac07041d6235e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pm_pfm"
+              }
+            },
+            "Property": "price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7e9fd8da858507acbe6b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pm_pfm"
+              }
+            },
+            "Property": "tkw"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c578ad7c03db795e5504",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pm_pfm"
+              }
+            },
+            "Property": "m2_proc"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "368c690bdd5666b2b124",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pm_pfm"
+              }
+            },
+            "Property": "discount_proc"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9481d91556a6a28b7757",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pm_pfm"
+              }
+            },
+            "Property": "CATALOG_DESC"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9f1a068eab673f12c144",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pm_pfm"
+              }
+            },
+            "Property": "price_status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

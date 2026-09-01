@@ -1,4 +1,4 @@
-table pm_pfm_a
+table pm_pfm
 	lineageTag: d232d5d2-917e-4f34-9c83-8276f5ae9d26
 
 	column PART_NO
@@ -38,14 +38,6 @@ table pm_pfm_a
 		lineageTag: cd097dab-c524-4b40-8cb4-2fe55ccfe4fc
 		summarizeBy: none
 		sourceColumn: line_code
-
-		annotation SummarizationSetBy = Automatic
-
-	column catalog_desc
-		dataType: string
-		lineageTag: 8270ad6c-2f9d-4a3d-ba09-70144e5b9f42
-		summarizeBy: none
-		sourceColumn: catalog_desc
 
 		annotation SummarizationSetBy = Automatic
 
@@ -103,14 +95,104 @@ table pm_pfm_a
 
 		annotation SummarizationSetBy = Automatic
 
-	partition pm_pfm_a = m
+	column QUOTATION_NO
+		dataType: string
+		lineageTag: 008d190f-f915-44be-bd44-c9f0ced390bc
+		summarizeBy: none
+		sourceColumn: QUOTATION_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column base_price_list_no
+		dataType: string
+		lineageTag: 5c7b6ca4-903e-43d1-bf17-6807a77358b7
+		summarizeBy: none
+		sourceColumn: base_price_list_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_name
+		dataType: string
+		lineageTag: 8cbad98a-bebb-416a-adbd-e6ab177a4326
+		summarizeBy: none
+		sourceColumn: prod_si_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_code
+		dataType: string
+		lineageTag: b84f59ae-7091-4888-b62b-f109f6d84d7c
+		summarizeBy: none
+		sourceColumn: model_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_name
+		dataType: string
+		lineageTag: 41cebd36-d11e-4da3-a68b-9dce6887a8e6
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_model_name
+		dataType: string
+		lineageTag: f7f18784-d19b-46e7-a462-fa1eab71c19e
+		summarizeBy: none
+		sourceColumn: price_model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_model_desc
+		dataType: string
+		lineageTag: 2f2768e7-c997-4008-9dcc-8c8fa0c98c1b
+		summarizeBy: none
+		sourceColumn: price_model_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATALOG_DESC
+		dataType: string
+		lineageTag: 5782c6d9-d1d4-4869-ab55-a750318a3332
+		summarizeBy: none
+		sourceColumn: CATALOG_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column option_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b9495fe-2125-4ff6-a5bd-656351b25459
+		summarizeBy: sum
+		sourceColumn: option_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column missing_option_count
+		dataType: int64
+		formatString: 0
+		lineageTag: a0bf6268-f388-4dda-9780-e03bae3bad52
+		summarizeBy: sum
+		sourceColumn: missing_option_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_status
+		dataType: string
+		lineageTag: 790aebc3-8668-4fd0-a57d-32c866cd2f78
+		summarizeBy: none
+		sourceColumn: price_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition pm_pfm = m
 		mode: import
 		source =
 				let
 				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
 				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
-				    pricelist_price_Schema = sandbox_Database{[Name="pricelist_price",Kind="Schema"]}[Data],
-				    pm_pfm_a_View = pricelist_price_Schema{[Name="pm_pfm_a",Kind="View"]}[Data]
+				    pricelist_price_Schema = sandbox_Database{[Name="pm_pfm_dev",Kind="Schema"]}[Data],
+				    pm_pfm_a_View = pricelist_price_Schema{[Name="pm_pfm",Kind="View"]}[Data]
 				in
 				    pm_pfm_a_View
 

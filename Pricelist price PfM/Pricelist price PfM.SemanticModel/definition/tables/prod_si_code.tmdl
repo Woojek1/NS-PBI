@@ -1,9 +1,9 @@
-table prod_si_code_a
-	lineageTag: db560b04-1dc5-48e0-8588-8372f96209d7
+table prod_si_code
+	lineageTag: 9733cef3-e2fe-43b3-9c4f-d097d7c1275e
 
 	column PART_NO
 		dataType: string
-		lineageTag: 3ca308be-8ab2-4cde-a033-55e77943620f
+		lineageTag: 0ea10005-7339-47ac-aa54-84aed324a2fe
 		summarizeBy: none
 		sourceColumn: PART_NO
 
@@ -11,7 +11,7 @@ table prod_si_code_a
 
 	column CONFIGURATION_ID
 		dataType: string
-		lineageTag: 1bfa7812-f1fe-4947-9eb1-6b0eb50e9e46
+		lineageTag: 46c98f65-b4d0-49db-a735-6b2908c31c96
 		summarizeBy: none
 		sourceColumn: CONFIGURATION_ID
 
@@ -19,47 +19,15 @@ table prod_si_code_a
 
 	column prod_si_code
 		dataType: string
-		lineageTag: 5d07c13f-a29b-4260-9bd9-2ebc5411c35c
+		lineageTag: 1aee82d3-0cc8-4184-a5ff-4b30558800ae
 		summarizeBy: none
 		sourceColumn: prod_si_code
 
 		annotation SummarizationSetBy = Automatic
 
-	column catalog_desc
-		dataType: string
-		lineageTag: 85633b2a-7b46-4aeb-9e3b-f68a2b60d952
-		summarizeBy: none
-		sourceColumn: catalog_desc
-
-		annotation SummarizationSetBy = Automatic
-
-	column price_model_name
-		dataType: string
-		lineageTag: 6a3c62d0-12f8-41d7-a01e-59a1de50343d
-		summarizeBy: none
-		sourceColumn: price_model_name
-
-		annotation SummarizationSetBy = Automatic
-
-	column price_model_desc
-		dataType: string
-		lineageTag: 48ccfd03-1fd4-4c0a-b4ef-73e6a4791380
-		summarizeBy: none
-		sourceColumn: price_model_desc
-
-		annotation SummarizationSetBy = Automatic
-
-	column line_code
-		dataType: string
-		lineageTag: 5fbf7c37-b60d-45a5-849d-727ee3d8e033
-		summarizeBy: none
-		sourceColumn: line_code
-
-		annotation SummarizationSetBy = Automatic
-
 	column prod_si_name
 		dataType: string
-		lineageTag: 0b93287b-f19a-480a-877a-6ccd2fe5f9bb
+		lineageTag: 575377ee-64a4-426c-b979-120410185be5
 		summarizeBy: none
 		sourceColumn: prod_si_name
 
@@ -67,7 +35,7 @@ table prod_si_code_a
 
 	column model_code
 		dataType: string
-		lineageTag: 4cf3a426-1a91-41ac-920c-178b066548ca
+		lineageTag: 022da1ea-5994-4220-a441-44e6a0683c1f
 		summarizeBy: none
 		sourceColumn: model_code
 
@@ -75,22 +43,58 @@ table prod_si_code_a
 
 	column model_name
 		dataType: string
-		lineageTag: da8f16dd-57bd-4cac-820b-40a8e95b5ec1
+		lineageTag: eaf7d74c-a49f-460f-abd6-70b4314abdea
 		summarizeBy: none
 		sourceColumn: model_name
 
 		annotation SummarizationSetBy = Automatic
 
-	partition prod_si_code_a = m
+	column CATALOG_DESC
+		dataType: string
+		lineageTag: 8c3921e5-2b1c-4f5f-94cc-cfacfba5b77c
+		summarizeBy: none
+		sourceColumn: CATALOG_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_model_name
+		dataType: string
+		lineageTag: c68a32d9-d8eb-4ed7-bf2b-b306820a9a6c
+		summarizeBy: none
+		sourceColumn: price_model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_model_desc
+		dataType: string
+		lineageTag: b71b9e49-39d1-47f1-90f8-b4c673542795
+		summarizeBy: none
+		sourceColumn: price_model_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_code
+		dataType: string
+		lineageTag: 6430cd1c-1513-464a-a042-10145a2a341d
+		summarizeBy: none
+		sourceColumn: line_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition prod_si_code = m
 		mode: import
 		source =
 				let
 				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
 				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
-				    pricelist_price_Schema = sandbox_Database{[Name="pricelist_price",Kind="Schema"]}[Data],
-				    prod_si_code_a_View = pricelist_price_Schema{[Name="prod_si_code_a",Kind="View"]}[Data]
+				    pricelist_price_Schema = sandbox_Database{[Name="pm_pfm_dev",Kind="Schema"]}[Data],
+				    prod_si_code_a_View = pricelist_price_Schema{[Name="prod_si_code",Kind="View"]}[Data]
 				in
 				    prod_si_code_a_View
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

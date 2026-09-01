@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "prod_si_code_a"
+                      "Entity": "prod_si_code"
                     }
                   },
                   "Property": "prod_si_code"
@@ -34,22 +34,21 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "opcje_v2a"
+                      "Entity": "opcje"
                     }
                   },
-                  "Property": "catalog_desc"
+                  "Property": "CATALOG_DESC"
                 }
               },
-              "queryRef": "opcje_v2a.catalog_desc",
-              "nativeQueryRef": "Catalog name",
-              "displayName": "Catalog name"
+              "queryRef": "opcje.CATALOG_DESC",
+              "nativeQueryRef": "CATALOG_DESC"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "opcje_v2a"
+                      "Entity": "opcje"
                     }
                   },
                   "Property": "characteristic_description"
@@ -64,7 +63,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "opcje_v2a"
+                      "Entity": "opcje"
                     }
                   },
                   "Property": "option_description"
@@ -113,13 +112,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "566.3333356695434D"
+                  "Value": "399.6338028169014D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "opcje_v2a.catalog_desc"
+            "metadata": "prod_si_code_a.prod_si_code"
           }
         },
         {
@@ -127,13 +126,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "171.66666666666669D"
+                  "Value": "720.0845070422534D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "prod_si_code_a.prod_si_code"
+            "metadata": "opcje.CATALOG_DESC"
           }
         }
       ],
@@ -174,5 +173,104 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f29e9904cd33866cc746",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "opcje"
+              }
+            },
+            "Property": "characteristic_description"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "edf3594c046ba67ca698",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "opcje"
+              }
+            },
+            "Property": "option_description"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "44f987e23f73ca9a23cd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "prod_si_code"
+              }
+            },
+            "Property": "prod_si_code"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "prod_si_code",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "prod_si_code"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'WEM2013-00016938'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "b594aa41e2cf937d3f44",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "opcje"
+              }
+            },
+            "Property": "CATALOG_DESC"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

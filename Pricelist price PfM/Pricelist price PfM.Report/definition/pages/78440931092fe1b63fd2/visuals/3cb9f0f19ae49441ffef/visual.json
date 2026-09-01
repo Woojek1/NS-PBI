@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "opcje_v2a"
+                      "Entity": "opcje"
                     }
                   },
-                  "Property": "quotation_no"
+                  "Property": "QUOTATION_NO"
                 }
               },
-              "queryRef": "opcje_v2a.quotation_no",
-              "nativeQueryRef": "Quotation No",
-              "active": true,
-              "displayName": "Quotation No"
+              "queryRef": "opcje.QUOTATION_NO",
+              "nativeQueryRef": "QUOTATION_NO",
+              "active": true
             }
           ]
         }
@@ -58,11 +57,67 @@
                   "Value": "true"
                 }
               }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "o",
+                    "Entity": "opcje",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "o"
+                              }
+                            },
+                            "Property": "QUOTATION_NO"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'174375'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "61740f12cf2b6b7d6f97",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "opcje"
+              }
+            },
+            "Property": "QUOTATION_NO"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -1,4 +1,4 @@
-table opcje_v2a
+table opcje
 	lineageTag: ada9882e-b307-4645-ba19-f515f6c6148b
 
 	column PART_NO
@@ -57,22 +57,6 @@ table opcje_v2a
 
 		annotation SummarizationSetBy = Automatic
 
-	column catalog_desc
-		dataType: string
-		lineageTag: 3fca588f-e187-453d-bfd9-58fe27e6e967
-		summarizeBy: none
-		sourceColumn: catalog_desc
-
-		annotation SummarizationSetBy = Automatic
-
-	column hash_part_option_value
-		dataType: string
-		lineageTag: 9f2d5130-52a2-4bb3-93f4-0b21b81cbfc8
-		summarizeBy: none
-		sourceColumn: hash_part_option_value
-
-		annotation SummarizationSetBy = Automatic
-
 	column hash_part_configuration
 		dataType: string
 		lineageTag: a991b719-723a-44a6-9f83-324fbb83ee6a
@@ -81,30 +65,46 @@ table opcje_v2a
 
 		annotation SummarizationSetBy = Automatic
 
-	column quotation_no
+	column CATALOG_DESC
 		dataType: string
-		lineageTag: f031a53d-d3a7-4864-ac70-ad2ec681bcf0
+		lineageTag: 34ef952b-8042-4797-a418-c09cf14ce650
 		summarizeBy: none
-		sourceColumn: quotation_no
+		sourceColumn: CATALOG_DESC
 
 		annotation SummarizationSetBy = Automatic
 
-	column price_list_no
+	column QUOTATION_NO
 		dataType: string
-		lineageTag: 4cab291d-0148-4b53-9d7f-f79da7e6bdc0
+		lineageTag: d0c2f84f-0743-4ac0-8c01-1ba7cdabe1c5
 		summarizeBy: none
-		sourceColumn: price_list_no
+		sourceColumn: QUOTATION_NO
 
 		annotation SummarizationSetBy = Automatic
 
-	partition opcje_v2a = m
+	column base_price_list_no
+		dataType: string
+		lineageTag: 2d71d21c-9cb5-41f2-9030-9a42a098d3f8
+		summarizeBy: none
+		sourceColumn: base_price_list_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column hash_configuration_option
+		dataType: string
+		lineageTag: 216f0a44-b912-434a-ab70-7a2f40d9305b
+		summarizeBy: none
+		sourceColumn: hash_configuration_option
+
+		annotation SummarizationSetBy = Automatic
+
+	partition opcje = m
 		mode: import
 		source =
 				let
 				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
 				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
-				    pricelist_price_Schema = sandbox_Database{[Name="pricelist_price",Kind="Schema"]}[Data],
-				    opcje_v2a_View = pricelist_price_Schema{[Name="opcje_v2a",Kind="View"]}[Data]
+				    pricelist_price_Schema = sandbox_Database{[Name="pm_pfm_dev",Kind="Schema"]}[Data],
+				    opcje_v2a_View = pricelist_price_Schema{[Name="opcje",Kind="View"]}[Data]
 				in
 				    opcje_v2a_View
 

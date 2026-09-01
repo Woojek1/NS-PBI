@@ -20,36 +20,19 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "prod_si_code_a"
+                      "Entity": "prod_si_code"
                     }
                   },
                   "Property": "prod_si_name"
                 }
               },
               "queryRef": "prod_si_code_a.prod_si_name",
-              "nativeQueryRef": "Pozycja sprzedaży",
+              "nativeQueryRef": "prod_si_name",
               "active": true,
               "displayName": "Pozycja sprzedaży"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "prod_si_code_a"
-                  }
-                },
-                "Property": "prod_si_name"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
