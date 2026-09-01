@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "625a6bc4a343f98f40f0",
   "position": {
-    "x": 20,
-    "y": 105,
+    "x": 20.281690140845068,
+    "y": 113.57746478873239,
     "z": 0,
     "height": 950,
     "width": 1885,
@@ -15,6 +15,21 @@
       "queryState": {
         "Values": {
           "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm"
+                    }
+                  },
+                  "Property": "prod_si_name"
+                }
+              },
+              "queryRef": "pm_pfm.prod_si_name",
+              "nativeQueryRef": "Pozycja sprzedaży",
+              "displayName": "Pozycja sprzedaży"
+            },
             {
               "field": {
                 "Column": {
@@ -44,6 +59,21 @@
               "queryRef": "Sum(pm_pfm_a.price)",
               "nativeQueryRef": "Cena katalogowa",
               "displayName": "Cena katalogowa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm"
+                    }
+                  },
+                  "Property": "currency_code"
+                }
+              },
+              "queryRef": "pm_pfm.currency_code",
+              "nativeQueryRef": "Waluta cennika",
+              "displayName": "Waluta cennika"
             },
             {
               "field": {
@@ -95,28 +125,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pm_pfm"
+                      "Entity": "prod_si_code"
                     }
                   },
-                  "Property": "CATALOG_DESC"
+                  "Property": "model_code"
                 }
               },
-              "queryRef": "pm_pfm.CATALOG_DESC",
-              "nativeQueryRef": "CATALOG_DESC"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pm_pfm"
-                    }
-                  },
-                  "Property": "price_status"
-                }
-              },
-              "queryRef": "pm_pfm.price_status",
-              "nativeQueryRef": "price_status"
+              "queryRef": "prod_si_code.model_code",
+              "nativeQueryRef": "model_code"
             }
           ]
         }
@@ -131,10 +147,10 @@
                     "Entity": "pm_pfm"
                   }
                 },
-                "Property": "price_status"
+                "Property": "prod_si_name"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -146,7 +162,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "111.23833291757873D"
+                  "Value": "76.26456051776336D"
                 }
               }
             }
@@ -160,7 +176,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "174.34276199284443D"
+                  "Value": "136.31922776065196D"
                 }
               }
             }
@@ -188,7 +204,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "151.1781392969995D"
+                  "Value": "107.0379055083936D"
                 }
               }
             }
@@ -216,13 +232,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "779.0322580645161D"
+                  "Value": "1119.0976410313974D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "pm_pfm.CATALOG_DESC"
+            "metadata": "pm_pfm.prod_si_name"
           }
         },
         {
@@ -230,13 +246,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "184.4516129032258D"
+                  "Value": "76.31813576494427D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "pm_pfm.price_status"
+            "metadata": "pm_pfm.currency_code"
           }
         }
       ],
@@ -470,7 +486,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "29677ae67fb8fc884a1f",
+        "name": "3566413c87dd487d6db1",
         "field": {
           "Column": {
             "Expression": {
@@ -484,7 +500,7 @@
         "type": "Categorical"
       },
       {
-        "name": "401fa33ac07041d6235e",
+        "name": "c769d0d08aeafce030eb",
         "field": {
           "Column": {
             "Expression": {
@@ -498,7 +514,7 @@
         "type": "Advanced"
       },
       {
-        "name": "7e9fd8da858507acbe6b",
+        "name": "ad18e63af12faba69794",
         "field": {
           "Column": {
             "Expression": {
@@ -512,7 +528,7 @@
         "type": "Advanced"
       },
       {
-        "name": "c578ad7c03db795e5504",
+        "name": "05b32a75cb88bb277aef",
         "field": {
           "Column": {
             "Expression": {
@@ -526,7 +542,7 @@
         "type": "Advanced"
       },
       {
-        "name": "368c690bdd5666b2b124",
+        "name": "0a325ba33b1446f032c6",
         "field": {
           "Column": {
             "Expression": {
@@ -540,7 +556,7 @@
         "type": "Advanced"
       },
       {
-        "name": "9481d91556a6a28b7757",
+        "name": "36401e1c5fa2cc2e17df",
         "field": {
           "Column": {
             "Expression": {
@@ -548,13 +564,13 @@
                 "Entity": "pm_pfm"
               }
             },
-            "Property": "CATALOG_DESC"
+            "Property": "prod_si_name"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "9f1a068eab673f12c144",
+        "name": "2c67319985fa738e457c",
         "field": {
           "Column": {
             "Expression": {
@@ -562,7 +578,21 @@
                 "Entity": "pm_pfm"
               }
             },
-            "Property": "price_status"
+            "Property": "currency_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73375dac89b9fd55b9f4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "prod_si_code"
+              }
+            },
+            "Property": "model_code"
           }
         },
         "type": "Categorical"

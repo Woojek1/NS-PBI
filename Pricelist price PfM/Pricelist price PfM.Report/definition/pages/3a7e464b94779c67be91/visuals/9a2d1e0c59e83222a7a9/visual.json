@@ -72,6 +72,20 @@
               "queryRef": "opcje_v2a.option_description",
               "nativeQueryRef": "Wartość",
               "displayName": "Wartość"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm"
+                    }
+                  },
+                  "Property": "model_code"
+                }
+              },
+              "queryRef": "pm_pfm.model_code",
+              "nativeQueryRef": "model_code"
             }
           ]
         }
@@ -98,7 +112,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "582.3333356962901D"
+                  "Value": "449.83660727780364D"
                 }
               }
             }
@@ -177,7 +191,35 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "f29e9904cd33866cc746",
+        "name": "44f987e23f73ca9a23cd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "prod_si_code"
+              }
+            },
+            "Property": "prod_si_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "caaa2e4001b5a3cc568f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "opcje"
+              }
+            },
+            "Property": "CATALOG_DESC"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "56f446f852ff23c4992f",
         "field": {
           "Column": {
             "Expression": {
@@ -191,7 +233,7 @@
         "type": "Categorical"
       },
       {
-        "name": "edf3594c046ba67ca698",
+        "name": "389d052184718ae82f71",
         "field": {
           "Column": {
             "Expression": {
@@ -205,68 +247,15 @@
         "type": "Categorical"
       },
       {
-        "name": "44f987e23f73ca9a23cd",
+        "name": "538f527cdfc2bfb50748",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "prod_si_code"
+                "Entity": "pm_pfm"
               }
             },
-            "Property": "prod_si_code"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "p",
-              "Entity": "prod_si_code",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "p"
-                          }
-                        },
-                        "Property": "prod_si_code"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'WEM2013-00016938'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "b594aa41e2cf937d3f44",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "opcje"
-              }
-            },
-            "Property": "CATALOG_DESC"
+            "Property": "model_code"
           }
         },
         "type": "Categorical"

@@ -10,3 +10,9 @@ relationship 24d5c9be-c647-ce83-d672-c49332edddab
 	fromColumn: prod_si_code.line_code
 	toColumn: pm_pfm.line_code
 
+relationship 5f857f52-f475-6f84-fdeb-99a825ffc422
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: pm_pfm.model_code
+	toColumn: m2_per_dep.model_code
+

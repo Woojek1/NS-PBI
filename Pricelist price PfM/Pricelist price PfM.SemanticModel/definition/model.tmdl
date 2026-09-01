@@ -9,13 +9,14 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["opcje","pm_pfm","prod_si_code"]
+annotation PBI_QueryOrder = ["opcje","pm_pfm","prod_si_code","m2_per_dep"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table opcje
 ref table pm_pfm
 ref table prod_si_code
+ref table m2_per_dep
 
 ref cultureInfo en-US
 

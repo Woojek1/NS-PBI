@@ -57,67 +57,11 @@
                   "Value": "true"
                 }
               }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "o",
-                    "Entity": "opcje",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "o"
-                              }
-                            },
-                            "Property": "QUOTATION_NO"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'174375'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "61740f12cf2b6b7d6f97",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "opcje"
-              }
-            },
-            "Property": "QUOTATION_NO"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

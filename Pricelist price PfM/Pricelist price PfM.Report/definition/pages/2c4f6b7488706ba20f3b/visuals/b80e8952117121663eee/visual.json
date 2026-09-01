@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "97cd9f55697803f6a5a8",
+  "name": "b80e8952117121663eee",
   "position": {
-    "x": 822.85714285714289,
-    "y": 10.666666666666666,
-    "z": 1000,
+    "x": 176.76190476190476,
+    "y": 0,
+    "z": 1,
     "height": 73.142857142857139,
-    "width": 259.04761904761904,
-    "tabOrder": 1000
+    "width": 208.76190476190476,
+    "tabOrder": 1
   },
   "visual": {
     "visualType": "slicer",
@@ -20,36 +20,18 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pm_pfm"
+                      "Entity": "prod_si_code"
                     }
                   },
-                  "Property": "PRICE_LIST_NO"
+                  "Property": "model_code"
                 }
               },
-              "queryRef": "pm_pfm_a.PRICE_LIST_NO",
-              "nativeQueryRef": "Pricelist",
-              "active": true,
-              "displayName": "Pricelist"
+              "queryRef": "prod_si_code.model_code",
+              "nativeQueryRef": "model_code",
+              "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "pm_pfm"
-                  }
-                },
-                "Property": "PRICE_LIST_NO"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -79,6 +61,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "model_code",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

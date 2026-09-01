@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "78398fe85c9fc5bde96b",
+  "position": {
+    "x": 177.5,
+    "y": 87.5,
+    "z": 0,
+    "height": 905,
+    "width": 442.5,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "m2_per_dep"
+                    }
+                  },
+                  "Property": "dept_code"
+                }
+              },
+              "queryRef": "m2_per_dep.dept_code",
+              "nativeQueryRef": "dept_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "m2_per_dep"
+                    }
+                  },
+                  "Property": "model_code"
+                }
+              },
+              "queryRef": "m2_per_dep.model_code",
+              "nativeQueryRef": "model_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "m2_per_dep"
+                    }
+                  },
+                  "Property": "m2_proc"
+                }
+              },
+              "queryRef": "Sum(m2_per_dep.m2_proc)",
+              "nativeQueryRef": "m2_proc"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "m2_per_dep"
+                      }
+                    },
+                    "Property": "m2_proc"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d93744b6e1868cd94d2e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "m2_per_dep"
+              }
+            },
+            "Property": "dept_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2d9cc9d912257007241d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "m2_per_dep"
+              }
+            },
+            "Property": "model_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ee44b614cc3b1158d5a4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "m2_per_dep"
+              }
+            },
+            "Property": "m2_proc"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

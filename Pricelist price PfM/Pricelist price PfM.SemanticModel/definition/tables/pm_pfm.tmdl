@@ -185,6 +185,14 @@ table pm_pfm
 
 		annotation SummarizationSetBy = Automatic
 
+	column currency_code
+		dataType: string
+		lineageTag: ce65bcb1-06c1-4617-a5ba-04b18fc865ec
+		summarizeBy: none
+		sourceColumn: currency_code
+
+		annotation SummarizationSetBy = Automatic
+
 	partition pm_pfm = m
 		mode: import
 		source =

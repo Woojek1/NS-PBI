@@ -1,0 +1,70 @@
+table m2_per_dep
+	lineageTag: b50264c9-5452-4b20-b7f6-c11356a1b4d5
+
+	column model_code
+		dataType: string
+		lineageTag: 6b1b9cd5-63eb-4936-b400-b1359b643361
+		summarizeBy: none
+		sourceColumn: model_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_name
+		dataType: string
+		lineageTag: e80fa54c-9ce8-4b13-b98a-b44a6d326df3
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_code
+		dataType: string
+		lineageTag: a9386e48-e849-492c-85cf-4b474e5a1109
+		summarizeBy: none
+		sourceColumn: dept_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_name
+		dataType: string
+		lineageTag: 9d55b759-c275-4d38-b9d8-175988d43cc4
+		summarizeBy: none
+		sourceColumn: dept_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column m2_proc
+		dataType: double
+		lineageTag: c11f00a4-d51d-4825-b33d-0ef4f6ffd037
+		summarizeBy: sum
+		sourceColumn: m2_proc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discount_proc
+		dataType: double
+		lineageTag: 5a57b790-aaf1-4761-acdd-e76fee0cd9d6
+		summarizeBy: sum
+		sourceColumn: discount_proc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition m2_per_dep = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    sandbox_Database = Source{[Name="sandbox",Kind="Database"]}[Data],
+				    pricelist_price_Schema = sandbox_Database{[Name="pm_pfm_dev",Kind="Schema"]}[Data],
+				    m2_per_department = pricelist_price_Schema{[Name="m2_per_department",Kind="View"]}[Data]
+				in
+				    m2_per_department
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
