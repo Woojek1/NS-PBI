@@ -1,0 +1,58 @@
+table d_organization
+	lineageTag: 5f4dcb19-f16c-4cf1-9dbb-64e735d18153
+
+	column org_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1819cbae-274c-46c1-b970-f39461322c21
+		summarizeBy: none
+		sourceColumn: org_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salesperson
+		dataType: string
+		lineageTag: cced5e12-32ee-4c7d-80ce-1ca26bceb538
+		summarizeBy: none
+		sourceColumn: Salesperson
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Salesperson Code'
+		dataType: string
+		lineageTag: b558e19e-e056-40e5-bd71-2294a9b03c9d
+		summarizeBy: none
+		sourceColumn: Salesperson Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_organization = m
+		mode: import
+		source =
+				Value.NativeQuery(Databricks.Catalogs(
+				    "adb-16306551450739.19.azuredatabricks.net",
+				    "/sql/1.0/warehouses/d77ff9935cb3e9fe",
+				    [Catalog="zenith", Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null, MetricViewBiCompatibilityMode=null]
+				    ){[Name="zenith",Kind="Database"]}[Data],
+				    "
+				    select
+				        org_id,
+				        -- dept_name as `Department`,
+				        -- dept_code as `Department Code`,
+				        -- team_code as `Section Code`,
+				        -- team_name as `Section`,
+				        sman_code as `Salesperson Code`,
+				        sman_name as `Salesperson`
+				    from zenith.edw.d_organization",
+				    null,
+				    [EnableFolding=true]
+				)
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

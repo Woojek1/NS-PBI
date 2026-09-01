@@ -1,0 +1,35 @@
+role 'Read Filter Role'
+	modelPermission: read
+
+	tablePermission f_margin75_facts =
+			(
+			[comp_id] in SELECTCOLUMNS(
+			        CALCULATETABLE(
+			            RoleDaxFilter_Comp,
+			            RoleDaxFilter_Comp[user_name]=USERNAME()
+			        ),
+			        "comp_id",
+			        [comp_id]
+			    )
+			) || (
+			[cust_id] in SELECTCOLUMNS(
+			        CALCULATETABLE(
+			            RoleDaxFilter_Cust,
+			            RoleDaxFilter_Cust[user_name]=USERNAME()
+			        ),
+			        "cust_id",
+			        [cust_id]
+			    )
+			) || (
+			[team_id] in SELECTCOLUMNS(
+			        CALCULATETABLE(
+			            RoleDaxFilter_Org,
+			            RoleDaxFilter_Org[user_name]=USERNAME()
+			        ),
+			        "team_id",
+			        [team_id]
+			    )
+			)
+
+	annotation PBI_Id = 4cf0003632db4055aeeec3ca5e6dff24
+
