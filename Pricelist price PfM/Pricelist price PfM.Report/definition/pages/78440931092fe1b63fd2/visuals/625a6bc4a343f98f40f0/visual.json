@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "625a6bc4a343f98f40f0",
   "position": {
-    "x": 20.281690140845068,
-    "y": 113.57746478873239,
+    "x": 0,
+    "y": 112.45714285714287,
     "z": 0,
     "height": 950,
     "width": 1885,
@@ -125,14 +125,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "prod_si_code"
+                      "Entity": "pm_pfm"
                     }
                   },
-                  "Property": "model_code"
+                  "Property": "prod_si_code"
                 }
               },
-              "queryRef": "prod_si_code.model_code",
-              "nativeQueryRef": "model_code"
+              "queryRef": "pm_pfm.prod_si_code",
+              "nativeQueryRef": "prod_si_code"
             }
           ]
         }
@@ -579,20 +579,6 @@
               }
             },
             "Property": "currency_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "73375dac89b9fd55b9f4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "prod_si_code"
-              }
-            },
-            "Property": "model_code"
           }
         },
         "type": "Categorical"
