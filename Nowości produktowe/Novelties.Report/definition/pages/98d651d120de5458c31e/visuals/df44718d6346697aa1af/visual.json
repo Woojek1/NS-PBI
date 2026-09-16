@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "df44718d6346697aa1af",
   "position": {
     "x": 10,
@@ -120,8 +120,8 @@
                 }
               },
               "queryRef": "Sum(novelties_sales_stock.brief_forecast_2026)",
-              "nativeQueryRef": "Brief forecast 2026",
-              "displayName": "Brief forecast 2026"
+              "nativeQueryRef": "Forecast 2026",
+              "displayName": "Forecast 2026"
             },
             {
               "field": {
@@ -160,8 +160,8 @@
                 }
               },
               "queryRef": "Sum(novelties_sales_stock.forecast_realisation_2026)",
-              "nativeQueryRef": "Brief forecast realisation 2026",
-              "displayName": "Brief forecast realisation 2026"
+              "nativeQueryRef": "Forecast realisation 2026",
+              "displayName": "Forecast realisation 2026"
             },
             {
               "field": {
@@ -325,21 +325,16 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "novelties_sales_stock"
-                      }
-                    },
-                    "Property": "val_pln_stock"
+                  "SourceRef": {
+                    "Entity": "novelties_sales_stock"
                   }
                 },
-                "Function": 0
+                "Property": "Linia"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
