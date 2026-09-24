@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "892945b25377ef737584",
   "position": {
     "x": 271.5,
@@ -23,13 +23,13 @@
                       "Entity": "d_time_mon"
                     }
                   },
-                  "Property": "year_name"
+                  "Property": "mon_name"
                 }
               },
-              "queryRef": "d_time_mon.year_name",
-              "nativeQueryRef": "Year",
+              "queryRef": "d_time_mon.mon_name",
+              "nativeQueryRef": "Month",
               "active": true,
-              "displayName": "Year"
+              "displayName": "Month"
             }
           ],
           "fieldParameters": [
@@ -1451,7 +1451,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
@@ -1723,6 +1722,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "isHiddenInViewMode": true
       },
       {
