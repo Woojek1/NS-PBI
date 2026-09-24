@@ -39,13 +39,12 @@
                       "Entity": "novelties_sales_stock"
                     }
                   },
-                  "Property": "index_type_corr_name"
+                  "Property": "index_type_corr_name_en"
                 }
               },
-              "queryRef": "novelties_sales_stock.index_type_corr_name",
-              "nativeQueryRef": "Line type",
-              "active": true,
-              "displayName": "Line type"
+              "queryRef": "novelties_sales_stock.index_type_corr_name_en",
+              "nativeQueryRef": "index_type_corr_name_en",
+              "active": true
             },
             {
               "field": {
@@ -60,7 +59,7 @@
               },
               "queryRef": "novelties_sales_stock.publication_date_p3s",
               "nativeQueryRef": "p3s publication date",
-              "active": true,
+              "active": false,
               "displayName": "p3s publication date"
             },
             {
@@ -76,7 +75,7 @@
               },
               "queryRef": "novelties_sales_stock.months_in_sales",
               "nativeQueryRef": "Months in sales",
-              "active": true,
+              "active": false,
               "displayName": "Months in sales"
             }
           ]
@@ -365,14 +364,16 @@
           },
           {
             "queryRefs": [
-              "novelties_sales_stock.index_type_corr_name"
+              "novelties_sales_stock.index_type_corr_name_en"
             ],
+            "isCollapsed": true,
             "isPinned": true
           },
           {
             "queryRefs": [
               "novelties_sales_stock.publication_date_p3s"
             ],
+            "isCollapsed": true,
             "isPinned": true
           },
           {
@@ -1012,20 +1013,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "fd801a541a9b0f3d15ef",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "novelties_sales_stock"
-              }
-            },
-            "Property": "index_type_corr_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "835cd3a35e6d10781a48",
         "field": {
           "Column": {
@@ -1289,6 +1276,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "1ee93d31e850a4a49060",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales_stock"
+              }
+            },
+            "Property": "index_type_corr_name_en"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

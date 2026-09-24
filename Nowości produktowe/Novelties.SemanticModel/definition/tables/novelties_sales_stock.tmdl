@@ -35,15 +35,6 @@ table novelties_sales_stock
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column index_type_corr_name
-		dataType: string
-		sourceProviderType: nvarchar(65535)
-		lineageTag: cae8ce35-44ba-48b9-a700-5d324977174c
-		summarizeBy: none
-		sourceColumn: index_type_corr_name
-
-		annotation SummarizationSetBy = Automatic
-
 	column invoiced_sale_qty_2025
 		dataType: double
 		formatString: #,0
@@ -165,6 +156,14 @@ table novelties_sales_stock
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column index_type_corr_name_en
+		dataType: string
+		lineageTag: ba0f9426-64eb-4c30-930d-aa6f74e55a52
+		summarizeBy: none
+		sourceColumn: index_type_corr_name_en
+
+		annotation SummarizationSetBy = Automatic
 
 	partition novelties_sales_stock = m
 		mode: import

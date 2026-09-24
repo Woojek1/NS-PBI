@@ -23,7 +23,7 @@ table _Measures
 			
 			CALCULATE(
 			    SUM(novelties_sales_stock[stock_eoy_2026]),
-			    novelties_sales_stock[index_type_corr_name] = "Purchased"
+			    novelties_sales_stock[index_type_corr_name_en] = "Purchased"
 			)
 		formatString: #,0
 		lineageTag: a8f63431-a58f-4d8e-a14b-52b23521ee87
