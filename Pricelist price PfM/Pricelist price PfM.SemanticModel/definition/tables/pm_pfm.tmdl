@@ -193,6 +193,14 @@ table pm_pfm
 
 		annotation SummarizationSetBy = Automatic
 
+	column NOTE_TEXT
+		dataType: string
+		lineageTag: d99bb61c-19cb-40e0-a2f2-d0f2531b4dd5
+		summarizeBy: none
+		sourceColumn: NOTE_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
 	partition pm_pfm = m
 		mode: import
 		source =

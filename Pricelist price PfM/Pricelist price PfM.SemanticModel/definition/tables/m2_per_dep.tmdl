@@ -1,6 +1,11 @@
 table m2_per_dep
 	lineageTag: b50264c9-5452-4b20-b7f6-c11356a1b4d5
 
+	measure m2_proc_dept = SUM(m2_per_dep[m2_proc])
+		lineageTag: a7a69fcb-651c-4d03-9807-97193b957737
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column model_code
 		dataType: string
 		lineageTag: 6b1b9cd5-63eb-4936-b400-b1359b643361
@@ -35,23 +40,21 @@ table m2_per_dep
 
 	column m2_proc
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: c11f00a4-d51d-4825-b33d-0ef4f6ffd037
 		summarizeBy: sum
 		sourceColumn: m2_proc
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column discount_proc
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 5a57b790-aaf1-4761-acdd-e76fee0cd9d6
 		summarizeBy: sum
 		sourceColumn: discount_proc
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition m2_per_dep = m
 		mode: import

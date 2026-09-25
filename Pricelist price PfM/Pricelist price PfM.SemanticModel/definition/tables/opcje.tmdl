@@ -97,6 +97,14 @@ table opcje
 
 		annotation SummarizationSetBy = Automatic
 
+	column NOTE_TEXT
+		dataType: string
+		lineageTag: 3b1d1ed3-3459-4d79-9419-64f00ba485e3
+		summarizeBy: none
+		sourceColumn: NOTE_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
 	partition opcje = m
 		mode: import
 		source =
