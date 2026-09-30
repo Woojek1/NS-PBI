@@ -3,7 +3,7 @@
   "name": "625a6bc4a343f98f40f0",
   "position": {
     "x": 0,
-    "y": 114.28571428571429,
+    "y": 115,
     "z": 0,
     "height": 950.00000000000011,
     "width": 1920.0000000000002,
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "pm_pfm.prod_si_name",
-              "nativeQueryRef": "Pozycja sprzedaży",
-              "displayName": "Pozycja sprzedaży"
+              "nativeQueryRef": "Kod produktu",
+              "displayName": "Kod produktu"
             },
             {
               "field": {
@@ -119,20 +119,6 @@
               "queryRef": "Sum(pm_pfm_a.discount_proc)",
               "nativeQueryRef": "Model Rabat%",
               "displayName": "Model Rabat%"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pm_pfm"
-                    }
-                  },
-                  "Property": "prod_si_code"
-                }
-              },
-              "queryRef": "pm_pfm.prod_si_code",
-              "nativeQueryRef": "prod_si_code"
             }
           ]
         }
@@ -162,7 +148,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "76.26456051776336D"
+                  "Value": "93.98405049954842D"
                 }
               }
             }
@@ -190,7 +176,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "137.42888389682693D"
+                  "Value": "165.78600599903146D"
                 }
               }
             }
@@ -204,7 +190,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "107.0379055083936D"
+                  "Value": "133.69678628698242D"
                 }
               }
             }
@@ -218,7 +204,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "101.36739933324095D"
+                  "Value": "94.2498773628193D"
                 }
               }
             }
@@ -232,7 +218,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "1155.6016249752718D"
+                  "Value": "1171.6072497893554D"
                 }
               }
             }
@@ -466,14 +452,56 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "section": {
               "expr": {
                 "Literal": {
-                  "Value": "'759bf60422a5db69a2e2'"
+                  "Value": "'2c4f6b7488706ba20f3b'"
+                }
+              }
+            },
+            "showActionsInTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "sentenceTemplate": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "showSentenceFormat": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showChartSpecificTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Canvas'"
+                }
+              }
+            },
+            "showTooltipFieldsOnly": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -482,107 +510,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "3566413c87dd487d6db1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pm_pfm"
-              }
-            },
-            "Property": "PRICE_LIST_NO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c769d0d08aeafce030eb",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pm_pfm"
-              }
-            },
-            "Property": "price"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ad18e63af12faba69794",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pm_pfm"
-              }
-            },
-            "Property": "tkw"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "05b32a75cb88bb277aef",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pm_pfm"
-              }
-            },
-            "Property": "m2_proc"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0a325ba33b1446f032c6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pm_pfm"
-              }
-            },
-            "Property": "discount_proc"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "36401e1c5fa2cc2e17df",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pm_pfm"
-              }
-            },
-            "Property": "prod_si_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "2c67319985fa738e457c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pm_pfm"
-              }
-            },
-            "Property": "currency_code"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

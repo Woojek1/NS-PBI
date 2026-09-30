@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "add11ddb4df48bf663b2",
+  "name": "47cafb30078c11edd411",
   "position": {
-    "x": 1535.7142857142858,
-    "y": 10,
-    "z": 3000,
-    "height": 62.857142857142861,
-    "width": 300,
-    "tabOrder": 3000
+    "x": 50,
+    "y": 18,
+    "z": 4000,
+    "height": 73.333333333333343,
+    "width": 1030,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -23,12 +23,13 @@
                       "Entity": "prod_si_code"
                     }
                   },
-                  "Property": "prod_si_code"
+                  "Property": "prod_si_name"
                 }
               },
-              "queryRef": "prod_si_code_a.prod_si_code",
-              "nativeQueryRef": "prod_si_code",
-              "active": true
+              "queryRef": "prod_si_code_a.prod_si_name",
+              "nativeQueryRef": "Kod produktu",
+              "active": true,
+              "displayName": "Kod produktu"
             }
           ]
         }
@@ -62,6 +63,29 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "prod_si_name",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5f2473982744e4843735",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "prod_si_code"
+              }
+            },
+            "Property": "prod_si_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -1,14 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "3a7e464b94779c67be91",
-  "displayName": "Page 2",
+  "displayName": "Options",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920,
   "filterConfig": {
     "filters": [
       {
-        "name": "677b7e69eed34572466c",
+        "name": "c95326ec036902c6ceaa",
         "field": {
           "Column": {
             "Expression": {
@@ -16,60 +16,24 @@
                 "Entity": "prod_si_code"
               }
             },
-            "Property": "catalog_desc"
+            "Property": "prod_si_name"
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "p",
-              "Entity": "prod_si_code",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "p"
-                          }
-                        },
-                        "Property": "catalog_desc"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'eModel 2.0 biurko T-LEG M DW z elektryczną regulacją wysokości'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "Drillthrough"
+        "howCreated": "Drillthrough",
+        "isLockedInViewMode": true
       }
     ]
   },
   "pageBinding": {
     "name": "16a1be9fb2d3a51cfd55",
-    "type": "Drillthrough",
+    "type": "Default",
     "parameters": [
       {
-        "name": "4c6f37e29136f6b0173f",
-        "boundFilter": "677b7e69eed34572466c",
+        "name": "60ad4942c277a323b5da",
+        "boundFilter": "c95326ec036902c6ceaa",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
         "fieldExpr": {
           "Column": {
             "Expression": {
@@ -77,11 +41,10 @@
                 "Entity": "prod_si_code"
               }
             },
-            "Property": "catalog_desc"
+            "Property": "prod_si_name"
           }
         }
       }
     ]
-  },
-  "type": "Drillthrough"
+  }
 }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "9a2d1e0c59e83222a7a9",
   "position": {
-    "x": 50,
+    "x": 0,
     "y": 104,
     "z": 1000,
-    "height": 946,
-    "width": 1834,
+    "height": 962,
+    "width": 1920,
     "tabOrder": 1000
   },
   "visual": {
@@ -15,34 +15,6 @@
       "queryState": {
         "Values": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "prod_si_code"
-                    }
-                  },
-                  "Property": "prod_si_code"
-                }
-              },
-              "queryRef": "prod_si_code_a.prod_si_code",
-              "nativeQueryRef": "prod_si_code"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "opcje"
-                    }
-                  },
-                  "Property": "CATALOG_DESC"
-                }
-              },
-              "queryRef": "opcje.CATALOG_DESC",
-              "nativeQueryRef": "CATALOG_DESC"
-            },
             {
               "field": {
                 "Column": {
@@ -70,8 +42,23 @@
                 }
               },
               "queryRef": "opcje_v2a.option_description",
-              "nativeQueryRef": "Wartość",
-              "displayName": "Wartość"
+              "nativeQueryRef": "Wartość opcji",
+              "displayName": "Wartość opcji"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "prod_si_code"
+                    }
+                  },
+                  "Property": "prod_si_name"
+                }
+              },
+              "queryRef": "prod_si_code.prod_si_name",
+              "nativeQueryRef": "Kod produktu",
+              "displayName": "Kod produktu"
             }
           ]
         }
@@ -112,27 +99,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "322.761740620762D"
+                  "Value": "1114D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "prod_si_code_a.prod_si_code"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "556.9022071312854D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "opcje.CATALOG_DESC"
+            "metadata": "prod_si_code.prod_si_name"
           }
         }
       ],
@@ -177,35 +150,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "44f987e23f73ca9a23cd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "prod_si_code"
-              }
-            },
-            "Property": "prod_si_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "caaa2e4001b5a3cc568f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "opcje"
-              }
-            },
-            "Property": "CATALOG_DESC"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "56f446f852ff23c4992f",
+        "name": "debfbc14438e0a22c948",
         "field": {
           "Column": {
             "Expression": {
@@ -219,7 +164,7 @@
         "type": "Categorical"
       },
       {
-        "name": "389d052184718ae82f71",
+        "name": "5bfbd2f3ab17092a0990",
         "field": {
           "Column": {
             "Expression": {
@@ -228,6 +173,20 @@
               }
             },
             "Property": "option_description"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "123443cb801726844240",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "prod_si_code"
+              }
+            },
+            "Property": "prod_si_name"
           }
         },
         "type": "Categorical"

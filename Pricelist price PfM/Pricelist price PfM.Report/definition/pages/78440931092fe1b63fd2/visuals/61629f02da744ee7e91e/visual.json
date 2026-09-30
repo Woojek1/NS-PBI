@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "61629f02da744ee7e91e",
   "position": {
-    "x": 20,
-    "y": 10,
+    "x": 24.38095238095238,
+    "y": 10.666666666666666,
     "z": 4000,
-    "height": 72.857142857142861,
-    "width": 450.00000000000006,
+    "height": 73.333333333333343,
+    "width": 1030,
     "tabOrder": 4000
   },
   "visual": {
@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "prod_si_code_a.prod_si_name",
-              "nativeQueryRef": "prod_si_name",
+              "nativeQueryRef": "Kod produktu",
               "active": true,
-              "displayName": "Pozycja sprzedaży"
+              "displayName": "Kod produktu"
             }
           ]
         }
@@ -62,6 +62,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "prod_si_name",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

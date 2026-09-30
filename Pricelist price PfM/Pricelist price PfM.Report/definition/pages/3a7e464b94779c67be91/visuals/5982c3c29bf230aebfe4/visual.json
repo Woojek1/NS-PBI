@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "5982c3c29bf230aebfe4",
   "position": {
-    "x": 530.74285714285713,
-    "y": 20.571428571428573,
+    "x": 1582,
+    "y": 20,
     "z": 3000,
     "height": 61.714285714285715,
     "width": 300.34285714285716,
@@ -23,32 +23,16 @@
                       "Entity": "opcje"
                     }
                   },
-                  "Property": "CHARACTERISTIC_ID"
+                  "Property": "option_description"
                 }
               },
-              "queryRef": "opcje_v2a.CHARACTERISTIC_ID",
-              "nativeQueryRef": "CHARACTERISTIC_ID",
-              "active": true
+              "queryRef": "opcje.option_description",
+              "nativeQueryRef": "Wartość opcji",
+              "active": true,
+              "displayName": "Wartość opcji"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "opcje"
-                  }
-                },
-                "Property": "CHARACTERISTIC_ID"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {

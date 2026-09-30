@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "97cd9f55697803f6a5a8",
+  "name": "a3af14cba59d42605981",
   "position": {
-    "x": 822.85714285714289,
+    "x": 1510.0952380952381,
     "y": 10.666666666666666,
-    "z": 1000,
-    "height": 73.142857142857139,
-    "width": 259.04761904761904,
-    "tabOrder": 1000
+    "z": 4001,
+    "height": 73.333333333333343,
+    "width": 363.33333333333337,
+    "tabOrder": 4001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,36 +20,19 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pm_pfm"
+                      "Entity": "opcje"
                     }
                   },
-                  "Property": "PRICE_LIST_NO"
+                  "Property": "NOTE_TEXT"
                 }
               },
-              "queryRef": "pm_pfm_a.PRICE_LIST_NO",
-              "nativeQueryRef": "Pricelist",
+              "queryRef": "opcje.NOTE_TEXT",
+              "nativeQueryRef": "Opis oferty",
               "active": true,
-              "displayName": "Pricelist"
+              "displayName": "Opis oferty"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "pm_pfm"
-                  }
-                },
-                "Property": "PRICE_LIST_NO"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {

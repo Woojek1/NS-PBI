@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "78398fe85c9fc5bde96b",
   "position": {
-    "x": 177.5,
-    "y": 87.5,
+    "x": 0,
+    "y": 0,
     "z": 0,
-    "height": 905,
-    "width": 442.5,
+    "height": 400,
+    "width": 300,
     "tabOrder": 0
   },
   "visual": {
@@ -27,21 +27,8 @@
                 }
               },
               "queryRef": "m2_per_dep.dept_code",
-              "nativeQueryRef": "dept_code"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "m2_per_dep"
-                    }
-                  },
-                  "Property": "model_code"
-                }
-              },
-              "queryRef": "m2_per_dep.model_code",
-              "nativeQueryRef": "model_code"
+              "nativeQueryRef": "Department code",
+              "displayName": "Department code"
             },
             {
               "field": {
@@ -55,7 +42,23 @@
                 }
               },
               "queryRef": "Sum(m2_per_dep.m2_proc)",
-              "nativeQueryRef": "m2_proc"
+              "nativeQueryRef": "M2 %",
+              "displayName": "M2 %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "m2_per_dep"
+                    }
+                  },
+                  "Property": "discount_proc"
+                }
+              },
+              "queryRef": "Sum(m2_per_dep.discount_proc)",
+              "nativeQueryRef": "discount_proc",
+              "displayName": "Discount %"
             }
           ]
         }
@@ -64,71 +67,129 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "m2_per_dep"
-                      }
-                    },
-                    "Property": "m2_proc"
+                  "SourceRef": {
+                    "Entity": "m2_per_dep"
                   }
                 },
-                "Function": 0
+                "Property": "dept_code"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
     },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.75000164832629D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(m2_per_dep.discount_proc)"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(m2_per_dep.discount_proc)"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(m2_per_dep.m2_proc)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d93744b6e1868cd94d2e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "m2_per_dep"
-              }
-            },
-            "Property": "dept_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "2d9cc9d912257007241d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "m2_per_dep"
-              }
-            },
-            "Property": "model_code"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ee44b614cc3b1158d5a4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "m2_per_dep"
-              }
-            },
-            "Property": "m2_proc"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
