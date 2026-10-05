@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "625a6bc4a343f98f40f0",
   "position": {
     "x": 0,
@@ -119,6 +119,20 @@
               "queryRef": "Sum(pm_pfm_a.discount_proc)",
               "nativeQueryRef": "Model Rabat%",
               "displayName": "Model Rabat%"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pm_pfm"
+                    }
+                  },
+                  "Property": "QUOTATION_NO"
+                }
+              },
+              "queryRef": "pm_pfm.QUOTATION_NO",
+              "nativeQueryRef": "QUOTATION_NO"
             }
           ]
         }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "9a2d1e0c59e83222a7a9",
   "position": {
     "x": 0,
@@ -146,51 +146,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "debfbc14438e0a22c948",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "opcje"
-              }
-            },
-            "Property": "characteristic_description"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "5bfbd2f3ab17092a0990",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "opcje"
-              }
-            },
-            "Property": "option_description"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "123443cb801726844240",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "prod_si_code"
-              }
-            },
-            "Property": "prod_si_name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
