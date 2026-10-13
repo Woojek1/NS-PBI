@@ -1,0 +1,259 @@
+table dekompletacja_order_intake_struktura
+	lineageTag: 18582aa2-3bba-4316-b0a1-a60fb52df36e
+
+	measure '% Zmiana' = ```
+			
+			VAR Wynik = DIVIDE([2026] - [2025], [2025], 0)
+			
+			RETURN 
+			    MIN(
+			        MAX(Wynik, -1), 
+			        2
+			    )
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 36b423a3-ecf3-4405-9ba5-da23bc202eee
+
+	measure 2025 = CALCULATE(SUM('dekompletacja_order_intake_struktura'[pln_net_allocated]), 'dekompletacja_order_intake_struktura'[year_struk] = 2025)
+		lineageTag: 81783651-cf27-4e3c-aea5-690206f9f4e0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 2026 = CALCULATE(SUM('dekompletacja_order_intake_struktura'[pln_net_allocated]), 'dekompletacja_order_intake_struktura'[year_struk] = 2026)
+		lineageTag: 506ac61f-783d-48cd-b0d9-c25ae9160925
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '2025 bpln' = CALCULATE(SUM('dekompletacja_order_intake_struktura'[bpln_net_allocated]), 'dekompletacja_order_intake_struktura'[year_struk] = 2025)
+		lineageTag: 06d66d2e-68d2-4f54-af96-e14ef61964a5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '2026 bpln' = CALCULATE(SUM('dekompletacja_order_intake_struktura'[bpln_net_allocated]), 'dekompletacja_order_intake_struktura'[year_struk] = 2026)
+		lineageTag: 7c161b8a-ef83-4054-931e-0840b99e9f22
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Zmiana BPLN' = ```
+			
+			VAR Wynik = DIVIDE([2026 bpln] - [2025 bpln], [2025 bpln], 0)
+			
+			RETURN 
+			    MIN(
+			        MAX(Wynik, -1), 
+			        2
+			    )
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 4a7b27c5-cc3f-49d3-8ef0-707c7f4a6852
+
+	column team_code
+		dataType: string
+		lineageTag: 66baaba9-81b0-4863-95ac-c11bf52b6d01
+		summarizeBy: none
+		sourceColumn: team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_struk = YEAR(dekompletacja_order_intake_struktura[activation_date])
+		formatString: 0
+		lineageTag: c7c9c4c2-440c-4e17-87d6-78510ca64a3d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_struct = WEEKNUM(dekompletacja_order_intake_struktura[activation_date])
+		formatString: 0
+		lineageTag: c1f7d6c7-80ca-4df2-b13f-59c996743d56
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_prod_ti_code
+		dataType: string
+		lineageTag: 4f2ebd44-c719-4dc2-903a-f93f751fc10e
+		summarizeBy: none
+		sourceColumn: src_prod_ti_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_description
+		dataType: string
+		lineageTag: 944972b8-2caa-4dcf-a645-1013096187a2
+		summarizeBy: none
+		sourceColumn: src_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column dept_code
+		dataType: string
+		lineageTag: f91460fc-7d73-4b81-a1e9-b8d4078b17ea
+		summarizeBy: none
+		sourceColumn: dept_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column activation_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 206e7aa7-3e2c-4a54-9126-eb16a2a5e6b6
+		summarizeBy: none
+		sourceColumn: activation_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column qty
+		dataType: double
+		lineageTag: 17e84c52-7c69-486f-a4a7-6f39804e1b4e
+		summarizeBy: sum
+		sourceColumn: qty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pln_net_original
+		dataType: double
+		lineageTag: a820bedd-d58d-470e-b95f-66823d067248
+		summarizeBy: sum
+		sourceColumn: pln_net_original
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column umstr_part_no
+		dataType: string
+		lineageTag: 35d44807-d742-4112-bbd8-985983adf6ea
+		summarizeBy: none
+		sourceColumn: umstr_part_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column umstr
+		dataType: string
+		lineageTag: 140e6beb-280d-4023-a61d-2e27a25eeb98
+		summarizeBy: none
+		sourceColumn: umstr
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_cost_pln
+		dataType: double
+		lineageTag: d3130187-e636-4248-91b1-6aee239eb2d5
+		summarizeBy: sum
+		sourceColumn: total_cost_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column zuzycie
+		dataType: double
+		lineageTag: dc342c80-72a9-4735-baab-ec6b20c3d77b
+		summarizeBy: sum
+		sourceColumn: zuzycie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cost_share
+		dataType: double
+		lineageTag: 158d9cbc-46a8-4afa-857e-9acca01f0775
+		summarizeBy: sum
+		sourceColumn: cost_share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pln_net_allocated
+		dataType: double
+		lineageTag: c2536a73-5f0f-44e2-9c78-aed1b81dd64d
+		summarizeBy: sum
+		sourceColumn: pln_net_allocated
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ACCOUNTING_GROUP
+		dataType: string
+		lineageTag: f36af282-c170-4f8b-bf18-541dbc90795c
+		summarizeBy: none
+		sourceColumn: ACCOUNTING_GROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ac_group = LEFT(dekompletacja_order_intake_struktura[ACCOUNTING_GROUP],1)
+		lineageTag: 48d4d226-96a3-462a-b5c0-7cbea1abe091
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column key2 = CONCATENATE(dekompletacja_order_intake_struktura[year_struk],dekompletacja_order_intake_struktura[week_struct])
+		lineageTag: a1ee91f3-e4d1-41ed-8a27-51d232a48e09
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_code
+		dataType: string
+		lineageTag: 0ecbbcd0-f4ec-4a17-a83f-358dc5d2a289
+		summarizeBy: none
+		sourceColumn: cust_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_name
+		dataType: string
+		lineageTag: a134edfb-3245-474c-b7f8-51b3d3c9a29d
+		summarizeBy: none
+		sourceColumn: cust_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column prj_code
+		dataType: string
+		lineageTag: 7309e52b-7143-42c6-833e-a4f002f42116
+		summarizeBy: none
+		sourceColumn: prj_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column bpln_net_original
+		dataType: double
+		lineageTag: 215bf405-6fe8-4d4a-b863-3fc4b432a1cb
+		summarizeBy: sum
+		sourceColumn: bpln_net_original
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bpln_net_allocated
+		dataType: double
+		lineageTag: c195a364-8f6c-4d37-bffb-3853b4b0e21a
+		summarizeBy: sum
+		sourceColumn: bpln_net_allocated
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dekompletacja_order_intake_struktura = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    bdg2026_Schema = controlling_Database{[Name="bdg2026",Kind="Schema"]}[Data],
+				    dekompletacja_order_intake_struktura_Table = bdg2026_Schema{[Name="dekompletacja_order_intake_struktura",Kind="Table"]}[Data]
+				in
+				    dekompletacja_order_intake_struktura_Table
+
+	annotation PBI_ResultType = Table
+

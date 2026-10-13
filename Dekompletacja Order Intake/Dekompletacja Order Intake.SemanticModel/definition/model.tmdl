@@ -1,0 +1,23 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["dekompletacja_order_intake_struktura","dekompletacja_order_intake_produkty","Calendar","UMSTR_sort"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dekompletacja_order_intake_struktura
+ref table dekompletacja_order_intake_produkty
+ref table Data
+ref table miara
+ref table Calendar
+ref table UMSTR_sort
+
+ref cultureInfo pl-PL
+

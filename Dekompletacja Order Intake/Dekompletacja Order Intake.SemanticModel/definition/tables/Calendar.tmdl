@@ -1,0 +1,134 @@
+table Calendar
+	lineageTag: 2399ea95-5e6c-4aec-9078-45a37f2acd80
+
+	column key
+		dataType: string
+		lineageTag: 1a4ab26b-b2c3-4be6-8026-d2486260339f
+		summarizeBy: none
+		sourceColumn: key
+
+		annotation SummarizationSetBy = Automatic
+
+	column week
+		dataType: int64
+		formatString: 0
+		lineageTag: 67d41796-f1ac-435e-bf8e-7f282e2eb67a
+		summarizeBy: sum
+		sourceColumn: week
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 414de778-abdc-428e-897e-3efec4802870
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 04552c90-c893-4f17-8464-aef7acd1c0ba
+		summarizeBy: none
+		sourceColumn: full_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Calendar = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(
+				        Json.Document(
+				            Binary.Decompress(
+				                Binary.FromText(
+				                    "ZdCxDcAgDETRXagpMMRAZkHZf43YiRQflwIJPbnw91qplqqScvLn/3TlF6sDYzNojIfBwagGytgNOuMwGIzTYDKeBiejFN++/PiJ4qoOqf1DSA2E1EBIDYTUQEgNhNRASA2E1MAtFRhTgT1JuEs3hsN4q3CwbgzTfgThS+jGNn3d",
+				                    BinaryEncoding.Base64
+				                ),
+				                Compression.Deflate
+				            )
+				        ),
+				        let
+				            _t = ((type nullable text) meta [Serialized.Text = true])
+				        in
+				            type table [key = _t, week = _t, year = _t]
+				    ),
+				
+				    #"Changed Type" = Table.TransformColumnTypes(
+				        Source,
+				        {{"key", type text}, {"week", Int64.Type}, {"year", Int64.Type}}
+				    ),
+				
+				    StartDate = #date(2025, 1, 1),
+				    EndDate = Date.From(DateTime.LocalNow()),
+				
+				    DateList = List.Dates(
+				        StartDate,
+				        Duration.Days(EndDate - StartDate) + 1,
+				        #duration(1, 0, 0, 0)
+				    ),
+				
+				    DatesTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),
+				    #"Dates Type" = Table.TransformColumnTypes(DatesTable, {{"Date", type date}}),
+				
+				    #"Added Year" = Table.AddColumn(#"Dates Type", "year", each Date.Year([Date]), Int64.Type),
+				    #"Added Week" = Table.AddColumn(#"Added Year", "week", each Date.WeekOfYear([Date], Day.Monday), Int64.Type),
+				
+				    #"Grouped Rows" = Table.Group(
+				        #"Added Week",
+				        {"year", "week"},
+				        {
+				            {"full_date", each List.Min([Date]), type date}
+				        }
+				    ),
+				
+				    #"Added Key" = Table.AddColumn(
+				        #"Grouped Rows",
+				        "key",
+				        each Text.From([year]) & Text.PadStart(Text.From([week]), 2, "0"),
+				        type text
+				    ),
+				
+				    #"Reordered Columns" = Table.ReorderColumns(
+				        #"Added Key",
+				        {"key", "week", "year", "full_date"}
+				    ),
+				
+				    #"Merged Queries" = Table.NestedJoin(
+				        #"Changed Type",
+				        {"key"},
+				        #"Reordered Columns",
+				        {"key"},
+				        "Dates",
+				        JoinKind.LeftOuter
+				    ),
+				
+				    #"Expanded Dates" = Table.ExpandTableColumn(
+				        #"Merged Queries",
+				        "Dates",
+				        {"full_date"},
+				        {"full_date"}
+				    ),
+				
+				    #"Missing Weeks" = Table.SelectRows(
+				        #"Reordered Columns",
+				        each not List.Contains(#"Changed Type"[key], [key])
+				    ),
+				
+				    #"Combined Tables" = Table.Combine({#"Expanded Dates", #"Missing Weeks"}),
+				
+				    #"Final Sort" = Table.Sort(
+				        #"Combined Tables",
+				        {{"year", Order.Ascending}, {"week", Order.Ascending}}
+				    )
+				in
+				    #"Final Sort"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

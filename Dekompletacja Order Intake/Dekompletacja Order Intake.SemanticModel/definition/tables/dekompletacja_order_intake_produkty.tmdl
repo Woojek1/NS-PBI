@@ -1,0 +1,153 @@
+table dekompletacja_order_intake_produkty
+	lineageTag: 51d78847-e3ef-4d16-b311-3e65fd77fbe7
+
+	column src_prod_ti_code
+		dataType: string
+		lineageTag: 9828d89d-ef44-4fdd-a256-a9e4e3e1a68f
+		summarizeBy: none
+		sourceColumn: src_prod_ti_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_description
+		dataType: string
+		lineageTag: 3c0935ab-3fa3-47d2-b0c6-bde66b9de496
+		summarizeBy: none
+		sourceColumn: src_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column pln_net
+		dataType: double
+		lineageTag: fd7ecc1a-14ca-4a0c-a5d2-522f38fbda3b
+		summarizeBy: sum
+		sourceColumn: pln_net
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column qty
+		dataType: double
+		lineageTag: d0c2b3e1-0c5b-4d1a-8add-014e1e907a07
+		summarizeBy: sum
+		sourceColumn: qty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_unit_price
+		dataType: double
+		lineageTag: bf6dbfc6-3292-4802-b77b-f69e28da85b1
+		summarizeBy: sum
+		sourceColumn: avg_unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dept_code
+		dataType: string
+		lineageTag: 98b09ef0-9147-43cb-80a1-791f80cf6aa4
+		summarizeBy: none
+		sourceColumn: dept_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_status
+		dataType: string
+		lineageTag: 66ce22ea-8965-4eb8-8972-072ececd62cb
+		summarizeBy: none
+		sourceColumn: part_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_code
+		dataType: string
+		lineageTag: 040fa5ff-c107-4381-b655-2fd25275ab20
+		summarizeBy: none
+		sourceColumn: team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_code
+		dataType: string
+		lineageTag: 31d5da89-3d92-4655-a6fe-72f974309e72
+		summarizeBy: none
+		sourceColumn: month_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column weight
+		dataType: double
+		lineageTag: 65a1ae12-0109-4250-8067-2836c2e3b976
+		summarizeBy: sum
+		sourceColumn: weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rank_position
+		dataType: int64
+		formatString: 0
+		lineageTag: aba2a187-2f52-4fa5-9cc6-233af88d8ded
+		summarizeBy: sum
+		sourceColumn: rank_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column calculated_qty
+		dataType: double
+		lineageTag: 3efeb3da-6f16-4310-9d69-3627fd6d86ac
+		summarizeBy: sum
+		sourceColumn: calculated_qty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column calculated_pln
+		dataType: double
+		lineageTag: eaa6bdf5-4ef1-48bf-8a5d-bb28604e7eb7
+		summarizeBy: sum
+		sourceColumn: calculated_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column year = YEAR(dekompletacja_order_intake_produkty[month_code])
+		formatString: 0
+		lineageTag: 16e34597-4ce8-4f7e-afcf-93ad7ca672ba
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column week = WEEKNUM(dekompletacja_order_intake_produkty[month_code])
+		formatString: 0
+		lineageTag: a2236ddb-b07d-47cb-8890-816cc3fcbf3b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column key = CONCATENATE(dekompletacja_order_intake_produkty[year],dekompletacja_order_intake_produkty[week])
+		lineageTag: 748dcb45-d0f9-4965-88d8-560d0c0971a2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dekompletacja_order_intake_produkty = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    bdg2026_Schema = controlling_Database{[Name="bdg2026",Kind="Schema"]}[Data],
+				    dekompletacja_order_intake_produkty_Table = bdg2026_Schema{[Name="dekompletacja_order_intake_produkty",Kind="Table"]}[Data]
+				in
+				    dekompletacja_order_intake_produkty_Table
+
+	annotation PBI_ResultType = Table
+

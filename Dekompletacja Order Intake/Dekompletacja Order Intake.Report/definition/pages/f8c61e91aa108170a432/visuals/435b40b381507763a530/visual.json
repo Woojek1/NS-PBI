@@ -1,0 +1,297 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "435b40b381507763a530",
+  "position": {
+    "x": 107.05882352941177,
+    "y": 30,
+    "z": 0,
+    "height": 647.05882352941182,
+    "width": 1052.9411764705883,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "1. Przygotowanie i \"dekompletacja\" danych sprzedażowych (Order Intake)"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Zanim algorytm podzieli wartość na zakłady, musi ustalić, co dokładnie zostało sprzedane."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Filtrowanie czasowe (SPLY):",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Algorytm pobiera dane dla bieżącego roku (2026) oraz analogicznego okresu roku poprzedniego (2025), precyzyjnie wyrównując dni tygodnia, aby umożliwić miarodajne porównania rok do roku."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Obsługa standardowych produktów:",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Typowe produkty są pobierane bezpośrednio z systemu w ich nominalnych wartościach."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Dekompletacja NPOZ (Niestandardowych Pozycji):",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " To kluczowy mechanizm dla działów fasadowych i projektowych (np. D-DE-FS, D-PL-FS). Kiedy sprzedawany jest tzw. \"produkt-worek\" (NPOZ-0001), algorytm zagląda do systemu IFS (linii zamówień klienta), aby sprawdzić, z jakich rzeczywistych części składa się to zamówienie. Następnie rozbija wartość całego zamówienia NPOZ na te części, zachowując ich systemowe proporcje wartościowe."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Zastępowanie \"wydmuszek\":",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Jeśli w systemie sprzedano produkt wirtualny/zastępczy (wydmuszkę), algorytm podmienia go na właściwy indeks produkcyjny na podstawie słownika mapowań. - Kod od Wiktora i Dominika"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. Rozbicie struktury produktowej (Eksplozja BOM)"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Aby wiedzieć, kto produkuje dany element, algorytm musi poznać \"przepis\" na każdy produkt (Bill of Materials - BOM)."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Iteracyjne schodzenie w dół:",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Kod (część w Pythonie) przechodzi przez strukturę produktu poziom po poziomie (aż do 25 poziomów w dół)."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Przypisanie zakładu:",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Dla każdego napotkanego komponentu algorytm sprawdza w tabelach kosztowych, w którym zakładzie ("
+                  },
+                  {
+                    "value": "contract",
+                    "textStyle": {
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                    "value": " / "
+                  },
+                  {
+                    "value": "umstr",
+                    "textStyle": {
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                    "value": ") dany detal jest produkowany."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. Wycena komponentów i określenie \"Wartości Dodanej\""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Gdy znana jest już struktura i zakłady produkcyjne, algorytm wycenia każdy komponent, aby ustalić jego wagę w całym produkcie:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Baza kosztowa:",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Używany jest standardowy koszt wytworzenia (zazwyczaj COST_SET = 2)."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Przelicznik walutowy/narzut dla spółek powiązanych:",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Koszty dla komponentów pochodzących z zakładów RGA i KDA są mnożone przez stały współczynnik "
+                  },
+                  {
+                    "value": "4.28",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " (najprawdopodobniej sztywny kurs wymiany walut w budżetowaniu lub specjalny narzut wewnątrzgrupowy)."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Wyodrębnienie wartości dodanej (Czysty Koszt Montażu):",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " To bardzo ważny punkt biznesowy. Jeśli produkt A składa się z komponentu B i C, to koszt produktu A w systemie zawiera już w sobie koszty B i C. Aby uniknąć podwójnego liczenia, algorytm od kosztu produktu gotowego odejmuje zsumowane koszty jego podzespołów. Dzięki temu do zakładu montującego produkt gotowy trafia tylko ta część wartości, która odpowiada za sam montaż (jego własną \"wartość dodaną\")."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "4. Ostateczna Alokacja (Rozsmarowanie wartości na zakłady)"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "To faza łączenia danych sprzedażowych z danymi produkcyjno-kosztowymi:"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Klucz podziału (",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "cost_share",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                    "value": "):",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Algorytm dzieli koszt danego komponentu (skalkulowany w kroku 3) przez całkowity koszt wytworzenia produktu gotowego. W ten sposób powstaje procentowy udział każdego zakładu. (Npr. Zakład X odpowiada za 30% kosztów, Zakład Y za 70%)."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Rozsmarowanie marży/przychodów:",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Wartość sprzedaży netto (Order Intake PLN) z kroku 1 jest mnożona przez ten procentowy udział. W efekcie sprzedaż jednego produktu zostaje podzielona na \"kawałki\" i przypisana do odpowiednich fabryk."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Obsługa wyjątków (Fallback):",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " Jeśli produkt nie ma zdefiniowanej struktury BOM i algorytm nie wie, jak go podzielić, wrzuca całą jego wartość do wirtualnego \"wiadra\" opisanego jako OTHER (lub OTHER_FS dla sekcji projektowych)."
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "f17468ff5aeca94636a3",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 350,
+    "width": 600,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "cust_name"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.cust_name",
+              "nativeQueryRef": "Customer",
+              "displayName": "Customer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "prj_code"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.prj_code",
+              "nativeQueryRef": "Projekt",
+              "displayName": "Projekt"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "2025"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.2025",
+              "nativeQueryRef": "2025"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "2026"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.2026",
+              "nativeQueryRef": "2026"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dekompletacja_order_intake_struktura"
+                  }
+                },
+                "Property": "2026"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "207.95327330490008D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dekompletacja_order_intake_struktura.cust_name"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dekompletacja_order_intake_struktura.2026"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dekompletacja_order_intake_struktura.2025"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

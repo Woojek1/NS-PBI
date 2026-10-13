@@ -1,0 +1,34 @@
+table UMSTR_sort
+	lineageTag: 52413185-4283-49dd-b6b9-e3560c6187db
+
+	column umstr
+		dataType: string
+		lineageTag: b59c2c68-42a4-4b7c-9839-ed10de1caff2
+		summarizeBy: none
+		sourceColumn: umstr
+		sortByColumn: sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort
+		dataType: int64
+		formatString: 0
+		lineageTag: f8b7113c-7b63-4a39-be10-d6316119385e
+		summarizeBy: none
+		sourceColumn: sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UMSTR_sort = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8gsOV9JRMlSK1QGxnYFsIyjbDcg2hrJdgGwTMNs/xMM1KN4tGChgDhYITi0qy0xOLQYKWCBUAHmWYF6QuyOQbQpme7uA2GZKsbEA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [umstr = _t, sort = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"umstr", type text}, {"sort", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "239e4580e2984858fc4c",
+  "position": {
+    "x": 16.771084337349397,
+    "y": 322.12048192771084,
+    "z": 3000,
+    "height": 227.85542168674698,
+    "width": 196.04819277108433,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "ac_group"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.ac_group",
+              "nativeQueryRef": "Grupa Księgowa Sprzedawanej Pozycji",
+              "active": true,
+              "displayName": "Grupa Księgowa Sprzedawanej Pozycji"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dekompletacja_order_intake_struktura"
+                  }
+                },
+                "Property": "ac_group"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Grupa Księgowa Sprzedawanej Pozycji'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "014f6bf31a3b2b995de2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "ac_group"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

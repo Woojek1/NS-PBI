@@ -1,0 +1,260 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "6ad1fc846dd7518d9497",
+  "position": {
+    "x": 5.1428571428571432,
+    "y": 88,
+    "z": 0,
+    "height": 618.28571428571433,
+    "width": 1237.1428571428571,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "umstr"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.umstr",
+              "nativeQueryRef": "umstr"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "src_prod_ti_code"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.src_prod_ti_code",
+              "nativeQueryRef": "src_prod_ti_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "umstr_part_no"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.umstr_part_no",
+              "nativeQueryRef": "umstr_part_no"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dekompletacja_order_intake_struktura"
+                        }
+                      },
+                      "Property": "pln_net_allocated"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dekompletacja_order_intake_struktura.pln_net_allocated)",
+              "nativeQueryRef": "PLN allocated",
+              "displayName": "PLN allocated"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "dept_code"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.dept_code",
+              "nativeQueryRef": "dept_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "team_code"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.team_code",
+              "nativeQueryRef": "team_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "ac_group"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.ac_group",
+              "nativeQueryRef": "acc_group",
+              "displayName": "acc_group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "src_description"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.src_description",
+              "nativeQueryRef": "src_description"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "dekompletacja_order_intake_struktura"
+                      }
+                    },
+                    "Property": "pln_net_allocated"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(dekompletacja_order_intake_struktura.pln_net_allocated)"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b13b1dca69a5d242ee15",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "week_struct"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dekompletacja_order_intake_struktura",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "week_struct"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "53L"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1219 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "9f6c8c72ec37a29a7906",
+  "position": {
+    "x": 491.15113547376666,
+    "y": 321.7541111981206,
+    "z": 2000,
+    "height": 363.85277995301487,
+    "width": 752.7642913077525,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "UMSTR_sort"
+                    }
+                  },
+                  "Property": "umstr"
+                }
+              },
+              "queryRef": "UMSTR_sort.umstr",
+              "nativeQueryRef": "umstr",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "src_prod_ti_code"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.src_prod_ti_code",
+              "nativeQueryRef": "src_prod_ti_code",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "cust_name"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.cust_name",
+              "nativeQueryRef": "cust_name",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "2025"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.2025",
+              "nativeQueryRef": "2025"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "2026"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.2026",
+              "nativeQueryRef": "2026"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "% Zmiana"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.% Zmiana",
+              "nativeQueryRef": "% Zmiana"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "2025 bpln"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.2025 bpln",
+              "nativeQueryRef": "2025 bpln"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "2026 bpln"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.2026bpln",
+              "nativeQueryRef": "2026 bpln"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "% Zmiana BPLN"
+                }
+              },
+              "queryRef": "dekompletacja_order_intake_struktura.% Zmiana BPLN",
+              "nativeQueryRef": "% Zmiana BPLN"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dekompletacja_order_intake_struktura"
+                  }
+                },
+                "Property": "2026"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "UMSTR_sort.umstr"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "UMSTR_sort"
+                    }
+                  },
+                  "Property": "umstr"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dekompletacja_order_intake_struktura.src_prod_ti_code"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dekompletacja_order_intake_struktura"
+                    }
+                  },
+                  "Property": "src_prod_ti_code"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dekompletacja_order_intake_struktura.cust_name"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dekompletacja_order_intake_struktura.2025"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dekompletacja_order_intake_struktura.2026"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dekompletacja_order_intake_struktura.2025 bpln"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dekompletacja_order_intake_struktura.2026bpln"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "icon": {
+              "kind": "Icon",
+              "layout": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Before'"
+                  }
+                }
+              },
+              "verticalAlignment": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Top'"
+                  }
+                }
+              },
+              "value": {
+                "expr": {
+                  "Conditional": {
+                    "Cases": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 4,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "dekompletacja_order_intake_struktura"
+                                  }
+                                },
+                                "Property": "% Zmiana"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "-0.05D"
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleRedPatternFill'"
+                          }
+                        }
+                      },
+                      {
+                        "Condition": {
+                          "And": {
+                            "Left": {
+                              "Comparison": {
+                                "ComparisonKind": 2,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "dekompletacja_order_intake_struktura"
+                                      }
+                                    },
+                                    "Property": "% Zmiana"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "-0.05D"
+                                  }
+                                }
+                              }
+                            },
+                            "Right": {
+                              "Comparison": {
+                                "ComparisonKind": 3,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "dekompletacja_order_intake_struktura"
+                                      }
+                                    },
+                                    "Property": "% Zmiana"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "0.05D"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleYellowPatternFill'"
+                          }
+                        }
+                      },
+                      {
+                        "Condition": {
+                          "And": {
+                            "Left": {
+                              "Comparison": {
+                                "ComparisonKind": 2,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "dekompletacja_order_intake_struktura"
+                                      }
+                                    },
+                                    "Property": "% Zmiana"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "0.05D"
+                                  }
+                                }
+                              }
+                            },
+                            "Right": {
+                              "Comparison": {
+                                "ComparisonKind": 4,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "dekompletacja_order_intake_struktura"
+                                      }
+                                    },
+                                    "Property": "% Zmiana"
+                                  }
+                                },
+                                "Right": {
+                                  "RangePercent": {
+                                    "Min": {
+                                      "ScopedEval": {
+                                        "Expression": {
+                                          "Aggregation": {
+                                            "Expression": {
+                                              "ScopedEval": {
+                                                "Expression": {
+                                                  "Measure": {
+                                                    "Expression": {
+                                                      "SourceRef": {
+                                                        "Entity": "dekompletacja_order_intake_struktura"
+                                                      }
+                                                    },
+                                                    "Property": "% Zmiana"
+                                                  }
+                                                },
+                                                "Scope": [
+                                                  {
+                                                    "AllRolesRef": {}
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "Function": 3
+                                          }
+                                        },
+                                        "Scope": []
+                                      }
+                                    },
+                                    "Max": {
+                                      "ScopedEval": {
+                                        "Expression": {
+                                          "Aggregation": {
+                                            "Expression": {
+                                              "ScopedEval": {
+                                                "Expression": {
+                                                  "Measure": {
+                                                    "Expression": {
+                                                      "SourceRef": {
+                                                        "Entity": "dekompletacja_order_intake_struktura"
+                                                      }
+                                                    },
+                                                    "Property": "% Zmiana"
+                                                  }
+                                                },
+                                                "Scope": [
+                                                  {
+                                                    "AllRolesRef": {}
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "Function": 4
+                                          }
+                                        },
+                                        "Scope": []
+                                      }
+                                    },
+                                    "Percent": 0.99
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleGreenPatternFill'"
+                          }
+                        }
+                      },
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "dekompletacja_order_intake_struktura"
+                                  }
+                                },
+                                "Property": "% Zmiana"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "2D"
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "null"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "dekompletacja_order_intake_struktura"
+                                    }
+                                  },
+                                  "Property": "% Zmiana"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "2D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFFFFF'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "dekompletacja_order_intake_struktura.% Zmiana"
+          }
+        },
+        {
+          "properties": {
+            "icon": {
+              "kind": "Icon",
+              "layout": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Before'"
+                  }
+                }
+              },
+              "verticalAlignment": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Top'"
+                  }
+                }
+              },
+              "value": {
+                "expr": {
+                  "Conditional": {
+                    "Cases": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 4,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "dekompletacja_order_intake_struktura"
+                                  }
+                                },
+                                "Property": "% Zmiana BPLN"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "-0.05D"
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleRedPatternFill'"
+                          }
+                        }
+                      },
+                      {
+                        "Condition": {
+                          "And": {
+                            "Left": {
+                              "Comparison": {
+                                "ComparisonKind": 2,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "dekompletacja_order_intake_struktura"
+                                      }
+                                    },
+                                    "Property": "% Zmiana BPLN"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "-0.05D"
+                                  }
+                                }
+                              }
+                            },
+                            "Right": {
+                              "Comparison": {
+                                "ComparisonKind": 3,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "dekompletacja_order_intake_struktura"
+                                      }
+                                    },
+                                    "Property": "% Zmiana BPLN"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "0.05D"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleYellowPatternFill'"
+                          }
+                        }
+                      },
+                      {
+                        "Condition": {
+                          "And": {
+                            "Left": {
+                              "Comparison": {
+                                "ComparisonKind": 2,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "dekompletacja_order_intake_struktura"
+                                      }
+                                    },
+                                    "Property": "% Zmiana BPLN"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "0.05D"
+                                  }
+                                }
+                              }
+                            },
+                            "Right": {
+                              "Comparison": {
+                                "ComparisonKind": 3,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Entity": "dekompletacja_order_intake_struktura"
+                                      }
+                                    },
+                                    "Property": "% Zmiana BPLN"
+                                  }
+                                },
+                                "Right": {
+                                  "RangePercent": {
+                                    "Min": {
+                                      "ScopedEval": {
+                                        "Expression": {
+                                          "Aggregation": {
+                                            "Expression": {
+                                              "ScopedEval": {
+                                                "Expression": {
+                                                  "Measure": {
+                                                    "Expression": {
+                                                      "SourceRef": {
+                                                        "Entity": "dekompletacja_order_intake_struktura"
+                                                      }
+                                                    },
+                                                    "Property": "% Zmiana BPLN"
+                                                  }
+                                                },
+                                                "Scope": [
+                                                  {
+                                                    "AllRolesRef": {}
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "Function": 3
+                                          }
+                                        },
+                                        "Scope": []
+                                      }
+                                    },
+                                    "Max": {
+                                      "ScopedEval": {
+                                        "Expression": {
+                                          "Aggregation": {
+                                            "Expression": {
+                                              "ScopedEval": {
+                                                "Expression": {
+                                                  "Measure": {
+                                                    "Expression": {
+                                                      "SourceRef": {
+                                                        "Entity": "dekompletacja_order_intake_struktura"
+                                                      }
+                                                    },
+                                                    "Property": "% Zmiana BPLN"
+                                                  }
+                                                },
+                                                "Scope": [
+                                                  {
+                                                    "AllRolesRef": {}
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "Function": 4
+                                          }
+                                        },
+                                        "Scope": []
+                                      }
+                                    },
+                                    "Percent": 0.99
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleGreenPatternFill'"
+                          }
+                        }
+                      },
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "dekompletacja_order_intake_struktura"
+                                  }
+                                },
+                                "Property": "% Zmiana BPLN"
+                              }
+                            },
+                            "Right": {
+                              "RangePercent": {
+                                "Min": {
+                                  "ScopedEval": {
+                                    "Expression": {
+                                      "Aggregation": {
+                                        "Expression": {
+                                          "ScopedEval": {
+                                            "Expression": {
+                                              "Measure": {
+                                                "Expression": {
+                                                  "SourceRef": {
+                                                    "Entity": "dekompletacja_order_intake_struktura"
+                                                  }
+                                                },
+                                                "Property": "% Zmiana BPLN"
+                                              }
+                                            },
+                                            "Scope": [
+                                              {
+                                                "AllRolesRef": {}
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "Function": 3
+                                      }
+                                    },
+                                    "Scope": []
+                                  }
+                                },
+                                "Max": {
+                                  "ScopedEval": {
+                                    "Expression": {
+                                      "Aggregation": {
+                                        "Expression": {
+                                          "ScopedEval": {
+                                            "Expression": {
+                                              "Measure": {
+                                                "Expression": {
+                                                  "SourceRef": {
+                                                    "Entity": "dekompletacja_order_intake_struktura"
+                                                  }
+                                                },
+                                                "Property": "% Zmiana BPLN"
+                                              }
+                                            },
+                                            "Scope": [
+                                              {
+                                                "AllRolesRef": {}
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "Function": 4
+                                      }
+                                    },
+                                    "Scope": []
+                                  }
+                                },
+                                "Percent": 0.02
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "null"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "dekompletacja_order_intake_struktura"
+                                    }
+                                  },
+                                  "Property": "% Zmiana BPLN"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "2D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFFFFF'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "dekompletacja_order_intake_struktura.% Zmiana BPLN"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "215.7583630417533D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "UMSTR_sort.umstr"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'9e7f6d2f9e55b6e837dd'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Order Intake po umiejscowieniach'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b13b1dca69a5d242ee15",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "week_struct"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dekompletacja_order_intake_struktura",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "week_struct"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "53L"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "933a8b262604cf977054",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "src_prod_ti_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "44750deb9bca58852247",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "cust_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2d93fda8a65c667d56f8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "2025"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bfbe651a6e5299504769",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "2026"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e31f887a41814375b5f1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "% Zmiana"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9d2692a664bdbae1da72",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "UMSTR_sort"
+              }
+            },
+            "Property": "umstr"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8aff7c3b2cdeeca4ac13",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "2025 bpln"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8a5d8eb44b118701e6ba",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "2026 bpln"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "33e44cfdce3daf6285c3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dekompletacja_order_intake_struktura"
+              }
+            },
+            "Property": "% Zmiana BPLN"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

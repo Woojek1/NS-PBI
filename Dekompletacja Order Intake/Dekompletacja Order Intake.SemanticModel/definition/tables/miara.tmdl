@@ -1,0 +1,47 @@
+table miara
+	lineageTag: 09a42bb2-3199-4ef0-8c91-5f08afdbcea8
+
+	column miara
+		lineageTag: a3aeae33-90e6-4caf-95b4-d5a6f744fa1c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Kolejność miara'
+
+		relatedColumnDetails
+			groupByColumn: 'Pola: miara'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pola: miara'
+		isHidden
+		lineageTag: eb1b3b06-ad8b-473f-aef3-f4417ad39128
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Kolejność miara'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kolejność miara'
+		isHidden
+		formatString: 0
+		lineageTag: 3a17f230-6d07-49b2-8dd0-8cb302ecbea0
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition miara = calculated
+		mode: import
+		source =
+				{
+				    ("Order Intake", NAMEOF('dekompletacja_order_intake_struktura'[order_intake]), 0)
+				}
+
+	annotation PBI_Id = 4bac716598f446b9bfd794f7dbf25d64
+

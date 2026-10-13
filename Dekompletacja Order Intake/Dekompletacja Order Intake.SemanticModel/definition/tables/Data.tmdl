@@ -1,0 +1,48 @@
+table Data
+	lineageTag: 6e524c01-8dc2-4fbd-8d6f-7b244c05cd09
+
+	column Data
+		lineageTag: 379d948e-eb30-44f3-ae3a-b9476a9508ce
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Kolejność Data'
+
+		relatedColumnDetails
+			groupByColumn: 'Pola: Data'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pola: Data'
+		isHidden
+		lineageTag: c4c126f2-8c29-4e80-b0e7-d87947e1730d
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Kolejność Data'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kolejność Data'
+		isHidden
+		formatString: 0
+		lineageTag: 69f88723-cd27-49f3-b32b-a30b81b751d4
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data = calculated
+		mode: import
+		source =
+				{
+				    ("year", NAMEOF('dekompletacja_order_intake_struktura'[year_struk]), 0),
+				    ("week", NAMEOF('dekompletacja_order_intake_struktura'[week_struct]), 1)
+				}
+
+	annotation PBI_Id = c87f347ea2b844e8abb7896aee536148
+
