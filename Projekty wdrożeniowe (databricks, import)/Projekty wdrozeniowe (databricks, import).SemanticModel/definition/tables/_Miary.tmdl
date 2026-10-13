@@ -65,7 +65,7 @@ table _Miary
 	measure 'Budzet projektu' = ```
 			
 			
-			SUM(vm_pbi_d_projects_budget[debet_amount])
+			SUM(vm_pbi_d_projects_budget[amount])
 			
 			```
 		formatString: #,0.00
@@ -267,8 +267,10 @@ table _Miary
 
 	measure 'Budget Type' =
 			
-			SELECTEDVALUE(
-			    vm_pbi_d_projects_budget[budget_type]
+			CONCATENATEX(
+			    VALUES(vm_pbi_d_projects_budget[budget_type]),
+			    vm_pbi_d_projects_budget[budget_type],
+			    ", "
 			)
 		lineageTag: 89d7cbf1-1c09-4631-92ae-968831b2acbd
 

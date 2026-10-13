@@ -65,6 +65,26 @@ table vm_pbi_d_projects_budget
 
 		annotation SummarizationSetBy = Automatic
 
+	column credit_amount
+		dataType: double
+		lineageTag: f40f68e5-5dd7-497d-a8a7-262572526973
+		summarizeBy: sum
+		sourceColumn: credit_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount
+		dataType: double
+		lineageTag: 22cb978b-2341-4019-97b1-245e9b26ae17
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition vm_pbi_d_projects_budget = m
 		mode: import
 		source = ```
@@ -80,7 +100,9 @@ table vm_pbi_d_projects_budget
 				        code_f,
 				        code_c,
 				        voucher_date,
-				        debet_amount
+				        debet_amount,
+				        credit_amount,
+				        amount
 				    from controlling.capex_implement.vm_pbi_d_projects_budget
 				    ",
 				    null,
@@ -92,6 +114,7 @@ table vm_pbi_d_projects_budget
 				    each 
 				        if Text.End([code_c], 2) = "ST" then "Standardowy"
 				        else if Text.End([code_c], 2) = "EX" then "Extra"
+				        else if Text.End([code_c], 2) = "CH" then "Zmiana"
 				        else Text.End([code_c], 2),
 				    type text
 				),

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "8d2528c6ad0a1054bedd",
   "position": {
     "x": 0,
@@ -62,6 +62,21 @@
             },
             {
               "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vm_pbi_d_gl_project"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "vm_pbi_d_gl_project.status",
+              "nativeQueryRef": "Status",
+              "displayName": "Status"
+            },
+            {
+              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
@@ -77,23 +92,17 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "vm_pbi_d_projects_budget"
-                        }
-                      },
-                      "Property": "debet_amount"
+                    "SourceRef": {
+                      "Entity": "_Miary"
                     }
                   },
-                  "Function": 0
+                  "Property": "Budzet projektu"
                 }
               },
-              "queryRef": "Sum(vm_pbi_d_projects_budget.debet_amount)",
-              "nativeQueryRef": "Budżet",
-              "displayName": "Budżet"
+              "queryRef": "_Miary.Budzet projektu",
+              "nativeQueryRef": "Budzet projektu"
             },
             {
               "field": {
@@ -236,16 +245,16 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Miary"
+                    "Entity": "vm_pbi_d_gl_project"
                   }
                 },
-                "Property": "Wydatki"
+                "Property": "hprj_code"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -411,20 +420,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "121.55281436320446D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(vm_pbi_d_projects_budget.debet_amount)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "87.2608454497415D"
                 }
               }
@@ -537,13 +532,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "126.66666949236954D"
+                  "Value": "177.4072791014584D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "_Miary.Budget Type"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "243.91557328255988D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vm_pbi_d_gl_project.status"
           }
         }
       ],
@@ -956,41 +965,6 @@
         },
         {
           "properties": {
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(vm_pbi_d_projects_budget.debet_amount)"
-          }
-        },
-        {
-          "properties": {
             "styleTotal": {
               "expr": {
                 "Literal": {
@@ -1279,7 +1253,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -1374,5 +1348,219 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cb2a0d212aa73785018e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "hprj_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "654d51c765548f0c10ff",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "prj_desc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "72c95f7d049d8464f74b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "38ad89eae70994f721b6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vm_pbi_d_gl_project"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ae134ec74c881307bf32",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Budget Type"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "23bd051ab41786c4727b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "de2a841422c6b8ac5aaf",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-01"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "143a998e1d88a1838d95",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-02"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bf90911e43d7d3808275",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-03"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e3ceb534aab6a1fa2227",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-04"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d23c08c80d86c0d48481",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-05"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "55546a35953a9c5f5d2e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-06"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ab468cf95afd15c71c2d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-07"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a12aa0c07f3460ad356b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki - A-WDR-99"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "600fa9a26f9af7ec6ce8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Budzet projektu"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
