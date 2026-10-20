@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d53603ea3aa2ae4ce63a",
   "position": {
     "x": 1555.2,
@@ -120,6 +120,67 @@
                 "Literal": {
                   "Value": "true"
                 }
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "v",
+                    "Entity": "vm_pbi_d_gl_project",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Or": {
+                        "Left": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "v"
+                                  }
+                                },
+                                "Property": "prj_desc"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'W-26NS0502'"
+                              }
+                            }
+                          }
+                        },
+                        "Right": {
+                          "Contains": {
+                            "Left": {
+                              "Column": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "v"
+                                  }
+                                },
+                                "Property": "hprj_code"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'W-26NS0502'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
               }
             }
           }

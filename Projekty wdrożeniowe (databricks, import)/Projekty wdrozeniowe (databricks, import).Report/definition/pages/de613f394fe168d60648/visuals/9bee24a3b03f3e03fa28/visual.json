@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "9bee24a3b03f3e03fa28",
   "position": {
     "x": 0,
@@ -867,7 +867,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e84a1f76c3a605e646ff",
+        "name": "6db6393dcfb7f6ed3525",
         "field": {
           "Column": {
             "Expression": {
@@ -881,7 +881,7 @@
         "type": "Categorical"
       },
       {
-        "name": "a0f267a166ae7e92bbf0",
+        "name": "cfed57d48068c537fe86",
         "field": {
           "Column": {
             "Expression": {
@@ -895,7 +895,7 @@
         "type": "Categorical"
       },
       {
-        "name": "fb0ac40c7fa772bcebf4",
+        "name": "58eb27f1b960951c9c6f",
         "field": {
           "Column": {
             "Expression": {
@@ -909,21 +909,7 @@
         "type": "Categorical"
       },
       {
-        "name": "d2cace29a8756bf38ea1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_time_mon"
-              }
-            },
-            "Property": "year_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b9673b0c55f37a331c9a",
+        "name": "d36069f779b8f30ff0d0",
         "field": {
           "Measure": {
             "Expression": {
@@ -935,6 +921,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "047bd0ae045243b0bf0b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

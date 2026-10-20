@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "82189ff439435403c483",
   "position": {
     "x": 0,
@@ -1468,5 +1468,93 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "99ddf53d2c5e7c3175a6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_time_mon"
+              }
+            },
+            "Property": "year_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e76a6b5bda0f23255eb2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_impl_cat_cost"
+              }
+            },
+            "Property": "impl_cat_cost_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "04bb145b4954d57b84ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_c"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6d236220cdafa26b6f3d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_code_d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "12b1ed70c96739c87d89",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_capex_imp_cost_data"
+              }
+            },
+            "Property": "src_text"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c2a26c0b03158a630592",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Wydatki"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
