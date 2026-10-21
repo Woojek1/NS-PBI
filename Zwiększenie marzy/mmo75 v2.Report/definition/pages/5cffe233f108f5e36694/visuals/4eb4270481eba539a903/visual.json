@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "4eb4270481eba539a903",
+  "position": {
+    "x": 882,
+    "y": 88,
+    "z": 3001,
+    "height": 966,
+    "width": 1018,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "d_product"
+                    }
+                  },
+                  "Property": "Line"
+                }
+              },
+              "queryRef": "d_product.Line",
+              "nativeQueryRef": "Line"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Net Sales PLN"
+                }
+              },
+              "queryRef": "f_margin75_facts.Net Sales PLN",
+              "nativeQueryRef": "Net Sales PLN"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "Margin I % (PLN)"
+                }
+              },
+              "queryRef": "f_margin75_facts.Margin I % (PLN)",
+              "nativeQueryRef": "Margin I % (PLN)",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_margin75_facts"
+                    }
+                  },
+                  "Property": "!Discount% (PLN)"
+                }
+              },
+              "queryRef": "f_margin75_facts.!Discount% (PLN)",
+              "nativeQueryRef": "!Discount% (PLN)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1e66c2bb046492e88e13",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_margin75_facts"
+              }
+            },
+            "Property": "Margin I % (PLN)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
