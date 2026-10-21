@@ -2614,9 +2614,208 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "novelties_sales_stock.index_type_corr_name_en": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "novelties_sales_stock",
+			          "ConceptualProperty": "index_type_corr_name_en"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "index type corr name en": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "index_type_corr_name_en": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "index category corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "index genre corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "index manner corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "index variety corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "index brand corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "index class corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "index kind corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "index style corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "index form corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "index grouping corr name en": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "Line type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "novelties_sales_stock_has_offered_qty_quot": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.offered_qty_quot": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.offered_qty_quot"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.offered_qty_quot"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_offered_qty_quots"
+			        }
+			      ]
+			    },
+			    "novelties_sales_stock_has_ordered_qty_ord": {
+			      "Binding": {
+			        "ConceptualEntity": "novelties_sales_stock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "novelties_sales_stock": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock"
+			          }
+			        },
+			        "novelties_sales_stock.ordered_qty_ord": {
+			          "Target": {
+			            "Entity": "novelties_sales_stock.ordered_qty_ord"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "novelties_sales_stock"
+			            },
+			            "Object": {
+			              "Role": "novelties_sales_stock.ordered_qty_ord"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "novelties_sales_stocks_have_ordered_qty_ord"
+			        }
+			      ]
+			    },
 			    "novelties_sales_stock_has_entity__measure_stock_EOY_purchased": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales_stock"
@@ -2980,52 +3179,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "novelties_sales_stock_has_index_type_corr_name": {
-			      "Binding": {
-			        "ConceptualEntity": "novelties_sales_stock"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "novelties_sales_stock": {
-			          "Target": {
-			            "Entity": "novelties_sales_stock"
-			          }
-			        },
-			        "novelties_sales_stock.index_type_corr_name": {
-			          "Target": {
-			            "Entity": "novelties_sales_stock.index_type_corr_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "novelties_sales_stock"
-			            },
-			            "Object": {
-			              "Role": "novelties_sales_stock.index_type_corr_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "novelties_sales_stocks_have_index_type_corr_names"
-			        },
-			        {
-			          "DynamicAdjective": {
-			            "Subject": {
-			              "Role": "novelties_sales_stock"
-			            },
-			            "Adjective": {
-			              "Role": "novelties_sales_stock.index_type_corr_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "index_type_corr_names_describe_novelties_sales_stocks"
-			        }
-			      ]
-			    },
 			    "novelties_sales_stock_has_month_in_sales": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales_stock"
@@ -3188,19 +3341,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "novelties_sales_have_index_type_corr_names"
-			        },
-			        {
-			          "DynamicAdjective": {
-			            "Subject": {
-			              "Role": "novelties_sale"
-			            },
-			            "Adjective": {
-			              "Role": "novelties_sale.index_type_corr_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "index_type_corr_names_describe_novelties_sales"
 			        }
 			      ]
 			    },
@@ -3666,7 +3806,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "novelties_sales_stock_has_ordered_qty_ord": {
+			    "novelties_sales_stock_is_index_type_corr_name_en": {
 			      "Binding": {
 			        "ConceptualEntity": "novelties_sales_stock"
 			      },
@@ -3677,58 +3817,38 @@ cultureInfo en-US
 			            "Entity": "novelties_sales_stock"
 			          }
 			        },
-			        "novelties_sales_stock.ordered_qty_ord": {
+			        "novelties_sales_stock.index_type_corr_name_en": {
 			          "Target": {
-			            "Entity": "novelties_sales_stock.ordered_qty_ord"
+			            "Entity": "novelties_sales_stock.index_type_corr_name_en"
 			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
-			          "Attribute": {
+			          "DynamicAdjective": {
 			            "Subject": {
 			              "Role": "novelties_sales_stock"
 			            },
-			            "Object": {
-			              "Role": "novelties_sales_stock.ordered_qty_ord"
+			            "Adjective": {
+			              "Role": "novelties_sales_stock.index_type_corr_name_en"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "novelties_sales_stocks_have_ordered_qty_ord"
-			        }
-			      ]
-			    },
-			    "novelties_sales_stock_has_offered_qty_quot": {
-			      "Binding": {
-			        "ConceptualEntity": "novelties_sales_stock"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "novelties_sales_stock": {
-			          "Target": {
-			            "Entity": "novelties_sales_stock"
-			          }
+			          "ID": "index_type_corr_name_ens_describe_novelties_sales_stocks"
 			        },
-			        "novelties_sales_stock.offered_qty_quot": {
-			          "Target": {
-			            "Entity": "novelties_sales_stock.offered_qty_quot"
-			          }
-			        }
-			      },
-			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "novelties_sales_stock"
 			            },
 			            "Object": {
-			              "Role": "novelties_sales_stock.offered_qty_quot"
+			              "Role": "novelties_sales_stock.index_type_corr_name_en"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "novelties_sales_stocks_have_offered_qty_quots"
+			          "ID": "novelties_sales_stocks_have_index_type_corr_name_ens"
 			        }
 			      ]
 			    }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "df44718d6346697aa1af",
   "position": {
     "x": 10,
@@ -43,8 +43,9 @@
                 }
               },
               "queryRef": "novelties_sales_stock.index_type_corr_name_en",
-              "nativeQueryRef": "index_type_corr_name_en",
-              "active": true
+              "nativeQueryRef": "Line type",
+              "active": true,
+              "displayName": "Line type"
             },
             {
               "field": {
@@ -59,7 +60,7 @@
               },
               "queryRef": "novelties_sales_stock.publication_date_p3s",
               "nativeQueryRef": "p3s publication date",
-              "active": false,
+              "active": true,
               "displayName": "p3s publication date"
             },
             {
@@ -75,7 +76,7 @@
               },
               "queryRef": "novelties_sales_stock.months_in_sales",
               "nativeQueryRef": "Months in sales",
-              "active": false,
+              "active": true,
               "displayName": "Months in sales"
             }
           ]
@@ -366,14 +367,12 @@
             "queryRefs": [
               "novelties_sales_stock.index_type_corr_name_en"
             ],
-            "isCollapsed": true,
             "isPinned": true
           },
           {
             "queryRefs": [
               "novelties_sales_stock.publication_date_p3s"
             ],
-            "isCollapsed": true,
             "isPinned": true
           },
           {
@@ -946,6 +945,20 @@
           "selector": {
             "metadata": "Sum(novelties_sales_stock.offered_qty_quot)"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "novelties_sales_stock.index_type_corr_name_en"
+          }
         }
       ]
     },
@@ -1013,7 +1026,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "835cd3a35e6d10781a48",
+        "name": "e4b2e2cd530dff7f01fb",
         "field": {
           "Column": {
             "Expression": {
@@ -1027,7 +1040,21 @@
         "type": "Categorical"
       },
       {
-        "name": "2554a298005c32c83d90",
+        "name": "1a0fa5b606901ddea7cd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "novelties_sales_stock"
+              }
+            },
+            "Property": "index_type_corr_name_en"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e67acce5be5114936966",
         "field": {
           "Column": {
             "Expression": {
@@ -1041,7 +1068,7 @@
         "type": "Categorical"
       },
       {
-        "name": "56159f8677b8e04e2d68",
+        "name": "c29ca9815cc67ed44540",
         "field": {
           "Column": {
             "Expression": {
@@ -1055,7 +1082,7 @@
         "type": "Advanced"
       },
       {
-        "name": "52141839c728eb87cbcc",
+        "name": "3327c8c3615e36852d0b",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1074,7 +1101,7 @@
         "type": "Advanced"
       },
       {
-        "name": "8f86e170805092ba1e2d",
+        "name": "0eca122d7e9a80b96b8f",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1093,7 +1120,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3e0e562d010390304060",
+        "name": "ef10a3d26fb2bc9a06ef",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1112,7 +1139,7 @@
         "type": "Advanced"
       },
       {
-        "name": "d704cbdba2e100c690d9",
+        "name": "63ba32e273bfd753c496",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1131,7 +1158,7 @@
         "type": "Advanced"
       },
       {
-        "name": "0c69d7e0ed546c79452e",
+        "name": "e457a3b4fae6d3fc7c1d",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1150,7 +1177,7 @@
         "type": "Advanced"
       },
       {
-        "name": "0c3323f7c70e00a9eb43",
+        "name": "52989d8834bfa16caf30",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1169,7 +1196,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3583c1608bc6311b02e0",
+        "name": "d9265a31478ef5ece059",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1188,7 +1215,7 @@
         "type": "Advanced"
       },
       {
-        "name": "a0b13961d01974c20a41",
+        "name": "39e72e061df34ac67b96",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1207,7 +1234,7 @@
         "type": "Advanced"
       },
       {
-        "name": "287b84bd2b2149679758",
+        "name": "b56f0e9851fc99b898a4",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1226,7 +1253,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3b32208ec34e6dd1a59d",
+        "name": "f808fb7f283b92972b7d",
         "field": {
           "Measure": {
             "Expression": {
@@ -1240,7 +1267,7 @@
         "type": "Advanced"
       },
       {
-        "name": "9fec3fde5c9d801d246a",
+        "name": "9549fd2c0758d314780d",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1259,7 +1286,7 @@
         "type": "Advanced"
       },
       {
-        "name": "201012b11875a260da9d",
+        "name": "9013a7a6fa627a16d11a",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -1276,20 +1303,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "1ee93d31e850a4a49060",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "novelties_sales_stock"
-              }
-            },
-            "Property": "index_type_corr_name_en"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

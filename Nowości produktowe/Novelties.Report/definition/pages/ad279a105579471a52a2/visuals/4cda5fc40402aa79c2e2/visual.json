@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "4cda5fc40402aa79c2e2",
   "position": {
     "x": 28,
@@ -160,58 +160,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "921e0d63962ecaa91511",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "novelties_sales_stock"
-              }
-            },
-            "Property": "Linia"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c2cdccafe0036569a502",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "novelties_sales_stock"
-                  }
-                },
-                "Property": "forecast_realisation_2026"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "dc7d2beba66391e2eeb0",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "novelties_sales_stock"
-                  }
-                },
-                "Property": "invoiced_sale_qty_2026"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "2e399bfeeeb63c0d8b59",
         "field": {
           "Column": {
@@ -264,25 +212,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "16fcab16d3050a8b00d3",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "novelties_sales_stock"
-                  }
-                },
-                "Property": "stock_eoy_2026"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
