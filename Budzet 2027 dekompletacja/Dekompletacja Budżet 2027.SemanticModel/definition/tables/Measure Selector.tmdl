@@ -1,0 +1,25 @@
+table 'Measure Selector'
+	lineageTag: 5485181e-ef82-4b02-8841-d68be8930d21
+
+	column 'Time Type'
+		lineageTag: f7af8142-4bf1-4985-b334-5f489beaeec9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Time Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measure Selector' = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Time Type", STRING,
+				    {
+				        {"Pracochłonność"},
+				        {"Maszynochłonność"}
+				    }
+				)
+
+	annotation PBI_Id = ac2236bed4124ac982d4fea2cce4c2c8
+

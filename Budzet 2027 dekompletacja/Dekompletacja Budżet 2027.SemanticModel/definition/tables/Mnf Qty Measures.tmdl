@@ -1,0 +1,99 @@
+table 'Mnf Qty Measures'
+	lineageTag: 232cd814-1ebc-4a67-a143-8785565a5250
+
+	measure 'Manufacturing Qty' = EXTERNALMEASURE("Manufacturing Qty", DOUBLE, "DirectQuery to AS - Manufacturing Costs Tabular Model")
+		lineageTag: 210e2496-a5e9-4fef-a882-7e1da3144cb9
+		sourceLineageTag: DirectQuery to AS - Manufacturing Costs Tabular Model.Manufacturing Qty
+		dataCategory: Uncategorized
+
+	measure 'Manufacturing Value' = EXTERNALMEASURE("Manufacturing Value", DOUBLE, "DirectQuery to AS - Manufacturing Costs Tabular Model")
+		lineageTag: 090d27d0-79d1-46b0-b0bc-807d5fe718ac
+		sourceLineageTag: DirectQuery to AS - Manufacturing Costs Tabular Model.Manufacturing Value
+		dataCategory: Uncategorized
+
+	column time_id
+		dataType: int64
+		isHidden
+		lineageTag: da17820b-63c7-4a14-9473-3216f6e2d3a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		lineageTag: 7fecb4c6-4783-4e32-b242-a6fb8bb8582c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_id
+		dataType: int64
+		isHidden
+		lineageTag: b0514a53-1641-4d3f-b3d3-a739ca680c56
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_id
+		dataType: int64
+		isHidden
+		lineageTag: 747465ec-bbfb-45ba-8e8c-4f8c5fd7b644
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		lineageTag: 92a4c706-9032-4cba-8fd7-b87fa9d0c5dc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_inv_type_id
+		dataType: int64
+		isHidden
+		lineageTag: e3c64209-58a4-49f9-847e-9bac538e6330
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_inv_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_qty
+		dataType: double
+		isHidden
+		lineageTag: 2546d515-39d6-4cff-99d1-c7d1a014e6d6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mnf_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_val
+		dataType: double
+		isHidden
+		lineageTag: f006d741-3a02-44cf-b0f8-e7cc988221a9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mnf_val
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Mnf Qty Measures-8460b649-37d6-40b0-a83d-d8374deda5e2' = entity
+		mode: directQuery
+		source
+			entityName: Mnf Qty Measures
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

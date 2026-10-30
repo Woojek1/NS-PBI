@@ -1,0 +1,113 @@
+table 'Mnf Bud Time Measures'
+	lineageTag: 833b2526-f7fb-467a-aa66-b0e1eb1320e4
+
+	measure 'Bud Labor Crew Time' = EXTERNALMEASURE("Bud Labor Crew Time", DOUBLE, "DirectQuery to AS - Manufacturing Costs Tabular Model")
+		formatString: #,0
+		lineageTag: 3d393dc5-dad2-4494-8e13-6f97ee5b3428
+		sourceLineageTag: DirectQuery to AS - Manufacturing Costs Tabular Model.Bud Labor Crew Time
+		dataCategory: Uncategorized
+
+	measure 'Bud Manufacturing Time' = EXTERNALMEASURE("Bud Manufacturing Time", DOUBLE, "DirectQuery to AS - Manufacturing Costs Tabular Model")
+		formatString: #,0
+		lineageTag: ed527cbc-f246-4543-b256-107cf5bc06c1
+		sourceLineageTag: DirectQuery to AS - Manufacturing Costs Tabular Model.Bud Manufacturing Time
+		dataCategory: Uncategorized
+
+	measure 'Bud Time Selected' =
+			
+			VAR SelectedType =
+			    SELECTEDVALUE(
+			        'Measure Selector'[Time Type],
+			        "Pracochłonność"
+			    )
+			RETURN
+			    SWITCH(
+			        SelectedType,
+			        "Pracochłonność", [Bud Labor Crew Time],
+			        "Maszynochłonność", [Bud Manufacturing Time]
+			    )
+		formatString: #,0
+		lineageTag: bb6b00b5-b064-4402-a9fc-6d20e75caed7
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column mon_id
+		dataType: int64
+		isHidden
+		lineageTag: 788ed531-e5a7-4fad-ad6b-e1c12c9f50e0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		lineageTag: aee303ae-c958-4d6c-a400-01cbabccc6f4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_id
+		dataType: int64
+		isHidden
+		lineageTag: d5d11843-0c16-4f43-bbd0-00d7a326e4ec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column wc_id
+		dataType: int64
+		isHidden
+		lineageTag: 0192a2c8-0ca1-483f-ade3-508c7ee0db26
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		lineageTag: 7e0cf7b1-a20a-477c-9d5d-ea560c5c1ee4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column bud_labor_crew_time
+		dataType: double
+		isHidden
+		lineageTag: 656f1d32-0388-4c2e-96c1-9fb9d41188e2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: bud_labor_crew_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column bud_manufacturing_time
+		dataType: double
+		isHidden
+		lineageTag: 89ad3b7c-d7a5-48f0-9fb1-c3172866f03b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: bud_manufacturing_time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Mnf Bud Time Measures' = entity
+		mode: directQuery
+		source
+			entityName: Mnf Bud Time Measures
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

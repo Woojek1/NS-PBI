@@ -1,0 +1,67 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "acbc62eb65f405d1d2a2",
+  "position": {
+    "x": 0,
+    "y": 552.02518363064007,
+    "z": 4000,
+    "height": 83.27387198321091,
+    "width": 206.84155299055615,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bdg_27_godziny_added_mpk"
+                    }
+                  },
+                  "Property": "part_no"
+                }
+              },
+              "queryRef": "bdg_27_godziny_added_mpk.part_no",
+              "nativeQueryRef": "part_no"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Indeks'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

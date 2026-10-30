@@ -1,0 +1,147 @@
+table 'Produkty do Dekompletacji'
+	lineageTag: 36ee35d8-de56-4c39-bb41-c6e3de4a43bb
+
+	column src_prod_ti_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f64b4470-6181-46f4-bc94-9265dc9b3671
+		summarizeBy: none
+		sourceColumn: src_prod_ti_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_description
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 982e0ae4-e422-4e37-bcea-c59719f7b189
+		summarizeBy: none
+		sourceColumn: src_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column pln_net
+		dataType: double
+		sourceProviderType: decimal(28, 2)
+		lineageTag: b40d004b-4fb8-43a3-bdcb-900923738dad
+		summarizeBy: sum
+		sourceColumn: pln_net
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column qty
+		dataType: double
+		sourceProviderType: decimal(28, 4)
+		lineageTag: 7938bfd7-354e-4b67-996c-35df2875c14e
+		summarizeBy: sum
+		sourceColumn: qty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_unit_price
+		dataType: double
+		sourceProviderType: decimal(38, 8)
+		lineageTag: 905a0683-6844-423b-96cb-bb295b3a6f81
+		summarizeBy: sum
+		sourceColumn: avg_unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dept_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6b20b299-3725-4702-81d2-90da44e25fa4
+		summarizeBy: none
+		sourceColumn: dept_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 479378d0-666d-4c88-9a07-529c8b87111d
+		summarizeBy: none
+		sourceColumn: team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c9e842f1-e6f5-45f0-a9fa-86daf54d6be8
+		summarizeBy: none
+		sourceColumn: month_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column weight
+		dataType: double
+		sourceProviderType: decimal(38, 10)
+		lineageTag: a15f1fee-5f2c-47c5-9964-ff4a4d2a13aa
+		summarizeBy: sum
+		sourceColumn: weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rank_position
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c969e9aa-8d5f-4927-8aa8-7ffc77eb4207
+		summarizeBy: sum
+		sourceColumn: rank_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column calculated_qty
+		dataType: double
+		formatString: 0.000
+		sourceProviderType: decimal(38, 6)
+		lineageTag: fdb6fd25-0f16-4395-abcd-529d959a4380
+		summarizeBy: sum
+		sourceColumn: calculated_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column calculated_pln
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		lineageTag: dec0aacb-3c38-4f5a-af55-d15c402bcda9
+		summarizeBy: sum
+		sourceColumn: calculated_pln
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column part_status
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 9b71db9f-345c-49bd-9c52-b69403a86a54
+		summarizeBy: none
+		sourceColumn: part_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Produkty do Dekompletacji' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    bdg2026_Schema = controlling_Database{[Name="bdg2027",Kind="Schema"]}[Data],
+				    dekompletacja_na_produkty_Table = bdg2026_Schema{[Name="dekompletacja_na_produkty_bdg27",Kind="Table"]}[Data]
+				in
+				    dekompletacja_na_produkty_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,78 @@
+table 'Time Measures Sets'
+	lineageTag: 1be40967-29d4-42bf-9db0-d90e211d7bc0
+
+	column 'Time Measures'
+		lineageTag: 0e53ea4b-06d8-43a7-ba16-34715b20d831
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Measure Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Time Measures Sets Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Measures Sets Fields'
+		isHidden
+		lineageTag: b4235e90-1a6c-442e-a5ce-060da2c0aeb6
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Measure Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Measure Order'
+		isHidden
+		formatString: 0
+		lineageTag: e98c96a4-5659-4b06-9fe4-7392e058f9ef
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Measures Sets'
+		lineageTag: 2fc0c65b-6eab-433d-9955-140460cbf6cb
+		summarizeBy: none
+		sourceColumn: [Value4]
+		sortByColumn: 'Set Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Set Order'
+		isHidden
+		formatString: 0
+		lineageTag: a5dc6616-dac1-477e-a9de-a8c4249b63c4
+		summarizeBy: sum
+		sourceColumn: [Value5]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Time Measures Sets' = calculated
+		mode: import
+		source = ```
+				{
+				
+				    ("Labor Crew Time", NAMEOF('Mnf Time Measures'[Labor Crew Time]),                               1, "Act+Bud and diff Labor Crew Time",   10),
+				    ("Bud Labor Crew Time", NAMEOF('Mnf Bud Time Measures'[Bud Labor Crew Time]),                   2, "Act+Bud and diff Labor Crew Time",   10),
+				    ("ACT/BUD Labor Crew Time", NAMEOF('Cnt Manufacturer'[ACT/BUD Labor Time]),                     3, "Act+Bud and diff Labor Crew Time",   10), 
+				    ("Machine Time", NAMEOF('Mnf Time Measures'[Machine Time]),                                     4, "Act+Bud and diff Machine Time",      20),
+				    ("Bud Manufacturing Time", NAMEOF('Mnf Bud Time Measures'[Bud Manufacturing Time]),             5, "Act+Bud and diff Machine Time",      20),
+				    ("ACT/BUD Manufacturing Time", NAMEOF('Cnt Manufacturer'[ACT/BUD Machine time]),                6, "Act+Bud and diff Machine Time",      20), 
+				   
+				    ("Labor Crew Time", NAMEOF('Mnf Time Measures'[Labor Crew Time]),                               1, "All Measures",              100),
+				    ("Bud Labor Crew Time", NAMEOF('Mnf Bud Time Measures'[Bud Labor Crew Time]),                   2, "All Measures",              100),
+				    ("Machine Time", NAMEOF('Mnf Time Measures'[Machine Time]),                                     3, "All Measures",              100),
+				    ("Bud Manufacturing Time", NAMEOF('Mnf Bud Time Measures'[Bud Manufacturing Time]),             4, "All Measures",              100),
+				    ("ACT/BUD Manufacturing Time", NAMEOF('Cnt Manufacturer'[ACT/BUD Machine time]),                5, "All Measures",              100),
+				    ("ACT/BUD Labor Crew Time", NAMEOF('Cnt Manufacturer'[ACT/BUD Labor Time]),                     6, "All Measures",              100)
+				}
+				```
+
+	annotation PBI_Id = 437b9ad3f5894e2d915d819b1b710705
+

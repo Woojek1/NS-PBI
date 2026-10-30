@@ -1,0 +1,256 @@
+table 'Month Mnf Cost'
+	isHidden
+	lineageTag: a5721b8a-049b-4678-be66-00e782b25f9b
+
+	column mon_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 7a2e07fc-fae1-460c-991f-44ce9a698908
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name_s
+		dataType: string
+		isHidden
+		lineageTag: a6b0369b-ef72-4678-b0dc-a34c2efbf89a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_count
+		dataType: int64
+		isHidden
+		lineageTag: e2039af1-45d2-4905-9fef-bbb9752a2520
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mon_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_id
+		dataType: int64
+		isHidden
+		lineageTag: ce22ceae-a64f-4b39-b535-ae91b9943bc1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_name_s
+		dataType: string
+		isHidden
+		lineageTag: c5f2a0d9-0207-4b4d-aa40-ec8d91e25072
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: quart_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 0bf458ea-b6d0-4d51-b373-f56108ab23c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: quart_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart_count
+		dataType: int64
+		isHidden
+		lineageTag: 765e34b8-1c2c-4467-a94a-2c33cd79d584
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quart_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_id
+		dataType: int64
+		isHidden
+		lineageTag: 9b88acf1-90f7-4218-9904-ae5dc2292c50
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearh_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_name_s
+		dataType: string
+		isHidden
+		lineageTag: 778e0c4c-c349-4c51-9d36-8066a9303583
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: yearh_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 78f68553-bea5-4453-a5d7-14bcf72e6c7b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: yearh_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearh_count
+		dataType: int64
+		isHidden
+		lineageTag: d276210f-f20b-4b51-b08d-cdb2b056982e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: yearh_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_id
+		dataType: int64
+		isHidden
+		lineageTag: 58dd0f2a-805f-4524-8001-705692ad8a40
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: year_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_name_s
+		dataType: string
+		isHidden
+		lineageTag: 645f29c7-00eb-4adb-a4d0-13139cdfca8a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: year_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_date
+		dataType: dateTime
+		isHidden
+		lineageTag: 5f0cac96-dad2-41b7-899a-f22d3e284e8a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: year_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_count
+		dataType: int64
+		isHidden
+		lineageTag: 35f4bd88-be92-4a3b-affb-40d12665dd90
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: year_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_id
+		dataType: int64
+		isHidden
+		lineageTag: 12c762c8-551c-4c12-b89b-3ad6e44c013d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mon2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon2_name_int
+		dataType: string
+		isHidden
+		lineageTag: ce8182e4-a12a-4ea6-9ae4-6fa195cc313c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mon2_name_int
+
+		annotation SummarizationSetBy = Automatic
+
+	column quart2_id
+		dataType: int64
+		isHidden
+		lineageTag: 79823e68-e304-4594-90ae-978c7e92acb4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quart2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Code'
+		dataType: string
+		lineageTag: 317dcdb1-e70c-4325-9d68-51438204c339
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Date'
+		dataType: dateTime
+		isNullable: false
+		lineageTag: 477a9076-2757-46b5-bd8f-eb62cdf5259b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Code'
+		dataType: string
+		lineageTag: 41c28730-0294-4290-833c-7f4d3a56bc01
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Quarter Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Half-Year
+		dataType: string
+		lineageTag: 8d550873-6653-4b4d-8572-687be7249caa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Half-Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fe24417-116e-456b-ada7-0cae530a203c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: string
+		lineageTag: 218f59ad-9d7d-4335-8181-b7a89ea16e2f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 19575cbd-74fe-48e8-bf8c-f3d8b310a396
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Month Mnf Cost-1d74bd0a-401a-4062-8b63-df76098ba236' = entity
+		mode: directQuery
+		source
+			entityName: Month Mnf Cost
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

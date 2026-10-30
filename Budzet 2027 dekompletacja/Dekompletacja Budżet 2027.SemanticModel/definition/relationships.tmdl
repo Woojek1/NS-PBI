@@ -1,0 +1,113 @@
+relationship 20f51ba3-bba2-439f-99fc-a273b346852a
+	fromColumn: 'Mnf Time Measures'.time_id
+	toColumn: Date.day_id
+
+relationship 79b61e64-91f5-4de5-9ecb-22e7b6e71cf7
+	fromColumn: 'Mnf Time Measures'.contr_id
+	toColumn: Contract.contr_id
+
+relationship 5dfd8a12-e917-407c-9e64-962e1adc3ea1
+	fromColumn: 'Mnf Time Measures'.labor_class_id
+	toColumn: 'Labor Class'.labor_class_id
+
+relationship 78526010-9644-4d4c-9784-fdbd90aacf43
+	fromColumn: 'Mnf Time Measures'.wc_id
+	toColumn: 'Work Center'.wc_id
+
+relationship 1e77f675-9b0b-4eff-8f25-2c4c9be46b81
+	fromColumn: 'Mnf Time Measures'.mpk_id
+	toColumn: Organization.mpk_id
+
+relationship a53f5100-ae8d-4385-bed7-7ffd2a1e52f7
+	fromColumn: 'Mnf Time Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship 6d35f0c1-426e-4aca-b121-e7848a88e162
+	fromColumn: 'Mnf Time Measures'.mnf_cnt_id
+	toColumn: 'Cnt Manufacturer'.mnf_cnt_id
+
+relationship 6109d811-9fc8-445e-8fa3-3a69f9b08152
+	fromColumn: 'Mnf Qty Measures'.time_id
+	toColumn: Date.day_id
+
+relationship 96f52593-5341-4d37-a39b-9f540386b8ee
+	fromColumn: 'Mnf Qty Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship 686a8789-4c68-4cfc-90a2-d01d845e3989
+	fromColumn: 'Mnf Qty Measures'.contr_id
+	toColumn: Contract.contr_id
+
+relationship 446a6a58-944a-4312-837b-179888d99df5
+	fromColumn: 'Mnf Qty Measures'.mpk_id
+	toColumn: Organization.mpk_id
+
+relationship 06a8354c-e0aa-408e-ae5e-c6a95b5660a3
+	fromColumn: 'Mnf Qty Measures'.prod_inv_type_id
+	toColumn: 'Product Inventory Type'.prod_inv_type_id
+
+relationship 310ffd4a-4c6c-4e8a-836d-3384e06239af
+	fromColumn: 'Mnf Qty Measures'.prod_id
+	toColumn: Product.prod_si_id
+
+relationship debe314d-8d6f-4ccb-850b-1e3adb8204f5
+	fromColumn: 'Mnf Cost Measures'.mpk_id
+	toColumn: Organization.mpk_id
+
+relationship 9a8df50b-89c1-4e33-bfc3-533c488f332d
+	fromColumn: 'Mnf Cost Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship a165b4ad-815b-493e-8532-1d96df4a1439
+	fromColumn: 'Mnf Cost Measures'.contr_id
+	toColumn: Contract.contr_id
+
+relationship 7289747b-fa12-45e1-aaf7-2ba3286c21da
+	fromColumn: 'Mnf Cost Measures'.tkw_type_id
+	toColumn: 'TMC Category Cost'.tkw_type_id
+
+relationship c4cedcb3-f3c5-45b0-ad65-a1d5180dca19
+	fromColumn: 'Mnf Cost Measures'.prod_id
+	toColumn: Product.prod_si_id
+
+relationship f9f4eca1-c3ee-49a7-811a-4b94cb13accd
+	fromColumn: 'Mnf Cost Measures'.time_id
+	toColumn: 'Month Mnf Cost'.mon_id
+
+relationship 51062d02-4b06-4e03-917f-5266698d875d
+	fromColumn: 'Mnf Bud Time Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship 9b0bd4f2-f705-4b79-b0e3-b4b1cabf452e
+	fromColumn: 'Mnf Bud Time Measures'.contr_id
+	toColumn: Contract.contr_id
+
+relationship 1dd8dc0d-083d-4d8e-b344-a837ee5e89ff
+	fromColumn: 'Mnf Bud Time Measures'.mpk_id
+	toColumn: Organization.mpk_id
+
+relationship 58f5be36-4a9c-4777-96cb-3b881a189f1b
+	fromColumn: 'Mnf Bud Time Measures'.wc_id
+	toColumn: 'Work Center'.wc_id
+
+relationship d506f90a-26db-4886-9d5d-8daa32bf2bff
+	fromColumn: 'Mnf Bud Time Measures'.mon_id
+	toColumn: 'Month Mnf Cost'.mon_id
+
+relationship 98d42c0b-8701-404a-86c8-961bec23aab6
+	crossFilteringBehavior: bothDirections
+	fromColumn: Date.mon_id
+	toColumn: 'Month Mnf Cost'.mon_id
+
+relationship 26cc7717-23e4-97aa-5bfc-524f397be6c6
+	fromColumn: 'Produkty do Dekompletacji'.src_prod_ti_code
+	toColumn: Produkt.prod_si_code
+
+relationship 19a9b267-9be3-375c-771f-439c863581ca
+	fromColumn: bdg_27_godziny_added_mpk.part_no
+	toColumn: Produkt.prod_si_code
+
+relationship 69fe3fe3-9e17-ed6c-b15b-f1ac02999521
+	fromColumn: bdg_27_godziny_added_mpk.work_center_no
+	toColumn: d_work_center.wc_code
+

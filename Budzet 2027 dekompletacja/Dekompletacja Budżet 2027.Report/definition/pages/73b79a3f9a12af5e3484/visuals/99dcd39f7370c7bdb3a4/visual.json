@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "99dcd39f7370c7bdb3a4",
+  "position": {
+    "x": 21.599999999999998,
+    "y": 32.4,
+    "z": 0,
+    "height": 687.6,
+    "width": 1258.8,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BDG Values 2027"
+                    }
+                  },
+                  "Property": "month_code"
+                }
+              },
+              "queryRef": "BDG Values 2027.month_code",
+              "nativeQueryRef": "month_code",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BDG Values 2027"
+                    }
+                  },
+                  "Property": "Section Code"
+                }
+              },
+              "queryRef": "BDG Values 2027.Section Code",
+              "nativeQueryRef": "Section Code",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BDG Values 2027"
+                        }
+                      },
+                      "Property": "pln"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Min(BDG Values 2027.pln)",
+              "nativeQueryRef": "Sum of pln"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "BDG Values 2027"
+                  }
+                },
+                "Property": "Section Code"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,70 @@
+table 'Cnt Manufacturer'
+	lineageTag: 2def1a47-109b-43c1-8643-d81d1ba77b8b
+
+	measure 'ACT/BUD Machine time' =
+			
+			[Machine Time]/[Bud Manufacturing Time]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0051fc74-bc27-4c25-82e6-26d2c72c07f9
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+		changedProperty = Name
+
+	measure 'ACT/BUD Labor Time' =
+			
+			[Labor Crew Time]/[Bud Labor Crew Time]
+		formatString: #,0%;-#,0%;#,0%
+		lineageTag: b41d5e83-9ef3-4120-b199-300f26dca251
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalSubtraction"
+				}
+
+		changedProperty = FormatString
+
+		changedProperty = Name
+
+	column mnf_cnt_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: a5e8dd73-b096-4f93-a80e-7ad2be5756a0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mnf_cnt_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cnt Manufacturer Code'
+		dataType: string
+		lineageTag: a00bdd2c-f6af-483a-bf6f-e1d8a9e1c4a1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cnt Manufacturer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cnt Manufacturer'
+		dataType: string
+		lineageTag: 3b5b6846-2df0-4ba8-8c9a-b60e6832b45a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cnt Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cnt Manufacturer-858c0a7b-6535-401d-830d-490dcd3983a1' = entity
+		mode: directQuery
+		source
+			entityName: Cnt Manufacturer
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

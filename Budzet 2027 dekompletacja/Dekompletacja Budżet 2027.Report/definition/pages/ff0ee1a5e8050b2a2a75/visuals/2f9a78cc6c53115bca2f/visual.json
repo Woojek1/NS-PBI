@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "2f9a78cc6c53115bca2f",
+  "position": {
+    "x": 746.59459459459458,
+    "y": 91.459459459459453,
+    "z": 4000,
+    "height": 423.56756756756755,
+    "width": 282.81081081081078,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "FilterByList507A2DBEC31244C8AAABDE9BA541F723_OrgStore",
+    "query": {
+      "queryState": {
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produkty do Dekompletacji"
+                    }
+                  },
+                  "Property": "src_prod_ti_code"
+                }
+              },
+              "queryRef": "Produkty do Dekompletacji.src_prod_ti_code",
+              "nativeQueryRef": "src_prod_ti_code"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,64 @@
+table 'BDG Values 2027'
+	lineageTag: c3e7f785-9ec2-4407-9226-d0fc5bf8af1c
+
+	column 'ALL DEPARTMENTS'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 74e0e916-db39-497e-baa1-ed15edcb99b2
+		summarizeBy: none
+		sourceColumn: ALL DEPARTMENTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Section Code'
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5d9362b3-c183-4c22-82ee-debee5ed9883
+		summarizeBy: none
+		sourceColumn: Section Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b1bc71f1-4fb4-4542-aacf-6a4a3c739c7e
+		summarizeBy: none
+		sourceColumn: month_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column pln
+		dataType: double
+		formatString: #,0
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b8beb5b2-cd38-483b-8378-09536a2075c0
+		summarizeBy: sum
+		sourceColumn: pln
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition 'BDG Values 2027' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs(
+				        "adb-16306551450739.19.azuredatabricks.net",
+				        "/sql/1.0/warehouses/58af2438595b0abd",
+				        [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]
+				    ),
+				    controlling_Database = Source{[Name="controlling", Kind="Database"]}[Data],
+				    bdg2026_Schema = controlling_Database{[Name="bdg2027", Kind="Schema"]}[Data],
+				    bdg_2026_values_pln_Table =
+				        bdg2026_Schema{[Name="bdg_2027_values_pln", Kind="Table"]}[Data]
+				in
+				    bdg_2026_values_pln_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

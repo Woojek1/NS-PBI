@@ -1,0 +1,48 @@
+table Miary
+	lineageTag: 24a023a4-b77d-42e8-a340-95d655cb70e0
+
+	column Miary
+		lineageTag: 6c1027de-6f14-41bc-934c-fa685e2fbc4c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Kolejność Miary'
+
+		relatedColumnDetails
+			groupByColumn: 'Pola: Miary'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pola: Miary'
+		isHidden
+		lineageTag: 4387b056-bd16-4a2c-ba78-6ef63a318a8b
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Kolejność Miary'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kolejność Miary'
+		isHidden
+		formatString: 0
+		lineageTag: fbdfd3f5-6f4b-4786-a647-1dac8751d17a
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Miary = calculated
+		mode: import
+		source =
+				{
+				    ("Maszynochłonność", NAMEOF('bdg_27_godziny_added_mpk'[Time]), 0),
+				    ("Pracochłonność", NAMEOF('bdg_27_godziny_added_mpk'[Labour H]), 1)
+				}
+
+	annotation PBI_Id = 96b044b1bc094f72bf592f28cf9d1ee0
+

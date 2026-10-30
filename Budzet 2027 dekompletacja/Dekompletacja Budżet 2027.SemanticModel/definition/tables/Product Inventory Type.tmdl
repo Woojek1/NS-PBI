@@ -1,0 +1,38 @@
+table 'Product Inventory Type'
+	lineageTag: 71d00b70-1ef6-4d19-9031-130338a95f61
+
+	column prod_inv_type_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: ad659fbc-8da2-4bc9-8282-104abc84d4e4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_inv_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Code'
+		dataType: string
+		lineageTag: dba4c963-9628-420e-931b-279232a402ba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: a2544ab3-372c-4815-9f79-01a005134bd3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Inventory Type-e6205e92-4a2a-456a-91a7-0487b5985630' = entity
+		mode: directQuery
+		source
+			entityName: Product Inventory Type
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

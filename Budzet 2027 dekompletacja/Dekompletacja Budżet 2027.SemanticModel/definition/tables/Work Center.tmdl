@@ -1,0 +1,262 @@
+table 'Work Center'
+	lineageTag: 205be62f-1178-4736-8666-49da6cd68440
+
+	column wc_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 9aa61d05-b85b-48c6-8d3d-1d9492a43e51
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column db_code
+		dataType: string
+		isHidden
+		lineageTag: c313aa7c-e626-4c58-b495-ee0265564070
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column wc_contract
+		dataType: string
+		isHidden
+		lineageTag: 4441ba65-e455-4b5f-b05e-2bf3819729b3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work Center Code'
+		dataType: string
+		lineageTag: 41a1aa89-54a7-4c00-a8b1-d688f8fe5e97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work Center Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work Center'
+		dataType: string
+		lineageTag: a3d85582-88a2-4cc6-b512-507e7ded319c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column wc_dept_no
+		dataType: string
+		isHidden
+		lineageTag: 1c1c5a44-8840-4a8b-a8a2-46c4df9cd64a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_dept_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column wc_cost_center_id
+		dataType: string
+		isHidden
+		lineageTag: c4a37c18-6f9f-4f0e-bf47-c19f717b29bf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_cost_center_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_id
+		dataType: int64
+		isHidden
+		lineageTag: 636c679e-d357-4028-9225-f91d990cf479
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: contr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_code
+		dataType: string
+		isHidden
+		lineageTag: a1411869-f252-445f-8f38-1a617f85b44f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_name
+		dataType: string
+		isHidden
+		lineageTag: 5d5bd1fc-f935-4652-a237-72c0b5e8a174
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_name2
+		dataType: string
+		isHidden
+		lineageTag: cab68fa3-84e6-4c81-96ab-d9772093593f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_name2
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		lineageTag: d38ead26-35bd-45d9-a7cc-436685b47e1f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		isHidden
+		lineageTag: a9a4223a-41d9-44a1-affd-4b65f64d0e50
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_name
+		dataType: string
+		isHidden
+		lineageTag: 3d08c305-5cfa-403f-b723-e40c2e84210f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_name_s
+		dataType: string
+		isHidden
+		lineageTag: 31fa2dba-45cf-469a-9965-9e2ae61a9237
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_name_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		lineageTag: f3d8a663-b4a6-438d-976c-acd69419ed88
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_code
+		dataType: string
+		isHidden
+		lineageTag: 3857f45c-7205-47d3-809a-a608d852a0b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_name
+		dataType: string
+		isHidden
+		lineageTag: c0de8083-fe4f-4df7-a66a-7095779233e0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_group_id
+		dataType: int64
+		isHidden
+		lineageTag: 99081091-2627-49b5-8b7c-9d7882b783c4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mpk_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MPK Group Code'
+		dataType: string
+		lineageTag: c4bbd31f-330d-43c8-850c-c81dd6a03d57
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MPK Group Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MPK Group'
+		dataType: string
+		lineageTag: 8b645ac7-2d97-488c-86d1-4a1488a65f05
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MPK Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column group_id
+		dataType: int64
+		isHidden
+		lineageTag: 37505344-0ec8-40d9-bf88-9cd912715a22
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Group Code'
+		dataType: string
+		lineageTag: ac7d97b2-fd30-4648-a806-6310bdbdbd5a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Group Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Group
+		dataType: string
+		lineageTag: 4ed2a81f-0261-4d18-b6b3-c1386f2d3bfe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Code'
+		dataType: string
+		lineageTag: eaa52ae0-adcb-4e91-a9e0-b22104709fdf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Area Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: 15644624-dd81-495b-973c-975ddbd4d75a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Work Center-4ef78c74-d5a3-47fc-bf4b-41331421d6f1' = entity
+		mode: directQuery
+		source
+			entityName: Work Center
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

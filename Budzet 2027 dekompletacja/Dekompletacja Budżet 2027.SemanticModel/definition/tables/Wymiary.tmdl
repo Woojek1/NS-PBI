@@ -1,0 +1,61 @@
+table Wymiary
+	lineageTag: d5150864-995e-4fc3-b73c-a35678b08c82
+
+	column Wymiary
+		lineageTag: c9973f88-586a-4a49-bf07-6224e30df0c8
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Kolejność Wymiary'
+
+		relatedColumnDetails
+			groupByColumn: 'Pola: Wymiary'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pola: Wymiary'
+		isHidden
+		lineageTag: 7794f695-a8a1-4c9c-a8f0-342f9d2311ab
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Kolejność Wymiary'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kolejność Wymiary'
+		isHidden
+		formatString: 0
+		lineageTag: 78516f38-20a0-401c-b4ba-e335a7874667
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Wymiary = calculated
+		mode: import
+		source =
+				{
+				    ("Contract", NAMEOF('bdg_27_godziny_added_mpk'[contract]), 0),
+				    ("Sekcja", NAMEOF('bdg_27_godziny_added_mpk'[team_code]), 0),
+				    ("Indekx", NAMEOF('bdg_27_godziny_added_mpk'[part_no]), 1),
+				    ("LABOR_CLASS", NAMEOF('bdg_27_godziny_added_mpk'[LABOR_CLASS_NO]), 2),
+				    ("Gniazdo Work Center No", NAMEOF('bdg_27_godziny_added_mpk'[work_center_no]), 3),
+				    ("Line", NAMEOF('Produkt'[line_name]), 4),
+				    ("Super Grupa", NAMEOF('Produkt'[supergrp_name]), 5),
+				    ("Podgrupa Produktowa", NAMEOF('Produkt'[sgrp_name]), 6),
+				    ("Index Description", NAMEOF('Produkt'[prod_si_name]), 6),
+				    ("WorkCenter Name", NAMEOF(d_work_center[wc_name]), 6),
+				     ("MPK code", NAMEOF(d_work_center[mpk_code]), 6),
+				    //  ("Dept No", NAMEOF(bdg_26_godziny_added_mpk[wc_dept_no]), 6),
+				    ("MPK name", NAMEOF(d_work_center[mpk_name]), 6),
+				    ("Manufacturer", NAMEOF('Produkt'[mnf_name]), 6),
+				    ("Grupa Produktowa", NAMEOF('Produkt'[grp_name]), 7)
+				}
+
+	annotation PBI_Id = ceb164852bea415d9c52937d7f1a7a83
+

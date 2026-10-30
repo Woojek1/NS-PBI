@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - Manufacturing Costs Tabular Model' =
+		let
+		    Source = AnalysisServices.Database("asazure://northeurope.asazure.windows.net/asnsgsolet", "Manufacturing Costs Tabular Model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Manufacturing Costs Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 9a6a21b6-b690-4fa7-b930-297be4eee8fd
+
+	annotation PBI_IncludeFutureArtifacts = True
+

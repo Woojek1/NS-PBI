@@ -1,0 +1,149 @@
+table 'Mnf Time Measures'
+	lineageTag: 80c1f218-2be4-442e-b6d0-ef9c4c3f1819
+
+	measure 'Machine Time' = EXTERNALMEASURE("Machine Time", DOUBLE, "DirectQuery to AS - Manufacturing Costs Tabular Model")
+		lineageTag: 3a4251ae-657a-44b3-93d6-5b0c3ff75cef
+		sourceLineageTag: DirectQuery to AS - Manufacturing Costs Tabular Model.Machine Time
+		dataCategory: Uncategorized
+
+	measure 'Labor Crew Time' = EXTERNALMEASURE("Labor Crew Time", DOUBLE, "DirectQuery to AS - Manufacturing Costs Tabular Model")
+		lineageTag: 4f244ff1-9399-4e07-b836-23fd98867bfd
+		sourceLineageTag: DirectQuery to AS - Manufacturing Costs Tabular Model.Labor Crew Time
+		dataCategory: Uncategorized
+
+	measure 'Actual Time Selected' =
+			
+			VAR SelectedType =
+			    SELECTEDVALUE(
+			        'Measure Selector'[Time Type],
+			        "Pracochłonność"
+			    )
+			RETURN
+			    SWITCH(
+			        SelectedType,
+			        "Pracochłonność", [Labor Crew Time],
+			        "Maszynochłonność", [Machine Time]
+			    )
+		formatString: #,0
+		lineageTag: 83fee02e-bc70-4889-92b5-0f2224d00acd
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column time_id
+		dataType: int64
+		isHidden
+		lineageTag: b217ab06-14c8-470b-a782-d8dc6cc76d05
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: time_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_id
+		dataType: int64
+		isHidden
+		lineageTag: 45160aca-f019-42b3-bba5-5f2a9878df8e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_id
+		dataType: int64
+		isHidden
+		lineageTag: 1e1ba28d-9ab7-4862-b962-8c7f14f7fedc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column wc_id
+		dataType: int64
+		isHidden
+		lineageTag: 05fb43eb-815e-4701-9312-a4ff128fcbda
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: wc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mpk_id
+		dataType: int64
+		isHidden
+		lineageTag: 43ee4bf2-ed2c-4c1e-9d21-a3f124cb0a92
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mpk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column labor_class_id
+		dataType: int64
+		isHidden
+		lineageTag: f2c20689-10ab-49cc-bd7d-4a837d6fa786
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: labor_class_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_cnt_id
+		dataType: int64
+		isHidden
+		lineageTag: 200ecd3e-8fe1-4212-9fca-4136da617348
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mnf_cnt_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column labor_crew_time
+		dataType: double
+		isHidden
+		lineageTag: a5aca754-d799-4968-b431-15fe272a8704
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: labor_crew_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column manufacturing_time
+		dataType: double
+		isHidden
+		lineageTag: 799746d4-9224-4464-9707-bcac45bde2f1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: manufacturing_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Code'
+		dataType: string
+		lineageTag: 1822895d-c2fc-4f7d-9977-92cd31791d13
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Adjustment Flag'
+		dataType: string
+		lineageTag: 65acc01e-e729-47a8-a161-586049c55787
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Adjustment Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Mnf Time Measures-95cf513d-6f38-4cd5-ba8d-b28fff49f604' = entity
+		mode: directQuery
+		source
+			entityName: Mnf Time Measures
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

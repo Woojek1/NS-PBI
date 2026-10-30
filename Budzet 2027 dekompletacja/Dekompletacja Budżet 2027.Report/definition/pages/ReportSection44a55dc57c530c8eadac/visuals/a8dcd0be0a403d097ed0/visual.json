@@ -1,0 +1,226 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a8dcd0be0a403d097ed0",
+  "position": {
+    "x": 150,
+    "y": 471.11111111111109,
+    "z": 5001,
+    "height": 226.66666666666666,
+    "width": 1121.1111111111111,
+    "tabOrder": 5001
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bdg_27_godziny_added_mpk"
+                    }
+                  },
+                  "Property": "month_code"
+                }
+              },
+              "queryRef": "bdg_26_godziny_added_mpk.month_code",
+              "nativeQueryRef": "month_code",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bdg_27_godziny_added_mpk"
+                    }
+                  },
+                  "Property": "contract"
+                }
+              },
+              "queryRef": "bdg_27_godziny_added_mpk.contract",
+              "nativeQueryRef": "Contract Code",
+              "active": true,
+              "displayName": "Contract Code"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bdg_27_godziny_added_mpk"
+                    }
+                  },
+                  "Property": "Budget Time Selected"
+                }
+              },
+              "queryRef": "bdg_27_godziny_added_mpk.Budget Time Selected",
+              "nativeQueryRef": "Budget Time Selected"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "bdg_27_godziny_added_mpk.contract"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bdg_27_godziny_added_mpk"
+                    }
+                  },
+                  "Property": "contract"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'NSF'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dekompletacja BDG 2027'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4a9d7c24c5b5df9b343a",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bdg_27_godziny_added_mpk"
+              }
+            },
+            "Property": "month_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ad480a4f7ba8dc5df109",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bdg_27_godziny_added_mpk"
+              }
+            },
+            "Property": "contract"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "08a7c196bbb765312e44",
+        "ordinal": 2,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bdg_27_godziny_added_mpk"
+              }
+            },
+            "Property": "Labour H"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

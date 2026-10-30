@@ -1,0 +1,61 @@
+table 'Parametry kolumn'
+	lineageTag: 8758b44e-90b3-4da7-b0fc-25a7e3e1fe35
+
+	measure 'Axis Order' = ```
+			
+			    switch(
+			            SELECTEDVALUE('Parametry kolumn'[Parametery kolumn Order],0),
+			            0, max('Date'[year_id]),
+			            1, max('Date'[quart_id]),
+			            max('Date'[mon_id]))
+			```
+		formatString: 0
+		lineageTag: b09ae5c4-7ffb-4057-890f-6d14b6cfbd06
+
+	column 'Parametry kolumn'
+		lineageTag: b744d5cb-1c4f-4395-b19c-7e8b48e52183
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parametery kolumn Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parametery kolumn Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parametery kolumn Fields'
+		isHidden
+		lineageTag: c3ed1ebc-526a-4f8e-9f89-fa398f076614
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parametery kolumn Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parametery kolumn Order'
+		isHidden
+		formatString: 0
+		lineageTag: 6ba0d1f5-04ff-4649-8974-a1ee310f6b01
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parametry kolumn-14dbfc9b-f8c6-41bf-b68f-3d5eaf4af273' = calculated
+		mode: import
+		source =
+				{
+				    ("Year", NAMEOF('Date'[Year]), 0),
+				    ("Quarter Code", NAMEOF('Date'[Quarter Code]), 1),
+				    ("Month Code", NAMEOF('Date'[Month Code]), 2)
+				}
+
+	annotation PBI_Id = d15cccc90cc34669b3629f26515809c1
+

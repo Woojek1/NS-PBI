@@ -1,0 +1,146 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "340d9277c162ffe3f96c",
+  "position": {
+    "x": 216.87707641196013,
+    "y": 53.156146179401993,
+    "z": 0,
+    "height": 575.14950166112953,
+    "width": 490.09966777408636,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produkty do Dekompletacji"
+                    }
+                  },
+                  "Property": "team_code"
+                }
+              },
+              "queryRef": "Produkty do Dekompletacji.team_code",
+              "nativeQueryRef": "team_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produkty do Dekompletacji"
+                    }
+                  },
+                  "Property": "src_prod_ti_code"
+                }
+              },
+              "queryRef": "Produkty do Dekompletacji.src_prod_ti_code",
+              "nativeQueryRef": "src_prod_ti_code"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Produkty do Dekompletacji"
+                        }
+                      },
+                      "Property": "calculated_pln"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Produkty do Dekompletacji.calculated_pln)",
+              "nativeQueryRef": "Wartość PLN",
+              "displayName": "Wartość PLN"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Produkty do Dekompletacji"
+                        }
+                      },
+                      "Property": "calculated_qty"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Produkty do Dekompletacji.calculated_qty)",
+              "nativeQueryRef": "Ilość",
+              "displayName": "Ilość"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Produkty do Dekompletacji"
+                      }
+                    },
+                    "Property": "calculated_pln"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnFormatting": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Produkty do Dekompletacji.calculated_pln)"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Produkty do Dekompletacji.calculated_qty)"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

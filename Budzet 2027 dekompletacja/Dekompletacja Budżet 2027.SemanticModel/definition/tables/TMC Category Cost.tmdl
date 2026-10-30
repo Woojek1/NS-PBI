@@ -1,0 +1,151 @@
+table 'TMC Category Cost'
+	lineageTag: bb75943c-e421-4094-93de-2c580358e474
+
+	column tkw_type_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 38ba5aff-a06c-4ba9-98bb-450598d2615e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: tkw_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Cost Code'
+		dataType: string
+		lineageTag: 4df2681e-5d6c-438b-a02b-852214ce20fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Cost Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Cost'
+		dataType: string
+		lineageTag: e48864ea-0b1e-40df-b8de-9a129038bd0f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_id
+		dataType: int64
+		isHidden
+		lineageTag: acabca18-3dd5-4fe2-8c8e-315f31de3c84
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Category'
+		dataType: string
+		lineageTag: 00c85987-1815-4ac1-80a6-6a3309de1cc6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		isHidden
+		lineageTag: afc404f9-01d6-44bb-99b4-d2ffeedc32df
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp1_id
+		dataType: int64
+		isHidden
+		lineageTag: 8615f36e-6a34-451a-a338-c2e66f01928f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: grp1_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Grp1 Code'
+		dataType: string
+		lineageTag: 08ff3c6f-2bf7-4759-8a86-373009b2992f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Grp1 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Grp1'
+		dataType: string
+		lineageTag: 3ebf9d52-4f66-4dfc-ae9c-9929397b035e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Grp1
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp2_id
+		dataType: int64
+		isHidden
+		lineageTag: 75af6274-04ed-41cd-8e53-c957f6f82604
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: grp2_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Grp2 Code'
+		dataType: string
+		lineageTag: 975fd584-8cda-4545-a443-d274afc3f611
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Grp2 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Grp2'
+		dataType: string
+		lineageTag: d0b717e5-eb4f-4f80-a5ca-5fe8314d568b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Grp2
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp3_id
+		dataType: int64
+		isHidden
+		lineageTag: 12b9a35c-9586-47f6-bd37-cfe9282a3171
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: grp3_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Grp3 Code'
+		dataType: string
+		lineageTag: d422b796-0fa1-415f-9619-e1c47e04c45d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Grp3 Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TMC Grp3'
+		dataType: string
+		lineageTag: 613d44f5-a465-4650-87e1-61e896f07306
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TMC Grp3
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'TMC Category Cost-c12d6e1b-0022-4072-ab5d-2f6bb104ce02' = entity
+		mode: directQuery
+		source
+			entityName: TMC Category Cost
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

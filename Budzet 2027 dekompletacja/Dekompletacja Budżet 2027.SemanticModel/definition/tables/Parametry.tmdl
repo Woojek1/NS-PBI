@@ -1,0 +1,51 @@
+table Parametry
+	lineageTag: 146113c6-10fe-4b9c-9aec-35d88ace3be4
+
+	column Parametry
+		lineageTag: c8aab411-48b3-4160-afcd-25bf8b783d4f
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parametry Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parametry Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parametry Fields'
+		isHidden
+		lineageTag: 6047d176-f012-4fdd-922b-7f2f220bf9ad
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parametry Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parametry Order'
+		isHidden
+		formatString: 0
+		lineageTag: 6c40e544-0dbb-4fe9-af7d-f5e62ea81ba5
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parametry-562210c4-c8b1-4a5e-bf33-e99baf25fa8c = calculated
+		mode: import
+		source =
+				{
+				    ("Work Center Code", NAMEOF('Work Center'[Work Center Code]), 4),
+				    ("Contract Code", NAMEOF('Contract'[Contract Code]), 1),
+				    ("Contract", NAMEOF('Contract'[Contract]), 0),
+				    ("MPK", NAMEOF('Organization'[MPK]), 3),
+				    ("MPK Code", NAMEOF(Organization[MPK Code]), 2),
+				    ("Work Center Name", NAMEOF('Work Center'[Work Center]), 5)}
+
+	annotation PBI_Id = 937772e542424370ae0e19b04e396ee6
+

@@ -1,0 +1,1151 @@
+table Product
+	lineageTag: d682da97-3db5-4642-af76-e35f49556274
+
+	column prod_si_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: a9308b89-ff21-4092-bf0e-f16be684b830
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_si_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_id
+		dataType: int64
+		isHidden
+		lineageTag: b21f286d-6b24-4ce0-87d4-c443a82a98b0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: prod_ti_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_name_en
+		dataType: string
+		isHidden
+		lineageTag: d82a4c32-827e-421b-b141-829b933e358f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_ti_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_name_de
+		dataType: string
+		isHidden
+		lineageTag: 30808617-90b4-4b8a-bb3d-c4f5cab89376
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_ti_name_de
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_name_fr
+		dataType: string
+		isHidden
+		lineageTag: 0c561836-6fe8-4e66-b873-2a24947b39ce
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_ti_name_fr
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_name_it
+		dataType: string
+		isHidden
+		lineageTag: 21415e5d-c72e-4cca-9bad-7331f2fdb6e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_ti_name_it
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_name_cs
+		dataType: string
+		isHidden
+		lineageTag: 51ab1272-1234-429e-a2bd-544c3ff3c970
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_ti_name_cs
+
+		annotation SummarizationSetBy = Automatic
+
+	column index_type_id
+		dataType: int64
+		isHidden
+		lineageTag: ed834d02-7b45-4aa8-b1ba-ed5750559dc8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: index_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column index_type_code
+		dataType: string
+		isHidden
+		lineageTag: 3b80919e-785f-423b-a5ab-d69d2e96dc21
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: index_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column index_type_name
+		dataType: string
+		isHidden
+		lineageTag: eb26d9d1-38c9-48cb-a02a-da9182865a24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: index_type_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_meas_id
+		dataType: int64
+		isHidden
+		lineageTag: 0b4a543c-4357-4b43-9462-6bed06d9f1b2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: unit_meas_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_meas_code
+		dataType: string
+		isHidden
+		lineageTag: 3e4c159d-46e5-4c14-ade9-f26efa0a821d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: unit_meas_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_meas_name
+		dataType: string
+		isHidden
+		lineageTag: e24bdb39-1242-4cb7-9037-2e46e05d6c31
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: unit_meas_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_id
+		dataType: int64
+		isHidden
+		lineageTag: 922e0c05-dce7-4442-96af-4bb5522bf6cb
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: model_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_objkey
+		dataType: string
+		isHidden
+		lineageTag: 9144c0ee-ed04-437d-a930-c7f090591234
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: model_objkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_id
+		dataType: int64
+		isHidden
+		lineageTag: 74b3228b-cfca-45c2-bc79-438e792cfdaa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: line_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_objkey
+		dataType: string
+		isHidden
+		lineageTag: bb601ff8-ebe7-442c-bb52-f12f8f9453eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: line_objkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_id
+		dataType: int64
+		isHidden
+		lineageTag: b1205309-835e-4206-b7af-464b2ad4328e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: brand_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_objkey
+		dataType: string
+		isHidden
+		lineageTag: f76e8f71-a9d1-4c53-8057-91c2b50e5dc1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: brand_objkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column sgrp_id
+		dataType: int64
+		isHidden
+		lineageTag: 7b2af19b-8c75-4045-8af1-4e4f25839f16
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: sgrp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sgrp_objkey
+		dataType: string
+		isHidden
+		lineageTag: 2f26ae43-1892-45d7-b551-312364014da3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sgrp_objkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp_id
+		dataType: int64
+		isHidden
+		lineageTag: c7146222-c597-4dfd-9273-14db70ddd640
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: grp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp_objkey
+		dataType: string
+		isHidden
+		lineageTag: f7889c8e-3d54-4af4-bc1d-a3dd4ab7da68
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: grp_objkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column lic_id
+		dataType: int64
+		isHidden
+		lineageTag: 39dd8a2c-dda3-4d6d-8718-18410fe084b5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: lic_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_kwdr_id
+		dataType: int64
+		isHidden
+		lineageTag: dbc1dbd2-d9e0-4e49-a141-052a56606682
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: prod_kwdr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_kwdr_code
+		dataType: string
+		isHidden
+		lineageTag: b0b57f2b-4588-4e42-aa42-b0db2c2d5407
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_kwdr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_kwdr_name
+		dataType: string
+		isHidden
+		lineageTag: f710ed94-e575-44f2-b04d-fb9f052cb4eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_kwdr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column impl_id
+		dataType: int64
+		isHidden
+		lineageTag: 69a3493b-4d2c-423f-9e7f-79599e292911
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: impl_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column impl_code
+		dataType: string
+		isHidden
+		lineageTag: 662ca847-fb67-45b6-bfd0-3cc12339611c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: impl_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column impl_name
+		dataType: string
+		isHidden
+		lineageTag: 3de5b90d-1ba9-44da-a8cd-52af473b1949
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: impl_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column impl_value
+		dataType: double
+		isHidden
+		lineageTag: 7cd5b023-ba48-444d-b20d-e1223d2d5b29
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: impl_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column impl_date_from
+		dataType: dateTime
+		isHidden
+		lineageTag: ee736e89-fd4b-4cc1-8625-ec4120985044
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: impl_date_from
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_id
+		dataType: int64
+		isHidden
+		lineageTag: 26a677e4-c822-44a3-a9f4-9a01651e7411
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mnf_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_cnt_id
+		dataType: int64
+		isHidden
+		lineageTag: e0472baf-41fb-402c-b51e-c5e548d42b36
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mnf_cnt_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_class_id
+		dataType: int64
+		isHidden
+		lineageTag: 0258f130-f806-4b3e-953e-929cd562852d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: purch_class_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_class_code
+		dataType: string
+		isHidden
+		lineageTag: c0c396f0-6de5-4ff4-936b-b775ca65b69c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: purch_class_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_class_name
+		dataType: string
+		isHidden
+		lineageTag: 555bbb78-8f62-46b4-a928-a72a52e4c530
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: purch_class_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_sgrp_id
+		dataType: int64
+		isHidden
+		lineageTag: ab8eafc3-3642-4ad9-bcb9-5b3b4d284242
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: purch_sgrp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_sgrp_code
+		dataType: string
+		isHidden
+		lineageTag: 8dae6cf2-f4a5-4cba-a942-5d3c86824414
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: purch_sgrp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_sgrp_name
+		dataType: string
+		isHidden
+		lineageTag: fd9be434-adf3-48d6-b025-1c647bcfc089
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: purch_sgrp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_grp_id
+		dataType: int64
+		isHidden
+		lineageTag: 28d91516-e902-48f2-8798-cdb066c92c18
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: purch_grp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_grp_code
+		dataType: string
+		isHidden
+		lineageTag: d066d515-d87a-4a0b-8433-a691ff106401
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: purch_grp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_grp_name
+		dataType: string
+		isHidden
+		lineageTag: f180efc9-6a8b-4ff9-95de-50421a0445e8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: purch_grp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_industr_id
+		dataType: int64
+		isHidden
+		lineageTag: 8dc54699-f658-4eaa-b00d-65d5ab4db5b2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: purch_industr_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_industr_code
+		dataType: string
+		isHidden
+		lineageTag: 63ab4cc0-994a-4ccb-bbb5-0957ab5a4c3c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: purch_industr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_industr_name
+		dataType: string
+		isHidden
+		lineageTag: 7597e823-ccdc-4363-b8bd-af3465bf65c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: purch_industr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_id
+		dataType: int64
+		isHidden
+		lineageTag: b75cf8bb-a7fe-465a-b014-2f33c2fb1f00
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: buyer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_code
+		dataType: string
+		isHidden
+		lineageTag: b112f5e8-7676-4c5b-a134-8aea2f4ae2b1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: buyer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_name
+		dataType: string
+		isHidden
+		lineageTag: bcd4ee77-1cf5-436e-8929-8626295a6156
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: buyer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Item Code'
+		dataType: string
+		lineageTag: fc6f00ed-c3b8-410d-9b98-014b60f9e07e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sale Item Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Item'
+		dataType: string
+		lineageTag: 61ac4bd7-9efb-40f3-bee6-7e971fa4fdca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sale Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inventory Item'
+		dataType: string
+		lineageTag: 58c0792e-f9f2-445a-bd01-d080bd7112d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Inventory Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr01
+		dataType: string
+		lineageTag: dbac9aaf-7dd5-4dd1-8b45-66d990bed850
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr01
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr02
+		dataType: string
+		lineageTag: 48f1a51d-d959-4e6a-a4dc-b3151a001c80
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr02
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr03
+		dataType: string
+		lineageTag: 8d1abc01-f933-4318-be9f-55845e925ddf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr03
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr04
+		dataType: string
+		lineageTag: dec27146-30b2-4ade-8062-b99c09e4b6d8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr04
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr05
+		dataType: string
+		lineageTag: d47510e5-724b-4d8d-9ff1-b144c1b50bae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr05
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr06
+		dataType: string
+		lineageTag: 7064682d-d8ca-4a3b-9f66-749328d0600d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr06
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr07
+		dataType: string
+		lineageTag: 630568ac-40c8-4fb3-b1b6-e40005478084
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr07
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr08
+		dataType: string
+		lineageTag: 02898da6-3d62-44e4-b03e-9cb18de95537
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr08
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr09
+		dataType: string
+		lineageTag: 3080e742-b8c2-4752-8f48-e51bc8c0f962
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr09
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attr10
+		dataType: string
+		lineageTag: 3fa4e5c4-efe4-4176-8e9c-d2bc2fe64c1b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attr10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Curr Mnf Cost'
+		dataType: double
+		lineageTag: 3639f02a-e840-46c6-a071-3c26169c9060
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Curr Mnf Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Model Code'
+		dataType: string
+		lineageTag: 6cbb4ab0-1fef-4dc6-b983-662572d9edff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Model Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 60e30cd2-baeb-4a51-ba8c-a6aa0c65e03e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Code'
+		dataType: string
+		lineageTag: d6dee0ad-0156-4c0d-b7f3-0514da9429ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line
+		dataType: string
+		lineageTag: 10cca693-ae2b-4c73-a00a-2359da8787b1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Brand Code'
+		dataType: string
+		lineageTag: c855b758-aa6d-456a-a051-bd0030f4f965
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Brand Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: bc67c9b6-7424-4c84-81a2-02d5a9d9fa36
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Subgroup Code'
+		dataType: string
+		lineageTag: 812d6b71-defd-4a26-882c-52b6ac49dbd7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Subgroup Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Subgroup'
+		dataType: string
+		lineageTag: 4694f66b-6d24-44a2-bfe5-d647a01b779a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Subgroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Group Code'
+		dataType: string
+		lineageTag: 18debfef-ca5a-4206-b9e6-6341f8d499ec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Group Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Group'
+		dataType: string
+		lineageTag: 7f4e5d57-6407-46ca-a282-eb6905e62cc0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'License Code'
+		dataType: string
+		lineageTag: 6e9e9270-427e-46f5-a627-dbc5c8450355
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: License Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column License
+		dataType: string
+		lineageTag: 6bf568ad-b41c-49b1-b6a0-bbca55efb6f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: License
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manufacturer Code'
+		dataType: string
+		lineageTag: 19109b98-9176-4943-af98-314cbc22ae75
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Manufacturer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: 84522644-41c8-47c7-9b0d-64cc3aa996bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cnt Manufacturer Code'
+		dataType: string
+		lineageTag: 97a1f75a-3f66-4afb-abe6-ad8dce4844e9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cnt Manufacturer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cnt Manufacturer'
+		dataType: string
+		lineageTag: 0b473fd5-4034-453e-877f-768f2d407940
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cnt Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Model Acquisition'
+		dataType: string
+		lineageTag: 55e3aefb-1d33-4ace-814d-6feeb114a154
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Model Acquisition
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Model PremiumEco'
+		dataType: string
+		lineageTag: 657345cc-826c-49dc-b834-495d7e2d2457
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Model PremiumEco
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_code
+		dataType: string
+		lineageTag: 2ce6a0f8-bb59-4313-9ea2-ba3de294e561
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_ti_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_model_code
+		dataType: string
+		lineageTag: 811dd578-4062-41a6-b163-455916512ec7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_model_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_model_name
+		dataType: string
+		lineageTag: 27a22e35-823e-4a70-950e-9e8b0ffd91ae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_model_description
+		dataType: string
+		lineageTag: 9b5c1cea-167e-4c8f-a63d-c0f8b2986fee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_model_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_brand_code
+		dataType: string
+		lineageTag: cffe199c-d999-4df8-93a1-268a38118d5f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_brand_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_brand_name
+		dataType: string
+		lineageTag: 688213af-ff64-40f7-ac4c-b8c9721ed709
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_brand_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_grp_code
+		dataType: string
+		lineageTag: 0cd0d5d0-7e97-4903-b555-c9b10e76cb6f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_grp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_grp_name
+		dataType: string
+		lineageTag: 60ae9953-cfee-47d4-b5aa-bf733ef24aef
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_grp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_sgrp_code
+		dataType: string
+		lineageTag: b1f59aff-7a7d-405c-91b1-e2dcd7b9ae80
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_sgrp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_sgrp_name
+		dataType: string
+		lineageTag: f85f3a15-e121-4caf-99f3-641a42b775fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_sgrp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_line_code
+		dataType: string
+		lineageTag: cec037b7-fd22-46a6-abfa-5f157182ea46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_line_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legacy_line_name
+		dataType: string
+		lineageTag: bde961e4-f7b7-4420-a6a1-383f3b967113
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legacy_line_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_ctr_code
+		dataType: string
+		lineageTag: bad69f04-bf31-4322-aa34-c13184d1a776
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: line_ctr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_ctr_name
+		dataType: string
+		lineageTag: 028e2548-a3ea-4531-8c95-bd0c252d4a01
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: line_ctr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_ctr_code
+		dataType: string
+		lineageTag: e335c679-2bfd-4d25-be6a-77fbb7290c0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: model_ctr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_ctr_name
+		dataType: string
+		lineageTag: 4d1a8f5d-b306-4e09-8bfd-a9e31ade2618
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: model_ctr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_ctr_code
+		dataType: string
+		lineageTag: 4c35a279-75c1-4f04-afaf-42ecf4f55af9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: brand_ctr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_ctr_name
+		dataType: string
+		lineageTag: 0ffbe81b-f95a-4c71-ba84-1cf25236cc41
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: brand_ctr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sgrp_ctr_code
+		dataType: string
+		lineageTag: acc21e25-df4d-486b-9440-603a2b7e8044
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sgrp_ctr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sgrp_ctr_name
+		dataType: string
+		lineageTag: 6b52f558-4180-481c-a90a-310437875bc6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sgrp_ctr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp_ctr_code
+		dataType: string
+		lineageTag: 0b5b8602-3e2a-4cac-8a9a-c875eb93cee4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: grp_ctr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp_ctr_name
+		dataType: string
+		lineageTag: d6872226-5245-4623-8226-6f637993b5f1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: grp_ctr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column supergrp_id
+		dataType: int64
+		lineageTag: 9faddaa8-faab-400a-86cf-e8fce6c7e3d5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: supergrp_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column supergrp_objkey
+		dataType: string
+		lineageTag: f8bb83ad-c6ad-4288-b226-0a0f4170e09a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supergrp_objkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column supergrp_code
+		dataType: string
+		lineageTag: e71db2f5-e4a4-421e-8ffb-7b82827ae892
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supergrp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column supergrp_name
+		dataType: string
+		lineageTag: 4740614f-fc15-4920-a9b5-35b98ab6565e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supergrp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_type_id
+		dataType: int64
+		lineageTag: 79d99570-14e1-496f-8fbe-f426a82d7055
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: model_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_type_code
+		dataType: string
+		lineageTag: 4fedd89f-d382-45f0-848e-ff8fffd9c1c0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: model_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_type_name
+		dataType: string
+		lineageTag: 40f984cd-dbe7-46d8-8858-4a83b98fae28
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: model_type_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_type_name_en
+		dataType: string
+		lineageTag: 0b598642-0d20-4e0c-b253-81c652b79347
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: model_type_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_mnf_cost_pln
+		dataType: double
+		lineageTag: ea40d8a7-f188-4a77-9bd1-6f6f69dcd4d7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: prod_si_mnf_cost_pln
+
+		annotation SummarizationSetBy = Automatic
+
+	column gtin8_code
+		dataType: string
+		lineageTag: 54513765-f9c5-4b88-af73-04a62d8c083d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: gtin8_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column gtin13_code
+		dataType: string
+		lineageTag: 81dd3e6d-07cd-4ca7-8d0a-1990206e7882
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: gtin13_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cluster_code
+		dataType: string
+		lineageTag: 21b0c9fa-6255-4168-a769-ba83072fb5ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cluster_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cluster_name
+		dataType: string
+		lineageTag: 48857c49-9d2c-4ac8-b388-e4223735d08b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cluster_name
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Group Hierarchy'
+		lineageTag: 8673e1f4-61f1-4ccb-a355-7fc292871c5e
+		sourceLineageTag: Group Hierarchy
+
+		level 'Product Group'
+			lineageTag: 4a41ffa3-cdd0-4b3d-8e3c-1c2b1542d43c
+			column: 'Product Group'
+
+		level 'Product Subgroup'
+			lineageTag: 1c5b8f18-6bb3-4c0e-bc45-c2326d45a1e3
+			column: 'Product Subgroup'
+
+		level Model
+			lineageTag: dfa272b1-baf2-4a41-8d1d-5b81935aaac2
+			column: Model
+
+		level 'Inventory Item'
+			lineageTag: b32a4690-90a5-4fce-9d87-e94209e5c84f
+			column: 'Inventory Item'
+
+		level 'Sale Item'
+			lineageTag: eb4aed1b-1774-41aa-a171-167786ea625e
+			column: 'Sale Item'
+
+	hierarchy 'Brand Hierarchy'
+		lineageTag: e4b96904-f95b-4f6b-8d15-6df215bab684
+		sourceLineageTag: Brand Hierarchy
+
+		level Brand
+			lineageTag: 3476a2a3-753b-425d-a2a6-b72d1cce709a
+			column: Brand
+
+		level Line
+			lineageTag: 3553402b-d7d8-4128-ad5d-00d35f01e80b
+			column: Line
+
+		level Model
+			lineageTag: f0909e54-7c6f-4a8f-8aea-035ad6ebd6f4
+			column: Model
+
+		level 'Inventory Item'
+			lineageTag: cffdd028-74c7-4c56-8a99-b20d27b45d10
+			column: 'Inventory Item'
+
+		level 'Sale Item'
+			lineageTag: b535bab9-14e8-457d-a0c6-ad7576531a8a
+			column: 'Sale Item'
+
+	partition Product-437c17b1-3e6e-4678-ba76-7a7978d069c2 = entity
+		mode: directQuery
+		source
+			entityName: Product
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

@@ -1,0 +1,47 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - Manufacturing Costs Tabular Model","BDG Values 2027","Produkty do Dekompletacji","Produkt","bdg_27_godziny_added_mpk","d_work_center"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Mnf Time Measures'
+ref table 'Mnf Qty Measures'
+ref table 'Mnf Cost Measures'
+ref table 'Mnf TMC Price Measures'
+ref table Date
+ref table Contract
+ref table Organization
+ref table Company
+ref table 'Labor Class'
+ref table 'Work Center'
+ref table 'Cnt Manufacturer'
+ref table Product
+ref table 'Product Inventory Type'
+ref table 'TMC Category Cost'
+ref table 'Month Mnf Cost'
+ref table Parametry
+ref table 'Parametry kolumn'
+ref table 'Time Measures'
+ref table 'Mnf Bud Time Measures'
+ref table 'Time Measures Sets'
+ref table 'BDG Values 2027'
+ref table 'Produkty do Dekompletacji'
+ref table RoleDaxFilter
+ref table Produkt
+ref table Wymiary
+ref table bdg_27_godziny_added_mpk
+ref table Miary
+ref table d_work_center
+ref table 'Measure Selector'
+
+ref cultureInfo en-US
+ref cultureInfo pl-PL
+

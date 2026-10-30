@@ -1,0 +1,50 @@
+table 'Time Measures'
+	lineageTag: 594749f3-fa99-44e1-bdbe-3aac1ee6a977
+
+	column 'Time Measures'
+		lineageTag: a5543b58-4f31-45c4-b5f8-94747d779333
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Time Measures Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Time Measures Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Measures Fields'
+		isHidden
+		lineageTag: 224aaaa9-4f5e-4a06-8445-1ba9eded2a6d
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Time Measures Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Measures Order'
+		isHidden
+		formatString: 0
+		lineageTag: 5eede7e6-81a6-4b89-9a27-f15f2e0f12fc
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Time Measures-56a829bd-f5a9-4236-be3e-d1640e1c1d19' = calculated
+		mode: import
+		source =
+				{
+				    ("Machine Time", NAMEOF('Mnf Time Measures'[Machine Time]), 0),
+				    ("Labor Crew Time", NAMEOF('Mnf Time Measures'[Labor Crew Time]), 1),
+				    ("Bud Labor Crew Time", NAMEOF('Mnf Bud Time Measures'[Bud Labor Crew Time]),2),
+				    ("Bud Manufacturing Time", NAMEOF('Mnf Bud Time Measures'[Bud Manufacturing Time]),3)
+				}
+
+	annotation PBI_Id = e969f89bca0d4bd889d5ce2aa81bc06c
+

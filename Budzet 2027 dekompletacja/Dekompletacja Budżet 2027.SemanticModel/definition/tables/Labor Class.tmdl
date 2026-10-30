@@ -1,0 +1,48 @@
+table 'Labor Class'
+	lineageTag: 82c8d17c-093f-49a0-a7d5-b29e5752e460
+
+	column labor_class_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: f86e9e03-f5a7-4141-bc49-eabe5bea5886
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: labor_class_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contr_code
+		dataType: string
+		isHidden
+		lineageTag: 475e02c3-ac6f-4277-8f87-c7f5088942fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: contr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Labor Class Code'
+		dataType: string
+		lineageTag: b16dc497-2a8b-4e3e-84a9-5075c89c8fb0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Labor Class Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Labor Class'
+		dataType: string
+		lineageTag: 3a761b4a-7ba2-46bb-8b5f-ec50a3982a21
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Labor Class
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Labor Class-428a0be1-f4d4-4dd9-ae8e-3683591b80bb' = entity
+		mode: directQuery
+		source
+			entityName: Labor Class
+			expressionSource: 'DirectQuery to AS - Manufacturing Costs Tabular Model'
+

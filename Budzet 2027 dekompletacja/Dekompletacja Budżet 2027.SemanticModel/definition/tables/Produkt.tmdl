@@ -1,0 +1,631 @@
+table Produkt
+	lineageTag: 668ce5e6-baab-4731-a5eb-92384896bfaf
+
+	column prod_si_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 9bf6b9ea-5956-4478-8109-59d4cadd6f8b
+		summarizeBy: none
+		sourceColumn: prod_si_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3324ba8f-63ed-4b61-806a-cedc575d3a8d
+		summarizeBy: none
+		sourceColumn: prod_si_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column index_type_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6f5d2552-887c-4f13-af4b-72b06b2454c8
+		summarizeBy: none
+		sourceColumn: index_type_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_meas_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d909d86e-28df-4019-8b60-95fee5f128fa
+		summarizeBy: none
+		sourceColumn: unit_meas_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 810e9699-eeac-4bf4-a52e-ad15de484386
+		summarizeBy: none
+		sourceColumn: model_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 22769b0b-1355-4f4e-a7c1-919b74ad560c
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 126a39d2-ac50-44eb-801f-c3d01cb6740f
+		summarizeBy: none
+		sourceColumn: line_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 36dd1e3c-f724-4041-ad19-6030ba925d77
+		summarizeBy: none
+		sourceColumn: line_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d0b56f01-5ed5-4b5a-adea-c670e6487323
+		summarizeBy: none
+		sourceColumn: brand_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 92035d49-d727-41ea-bf08-a783c00eac59
+		summarizeBy: none
+		sourceColumn: brand_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sgrp_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f5dcecda-6213-4c78-96c1-358501f32ede
+		summarizeBy: none
+		sourceColumn: sgrp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sgrp_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 38c5682e-8f41-46a1-a4c3-bd97dca9714e
+		summarizeBy: none
+		sourceColumn: sgrp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 91382bfc-38f5-4b46-abe2-bff98fbfe9cc
+		summarizeBy: none
+		sourceColumn: grp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column grp_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8302ace7-3fdc-4d92-8330-ffeca37f0e93
+		summarizeBy: none
+		sourceColumn: grp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column lic_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7344937f-aee2-41db-96f4-daaad2234561
+		summarizeBy: none
+		sourceColumn: lic_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column lic_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e826caa2-1862-4c2f-a632-10998b30b2c2
+		summarizeBy: none
+		sourceColumn: lic_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8112fc3d-3531-4b5f-8612-b0aba4f4e3b9
+		summarizeBy: sum
+		sourceColumn: mnf_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5dd76d67-7548-41ec-af1a-f09d9f06e269
+		summarizeBy: none
+		sourceColumn: mnf_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 1805eb89-b0f7-4b15-bc8c-03f947f5671f
+		summarizeBy: none
+		sourceColumn: mnf_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_class_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7636003a-9215-474a-b0e4-287d8ca45809
+		summarizeBy: none
+		sourceColumn: purch_class_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_class_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7a91cfd9-d493-4dba-857e-51c482c2a96c
+		summarizeBy: none
+		sourceColumn: purch_class_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_sgrp_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3afa7b8b-df28-47b0-ae6d-0fb0bbbb32b3
+		summarizeBy: none
+		sourceColumn: purch_sgrp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_sgrp_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 2bb386f1-0a79-4f44-8cf1-2690739dcc37
+		summarizeBy: none
+		sourceColumn: purch_sgrp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_grp_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3b776ef9-82cb-49f0-b294-cd3dd09e1876
+		summarizeBy: none
+		sourceColumn: purch_grp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_grp_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4d26ebfa-6512-4691-a8fd-698d02b5155d
+		summarizeBy: none
+		sourceColumn: purch_grp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_industr_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f61ad9d8-6f0a-4bde-9c15-967f07dacb18
+		summarizeBy: none
+		sourceColumn: purch_industr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column purch_industr_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b2e1fe7e-ab47-4a7f-91c4-d2f3819a3328
+		summarizeBy: none
+		sourceColumn: purch_industr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: d548396f-51bc-4218-a20b-0c2a6146b77b
+		summarizeBy: none
+		sourceColumn: buyer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 1d6a8493-8f84-44f8-8a09-c93425aa1aed
+		summarizeBy: none
+		sourceColumn: buyer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column supergrp_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3fd4ae8e-789b-4b16-8232-93f34cd49cab
+		summarizeBy: none
+		sourceColumn: supergrp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column supergrp_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a0a98b03-3d7e-44de-bd23-c3425ba96171
+		summarizeBy: none
+		sourceColumn: supergrp_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_type_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 66a44385-3886-48ed-818b-60819d82f04b
+		summarizeBy: none
+		sourceColumn: model_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_type_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f1c4842a-b159-45ac-99d7-88d83fc0d9f3
+		summarizeBy: none
+		sourceColumn: model_type_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_type_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5ea1a39c-a9e3-40f1-bc64-9d38d4210382
+		summarizeBy: none
+		sourceColumn: model_type_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_inv_part_flag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 186cbc22-2c37-455c-8386-498216114b10
+		summarizeBy: sum
+		sourceColumn: prod_si_inv_part_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_sales_part_flag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: b80e7199-bbec-4d47-b2a3-dcd033bc32e7
+		summarizeBy: sum
+		sourceColumn: prod_si_sales_part_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_purch_part_flag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: 7d17fc9f-f5cd-445f-a4cd-d8f2ab0c4b95
+		summarizeBy: sum
+		sourceColumn: prod_si_purch_part_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_acq_line_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6dd9651f-d4f9-4d32-938c-8001d74a1872
+		summarizeBy: none
+		sourceColumn: model_acq_line_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_premium_eco
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 55833acd-9f62-4a6c-8dd3-79d4418f69d4
+		summarizeBy: none
+		sourceColumn: model_premium_eco
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_purch_part_rule_flag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: tinyint
+		lineageTag: c32800f0-9639-40a1-a64b-cd71170c90df
+		summarizeBy: sum
+		sourceColumn: prod_si_purch_part_rule_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_contr_type_list
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: ad60cdda-df83-4d06-8912-481425110a41
+		summarizeBy: none
+		sourceColumn: prod_si_contr_type_list
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_contr_pri_vend_list
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0af9241c-626f-4f43-83c7-ec699ca3b019
+		summarizeBy: none
+		sourceColumn: prod_si_contr_pri_vend_list
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_novelties_flag
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5da136fc-50f9-4c94-a667-108cbf277eba
+		summarizeBy: none
+		sourceColumn: line_novelties_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_status_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7c640495-39bf-4652-bbcd-7b9a68737949
+		summarizeBy: none
+		sourceColumn: line_status_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg3_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 1df358fa-b238-433a-b653-78c45ad5c4df
+		summarizeBy: none
+		sourceColumn: bcg3_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg3_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 415fa9f8-434c-44a6-becf-ca9b4e6db827
+		summarizeBy: none
+		sourceColumn: bcg3_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg3_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0a3d6a8c-f269-4f81-8df7-feb6ba6232b2
+		summarizeBy: none
+		sourceColumn: bcg3_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg2_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 738926b1-4886-4ceb-b6c6-a10a96be7862
+		summarizeBy: none
+		sourceColumn: bcg2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg2_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 101b2877-bdc6-416e-b62f-2fb454e82e06
+		summarizeBy: none
+		sourceColumn: bcg2_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg1_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0dbe6eb4-8b90-466e-b5dc-7f9d4e636d10
+		summarizeBy: none
+		sourceColumn: bcg1_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bcg1_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6bca2716-b085-4a93-8e83-54c79d26b41d
+		summarizeBy: none
+		sourceColumn: bcg1_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_lists
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b24b1cce-326f-4df4-9e75-2531b5438781
+		summarizeBy: none
+		sourceColumn: price_lists
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_list_master_flag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 955dc8f6-7d71-4c32-a7a6-0e203c4c180b
+		summarizeBy: sum
+		sourceColumn: price_list_master_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_list_special_flag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 312be371-0fb6-40d4-acb6-3ff426aa9c8f
+		summarizeBy: sum
+		sourceColumn: price_list_special_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_list_other_flag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: b53deccc-7430-4ffc-b995-609e37dac557
+		summarizeBy: sum
+		sourceColumn: price_list_other_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column npi_no
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8417fee3-7acf-401f-b0b7-38d49a8c6e08
+		summarizeBy: none
+		sourceColumn: npi_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_lists_json
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0c54c9d0-1fb8-4f8e-837e-cfebdc770159
+		summarizeBy: none
+		sourceColumn: price_lists_json
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_code_f
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7a1d488b-635b-42dc-a492-6487e288ecb8
+		summarizeBy: none
+		sourceColumn: model_code_f
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_model_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: e4baabaa-d133-457b-accb-0a79121d17da
+		summarizeBy: none
+		sourceColumn: price_model_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_model_name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f4473ca2-2f77-4124-b6b0-53fcd4b4c0b4
+		summarizeBy: none
+		sourceColumn: price_model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_model_desc
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cd0071f0-d6c8-47ca-a191-7f31ba6060e6
+		summarizeBy: none
+		sourceColumn: price_model_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c9a9e088-5926-4380-a9c9-5e9ea7f1332d
+		summarizeBy: sum
+		sourceColumn: prod_si_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_si_db_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 704c702c-aa8d-48a7-bea6-5d46cec987d0
+		summarizeBy: none
+		sourceColumn: prod_si_db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_name_en
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f497f1ad-c0b5-4ae8-9cd4-337f4ab9662a
+		summarizeBy: none
+		sourceColumn: prod_ti_name_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_name_de
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 24f11fdb-5f78-4748-8f8c-92543f77d20b
+		summarizeBy: none
+		sourceColumn: prod_ti_name_de
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_name_fr
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 51efe86c-c7c6-461d-84c8-be1703918b04
+		summarizeBy: none
+		sourceColumn: prod_ti_name_fr
+
+		annotation SummarizationSetBy = Automatic
+
+	column index_type_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 2201854f-7bc7-4f2f-9fda-acab57088c3c
+		summarizeBy: none
+		sourceColumn: index_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Produkt = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+				    prd_Database = Source{[Name="zenith",Kind="Database"]}[Data],
+				    solet_Schema = prd_Database{[Name="edw",Kind="Schema"]}[Data],
+				    d_product_Table = solet_Schema{[Name="d_product",Kind="Table"]}[Data]
+				    // #"Removed Columns" = Table.RemoveColumns(d_product_Table,{"prod_si_id", "prod_si_db_code", "prod_ti_name_en", "prod_ti_name_de", "prod_ti_name_fr"})
+				in
+				    #"d_product_Table"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

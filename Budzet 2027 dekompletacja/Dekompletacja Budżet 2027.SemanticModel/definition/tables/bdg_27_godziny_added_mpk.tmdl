@@ -1,0 +1,133 @@
+table bdg_27_godziny_added_mpk
+	lineageTag: 93e4a0bf-d6e5-428b-aeeb-adc4099bd711
+
+	measure Time = sum(bdg_27_godziny_added_mpk[total_time])
+		formatString: #,0
+		lineageTag: 22a37f5b-32c0-4fba-bbfb-a91a90ad8b93
+
+	measure 'Labour H' = SUM(bdg_27_godziny_added_mpk[total_labour_time])
+		formatString: #,0
+		lineageTag: dfe0865d-672d-451b-8378-4587b31572f1
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Budget Time Selected' =
+			
+			VAR SelectedType =
+			    SELECTEDVALUE(
+			        'Measure Selector'[Time Type],
+			        "Pracochłonność"
+			    )
+			RETURN
+			    SWITCH(
+			        SelectedType,
+			        "Pracochłonność", [Labour H],
+			        "Maszynochłonność", [Time]
+			    )
+		formatString: #,0
+		lineageTag: 02cd778c-f6ac-4dc4-af8c-f5d4c3f56624
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column part_no
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7a113a62-c059-46a0-962d-e1dd83fabbed
+		summarizeBy: none
+		sourceColumn: part_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column work_center_no
+		dataType: string
+		sourceProviderType: nvarchar(5)
+		lineageTag: e88f8fe6-d666-4b16-90aa-a20637af67c6
+		summarizeBy: none
+		sourceColumn: work_center_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column LABOR_CLASS_NO
+		dataType: string
+		sourceProviderType: nvarchar(10)
+		lineageTag: d81d16e0-9bee-405b-8059-36276c55c055
+		summarizeBy: none
+		sourceColumn: LABOR_CLASS_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column contract
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 052dad98-94ee-4d78-bb27-3d4193e1275c
+		summarizeBy: none
+		sourceColumn: contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column item
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 840f3732-5f0a-425d-99b4-6d7026a8ac3b
+		summarizeBy: none
+		sourceColumn: item
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3e51bca4-6d75-487c-8a26-f24dde4c5fc0
+		summarizeBy: none
+		sourceColumn: month_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_code
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7cec51bb-17dc-4c12-83f6-3d0a53367c4b
+		summarizeBy: none
+		sourceColumn: team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_time
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 0949dc3a-14f2-4424-8d09-ad2973eecd19
+		summarizeBy: sum
+		sourceColumn: total_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_labour_time
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 95527d67-7b31-4ee1-9b7c-252483965a56
+		summarizeBy: sum
+		sourceColumn: total_labour_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition bdg_27_godziny_added_mpk = m
+		mode: directQuery
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/58af2438595b0abd", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+				    controlling_Database = Source{[Name="controlling",Kind="Database"]}[Data],
+				    bdg2026_Schema = controlling_Database{[Name="bdg2027",Kind="Schema"]}[Data],
+				    dekompletacja_na_godziny_Table = bdg2026_Schema{[Name="dekompletacja_na_godziny_bdg27",Kind="Table"]}[Data]
+				in
+				    dekompletacja_na_godziny_Table
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
