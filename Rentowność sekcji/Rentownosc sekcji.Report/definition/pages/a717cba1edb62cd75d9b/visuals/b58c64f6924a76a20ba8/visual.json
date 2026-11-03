@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "b58c64f6924a76a20ba8",
+  "position": {
+    "x": 672.85714285714289,
+    "y": 28.571428571428573,
+    "z": 2,
+    "height": 70,
+    "width": 610,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist_price"
+                    }
+                  },
+                  "Property": "bcg3_name"
+                }
+              },
+              "queryRef": "pricelist_price.bcg3_name",
+              "nativeQueryRef": "bcg3_name",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pricelist_price"
+                  }
+                },
+                "Property": "bcg3_name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f9e91905c0ae90a929d4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist_price"
+              }
+            },
+            "Property": "bcg3_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

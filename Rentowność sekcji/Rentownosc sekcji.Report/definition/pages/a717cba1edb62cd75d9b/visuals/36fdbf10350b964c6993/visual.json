@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "36fdbf10350b964c6993",
+  "position": {
+    "x": 52.857142857142861,
+    "y": 135.71428571428572,
+    "z": 0,
+    "height": 874.28571428571433,
+    "width": 610,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "margin_data"
+                    }
+                  },
+                  "Property": "partNo"
+                }
+              },
+              "queryRef": "margin_data.partNo",
+              "nativeQueryRef": "partNo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "margin_data"
+                    }
+                  },
+                  "Property": "line_name"
+                }
+              },
+              "queryRef": "margin_data.line_name",
+              "nativeQueryRef": "line_name"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "222.0000028655004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "margin_data.partNo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "128.33333333333334D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "margin_data.line_name"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "353336f940b41a060b02",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "margin_data"
+              }
+            },
+            "Property": "partNo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "25a7e5418085ad310784",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "margin_data"
+              }
+            },
+            "Property": "line_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

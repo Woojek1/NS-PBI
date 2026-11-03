@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "4f5f094e696bd62a0be6",
+  "position": {
+    "x": 1225,
+    "y": 218.33333333333334,
+    "z": 3002,
+    "height": 838.33333333333337,
+    "width": 621.66666666666674,
+    "tabOrder": 3002
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "M2"
+                }
+              },
+              "queryRef": "_Measures.M2",
+              "nativeQueryRef": "M2"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average M2 by Product Line"
+                }
+              },
+              "queryRef": "_Measures.Average M2 by Product Line",
+              "nativeQueryRef": "Average M2 by Product Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist_price"
+                    }
+                  },
+                  "Property": "line_name"
+                }
+              },
+              "queryRef": "pricelist_price.line_name",
+              "nativeQueryRef": "line_name1"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f4565ad41629077e048d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "M2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3a2a6d4412131c39103d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average M2 by Product Line"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "56fd13ddb5c02c769ad9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist_price"
+              }
+            },
+            "Property": "line_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

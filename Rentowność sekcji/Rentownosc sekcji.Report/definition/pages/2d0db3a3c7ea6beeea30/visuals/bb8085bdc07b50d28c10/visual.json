@@ -1,0 +1,309 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "bb8085bdc07b50d28c10",
+  "position": {
+    "x": 38.333333333333336,
+    "y": 218.33333333333334,
+    "z": 0,
+    "height": 838.33333333333337,
+    "width": 1146.6666666666667,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist_price"
+                    }
+                  },
+                  "Property": "line_name"
+                }
+              },
+              "queryRef": "pricelist_price.line_name",
+              "nativeQueryRef": "line_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist_price"
+                    }
+                  },
+                  "Property": "currency"
+                }
+              },
+              "queryRef": "pricelist_price.currency",
+              "nativeQueryRef": "currency"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist_price"
+                    }
+                  },
+                  "Property": "pricelist_region"
+                }
+              },
+              "queryRef": "pricelist_price.pricelist_region",
+              "nativeQueryRef": "pricelist_region"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Discount Value"
+                }
+              },
+              "queryRef": "_Measures.Discount Value",
+              "nativeQueryRef": "Discount Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "D&I Value"
+                }
+              },
+              "queryRef": "_Measures.D&I Value",
+              "nativeQueryRef": "D&I Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "TKW"
+                }
+              },
+              "queryRef": "_Measures.TKW",
+              "nativeQueryRef": "TKW"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pricelist_price"
+                        }
+                      },
+                      "Property": "price_pln"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pricelist_price.price_pln)",
+              "nativeQueryRef": "Sum of price_pln"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "pricelist_price"
+                        }
+                      },
+                      "Property": "price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(pricelist_price.price)",
+              "nativeQueryRef": "Sum of price"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "178.03774085528724D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "`sandbox` `team_profitability` `pricelist_price`.partNo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "174.08388127126335D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "pricelist_price.line_name"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b144674420d046b67460",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist_price"
+              }
+            },
+            "Property": "line_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "11c95a10ae3ae94a2a30",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist_price"
+              }
+            },
+            "Property": "currency"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3ff511ac03dcd25616a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist_price"
+              }
+            },
+            "Property": "pricelist_region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "896f05a1788ab5cd71e9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Discount Value"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7f8d57777779080085d2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "D&I Value"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4eea56b6104063b9b598",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "TKW"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bc264cd075456246d780",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pricelist_price"
+                  }
+                },
+                "Property": "price_pln"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f33c01d60bd460d9c974",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pricelist_price"
+                  }
+                },
+                "Property": "price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

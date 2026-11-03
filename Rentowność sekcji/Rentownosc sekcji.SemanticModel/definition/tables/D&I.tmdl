@@ -1,0 +1,14 @@
+table D&I
+	lineageTag: 3c177d98-562a-447d-b246-c8ddb411dafd
+
+	column D&I
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: bb8383ae-0cf2-4756-86f1-8e0c15767866
+		summarizeBy: none
+		sourceColumn: [Value]
+
+	partition D&I = calculated
+		mode: import
+		source = GENERATESERIES(0, 1, 0.005)
+

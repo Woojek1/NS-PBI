@@ -1,0 +1,119 @@
+table _Measures
+	lineageTag: 9c5a4648-9b5f-4559-8f95-0ccccc7d4ce7
+
+	measure 'Discount Value' = SELECTEDVALUE('Discount'[Discount], 0.62)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3b1a0072-d3ed-488f-8592-c998ca444d1f
+
+	measure 'D&I Value' = SELECTEDVALUE('D&I'[D&I], 0.12)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 39a6468b-f6d9-4601-b920-4c56a3319a5e
+
+	measure 'Catalog Price' =
+			
+			CALCULATE(
+			    SELECTEDVALUE(pricelist_price[price_pln]),
+			    TREATAS(
+			        VALUES(margin_data[partNo]),
+			        pricelist_price[part_no]
+			    )
+			)
+		formatString: #,##0.00
+		lineageTag: eb8a6743-f860-47f5-86b4-5b69b8aee082
+
+	measure 'Price After Discount' =
+			VAR _Price = [Catalog Price]
+			RETURN
+			    _Price * (1 - [Discount Value])
+		formatString: #,##0.00
+		lineageTag: 68ff558d-a067-4e68-89d8-3f93bc00ebc8
+
+	measure TKW = MAX(pricelist_price[tkw_pln])
+		formatString: #,##0.00
+		lineageTag: 2758a5dc-8bda-42f9-8908-2f740c699a16
+
+	measure M2 =
+			VAR _NetPrice = [Price After Discount]
+			VAR _TKW = [TKW]
+			VAR _DandI = [D&I Value]
+			RETURN
+			    IF(
+			        ISBLANK(_NetPrice) || _NetPrice = 0 || ISBLANK(_TKW),
+			        BLANK(),
+			        DIVIDE(
+			            _NetPrice - (_TKW * 1.03) - ((_DandI + 0.015) * _NetPrice),
+			            _NetPrice
+			        )
+			    )
+		lineageTag: 599c0774-e9a7-47c4-9048-430f07dcf781
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average M2 by Product Line' =
+			AVERAGEX(
+			    VALUES(pricelist_price[part_no]),
+			    CALCULATE([M2])
+			)
+		lineageTag: 5d1cc551-8b70-42ae-9cbc-905ff8cda941
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Product Line Rank' =
+			
+			VAR _CurrentM2 = [Average M2 by Product Line]
+			
+			RETURN
+			IF(
+			    NOT ISBLANK(_CurrentM2),
+			    RANKX(
+			        FILTER(
+			            ALLSELECTED(margin_data[line_name]),
+			            NOT ISBLANK(
+			                CALCULATE([Average M2 by Product Line])
+			            )
+			        ),
+			        CALCULATE([Average M2 by Product Line]),
+			        _CurrentM2,
+			        DESC,
+			        DENSE
+			    )
+			)
+		formatString: 0
+		lineageTag: ac30bdf5-cec2-4f6c-a7ba-e8674af0ab3b
+
+	measure 'Show Top 10 Product Lines' = IF([Product Line Rank] <= 10, 1, 0)
+		formatString: 0
+		lineageTag: 4b27f50c-5b67-4736-8c2d-a018bd360585
+
+	measure 'Catalog Price Count' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(pricelist_price[catalog_price]),
+			    TREATAS(
+			        VALUES(margin_data[partNo]),
+			        pricelist_price[partNo]
+			    )
+			)
+		formatString: 0
+		lineageTag: e6011e35-553d-4cdb-b3d0-68e34f3f10d1
+
+	measure tkw_increase = ([TKW] * 1.03)
+		lineageTag: 2528bfff-cda2-404a-be4a-20d0c2312f67
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value
+		formatString: 0
+		lineageTag: 376f7a63-94d8-43e5-89af-6b1652fbbc3d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = 1a9d3676f9d9470db6be4ffec09eb941
+

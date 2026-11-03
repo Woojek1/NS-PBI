@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "98c7559c0c15aa3da3b2",
+  "position": {
+    "x": 673,
+    "y": 136,
+    "z": 1,
+    "height": 874,
+    "width": 610,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist_price"
+                    }
+                  },
+                  "Property": "part_no"
+                }
+              },
+              "queryRef": "pricelist_price.part_no",
+              "nativeQueryRef": "part_no"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist_price"
+                    }
+                  },
+                  "Property": "bcg3_name"
+                }
+              },
+              "queryRef": "pricelist_price.bcg3_name",
+              "nativeQueryRef": "bcg3_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pricelist_price"
+                    }
+                  },
+                  "Property": "line_name"
+                }
+              },
+              "queryRef": "pricelist_price.line_name",
+              "nativeQueryRef": "line_name"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pricelist_price"
+                  }
+                },
+                "Property": "part_no"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "279c3062b3d1435a6c96",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist_price"
+              }
+            },
+            "Property": "part_no"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f05d9ffe0531932b5503",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist_price"
+              }
+            },
+            "Property": "bcg3_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "23730f25c20081076633",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pricelist_price"
+              }
+            },
+            "Property": "line_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

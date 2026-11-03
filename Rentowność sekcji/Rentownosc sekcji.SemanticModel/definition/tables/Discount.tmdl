@@ -1,0 +1,18 @@
+table Discount
+	lineageTag: 6c912b58-721a-459d-8d26-a4867c80a51c
+
+	column Discount
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 09bc7abb-877e-4ccf-ae07-4280e283675a
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = User
+
+	partition Discount = calculated
+		mode: import
+		source = GENERATESERIES(0, 1, 0.005)
+
+	annotation PBI_Id = 5d9ec740837b4c53a03798974dc8da48
+
