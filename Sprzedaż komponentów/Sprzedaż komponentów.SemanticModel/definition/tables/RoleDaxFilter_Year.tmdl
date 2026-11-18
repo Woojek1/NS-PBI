@@ -1,0 +1,29 @@
+table RoleDaxFilter_Year
+	isHidden
+	lineageTag: ed136a47-c450-4c23-89d5-5ba0ca8ddf98
+
+	column user_name
+		dataType: string
+		lineageTag: ea5e4587-33fd-441a-aba3-1d7cf51b865e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_id
+		dataType: int64
+		formatString: 0
+		lineageTag: db4e849e-22ed-492c-93b5-69fcf78d74c2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: day_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RoleDaxFilter_Year = entity
+		mode: directQuery
+		source
+			entityName: RoleDaxFilter_Year
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

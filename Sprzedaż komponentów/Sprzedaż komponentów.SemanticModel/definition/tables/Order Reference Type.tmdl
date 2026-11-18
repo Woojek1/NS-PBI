@@ -1,0 +1,39 @@
+table 'Order Reference Type'
+	lineageTag: d61517db-95e4-43a9-a610-f03560cf58b4
+
+	column ord_supp_type_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: dda8e8c7-9125-442e-97e7-6ee19fa83e86
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ord_supp_type_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Ref Type Code'
+		dataType: string
+		lineageTag: 52f88f4e-a523-4866-ba22-14e83a7e9e4d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Ref Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Ref Type '
+		dataType: string
+		lineageTag: 6219597d-6621-4177-9fe0-ee67b39de4da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: "Order Ref Type "
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Order Reference Type' = entity
+		mode: directQuery
+		source
+			entityName: Order Reference Type
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

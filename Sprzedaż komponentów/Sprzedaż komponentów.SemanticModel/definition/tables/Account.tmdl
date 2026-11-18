@@ -1,0 +1,59 @@
+table Account
+	lineageTag: ecea434e-a1b6-428f-b5af-7214a958cc16
+
+	column account_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 38a76984-d43a-47d9-84a9-bb674f715b13
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = User
+
+	column db_code
+		dataType: string
+		isHidden
+		lineageTag: d270e8d6-c965-4f96-acd9-a2102b1d3246
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		isHidden
+		lineageTag: 924eb405-df42-4c35-b38c-4d96be95908b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Code'
+		dataType: string
+		lineageTag: 5e6206ad-9ee0-4bca-bdc8-fa80899132ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account
+		dataType: string
+		lineageTag: 92eb1c7d-bf11-4588-b175-fc4400ac5fd6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Account = entity
+		mode: directQuery
+		source
+			entityName: Account
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

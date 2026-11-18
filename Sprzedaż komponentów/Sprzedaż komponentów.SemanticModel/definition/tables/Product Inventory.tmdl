@@ -1,0 +1,117 @@
+table 'Product Inventory'
+	lineageTag: c6a9fed2-f655-4cf1-afe6-daca47f0fd81
+
+	column prod_si_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 91990ab3-b56c-4726-ac04-9166a5827ac7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_si_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Inventory Item Code'
+		dataType: string
+		lineageTag: ce0886d1-0d96-4aa9-a51d-3c7b1befe4bf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Inventory Item Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inventory Item Name'
+		dataType: string
+		lineageTag: 59880eab-d6e5-40af-9c74-106ee7ca3bff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Inventory Item Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_ti_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b1a3ac66-751f-4a72-a661-62aebc6aafe7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: prod_ti_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hold Inventory Item Name'
+		dataType: string
+		lineageTag: a182b400-b609-47c4-8f5e-d994339617a8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hold Inventory Item Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 89e73a91-6524-4445-816a-24f9388e732a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mnf_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PI Manufacturer Code'
+		dataType: string
+		lineageTag: 3ef70fc5-a9e2-4eaf-93a1-26511e85e0c6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PI Manufacturer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PI Manufacturer'
+		dataType: string
+		lineageTag: 77c9b71a-9f2b-4e47-9543-087494fc5bb2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PI Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column mnf_cnt_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f426ff02-8883-444c-a6fe-2b5ef0308e22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mnf_cnt_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PI Cnt Manufacturer Code'
+		dataType: string
+		lineageTag: e55f46ed-f0e7-4abd-8f1a-d0e9ede26e22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PI Cnt Manufacturer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PI Cnt Manufacturer'
+		dataType: string
+		lineageTag: 74441217-90c5-40f8-b916-a42396bb6dcd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PI Cnt Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Inventory' = entity
+		mode: directQuery
+		source
+			entityName: Product Inventory
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

@@ -1,0 +1,29 @@
+table RoleDaxFilter_Cust
+	isHidden
+	lineageTag: 0ebb2db5-7c3a-4e6b-8684-91e84559f976
+
+	column user_name
+		dataType: string
+		lineageTag: 0d689b91-86e0-45b1-9f0e-f24ae5c4751c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: user_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b9fa19b2-f739-4f52-9359-33010de37126
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: cust_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RoleDaxFilter_Cust = entity
+		mode: directQuery
+		source
+			entityName: RoleDaxFilter_Cust
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

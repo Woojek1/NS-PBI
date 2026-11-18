@@ -1,0 +1,281 @@
+table Destination
+	lineageTag: 83830af3-81c0-411d-95b2-82c561cf0803
+
+	column dest_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: c2511eff-70cb-4cbd-8e3d-00f876aa8857
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: dest_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Destination Code'
+		dataType: string
+		lineageTag: e02c98a5-0cc1-47fd-bf5e-c8c371f4d47b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Destination Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column address_id
+		dataType: string
+		isHidden
+		lineageTag: 166dc0f6-e06c-4ecf-96c6-a1ab99ac7ae5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: address_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination Address'
+		dataType: string
+		lineageTag: e5bcfbd3-2fc7-41c4-b086-bcff54ce03ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Destination Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination
+		dataType: string
+		lineageTag: 86caec31-1983-43f3-a1ef-48c0531d4d4f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Destination
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination Address Name'
+		dataType: string
+		lineageTag: 160d2735-6f69-4113-b314-3b75f53a3f34
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Destination Address Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column District
+		dataType: string
+		lineageTag: 0fd15a2c-2da6-4961-9737-ab2610684053
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: District
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination Zip Code'
+		dataType: string
+		lineageTag: ba595457-7984-4237-9b83-526f6cc7bcd4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Destination Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04e91eca-d4dc-4b33-99c9-8d64e256ec52
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: city_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 6f22af30-ea47-41da-85c2-25c5d9465c17
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'City Desc'
+		dataType: string
+		lineageTag: 22d5137e-1f86-42b4-83f0-2555ecb73e66
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: City Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column voivodeship_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7f67ca98-6647-45a4-8460-d123efc0987a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: voivodeship_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column voivodeship_code
+		dataType: string
+		isHidden
+		lineageTag: 5949e38b-dd54-483e-8b27-7bac7a1c616e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: voivodeship_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Province
+		dataType: string
+		lineageTag: b4e84dc6-4f9c-4a65-ae20-1b9978bbdc37
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Province
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 54a033dc-ffce-4132-b5bd-89af189a6ca7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dest Country Code'
+		dataType: string
+		lineageTag: c9e318e5-9e36-4aee-be00-de4bf5e8ac89
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dest Country Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dest Country'
+		dataType: string
+		lineageTag: 42bd5758-af74-457b-9220-20632fdbe1e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dest Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dest Country Code (ISO3)'
+		dataType: string
+		lineageTag: 038383ba-3e5c-4e8c-aa51-92b4e4cca158
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dest Country Code (ISO3)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dest Country Name (en)'
+		dataType: string
+		lineageTag: 5b1108a3-9e06-48de-9a1e-12144d7e5e21
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dest Country Name (en)
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f1aabf88-2a05-4758-97d3-ce1f2103c371
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: area_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_code
+		dataType: string
+		isHidden
+		lineageTag: e2ea598f-45f2-4b44-9eac-051d5a1b76bc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'World Region'
+		dataType: string
+		lineageTag: 4547794c-355b-4b2f-93da-f1e1de466fcc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: World Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination Address Code'
+		dataType: string
+		lineageTag: 82051e65-a3fe-43e1-96b7-f7e0bd330ba8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Destination Address Code
+
+		annotation SummarizationSetBy = User
+
+	column sman_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 95278deb-3105-4525-9e52-99b25f768127
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sman_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sman_code
+		dataType: string
+		isHidden
+		lineageTag: 8e18b13e-8572-4ca0-b84a-c4da221251af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sman_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sman_name
+		dataType: string
+		isHidden
+		lineageTag: 278f4867-dc7b-4c6a-b71e-e78c4aa2cd8e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sman_name
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Destination Hierarchy'
+		lineageTag: d17dc3d6-ab8a-44cf-af02-101d23d3c21f
+		sourceLineageTag: Destination Hierarchy
+
+		level 'World Region'
+			lineageTag: 64c0ab84-fff2-46d7-9e99-3991d88fc4fe
+			column: 'World Region'
+
+		level 'Dest Country'
+			lineageTag: 8d715c18-8497-4df3-8e0e-df95bd7b3abf
+			column: 'Dest Country'
+
+		level Province
+			lineageTag: 025c4cb4-23d6-4bd7-95e0-960225d4393e
+			column: Province
+
+		level City
+			lineageTag: 19aa52aa-f420-471a-81fc-288f55bd0b17
+			column: City
+
+	partition Destination = entity
+		mode: directQuery
+		source
+			entityName: Destination
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

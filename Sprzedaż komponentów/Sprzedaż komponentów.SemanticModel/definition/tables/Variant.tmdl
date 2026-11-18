@@ -1,0 +1,40 @@
+table Variant
+	lineageTag: 45403979-784c-4075-91fd-69e4212f466d
+
+	column var_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 13025b3f-653d-4c96-91ad-a3916d854a2b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: var_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Variant Code'
+		dataType: string
+		lineageTag: b3957a0e-f945-4519-b8e3-21503c02a94b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Variant Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column var_name
+		dataType: string
+		isHidden
+		lineageTag: 8806b50a-7b4a-4118-8b4e-0afd7b4b72d8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: var_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Variant = entity
+		mode: directQuery
+		source
+			entityName: Variant
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

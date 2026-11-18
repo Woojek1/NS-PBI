@@ -1,0 +1,39 @@
+table 'Catalog Type'
+	lineageTag: e10bace6-84a0-4d70-930d-0ade9f300639
+
+	column cat_type_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 64c4a018-fc53-404a-8286-d9b698fd49b0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cat_type_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Catalog Type Code'
+		dataType: string
+		lineageTag: 6b38c58f-01eb-4926-a557-c5bd366c6667
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Catalog Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Catalog Type'
+		dataType: string
+		lineageTag: 476dc4dc-0be8-4963-998f-fd6da5b89b7c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Catalog Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Catalog Type' = entity
+		mode: directQuery
+		source
+			entityName: Catalog Type
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

@@ -1,0 +1,59 @@
+table Coordinator
+	lineageTag: d32c5654-4d90-4df1-8337-f7bb7ad293f4
+
+	column cord_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 001933ce-f24d-400a-9297-0f967ef53b11
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cord_id
+
+		annotation SummarizationSetBy = User
+
+	column comp_code
+		dataType: string
+		isHidden
+		lineageTag: e0b2149d-90b8-404b-9fcb-12f8b138ffac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column auth_code
+		dataType: string
+		isHidden
+		lineageTag: b931bada-3c1b-4c0b-9ecb-243d93854e69
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: auth_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Coordinator Code'
+		dataType: string
+		lineageTag: 8f8ab93d-78f9-4bd4-936e-fdcdd9eb5a9e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Coordinator Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Coordinator
+		dataType: string
+		lineageTag: 4e9779fe-2204-4ea9-9323-847381a8aef9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Coordinator
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Coordinator = entity
+		mode: directQuery
+		source
+			entityName: Coordinator
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

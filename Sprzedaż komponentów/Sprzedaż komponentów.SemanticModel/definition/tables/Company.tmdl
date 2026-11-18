@@ -1,0 +1,59 @@
+table Company
+	lineageTag: 89148cb2-29e6-416a-8dff-dc82c7f0e94c
+
+	column comp_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: de8a4358-d80c-4980-b746-e12591e1cfdf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_id
+
+		annotation SummarizationSetBy = User
+
+	column comp_code_sys
+		dataType: string
+		isHidden
+		lineageTag: a4f6e1eb-8b14-4a41-933f-fca08cd12a6c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code_sys
+
+		annotation SummarizationSetBy = Automatic
+
+	column comp_code
+		dataType: string
+		isHidden
+		lineageTag: f63d1ffb-2d8b-46bc-adfa-9a560a8cf317
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: comp_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 3bab1005-ca5a-43f1-acad-86d108d349bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: 975d8753-d733-4469-94ea-1f135e0be7d1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Company = entity
+		mode: directQuery
+		source
+			entityName: Company
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

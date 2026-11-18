@@ -1,0 +1,57 @@
+table License
+	lineageTag: 2e0c45b8-c7b6-45d5-9107-c9fcf1f697ff
+
+	column lic_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 805c535a-af82-42ef-abb6-1f1f07ada70b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: lic_id
+
+		annotation SummarizationSetBy = User
+
+	column 'License Code'
+		dataType: string
+		lineageTag: 0c17f8fa-d3d8-4895-ac78-3c04d3445c70
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: License Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column License
+		dataType: string
+		lineageTag: 209a3453-fb99-4aae-8903-dcd9db873de5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: License
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'License Type'
+		dataType: string
+		lineageTag: 8c5d0b26-612a-46e1-a4b9-05de7558ee6d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: License Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Designer
+		dataType: string
+		lineageTag: 5666d19c-e4e0-449b-9785-049fe37c8157
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Designer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition License = entity
+		mode: directQuery
+		source
+			entityName: License
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

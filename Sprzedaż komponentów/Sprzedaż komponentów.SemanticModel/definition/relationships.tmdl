@@ -1,0 +1,129 @@
+relationship 67bd5446-b0ac-4044-838f-4070ce2f7632
+	fromColumn: 'Sales Measures'.time_id
+	toColumn: Date.day_id
+
+relationship a163327c-7005-4c3a-ab09-7cf2f9b41f89
+	fromColumn: 'Sales Measures'.d_term_id
+	toColumn: 'Delivery Term'.d_term_id
+
+relationship 5136ffa3-84c6-4d7c-b0b8-2fda1fc94b16
+	fromColumn: 'Sales Measures'.account_id
+	toColumn: Account.account_id
+
+relationship e2010104-b8af-4e81-bfe2-80a2b8094ac7
+	fromColumn: 'Sales Measures'.prod_id
+	toColumn: Product.prod_si_id
+
+relationship b43e3728-195d-4950-a472-13b25c06780c
+	fromColumn: 'Sales Measures'.var_id
+	toColumn: Variant.var_id
+
+relationship 560a0e40-3af7-4f66-846a-8f4219f49efe
+	fromColumn: 'Sales Measures'.cat_type_id
+	toColumn: 'Catalog Type'.cat_type_id
+
+relationship 83f1b9dc-2bdd-4160-ba11-56ede4a1153c
+	fromColumn: 'Sales Measures'.cord_id
+	toColumn: Coordinator.cord_id
+
+relationship 27dd2d7c-3430-418d-8ec7-eac2e478c691
+	fromColumn: 'Sales Measures'.curr_id
+	toColumn: Currency.curr_id
+
+relationship 4b349ec2-ee3c-4fb0-8f8f-f2010cc6bf47
+	fromColumn: 'Sales Measures'.invoice_id
+	toColumn: Invoice.invoice_id
+
+relationship 7e3e7cfd-9f03-46ab-9e85-ac6e225f0053
+	fromColumn: 'Sales Measures'.ord_rec_id
+	toColumn: 'Order Receive'.ord_rec_id
+
+relationship 962676e4-d224-4117-b718-1c8c123801d0
+	fromColumn: 'Sales Measures'.s_sta_id
+	toColumn: 'Sale Status'.s_sta_id
+
+relationship dd6d649f-582b-440e-9947-ea80614798d0
+	fromColumn: 'Sales Measures'.skonto_id
+	toColumn: Skonto.skonto_id
+
+relationship e835789b-f079-4647-8f3f-90ce392b0191
+	fromColumn: 'Sales Measures'.cust_id
+	toColumn: Customer.cust_id
+
+relationship 7cbb149b-a3ff-4f3a-bfbe-583b2b8be7d2
+	fromColumn: 'Sales Measures'.c_grp_id
+	toColumn: 'Customer Group'.cust_grp_id
+
+relationship fd464469-5384-4df5-b3ed-432ca308374c
+	fromColumn: 'Sales Measures'.dest_id
+	toColumn: Destination.dest_id
+
+relationship 92fc40bb-018c-47ed-88fa-700fe97eb2dc
+	fromColumn: 'Sales Measures'.c_reg_id
+	toColumn: 'Destination Region'.dest_reg_id
+
+relationship 9027fc3b-ad4e-4d6e-90f7-0fa2615b29c1
+	fromColumn: 'Sales Measures'.prj_id
+	toColumn: Project.prj_id
+
+relationship 98ae67aa-8f5f-472a-8903-17a77841828d
+	fromColumn: 'Sales Measures'.org_id
+	toColumn: Department.org_id
+
+relationship 8daf68fd-c940-4295-91fb-4aa173857563
+	fromColumn: 'Sales Measures'.price_um_id
+	toColumn: 'Price Measure'.unit_meas_id
+
+relationship 6e36e903-511d-481c-9043-b585576bc50f
+	fromColumn: 'Sales Measures'.invent_um_id
+	toColumn: 'Inventory Measure'.unit_meas_id
+
+relationship 0a8fec1c-afb7-4858-870c-764b5ac8d6fd
+	fromColumn: 'Sales Measures'.sale_um_id
+	toColumn: 'Sale Measure'.unit_meas_id
+
+relationship e1db1a59-019b-43d0-9ab2-1278b3b8ed84
+	fromColumn: 'Sales Measures'.curr_dom_id
+	toColumn: 'Currency Dom'.curr_id
+
+relationship 6b9658fe-993e-4031-a854-73d44c09393b
+	fromColumn: 'Sales Measures'.prod_inv_id
+	toColumn: 'Product Inventory'.prod_si_id
+
+relationship 9fef6a4c-7c55-4b91-85a4-32c2bd0f96bf
+	fromColumn: 'Sales Measures'.lic_id
+	toColumn: License.lic_id
+
+relationship f6dc87a0-d8c1-4fa8-81bb-fae73796f411
+	fromColumn: 'Sales Measures'.pricelist_id
+	toColumn: 'Price List'.pricelist_id
+
+relationship 65a9970e-41c0-4b63-a4ef-d7d590550992
+	fromColumn: 'Sales Measures'.ord_supp_type_id
+	toColumn: 'Order Reference Type'.ord_supp_type_id
+
+relationship b11641b3-3f7f-49c6-a9b3-d57c2cf22e7e
+	fromColumn: 'Sales Measures'.comp_id
+	toColumn: Company.comp_id
+
+relationship b64e5b61-598d-4875-a06f-d1853436284f
+	fromColumn: 'Sales Measures'.dest_ord_id
+	toColumn: 'Destination Order'.dest_id
+
+relationship 8077eda2-d39a-4706-8568-773b6358b5ef
+	fromColumn: 'Sales Measures'.supp_id
+	toColumn: Supplier.supp_id
+
+relationship a3cf6650-8fed-414c-96e9-cb0cb1807a77
+	fromColumn: 'Currency Rate'.curr_id
+	toColumn: Currency.curr_id
+
+relationship 914cbb95-da9a-4012-b323-d7c049d31f19
+	fromColumn: 'Currency Rate'.day_id
+	toColumn: Date.day_id
+
+relationship 0e389f54-b296-88e4-61a8-bd1716275b5b
+	securityFilteringBehavior: none
+	fromColumn: 'Sales Measures'.prod_inv_id
+	toColumn: '`sandbox` `sprzedaz_komponentow` `cennik_komponentow`'.prod_si_id
+

@@ -1,0 +1,44 @@
+table 'Currency Rate'
+	lineageTag: dbc3ba70-7de7-48dd-8d8a-1ef9e3a0e6c4
+
+	column day_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 0de57196-d891-486c-920c-e3b2ed598567
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: day_id
+
+		annotation SummarizationSetBy = User
+
+	column curr_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 98727395-9f96-4039-8c97-abafc6d14179
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: curr_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Rate PLN'
+		dataType: double
+		formatString: 0.00
+		displayFolder: Calculated measures simple
+		lineageTag: fa0f8a23-69e6-4067-9c51-4060a1fa744b
+		dataCategory: Uncategorized
+		summarizeBy: average
+		sourceColumn: Currency Rate PLN
+
+		annotation SummarizationSetBy = User
+
+	partition 'Currency Rate' = entity
+		mode: directQuery
+		source
+			entityName: Currency Rate
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

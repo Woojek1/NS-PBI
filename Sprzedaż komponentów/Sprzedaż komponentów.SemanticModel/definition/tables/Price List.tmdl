@@ -1,0 +1,161 @@
+table 'Price List'
+	lineageTag: 05904d2c-bc2e-488c-a02f-94d96cb07188
+
+	column pricelist_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: cc5e6fc1-5c97-4e3a-8ad2-629702188c7a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: pricelist_id
+
+		annotation SummarizationSetBy = User
+
+	column db_code
+		dataType: string
+		isHidden
+		lineageTag: f4ac5c06-efa4-4796-8552-d30fc5a8ca24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: db_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Code'
+		dataType: string
+		lineageTag: 05c35609-bf38-4ed5-8271-f24a14a91277
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column PriceList
+		dataType: string
+		lineageTag: 62e475e8-6eb4-4901-928e-aad10ac1cfe8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList date from'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c3aab53b-d219-4094-96fb-5e2daaeba920
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList date from
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList date to'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c155c76b-4fd3-4b24-b789-b54f9f259d6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList date to
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Currency'
+		dataType: string
+		lineageTag: 571897d6-70a9-40d6-9055-02a39db29030
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Owning Company'
+		dataType: string
+		lineageTag: 251312db-abf0-4d19-9ec9-8368458ef7be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Owning Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList base site'
+		dataType: string
+		lineageTag: 0a5a9933-8500-445a-85a7-4c1fd7e1bedc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList base site
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_price_group_id
+		dataType: string
+		isHidden
+		lineageTag: ab545941-0709-4ed4-9350-90dd26266ef7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sales_price_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Assortment id'
+		dataType: string
+		lineageTag: 01c5b9bc-e5a6-4f51-a21b-8015d17bae98
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Assortment id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PriceList Category'
+		dataType: string
+		lineageTag: 01844225-84b3-44dc-8d09-d808ed26acf8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PriceList Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_desc
+		dataType: string
+		isHidden
+		lineageTag: 9ed9c4f6-fb43-43ba-8302-643ccaf155c0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: category_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pricelist workspace'
+		dataType: string
+		lineageTag: c101d455-a31d-4a64-ae88-4f07d2d94ffd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pricelist workspace
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent PriceList Code'
+		dataType: string
+		lineageTag: 16506d19-7381-44ad-b835-097e9a706539
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Parent PriceList Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent PriceList'
+		dataType: string
+		lineageTag: 0b385568-63be-4120-b87d-1a3eb369ac39
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Parent PriceList
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Price List' = entity
+		mode: directQuery
+		source
+			entityName: Price List
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+

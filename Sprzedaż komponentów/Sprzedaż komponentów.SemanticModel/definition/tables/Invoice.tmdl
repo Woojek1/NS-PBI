@@ -1,0 +1,130 @@
+table Invoice
+	lineageTag: f259eb1f-15a2-45a7-b087-774708712721
+
+	column invoice_id
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 5d1f4a80-f00b-494c-adc4-93f62308f8f3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: invoice_id
+
+		annotation SummarizationSetBy = User
+
+	column inv_type_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8e6b03e5-388e-4363-bd24-2118b866c08f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: inv_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 1a69a07e-fc63-4a5f-b651-c5f56690b5da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type Name'
+		dataType: string
+		lineageTag: 591ede7f-0f56-4c41-8136-4bb996e1e41a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Type Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column series_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7e19d4b2-5b86-4808-b4b7-4662536265f3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: series_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Series
+		dataType: string
+		lineageTag: 8d75e38c-b1c1-4d33-bb4c-5968f293c390
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Series
+
+		annotation SummarizationSetBy = Automatic
+
+	column series_name
+		dataType: string
+		isHidden
+		lineageTag: 1737f9ac-aece-4af8-9c37-40d3be1a11f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: series_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Direction
+		dataType: string
+		lineageTag: 91ffdef0-0df6-4311-924d-b77acdffccd4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column de_name
+		dataType: string
+		isHidden
+		lineageTag: 4d0a70b1-e952-4fe4-9d0a-09d3cc91f539
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: de_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Correction'
+		dataType: string
+		lineageTag: 70452395-cc03-4a8b-a4a8-46591662ea2d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Correction
+
+		annotation SummarizationSetBy = Automatic
+
+	column corr_name
+		dataType: string
+		isHidden
+		lineageTag: 1a9ce808-6d44-4788-94c6-54b51c2bc51d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: corr_name
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Direction Hierarchy'
+		lineageTag: 14db8819-8d75-43d5-8335-e3554f88b88f
+		sourceLineageTag: Direction Hierarchy
+
+		level Direction
+			lineageTag: 8d045ce6-76b3-48e8-87e9-38e45e7d11d1
+			column: Direction
+
+		level Series
+			lineageTag: ed4ceb0c-875c-48d9-b398-e6cc114679bc
+			column: Series
+
+	partition Invoice = entity
+		mode: directQuery
+		source
+			entityName: Invoice
+			expressionSource: 'DirectQuery to AS - Sales Tabular Model'
+
