@@ -1,0 +1,115 @@
+table coordinator_lines
+	lineageTag: 40dd134e-a205-480b-9393-008ccf9db93e
+
+	column cord_code
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 4160599f-c620-45ca-89b8-c9c8e3145958
+		summarizeBy: none
+		sourceColumn: cord_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cord_name
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: ea407c7b-6acf-406a-909a-88b97a8d797b
+		summarizeBy: none
+		sourceColumn: cord_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column contract
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 19c5364d-62bc-4712-aa13-cf708c068c86
+		summarizeBy: none
+		sourceColumn: contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_code
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 2ee7b689-de55-452b-a7e4-caad48a488a5
+		summarizeBy: none
+		sourceColumn: team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_type
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: cc0a699e-eccb-44e7-a70f-4deacb0aa48a
+		summarizeBy: none
+		sourceColumn: order_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_count
+		dataType: int64
+		isNullable: false
+		formatString: #,0
+		sourceProviderType: bigint
+		lineageTag: 66ecd223-8a88-41a6-8a0f-cdb70cc62fa3
+		summarizeBy: sum
+		sourceColumn: line_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column s_net
+		dataType: double
+		formatString: #,0
+		sourceProviderType: decimal(33, 0)
+		lineageTag: 9b7edc09-94d9-4c58-8c95-bc60c311d4cb
+		summarizeBy: sum
+		sourceColumn: s_net
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column s_net_per_line
+		dataType: double
+		formatString: #,0
+		sourceProviderType: decimal(33, 0)
+		lineageTag: 2191142f-27af-40d6-865b-06fd270b338d
+		summarizeBy: sum
+		sourceColumn: s_net_per_line
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column orders_no
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 43aa01c6-fc65-477c-8d00-a917ee3bcd7b
+		summarizeBy: none
+		sourceColumn: orders_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_code
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 508ffb74-0657-409a-9a02-48ba608d54a2
+		summarizeBy: none
+		sourceColumn: currency_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition coordinator_lines = m
+		mode: directQuery
+		source =
+				let
+				  Source = Databricks.Catalogs("adb-16306551450739.19.azuredatabricks.net", "/sql/1.0/warehouses/d77ff9935cb3e9fe", [Catalog = null, Database = null, QueryTags = null, EnableAutomaticProxyDiscovery = "enabled", Implementation = "2.0", Protocol = null]),
+				  #"Navigation 1" = Source{[Name = "controlling", Kind = "Database"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Name = "coordinator_lines", Kind = "Schema"]}[Data],
+				  #"Navigation 3" = #"Navigation 2"{[Name = "coordinator_lines", Kind = "View"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(#"Navigation 3",{{"AUTHORIZE_CODE", "cord_code"}})
+				in
+				  #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

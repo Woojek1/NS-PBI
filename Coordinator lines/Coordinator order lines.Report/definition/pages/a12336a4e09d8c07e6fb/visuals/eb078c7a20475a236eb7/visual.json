@@ -1,0 +1,379 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "eb078c7a20475a236eb7",
+  "position": {
+    "x": 20,
+    "y": 10,
+    "z": 0,
+    "height": 1058.3333333333335,
+    "width": 1880,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "cord_code"
+                }
+              },
+              "queryRef": "coordinator_lines.AUTHORIZE_CODE",
+              "nativeQueryRef": "cord_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "cord_name"
+                }
+              },
+              "queryRef": "coordinator_lines.cord_name",
+              "nativeQueryRef": "cord_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "contract"
+                }
+              },
+              "queryRef": "coordinator_lines.contract",
+              "nativeQueryRef": "contract"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "team_code"
+                }
+              },
+              "queryRef": "coordinator_lines.team_code",
+              "nativeQueryRef": "team_code"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "coordinator_lines"
+                        }
+                      },
+                      "Property": "line_count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(coordinator_lines.line_count)",
+              "nativeQueryRef": "Sum of line_count"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "coordinator_lines"
+                        }
+                      },
+                      "Property": "s_net"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(coordinator_lines.s_net)",
+              "nativeQueryRef": "Sum of s_net"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "currency_code"
+                }
+              },
+              "queryRef": "coordinator_lines.currency_code",
+              "nativeQueryRef": "currency",
+              "displayName": "currency"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "coordinator_lines"
+                        }
+                      },
+                      "Property": "s_net_per_line"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(coordinator_lines.s_net_per_line)",
+              "nativeQueryRef": "Sum of s_net_per_line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "order_type"
+                }
+              },
+              "queryRef": "coordinator_lines.order_type",
+              "nativeQueryRef": "order_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "orders_no"
+                }
+              },
+              "queryRef": "coordinator_lines.orders_no",
+              "nativeQueryRef": "orders_no"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "coordinator_lines"
+                  }
+                },
+                "Property": "cord_code"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139.66667254673848D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "coordinator_lines.cord_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82.99999804374576D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "coordinator_lines.team_code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.99999364217527D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "coordinator_lines.currency_code"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6b9a8eaf2d1d7b433f04",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "cord_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7eb6949e7cfdb9311ef7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "contract"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0564637a7a567794f3d7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "coordinator_lines"
+                  }
+                },
+                "Property": "line_count"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fe99da840a5cbe9f5b8a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "coordinator_lines"
+                  }
+                },
+                "Property": "s_net"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e2f92a15fa7cad979694",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "coordinator_lines"
+                  }
+                },
+                "Property": "s_net_per_line"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0beb809e11f212c5a217",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "cord_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d4cd203844fa342bc360",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "orders_no"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fae445351e72d82b3c46",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "team_code"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
