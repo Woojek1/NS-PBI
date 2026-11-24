@@ -1,0 +1,183 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "eb828a93463dc21ade61",
+  "position": {
+    "x": 47.142857142857146,
+    "y": 38.571428571428577,
+    "z": 0,
+    "height": 918.57142857142867,
+    "width": 480.00000000000006,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "coord_comp"
+                }
+              },
+              "queryRef": "coordinator_lines.coord_comp",
+              "nativeQueryRef": "coord_comp"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "cord_name"
+                }
+              },
+              "queryRef": "coordinator_lines.cord_name",
+              "nativeQueryRef": "cord_name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "coordinator_lines"
+                        }
+                      },
+                      "Property": "line_count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(coordinator_lines.line_count)",
+              "nativeQueryRef": "Sum of line_count"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "coordinator_lines"
+                      }
+                    },
+                    "Property": "line_count"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9e757ab858b5601ca7ea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "coord_comp"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "coordinator_lines",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "coord_comp"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "99b312b98b5bc5193e0e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "cord_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b65b87dbfc039119b0e7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "coordinator_lines"
+                  }
+                },
+                "Property": "line_count"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

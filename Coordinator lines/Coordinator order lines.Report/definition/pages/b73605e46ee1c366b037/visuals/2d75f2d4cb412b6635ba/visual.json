@@ -1,0 +1,346 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "2d75f2d4cb412b6635ba",
+  "position": {
+    "x": 20,
+    "y": 104,
+    "z": 0,
+    "height": 948,
+    "width": 1880,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "contract"
+                }
+              },
+              "queryRef": "coordinator_lines.contract",
+              "nativeQueryRef": "contract",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "coord_comp"
+                }
+              },
+              "queryRef": "coordinator_lines.coord_comp",
+              "nativeQueryRef": "coord_comp",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "cord_name"
+                }
+              },
+              "queryRef": "coordinator_lines.cord_name",
+              "nativeQueryRef": "cord_name",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "coordinator_lines"
+                        }
+                      },
+                      "Property": "line_count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(coordinator_lines.line_count)1",
+              "nativeQueryRef": "Ilość linii zamówień",
+              "displayName": "Ilość linii zamówień"
+            },
+            {
+              "field": {
+                "Arithmetic": {
+                  "Left": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "coordinator_lines"
+                            }
+                          },
+                          "Property": "line_count"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "coordinator_lines"
+                                }
+                              },
+                              "Property": "line_count"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
+                }
+              },
+              "queryRef": "Sum(coordinator_lines.line_count)",
+              "nativeQueryRef": "% linii zamówień",
+              "displayName": "% linii zamówień"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "coordinator_lines"
+                  }
+                },
+                "Property": "coord_comp"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "coordinator_lines.coord_comp"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "coord_comp"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "coordinator_lines.cord_name"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "null"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "titleAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "autoExpand": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9460d8c39e405d3705bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "coord_comp"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3a610c465c3758d2f057",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "contract"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e16646447d1e8154eb95",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "coordinator_lines"
+                  }
+                },
+                "Property": "line_count"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7c6356f64f26f54aaa23",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "cord_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "502e77cdb866271de7b6",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "coordinator_lines"
+                      }
+                    },
+                    "Property": "line_count"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "coordinator_lines"
+                          }
+                        },
+                        "Property": "line_count"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

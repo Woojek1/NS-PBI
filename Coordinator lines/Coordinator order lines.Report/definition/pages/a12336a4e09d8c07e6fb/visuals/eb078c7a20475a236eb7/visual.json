@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "eb078c7a20475a236eb7",
   "position": {
     "x": 20,
-    "y": 10,
+    "y": 93.75,
     "z": 0,
-    "height": 1058.3333333333335,
+    "height": 975,
     "width": 1880,
     "tabOrder": 0
   },
@@ -42,6 +42,20 @@
               },
               "queryRef": "coordinator_lines.cord_name",
               "nativeQueryRef": "cord_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "coordinator_lines"
+                    }
+                  },
+                  "Property": "coord_comp"
+                }
+              },
+              "queryRef": "coordinator_lines.coord_comp",
+              "nativeQueryRef": "coord_comp"
             },
             {
               "field": {
@@ -184,7 +198,7 @@
                     "Entity": "coordinator_lines"
                   }
                 },
-                "Property": "cord_code"
+                "Property": "coord_comp"
               }
             },
             "direction": "Ascending"
@@ -248,7 +262,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "6b9a8eaf2d1d7b433f04",
+        "name": "fed0889308208e5ff8a6",
         "field": {
           "Column": {
             "Expression": {
@@ -262,7 +276,21 @@
         "type": "Categorical"
       },
       {
-        "name": "7eb6949e7cfdb9311ef7",
+        "name": "9fd47c05716559be68ce",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "cord_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5b3f6448e245d166cc39",
         "field": {
           "Column": {
             "Expression": {
@@ -276,7 +304,21 @@
         "type": "Categorical"
       },
       {
-        "name": "0564637a7a567794f3d7",
+        "name": "c2efdecdb932c9ce71b2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "team_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c7762fea8e79a87cf547",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -295,7 +337,7 @@
         "type": "Advanced"
       },
       {
-        "name": "fe99da840a5cbe9f5b8a",
+        "name": "19aee3e26d1966dadc4a",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -314,7 +356,21 @@
         "type": "Advanced"
       },
       {
-        "name": "e2f92a15fa7cad979694",
+        "name": "89f5dc1e4117579e791c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "coordinator_lines"
+              }
+            },
+            "Property": "currency_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "37faad08821b22f7bead",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -333,7 +389,7 @@
         "type": "Advanced"
       },
       {
-        "name": "0beb809e11f212c5a217",
+        "name": "1317d3b8adcef9d42f99",
         "field": {
           "Column": {
             "Expression": {
@@ -341,13 +397,13 @@
                 "Entity": "coordinator_lines"
               }
             },
-            "Property": "cord_name"
+            "Property": "order_type"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "d4cd203844fa342bc360",
+        "name": "e8acf68476c2b73b5fcf",
         "field": {
           "Column": {
             "Expression": {
@@ -361,7 +417,7 @@
         "type": "Categorical"
       },
       {
-        "name": "fae445351e72d82b3c46",
+        "name": "34fe52c9e7362e554aa0",
         "field": {
           "Column": {
             "Expression": {
@@ -369,7 +425,7 @@
                 "Entity": "coordinator_lines"
               }
             },
-            "Property": "team_code"
+            "Property": "coord_comp"
           }
         },
         "type": "Categorical"

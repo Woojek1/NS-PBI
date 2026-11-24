@@ -99,6 +99,24 @@ table coordinator_lines
 
 		annotation SummarizationSetBy = Automatic
 
+	column coord_comp
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 7b21eadd-7f2c-4866-aef9-03906e1941cb
+		summarizeBy: none
+		sourceColumn: coord_comp
+
+		annotation SummarizationSetBy = Automatic
+
+	column mon_name
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 319ef96e-3f49-42ee-b883-8890f144db1c
+		summarizeBy: none
+		sourceColumn: mon_name
+
+		annotation SummarizationSetBy = Automatic
+
 	partition coordinator_lines = m
 		mode: directQuery
 		source =
